@@ -19,7 +19,7 @@ SINGLE_SURNAMES = (
     "戚谢邹喻柏水窦章云苏潘葛奚范彭郎鲁韦昌马苗凤花方俞任袁柳鲍史唐费"
     "廉岑薛雷贺倪汤滕殷罗毕郝邬安常乐于时傅皮卞齐康伍余元卜顾孟平黄"
     "和穆萧尹姚邵湛汪祁毛禹狄米贝明臧计伏成戴宋庞熊纪舒屈项祝董梁杜"
-    "阮蓝闵席季麻强贾路娄危江童颜郭梅盛林刁钟徐邱骆高夏蔡田胡凌霍虞"
+    "阮蓝闵席季麻强贾路娄危江童佟颜郭梅盛林刁钟徐邱骆高夏蔡田胡凌霍虞"
     "万支柯昝管卢莫经房裘缪干解应宗丁宣邓郁单杭洪包诸左石崔吉龚程邢"
     "裴陆荣翁荀羊於惠甄曲家封芮羿储靳汲邴糜松井段富巫乌焦巴弓牧隗山"
     "谷车侯宓蓬全郗班仰秋仲伊宫宁仇栾暴甘斜厉戎祖武符刘景詹束龙叶幸"
@@ -66,11 +66,179 @@ ALIASES = {
     "胡适之": "胡适",
     "王世傑": "王世杰",
     "相湘": "吴相湘",
+    "姚老头": "姚从吾",
+    "周树人": "鲁迅",
+    "东方望": "汪梦湘",
+    "马戈": "马宏祥",
+    "施启杨": "施启扬",
+    "詹永傑": "詹永杰",
+    "景生二": "李景生",
+    "素馨": "李文钧",
 }
 
 ALWAYS_NAMES = {
     "姚从吾", "蔡元培", "周作人", "钱玄同", "沈尹默", "陶晋生", "严以侨",
+    "李政一", "黄中国", "高时运", "李国龙", "崔积泽",
+    "周弘", "景新汉", "马宏祥", "白绍康", "华昌平", "李华俊", "陈又亮",
+    "祝庭生", "张克斌", "袁祝泰", "朱广诚", "黄锡昌", "施启扬", "佟耀勋",
+    "阙至正", "孙英善", "林淑美", "杨祖燕", "杨世彭", "袁天中", "王尚义",
+    "陈良榘", "王曾才", "李耀祖", "王文振", "陈士宽", "施敏雄", "毛树清",
 }
+
+NONSTANDARD_NAMES = {
+    "小屯", "小蕾", "勘勘", "谌谌", "素馨", "小八",
+}
+
+CURATED_IDENTITIES = {
+    "胡适": ["correspondence", "meeting", "academic"],
+    "姚从吾": ["teacher_student", "academic"],
+    "陶希圣": ["meeting", "politician", "public_debate", "academic"],
+    "胡秋原": ["public_debate", "publishing", "academic"],
+    "殷海光": ["teacher_student", "publishing", "academic", "public_debate"],
+    "徐高阮": ["public_debate", "academic"],
+    "吴相湘": ["teacher_student", "academic", "meeting"],
+    "严师母": ["nickname"],
+    "马占山": ["military_figure", "politician"],
+    "蒋介石": ["politician", "public_debate"],
+    "严侨": ["teacher_student", "public_debate"],
+    "萧启庆": ["academic", "meeting"],
+    "高荫祖": ["meeting", "politician", "public_debate"],
+    "叶明勋": ["publishing"],
+    "敖弟": ["family", "correspondence"],
+    "王世杰": ["politician", "meeting"],
+    "王克敏": ["politician"],
+    "魏廷朝": ["case_prison", "public_debate"],
+    "黄宝实": ["public_debate"],
+    "赵铁寒": ["academic", "publishing"],
+    "罗家伦": ["academic", "politician"],
+    "沈刚伯": ["academic"],
+    "张伯伯": ["nickname", "meeting"],
+    "张伯敏": ["academic"],
+    "钱思亮": ["academic", "meeting"],
+    "庄严": ["academic", "correspondence"],
+    "蒋君章": ["academic"],
+    "王民信": ["academic", "classmate_colleague"],
+    "蒋复璁": ["academic"],
+    "陈鼓应": ["classmate_colleague"],
+    "马宏祥": ["correspondence", "classmate_colleague", "publishing"],
+    "林海音": ["correspondence", "publishing"],
+    "王文俊": ["in_law"],
+    "王正廷": ["politician"],
+    "王洪钧": ["publishing"],
+    "梁实秋": ["academic", "publishing"],
+    "萧孟能": ["publishing"],
+    "蒋经国": ["politician", "public_debate"],
+    "周恩来": ["politician", "spiritual"],
+    "毛泽东": ["politician", "spiritual"],
+    "张学良": ["politician", "public_debate"],
+    "彭明敏": ["public_debate"],
+    "谢聪敏": ["case_prison", "public_debate"],
+    "李政一": ["case_prison"],
+    "黄中国": ["case_prison", "litigation"],
+    "高时运": ["case_prison", "politician"],
+    "李国龙": ["case_prison"],
+    "古永城": ["mentioned"],
+    "吴彰炯": ["intelligence_police", "military_figure"],
+    "汪梦湘": ["intelligence_police", "military_figure", "publishing", "friendship"],
+    "胡炎汉": ["case_prison"],
+    "陈独秀": ["academic", "politician", "public_debate", "spiritual"],
+    "鲁迅": ["academic", "spiritual"],
+    "李伋": ["spiritual"],
+    "李玄伯": ["teacher_student", "academic"],
+    "钱宾四": ["academic", "spiritual"],
+    "罗志希": ["publishing", "politician"],
+    "赵元任": ["academic"],
+    "李德林": ["in_law"],
+    "尹女士": ["in_law", "nickname"],
+    "王家桢": ["politician"],
+    "王墨林": ["meeting"],
+    "李鼎彝": ["family", "academic"],
+    "吴焕章": ["friendship"],
+    "温茂林": ["meeting", "nickname"],
+    "李纯仁": ["family"],
+    "丁锡庆": ["in_law"],
+    "周翔举": ["friendship", "meeting"],
+    "詹永杰": ["friendship", "classmate_colleague"],
+    "严停云": ["publishing"],
+    "李子卓": ["in_law", "politician"],
+    "关颂韬": ["meeting"],
+    "李景生": ["family", "nickname"],
+    "徐伟森": ["friendship", "meeting"],
+    "周桐雨": ["meeting"],
+    "徐国材": ["in_law"],
+    "张桂贞": ["family"],
+    "顾维钧": ["politician", "spiritual"],
+    "张莘夫": ["friendship"],
+    "李锡恩": ["academic", "politician"],
+    "陈纳德": ["politician", "spiritual"],
+    "周克敏": ["in_law"],
+    "孙念台": ["teacher_student"],
+    "张作相": ["academic", "politician"],
+    "王靖雯": ["media"],
+    "西门庆": ["spiritual"],
+    "刘半农": ["academic", "spiritual"],
+    "黄毅辛": ["case_prison", "media"],
+    "崔积泽": ["case_prison", "friendship"],
+    "王云五": ["publishing", "politician"],
+    "叶明勋": ["publishing", "media"],
+    "林正杰": ["publishing", "public_debate", "politician"],
+    "黄信介": ["politician", "media", "public_debate"],
+    "骆学良": ["publishing", "media", "correspondence"],
+    "侯立朝": ["intelligence_police", "publishing", "public_debate"],
+    "陈果夫": ["politician", "public_debate", "spiritual"],
+    "葛县长": ["politician", "litigation"],
+    "冀元铎": ["intelligence_police", "litigation"],
+    "陶百川": ["legal_official", "politician"],
+    "钱思亮": ["academic"],
+    "刘子健": ["academic"],
+    "李翰祥": ["media"],
+    "芮逸夫": ["academic"],
+    "李宏基": ["academic"],
+    "孙英善": ["classmate_colleague"],
+    "周弘": ["classmate_colleague", "meeting"],
+    "景新汉": ["classmate_colleague", "meeting"],
+    "白绍康": ["classmate_colleague", "meeting"],
+    "华昌平": ["classmate_colleague", "meeting"],
+    "李华俊": ["classmate_colleague", "meeting"],
+    "陈又亮": ["classmate_colleague", "meeting"],
+    "祝庭生": ["classmate_colleague", "meeting"],
+    "张克斌": ["classmate_colleague", "meeting"],
+    "袁祝泰": ["classmate_colleague", "meeting"],
+    "朱广诚": ["classmate_colleague", "meeting"],
+    "黄锡昌": ["classmate_colleague", "meeting"],
+    "施启扬": ["classmate_colleague", "public_debate", "meeting"],
+    "佟耀勋": ["classmate_colleague", "meeting"],
+    "阙至正": ["classmate_colleague", "meeting"],
+    "林淑美": ["classmate_colleague", "meeting"],
+    "杨祖燕": ["classmate_colleague", "meeting"],
+    "杨世彭": ["classmate_colleague", "meeting"],
+    "袁天中": ["classmate_colleague", "meeting"],
+    "王尚义": ["classmate_colleague", "meeting"],
+    "陈良榘": ["classmate_colleague", "meeting"],
+    "王曾才": ["classmate_colleague", "meeting"],
+    "李耀祖": ["classmate_colleague", "meeting"],
+    "王文振": ["classmate_colleague"],
+    "陈士宽": ["classmate_colleague"],
+    "施敏雄": ["classmate_colleague"],
+    "毛树清": ["classmate_colleague", "friendship"],
+    "徐公起": ["academic"],
+    "李济": ["academic"],
+    "姚渔湘": ["academic", "meeting"],
+    "李朝宗": ["intelligence_police", "litigation"],
+    "姜穆": ["litigation"],
+    "王惺三": ["legal_official"],
+    "端木恺": ["legal_official"],
+    "李孟谦": ["family"],
+    "李文钧": ["family", "nickname"],
+    "李景生": ["family"],
+    "小屯": ["in_law", "romance", "nickname"],
+    "小蕾": ["romance", "nickname", "meeting"],
+    "勘勘": ["family", "nickname"],
+    "谌谌": ["family", "nickname"],
+    "小八": ["family", "nickname"],
+}
+
+NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(NONSTANDARD_NAMES, key=len, reverse=True))))
 
 MEETING_CUES = (
     "见", "见到", "见面", "会面", "晤", "拜访", "访问", "认识", "遇见", "碰到", "来我家",
@@ -82,7 +250,7 @@ CORRESPONDENCE_CUES = (
 )
 
 TEACHER_STUDENT_CUES = (
-    "老师", "学生", "教授", "助理", "授课", "教书", "师母", "师生", "先生",
+    "老师", "学生", "教授", "助理", "授课", "教书", "师母", "师生",
 )
 
 CLASSMATE_COLLEAGUE_CUES = (
@@ -133,8 +301,12 @@ POLITICIAN_CUES = (
     "总统", "主席", "委员", "部长", "院长", "市长", "县长", "立委", "选举", "政府", "党部",
 )
 
-MILITARY_INTELLIGENCE_CUES = (
-    "情治", "特务", "调查局", "警备总部", "警总", "警察", "军法", "将军", "上校", "少将", "中将",
+INTELLIGENCE_POLICE_CUES = (
+    "情治", "特务", "调查局", "警备总部", "警总", "警察", "保防", "政战", "保安处",
+)
+
+MILITARY_FIGURE_CUES = (
+    "将军", "上校", "少将", "中将", "军法", "军衔", "司令", "军长", "师长", "旅长", "参谋",
 )
 
 PUBLIC_DEBATE_CUES = (
@@ -172,7 +344,7 @@ STOP_NAMES = {
     "经验", "万岁", "国家带", "司法行", "华北政", "卓绝", "游击战", "连空头", "任常务",
     "任主任", "安东省", "江反省", "全国振", "山东反", "时发表", "武誓彭", "任命",
     "相终始", "谷旅团", "别人", "李同志", "计程车", "麻烦", "管区警", "姚谈", "姚老谈",
-    "和蔼", "时用手", "明言当", "姚老", "松曰", "时警总", "文化古", "经济问", "水槽",
+    "和蔼", "时用手", "明言当", "明言地", "姚老", "松曰", "时警总", "文化古", "经济问", "水槽",
     "东林怀", "怀严侨", "家失散", "古稀之", "平地人", "严侨带", "时全照", "时间已",
     "陆丢掉", "那位老", "胡适谈", "冷场", "时又有", "华严通", "车修好", "东北义",
     "公室", "时代老", "谢饭", "和济之", "于吴廷", "支持胡", "于引导", "房客庄",
@@ -184,6 +356,9 @@ STOP_NAMES = {
     "苏共接", "荣同辱", "解仍旧", "路人来", "辛酸", "边站", "连助教", "通知五",
     "那次人", "严侨建", "台者", "和希望", "安徽反", "时谢绝", "曾经有", "江西反",
     "班长倒", "相印证", "管理财", "须请李",
+    "明天再", "时买房", "班陆侃", "时还有", "通话人",
+    "纪念周", "吉林女",
+    "封长信", "高明得",
 }
 SIGNAL_BEFORE = set(" \t\r\n　,，.。:：;；、!！?？([（《〈“‘'\"和与及给向问访见找由同为把对从跟请替将是叫姓名骂告")
 SIGNAL_AFTER = set(" \t\r\n　,，.。:：;；、!！?？)]）《》〉”’'\"")
@@ -217,7 +392,8 @@ CATEGORY_LABELS = {
     "litigation": "诉讼",
     "case_prison": "同案狱友",
     "politician": "政治人物",
-    "military_intelligence": "情治军警",
+    "intelligence_police": "情治警务",
+    "military_figure": "军事人物",
     "public_debate": "公共论战",
     "spiritual": "神交引用",
     "nickname": "称谓待考",
@@ -253,7 +429,7 @@ def clean_title(raw: str) -> str:
 
 
 def is_likely_person_name(name: str) -> bool:
-    if name in ALWAYS_NAMES or name in ALIASES:
+    if name in ALWAYS_NAMES or name in ALIASES or name in NONSTANDARD_NAMES:
         return True
     if name in STOP_NAMES:
         return False
@@ -301,7 +477,8 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
         ("litigation", LITIGATION_CUES, 4),
         ("case_prison", CASE_PRISON_CUES, 5),
         ("politician", POLITICIAN_CUES, 4),
-        ("military_intelligence", MILITARY_INTELLIGENCE_CUES, 4),
+        ("intelligence_police", INTELLIGENCE_POLICE_CUES, 4),
+        ("military_figure", MILITARY_FIGURE_CUES, 4),
         ("public_debate", PUBLIC_DEBATE_CUES, 3),
         ("spiritual", SPIRITUAL_CUES, 1),
     )
@@ -312,6 +489,9 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
             hits.extend(local_hits[:4])
     for suffix in ROLE_SUFFIXES:
         if after.startswith(suffix):
+            if suffix in ("先生", "女士", "小姐"):
+                hits.append(suffix)
+                continue
             if suffix in LEGAL_OFFICIAL_CUES or suffix in ("法官", "律师", "检察官", "审判长", "审判官", "书记官"):
                 scores["legal_official"] += 6
             elif suffix in FAMILY_CUES:
@@ -325,8 +505,10 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
                 scores["media"] += 4
             elif suffix in POLITICIAN_CUES or suffix in ("主席", "总统", "部长", "委员"):
                 scores["politician"] += 4
-            elif suffix in MILITARY_INTELLIGENCE_CUES or suffix in ("将军", "上校", "少将", "中将"):
-                scores["military_intelligence"] += 4
+            elif suffix in INTELLIGENCE_POLICE_CUES:
+                scores["intelligence_police"] += 4
+            elif suffix in MILITARY_FIGURE_CUES or suffix in ("将军", "上校", "少将", "中将"):
+                scores["military_figure"] += 4
             else:
                 scores["meeting"] += 3
             hits.append(suffix)
@@ -387,6 +569,21 @@ def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
     return collection, book, chapter
 
 
+def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> bool:
+    ctx = context_window(text, start, end)
+    if name == "老子":
+        real_markers = ("《老子》", "老子曰", "老子说", "道德经", "老庄")
+        if any(marker in ctx for marker in real_markers):
+            return False
+        false_markers = (
+            "我老子", "老子们", "死了老子", "老子不管儿子", "老子感化",
+            "受老子感化", "土匪爷爷", "有钱的老子", "老子的余荫",
+            "你老子", "他老子", "儿子", "父亲意像",
+        )
+        return any(marker in ctx for marker in false_markers)
+    return False
+
+
 def extract_from_text(
     text: str,
     path: Path,
@@ -395,10 +592,12 @@ def extract_from_text(
     title_names: set[str],
 ) -> None:
     collection, book, chapter = meta_for_path(source_root, path)
-    for regex in (NAME_RE, FOREIGN_RE):
+    for regex in (NAME_RE, FOREIGN_RE, NONSTANDARD_NAME_RE):
         for match in regex.finditer(text):
             name = match.group(0)
             if not is_likely_person_name(name):
+                continue
+            if is_contextual_false_positive(name, text, match.start(), match.end()):
                 continue
             name = ALIASES.get(name, name)
             ctx = context_window(text, match.start(), match.end())
@@ -464,6 +663,8 @@ def extract_title_names(source_root: Path, files: list[Path] | None = None) -> s
                     names.add(ALIASES.get(name, name))
             for match in FOREIGN_RE.finditer(raw):
                 names.add(ALIASES.get(match.group(0), match.group(0)))
+            for match in NONSTANDARD_NAME_RE.finditer(raw):
+                names.add(ALIASES.get(match.group(0), match.group(0)))
             for marker in ("研究", "评传", "真面目", "臭史", "论"):
                 if marker in raw:
                     prefix = raw.split(marker, 1)[0]
@@ -477,6 +678,8 @@ def extract_title_names(source_root: Path, files: list[Path] | None = None) -> s
 def keep_person(hit: PersonHit) -> bool:
     if hit.name in STOP_NAMES:
         return False
+    if hit.name in CURATED_IDENTITIES and hit.occurrences > 0:
+        return True
     if hit.title_hits > 0:
         return True
     if hit.name_signals == 0:
@@ -491,6 +694,8 @@ def keep_person(hit: PersonHit) -> bool:
 
 
 def categories_for_hit(hit: PersonHit) -> list[str]:
+    if hit.name in CURATED_IDENTITIES:
+        return CURATED_IDENTITIES[hit.name]
     if hit.name in SPIRITUAL_ONLY:
         return ["spiritual"]
     categories = []
@@ -508,6 +713,8 @@ def categories_for_hit(hit: PersonHit) -> list[str]:
 
 
 def primary_category(hit: PersonHit) -> str:
+    if hit.name in CURATED_IDENTITIES:
+        return CURATED_IDENTITIES[hit.name][0]
     weighted = Counter(hit.categories)
     if hit.name in FOREIGN_AND_HISTORICAL:
         weighted["spiritual"] += 4
@@ -547,8 +754,13 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
             "primaryCategoryLabel": CATEGORY_LABELS[primary],
             "categories": cats,
             "categoryLabels": [CATEGORY_LABELS[cat] for cat in cats],
-            "categoryStats": [
-                {"category": cat, "label": CATEGORY_LABELS[cat], "count": hit.categories[cat]}
+        "categoryStats": [
+                {
+                    "category": cat,
+                    "label": CATEGORY_LABELS[cat],
+                    "count": hit.categories[cat] or max(1, min(hit.occurrences, 3)),
+                    "curated": hit.name in CURATED_IDENTITIES,
+                }
                 for cat in cats
             ],
             "confidence": confidence(hit),
@@ -636,7 +848,7 @@ def write_json_js(data: dict, data_dir: Path) -> None:
 def write_text_exports(data: dict, export_dir: Path) -> None:
     export_dir.mkdir(parents=True, exist_ok=True)
     lines = []
-    lines.append("李敖交互式人物关系表：纯文本导出")
+    lines.append("李敖交互式人物关系图：纯文本导出")
     lines.append(f"生成时间：{data['generatedAt']}")
     lines.append(f"来源：{data['sourceRoot']}")
     lines.append(f"说明：{data['method']}")

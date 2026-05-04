@@ -5,6 +5,8 @@
     category: "all",
     confidence: 1,
     selected: null,
+    graphView: { x: 0, y: 0, k: 1 },
+    pan: null,
   };
 
   const $ = (id) => document.getElementById(id);
@@ -24,7 +26,8 @@
     litigation: "#9333ea",
     case_prison: "#475569",
     politician: "#b45309",
-    military_intelligence: "#92400e",
+    intelligence_police: "#92400e",
+    military_figure: "#7c2d12",
     public_debate: "#ea580c",
     spiritual: "#377a38",
     nickname: "#64748b",
@@ -228,12 +231,13 @@
 
   function renderGraph() {
     const svg = $("graphSvg");
-    const width = Math.max(720, svg.clientWidth || 960);
-    const height = Math.max(620, svg.clientHeight || 680);
+    const width = Math.max(960, svg.clientWidth || 960);
+    const height = Math.max(720, svg.clientHeight || 680);
     const filteredPeople = data.people.filter(personMatches);
     $("resultCount").textContent = `${filteredPeople.length.toLocaleString("zh-CN")} 人`;
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.innerHTML = "";
+    svg.style.cursor = "grab";
 
     if (!filteredPeople.length) {
       renderLegend([]);
@@ -245,10 +249,14 @@
     simulate(graph, width, height);
     renderLegend(graph.activeCategories);
 
+    const viewportLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
     const linkLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
     const nodeLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
-    svg.appendChild(linkLayer);
-    svg.appendChild(nodeLayer);
+    viewportLayer.setAttribute("class", "graphViewport");
+    svg.appendChild(viewportLayer);
+    viewportLayer.appendChild(linkLayer);
+    viewportLayer.appendChild(nodeLayer);
+    applyGraphView(svg, viewportLayer);
 
     graph.links.forEach((link) => {
       const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -299,6 +307,69 @@
         renderDetail(first);
       }
     }
+  }
+
+  function applyGraphView(svg, viewportLayer = svg.querySelector(".graphViewport")) {
+    if (!viewportLayer) return;
+    const { x, y, k } = state.graphView;
+    viewportLayer.setAttribute("transform", `translate(${x} ${y}) scale(${k})`);
+  }
+
+  function bindGraphInteractions() {
+    const svg = $("graphSvg");
+    svg.addEventListener("pointerdown", (event) => {
+      if (event.button !== 0 || event.target.closest(".node")) return;
+      state.pan = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startY: event.clientY,
+        viewX: state.graphView.x,
+        viewY: state.graphView.y,
+      };
+      svg.setPointerCapture(event.pointerId);
+      svg.style.cursor = "grabbing";
+    });
+
+    svg.addEventListener("pointermove", (event) => {
+      if (!state.pan || state.pan.pointerId !== event.pointerId) return;
+      state.graphView.x = state.pan.viewX + event.clientX - state.pan.startX;
+      state.graphView.y = state.pan.viewY + event.clientY - state.pan.startY;
+      applyGraphView(svg);
+    });
+
+    svg.addEventListener("pointerup", (event) => {
+      if (!state.pan || state.pan.pointerId !== event.pointerId) return;
+      state.pan = null;
+      svg.releasePointerCapture(event.pointerId);
+      svg.style.cursor = "grab";
+    });
+
+    svg.addEventListener("pointercancel", () => {
+      state.pan = null;
+      svg.style.cursor = "grab";
+    });
+
+    svg.addEventListener("wheel", (event) => {
+      event.preventDefault();
+      const rect = svg.getBoundingClientRect();
+      const pointX = event.clientX - rect.left;
+      const pointY = event.clientY - rect.top;
+      const oldK = state.graphView.k;
+      const scale = event.deltaY < 0 ? 1.12 : 0.9;
+      const nextK = Math.max(0.55, Math.min(2.8, oldK * scale));
+      const worldX = (pointX - state.graphView.x) / oldK;
+      const worldY = (pointY - state.graphView.y) / oldK;
+      state.graphView.k = nextK;
+      state.graphView.x = pointX - worldX * nextK;
+      state.graphView.y = pointY - worldY * nextK;
+      applyGraphView(svg);
+    }, { passive: false });
+
+    svg.addEventListener("dblclick", (event) => {
+      if (event.target.closest(".node")) return;
+      state.graphView = { x: 0, y: 0, k: 1 };
+      applyGraphView(svg);
+    });
   }
 
   function renderDetail(node) {
@@ -385,23 +456,28 @@
     $("searchInput").addEventListener("input", (event) => {
       state.query = event.target.value.trim().toLowerCase();
       state.selected = null;
+      state.graphView = { x: 0, y: 0, k: 1 };
       renderGraph();
     });
     $("categoryFilter").addEventListener("change", (event) => {
       state.category = event.target.value;
       state.selected = null;
+      state.graphView = { x: 0, y: 0, k: 1 };
       renderGraph();
     });
     $("confidenceFilter").addEventListener("input", (event) => {
       state.confidence = Number(event.target.value);
       $("confidenceValue").textContent = state.confidence;
       state.selected = null;
+      state.graphView = { x: 0, y: 0, k: 1 };
       renderGraph();
     });
     window.addEventListener("resize", () => {
       state.selected = null;
+      state.graphView = { x: 0, y: 0, k: 1 };
       renderGraph();
     });
+    bindGraphInteractions();
   }
 
   if (!data) {

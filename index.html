@@ -3,22 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>李敖交互式人物关系表</title>
+    <title>李敖交互式人物关系图</title>
     <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <header class="topbar">
-      <div>
-        <h1>李敖交互式人物关系表</h1>
+    <section class="portraitBand" aria-label="李敖照片">
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/LiAosVistingFayuansi.JPG"
+        alt="李敖游览法源寺"
+      />
+      <div class="portraitText">
+        <h1>李敖交互式人物关系图</h1>
         <p id="methodLine">逐本抽取《大李敖全集5.0》中的人物关系候选。</p>
+        <span>当前书目：《李敖自传与回忆》</span>
       </div>
-      <nav class="exports" aria-label="导出">
-        <a href="exports/li-ao-relationships.txt">TXT 总表</a>
-        <a href="exports/by-book-index.txt">逐本 TXT</a>
-        <a href="exports/li-ao-relationships.csv">CSV</a>
-        <a href="data/people.json">JSON</a>
-      </nav>
-    </header>
+      <a
+        class="photoCredit"
+        href="https://commons.wikimedia.org/wiki/File:LiAosVistingFayuansi.JPG"
+        target="_blank"
+        rel="noreferrer"
+      >图片来源：Wikimedia Commons</a>
+    </section>
 
     <main class="layout">
       <section class="toolbar" aria-label="筛选">

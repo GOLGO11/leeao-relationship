@@ -28,16 +28,6 @@ body {
   background: var(--bg);
 }
 
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 28px;
-  border-bottom: 1px solid var(--line);
-  background: var(--panel);
-}
-
 h1,
 h2,
 p {
@@ -55,35 +45,76 @@ h2 {
   font-weight: 720;
 }
 
-.topbar p {
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 13px;
+.portraitBand {
+  position: relative;
+  display: grid;
+  min-height: 500px;
+  align-items: end;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #101820;
 }
 
-.exports {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px;
+.portraitBand img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  opacity: 0.98;
+  filter: saturate(0.94) contrast(1.04);
 }
 
-.exports a {
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  padding: 0 12px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  color: var(--ink);
-  background: #fbfcfc;
+.portraitBand::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(5, 12, 16, 0.82), rgba(5, 12, 16, 0.46) 42%, rgba(5, 12, 16, 0.12)),
+    linear-gradient(0deg, rgba(5, 12, 16, 0.66), rgba(5, 12, 16, 0.04) 58%);
+}
+
+.portraitText {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-content: center;
+  max-width: 900px;
+  gap: 14px;
+  padding: 72px 44px 82px 36px;
+  color: #ffffff;
+}
+
+.portraitText h1 {
+  font-size: 60px;
+  line-height: 1.05;
+  letter-spacing: 0;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.42);
+}
+
+.portraitText p,
+.portraitText span {
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  line-height: 1.7;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+}
+
+.photoCredit {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  z-index: 1;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 12px;
   text-decoration: none;
-  font-size: 13px;
 }
 
-.exports a:hover {
-  border-color: var(--accent);
-  color: var(--accent);
+.photoCredit:hover {
+  color: #ffffff;
 }
 
 .layout {
@@ -205,6 +236,7 @@ select:focus {
   width: 100%;
   height: 680px;
   touch-action: none;
+  user-select: none;
 }
 
 .graph-link {
@@ -404,12 +436,20 @@ select:focus {
 }
 
 @media (max-width: 980px) {
-  .topbar {
-    display: grid;
+  .portraitBand {
+    min-height: 410px;
   }
 
-  .exports {
-    justify-content: start;
+  .portraitBand img {
+    object-position: center 42%;
+  }
+
+  .portraitText {
+    padding: 52px 18px 66px;
+  }
+
+  .photoCredit {
+    right: 12px;
   }
 
   .toolbar,
@@ -429,7 +469,20 @@ select:focus {
     padding: 10px;
   }
 
-  .topbar {
-    padding: 16px;
+  .portraitBand img {
+    object-position: center 45%;
+  }
+
+  .portraitBand {
+    min-height: 360px;
+  }
+
+  .portraitText h1 {
+    font-size: 36px;
+  }
+
+  .portraitText span {
+    max-width: 220px;
+    font-size: 13px;
   }
 }
