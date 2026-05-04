@@ -7,6 +7,8 @@
     selected: null,
     graphView: { x: 0, y: 0, k: 1 },
     pan: null,
+    touchPointers: new Map(),
+    pinch: null,
   };
 
   const $ = (id) => document.getElementById(id);
@@ -22,12 +24,16 @@
     publishing: "#7c3aed",
     academic: "#1d4ed8",
     media: "#0284c7",
+    household_staff: "#65a30d",
+    indoctrination: "#9f1239",
     legal_official: "#6d5bd0",
     litigation: "#9333ea",
     case_prison: "#475569",
     politician: "#b45309",
+    political_dissident: "#dc2626",
     intelligence_police: "#92400e",
     military_figure: "#7c2d12",
+    underworld: "#525252",
     public_debate: "#ea580c",
     spiritual: "#377a38",
     nickname: "#64748b",
@@ -78,7 +84,6 @@
   }
 
   function fillStats() {
-    $("methodLine").textContent = `${data.method} 生成时间：${data.generatedAt || "未生成"}`;
     $("statPeople").textContent = data.totals.people.toLocaleString("zh-CN");
     $("statIdentities").textContent = identityLinks().length.toLocaleString("zh-CN");
     $("statBooks").textContent = data.totals.books.toLocaleString("zh-CN");
@@ -317,7 +322,46 @@
 
   function bindGraphInteractions() {
     const svg = $("graphSvg");
+
+    function pointerDistance(a, b) {
+      return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY) || 1;
+    }
+
+    function pointerCenter(a, b) {
+      return {
+        x: (a.clientX + b.clientX) / 2,
+        y: (a.clientY + b.clientY) / 2,
+      };
+    }
+
+    function zoomAt(clientX, clientY, nextK) {
+      const rect = svg.getBoundingClientRect();
+      const pointX = clientX - rect.left;
+      const pointY = clientY - rect.top;
+      const oldK = state.graphView.k;
+      const worldX = (pointX - state.graphView.x) / oldK;
+      const worldY = (pointY - state.graphView.y) / oldK;
+      state.graphView.k = Math.max(0.55, Math.min(2.8, nextK));
+      state.graphView.x = pointX - worldX * state.graphView.k;
+      state.graphView.y = pointY - worldY * state.graphView.k;
+      applyGraphView(svg);
+    }
+
     svg.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "touch") {
+        state.touchPointers.set(event.pointerId, { clientX: event.clientX, clientY: event.clientY });
+        svg.setPointerCapture(event.pointerId);
+        if (state.touchPointers.size === 2) {
+          const [first, second] = [...state.touchPointers.values()];
+          state.pinch = {
+            startDistance: pointerDistance(first, second),
+            startK: state.graphView.k,
+          };
+          state.pan = null;
+          svg.style.cursor = "grabbing";
+          return;
+        }
+      }
       if (event.button !== 0 || event.target.closest(".node")) return;
       state.pan = {
         pointerId: event.pointerId,
@@ -331,6 +375,16 @@
     });
 
     svg.addEventListener("pointermove", (event) => {
+      if (state.touchPointers.has(event.pointerId)) {
+        state.touchPointers.set(event.pointerId, { clientX: event.clientX, clientY: event.clientY });
+        if (state.pinch && state.touchPointers.size >= 2) {
+          const [first, second] = [...state.touchPointers.values()];
+          const center = pointerCenter(first, second);
+          const ratio = pointerDistance(first, second) / state.pinch.startDistance;
+          zoomAt(center.x, center.y, state.pinch.startK * ratio);
+          return;
+        }
+      }
       if (!state.pan || state.pan.pointerId !== event.pointerId) return;
       state.graphView.x = state.pan.viewX + event.clientX - state.pan.startX;
       state.graphView.y = state.pan.viewY + event.clientY - state.pan.startY;
@@ -338,31 +392,26 @@
     });
 
     svg.addEventListener("pointerup", (event) => {
+      state.touchPointers.delete(event.pointerId);
+      if (state.touchPointers.size < 2) state.pinch = null;
+      if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
       if (!state.pan || state.pan.pointerId !== event.pointerId) return;
       state.pan = null;
-      svg.releasePointerCapture(event.pointerId);
       svg.style.cursor = "grab";
     });
 
-    svg.addEventListener("pointercancel", () => {
+    svg.addEventListener("pointercancel", (event) => {
+      state.touchPointers.delete(event.pointerId);
+      state.pinch = null;
       state.pan = null;
+      if (svg.hasPointerCapture(event.pointerId)) svg.releasePointerCapture(event.pointerId);
       svg.style.cursor = "grab";
     });
 
     svg.addEventListener("wheel", (event) => {
       event.preventDefault();
-      const rect = svg.getBoundingClientRect();
-      const pointX = event.clientX - rect.left;
-      const pointY = event.clientY - rect.top;
-      const oldK = state.graphView.k;
       const scale = event.deltaY < 0 ? 1.12 : 0.9;
-      const nextK = Math.max(0.55, Math.min(2.8, oldK * scale));
-      const worldX = (pointX - state.graphView.x) / oldK;
-      const worldY = (pointY - state.graphView.y) / oldK;
-      state.graphView.k = nextK;
-      state.graphView.x = pointX - worldX * nextK;
-      state.graphView.y = pointY - worldY * nextK;
-      applyGraphView(svg);
+      zoomAt(event.clientX, event.clientY, state.graphView.k * scale);
     }, { passive: false });
 
     svg.addEventListener("dblclick", (event) => {
