@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>李敖交互式人物关系表</title>
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <h1>李敖交互式人物关系表</h1>
+        <p id="methodLine">逐本抽取《大李敖全集5.0》中的人物关系候选。</p>
+      </div>
+      <nav class="exports" aria-label="导出">
+        <a href="exports/li-ao-relationships.txt">TXT 总表</a>
+        <a href="exports/by-book-index.txt">逐本 TXT</a>
+        <a href="exports/li-ao-relationships.csv">CSV</a>
+        <a href="data/people.json">JSON</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="toolbar" aria-label="筛选">
+        <label class="search">
+          <span>搜索</span>
+          <input id="searchInput" type="search" placeholder="人名、分类、线索、证据片段" autocomplete="off" />
+        </label>
+        <label>
+          <span>身份分类</span>
+          <select id="categoryFilter"></select>
+        </label>
+        <label>
+          <span>最低可信度</span>
+          <input id="confidenceFilter" type="range" min="1" max="99" value="1" />
+          <b id="confidenceValue">1</b>
+        </label>
+      </section>
+
+      <section class="stats" aria-label="统计">
+        <div><strong id="statPeople">0</strong><span>人物</span></div>
+        <div><strong id="statIdentities">0</strong><span>身份边</span></div>
+        <div><strong id="statBooks">0</strong><span>本书</span></div>
+        <div><strong id="statChapters">0</strong><span>章节</span></div>
+      </section>
+
+      <section class="networkShell">
+        <div class="paneHeader">
+          <h2>人物关系网络</h2>
+          <span id="resultCount">0 人</span>
+        </div>
+        <div class="networkLayout">
+          <div class="graphPane">
+            <svg id="graphSvg" role="img" aria-label="李敖人物关系网络拓扑图"></svg>
+            <div class="legend" id="legend"></div>
+          </div>
+          <aside class="detailPane" aria-live="polite">
+            <div class="paneHeader">
+              <h2 id="detailName">选择节点</h2>
+              <span id="detailMeta">查看关系证据</span>
+            </div>
+            <div id="detailBody" class="detailBody">
+              点击人物、身份分类或连线节点，可查看出现次数、独立身份边和原文片段。
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="bookPane">
+        <div class="paneHeader">
+          <h2>逐本挖掘进度</h2>
+          <span id="bookCount">0 本</span>
+        </div>
+        <div id="bookGrid" class="bookGrid"></div>
+      </section>
+    </main>
+
+    <script src="data/relationship-data.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
+</html>
