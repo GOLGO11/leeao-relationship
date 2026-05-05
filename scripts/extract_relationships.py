@@ -45,7 +45,7 @@ COMPOUND_SURNAMES = (
 FOREIGN_AND_HISTORICAL = {
     "爱因斯坦", "苏格拉底", "柏拉图", "亚里士多德", "拿破仑", "马克思", "恩格斯", "列宁",
     "斯大林", "希特勒", "达尔文", "罗素", "伏尔泰", "卢梭", "康德", "黑格尔", "尼采",
-    "莎士比亚", "歌德", "托尔斯泰", "陀思妥耶夫斯基", "林肯", "华盛顿", "罗斯福", "丘吉尔",
+    "莎士比亚", "萧伯纳", "歌德", "托尔斯泰", "陀思妥耶夫斯基", "林肯", "华盛顿", "罗斯福", "丘吉尔",
     "马歇尔", "詹姆斯·法兰克", "詹姆斯杜渥", "詹姆斯·杜渥",
     "马歇尔", "詹姆斯·法兰克", "詹姆斯杜渥", "詹姆斯·杜渥",
     "凯撒", "哥伦布", "伽利略", "牛顿", "释迦牟尼", "耶稣", "穆罕默德", "孔子", "孟子",
@@ -57,7 +57,7 @@ FOREIGN_AND_HISTORICAL = {
 SPIRITUAL_ONLY = {
     "爱因斯坦", "苏格拉底", "柏拉图", "亚里士多德", "拿破仑", "马克思", "恩格斯", "列宁",
     "斯大林", "希特勒", "达尔文", "罗素", "伏尔泰", "卢梭", "康德", "黑格尔", "尼采",
-    "莎士比亚", "歌德", "托尔斯泰", "陀思妥耶夫斯基", "林肯", "华盛顿", "罗斯福", "丘吉尔",
+    "莎士比亚", "萧伯纳", "歌德", "托尔斯泰", "陀思妥耶夫斯基", "林肯", "华盛顿", "罗斯福", "丘吉尔",
     "凯撒", "哥伦布", "伽利略", "牛顿", "释迦牟尼", "耶稣", "穆罕默德", "孔子", "孟子",
     "老子", "庄子", "墨子", "荀子", "韩非", "司马迁", "班固", "陶渊明", "李白", "杜甫",
     "白居易", "苏东坡", "王安石", "朱熹", "王阳明", "曹操", "诸葛亮", "岳飞", "文天祥",
@@ -73,6 +73,7 @@ FICTIONAL_CHARACTERS = {
 
 ALIASES = {
     "胡适之": "胡适",
+    "钱宾四": "钱穆",
     "王世傑": "王世杰",
     "相湘": "吴相湘",
     "姚老头": "姚从吾",
@@ -435,7 +436,7 @@ CURATED_IDENTITIES = {
     "吴焕章": ["friendship", "meeting"],
     "张灏": ["academic", "classmate_colleague", "meeting"],
     "王兆民": ["politician", "family", "correspondence"],
-    "张乐平": ["media", "spiritual"],
+    "张乐平": ["spiritual", "media"],
     "叶圣康": ["publishing", "meeting"],
     "张瑞珂": ["meeting"],
     "罗香林": ["academic"],
@@ -863,10 +864,11 @@ CURATED_IDENTITIES = {
     "赵培鑫": ["friendship", "meeting"],
     "连培如": ["friendship", "meeting"],
     "柯贤忠": ["prison_medical", "politician"],
-    "狄德罗": ["academic", "spiritual"],
+    "狄德罗": ["spiritual"],
     "史华格": ["spiritual"],
-    "梭维斯特": ["publishing", "spiritual"],
+    "梭维斯特": ["spiritual"],
     "左丘明": ["spiritual"],
+    "陆象山": ["spiritual"],
     "黄中国": ["case_prison", "litigation"],
     "高时运": ["case_prison", "politician"],
     "李国龙": ["case_prison"],
@@ -880,7 +882,6 @@ CURATED_IDENTITIES = {
     "鲁迅": ["academic", "spiritual"],
     "李伋": ["spiritual"],
     "李玄伯": ["teacher_student", "academic"],
-    "钱宾四": ["academic", "spiritual"],
     "罗志希": ["publishing", "politician"],
     "赵元任": ["academic"],
     "李德林": ["in_law"],
@@ -909,14 +910,14 @@ CURATED_IDENTITIES = {
     "李锡恩": ["academic", "politician"],
     "陈纳德": ["military_figure", "spiritual"],
     "马歇尔": ["military_figure", "politician", "spiritual"],
-    "詹姆斯·法兰克": ["academic", "spiritual"],
-    "詹姆斯·杜渥": ["academic", "spiritual"],
+    "詹姆斯·法兰克": ["spiritual"],
+    "詹姆斯·杜渥": ["spiritual"],
     "周克敏": ["in_law"],
     "孙念台": ["teacher_student"],
     "张作相": ["politician"],
     "王靖雯": ["media"],
     "西门庆": ["fictional"],
-    "刘半农": ["academic", "spiritual"],
+    "刘半农": ["spiritual"],
     "黄毅辛": ["case_prison"],
     "崔积泽": ["case_prison", "friendship"],
     "王云五": ["publishing", "politician"],
@@ -1322,7 +1323,7 @@ STOP_NAMES = {
     "李敖", "李先", "李大师", "李先生", "李语", "李文", "李书", "李政", "王法", "王国", "王军",
     "中国人", "台湾人", "美国人", "日本人", "英国人", "国民党", "民进党", "共产党", "新闻界",
     "文化界", "政治犯", "外省人", "台湾话", "负责人", "发行人", "总编辑", "编者略", "不自由",
-    "文星", "台独", "利益", "文学", "宣传", "支持", "成立", "毕业", "党员", "司令", "权力",
+    "文星", "台独", "红卫兵", "利益", "文学", "宣传", "支持", "成立", "毕业", "党员", "司令", "权力",
     "国防部", "华民国", "国总统", "国共产", "党主席", "蒋总统", "白色恐", "宫博物",
     "公敌", "时间", "国家长", "陆杂志", "史系", "马褂", "吉林省", "龙江省", "国史馆",
     "卢沟桥", "丰富", "全家最", "祝寿", "关切", "任委员", "别文坛", "文星讼", "利用胡",
@@ -1868,11 +1869,13 @@ def categories_for_hit(hit: PersonHit) -> list[str]:
 def primary_category(hit: PersonHit) -> str:
     if hit.name in CURATED_IDENTITIES:
         return CURATED_IDENTITIES[hit.name][0]
+    if hit.name in FICTIONAL_CHARACTERS:
+        return "fictional"
+    if hit.name in SPIRITUAL_ONLY:
+        return "spiritual"
     weighted = Counter(hit.categories)
     if hit.name in FOREIGN_AND_HISTORICAL:
         weighted["spiritual"] += 4
-    if hit.name in FICTIONAL_CHARACTERS:
-        weighted["fictional"] += 4
     if hit.relevant_occurrences == 0:
         return "mentioned"
     return weighted.most_common(1)[0][0]
