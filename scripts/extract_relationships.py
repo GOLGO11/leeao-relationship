@@ -101,6 +101,7 @@ ALIASES = {
     "玑衡": "李鼎彝",
     "李大下巴": "李鼎彝",
     "马小个子": "马占山",
+    "鲁肇岚": "小蕾",
     "尚勤": "王尚勤",
     "小屯": "王小屯",
     "吴黑子": "吴申叔",
@@ -398,6 +399,7 @@ CURATED_IDENTITIES = {
     "马丁·路德·金": ["spiritual"],
     "老子": ["spiritual"],
     "孙中山": ["politician", "spiritual"],
+    "李凤亭": ["family"],
     "武则天": ["spiritual"],
     "章太炎": ["academic", "spiritual"],
     "姚从吾": ["teacher_student", "academic"],
@@ -1409,6 +1411,14 @@ CURATED_IDENTITIES = {
     "傅熹年": ["academic", "spiritual"],
     "谢辰生": ["academic", "spiritual"],
     "陈支平": ["academic", "meeting"],
+    "封德屏": ["publishing", "media"],
+    "应凤凰": ["publishing"],
+    "钟丽慧": ["publishing"],
+    "李瑞腾": ["publishing", "academic"],
+    "陈文芬": ["media"],
+    "陈奇禄": ["academic", "politician", "publishing"],
+    "赵宁": ["media", "meeting"],
+    "蒋廷黻": ["academic", "publishing", "spiritual", "public_debate"],
     "郑板桥": ["spiritual"],
     "江青": ["spiritual"],
     "周才蔚": ["correspondence", "friendship"],
@@ -1614,6 +1624,8 @@ STOP_NAMES = {
     "国父纪", "李飞刀", "和国", "万岁评", "乌鸦评", "冷暖",
     "宣传车", "和稀泥", "国公民", "高官", "高朋满",
     "张淑婉",
+    "查禁清", "方理由", "家作品", "文星杂", "常说", "范儿童",
+    "惠予更", "雷震做", "时刘长", "尚勤同", "时扣押", "辛勤耕", "别信",
     "李敖", "李先", "李大师", "李先生", "李语", "李文", "李书", "李政", "王法", "王国", "王军",
     "中国人", "台湾人", "美国人", "日本人", "英国人", "国民党", "民进党", "共产党", "新闻界",
     "文化界", "政治犯", "外省人", "台湾话", "负责人", "发行人", "总编辑", "编者略", "不自由",
@@ -2079,17 +2091,24 @@ def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
 def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> bool:
     ctx = context_window(text, start, end)
     if name == "老子":
-        real_markers = ("《老子》", "老子曰", "老子说", "道德经", "老庄")
+        real_markers = (
+            "《老子》", "老子曰", "老子说", "道德经", "老庄", "老子李耳",
+            "老子的追随者", "老子一言不发", "徐甲", "李耳",
+        )
         if any(marker in ctx for marker in real_markers):
             return False
-        false_markers = (
-            "我老子", "老子们", "死了老子", "老子不管儿子", "老子感化",
-            "受老子感化", "土匪爷爷", "有钱的老子", "老子的余荫",
-            "你老子", "他老子", "儿子", "父亲意像",
-        )
-        return any(marker in ctx for marker in false_markers)
+        return True
     if name == "康德":
         return "感冒药康德" in ctx or "康德600" in ctx
+    if name == "江南":
+        false_markers = (
+            "出发到江南", "守江南", "大江南北", "曲尽江南美女", "哀江南赋",
+            "江南·江南·哀江南", "《江南·江南", "《哀江南", "江南并发症",
+            "连江南都保不住", "江南廖家楠",
+        )
+        return any(marker in ctx for marker in false_markers)
+    if name == "应凤凰":
+        return "应凤凰电视" in ctx
     return False
 
 
