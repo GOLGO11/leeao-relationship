@@ -37,7 +37,7 @@
     human_rights: "#059669",
     veteran: "#475569",
     social_case: "#991b1b",
-    anti_communist_defector: "#be123c",
+    anti_communist_defector: "#475569",
     medical_care: "#0e7490",
     religion: "#7c3aed",
     indoctrination: "#9f1239",
@@ -98,6 +98,33 @@
     );
   }
 
+  function personMatchesBase(person) {
+    if (person.confidence < state.confidence) return false;
+    if (!state.query) return true;
+    const query = state.query;
+    return (
+      textIncludes(person.name, query) ||
+      textIncludes(personAliasText(person), query) ||
+      textIncludes((person.categoryLabels || [person.categoryLabel]).join(" "), query) ||
+      person.cues.some((item) => textIncludes(item.cue, query)) ||
+      person.evidence.some((item) => textIncludes(item.snippet, query) || textIncludes(item.chapter, query))
+    );
+  }
+
+  function availableCategories() {
+    const peopleByName = new Set(data.people.filter(personMatchesBase).map((person) => person.name));
+    return [...new Set(identityLinks().filter((link) => peopleByName.has(link.person)).map((link) => link.category))];
+  }
+
+  function setCategory(category) {
+    state.category = category;
+    const filter = $("categoryFilter");
+    if (filter) filter.value = category;
+    state.selected = null;
+    state.graphView = { x: 0, y: 0, k: 1 };
+    renderGraph();
+  }
+
   function fillFilters() {
     const categoryFilter = $("categoryFilter");
     categoryFilter.innerHTML = '<option value="all">全部身份</option>';
@@ -124,13 +151,22 @@
   }
 
   function renderLegend(activeCategories) {
-    $("legend").innerHTML = activeCategories
+    const categories = availableCategories();
+    const currentCategories = new Set(activeCategories);
+    $("legend").innerHTML = categories
       .map((category) => {
         const label = data.categoryLabels[category] || category;
         const color = categoryColors[category] || "#64748b";
-        return `<span><i style="background:${color}"></i>${label}</span>`;
+        const isSelected = state.category === category;
+        const isVisible = currentCategories.has(category);
+        return `<button type="button" data-category="${category}" class="${isSelected ? "active" : ""}${isVisible ? "" : " muted"}" title="只显示${label}"><i style="background:${color}"></i>${label}</button>`;
       })
       .join("");
+    $("legend").querySelectorAll("button[data-category]").forEach((button) => {
+      button.addEventListener("click", () => {
+        setCategory(button.dataset.category);
+      });
+    });
   }
 
   function hashName(name) {
@@ -540,10 +576,7 @@
       renderGraph();
     });
     $("categoryFilter").addEventListener("change", (event) => {
-      state.category = event.target.value;
-      state.selected = null;
-      state.graphView = { x: 0, y: 0, k: 1 };
-      renderGraph();
+      setCategory(event.target.value);
     });
     $("confidenceFilter").addEventListener("input", (event) => {
       state.confidence = Number(event.target.value);

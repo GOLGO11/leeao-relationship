@@ -295,7 +295,7 @@ select:focus {
   background: rgba(255, 255, 255, 0.92);
 }
 
-.legend span,
+.legend button,
 .identityPill {
   display: inline-flex;
   align-items: center;
@@ -307,6 +307,26 @@ select:focus {
   color: #314047;
   white-space: nowrap;
   font-size: 12px;
+}
+
+.legend button {
+  border: 1px solid transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.legend button:hover,
+.legend button.active {
+  border-color: #9ab2bb;
+  background: #ffffff;
+}
+
+.legend button.active {
+  box-shadow: 0 0 0 2px rgba(15, 118, 110, 0.12);
+}
+
+.legend button.muted {
+  opacity: 0.48;
 }
 
 .legend i,
