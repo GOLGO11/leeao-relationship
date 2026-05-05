@@ -62,6 +62,13 @@ SPIRITUAL_ONLY = {
     "鲁迅",
 }
 
+FICTIONAL_CHARACTERS = {
+    "西门庆", "潘金莲", "武松", "孙悟空", "猪八戒", "唐僧", "沙僧",
+    "贾宝玉", "林黛玉", "薛宝钗", "鲁智深", "林冲", "宋江", "李逵",
+    "哈姆雷特", "堂吉诃德", "浮士德", "罗密欧", "朱丽叶", "夏洛克",
+    "福尔摩斯", "阿Q", "孔乙己", "祥林嫂",
+}
+
 ALIASES = {
     "胡适之": "胡适",
     "王世傑": "王世杰",
@@ -77,6 +84,40 @@ ALIASES = {
     "素馨": "李文钧",
     "项廼光": "项迺光",
     "阉鸡": "李盛渊",
+    "蒋总裁": "蒋介石",
+    "东方望先": "汪梦湘",
+    "何王剑": "王剑芬",
+    "李老太": "张桂贞",
+    "雷震出": "雷震",
+    "钱穆通": "钱穆",
+    "钱穆早": "钱穆",
+    "钱穆约": "钱穆",
+    "钱穆谈": "钱穆",
+    "胡适有": "胡适",
+    "胡适关": "胡适",
+    "胡适只": "胡适",
+    "胡适帮": "胡适",
+    "尚勤": "王尚勤",
+    "尚勤看": "王尚勤",
+    "萧朱婉": "朱婉坚",
+    "康白联": "康白",
+    "居人王": "王黄双",
+    "居人黄": "黄彩琴",
+    "胡因子": "胡茵梦",
+    "王女士": "王剑芬",
+    "何秀惶": "何秀煌",
+    "柏杨太": "艾玫",
+    "马丁见": "马丁",
+    "魏胖": "魏廷朝",
+    "老谢": "谢聪敏",
+    "王洁": "王洁中",
+    "马丁·恩纳尔斯": "马丁",
+    "白脸": "黄永寿",
+    "欧阳坤判": "欧阳坤",
+    "何剑芬": "王剑芬",
+    "何王剑芬": "王剑芬",
+    "何王剑": "王剑芬",
+    "胡因": "胡茵梦",
 }
 
 ALWAYS_NAMES = {
@@ -91,11 +132,27 @@ ALWAYS_NAMES = {
     "徐钟珮", "张明", "张兰熙", "曾虚白",
     "陶涤亚", "项迺光", "项廼光", "周道济", "王洸", "屠炳春", "任卓宣",
     "柴松林", "魏萼", "邬昆如", "魏以之", "史与为", "胡汝森", "陈启天",
-    "于长城", "于长庚", "林蒨", "李盛渊", "俞中兴",
+    "于长城", "于长庚", "林蒨", "李盛渊", "俞中兴", "雷震", "康白",
+    "王黄双", "黄彩琴", "何秀煌", "孟祥柯", "段宏俊", "叶肇模",
+    "萧近仁", "高仲元", "陈子和", "张任飞", "章尊良", "林紫耀", "艾玫",
+    "郭荣文", "刘刑警", "尤元基", "王剑吟", "尹俊", "王洁中", "吴荣元",
+    "陈鸿渐", "蔡俊军", "沈之岳", "蔡金铿", "吴松枝", "赵清泉",
+    "杨英龙", "刘伟民", "徐开喜", "黄祥华", "谭坤泉",
+    "朱光军", "汪本流", "毛世馨", "陈晏庭", "王建福", "李聪明", "林荣宗",
+    "欧阳坤", "陈廷柳", "陈金凤", "汪宾彬", "黄道舜", "雷志云", "陈庆堂",
+    "林浩兴", "苏振崧", "卞昭荃", "刘台生", "熊钰铮", "林堂正", "孟昭熙",
+    "蔡火炮", "蔡国扬", "徐鹏举", "林宗科", "杨次长", "洪炳麟", "蔡甘清",
+    "陈清华", "程台生", "李新冰", "黄永寿", "黄铭强", "张树忠", "温锦丰",
+    "赖锡志", "丘国利", "李焕升", "张国杰",
+    "吴尚纬", "许文志", "魏文龙", "屠寄",
+    "金亚平", "黄仁温", "晁煜", "张顺良", "庄建国", "童聪明", "谢骏扬",
+    "董嘉诚", "林丰翔", "林河南", "赵天仪", "张齐斌", "王护士",
+    "璩诗方", "刘维斌", "刘望苏",
 }
 
 NONSTANDARD_NAMES = {
     "小屯", "小蕾", "勘勘", "谌谌", "素馨", "小八", "阉鸡", "札奇斯钦", "李其泰",
+    "王洁中", "尹俊", "毛世馨", "丘国利", "欧阳坤", "屠寄", "晁煜",
 }
 
 CURATED_IDENTITIES = {
@@ -116,7 +173,7 @@ CURATED_IDENTITIES = {
     "敖弟": ["family", "correspondence"],
     "王世杰": ["politician", "meeting"],
     "王克敏": ["politician"],
-    "魏廷朝": ["case_prison", "political_dissident"],
+    "魏廷朝": ["case_prison", "political_dissident", "human_rights"],
     "黄宝实": ["public_debate"],
     "龚德柏": ["political_dissident", "media"],
     "赵铁寒": ["academic", "publishing"],
@@ -136,14 +193,14 @@ CURATED_IDENTITIES = {
     "王正廷": ["politician"],
     "王洪钧": ["publishing"],
     "梁实秋": ["academic", "publishing"],
-    "萧孟能": ["publishing"],
+    "萧孟能": ["publishing", "litigation", "property_finance"],
     "蒋经国": ["politician", "public_debate"],
     "周恩来": ["politician", "spiritual"],
     "毛泽东": ["politician", "spiritual"],
     "张学良": ["politician", "public_debate"],
     "彭明敏": ["political_dissident", "politician"],
-    "谢聪敏": ["case_prison", "political_dissident"],
-    "李政一": ["case_prison"],
+    "谢聪敏": ["case_prison", "political_dissident", "human_rights"],
+    "李政一": ["case_prison", "political_dissident", "torture_victim", "correspondence"],
     "黄中国": ["case_prison", "litigation"],
     "高时运": ["case_prison", "politician"],
     "李国龙": ["case_prison"],
@@ -187,7 +244,7 @@ CURATED_IDENTITIES = {
     "孙念台": ["teacher_student"],
     "张作相": ["politician"],
     "王靖雯": ["media"],
-    "西门庆": ["spiritual"],
+    "西门庆": ["fictional"],
     "刘半农": ["academic", "spiritual"],
     "黄毅辛": ["case_prison", "media"],
     "崔积泽": ["case_prison", "friendship"],
@@ -195,6 +252,8 @@ CURATED_IDENTITIES = {
     "林正杰": ["publishing", "public_debate", "politician"],
     "黄信介": ["politician", "political_dissident", "media", "public_debate"],
     "骆学良": ["publishing", "media", "correspondence"],
+    "安瑞甫": ["media", "publishing", "meeting"],
+    "戴布兹": ["spiritual", "political_dissident"],
     "侯立朝": ["intelligence_police", "publishing", "public_debate"],
     "陈果夫": ["politician", "spiritual"],
     "葛县长": ["politician", "litigation"],
@@ -257,6 +316,135 @@ CURATED_IDENTITIES = {
     "李其泰": ["academic"],
     "陈正澄": ["classmate_colleague", "academic", "publishing"],
     "钱穆": ["academic", "correspondence", "public_debate", "indoctrination"],
+    "雷震": ["political_dissident", "publishing", "media"],
+    "康白": ["meeting", "correspondence"],
+    "周康熙": ["property_finance", "litigation"],
+    "萧广仁": ["property_finance", "litigation"],
+    "毛四": ["legal_official"],
+    "王文发": ["prison_guard", "prison_admin", "torture_actor"],
+    "王黄双": ["witness"],
+    "黄彩琴": ["litigation", "witness", "property_finance"],
+    "刘辰旦": ["case_prison", "meeting", "friendship", "political_dissident", "torture_victim"],
+    "吴忠信": ["case_prison", "political_dissident", "torture_victim"],
+    "郭荣文": ["case_prison", "political_dissident", "torture_victim"],
+    "詹重雄": ["case_prison", "meeting", "political_dissident", "torture_victim"],
+    "季贵成": ["intelligence_police", "torture_actor"],
+    "吴彰炯": ["intelligence_police", "military_figure", "torture_actor"],
+    "郭刑警": ["intelligence_police", "torture_actor"],
+    "刘刑警": ["intelligence_police", "torture_actor"],
+    "张耀华": ["intelligence_police", "military_figure"],
+    "魏宜智": ["intelligence_police"],
+    "尤元基": ["intelligence_police"],
+    "王剑吟": ["intelligence_police"],
+    "尹俊": ["intelligence_police", "military_figure"],
+    "王洁中": ["intelligence_police", "military_figure"],
+    "李元簇": ["legal_official", "prison_admin", "politician"],
+    "汪文吉": ["case_prison", "litigation", "in_law"],
+    "李文荣": ["case_prison", "meeting", "torture_victim", "witness"],
+    "曾庆璧": ["prison_admin", "legal_official", "correspondence"],
+    "王伟珍": ["intelligence_police", "case_prison"],
+    "李世杰": ["intelligence_police", "case_prison"],
+    "吴锦江": ["case_prison", "political_dissident"],
+    "吴荣元": ["case_prison", "political_dissident"],
+    "陈鸿渐": ["intelligence_police", "case_prison"],
+    "蔡俊军": ["case_prison"],
+    "沈之岳": ["intelligence_police"],
+    "蔡金铿": ["political_dissident"],
+    "吴松枝": ["political_dissident"],
+    "赵清泉": ["witness"],
+    "杨英龙": ["case_prison", "torture_victim"],
+    "刘伟民": ["case_prison", "torture_victim"],
+    "徐开喜": ["case_prison", "witness"],
+    "黄祥华": ["prison_guard", "witness"],
+    "谭坤泉": ["prison_guard", "witness", "torture_victim"],
+    "朱光军": ["prison_admin", "prison_guard", "torture_actor"],
+    "汪本流": ["prison_admin"],
+    "毛世馨": ["prison_admin"],
+    "陈晏庭": ["case_prison"],
+    "王建福": ["case_prison"],
+    "李聪明": ["case_prison", "torture_victim"],
+    "林荣宗": ["case_prison", "torture_victim"],
+    "欧阳坤": ["case_prison"],
+    "陈廷柳": ["case_prison"],
+    "陈金凤": ["prison_guard", "property_finance", "litigation"],
+    "汪宾彬": ["property_finance", "litigation"],
+    "黄道舜": ["prison_guard", "torture_actor"],
+    "雷志云": ["prison_guard", "torture_actor"],
+    "陈庆堂": ["case_prison", "torture_victim", "litigation"],
+    "林浩兴": ["case_prison", "torture_victim"],
+    "苏振崧": ["case_prison", "torture_victim"],
+    "卞昭荃": ["case_prison", "torture_victim"],
+    "刘台生": ["case_prison", "torture_victim"],
+    "熊钰铮": ["case_prison", "property_finance"],
+    "林堂正": ["prison_guard"],
+    "孟昭熙": ["intelligence_police", "prison_admin"],
+    "蔡火炮": ["politician"],
+    "蔡国扬": ["case_prison"],
+    "徐鹏举": ["case_prison"],
+    "林宗科": ["case_prison", "property_finance"],
+    "杨次长": ["legal_official", "prison_admin"],
+    "洪炳麟": ["case_prison", "politician"],
+    "蔡甘清": ["case_prison", "politician"],
+    "陈清华": ["prison_guard", "litigation"],
+    "程台生": ["prison_guard", "litigation"],
+    "李新冰": ["prison_guard", "litigation"],
+    "黄永寿": ["prison_guard", "torture_actor"],
+    "黄铭强": ["prison_guard", "torture_actor"],
+    "张树忠": ["prison_guard", "property_finance"],
+    "温锦丰": ["prison_guard", "property_finance"],
+    "赖锡志": ["prison_guard", "property_finance", "litigation"],
+    "丘国利": ["prison_guard", "witness"],
+    "李焕升": ["prison_guard", "witness"],
+    "张国杰": ["case_prison", "torture_victim"],
+    "吴尚纬": ["prison_guard", "torture_actor", "litigation"],
+    "许文志": ["prison_guard", "torture_actor", "litigation"],
+    "魏文龙": ["prison_guard", "torture_actor", "litigation"],
+    "屠寄": ["prison_guard", "property_finance"],
+    "金亚平": ["prison_medical", "prison_admin"],
+    "王护士": ["prison_medical"],
+    "黄仁温": ["case_prison", "prison_medical"],
+    "晁煜": ["case_prison", "prison_medical"],
+    "童聪明": ["prison_guard", "property_finance"],
+    "张顺良": ["case_prison", "property_finance"],
+    "庄建国": ["prison_guard", "property_finance"],
+    "董嘉诚": ["prison_admin"],
+    "谢骏扬": ["prison_guard"],
+    "陈金树": ["case_prison", "property_finance"],
+    "林丰翔": ["case_prison", "property_finance"],
+    "林河南": ["case_prison", "property_finance"],
+    "刘家昌": ["media"],
+    "赵天仪": ["academic"],
+    "张齐斌": ["politician"],
+    "朱婉坚": ["publishing", "in_law", "property_finance", "litigation"],
+    "王剑芬": ["romance", "in_law", "trust_property", "property_finance", "litigation"],
+    "胡茵梦": ["romance", "in_law", "trust_property", "litigation", "media"],
+    "刘会云": ["publishing", "litigation", "property_finance"],
+    "冯作民": ["correspondence", "litigation", "property_finance"],
+    "陈苾仙": ["in_law", "property_finance", "litigation"],
+    "王国樑": ["in_law", "family", "property_finance", "litigation"],
+    "何秀煌": ["in_law", "witness"],
+    "孟祥柯": ["witness"],
+    "段宏俊": ["witness"],
+    "璩诗方": ["witness", "in_law", "trust_property", "correspondence"],
+    "刘维斌": ["witness", "trust_property"],
+    "刘望苏": ["property_finance"],
+    "叶肇模": ["property_finance", "litigation"],
+    "萧近仁": ["property_finance", "litigation"],
+    "高仲元": ["property_finance", "litigation"],
+    "陈子和": ["property_finance"],
+    "张任飞": ["property_finance"],
+    "萧同兹": ["publishing", "family"],
+    "童有德": ["legal_official", "litigation"],
+    "陈聪明": ["legal_official", "litigation"],
+    "李永然": ["lawyer_counsel", "litigation"],
+    "龙云翔": ["lawyer_counsel", "litigation", "correspondence"],
+    "廖茂荣": ["legal_official", "litigation"],
+    "蒋女士": ["romance", "property_finance"],
+    "许女士": ["romance"],
+    "马丁": ["meeting", "human_rights"],
+    "艾玫": ["correspondence", "in_law"],
+    "章尊良": ["property_finance"],
+    "林紫耀": ["witness", "property_finance", "litigation"],
     "顾翊群": ["academic", "public_debate"],
     "郑学稼": ["academic", "publishing", "public_debate"],
     "胡传厚": ["media"],
@@ -318,6 +506,29 @@ ROMANCE_CUES = (
     "情人", "女友", "男友", "恋爱", "小情人", "爱上", "分手", "情书",
 )
 
+PROPERTY_FINANCE_CUES = (
+    "房地", "房产", "土地", "产权", "财产", "债务", "欠债", "还钱", "借贷", "借钱",
+    "过户", "委任书", "协议书", "债权", "收益权", "保证金", "存款", "支票",
+)
+
+TRUST_PROPERTY_CUES = (
+    "信托", "信托关系", "信托意思", "意思表示中止", "天母静庐", "权状", "存证信",
+)
+
+TORTURE_VICTIM_CUES = (
+    "刑求", "逼供", "苦刑", "灌水", "绑担架", "拳头", "巴掌", "木棍", "脱去我的衣服",
+    "被捕入狱", "冤案", "假案",
+)
+
+TORTURE_ACTOR_CUES = (
+    "刑求", "逼供", "办案人员", "专案小组", "警总", "调查局", "保安处", "刑警",
+    "拳头", "巴掌", "木棍", "绑我的", "绑担架", "大打其耳光", "皮鞭打", "凌虐",
+)
+
+WITNESS_CUES = (
+    "见证", "证人", "公证书", "签名可证", "结证",
+)
+
 PUBLISHING_CUES = (
     "编辑", "主编", "出版", "出版社", "杂志", "报纸", "写稿", "投稿", "序", "书店", "文星",
 )
@@ -331,7 +542,25 @@ MEDIA_CUES = (
 )
 
 LEGAL_OFFICIAL_CUES = (
-    "法官", "审判长", "审判官", "检察官", "检察长", "书记官", "律师", "庭长",
+    "法官", "审判长", "审判官", "检察官", "检察长", "书记官", "庭长", "推事",
+)
+
+LAWYER_COUNSEL_CUES = (
+    "律师", "辩护人", "公设辩护人", "委由", "去函", "代理", "辩护", "见证",
+)
+
+PRISON_ADMIN_CUES = (
+    "司法行政部", "法务部", "监狱", "看守所", "典狱长", "所长", "副所长", "秘书",
+    "课长", "主任", "名籍室", "卫生课", "福利社", "戒护课长", "台北监狱", "台北看守所",
+)
+
+PRISON_GUARD_CUES = (
+    "管理员", "主任管理员", "临时管理员", "课员", "戒护", "戒护课长", "看守所",
+    "脚镣", "手铐", "钉脚镣", "舍房", "抄房", "接见", "放封", "杂役", "岗哨",
+)
+
+PRISON_MEDICAL_CUES = (
+    "卫生课", "健康检查", "保外就医", "病房", "疗伤",
 )
 
 LITIGATION_CUES = (
@@ -366,7 +595,8 @@ SPIRITUAL_CUES = (
 ROLE_SUFFIXES = (
     "先生", "女士", "小姐", "太太", "夫人", "教授", "博士", "法官", "律师", "检察官", "审判长",
     "审判官", "书记官", "院长", "庭长", "校长", "主席", "总统", "部长", "将军", "上校", "少将",
-    "中将", "作家", "编辑", "记者", "导演", "委员", "同学", "老师",
+    "中将", "作家", "编辑", "记者", "导演", "委员", "同学", "老师", "所长", "副所长",
+    "典狱长", "管理员", "主任管理员", "临时管理员", "戒护课长", "课员",
 )
 
 BAD_NAME_CHARS = set("的一是在不了和与及或而也就都被把让给对从向于以为着过吗呢啊呀吧里中上下前后内外时日年月个些其此那这我你他她它们")
@@ -392,6 +622,7 @@ STOP_NAMES = {
     "和蔼", "时用手", "明言当", "明言地", "姚老", "松曰", "时警总", "文化古", "经济问", "水槽",
     "东林怀", "怀严侨", "家失散", "古稀之", "平地人", "严侨带", "时全照", "时间已",
     "陆丢掉", "那位老", "胡适谈", "冷场", "时又有", "华严通", "车修好", "东北义",
+    "路人",
     "公室", "时代老", "谢饭", "和济之", "于吴廷", "支持胡", "于引导", "房客庄",
     "通知李", "都本仁", "向教务", "花枝", "雷震曾", "别人裁", "姚二次", "敖弟之",
     "时考入", "那身体", "任性", "经理", "于京房", "元配离", "华严做", "华严结",
@@ -404,6 +635,25 @@ STOP_NAMES = {
     "明天再", "时买房", "班陆侃", "时还有", "通话人",
     "纪念周", "吉林女",
     "封长信", "高明得",
+    "管理员", "封信", "方式", "公道", "安全", "台南美", "全权代", "家爸爸", "国际特",
+    "通讯", "熊来", "熊往", "云乎哉", "公然抹", "高院推", "罗织人", "从主流",
+    "皮蛋", "李放使", "李放", "能见到", "文书之", "房租", "公道终", "印刷者",
+    "查起诉", "甘共苦", "终之资", "和深度", "明告",
+    "水到", "权益", "司法单", "水果", "和实际", "敖按", "印刷精", "国人权",
+    "时副总", "经监务", "时平行", "全部契", "别人杂", "国父孙", "国家有",
+    "应俱全", "祖国正", "苍天", "温杯", "公道没", "关怀照", "利润之",
+    "家人放", "居人", "山盟", "常人无", "文星替", "时身受", "程序要",
+    "管教", "终难深", "谢签名", "雷管", "彭相识", "谢交往", "权贵角",
+    "马桶有", "管理条", "经手人", "萧某之", "都异口", "都得照",
+    "于本庭", "于赴义", "关系够", "却遭到", "和平", "家属之", "山林起",
+    "强盗钉", "时失去", "时抨击", "明写", "曲解", "曾明写", "权使用",
+    "李放同", "查出胡", "平奖",
+    "林办理", "于自诉",
+    "毛三", "干人", "任二人", "全所", "向主任", "向禁止", "家去取", "平分",
+    "成事件", "时抄房", "查嘴巴", "查头顶", "班人", "籍股", "管主任", "经常特",
+    "时说",
+    "文化人", "能达成",
+    "时候", "勾结", "都能", "居人还",
 }
 SIGNAL_BEFORE = set(" \t\r\n　,，.。:：;；、!！?？([（《〈“‘'\"和与及给向问访见找由同为把对从跟请替将是叫姓名骂告")
 SIGNAL_AFTER = set(" \t\r\n　,，.。:：;；、!！?？)]）《》〉”’'\"")
@@ -418,7 +668,8 @@ POST_VERBS = (
 )
 ROLE_PREFIX_RE = re.compile(
     r"(审判长|审判官|法官|律师|检察官|书记官|院长|处长|主任|校长|教授|主席|总统|部长|"
-    r"将军|上校|少将|中将|主编|编辑|记者|发行人|总编辑|所长|庭长|委员)[^。！？；：:]{0,10}$"
+    r"将军|上校|少将|中将|主编|编辑|记者|发行人|总编辑|所长|副所长|典狱长|庭长|"
+    r"管理员|主任管理员|临时管理员|戒护课长|课员|委员)[^。！？；：:]{0,10}$"
 )
 
 CATEGORY_LABELS = {
@@ -430,12 +681,22 @@ CATEGORY_LABELS = {
     "family": "亲属",
     "in_law": "姻亲",
     "romance": "情感",
+    "property_finance": "财产债务",
+    "trust_property": "财产信托",
+    "torture_victim": "刑求受害",
+    "torture_actor": "刑求人员",
+    "witness": "证人见证",
     "publishing": "出版",
     "academic": "学术",
     "media": "媒体",
     "household_staff": "家中雇员",
+    "human_rights": "人权救援",
     "indoctrination": "感化人员",
     "legal_official": "司法人员",
+    "lawyer_counsel": "律师代理",
+    "prison_admin": "监狱行政",
+    "prison_guard": "看守戒护",
+    "prison_medical": "监所医疗",
     "litigation": "诉讼",
     "case_prison": "同案狱友",
     "politician": "政治人物",
@@ -445,6 +706,7 @@ CATEGORY_LABELS = {
     "underworld": "江湖人物",
     "public_debate": "公共论战",
     "spiritual": "神交引用",
+    "fictional": "虚拟人物",
     "nickname": "称谓待考",
     "mentioned": "待复核",
 }
@@ -458,7 +720,7 @@ def build_name_regex() -> re.Pattern[str]:
 
 
 NAME_RE = build_name_regex()
-FOREIGN_RE = re.compile("|".join(map(re.escape, sorted(FOREIGN_AND_HISTORICAL, key=len, reverse=True))))
+FOREIGN_RE = re.compile("|".join(map(re.escape, sorted(FOREIGN_AND_HISTORICAL | FICTIONAL_CHARACTERS, key=len, reverse=True))))
 
 
 def read_text(path: Path) -> str:
@@ -494,7 +756,7 @@ def is_likely_person_name(name: str) -> bool:
         return False
     if re.search(r"[第年月日号集类篇册卷上下前后续新大小多少]", name[1:]):
         return False
-    if name in FOREIGN_AND_HISTORICAL:
+    if name in FOREIGN_AND_HISTORICAL or name in FICTIONAL_CHARACTERS:
         return True
     if name[:2] in COMPOUND_SURNAMES:
         return len(name) in (3, 4)
@@ -519,10 +781,19 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
         ("family", FAMILY_CUES, 5),
         ("in_law", IN_LAW_CUES, 5),
         ("romance", ROMANCE_CUES, 5),
+        ("property_finance", PROPERTY_FINANCE_CUES, 5),
+        ("trust_property", TRUST_PROPERTY_CUES, 6),
+        ("torture_victim", TORTURE_VICTIM_CUES, 5),
+        ("torture_actor", TORTURE_ACTOR_CUES, 5),
+        ("witness", WITNESS_CUES, 4),
         ("publishing", PUBLISHING_CUES, 4),
         ("academic", ACADEMIC_CUES, 4),
         ("media", MEDIA_CUES, 4),
         ("legal_official", LEGAL_OFFICIAL_CUES, 5),
+        ("lawyer_counsel", LAWYER_COUNSEL_CUES, 5),
+        ("prison_admin", PRISON_ADMIN_CUES, 5),
+        ("prison_guard", PRISON_GUARD_CUES, 5),
+        ("prison_medical", PRISON_MEDICAL_CUES, 5),
         ("litigation", LITIGATION_CUES, 4),
         ("case_prison", CASE_PRISON_CUES, 5),
         ("politician", POLITICIAN_CUES, 4),
@@ -541,8 +812,14 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
             if suffix in ("先生", "女士", "小姐"):
                 hits.append(suffix)
                 continue
-            if suffix in LEGAL_OFFICIAL_CUES or suffix in ("法官", "律师", "检察官", "审判长", "审判官", "书记官"):
+            if suffix in LEGAL_OFFICIAL_CUES or suffix in ("法官", "检察官", "审判长", "审判官", "书记官", "推事"):
                 scores["legal_official"] += 6
+            elif suffix == "律师":
+                scores["lawyer_counsel"] += 6
+            elif suffix in ("所长", "副所长", "典狱长"):
+                scores["prison_admin"] += 6
+            elif suffix in ("管理员", "主任管理员", "临时管理员", "戒护课长", "课员"):
+                scores["prison_guard"] += 6
             elif suffix in FAMILY_CUES:
                 scores["family"] += 4
             elif suffix in TEACHER_STUDENT_CUES or suffix in ("教授", "博士"):
@@ -563,12 +840,14 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
             hits.append(suffix)
     if name in FOREIGN_AND_HISTORICAL:
         scores["spiritual"] += 4
+    if name in FICTIONAL_CHARACTERS:
+        scores["fictional"] += 4
     if not scores:
         return "mentioned", 0, []
     category, score = scores.most_common(1)[0]
     stronger_than_spiritual = [
         "meeting", "correspondence", "teacher_student", "family", "in_law", "romance",
-        "legal_official", "litigation", "case_prison",
+        "legal_official", "lawyer_counsel", "prison_admin", "prison_guard", "prison_medical", "litigation", "case_prison",
     ]
     if category == "spiritual" and any(scores[item] >= 4 for item in stronger_than_spiritual):
         category, score = max(((item, scores[item]) for item in stronger_than_spiritual), key=lambda x: x[1])
@@ -630,6 +909,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "你老子", "他老子", "儿子", "父亲意像",
         )
         return any(marker in ctx for marker in false_markers)
+    if name == "康德":
+        return "感冒药康德" in ctx or "康德600" in ctx
     return False
 
 
@@ -641,6 +922,7 @@ def extract_from_text(
     title_names: set[str],
 ) -> None:
     collection, book, chapter = meta_for_path(source_root, path)
+    title_names = extract_title_names_from_strings((book, chapter))
     for regex in (NAME_RE, FOREIGN_RE, NONSTANDARD_NAME_RE):
         for match in regex.finditer(text):
             name = match.group(0)
@@ -701,26 +983,32 @@ def extract_from_text(
                 )
 
 
+def extract_title_names_from_strings(raw_titles: tuple[str, ...] | list[str]) -> set[str]:
+    names: set[str] = set()
+    for raw in raw_titles:
+        for match in NAME_RE.finditer(raw):
+            name = match.group(0)
+            if is_likely_person_name(name):
+                names.add(ALIASES.get(name, name))
+        for match in FOREIGN_RE.finditer(raw):
+            names.add(ALIASES.get(match.group(0), match.group(0)))
+        for match in NONSTANDARD_NAME_RE.finditer(raw):
+            names.add(ALIASES.get(match.group(0), match.group(0)))
+        for marker in ("研究", "评传", "真面目", "臭史", "论"):
+            if marker in raw:
+                prefix = raw.split(marker, 1)[0]
+                for match in NAME_RE.finditer(prefix):
+                    name = match.group(0)
+                    if is_likely_person_name(name):
+                        names.add(ALIASES.get(name, name))
+    return names
+
+
 def extract_title_names(source_root: Path, files: list[Path] | None = None) -> set[str]:
     names: set[str] = set()
     for path in files or iter_text_files(source_root):
-        collection, book, chapter = meta_for_path(source_root, path)
-        for raw in (book, chapter):
-            for match in NAME_RE.finditer(raw):
-                name = match.group(0)
-                if is_likely_person_name(name):
-                    names.add(ALIASES.get(name, name))
-            for match in FOREIGN_RE.finditer(raw):
-                names.add(ALIASES.get(match.group(0), match.group(0)))
-            for match in NONSTANDARD_NAME_RE.finditer(raw):
-                names.add(ALIASES.get(match.group(0), match.group(0)))
-            for marker in ("研究", "评传", "真面目", "臭史", "论"):
-                if marker in raw:
-                    prefix = raw.split(marker, 1)[0]
-                    for match in NAME_RE.finditer(prefix):
-                        name = match.group(0)
-                        if is_likely_person_name(name):
-                            names.add(ALIASES.get(name, name))
+        _collection, book, chapter = meta_for_path(source_root, path)
+        names.update(extract_title_names_from_strings((book, chapter)))
     return names
 
 
@@ -737,6 +1025,8 @@ def keep_person(hit: PersonHit) -> bool:
         return True
     if hit.name in FOREIGN_AND_HISTORICAL and hit.occurrences >= 1:
         return True
+    if hit.name in FICTIONAL_CHARACTERS and hit.occurrences >= 1:
+        return True
     if hit.strong_signals >= 2 and hit.occurrences >= 2:
         return True
     return False
@@ -745,6 +1035,8 @@ def keep_person(hit: PersonHit) -> bool:
 def categories_for_hit(hit: PersonHit) -> list[str]:
     if hit.name in CURATED_IDENTITIES:
         return CURATED_IDENTITIES[hit.name]
+    if hit.name in FICTIONAL_CHARACTERS:
+        return ["fictional"]
     if hit.name in SPIRITUAL_ONLY:
         return ["spiritual"]
     categories = []
@@ -756,6 +1048,8 @@ def categories_for_hit(hit: PersonHit) -> list[str]:
             categories.append(category)
     if hit.name in FOREIGN_AND_HISTORICAL and "spiritual" not in categories:
         categories.append("spiritual")
+    if hit.name in FICTIONAL_CHARACTERS and "fictional" not in categories:
+        categories.append("fictional")
     if not categories:
         categories.append("mentioned")
     return categories
@@ -767,6 +1061,8 @@ def primary_category(hit: PersonHit) -> str:
     weighted = Counter(hit.categories)
     if hit.name in FOREIGN_AND_HISTORICAL:
         weighted["spiritual"] += 4
+    if hit.name in FICTIONAL_CHARACTERS:
+        weighted["fictional"] += 4
     if hit.relevant_occurrences == 0:
         return "mentioned"
     return weighted.most_common(1)[0][0]
@@ -866,6 +1162,7 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
         "identityLinks": len(identity_links),
         "categoryCounts": category_counts,
         "spiritual": category_counts.get("spiritual", 0),
+        "fictional": category_counts.get("fictional", 0),
         "legal": category_counts.get("legal_official", 0) + category_counts.get("litigation", 0),
         "direct": category_counts.get("meeting", 0),
         "mentioned": sum(1 for x in person_rows if "mentioned" in x["categories"]),
@@ -968,7 +1265,7 @@ def write_text_exports(data: dict, export_dir: Path) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Extract Li Ao relationship candidates book by book.")
     parser.add_argument("--source", default=SOURCE_DIR, help="source corpus directory")
-    parser.add_argument("--book-path", help="one book directory under the source corpus")
+    parser.add_argument("--book-path", action="append", help="one book directory under the source corpus; repeat for multiple books")
     parser.add_argument("--all", action="store_true", help="scan the whole corpus explicitly")
     parser.add_argument("--data-dir", default="data", help="output data directory")
     parser.add_argument("--export-dir", default="exports", help="plain-text export directory")
@@ -979,12 +1276,18 @@ def main() -> None:
         raise SystemExit(f"Source directory not found: {source_root}")
 
     if args.book_path:
-        target = Path(args.book_path)
-        if not target.is_absolute():
-            target = Path.cwd() / target
-        if not target.exists():
-            raise SystemExit(f"Book directory not found: {target}")
-        files = sorted(target.rglob("*.txt"), key=lambda p: str(p))
+        targets = []
+        for book_path in args.book_path:
+            target = Path(book_path)
+            if not target.is_absolute():
+                target = Path.cwd() / target
+            if not target.exists():
+                raise SystemExit(f"Book directory not found: {target}")
+            targets.append(target)
+        files = sorted(
+            (path for target in targets for path in target.rglob("*.txt")),
+            key=lambda p: str(p),
+        )
     elif args.all:
         files = iter_text_files(source_root)
     else:
