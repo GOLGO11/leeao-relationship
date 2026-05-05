@@ -113,6 +113,11 @@ ALIASES = {
     "刘福増": "刘福增",
     "汪师长": "汪敬煦",
     "孙猴子": "孙悟空",
+    "唐三藏": "唐僧",
+    "沙和尚": "沙僧",
+    "神宗": "明神宗",
+    "汪逆精卫": "汪精卫",
+    "弟昙": "郗昙",
     "蒋夫人": "宋美龄",
     "萧朱婉": "朱婉坚",
     "萧太太": "朱婉坚",
@@ -168,6 +173,20 @@ ALIASES = {
     "彭老师": "彭明敏",
     "路易斯": "乔·路易斯",
     "孔夫子": "孔子",
+    "孔丘": "孔子",
+    "孔圣": "孔子",
+    "孟夫子": "孟子",
+    "张子野": "张先",
+    "袁子才": "袁枚",
+    "曹孟德": "曹操",
+    "庄周": "庄子",
+    "生公": "竺道生",
+    "西太后": "慈禧",
+    "梦露": "玛丽莲·梦露",
+    "玛丽莲·梦露": "玛丽莲·梦露",
+    "Frederick Lewis Allen": "弗雷德里克·刘易斯·艾伦",
+    "罗伯特·瓦格纳": "罗勃韦纳",
+    "娜塔莉·伍德": "娜妲丽华",
     "王雪艇": "王世杰",
     "经国": "蒋经国",
     "经国哥": "蒋经国",
@@ -398,6 +417,7 @@ CURATED_IDENTITIES = {
     "马克思": ["spiritual"],
     "马丁·路德·金": ["spiritual"],
     "老子": ["spiritual"],
+    "孟子": ["spiritual"],
     "孙中山": ["politician", "spiritual"],
     "李凤亭": ["family"],
     "武则天": ["spiritual"],
@@ -715,8 +735,7 @@ CURATED_IDENTITIES = {
     "林海音": ["correspondence", "publishing"],
     "王文俊": ["in_law"],
     "王正廷": ["politician"],
-    "王洪钧": ["publishing"],
-    "梁实秋": ["academic", "publishing"],
+    "梁实秋": ["academic", "publishing", "spiritual"],
     "萧孟能": ["publishing", "litigation", "property_finance"],
     "蒋经国": ["politician", "public_debate"],
     "周恩来": ["politician", "spiritual"],
@@ -1253,7 +1272,7 @@ CURATED_IDENTITIES = {
     "史为鉴": ["academic", "publishing", "meeting"],
     "汪荣祖": ["academic", "publishing", "correspondence", "meeting"],
     "庄申": ["correspondence", "academic"],
-    "李其泰": ["academic"],
+    "李其泰": ["academic", "spiritual"],
     "陈正澄": ["classmate_colleague", "academic", "publishing"],
     "钱穆": ["academic", "correspondence", "meeting", "public_debate"],
     "雷震": ["political_dissident", "publishing", "media"],
@@ -1419,6 +1438,180 @@ CURATED_IDENTITIES = {
     "陈奇禄": ["academic", "politician", "publishing"],
     "赵宁": ["media", "meeting"],
     "蒋廷黻": ["academic", "publishing", "spiritual", "public_debate"],
+    "林语堂": ["academic", "publishing", "spiritual"],
+    "杨国枢": ["academic", "public_debate"],
+    "白光": ["media", "spiritual"],
+    "罗勃韦纳": ["media", "spiritual"],
+    "娜妲丽华": ["media", "spiritual"],
+    "张先": ["academic", "spiritual"],
+    "李石曾": ["academic", "politician", "spiritual"],
+    "培根": ["academic", "spiritual"],
+    "维纳斯": ["spiritual"],
+    "安琪夫人": ["media", "nickname", "spiritual"],
+    "查拉斯图特拉": ["religion", "spiritual"],
+    "海明威": ["publishing", "spiritual"],
+    "叔本华": ["academic", "spiritual"],
+    "卓文君": ["spiritual"],
+    "贾充": ["politician", "spiritual"],
+    "焦先": ["spiritual"],
+    "潘安": ["spiritual"],
+    "王蒙": ["spiritual"],
+    "沙吒利": ["fictional"],
+    "阿拉伯德": ["academic", "romance", "spiritual"],
+    "爱绿依丝": ["romance", "spiritual"],
+    "班昭": ["academic", "spiritual"],
+    "于义方": ["academic", "spiritual"],
+    "斯特林堡": ["publishing", "spiritual"],
+    "慈禧": ["politician", "spiritual"],
+    "娄逞": ["politician", "spiritual"],
+    "玛丽莲·梦露": ["media", "spiritual"],
+    "弗雷德里克·刘易斯·艾伦": ["academic", "spiritual"],
+    "仇十洲": ["academic", "spiritual"],
+    "祢衡": ["academic", "public_debate", "spiritual"],
+    "阮籍": ["academic", "spiritual"],
+    "阮瞻": ["spiritual"],
+    "王澄": ["spiritual"],
+    "谢鲲": ["spiritual"],
+    "胡毋辅之": ["spiritual"],
+    "刘孝标": ["academic", "spiritual"],
+    "王隐": ["academic", "spiritual"],
+    "慎夫人": ["spiritual"],
+    "苻坚": ["politician", "spiritual"],
+    "菁如": ["media", "publishing", "spiritual"],
+    "艾健": ["medical_care", "public_debate", "spiritual"],
+    "特号老顽固": ["nickname", "public_debate"],
+    "金一": ["academic", "human_rights", "spiritual"],
+    "奚明": ["media", "public_debate", "spiritual"],
+    "张飞": ["military_figure", "spiritual"],
+    "范疆": ["military_figure", "spiritual"],
+    "张达": ["military_figure", "spiritual"],
+    "黛比雷诺": ["media", "spiritual"],
+    "艾迪费雪": ["media", "spiritual"],
+    "埃洛弗林": ["media", "spiritual"],
+    "拜伦": ["publishing", "spiritual"],
+    "卡门": ["fictional"],
+    "穆万森": ["social_case", "spiritual"],
+    "袁枚": ["academic", "spiritual"],
+    "思文君": ["spiritual"],
+    "彼得潘": ["fictional"],
+    "辛八达": ["fictional"],
+    "管仲": ["politician", "spiritual"],
+    "马彬和": ["spiritual"],
+    "李子述": ["nickname", "spiritual"],
+    "吴鲁芹": ["publishing", "academic", "spiritual"],
+    "无为先生": ["fictional"],
+    "无智": ["fictional"],
+    "无能": ["fictional"],
+    "王充": ["academic", "spiritual"],
+    "孔融": ["academic", "spiritual"],
+    "杜威": ["academic", "spiritual"],
+    "第欧根尼": ["academic", "spiritual"],
+    "斯威夫特": ["publishing", "spiritual"],
+    "阿瑞尔": ["fictional"],
+    "汤普森": ["publishing", "spiritual"],
+    "刘伶": ["spiritual"],
+    "黄石公": ["military_figure", "spiritual"],
+    "张良": ["politician", "military_figure", "spiritual"],
+    "李德哈达": ["military_figure", "academic", "spiritual"],
+    "约米尼": ["military_figure", "academic", "spiritual"],
+    "艾森豪威尔": ["military_figure", "politician", "spiritual"],
+    "泰戈尔": ["publishing", "spiritual"],
+    "竺道生": ["religion", "spiritual"],
+    "焦易堂": ["legal_official", "politician", "public_debate"],
+    "张天师": ["religion", "public_debate"],
+    "吴基福": ["medical_care", "academic", "public_debate"],
+    "王洪钧": ["publishing", "public_debate"],
+    "孔德成": ["religion", "academic", "public_debate"],
+    "黄宽": ["medical_care", "academic", "spiritual"],
+    "汪大燮": ["politician", "medical_care", "public_debate", "spiritual"],
+    "石瑛": ["politician", "public_debate", "spiritual"],
+    "林天送": ["medical_care", "social_case", "public_debate"],
+    "丁福保": ["academic", "medical_care", "spiritual"],
+    "肯尼迪": ["politician", "spiritual"],
+    "余岩": ["politician", "medical_care", "public_debate", "spiritual"],
+    "汪精卫": ["politician", "spiritual"],
+    "扁鹊": ["medical_care", "spiritual"],
+    "歧伯": ["medical_care", "spiritual"],
+    "雷公": ["medical_care", "spiritual"],
+    "淳于意": ["medical_care", "spiritual"],
+    "张机": ["medical_care", "spiritual"],
+    "华佗": ["medical_care", "spiritual"],
+    "王叔和": ["medical_care", "spiritual"],
+    "皇甫谧": ["medical_care", "academic", "spiritual"],
+    "葛洪": ["medical_care", "religion", "academic", "spiritual"],
+    "褚澄": ["medical_care", "spiritual"],
+    "陶弘景": ["medical_care", "religion", "academic", "spiritual"],
+    "徐之才": ["medical_care", "spiritual"],
+    "巢元方": ["medical_care", "spiritual"],
+    "孙思邈": ["medical_care", "spiritual"],
+    "钱乙": ["medical_care", "spiritual"],
+    "张元素": ["medical_care", "spiritual"],
+    "罗知悌": ["medical_care", "spiritual"],
+    "戴思恭": ["medical_care", "spiritual"],
+    "张介宾": ["medical_care", "spiritual"],
+    "喻昌": ["medical_care", "spiritual"],
+    "陆懋修": ["medical_care", "spiritual"],
+    "张正随": ["religion", "spiritual"],
+    "宋徽宗": ["politician", "spiritual"],
+    "张继先": ["religion", "spiritual"],
+    "张正常": ["religion", "spiritual"],
+    "张鲁": ["religion", "politician", "military_figure", "spiritual"],
+    "刘焉": ["politician", "military_figure", "spiritual"],
+    "张修": ["religion", "spiritual"],
+    "张角": ["religion", "military_figure", "spiritual"],
+    "皇甫嵩": ["military_figure", "spiritual"],
+    "马端临": ["academic", "spiritual"],
+    "赵翼": ["academic", "spiritual"],
+    "郗愔": ["religion", "spiritual"],
+    "郗昙": ["religion", "spiritual"],
+    "寇谦之": ["religion", "spiritual"],
+    "北魏太武帝": ["politician", "military_figure", "spiritual"],
+    "崔浩": ["politician", "academic", "spiritual"],
+    "王棠": ["academic", "spiritual"],
+    "林太守": ["legal_official", "spiritual"],
+    "唐僖宗": ["politician", "spiritual"],
+    "宋真宗": ["politician", "spiritual"],
+    "元世祖": ["politician", "spiritual"],
+    "张宗演": ["religion", "spiritual"],
+    "明穆宗": ["politician", "spiritual"],
+    "明神宗": ["politician", "spiritual"],
+    "清仁宗": ["politician", "spiritual"],
+    "王世祯": ["academic", "spiritual"],
+    "采蘅子": ["academic", "spiritual"],
+    "雷震春": ["politician", "spiritual"],
+    "梁敦彦": ["politician", "spiritual"],
+    "张镇芳": ["politician", "spiritual"],
+    "朱元璋": ["politician", "military_figure", "spiritual"],
+    "张士诚": ["military_figure", "spiritual"],
+    "郭子兴": ["military_figure", "spiritual"],
+    "韩林儿": ["politician", "spiritual"],
+    "徐达": ["military_figure", "spiritual"],
+    "朱亮祖": ["military_figure", "spiritual"],
+    "汤和": ["military_figure", "spiritual"],
+    "方国珍": ["military_figure", "spiritual"],
+    "熊天瑞": ["military_figure", "spiritual"],
+    "桓温": ["politician", "military_figure", "spiritual"],
+    "周武王": ["politician", "spiritual"],
+    "子路": ["academic", "spiritual"],
+    "神农": ["medical_care", "spiritual"],
+    "黄帝": ["medical_care", "spiritual"],
+    "巫彭": ["medical_care", "spiritual"],
+    "巫咸": ["medical_care", "spiritual"],
+    "王逸": ["academic", "spiritual"],
+    "颜师古": ["academic", "spiritual"],
+    "孙传芳": ["military_figure", "spiritual"],
+    "张竞生": ["academic", "spiritual", "public_debate"],
+    "黎锦晖": ["publishing", "spiritual", "public_debate"],
+    "晏阳初": ["academic", "spiritual"],
+    "谢瀛洲": ["academic", "legal_official", "spiritual"],
+    "李势": ["politician", "spiritual"],
+    "穆罕默德": ["religion", "spiritual"],
+    "尼采": ["spiritual"],
+    "蓬斯德莱昂": ["spiritual"],
+    "胡吉藏": ["religion", "spiritual"],
+    "周太祖": ["politician", "spiritual"],
+    "姚思廉": ["academic", "spiritual"],
+    "沙僧": ["fictional"],
     "郑板桥": ["spiritual"],
     "江青": ["spiritual"],
     "周才蔚": ["correspondence", "friendship"],
@@ -1626,6 +1819,18 @@ STOP_NAMES = {
     "张淑婉",
     "查禁清", "方理由", "家作品", "文星杂", "常说", "范儿童",
     "惠予更", "雷震做", "时刘长", "尚勤同", "时扣押", "辛勤耕", "别信",
+    "师资格", "通性", "师业务", "简任推", "容易", "充员官", "红玫瑰",
+    "明法之", "程度", "毕业生", "能参加", "常务理", "居然还", "闻记者",
+    "和十三", "乐趣", "第五十五", "国本位", "能用", "封神气", "从事公",
+    "和道德", "师考试", "别人钩", "车主", "陈仓", "东三姨", "都详细",
+    "封建余", "符水咒", "贡献者", "国珍", "何取舍", "红衣主", "简任",
+    "利权", "明修栈", "那肘膝", "能得兼", "能名列", "任首席", "山东裁",
+    "山直接", "师出身", "师登录", "师牌子", "师之籍", "时分别", "时还包",
+    "时会联", "时决定", "时衣服", "时应受", "时用礼", "时又可", "时责备",
+    "卫生衙", "终身官",
+    "国人民", "计较", "冷冷地", "方神父", "司机", "许可", "终身", "能获得",
+    "明显", "车子", "从事国", "从速解", "李阿姨", "张太太",
+    "和英国", "文物之", "时看到", "应该如", "时人人",
     "李敖", "李先", "李大师", "李先生", "李语", "李文", "李书", "李政", "王法", "王国", "王军",
     "中国人", "台湾人", "美国人", "日本人", "英国人", "国民党", "民进党", "共产党", "新闻界",
     "文化界", "政治犯", "外省人", "台湾话", "负责人", "发行人", "总编辑", "编者略", "不自由",
@@ -2068,15 +2273,31 @@ def add_evidence(hit: PersonHit, item: dict) -> None:
         return
     # Keep high-score examples and a spread across books.
     existing_books = {x["book"] for x in hit.evidence}
-    if item["score"] >= 4 and item["book"] not in existing_books:
-        hit.evidence[-1] = item
+    if (item["score"] >= 4 or item.get("curated")) and item["book"] not in existing_books:
+        book_counts = Counter(x["book"] for x in hit.evidence)
+        replace_idx = min(
+            range(len(hit.evidence)),
+            key=lambda idx: (
+                book_counts[hit.evidence[idx]["book"]] <= 1,
+                hit.evidence[idx].get("score", 0),
+            ),
+        )
+        hit.evidence[replace_idx] = item
 
 
 def iter_text_files(source_root: Path) -> list[Path]:
     return sorted(
-        (p for p in source_root.rglob("*.txt") if len(p.relative_to(source_root).parts) >= 3),
+        (
+            p
+            for p in source_root.rglob("*.txt")
+            if len(p.relative_to(source_root).parts) >= 3 and is_content_text_file(p)
+        ),
         key=lambda p: str(p),
     )
+
+
+def is_content_text_file(path: Path) -> bool:
+    return not clean_title(path.stem).endswith("目录")
 
 
 def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
@@ -2100,11 +2321,26 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return True
     if name == "康德":
         return "感冒药康德" in ctx or "康德600" in ctx
+    if name == "经国":
+        return "经国家" in ctx
+    if name == "金一":
+        return "爱自由者金一" not in ctx
+    if name == "无能":
+        return "次兄无能" not in ctx
+    if name == "无智":
+        return "长兄无智" not in ctx
+    if name == "大风":
+        return "大风波" in ctx
+    if name == "咪咪":
+        return "母猫" in ctx or "波斯种" in ctx
+    if name == "白脸":
+        return "外号" not in ctx and "叫黄永寿" not in ctx
     if name == "江南":
         false_markers = (
             "出发到江南", "守江南", "大江南北", "曲尽江南美女", "哀江南赋",
             "江南·江南·哀江南", "《江南·江南", "《哀江南", "江南并发症",
-            "连江南都保不住", "江南廖家楠",
+            "连江南都保不住", "江南廖家楠", "江南世代儒医", "江南暖",
+            "江南饱", "江南恶", "江南好", "到江南", "思江南",
         )
         return any(marker in ctx for marker in false_markers)
     if name == "应凤凰":
@@ -2182,6 +2418,7 @@ def extract_from_text(
                         "score": score,
                         "cues": cues[:6],
                         "snippet": ctx,
+                        "curated": name in CURATED_IDENTITIES,
                     },
                 )
 
@@ -2334,7 +2571,7 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
             "topChapters": [{"chapter": ch, "count": c} for ch, c in hit.chapters.most_common(10)],
             "collections": [{"collection": c, "count": n} for c, n in hit.collections.most_common()],
             "cues": [{"cue": cue, "count": n} for cue, n in hit.cue_hits.most_common(10)],
-            "evidence": sorted(hit.evidence, key=lambda x: (-x["score"], x["book"], x["chapter"]))[:8],
+            "evidence": sorted(hit.evidence, key=lambda x: (-x["score"], x["book"], x["chapter"]))[:10],
         }
         person_rows.append(row)
         for stat in row["categoryStats"]:
@@ -2501,7 +2738,7 @@ def main() -> None:
                 raise SystemExit(f"Book directory not found: {target}")
             targets.append(target)
         files = sorted(
-            (path for target in targets for path in target.rglob("*.txt")),
+            (path for target in targets for path in target.rglob("*.txt") if is_content_text_file(path)),
             key=lambda p: str(p),
         )
     elif args.all:
