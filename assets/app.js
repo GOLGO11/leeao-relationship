@@ -31,6 +31,7 @@
     witness: "#64748b",
     publishing: "#7c3aed",
     academic: "#1d4ed8",
+    scientist: "#0369a1",
     media: "#0284c7",
     household_staff: "#65a30d",
     disability: "#0d9488",

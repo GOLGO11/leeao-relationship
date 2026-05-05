@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-05T12:31:02",
+  "generatedAt": "2026-05-05T12:46:31",
   "sourceRoot": "C:\\Users\\zzy87\\Desktop\\project\\leeao-relationship\\《大李敖全集5.0》（wjm_tcy版）分章节",
   "method": "本地规则抽取：中文姓名候选 + 关系语境线索 + 逐书聚合；结果保留证据片段，适合继续人工校订。",
   "categoryLabels": {
@@ -21,6 +21,7 @@
     "witness": "证人见证",
     "publishing": "出版",
     "academic": "学术",
+    "scientist": "科学家",
     "media": "媒体",
     "household_staff": "家中雇员",
     "disability": "残障人士",
@@ -54,9 +55,9 @@
     "people": 884,
     "books": 4,
     "chapters": 95,
-    "identityLinks": 1776,
+    "identityLinks": 1773,
     "categoryCounts": {
-      "meeting": 271,
+      "meeting": 270,
       "correspondence": 38,
       "neighbor": 3,
       "teacher_student": 34,
@@ -71,14 +72,15 @@
       "trust_property": 5,
       "torture_victim": 18,
       "torture_actor": 16,
-      "witness": 26,
-      "publishing": 86,
-      "academic": 84,
+      "witness": 24,
+      "publishing": 84,
+      "academic": 86,
+      "scientist": 1,
       "media": 30,
       "household_staff": 1,
       "disability": 1,
       "human_rights": 13,
-      "veteran": 5,
+      "veteran": 4,
       "social_case": 2,
       "anti_communist_defector": 2,
       "medical_care": 4,
@@ -94,19 +96,19 @@
       "politician": 115,
       "political_dissident": 28,
       "intelligence_police": 160,
-      "military_figure": 66,
+      "military_figure": 65,
       "party_propaganda": 4,
       "underworld": 3,
-      "public_debate": 63,
-      "spiritual": 72,
+      "public_debate": 62,
+      "spiritual": 74,
       "fictional": 8,
       "nickname": 16,
       "mentioned": 0
     },
-    "spiritual": 72,
+    "spiritual": 74,
     "fictional": 8,
     "legal": 98,
-    "direct": 271,
+    "direct": 270,
     "mentioned": 0
   },
   "people": [
@@ -7575,8 +7577,7 @@
     {
       "name": "马丁",
       "aliases": [
-        "马丁·恩纳尔斯",
-        "马丁见"
+        "马丁·恩纳尔斯"
       ],
       "category": "meeting",
       "categoryLabel": "见面",
@@ -7758,22 +7759,6 @@
           "snippet": "1977年获得诺贝尔和平奖，它的被举世肯定，可见一斑。 在我被国民党“跟监”的日子里，马丁·恩纳尔斯到了台湾。魏胖（魏廷朝）、老谢（谢聪敏）到我家，约我一起去看马丁。我说我李敖架子很大，"
         },
         {
-          "book": "李敖自传与回忆续集",
-          "collection": "自传回忆类",
-          "chapter": "我才“妨害军机”呢！",
-          "category": "romance",
-          "score": 7,
-          "cues": [
-            "见",
-            "见面",
-            "电话",
-            "太太",
-            "情人",
-            "小情人"
-          ],
-          "snippet": "办法，为了加深马丁的印象，我请小情人小蕾给柏杨太太艾玫打公用电话（我家的怕窃听），问她愿不愿意跟马丁见见面。电话中艾玫说她愿意来，可是到时候，她爽约了。为什么爽约，我至今还不清楚。 马丁到"
-        },
-        {
           "book": "李敖回忆录",
           "collection": "自传回忆类",
           "chapter": "软禁（1970-1971·35到36岁）",
@@ -7798,6 +7783,18 @@
             "政府"
           ],
           "snippet": "单，其严重性已至“颠覆政府”的程度，比起今天党外人士的饱受虚惊来，他们真是太娇嫩矣！ 马丁“行客拜坐客” 泰源监狱名单的得以外泄，得力于一个人的帮忙，这人就是“国际特赦协会”秘"
+        },
+        {
+          "book": "李敖自传与回忆续集",
+          "collection": "自传回忆类",
+          "chapter": "我才“妨害军机”呢！",
+          "category": "prison_admin",
+          "score": 6,
+          "cues": [
+            "监狱",
+            "像"
+          ],
+          "snippet": "真名不虚传。 就在这次“行客拜坐客”里，我把一些被“跟监”的照片和泰源监狱名单，交给了马丁。我没交代他怎么处理，他也没说怎么处理。一切都好像心照不宣似的。 泰源监狱名单全文"
         },
         {
           "book": "李敖自传与回忆续集",
@@ -13591,33 +13588,17 @@
       "primaryCategory": "spiritual",
       "primaryCategoryLabel": "神交引用",
       "categories": [
-        "spiritual",
-        "publishing",
-        "meeting"
+        "spiritual"
       ],
       "categoryLabels": [
-        "神交引用",
-        "出版",
-        "见面"
+        "神交引用"
       ],
       "categoryStats": [
         {
           "category": "spiritual",
           "label": "神交引用",
           "count": 15,
-          "curated": false
-        },
-        {
-          "category": "publishing",
-          "label": "出版",
-          "count": 10,
-          "curated": false
-        },
-        {
-          "category": "meeting",
-          "label": "见面",
-          "count": 3,
-          "curated": false
+          "curated": true
         }
       ],
       "confidence": 99,
@@ -17057,7 +17038,6 @@
       "name": "汪梦湘",
       "aliases": [
         "东方望",
-        "东方望先",
         "于大江"
       ],
       "category": "intelligence_police",
@@ -17172,6 +17152,10 @@
           "count": 8
         },
         {
+          "cue": "先生",
+          "count": 5
+        },
+        {
           "cue": "请他",
           "count": 3
         },
@@ -17184,20 +17168,16 @@
           "count": 3
         },
         {
+          "cue": "所谓",
+          "count": 2
+        },
+        {
           "cue": "杂志",
           "count": 2
         },
         {
           "cue": "控告",
           "count": 2
-        },
-        {
-          "cue": "所谓",
-          "count": 2
-        },
-        {
-          "cue": "政治",
-          "count": 1
         }
       ],
       "evidence": [
@@ -17294,14 +17274,16 @@
         {
           "book": "李敖自传与回忆续集",
           "collection": "自传回忆类",
-          "chapter": "大登特登与一字不登",
-          "category": "publishing",
+          "chapter": "我是我自己的保人",
+          "category": "meeting",
           "score": 5,
           "cues": [
-            "杂志",
-            "控告"
+            "请他",
+            "朋友",
+            "文星",
+            "上校"
           ],
-          "snippet": "考采用。” 现在，对照起《前进》刊出这篇文章时前面的按语，一切就呼之欲出： 东方望先生这篇文章写于民国六十九年萧孟能控告李敖之后，当时萧李成为报章杂志的锋头人物，《民生报》原拟以专"
+          "snippet": "治犯，我的朋友全跑了。只剩下一个“朋友”，就是你们“仁爱教育实验所”的教导长汪梦湘上校，此公笔名东方望，给《文星》写过稿，你们一定要保，就请他保我罢。话传过去，汪梦湘跑来，说他有职在身，不便保我，我"
         }
       ]
     },
@@ -17542,10 +17524,10 @@
     {
       "name": "马克思",
       "aliases": [],
-      "category": "public_debate",
-      "categoryLabel": "公共论战",
-      "primaryCategory": "public_debate",
-      "primaryCategoryLabel": "公共论战",
+      "category": "spiritual",
+      "categoryLabel": "神交引用",
+      "primaryCategory": "spiritual",
+      "primaryCategoryLabel": "神交引用",
       "categories": [
         "spiritual"
       ],
@@ -17557,7 +17539,7 @@
           "category": "spiritual",
           "label": "神交引用",
           "count": 4,
-          "curated": false
+          "curated": true
         }
       ],
       "confidence": 99,
@@ -22131,7 +22113,6 @@
     {
       "name": "马宏祥",
       "aliases": [
-        "班马宏",
         "马戈"
       ],
       "category": "correspondence",
@@ -22341,19 +22322,6 @@
           "snippet": "提升文星的一个回忆 一九五八年，我做大学生的时候，就写信给马戈，谈到知识分子从事文化事业的构想，我说： 我感到“行有余力则以学文”那句老话真是不"
         },
         {
-          "book": "李敖回忆录",
-          "collection": "自传回忆类",
-          "chapter": "台大（1954-1959·19到24岁）",
-          "category": "meeting",
-          "score": 5,
-          "cues": [
-            "一起",
-            "同班",
-            "国民党"
-          ],
-          "snippet": "的刊物上，用科学方法，分析了蒋介石的“伟大”，他不但马屁拍得十分肉麻，还即时加入了国民党。他的同班马宏祥找到这篇文章，和我一起告诉殷海光。殷海光大为痛苦，他大概做梦也没想到，他传授的科学方法，竟被林"
-        },
-        {
           "book": "李敖自传与回忆",
           "collection": "自传回忆类",
           "chapter": "“北土非吾愿，东林怀我师”",
@@ -22374,6 +22342,18 @@
             "博士"
           ],
           "snippet": "人意耳。而赵先生看胡博士金面当不成问题——至于大作之精采处，渠定与姚先生一斑不解也。 马戈就是马宏祥，他在历史系比我高一班。他和我在知识上都是前进人物，对“姚老”、“赵先生”（赵铁寒）诸"
+        },
+        {
+          "book": "李敖回忆录",
+          "collection": "自传回忆类",
+          "chapter": "台大（1954-1959·19到24岁）",
+          "category": "spiritual",
+          "score": 3,
+          "cues": [
+            "读",
+            "像"
+          ],
+          "snippet": "那一套，即可受欢迎，但他们又何其狭窄。”在第二年1月6日写道：“夜读逻辑，决定好好学到殷海光，从马戈言，此不难也。像‘吸收’胡适一样，他没有多少好‘吸收’的。”这些日记，都表示了我有限度的佩服殷海"
         }
       ]
     },
@@ -25199,10 +25179,10 @@
     {
       "name": "老子",
       "aliases": [],
-      "category": "meeting",
-      "categoryLabel": "见面",
-      "primaryCategory": "meeting",
-      "primaryCategoryLabel": "见面",
+      "category": "spiritual",
+      "categoryLabel": "神交引用",
+      "primaryCategory": "spiritual",
+      "primaryCategoryLabel": "神交引用",
       "categories": [
         "spiritual"
       ],
@@ -25214,7 +25194,7 @@
           "category": "spiritual",
           "label": "神交引用",
           "count": 2,
-          "curated": false
+          "curated": true
         }
       ],
       "confidence": 99,
@@ -37091,30 +37071,30 @@
     {
       "name": "潘毓刚",
       "aliases": [],
-      "category": "veteran",
-      "categoryLabel": "老兵士官",
-      "primaryCategory": "veteran",
-      "primaryCategoryLabel": "老兵士官",
+      "category": "scientist",
+      "categoryLabel": "科学家",
+      "primaryCategory": "scientist",
+      "primaryCategoryLabel": "科学家",
       "categories": [
-        "veteran",
-        "military_figure",
+        "scientist",
+        "academic",
         "friendship"
       ],
       "categoryLabels": [
-        "老兵士官",
-        "军事人物",
+        "科学家",
+        "学术",
         "朋友"
       ],
       "categoryStats": [
         {
-          "category": "veteran",
-          "label": "老兵士官",
+          "category": "scientist",
+          "label": "科学家",
           "count": 3,
           "curated": true
         },
         {
-          "category": "military_figure",
-          "label": "军事人物",
+          "category": "academic",
+          "label": "学术",
           "count": 3,
           "curated": true
         },
@@ -39525,6 +39505,208 @@
             "大学"
           ],
           "snippet": "状元胡同的房子做盘缠，剩下的少量余款又在西城什么地方买了座小房子，同时买房的还有五叔和大娘的妹夫李德林，三所房子的形状结构都相同。那年大姐刚刚考进辅仁大学医预系，考大学在当年很不容易，大姐又是个既能"
+        }
+      ]
+    },
+    {
+      "name": "章太炎",
+      "aliases": [],
+      "category": "academic",
+      "categoryLabel": "学术",
+      "primaryCategory": "academic",
+      "primaryCategoryLabel": "学术",
+      "categories": [
+        "academic",
+        "spiritual"
+      ],
+      "categoryLabels": [
+        "学术",
+        "神交引用"
+      ],
+      "categoryStats": [
+        {
+          "category": "academic",
+          "label": "学术",
+          "count": 1,
+          "curated": true
+        },
+        {
+          "category": "spiritual",
+          "label": "神交引用",
+          "count": 3,
+          "curated": true
+        }
+      ],
+      "confidence": 99,
+      "occurrences": 7,
+      "relevantOccurrences": 7,
+      "bookCount": 3,
+      "chapterCount": 4,
+      "titleHits": 0,
+      "topBooks": [
+        {
+          "book": "李敖回忆录",
+          "count": 4
+        },
+        {
+          "book": "我最难忘的事和人",
+          "count": 2
+        },
+        {
+          "book": "李敖自传与回忆续集",
+          "count": 1
+        }
+      ],
+      "topChapters": [
+        {
+          "chapter": "李敖回忆录 / 口诛（1993-·58岁至今）",
+          "count": 3
+        },
+        {
+          "chapter": "我最难忘的事和人 / 我最难忘的一个国特",
+          "count": 2
+        },
+        {
+          "chapter": "李敖自传与回忆续集 / 文星与伪文星",
+          "count": 1
+        },
+        {
+          "chapter": "李敖回忆录 / 前程（1997-·62岁以后）",
+          "count": 1
+        }
+      ],
+      "collections": [
+        {
+          "collection": "自传回忆类",
+          "count": 7
+        }
+      ],
+      "cues": [
+        {
+          "cue": "将军",
+          "count": 3
+        },
+        {
+          "cue": "见",
+          "count": 2
+        },
+        {
+          "cue": "出版",
+          "count": 1
+        },
+        {
+          "cue": "杂志",
+          "count": 1
+        },
+        {
+          "cue": "文星",
+          "count": 1
+        },
+        {
+          "cue": "政府",
+          "count": 1
+        },
+        {
+          "cue": "序",
+          "count": 1
+        },
+        {
+          "cue": "史学",
+          "count": 1
+        },
+        {
+          "cue": "大学",
+          "count": 1
+        },
+        {
+          "cue": "国民党",
+          "count": 1
+        }
+      ],
+      "evidence": [
+        {
+          "book": "李敖回忆录",
+          "collection": "自传回忆类",
+          "chapter": "前程（1997-·62岁以后）",
+          "category": "case_prison",
+          "score": 7,
+          "cues": [
+            "见",
+            "研究",
+            "看守所",
+            "军法",
+            "将军"
+          ],
+          "snippet": "皇）之于《蒋介石国大现形记》、万亚刚之于《国共斗争的见闻》、宋希濂之于《鹰犬将军》、汪荣祖之于《章太炎研究》、谢聪敏之于《谈景美军法看守所》、谷正文之于《安全局机密文件》……种种努力，真可谓“无隐之"
+        },
+        {
+          "book": "李敖自传与回忆续集",
+          "collection": "自传回忆类",
+          "chapter": "文星与伪文星",
+          "category": "publishing",
+          "score": 7,
+          "cues": [
+            "出版",
+            "杂志",
+            "文星",
+            "政府"
+          ],
+          "snippet": "日本政府封门。一九一〇年，又出版了表面上在巴黎发行的第二十五期、第二十六期，引起原来民报的大功臣章太炎的不满，公开指斥复刊后的民报为伪民报。如今文星杂志复刊，我不忍视它为伪文星，但它若背弃李敖树立的"
+        },
+        {
+          "book": "李敖回忆录",
+          "collection": "自传回忆类",
+          "chapter": "口诛（1993-·58岁至今）",
+          "category": "academic",
+          "score": 6,
+          "cues": [
+            "史学",
+            "大学",
+            "国民党"
+          ],
+          "snippet": "写给他们每一位说： 东吴大学本有它声援言论自由的历史学风，这由“《苏报》案”前国学大师章太炎能被东吴请来讲学可以为证。虽然这一学风，几十年来被国民党消灭已尽。章校长请李敖来东吴，从不讳言以"
+        },
+        {
+          "book": "我最难忘的事和人",
+          "collection": "自传回忆类",
+          "chapter": "我最难忘的一个国特",
+          "category": "publishing",
+          "score": 5,
+          "cues": [
+            "序",
+            "将军"
+          ],
+          "snippet": "将军笔下的千言万语，一涉及戴笠，便隐恶扬善得一塌糊涂，这就“爱之适足以害之”了。 章太炎为冯自由《中华民国开国前革命史》写序，说有人劝他写出信史，他“犹豫未下笔”，为什么？因为“身不与"
+        },
+        {
+          "book": "我最难忘的事和人",
+          "collection": "自传回忆类",
+          "chapter": "我最难忘的一个国特",
+          "category": "meeting",
+          "score": 5,
+          "cues": [
+            "见",
+            "将军"
+          ],
+          "snippet": "不敢言；身与其事者，所见乾没忮戾之事亦多矣，书其美不隐其恶，或不足以为同志光宠，是以默而息也。”章太炎这位革命元勋为什么这样？原因就在于他无法“书其美不隐其恶”，结果连美也无法一书了。乔家才将军则正"
+        },
+        {
+          "book": "李敖回忆录",
+          "collection": "自传回忆类",
+          "chapter": "口诛（1993-·58岁至今）",
+          "category": "mentioned",
+          "score": 0,
+          "cues": [],
+          "snippet": "据我们的观察，如果能由孝慈校长主动出面聘请敖之先生到东吴来任教的话，是一件再合适不过的事，于公，章太炎、傅正二公曾任教于东吴，李敖之于东吴，有前例可循，任教一事，似无不可；于私，李先生和校长“两家渊"
+        },
+        {
+          "book": "李敖回忆录",
+          "collection": "自传回忆类",
+          "chapter": "口诛（1993-·58岁至今）",
+          "category": "mentioned",
+          "score": 0,
+          "cues": [],
+          "snippet": "。而李先生也曾受我们之邀莅临东吴来演讲，在演讲期间也到过校长办公室聊聊天，回拜校长，并赠送了一幅章太炎的字给校长，以示对校长来访的答谢。 于是这件“偶然”的事件，就在校长礼贤下士、敖之先"
         }
       ]
     },
@@ -42580,169 +42762,6 @@
             "政治"
           ],
           "snippet": "临文之末，我想到印度革命家尼赫鲁（Nehru）。尼赫鲁在做政治犯时候，曾为独生女儿——后来的甘地夫人（Mrs. Gandhi）——写过简明的世界史，就是1942年印出的Glimpses of"
-        }
-      ]
-    },
-    {
-      "name": "章太炎",
-      "aliases": [],
-      "category": "publishing",
-      "categoryLabel": "出版",
-      "primaryCategory": "publishing",
-      "primaryCategoryLabel": "出版",
-      "categories": [
-        "publishing"
-      ],
-      "categoryLabels": [
-        "出版"
-      ],
-      "categoryStats": [
-        {
-          "category": "publishing",
-          "label": "出版",
-          "count": 2,
-          "curated": false
-        }
-      ],
-      "confidence": 99,
-      "occurrences": 6,
-      "relevantOccurrences": 4,
-      "bookCount": 3,
-      "chapterCount": 4,
-      "titleHits": 0,
-      "topBooks": [
-        {
-          "book": "李敖回忆录",
-          "count": 3
-        },
-        {
-          "book": "我最难忘的事和人",
-          "count": 2
-        },
-        {
-          "book": "李敖自传与回忆续集",
-          "count": 1
-        }
-      ],
-      "topChapters": [
-        {
-          "chapter": "我最难忘的事和人 / 我最难忘的一个国特",
-          "count": 2
-        },
-        {
-          "chapter": "李敖回忆录 / 口诛（1993-·58岁至今）",
-          "count": 2
-        },
-        {
-          "chapter": "李敖自传与回忆续集 / 文星与伪文星",
-          "count": 1
-        },
-        {
-          "chapter": "李敖回忆录 / 前程（1997-·62岁以后）",
-          "count": 1
-        }
-      ],
-      "collections": [
-        {
-          "collection": "自传回忆类",
-          "count": 6
-        }
-      ],
-      "cues": [
-        {
-          "cue": "将军",
-          "count": 3
-        },
-        {
-          "cue": "见",
-          "count": 2
-        },
-        {
-          "cue": "出版",
-          "count": 1
-        },
-        {
-          "cue": "杂志",
-          "count": 1
-        },
-        {
-          "cue": "文星",
-          "count": 1
-        },
-        {
-          "cue": "政府",
-          "count": 1
-        },
-        {
-          "cue": "序",
-          "count": 1
-        },
-        {
-          "cue": "研究",
-          "count": 1
-        },
-        {
-          "cue": "看守所",
-          "count": 1
-        },
-        {
-          "cue": "军法",
-          "count": 1
-        }
-      ],
-      "evidence": [
-        {
-          "book": "李敖回忆录",
-          "collection": "自传回忆类",
-          "chapter": "前程（1997-·62岁以后）",
-          "category": "case_prison",
-          "score": 7,
-          "cues": [
-            "见",
-            "研究",
-            "看守所",
-            "军法",
-            "将军"
-          ],
-          "snippet": "皇）之于《蒋介石国大现形记》、万亚刚之于《国共斗争的见闻》、宋希濂之于《鹰犬将军》、汪荣祖之于《章太炎研究》、谢聪敏之于《谈景美军法看守所》、谷正文之于《安全局机密文件》……种种努力，真可谓“无隐之"
-        },
-        {
-          "book": "李敖自传与回忆续集",
-          "collection": "自传回忆类",
-          "chapter": "文星与伪文星",
-          "category": "publishing",
-          "score": 7,
-          "cues": [
-            "出版",
-            "杂志",
-            "文星",
-            "政府"
-          ],
-          "snippet": "日本政府封门。一九一〇年，又出版了表面上在巴黎发行的第二十五期、第二十六期，引起原来民报的大功臣章太炎的不满，公开指斥复刊后的民报为伪民报。如今文星杂志复刊，我不忍视它为伪文星，但它若背弃李敖树立的"
-        },
-        {
-          "book": "我最难忘的事和人",
-          "collection": "自传回忆类",
-          "chapter": "我最难忘的一个国特",
-          "category": "publishing",
-          "score": 5,
-          "cues": [
-            "序",
-            "将军"
-          ],
-          "snippet": "将军笔下的千言万语，一涉及戴笠，便隐恶扬善得一塌糊涂，这就“爱之适足以害之”了。 章太炎为冯自由《中华民国开国前革命史》写序，说有人劝他写出信史，他“犹豫未下笔”，为什么？因为“身不与"
-        },
-        {
-          "book": "我最难忘的事和人",
-          "collection": "自传回忆类",
-          "chapter": "我最难忘的一个国特",
-          "category": "meeting",
-          "score": 5,
-          "cues": [
-            "见",
-            "将军"
-          ],
-          "snippet": "不敢言；身与其事者，所见乾没忮戾之事亦多矣，书其美不隐其恶，或不足以为同志光宠，是以默而息也。”章太炎这位革命元勋为什么这样？原因就在于他无法“书其美不隐其恶”，结果连美也无法一书了。乔家才将军则正"
         }
       ]
     },
@@ -54663,9 +54682,7 @@
     },
     {
       "name": "张灏",
-      "aliases": [
-        "张灏跑"
-      ],
+      "aliases": [],
       "category": "academic",
       "categoryLabel": "学术",
       "primaryCategory": "academic",
@@ -54799,7 +54816,7 @@
             "台大",
             "哲学"
           ],
-          "snippet": "震虽然办《自由中国》，但是这杂志真正的灵魂人物是殷海光。殷海光是台大哲学系教授，我的文章发表后，张灏跑来找我说：“殷海光看了你的文章，想见见你。”张灏在历史系比我高两班，我认为他才气很弱，他是殷海光"
+          "snippet": "震虽然办《自由中国》，但是这杂志真正的灵魂人物是殷海光。殷海光是台大哲学系教授，我的文章发表后，张灏跑来找我说：“殷海光看了你的文章，想见见你。”张灏在历史系比我高两班，我认为他才气很弱，他是殷海"
         },
         {
           "book": "李敖回忆录",
@@ -63165,22 +63182,22 @@
     {
       "name": "武则天",
       "aliases": [],
-      "category": "public_debate",
-      "categoryLabel": "公共论战",
-      "primaryCategory": "public_debate",
-      "primaryCategoryLabel": "公共论战",
+      "category": "spiritual",
+      "categoryLabel": "神交引用",
+      "primaryCategory": "spiritual",
+      "primaryCategoryLabel": "神交引用",
       "categories": [
-        "public_debate"
+        "spiritual"
       ],
       "categoryLabels": [
-        "公共论战"
+        "神交引用"
       ],
       "categoryStats": [
         {
-          "category": "public_debate",
-          "label": "公共论战",
-          "count": 2,
-          "curated": false
+          "category": "spiritual",
+          "label": "神交引用",
+          "count": 1,
+          "curated": true
         }
       ],
       "confidence": 87,
@@ -84265,23 +84282,15 @@
       "primaryCategory": "fictional",
       "primaryCategoryLabel": "虚拟人物",
       "categories": [
-        "fictional",
-        "witness"
+        "fictional"
       ],
       "categoryLabels": [
-        "虚拟人物",
-        "证人见证"
+        "虚拟人物"
       ],
       "categoryStats": [
         {
           "category": "fictional",
           "label": "虚拟人物",
-          "count": 2,
-          "curated": true
-        },
-        {
-          "category": "witness",
-          "label": "证人见证",
           "count": 2,
           "curated": true
         }
@@ -84471,23 +84480,15 @@
       "primaryCategory": "fictional",
       "primaryCategoryLabel": "虚拟人物",
       "categories": [
-        "fictional",
-        "witness"
+        "fictional"
       ],
       "categoryLabels": [
-        "虚拟人物",
-        "证人见证"
+        "虚拟人物"
       ],
       "categoryStats": [
         {
           "category": "fictional",
           "label": "虚拟人物",
-          "count": 2,
-          "curated": true
-        },
-        {
-          "category": "witness",
-          "label": "证人见证",
           "count": 2,
           "curated": true
         }
@@ -114499,22 +114500,6 @@
     },
     {
       "person": "孙中山",
-      "category": "meeting",
-      "categoryLabel": "见面",
-      "count": 3,
-      "personOccurrences": 31,
-      "confidence": 99
-    },
-    {
-      "person": "孙中山",
-      "category": "publishing",
-      "categoryLabel": "出版",
-      "count": 10,
-      "personOccurrences": 31,
-      "confidence": 99
-    },
-    {
-      "person": "孙中山",
       "category": "spiritual",
       "categoryLabel": "神交引用",
       "count": 15,
@@ -116699,6 +116684,14 @@
     },
     {
       "person": "潘毓刚",
+      "category": "academic",
+      "categoryLabel": "学术",
+      "count": 3,
+      "personOccurrences": 8,
+      "confidence": 99
+    },
+    {
+      "person": "潘毓刚",
       "category": "friendship",
       "categoryLabel": "朋友",
       "count": 2,
@@ -116707,16 +116700,8 @@
     },
     {
       "person": "潘毓刚",
-      "category": "military_figure",
-      "categoryLabel": "军事人物",
-      "count": 3,
-      "personOccurrences": 8,
-      "confidence": 99
-    },
-    {
-      "person": "潘毓刚",
-      "category": "veteran",
-      "categoryLabel": "老兵士官",
+      "category": "scientist",
+      "categoryLabel": "科学家",
       "count": 3,
       "personOccurrences": 8,
       "confidence": 99
@@ -117138,6 +117123,22 @@
       "confidence": 97
     },
     {
+      "person": "章太炎",
+      "category": "academic",
+      "categoryLabel": "学术",
+      "count": 1,
+      "personOccurrences": 7,
+      "confidence": 99
+    },
+    {
+      "person": "章太炎",
+      "category": "spiritual",
+      "categoryLabel": "神交引用",
+      "count": 3,
+      "personOccurrences": 7,
+      "confidence": 99
+    },
+    {
       "person": "诸葛亮",
       "category": "spiritual",
       "categoryLabel": "神交引用",
@@ -117534,14 +117535,6 @@
       "category": "spiritual",
       "categoryLabel": "神交引用",
       "count": 3,
-      "personOccurrences": 6,
-      "confidence": 99
-    },
-    {
-      "person": "章太炎",
-      "category": "publishing",
-      "categoryLabel": "出版",
-      "count": 2,
       "personOccurrences": 6,
       "confidence": 99
     },
@@ -118643,9 +118636,9 @@
     },
     {
       "person": "武则天",
-      "category": "public_debate",
-      "categoryLabel": "公共论战",
-      "count": 2,
+      "category": "spiritual",
+      "categoryLabel": "神交引用",
+      "count": 1,
       "personOccurrences": 4,
       "confidence": 87
     },
@@ -121226,14 +121219,6 @@
       "confidence": 64
     },
     {
-      "person": "孔昭庆",
-      "category": "witness",
-      "categoryLabel": "证人见证",
-      "count": 2,
-      "personOccurrences": 2,
-      "confidence": 64
-    },
-    {
       "person": "孙华",
       "category": "friendship",
       "categoryLabel": "朋友",
@@ -121477,14 +121462,6 @@
       "person": "彭立云",
       "category": "fictional",
       "categoryLabel": "虚拟人物",
-      "count": 2,
-      "personOccurrences": 2,
-      "confidence": 64
-    },
-    {
-      "person": "彭立云",
-      "category": "witness",
-      "categoryLabel": "证人见证",
       "count": 2,
       "personOccurrences": 2,
       "confidence": 64
