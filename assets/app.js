@@ -43,6 +43,7 @@
     political_dissident: "#dc2626",
     intelligence_police: "#92400e",
     military_figure: "#7c2d12",
+    party_propaganda: "#be123c",
     underworld: "#525252",
     public_debate: "#ea580c",
     spiritual: "#377a38",
@@ -53,6 +54,10 @@
 
   function textIncludes(value, query) {
     return String(value || "").toLowerCase().includes(query);
+  }
+
+  function personAliasText(person) {
+    return (person.aliases || []).join(" ");
   }
 
   function identityLinks() {
@@ -77,6 +82,7 @@
     const query = state.query;
     return (
       textIncludes(person.name, query) ||
+      textIncludes(personAliasText(person), query) ||
       textIncludes((person.categoryLabels || [person.categoryLabel]).join(" "), query) ||
       person.cues.some((item) => textIncludes(item.cue, query)) ||
       person.evidence.some((item) => textIncludes(item.snippet, query) || textIncludes(item.chapter, query))
@@ -473,6 +479,10 @@
     $("detailName").textContent = person.name;
     $("detailMeta").textContent = `出现 ${person.occurrences} 次 · 可信度 ${person.confidence}`;
     const identities = (person.categoryStats || []).map((stat) => categoryPill(stat.category, stat.label, stat.count)).join("");
+    const aliases = (person.aliases || []).filter(Boolean);
+    const aliasLine = aliases.length
+      ? `<div class="aliasLine"><strong>别名/外号：</strong>${aliases.map((alias) => `<span>${alias}</span>`).join("")}</div>`
+      : "";
     const cues = person.cues.length ? person.cues.map((x) => `${x.cue}(${x.count})`).join("、") : "无明显线索";
     const evidence = person.evidence
       .map(
@@ -491,6 +501,7 @@
         <span>章节 ${person.chapterCount}</span>
       </div>
       <div class="identityList">${identities}</div>
+      ${aliasLine}
       <div><strong>线索：</strong>${cues}</div>
       <div class="evidence">${evidence || "暂无证据片段"}</div>
     `;

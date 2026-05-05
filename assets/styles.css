@@ -347,6 +347,27 @@ select:focus {
   background: #fbfcfc;
 }
 
+.aliasLine {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.aliasLine strong {
+  margin-right: 2px;
+  color: #1f2d33;
+}
+
+.aliasLine span {
+  padding: 3px 7px;
+  border: 1px solid #d7e1df;
+  border-radius: 6px;
+  background: #f4f8f7;
+  color: #334e4a;
+  line-height: 1.3;
+}
+
 .evidence {
   display: grid;
   gap: 10px;
