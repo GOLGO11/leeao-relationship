@@ -499,23 +499,38 @@ select:focus {
     grid-template-columns: 1fr;
   }
 
+  .networkShell,
+  .networkLayout,
+  .graphPane,
+  .detailPane,
+  .detailBody {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .graphPane {
     display: flex;
     min-height: 0;
     flex-direction: column;
     border-right: 0;
     border-bottom: 1px solid var(--line);
-    overflow: visible;
+    overflow: hidden;
   }
 
   #graphSvg {
     height: 620px;
     min-height: 0;
+    flex: 0 0 auto;
   }
 
   .legend {
     position: static;
+    left: auto;
+    bottom: auto;
     flex-wrap: nowrap;
+    width: 100%;
+    min-width: 0;
     max-width: none;
     margin: 0;
     border-right: 0;
@@ -526,6 +541,18 @@ select:focus {
     overflow-y: hidden;
     background: rgba(255, 255, 255, 0.96);
     scrollbar-width: thin;
+  }
+
+  .legend button {
+    flex: 0 0 auto;
+  }
+
+  .detailBody,
+  .evidence,
+  .evidence article,
+  .evidence h3,
+  .evidence p {
+    overflow-wrap: anywhere;
   }
 }
 
@@ -560,7 +587,4 @@ select:focus {
     padding: 9px 10px;
   }
 
-  .legend button {
-    flex: 0 0 auto;
-  }
 }
