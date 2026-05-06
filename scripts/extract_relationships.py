@@ -101,6 +101,7 @@ ALIASES = {
     "何王剑": "王剑芬",
     "华严": "严停云",
     "孟绝子": "孟祥柯",
+    "梦公": "孟祥柯",
     "李老太": "张桂贞",
     "李季恒": "李鼎彝",
     "玑衡": "李鼎彝",
@@ -164,6 +165,8 @@ ALIASES = {
     "钟会兄": "钟会",
     "李卓吾": "李贽",
     "花木兰": "木兰",
+    "吴老师": "吴俊才",
+    "王部长": "王世杰",
     "范文正": "范仲淹",
     "程正叔": "程颐",
     "陈文惠": "陈尧佐",
@@ -323,7 +326,6 @@ ALIASES = {
     "华柱": "高华柱",
     "施次长颜祥": "施颜祥",
     "Vicky": "李姿仪",
-    "用和": "汪用和",
     "苏亚孙": "翁苏亚孙",
     "小常": "常修治",
     "小蔡": "蔡志煌",
@@ -331,6 +333,17 @@ ALIASES = {
     "颜胖子": "颜清标",
     "沈二爷": "沈铭三",
     "殷师母": "夏君璐",
+    "明太祖": "朱元璋",
+    "萧衍": "梁武帝",
+    "柴荣": "周世宗",
+    "阮刻": "阮元",
+    "佛印和尚": "佛印",
+    "济公活佛": "济公",
+    "阎王爷": "阎王",
+    "阎王老爷": "阎王",
+    "Grove Cleveland": "克利夫兰",
+    "Grover Cleveland": "克利夫兰",
+    "Edward S. Bragg": "布瑞格",
 }
 
 ALWAYS_NAMES = {
@@ -451,6 +464,7 @@ NONSTANDARD_NAMES = {
     "苏院长贞昌", "谢院长长廷", "杜部长正胜", "薛局长石民", "张主任委员政雄",
     "陈总统水扁", "林委员郁方", "罗委员志明", "丁委员守中", "苏委员起",
     "费委员鸿泰", "李部长杰", "李部长天羽", "蔡副部长明宪", "高金素梅",
+    "杏如",
 }
 
 CURATED_IDENTITIES = {
@@ -464,7 +478,13 @@ CURATED_IDENTITIES = {
     "袁世凯": ["politician", "spiritual"],
     "韩信": ["military_figure", "spiritual"],
     "蔡九": ["fictional"],
+    "黄药师": ["fictional"],
+    "洪七公": ["fictional"],
     "释迦牟尼": ["religion", "spiritual"],
+    "阿弥陀佛": ["religion", "spiritual"],
+    "观世音": ["religion", "spiritual"],
+    "文殊菩萨": ["religion", "spiritual"],
+    "地藏菩萨": ["religion", "spiritual"],
     "伏羲": ["religion", "spiritual"],
     "女娲": ["religion", "spiritual"],
     "王母娘娘": ["religion", "spiritual"],
@@ -1003,6 +1023,32 @@ CURATED_IDENTITIES = {
     "杜本": ["academic", "spiritual"],
     "孔尚任": ["publishing", "spiritual"],
     "李慎言": ["spiritual"],
+    "林琴南": ["academic", "publishing", "spiritual"],
+    "利玛窦": ["religion", "academic", "spiritual"],
+    "左舜生": ["politician", "publishing", "public_debate", "spiritual"],
+    "梁启超": ["academic", "politician", "publishing", "spiritual"],
+    "宋太祖": ["politician", "military_figure", "spiritual"],
+    "宋太宗": ["politician", "spiritual"],
+    "巴克莱": ["academic", "spiritual"],
+    "梁漱溟": ["academic", "spiritual", "public_debate"],
+    "汤因比": ["academic", "spiritual"],
+    "包德甫": ["media", "spiritual"],
+    "吴相湘": ["academic", "spiritual"],
+    "马通伯": ["academic", "spiritual"],
+    "贾谊": ["academic", "politician", "spiritual"],
+    "唐太宗": ["politician", "military_figure", "spiritual"],
+    "黑格尔": ["academic", "spiritual"],
+    "韦政通": ["academic", "public_debate", "spiritual"],
+    "方东美": ["academic", "public_debate", "spiritual"],
+    "王浩": ["academic", "spiritual"],
+    "高本汉": ["academic", "spiritual"],
+    "熊十力": ["academic", "spiritual"],
+    "梁巨川": ["academic", "politician", "spiritual"],
+    "左宗棠": ["military_figure", "politician", "spiritual"],
+    "黄蔴": ["politician", "spiritual"],
+    "蒋匀田": ["publishing", "spiritual"],
+    "居励今": ["academic", "spiritual"],
+    "何世桢": ["politician", "spiritual"],
     "张炳华": ["intelligence_police", "politician", "prison_admin"],
     "李宗仁": ["politician", "military_figure"],
     "吴毅安": ["military_figure", "politician"],
@@ -1744,6 +1790,38 @@ CURATED_IDENTITIES = {
     "桓温": ["politician", "military_figure", "spiritual"],
     "周武王": ["politician", "spiritual"],
     "子路": ["academic", "spiritual"],
+    "阿登纳": ["politician", "spiritual"],
+    "戴高乐": ["politician", "military_figure", "spiritual"],
+    "巴斯噶": ["academic", "spiritual"],
+    "佛印": ["religion", "spiritual"],
+    "济公": ["religion", "fictional", "spiritual"],
+    "梁武帝": ["politician", "religion", "spiritual"],
+    "张献忠": ["military_figure", "politician", "spiritual"],
+    "李定国": ["military_figure", "politician", "spiritual"],
+    "破山和尚": ["religion", "spiritual"],
+    "周世宗": ["politician", "spiritual"],
+    "阎王": ["religion", "spiritual"],
+    "杨贵妃": ["spiritual"],
+    "周泽": ["politician", "spiritual"],
+    "毛宝": ["military_figure", "spiritual"],
+    "孔愉": ["politician", "spiritual"],
+    "宋祁": ["academic", "politician", "spiritual"],
+    "宋郊": ["academic", "spiritual"],
+    "屈师": ["spiritual"],
+    "隋侯": ["spiritual"],
+    "王永庆": ["spiritual"],
+    "张之洞": ["politician", "academic", "publishing", "spiritual"],
+    "黄尧圃": ["academic", "publishing", "spiritual"],
+    "刘国钧": ["academic", "publishing", "spiritual"],
+    "杜定友": ["academic", "publishing", "spiritual"],
+    "胡三省": ["academic", "publishing", "spiritual"],
+    "阮元": ["politician", "academic", "publishing", "spiritual"],
+    "黄善夫": ["publishing", "spiritual"],
+    "金庸": ["publishing", "spiritual"],
+    "鲁智深": ["fictional"],
+    "布瑞格": ["military_figure", "spiritual"],
+    "克利夫兰": ["politician", "spiritual"],
+    "杏如": ["correspondence", "friendship", "mentioned"],
     "神农": ["religion", "medical_care", "spiritual"],
     "黄帝": ["religion", "medical_care", "spiritual"],
     "巫彭": ["medical_care", "spiritual"],
@@ -1805,6 +1883,7 @@ CURATED_IDENTITIES = {
     "艾玫": ["correspondence", "in_law"],
     "宋美龄": ["politician", "public_debate"],
     "居浩然": ["correspondence", "friendship", "academic", "publishing", "meeting"],
+    "吴忠信（党国元老）": ["politician", "spiritual"],
     "余纪忠": ["media", "publishing", "meeting", "friendship", "public_debate"],
     "张世民": ["classmate_colleague", "friendship", "meeting"],
     "蒋梦麟": ["academic", "politician", "meeting", "public_debate"],
@@ -1996,6 +2075,18 @@ BAD_ENDINGS = (
 )
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
+    "和团思", "沙文主", "和文化", "经济自", "强盗", "强盗来", "国赌", "黄帝子",
+    "全国代", "全国委", "文章写", "和尚吃", "常识", "华尚有", "安排", "苍生问",
+    "段革命", "国文老", "干黄金", "时演出", "金观", "文学只", "汤武制",
+    "从广义", "封建势", "时顽固", "怀抱阴", "党组织", "国代表", "经世致",
+    "国家政", "山门", "文老师", "全地带", "曾经做", "马基氏", "国皇家",
+    "时告诉", "牛马同", "罗素介",
+    "经济力", "于唐朝", "卫生扯", "宣布组", "居民", "时报等", "解发表",
+    "诸亲好", "闻国政", "于今世", "包括执", "国洛克", "居吴两", "成败参",
+    "曾宣布", "阎王老", "时人奋", "国招待", "那种国",
+    "曾左胡", "李郑之", "国语罗", "冷漠", "纪念胡", "应该怎", "简直可",
+    "时遭遇", "从理想", "班受训", "都高出", "国家观", "于接受",
+    "包括", "国奖券",
     "红色", "房到十", "从头", "那家伙", "阴险无", "安处押", "高院刑",
     "常业", "谢两位", "党出身", "胡适说", "查肛门", "张坏嘴",
     "广告", "怀念周", "方封杀", "别再做", "台独英", "殷门弟", "那儿",
@@ -2377,6 +2468,14 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
     return snippet
 
 
+def canonical_name(raw_name: str, ctx: str) -> str:
+    if raw_name == "吴忠信" and any(
+        marker in ctx for marker in ("党国元老", "吴申叔", "首都警察总监", "居浩然大少爷")
+    ):
+        return "吴忠信（党国元老）"
+    return ALIASES.get(raw_name, raw_name)
+
+
 def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]:
     scores = Counter()
     hits: list[str] = []
@@ -2533,6 +2632,8 @@ def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
 
 def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> bool:
     ctx = context_window(text, start, end)
+    if name == "华严":
+        return "华严经" in ctx
     if name == "老子":
         real_markers = (
             "《老子》", "老子曰", "老子说", "道德经", "老庄", "老子李耳",
@@ -2565,6 +2666,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return "单于连战" in ctx or "与单于连战" in ctx
     if name == "王充":
         return "王世充" in ctx
+    if name == "汪用和":
+        return "用和平方式" in ctx
     if name == "三娘":
         return "三娘教子" not in ctx
     if name == "木兰":
@@ -2574,7 +2677,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "出发到江南", "守江南", "大江南北", "曲尽江南美女", "哀江南赋",
             "江南·江南·哀江南", "《江南·江南", "《哀江南", "江南并发症",
             "连江南都保不住", "江南廖家楠", "江南世代儒医", "江南暖",
-            "江南饱", "江南恶", "江南好", "到江南", "下江南", "思江南",
+            "江南饱", "江南恶", "江南好", "江南小国", "到江南", "下江南", "思江南",
         )
         return any(marker in ctx for marker in false_markers)
     if name == "张先":
@@ -2601,12 +2704,12 @@ def extract_from_text(
                 continue
             if is_contextual_false_positive(name, text, match.start(), match.end()):
                 continue
-            name = ALIASES.get(name, name)
+            ctx = context_window(text, match.start(), match.end())
+            name = canonical_name(name, ctx)
             match_key = (match.start(), match.end(), name)
             if match_key in seen_matches:
                 continue
             seen_matches.add(match_key)
-            ctx = context_window(text, match.start(), match.end())
             after = text[match.end(): match.end() + 6]
             before = text[match.start() - 1: match.start()] if match.start() else ""
             pre12 = text[max(0, match.start() - 12): match.start()]
