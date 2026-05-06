@@ -65,7 +65,7 @@ SPIRITUAL_ONLY = {
 }
 
 FICTIONAL_CHARACTERS = {
-    "西门庆", "潘金莲", "武松", "孙悟空", "猪八戒", "唐僧", "沙僧",
+    "西门庆", "潘金莲", "武松", "孙悟空", "猪八戒", "唐僧", "沙僧", "四大天王",
     "贾宝玉", "林黛玉", "薛宝钗", "鲁智深", "林冲", "宋江", "李逵",
     "哈姆雷特", "堂吉诃德", "浮士德", "罗密欧", "朱丽叶", "夏洛克",
     "福尔摩斯", "阿Q", "孔乙己", "祥林嫂", "薛蟠", "莺莺",
@@ -221,6 +221,7 @@ ALIASES = {
     "孙行者": "孙悟空",
     "齐天大圣": "孙悟空",
     "孙猴": "孙悟空",
+    "叶青": "任卓宣",
     "观世音菩萨": "观世音",
     "二郎显圣真君": "二郎神",
     "则天皇后": "武则天",
@@ -236,6 +237,7 @@ ALIASES = {
     "孔丘": "孔子",
     "孔圣": "孔子",
     "孟夫子": "孟子",
+    "巴扎洛夫": "巴札洛夫",
     "张子野": "张先",
     "袁子才": "袁枚",
     "纪晓岚": "纪昀",
@@ -585,7 +587,13 @@ NONSTANDARD_NAMES = {
     "苏院长贞昌", "谢院长长廷", "杜部长正胜", "薛局长石民", "张主任委员政雄",
     "陈总统水扁", "林委员郁方", "罗委员志明", "丁委员守中", "苏委员起",
     "费委员鸿泰", "李部长杰", "李部长天羽", "蔡副部长明宪", "高金素梅",
-    "杏如",
+    "杏如", "李焕燊",
+    "黄富三", "曹德宣", "张化民", "程石泉", "罗刚", "张金鉴", "莫辛", "杜果人",
+    "周弘然", "田尚明", "李王粲", "许大受", "张祥普", "孙家鼐", "刘文正",
+    "杨光先", "梁章钜", "艾森豪威尔", "维辛斯基", "巴札洛夫", "四大天王",
+    "唐君毅", "张君劢", "田培林", "方子卫", "吴曼君", "王集丛", "赵一苇",
+    "廖维藩", "黎晋伟", "杨树人", "余又荪", "刘百闵", "张佛泉", "胡礼垣",
+    "郭嵩焘", "胡林翼", "柯伦泰",
 }
 
 CURATED_IDENTITIES = {
@@ -603,7 +611,7 @@ CURATED_IDENTITIES = {
     "洪七公": ["fictional"],
     "释迦牟尼": ["religion", "spiritual"],
     "阿弥陀佛": ["religion", "spiritual"],
-    "观世音": ["religion", "spiritual"],
+    "观世音": ["fictional", "religion", "spiritual"],
     "文殊菩萨": ["religion", "spiritual"],
     "地藏菩萨": ["religion", "spiritual"],
     "伏羲": ["religion", "spiritual"],
@@ -938,7 +946,7 @@ CURATED_IDENTITIES = {
     "敖弟": ["family", "correspondence"],
     "王世杰": ["politician", "academic_admin", "public_debate", "public_funds", "meeting", "property_finance"],
     "王克敏": ["politician"],
-    "魏廷朝": ["case_prison", "political_dissident", "human_rights", "friendship", "meeting"],
+    "魏廷朝": ["case_prison", "political_dissident", "human_rights", "friendship", "meeting", "publishing", "public_debate"],
     "龚德柏": ["political_dissident", "media", "indoctrination"],
     "赵铁寒": ["academic", "publishing"],
     "罗家伦": ["academic", "politician"],
@@ -990,7 +998,7 @@ CURATED_IDENTITIES = {
     "沈醉": ["intelligence_police", "military_figure", "publishing"],
     "杜聿明": ["military_figure"],
     "张永亭": ["veteran", "military_figure", "friendship", "meeting"],
-    "潘毓刚": ["scientist", "academic", "friendship"],
+    "潘毓刚": ["scientist", "academic", "friendship", "correspondence", "public_debate"],
     "刘济民": ["media", "publishing"],
     "徐菊生": ["veteran", "military_figure", "friendship", "meeting"],
     "周忠明": ["veteran", "military_figure", "friendship", "meeting"],
@@ -1120,6 +1128,9 @@ CURATED_IDENTITIES = {
     "陈瑞甫": ["legal_official", "litigation"],
     "刁德善": ["case_prison", "political_dissident"],
     "李焕": ["politician", "party_propaganda"],
+    "李焕燊": ["publishing", "public_debate"],
+    "钱玄同": ["academic", "publishing", "spiritual"],
+    "吴景超": ["academic", "public_debate"],
     "陈绥民": ["party_propaganda", "politician", "meeting"],
     "李天培": ["academic", "classmate_colleague", "friendship", "meeting"],
     "刘必跟": ["litigation", "witness"],
@@ -1149,6 +1160,57 @@ CURATED_IDENTITIES = {
     "郭紫峻": ["intelligence_police", "politician"],
     "刘启瑞": ["intelligence_police", "academic"],
     "徐复观": ["academic", "publishing", "litigation", "public_debate", "spiritual"],
+    "任卓宣": ["politician", "party_propaganda", "publishing", "public_debate"],
+    "廖维藩": ["politician", "public_debate"],
+    "黎晋伟": ["public_debate"],
+    "陈序经": ["academic", "publishing", "public_debate", "spiritual"],
+    "张铁君": ["academic", "academic_admin", "public_debate"],
+    "曹德宣": ["public_debate"],
+    "黄富三": ["public_debate"],
+    "许登源": ["publishing", "public_debate"],
+    "洪成完": ["public_debate"],
+    "张化民": ["public_debate"],
+    "程石泉": ["public_debate"],
+    "罗刚": ["academic", "public_debate"],
+    "张金鉴": ["academic", "public_debate"],
+    "周若木": ["publishing", "public_debate"],
+    "莫辛": ["publishing", "public_debate"],
+    "严灵峰": ["academic", "publishing", "public_debate"],
+    "杜果人": ["publishing", "public_debate"],
+    "梁容若": ["academic", "publishing", "public_debate"],
+    "沈国钧": ["publishing", "public_debate"],
+    "田尚明": ["public_debate"],
+    "杨树人": ["publishing", "public_debate"],
+    "吴心柳": ["publishing", "correspondence", "public_debate"],
+    "余又荪": ["academic", "public_debate"],
+    "刘百闵": ["academic", "public_debate"],
+    "张佛泉": ["academic", "publishing", "public_debate", "spiritual"],
+    "邱有珍": ["politician", "public_debate"],
+    "谢扶雅": ["academic", "publishing", "public_debate", "spiritual"],
+    "吴康": ["academic", "public_debate", "spiritual"],
+    "周弘然": ["academic", "publishing", "public_debate"],
+    "唐君毅": ["academic", "public_debate", "spiritual"],
+    "张君劢": ["academic", "politician", "public_debate", "spiritual"],
+    "田培林": ["academic", "public_debate"],
+    "方子卫": ["academic", "public_debate"],
+    "吴曼君": ["academic", "public_debate"],
+    "王集丛": ["academic", "public_debate"],
+    "赵一苇": ["public_debate"],
+    "胡礼垣": ["academic", "spiritual"],
+    "郭嵩焘": ["politician", "academic", "spiritual"],
+    "胡林翼": ["politician", "military_figure", "academic", "spiritual"],
+    "李王粲": ["academic", "spiritual"],
+    "许大受": ["academic", "spiritual"],
+    "张祥普": ["academic", "spiritual"],
+    "孙家鼐": ["politician", "academic", "spiritual"],
+    "刘文正": ["academic", "spiritual"],
+    "杨光先": ["academic", "spiritual"],
+    "梁章钜": ["academic", "spiritual"],
+    "艾森豪威尔": ["politician", "military_figure", "spiritual"],
+    "维辛斯基": ["legal_official", "politician", "spiritual"],
+    "柯伦泰": ["politician", "spiritual"],
+    "巴札洛夫": ["fictional"],
+    "四大天王": ["fictional", "religion"],
     "徐武军": ["meeting", "academic"],
     "徐熙光": ["academic", "academic_admin"],
     "孙武": ["spiritual", "military_figure"],
@@ -1377,7 +1439,7 @@ CURATED_IDENTITIES = {
     "贺元": ["intelligence_police", "friendship", "meeting"],
     "杨遇春": ["intelligence_police", "friendship", "meeting"],
     "尚望": ["intelligence_police", "friendship", "meeting"],
-    "严灵峰": ["intelligence_police", "friendship", "meeting"],
+    "严灵峰": ["academic", "publishing", "public_debate"],
     "柯建安": ["intelligence_police", "friendship", "meeting"],
     "程克祥": ["intelligence_police", "friendship", "meeting"],
     "萧勃": ["intelligence_police", "friendship", "meeting"],
@@ -2436,7 +2498,7 @@ CURATED_IDENTITIES = {
     "江青": ["spiritual"],
     "周才蔚": ["correspondence", "friendship"],
     "黄祝贵": ["teacher_student", "academic"],
-    "吴心柳": ["publishing", "correspondence", "friendship"],
+    "吴心柳": ["publishing", "correspondence", "public_debate"],
     "简志信": ["friendship", "property_finance"],
     "简瑞甫": ["friendship", "property_finance"],
     "洪金立": ["correspondence", "friendship"],
@@ -2505,7 +2567,7 @@ CURATED_IDENTITIES = {
     "周道济": ["indoctrination"],
     "王洸": ["indoctrination"],
     "屠炳春": ["indoctrination"],
-    "任卓宣": ["indoctrination", "public_debate"],
+    "任卓宣": ["politician", "party_propaganda", "publishing", "public_debate"],
     "柴松林": ["indoctrination"],
     "魏萼": ["indoctrination"],
     "邬昆如": ["indoctrination"],
@@ -2674,6 +2736,14 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "莫属", "汪汪", "游戏", "欧八桑",
+    "于文化", "文化问", "那位作", "文章来", "别强调", "方块字", "于最近",
+    "方法训", "文化工", "从胡适", "解答", "马拉松", "危险性", "叶青又",
+    "全盘复", "和见解", "欧化主", "国粹之", "国运", "东西之", "别人所",
+    "文化真", "宣传成", "文化主", "廉价西", "时用作", "家周扬", "和李先",
+    "经典", "国人所", "国教育", "欧洲人", "文化之", "和李敖", "都非常",
+    "和叫嚣", "解精辟", "解论述", "解仍有", "却只写", "时更应",
+    "魏之友", "席指导", "左右袒", "阿尔伯特", "于李敖", "别人有", "都会知",
+    "水灾之", "祖宗八", "相信人",
     "和团思", "沙文主", "和文化", "经济自", "强盗", "强盗来", "国赌", "黄帝子",
     "全国代", "全国委", "文章写", "和尚吃", "常识", "华尚有", "安排", "苍生问",
     "段革命", "国文老", "干黄金", "时演出", "金观", "文学只", "汤武制",
@@ -3312,6 +3382,18 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return any(marker in ctx for marker in ("母猫", "波斯种", "波斯猫", "波波", "猫为咪咪"))
     if name == "白脸":
         return "外号" not in ctx and "叫黄永寿" not in ctx
+    if name == "黄富":
+        return "黄富三" in ctx or "黄富美" in ctx
+    if name == "周弘":
+        return "周弘然" in ctx or "周弘道" in ctx
+    if name == "艾森豪":
+        return "艾森豪威尔" in ctx
+    if name == "辛斯基":
+        return "维辛斯基" in ctx
+    if name == "李焕":
+        return "李焕燊" in ctx or "李焕升" in ctx
+    if name == "文强":
+        return "该文强调" in ctx
     if name == "李老太":
         return any(marker in ctx for marker in ("李鸿章", "大脚夫人", "西太后", "脚大", "大脚"))
     if name == "新公":
