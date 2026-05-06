@@ -68,7 +68,7 @@ FICTIONAL_CHARACTERS = {
     "西门庆", "潘金莲", "武松", "孙悟空", "猪八戒", "唐僧", "沙僧",
     "贾宝玉", "林黛玉", "薛宝钗", "鲁智深", "林冲", "宋江", "李逵",
     "哈姆雷特", "堂吉诃德", "浮士德", "罗密欧", "朱丽叶", "夏洛克",
-    "福尔摩斯", "阿Q", "孔乙己", "祥林嫂",
+    "福尔摩斯", "阿Q", "孔乙己", "祥林嫂", "薛蟠", "莺莺",
 }
 
 ALIASES = {
@@ -82,6 +82,9 @@ ALIASES = {
     "于大江": "汪梦湘",
     "沈局长": "沈之岳",
     "马戈": "马宏祥",
+    "宏老": "马宏祥",
+    "新公": "景新汉",
+    "老景": "景新汉",
     "施启杨": "施启扬",
     "詹永傑": "詹永杰",
     "景生二": "李景生",
@@ -178,6 +181,14 @@ ALIASES = {
     "孟夫子": "孟子",
     "张子野": "张先",
     "袁子才": "袁枚",
+    "纪晓岚": "纪昀",
+    "晓岚": "纪昀",
+    "微之": "元稹",
+    "李敖巴特拉": "克利奥帕特拉",
+    "罗蜜欧": "罗密欧",
+    "薛幡": "薛蟠",
+    "Swift": "斯威夫特",
+    "大约农": "曾约农",
     "曹孟德": "曹操",
     "庄周": "庄子",
     "生公": "竺道生",
@@ -200,6 +211,15 @@ ALIASES = {
     "钱复同": "钱复",
     "柏杨师": "柏杨",
     "李焕先": "李焕",
+    "孟能": "萧孟能",
+    "干事袁": "袁贻瑾",
+    "胡适任": "胡适",
+    "张群托": "张群",
+    "保轩": "赵保轩",
+    "赵主任保轩": "赵保轩",
+    "主任赵": "赵保轩",
+    "总干事袁": "袁贻瑾",
+    "院长王": "王世杰",
     "周玉寇": "周玉蔻",
     "徐佛观": "徐复观",
     "张炎元": "张炳华",
@@ -717,7 +737,7 @@ CURATED_IDENTITIES = {
     "陈维昭": ["academic", "correspondence", "public_debate"],
     "叶明勋": ["media", "in_law"],
     "敖弟": ["family", "correspondence"],
-    "王世杰": ["politician", "meeting"],
+    "王世杰": ["politician", "academic_admin", "public_debate", "public_funds", "meeting", "property_finance"],
     "王克敏": ["politician"],
     "魏廷朝": ["case_prison", "political_dissident", "human_rights", "friendship", "meeting"],
     "龚德柏": ["political_dissident", "media", "indoctrination"],
@@ -732,6 +752,7 @@ CURATED_IDENTITIES = {
     "蒋复璁": ["academic"],
     "陈鼓应": ["classmate_colleague"],
     "马宏祥": ["correspondence", "classmate_colleague", "publishing"],
+    "景新汉": ["classmate_colleague", "meeting", "correspondence"],
     "林海音": ["correspondence", "publishing"],
     "王文俊": ["in_law"],
     "王正廷": ["politician"],
@@ -1131,7 +1152,8 @@ CURATED_IDENTITIES = {
     "李伋": ["spiritual"],
     "李玄伯": ["teacher_student", "academic"],
     "罗志希": ["publishing", "politician"],
-    "赵元任": ["academic"],
+    "赵元任": ["academic", "correspondence"],
+    "陈之迈": ["academic", "correspondence"],
     "李德林": ["in_law"],
     "尹女士": ["in_law", "nickname"],
     "王家桢": ["politician"],
@@ -1222,7 +1244,7 @@ CURATED_IDENTITIES = {
     "李宏基": ["academic"],
     "孙英善": ["classmate_colleague"],
     "周弘": ["classmate_colleague", "meeting"],
-    "景新汉": ["classmate_colleague", "meeting"],
+    "景新汉": ["classmate_colleague", "meeting", "correspondence"],
     "白绍康": ["classmate_colleague", "meeting"],
     "华昌平": ["classmate_colleague", "meeting"],
     "李华俊": ["classmate_colleague", "meeting"],
@@ -1492,6 +1514,22 @@ CURATED_IDENTITIES = {
     "卡门": ["fictional"],
     "穆万森": ["social_case", "spiritual"],
     "袁枚": ["academic", "spiritual"],
+    "盘古": ["spiritual"],
+    "亚当": ["religion", "spiritual"],
+    "克利奥帕特拉": ["politician", "spiritual"],
+    "王昭君": ["spiritual"],
+    "爱德华八世": ["politician", "spiritual"],
+    "唐明皇": ["politician", "spiritual"],
+    "吴三桂": ["politician", "military_figure", "spiritual"],
+    "纪昀": ["academic", "spiritual"],
+    "元稹": ["academic", "spiritual"],
+    "孙原湘": ["academic", "spiritual"],
+    "陈文述": ["academic", "spiritual"],
+    "和凝": ["academic", "spiritual"],
+    "韩偓": ["academic", "spiritual"],
+    "柳下惠": ["spiritual"],
+    "蒙田": ["academic", "spiritual"],
+    "伊斯美": ["politician", "spiritual"],
     "思文君": ["spiritual"],
     "彼得潘": ["fictional"],
     "辛八达": ["fictional"],
@@ -1604,6 +1642,28 @@ CURATED_IDENTITIES = {
     "黎锦晖": ["publishing", "spiritual", "public_debate"],
     "晏阳初": ["academic", "spiritual"],
     "谢瀛洲": ["academic", "legal_official", "spiritual"],
+    "袁贻瑾": ["academic_admin", "correspondence", "public_funds", "public_debate"],
+    "赵保轩": ["academic_admin", "public_funds", "public_debate"],
+    "王志维": ["academic_admin", "public_debate"],
+    "余繁初": ["academic_admin", "public_debate"],
+    "潘光宇": ["correspondence", "public_funds", "public_debate"],
+    "王振球": ["academic_admin", "public_funds", "public_debate"],
+    "王海龙": ["institutional_security", "witness", "public_funds", "public_debate"],
+    "李满元": ["institutional_security", "witness", "public_funds", "public_debate"],
+    "刘继琨": ["institutional_security", "witness", "public_funds", "public_debate"],
+    "阮维周": ["academic_admin", "public_funds", "public_debate"],
+    "乔一凡": ["politician", "public_debate"],
+    "乔龙文": ["public_debate", "public_funds"],
+    "刘世超": ["public_debate"],
+    "曹汤三": ["public_debate", "spiritual"],
+    "林森": ["politician", "public_debate", "spiritual"],
+    "曾国藩": ["politician", "military_figure", "spiritual"],
+    "洪秀全": ["politician", "religion", "spiritual"],
+    "曾约农": ["religion", "academic", "spiritual"],
+    "曾宝荪": ["religion", "spiritual"],
+    "朱骏声": ["academic", "spiritual"],
+    "蓟子训": ["spiritual"],
+    "张默君": ["politician", "meeting"],
     "李势": ["politician", "spiritual"],
     "穆罕默德": ["religion", "spiritual"],
     "尼采": ["spiritual"],
@@ -1708,6 +1768,11 @@ PROPERTY_FINANCE_CUES = (
     "过户", "委任书", "协议书", "债权", "收益权", "保证金", "存款", "支票",
 )
 
+PUBLIC_FUNDS_CUES = (
+    "公款", "公帑", "公账", "经费", "回扣", "出款", "国库支票", "实报实销",
+    "特支费", "报公账", "扣回佣", "福利金", "归公",
+)
+
 TRUST_PROPERTY_CUES = (
     "信托", "信托关系", "信托意思", "意思表示中止", "天母静庐", "权状", "存证信",
 )
@@ -1734,6 +1799,11 @@ ACADEMIC_CUES = (
     "研究", "学者", "博士", "学术", "史学", "传记", "论文", "大学", "台大", "北大",
 )
 
+ACADEMIC_ADMIN_CUES = (
+    "中央研究院", "本院", "贵院", "院方", "院长", "总干事", "总务主任", "总务科",
+    "事务", "学人宿舍", "最高学术机构",
+)
+
 MEDIA_CUES = (
     "记者", "访谈", "采访", "访问", "受访", "报导", "报道", "报人", "副总编辑",
     "记者招待会", "节目", "电视", "广播", "导演",
@@ -1749,7 +1819,7 @@ LAWYER_COUNSEL_CUES = (
 
 PRISON_ADMIN_CUES = (
     "司法行政部", "法务部", "监狱", "看守所", "典狱长", "所长", "副所长", "秘书",
-    "课长", "主任", "名籍室", "卫生课", "福利社", "戒护课长", "台北监狱", "台北看守所",
+    "课长", "名籍室", "卫生课", "福利社", "戒护课长", "台北监狱", "台北看守所",
 )
 
 PRISON_GUARD_CUES = (
@@ -1787,6 +1857,10 @@ PUBLIC_DEBATE_CUES = (
 
 PARTY_PROPAGANDA_CUES = (
     "宣传", "国民宣传", "中央委员会第四组", "第四组主任", "党务", "党限", "查禁", "封闭文星",
+)
+
+INSTITUTIONAL_SECURITY_CUES = (
+    "驻卫警员", "警卫室", "治安工作", "院内", "警卫室人员",
 )
 
 SPIRITUAL_CUES = (
@@ -1831,6 +1905,8 @@ STOP_NAMES = {
     "国人民", "计较", "冷冷地", "方神父", "司机", "许可", "终身", "能获得",
     "明显", "车子", "从事国", "从速解", "李阿姨", "张太太",
     "和英国", "文物之", "时看到", "应该如", "时人人",
+    "时代", "蒙混舞", "任事务", "都予退", "和平待", "经手", "却住进",
+    "卫警员", "时正告",
     "李敖", "李先", "李大师", "李先生", "李语", "李文", "李书", "李政", "王法", "王国", "王军",
     "中国人", "台湾人", "美国人", "日本人", "英国人", "国民党", "民进党", "共产党", "新闻界",
     "文化界", "政治犯", "外省人", "台湾话", "负责人", "发行人", "总编辑", "编者略", "不自由",
@@ -2070,11 +2146,13 @@ CATEGORY_LABELS = {
     "romance": "情感",
     "property_finance": "财产债务",
     "trust_property": "财产信托",
+    "public_funds": "公款经费",
     "torture_victim": "刑求受害",
     "torture_actor": "刑求人员",
     "witness": "证人见证",
     "publishing": "出版",
     "academic": "学术",
+    "academic_admin": "学术行政",
     "scientist": "科学家",
     "media": "媒体",
     "household_staff": "家中雇员",
@@ -2098,6 +2176,7 @@ CATEGORY_LABELS = {
     "intelligence_police": "情治警务",
     "military_figure": "军事人物",
     "party_propaganda": "党务宣传",
+    "institutional_security": "机构警卫",
     "underworld": "江湖人物",
     "public_debate": "公共论战",
     "spiritual": "神交引用",
@@ -2122,10 +2201,26 @@ def read_text(path: Path) -> str:
     data = path.read_bytes()
     for encoding in ("utf-8-sig", "utf-8", "gb18030", "big5", "utf-16"):
         try:
-            return data.decode(encoding)
+            return strip_production_footer(data.decode(encoding))
         except UnicodeDecodeError:
             continue
-    return data.decode("utf-8", errors="ignore")
+    return strip_production_footer(data.decode("utf-8", errors="ignore"))
+
+
+def strip_production_footer(text: str) -> str:
+    footer_markers = (
+        "李敖影音E书QQ群",
+        "李敖影音E书籍",
+        "李敖研究网",
+        "李敖资源下载站",
+        "wjm_tcy（不自由",
+        "不自由的自由（wjm_tcy）",
+        "与“Jeff Ao”联合制作",
+    )
+    positions = [text.find(marker) for marker in footer_markers if marker in text]
+    if not positions:
+        return text
+    return text[:min(positions)].rstrip()
 
 
 def clean_title(raw: str) -> str:
@@ -2177,12 +2272,14 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
         ("in_law", IN_LAW_CUES, 5),
         ("romance", ROMANCE_CUES, 5),
         ("property_finance", PROPERTY_FINANCE_CUES, 5),
+        ("public_funds", PUBLIC_FUNDS_CUES, 5),
         ("trust_property", TRUST_PROPERTY_CUES, 6),
         ("torture_victim", TORTURE_VICTIM_CUES, 5),
         ("torture_actor", TORTURE_ACTOR_CUES, 5),
         ("witness", WITNESS_CUES, 4),
         ("publishing", PUBLISHING_CUES, 4),
         ("academic", ACADEMIC_CUES, 4),
+        ("academic_admin", ACADEMIC_ADMIN_CUES, 5),
         ("media", MEDIA_CUES, 4),
         ("legal_official", LEGAL_OFFICIAL_CUES, 5),
         ("lawyer_counsel", LAWYER_COUNSEL_CUES, 5),
@@ -2196,6 +2293,7 @@ def score_context(name: str, ctx: str, after: str) -> tuple[str, int, list[str]]
         ("military_figure", MILITARY_FIGURE_CUES, 4),
         ("public_debate", PUBLIC_DEBATE_CUES, 3),
         ("party_propaganda", PARTY_PROPAGANDA_CUES, 5),
+        ("institutional_security", INSTITUTIONAL_SECURITY_CUES, 5),
         ("spiritual", SPIRITUAL_CUES, 1),
     )
     for category, cues, weight in cue_sets:
@@ -2283,6 +2381,12 @@ def add_evidence(hit: PersonHit, item: dict) -> None:
             ),
         )
         hit.evidence[replace_idx] = item
+        return
+    same_book_indices = [idx for idx, old in enumerate(hit.evidence) if old["book"] == item["book"]]
+    if same_book_indices and (item["score"] >= 4 or item.get("curated")):
+        replace_idx = min(same_book_indices, key=lambda idx: hit.evidence[idx].get("score", 0))
+        if item.get("score", 0) > hit.evidence[replace_idx].get("score", 0):
+            hit.evidence[replace_idx] = item
 
 
 def iter_text_files(source_root: Path) -> list[Path]:
@@ -2343,6 +2447,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "江南饱", "江南恶", "江南好", "到江南", "思江南",
         )
         return any(marker in ctx for marker in false_markers)
+    if name == "张先":
+        return "张先生订" in ctx
     if name == "应凤凰":
         return "应凤凰电视" in ctx
     return False
@@ -2530,6 +2636,52 @@ def aliases_for_person(name: str) -> list[str]:
     )
 
 
+def normalize_evidence_items(hit: PersonHit, cats: list[str]) -> list[dict]:
+    normalized = []
+    allowed = set(cats)
+    fallback = primary_category(hit)
+    cue_map = {
+        "meeting": MEETING_CUES,
+        "correspondence": CORRESPONDENCE_CUES,
+        "teacher_student": TEACHER_STUDENT_CUES,
+        "classmate_colleague": CLASSMATE_COLLEAGUE_CUES,
+        "friendship": FRIENDSHIP_CUES,
+        "family": FAMILY_CUES,
+        "in_law": IN_LAW_CUES,
+        "romance": ROMANCE_CUES,
+        "property_finance": PROPERTY_FINANCE_CUES,
+        "public_funds": PUBLIC_FUNDS_CUES,
+        "trust_property": TRUST_PROPERTY_CUES,
+        "witness": WITNESS_CUES,
+        "publishing": PUBLISHING_CUES,
+        "academic": ACADEMIC_CUES,
+        "academic_admin": ACADEMIC_ADMIN_CUES,
+        "media": MEDIA_CUES,
+        "legal_official": LEGAL_OFFICIAL_CUES,
+        "lawyer_counsel": LAWYER_COUNSEL_CUES,
+        "litigation": LITIGATION_CUES,
+        "politician": POLITICIAN_CUES,
+        "intelligence_police": INTELLIGENCE_POLICE_CUES,
+        "military_figure": MILITARY_FIGURE_CUES,
+        "party_propaganda": PARTY_PROPAGANDA_CUES,
+        "institutional_security": INSTITUTIONAL_SECURITY_CUES,
+        "public_debate": PUBLIC_DEBATE_CUES,
+        "spiritual": SPIRITUAL_CUES,
+    }
+    for item in hit.evidence:
+        fixed = dict(item)
+        if fixed.get("category") not in allowed:
+            snippet = fixed.get("snippet", "")
+            scored = [
+                (sum(1 for cue in cue_map.get(cat, ()) if cue in snippet), cat)
+                for cat in cats
+            ]
+            scored.sort(reverse=True)
+            fixed["category"] = scored[0][1] if scored and scored[0][0] > 0 else fallback
+        normalized.append(fixed)
+    return normalized
+
+
 def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[Path]) -> dict:
     kept = [hit for hit in people.values() if keep_person(hit)]
     person_rows = []
@@ -2571,7 +2723,7 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
             "topChapters": [{"chapter": ch, "count": c} for ch, c in hit.chapters.most_common(10)],
             "collections": [{"collection": c, "count": n} for c, n in hit.collections.most_common()],
             "cues": [{"cue": cue, "count": n} for cue, n in hit.cue_hits.most_common(10)],
-            "evidence": sorted(hit.evidence, key=lambda x: (-x["score"], x["book"], x["chapter"]))[:10],
+            "evidence": sorted(normalize_evidence_items(hit, cats), key=lambda x: (-x["score"], x["book"], x["chapter"]))[:10],
         }
         person_rows.append(row)
         for stat in row["categoryStats"]:
