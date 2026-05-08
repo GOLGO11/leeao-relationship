@@ -218,6 +218,18 @@ ALIASES = {
     "马丁·恩纳": "马丁·恩纳尔斯",
     "马丁埃纳": "马丁·恩纳尔斯",
     "詹姆斯杜渥": "詹姆斯·杜渥",
+    "井武夫": "今井武夫",
+    "今井": "今井武夫",
+    "和冈村": "冈村宁次",
+    "冈村": "冈村宁次",
+    "松冈": "松冈洋右",
+    "萧参谋": "萧毅肃",
+    "何总司": "何应钦",
+    "朱子家": "金雄白",
+    "田良三": "福田良三",
+    "山春树": "谏山春树",
+    "国王武": "王武",
+    "邵参议": "邵毓麟",
     "白脸": "黄永寿",
     "欧阳坤判": "欧阳坤",
     "何剑芬": "王剑芬",
@@ -762,6 +774,8 @@ NONSTANDARD_NAMES = {
     "夏衍", "巴金", "东方曙",
     "马尔罗", "武慰先", "林孟贵", "张麟征", "林宪同", "陈涵", "吕有文", "洪威华",
     "彭芸", "何应钦",
+    "今井武夫", "冈村宁次", "松冈洋右", "金雄白", "福田良三", "谏山春树", "王武",
+    "艾伦·杜勒斯",
     "曾雪玉", "曾老吸", "宋楚瑜夫人", "曾俊义夫人", "萧天赞夫人", "柯晴男",
     "孙嘉禄", "郑红", "杨襄明", "曹德成",
     "施性平", "魏秀珍", "蔡宪崇", "周雍能", "俞鸿钧", "姚嘉文", "江鹏坚",
@@ -893,6 +907,15 @@ CURATED_IDENTITIES = {
     "黄坤尧": ["academic"],
     "常宗豪": ["academic"],
     "陈仪": ["politician", "military_figure", "public_debate", "spiritual"],
+    "今井武夫": ["military_figure", "meeting"],
+    "冈村宁次": ["military_figure", "politician", "spiritual"],
+    "松冈洋右": ["politician", "spiritual"],
+    "萧毅肃": ["military_figure"],
+    "福田良三": ["military_figure"],
+    "谏山春树": ["military_figure"],
+    "王武": ["military_figure"],
+    "金雄白": ["media", "publishing", "spiritual"],
+    "陶永标": ["military_figure", "witness"],
     "叶建丽": ["media", "publishing"],
     "邹龙承": ["publishing", "media", "litigation"],
     "蒋纬国": ["politician", "military_figure", "family", "public_debate"],
@@ -3536,6 +3559,37 @@ CURATED_IDENTITIES.update({
     "龙应台": ["media", "academic", "public_debate"],
 })
 
+CURATED_IDENTITIES.update({
+    "冷欣": ["military_figure", "witness"],
+    "顾祝同": ["military_figure", "politician"],
+    "徐永昌": ["military_figure", "politician", "spiritual"],
+    "陶德曼": ["politician", "spiritual"],
+    "邵毓麟": ["politician", "witness"],
+    "陈良埙": ["military_figure", "case_prison", "witness", "meeting"],
+    "陈诚": ["politician", "military_figure", "public_debate", "spiritual"],
+    "白崇禧": ["military_figure", "politician", "spiritual"],
+    "张群": ["politician", "public_debate", "spiritual"],
+    "李杰": ["military_figure", "politician", "public_debate"],
+    "颜清标": ["politician", "public_debate"],
+    "今井武夫": ["military_figure", "witness", "spiritual"],
+    "冈村宁次": ["military_figure", "spiritual"],
+    "陈布雷": ["politician", "publishing", "spiritual"],
+    "三毛": ["publishing", "media", "spiritual"],
+    "鲍罗廷": ["politician", "party_propaganda", "spiritual"],
+    "舒适存": ["military_figure"],
+    "梁文杰": ["politician", "media", "public_debate"],
+    "庄瑞雄": ["politician", "media", "public_debate"],
+    "何辑五": ["spiritual"],
+    "贺衷寒": ["military_figure", "politician", "witness"],
+    "王枕华": ["politician", "legal_official", "public_debate"],
+    "何成浚": ["military_figure", "spiritual"],
+    "林瑞雄": ["academic", "politician", "public_debate"],
+    "吴世昌": ["academic", "spiritual"],
+    "杨树达": ["academic", "spiritual"],
+    "丁树声": ["academic", "spiritual"],
+    "艾伦·杜勒斯": ["intelligence_police", "politician", "spiritual"],
+})
+
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
 
@@ -4099,6 +4153,21 @@ STOP_NAMES = {
     "通学者", "应考司", "能放宽", "都取得", "须知司", "吉光片", "应该经", "从牌桌",
     "胡佛最", "国公使", "毕业典", "应该走", "马分尸",
     "胡适先",
+    "时条款", "辛亥革", "武学校", "时分", "党争", "鱼台", "司令官", "暴政必",
+    "国歌", "余人", "解严", "解职", "白猫", "黑猫", "任状", "甘心", "花费",
+    "元帅", "国考", "席者", "连庄", "空白", "经传", "和之", "党棍", "时机",
+    "文艺", "张本", "黄莺",
+    "苏联订", "纪欠佳", "和介绍", "成绩还", "金等量", "国会有", "时并存",
+    "马嘶呓", "国军官", "时调查", "应迅速", "和参谋", "却称帝", "宋自己",
+    "从参谋", "古人比", "于职位", "那样自", "蒋钧鉴", "经请示", "经济顾",
+    "林蔚劝", "时会议", "方式座", "时安阳", "马林问", "党护航", "都人士",
+    "何只干", "王昇说", "和布雷", "黄埔同", "广东问", "时还指", "成皇帝",
+    "向陶德", "连早餐", "连同命", "何等精", "何接收", "党费须", "党争实",
+    "于雅尔", "平奋斗", "富邦银", "金余额", "于汝等", "黄埔建", "黄高参",
+    "文化建", "陆出版", "苏联政", "全国人", "苏俄代", "计委员", "国考察",
+    "却因孙", "别要求",
+    "班人马", "公然表", "国广播", "国军退", "国来救", "包括国", "和国际",
+    "欧洲议", "路易十", "于三十",
 }
 SIGNAL_BEFORE = set(" \t\r\n　,，.。:：;；、!！?？([（《〈“‘'\"和与及给向问访见找由同为把对从跟请替将是叫姓名骂告")
 SIGNAL_AFTER = set(" \t\r\n　,，.。:：;；、!！?？)]）《》〉”’'\"")
@@ -4422,6 +4491,8 @@ def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
 
 def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> bool:
     ctx = context_window(text, start, end)
+    if name == "艾伦" and "杜勒斯" in ctx:
+        return True
     if name == "华严":
         return "华严经" in ctx
     if name == "老子":
