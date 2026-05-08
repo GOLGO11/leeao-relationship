@@ -66,6 +66,7 @@ SPIRITUAL_ONLY = {
 
 FICTIONAL_CHARACTERS = {
     "西门庆", "潘金莲", "武松", "孙悟空", "猪八戒", "唐僧", "沙僧", "四大天王",
+    "二郎神", "哪吒", "托塔天王", "鸿钧老祖", "骊山老母", "黄三太", "黄天霸", "杨香武",
     "贾宝玉", "林黛玉", "薛宝钗", "鲁智深", "林冲", "宋江", "李逵",
     "哈姆雷特", "堂吉诃德", "浮士德", "罗密欧", "朱丽叶", "夏洛克",
     "福尔摩斯", "阿Q", "孔乙己", "祥林嫂", "薛蟠", "莺莺",
@@ -131,6 +132,29 @@ ALIASES = {
     "熊希齢": "熊希龄",
     "钱其深": "钱其琛",
     "章炳麟": "章太炎",
+    "谭复生": "谭嗣同",
+    "复生": "谭嗣同",
+    "谭老师": "谭嗣同",
+    "谭大人": "谭嗣同",
+    "大刀王五": "王五",
+    "袁督师": "袁崇焕",
+    "翁师傅": "翁同龢",
+    "伊藤博": "伊藤博文",
+    "伊藤公": "伊藤博文",
+    "李总管": "李莲英",
+    "黄轸兄": "黄轸",
+    "普净": "李十力",
+    "小和尚普净": "李十力",
+    "康进士": "康有为",
+    "林公使": "林权助",
+    "成祖": "明成祖",
+    "田光去": "田光",
+    "田光执": "田光",
+    "牛头马": "牛头马面",
+    "姚和尚": "姚广孝",
+    "胡七拜": "胡七",
+    "通臂猿": "胡七",
+    "虞愿却": "虞愿",
     "侯赛因": "萨达姆·侯赛因",
     "陆生": "陆贾",
     "尉他": "赵佗",
@@ -197,6 +221,11 @@ ALIASES = {
     "孙猴子": "孙悟空",
     "唐三藏": "唐僧",
     "沙和尚": "沙僧",
+    "张翼德": "张飞",
+    "九天玄女": "玄女",
+    "洪钧老祖": "鸿钧老祖",
+    "梨山老母": "骊山老母",
+    "王瑶卿": "王瑶卿",
     "母夜叉": "孙二娘",
     "武都头": "武松",
     "黑旋风": "李逵",
@@ -825,7 +854,7 @@ CURATED_IDENTITIES = {
     "胡适": ["correspondence", "meeting", "academic"],
     "马克思": ["spiritual"],
     "马丁·路德·金": ["spiritual"],
-    "老子": ["spiritual"],
+    "老子": ["historical_allusion", "spiritual"],
     "孟子": ["spiritual"],
     "孙中山": ["politician", "public_debate", "spiritual"],
     "蒋介石": ["politician", "public_debate"],
@@ -966,7 +995,7 @@ CURATED_IDENTITIES = {
     "王洪钧": ["academic_admin", "public_debate"],
     "武慰先": ["classmate", "meeting", "correspondence"],
     "蔡元培": ["academic", "academic_admin", "spiritual"],
-    "袁世凯": ["politician", "public_debate", "spiritual"],
+    "袁世凯": ["plot_character", "literary_character", "politician", "public_debate", "spiritual"],
     "韩信": ["military_figure", "spiritual"],
     "蔡九": ["fictional"],
     "黄药师": ["fictional"],
@@ -995,14 +1024,14 @@ CURATED_IDENTITIES = {
     "伯夷": ["political_dissident", "spiritual"],
     "叔齐": ["political_dissident", "spiritual"],
     "檀道济": ["military_figure", "politician", "spiritual"],
-    "信陵君": ["politician", "spiritual"],
-    "蔡锷": ["military_figure", "politician", "spiritual"],
+    "信陵君": ["historical_allusion", "politician", "spiritual"],
+    "蔡锷": ["plot_character", "literary_character", "military_figure", "politician", "spiritual"],
     "小凤仙": ["romance", "spiritual"],
     "范睢": ["politician", "spiritual"],
     "豫让": ["political_dissident", "spiritual"],
     "龚自珍": ["academic", "publishing", "spiritual"],
     "金圣叹": ["academic", "publishing", "spiritual"],
-    "魏忠贤": ["politician", "spiritual"],
+    "魏忠贤": ["historical_allusion", "politician", "spiritual"],
     "圣母": ["religion", "spiritual"],
     "章太炎": ["academic", "spiritual"],
     "姚从吾": ["teacher_student", "academic"],
@@ -1351,7 +1380,7 @@ CURATED_IDENTITIES = {
     "秦孝仪": ["party_propaganda", "litigation", "academic"],
     "吴健雄": ["spiritual", "scientist"],
     "王恒庆": ["teacher_student", "meeting"],
-    "张灏": ["academic", "classmate", "meeting"],
+    "张灏": ["research_reference", "academic", "classmate", "meeting"],
     "王兆民": ["politician", "family", "correspondence"],
     "张乐平": ["spiritual", "media"],
     "叶圣康": ["publishing", "meeting", "correspondence", "friendship"],
@@ -1496,9 +1525,10 @@ CURATED_IDENTITIES = {
     "黄兴": ["politician", "spiritual"],
     "宋教仁": ["politician", "spiritual"],
     "张勋": ["military_figure", "politician", "spiritual"],
+    "唐高祖": ["historical_allusion", "politician", "military_figure", "spiritual"],
     "陈宦": ["military_figure", "politician", "spiritual"],
     "佛朗哥": ["military_figure", "politician", "public_debate", "spiritual"],
-    "林则徐": ["politician", "academic", "spiritual"],
+    "林则徐": ["historical_allusion", "politician", "academic", "spiritual"],
     "魏源": ["academic", "spiritual"],
     "奕訢": ["politician", "spiritual"],
     "文祥": ["politician", "spiritual"],
@@ -1506,7 +1536,7 @@ CURATED_IDENTITIES = {
     "冯桂芬": ["academic", "politician", "spiritual"],
     "郭嵩焘": ["politician", "academic", "spiritual"],
     "容闳": ["academic", "politician", "spiritual"],
-    "张荫桓": ["politician", "spiritual"],
+    "张荫桓": ["plot_character", "literary_character", "politician", "spiritual"],
     "曾纪泽": ["politician", "academic", "spiritual"],
     "薛福成": ["politician", "academic", "spiritual"],
     "马建忠": ["academic", "politician", "spiritual"],
@@ -1661,7 +1691,7 @@ CURATED_IDENTITIES = {
     "曾子": ["spiritual"],
     "朱熹": ["spiritual", "academic"],
     "李二曲": ["academic", "spiritual"],
-    "安禄山": ["military_figure", "politician", "spiritual"],
+    "安禄山": ["historical_allusion", "military_figure", "politician", "spiritual"],
     "冯希乐": ["spiritual"],
     "张公艺": ["spiritual"],
     "辛庆忌": ["military_figure", "spiritual"],
@@ -1693,7 +1723,7 @@ CURATED_IDENTITIES = {
     "吴虞": ["academic", "spiritual"],
     "韩非": ["academic", "spiritual"],
     "刘邦": ["politician", "military_figure", "spiritual"],
-    "郑成功": ["military_figure", "politician", "spiritual"],
+    "郑成功": ["historical_allusion", "military_figure", "politician", "spiritual"],
     "陶渊明": ["academic", "spiritual"],
     "俞樾": ["academic", "spiritual"],
     "乔氏": ["social_case", "spiritual"],
@@ -1743,7 +1773,7 @@ CURATED_IDENTITIES = {
     "林琴南": ["academic", "publishing", "spiritual"],
     "利玛窦": ["religion", "academic", "spiritual"],
     "左舜生": ["politician", "publishing", "public_debate", "spiritual"],
-    "梁启超": ["academic", "politician", "publishing", "spiritual"],
+    "梁启超": ["plot_character", "literary_character", "academic", "politician", "publishing", "spiritual"],
     "宋太祖": ["politician", "military_figure", "spiritual"],
     "宋太宗": ["politician", "spiritual"],
     "巴克莱": ["academic", "spiritual"],
@@ -2383,7 +2413,7 @@ CURATED_IDENTITIES = {
     "班昭": ["academic", "spiritual"],
     "于义方": ["academic", "spiritual"],
     "斯特林堡": ["publishing", "spiritual"],
-    "慈禧": ["politician", "spiritual"],
+    "慈禧": ["plot_character", "literary_character", "politician", "spiritual"],
     "娄逞": ["politician", "spiritual"],
     "玛丽莲·梦露": ["media", "spiritual"],
     "弗雷德里克·刘易斯·艾伦": ["academic", "spiritual"],
@@ -2548,7 +2578,7 @@ CURATED_IDENTITIES = {
     "严停云": ["publishing", "public_debate"],
     "华严": ["publishing", "public_debate"],
     "刘秀嫚": ["media", "romance", "meeting", "correspondence", "public_debate"],
-    "屈原": ["academic", "politician", "spiritual"],
+    "屈原": ["historical_allusion", "academic", "politician", "spiritual"],
     "于右任": ["politician", "meeting", "public_debate", "spiritual"],
     "何烈": ["correspondence", "public_debate"],
     "钟梅音": ["correspondence", "publishing", "public_debate"],
@@ -2639,7 +2669,7 @@ CURATED_IDENTITIES = {
     "曹仁": ["military_figure", "spiritual"],
     "张献忠": ["military_figure", "politician", "spiritual"],
     "李定国": ["military_figure", "politician", "spiritual"],
-    "破山和尚": ["religion", "spiritual"],
+    "破山和尚": ["historical_allusion", "religion", "spiritual"],
     "周世宗": ["politician", "spiritual"],
     "阎王": ["religion", "spiritual"],
     "杨贵妃": ["spiritual"],
@@ -2662,7 +2692,7 @@ CURATED_IDENTITIES = {
     "巴斯德": ["scientist", "spiritual"],
     "贝尔": ["scientist", "spiritual"],
     "马克·吐温": ["publishing", "spiritual"],
-    "张之洞": ["politician", "academic", "publishing", "spiritual"],
+    "张之洞": ["historical_allusion", "politician", "academic", "publishing", "spiritual"],
     "黄尧圃": ["academic", "publishing", "spiritual"],
     "刘国钧": ["academic", "publishing", "spiritual"],
     "杜定友": ["academic", "publishing", "spiritual"],
@@ -2703,7 +2733,7 @@ CURATED_IDENTITIES = {
     "吴敬恒": ["academic", "politician", "spiritual"],
     "刘后": ["politician", "spiritual"],
     "敬新磨": ["media", "spiritual"],
-    "魏征": ["politician", "academic", "spiritual"],
+    "魏征": ["historical_allusion", "politician", "academic", "spiritual"],
     "司马相如": ["publishing", "spiritual"],
     "范蠡": ["politician", "spiritual"],
     "张敞": ["politician", "spiritual"],
@@ -2805,7 +2835,7 @@ CURATED_IDENTITIES = {
     "秦失": ["spiritual"],
     "胡适母亲": ["family", "spiritual"],
     "李夫人": ["politician", "spiritual"],
-    "汉武帝": ["politician", "spiritual"],
+    "汉武帝": ["historical_allusion", "politician", "spiritual"],
     "路易十六": ["politician", "spiritual"],
     "玛丽·安托内特": ["politician", "spiritual"],
     "伊索": ["publishing", "spiritual"],
@@ -2817,7 +2847,7 @@ CURATED_IDENTITIES = {
     "鲁哀公": ["politician", "spiritual"],
     "姜太公": ["politician", "military_figure", "spiritual"],
     "杨朝麟": ["legal_official", "spiritual"],
-    "伍子胥": ["politician", "military_figure", "spiritual"],
+    "伍子胥": ["historical_allusion", "politician", "military_figure", "spiritual"],
     "宋小濂": ["politician", "spiritual"],
     "凯斯特勒": ["publishing", "spiritual"],
     "卢巴雪夫": ["fictional", "political_dissident"],
@@ -2838,8 +2868,59 @@ CURATED_IDENTITIES = {
     "奥尔特加": ["politician", "public_debate"],
     "索摩查": ["politician", "public_debate"],
     "陈淑华": ["correspondence", "publishing", "meeting"],
-    "康有为": ["academic", "politician", "publishing", "spiritual"],
-    "光绪": ["politician", "spiritual"],
+    "康有为": ["plot_character", "literary_character", "academic", "politician", "publishing", "spiritual"],
+    "光绪": ["plot_character", "literary_character", "politician", "spiritual"],
+    "谭嗣同": ["plot_character", "literary_character", "political_dissident", "academic", "spiritual"],
+    "王五": ["plot_character", "literary_character", "underworld", "martyr", "spiritual"],
+    "平山周": ["plot_character", "literary_character", "politician", "meeting"],
+    "林权助": ["plot_character", "literary_character", "politician", "meeting"],
+    "佘法师": ["plot_character", "literary_character", "religion", "meeting"],
+    "李十力": ["plot_character", "literary_character", "fictional", "religion", "academic", "political_dissident"],
+    "袁崇焕": ["historical_allusion", "military_figure", "political_dissident", "spiritual"],
+    "翁同龢": ["plot_character", "literary_character", "teacher_student", "politician", "academic", "spiritual"],
+    "李莲英": ["plot_character", "literary_character", "politician", "household_staff", "spiritual"],
+    "伊藤博文": ["plot_character", "literary_character", "politician", "spiritual"],
+    "黄轸": ["plot_character", "literary_character", "meeting"],
+    "袁励准": ["plot_character", "literary_character", "meeting"],
+    "谢枋得": ["historical_allusion", "political_dissident", "spiritual"],
+    "屈突通": ["historical_allusion", "military_figure", "spiritual"],
+    "公孙杵臼": ["historical_allusion", "spiritual"],
+    "荆轲": ["historical_allusion", "spiritual"],
+    "明成祖": ["historical_allusion", "politician", "spiritual"],
+    "文彦博": ["historical_allusion", "politician", "spiritual"],
+    "李世民": ["historical_allusion", "politician", "military_figure", "spiritual"],
+    "刘邦": ["historical_allusion", "politician", "military_figure", "spiritual"],
+    "孔子": ["historical_allusion", "spiritual"],
+    "程婴": ["historical_allusion", "spiritual"],
+    "冯道": ["historical_allusion", "politician", "spiritual"],
+    "方孝孺": ["historical_allusion", "teacher_student", "spiritual"],
+    "乾隆": ["historical_allusion", "politician", "spiritual"],
+    "石达开": ["historical_allusion", "military_figure", "publishing", "spiritual"],
+    "王安石": ["historical_allusion", "politician", "academic", "spiritual"],
+    "杜甫": ["historical_allusion", "spiritual"],
+    "庄子": ["historical_allusion", "spiritual"],
+    "曹操": ["historical_allusion", "politician", "military_figure", "spiritual"],
+    "司马迁": ["historical_allusion", "spiritual"],
+    "王阳明": ["historical_allusion", "academic", "spiritual"],
+    "田光": ["historical_allusion", "underworld", "spiritual"],
+    "太子丹": ["historical_allusion", "politician", "spiritual"],
+    "专诸": ["historical_allusion", "underworld", "martyr", "spiritual"],
+    "王僚": ["historical_allusion", "politician", "spiritual"],
+    "要离": ["historical_allusion", "underworld", "martyr", "spiritual"],
+    "姚广孝": ["historical_allusion", "religion", "politician", "spiritual"],
+    "沈度": ["historical_allusion", "arts_music", "academic", "spiritual"],
+    "牛头马面": ["fictional", "religion", "spiritual"],
+    "胡七": ["plot_character", "literary_character", "underworld", "friendship", "meeting"],
+    "虞愿": ["historical_allusion", "religion", "politician", "spiritual"],
+    "王瑶卿": ["historical_allusion", "arts_music", "spiritual"],
+    "托塔天王": ["fictional", "religion", "spiritual"],
+    "鸿钧老祖": ["fictional", "religion", "spiritual"],
+    "骊山老母": ["fictional", "religion", "spiritual"],
+    "黄三太": ["fictional", "underworld", "spiritual"],
+    "黄天霸": ["fictional", "underworld", "spiritual"],
+    "杨香武": ["fictional", "underworld", "spiritual"],
+    "潘君密": ["source_support", "publishing", "friendship"],
+    "李荣胜": ["source_support", "publishing"],
     "洪旭": ["social_case", "media"],
     "纪政": ["media", "litigation", "public_debate"],
     "杨传广": ["media", "litigation", "public_debate"],
@@ -2921,7 +3002,7 @@ CURATED_IDENTITIES = {
     "刘世超": ["public_debate"],
     "曹汤三": ["public_debate", "spiritual"],
     "林森": ["politician", "public_debate", "spiritual"],
-    "曾国藩": ["politician", "military_figure", "spiritual"],
+    "曾国藩": ["historical_allusion", "politician", "military_figure", "spiritual"],
     "洪秀全": ["politician", "religion", "spiritual"],
     "曾约农": ["religion", "academic", "spiritual"],
     "曾宝荪": ["religion", "spiritual"],
@@ -2945,7 +3026,7 @@ CURATED_IDENTITIES = {
     "简瑞甫": ["friendship", "property_finance"],
     "洪金立": ["correspondence", "friendship"],
     "左伯桃": ["spiritual"],
-    "程婴": ["spiritual"],
+    "程婴": ["historical_allusion", "spiritual"],
     "吴文立": ["classmate", "meeting", "witness"],
     "吴申叔": ["friendship", "publishing", "meeting", "family"],
     "郁慕明": ["politician", "friendship", "litigation", "meeting"],
@@ -3364,7 +3445,7 @@ CURATED_IDENTITIES.update({
     "海耶克": ["academic", "public_debate", "spiritual"],
     "萧铮": ["politician", "public_debate"],
     "许倬云": ["academic", "litigation", "public_debate"],
-    "许以祺": ["academic", "friendship", "correspondence"],
+    "许以祺": ["source_support", "academic", "friendship", "correspondence"],
     "吴阿民": ["media", "public_debate"],
     "罗曼纳斯": ["academic", "spiritual"],
     "孙德兰": ["academic", "spiritual"],
@@ -3420,7 +3501,7 @@ CURATED_IDENTITIES.update({
     "倪嗣冲": ["military_figure", "politician", "public_debate", "spiritual"],
     "龚忠武": ["classmate", "correspondence", "public_debate"],
     "徐庆誉": ["publishing", "public_debate", "spiritual"],
-    "陈兆基": ["friendship", "publishing", "public_debate"],
+    "陈兆基": ["source_support", "friendship", "publishing", "public_debate"],
     "舒密特": ["correspondence", "spiritual"],
     "哈里森·索尔兹伯里": ["media", "publishing", "spiritual"],
     "洛桑平措": ["publishing", "politician", "public_debate"],
@@ -3608,7 +3689,7 @@ CURATED_IDENTITIES.update({
     "冈村宁次": ["military_figure", "spiritual"],
     "陈布雷": ["politician", "publishing", "spiritual"],
     "三毛": ["publishing", "media", "spiritual"],
-    "孙子": ["spiritual"],
+    "孙子": ["historical_allusion", "spiritual"],
     "冯作民": ["social_case", "publishing", "property_finance", "litigation"],
     "柳庭桂": ["social_case", "publishing", "property_finance", "academic"],
     "李传理": ["publishing", "witness", "litigation"],
@@ -3938,6 +4019,18 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "公司",
+    "满洲人", "万寿寺", "隆皇帝", "满清政", "满洲皇", "和尚来", "解释得",
+    "和各位", "能自己", "师父", "梁老师", "公子光", "怀粉身", "宫墙",
+    "时间去", "明明有", "路子",
+    "从古典", "从床边", "从监牢", "任何可", "党进去", "党革命", "公使商",
+    "公子", "冷汗", "别有奇", "古刹重", "史事挂", "向残碑", "国家又",
+    "孙子谭", "安详地", "家高足", "寇攻进", "居然做", "左右同", "左右说",
+    "师父走", "师说谭", "应召进", "张桌子", "张灏写", "强者讨", "成功连",
+    "时代潮", "时代相", "时可用", "时想开", "查办之", "满脸通", "班子",
+    "荆轲替", "荆轲激", "解更奇", "解脱目", "解释说", "那黑袍", "都各有",
+    "都搞错", "金刚般", "高丽来", "龙点睛", "余花", "国殇", "向梁启",
+    "屈突盖", "左右又", "相信梁", "相信谭", "那张说",
+    "相知之", "索寞", "能叫司", "能守", "能看出", "第五章",
     "彭交情",
     "宿舍", "那天", "厉害", "纪念", "从容", "平反", "查出", "元首", "干戈", "重则",
     "解聘", "曾经", "文章又", "计长", "山头", "党政策", "于狱", "公布出", "万请先",
@@ -4422,8 +4515,10 @@ CATEGORY_LABELS = {
     "torture_victim": "刑求受害",
     "torture_actor": "刑求人员",
     "witness": "证人见证",
+    "source_support": "创作资料协助",
     "publishing": "出版",
     "academic": "学术",
+    "research_reference": "学术考证引用",
     "academic_admin": "学术行政",
     "scientist": "科学家",
     "arts_music": "文艺音乐",
@@ -4453,6 +4548,9 @@ CATEGORY_LABELS = {
     "institutional_security": "机构警卫",
     "underworld": "江湖人物",
     "public_debate": "公共论战",
+    "plot_character": "主剧情人物",
+    "literary_character": "小说剧本人物",
+    "historical_allusion": "历史类比引用",
     "spiritual": "神交引用",
     "fictional": "虚拟人物",
     "nickname": "称谓待考",
@@ -4724,7 +4822,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "艾伦" and "杜勒斯" in ctx:
         return True
     if name == "华严":
-        return "华严经" in ctx
+        return any(marker in ctx for marker in ("华严经", "华严钟", "华严一转", "华严的", "华严‘"))
     if name == "老子":
         real_markers = (
             "《老子》", "老子曰", "老子说", "道德经", "老庄", "老子李耳",
@@ -4759,7 +4857,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "文丑":
         return "大批文丑" in ctx
     if name == "圣母":
-        return "圣母颂" in ctx
+        return "圣母颂" in ctx or "皇太后" in ctx
     if name == "马克":
         return "马克·吐温" in ctx
     if name == "贝克特":
@@ -4846,7 +4944,15 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "萧正德":
         return "正德间" in ctx or "正德皇帝" in ctx
     if name == "方广":
-        return text[end:end + 1] in {"播", "州"} or text[start - 1:start] == "南"
+        return (
+            text[end:end + 1] in {"播", "州"}
+            or text[start - 1:start] == "南"
+            or "大方广佛华严经" in ctx
+        )
+    if name == "王瑶":
+        return text[end:end + 1] == "卿"
+    if name == "张翼":
+        return text[end:end + 1] == "德"
     if name == "李焕":
         return "李焕燊" in ctx or "李焕升" in ctx
     if name == "文强":
@@ -4865,8 +4971,10 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return "用和平方式" in ctx
     if name == "三娘":
         return "三娘教子" not in ctx
+    if name == "三毛":
+        return text[end:end + 1] == "子"
     if name == "小八":
-        return "英雄小八义" in ctx or "小八字" in ctx
+        return "英雄小八义" in ctx or "小八字" in ctx or "小八岁" in ctx
     if name == "牡丹":
         return not any(marker in ctx for marker in ("洞宾", "吕洞宾", "武家坡"))
     if name == "木兰":
@@ -4877,6 +4985,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "江南·江南·哀江南", "《江南·江南", "《哀江南", "江南并发症",
             "连江南都保不住", "江南廖家楠", "江南世代儒医", "江南暖",
             "江南饱", "江南恶", "江南好", "江南小国", "到江南", "下江南", "思江南",
+            "江南制造局", "江南机器局",
         )
         return any(marker in ctx for marker in false_markers)
     if name == "张先":
