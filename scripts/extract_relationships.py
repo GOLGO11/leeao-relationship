@@ -185,6 +185,7 @@ ALIASES = {
     "班禅": "班禅额尔德尼",
     "确吉坚赞": "班禅额尔德尼",
     "汪师长": "汪敬煦",
+    "马总统": "马英九",
     "孙猴子": "孙悟空",
     "唐三藏": "唐僧",
     "沙和尚": "沙僧",
@@ -3588,6 +3589,19 @@ CURATED_IDENTITIES.update({
     "杨树达": ["academic", "spiritual"],
     "丁树声": ["academic", "spiritual"],
     "艾伦·杜勒斯": ["intelligence_police", "politician", "spiritual"],
+    "蔡明宪": ["military_figure", "politician", "public_debate"],
+    "张俊雄": ["politician", "public_debate"],
+    "许荣淑": ["politician", "public_debate"],
+    "李庆安": ["politician", "public_debate"],
+    "赵良燕": ["politician", "public_debate"],
+    "丁守中": ["politician", "public_debate"],
+    "苏起": ["politician", "academic", "public_debate"],
+    "郝龙斌": ["politician", "public_debate"],
+    "顾崇廉": ["military_figure", "politician", "public_debate"],
+    "沈富雄": ["politician", "public_debate"],
+    "林浊水": ["politician", "public_debate"],
+    "张显耀": ["politician", "public_debate"],
+    "帅化民": ["military_figure", "politician", "public_debate"],
 })
 
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
@@ -4168,6 +4182,7 @@ STOP_NAMES = {
     "却因孙", "别要求",
     "班人马", "公然表", "国广播", "国军退", "国来救", "包括国", "和国际",
     "欧洲议", "路易十", "于三十",
+    "连选得", "文山区",
 }
 SIGNAL_BEFORE = set(" \t\r\n　,，.。:：;；、!！?？([（《〈“‘'\"和与及给向问访见找由同为把对从跟请替将是叫姓名骂告")
 SIGNAL_AFTER = set(" \t\r\n　,，.。:：;；、!！?？)]）《》〉”’'\"")
