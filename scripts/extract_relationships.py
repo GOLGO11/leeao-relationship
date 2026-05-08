@@ -398,6 +398,19 @@ ALIASES = {
     "孟能": "萧孟能",
     "干事袁": "袁贻瑾",
     "胡适任": "胡适",
+    "胡夫人": "江冬秀",
+    "胡适夫人": "江冬秀",
+    "胡江冬秀": "江冬秀",
+    "筱峰": "李筱峰",
+    "章实斋": "章学诚",
+    "戡戡": "李戡",
+    "李戡生": "李戡",
+    "李戡首": "李戡",
+    "余老板": "余纪忠",
+    "马偕行": "马偕",
+    "雷震先": "雷震",
+    "黄钟老": "黄钟",
+    "陈诚副": "陈诚",
     "张群托": "张群",
     "保轩": "赵保轩",
     "赵主任保轩": "赵保轩",
@@ -673,6 +686,10 @@ ALWAYS_NAMES = {
     "叶圣康", "张立豫", "叶成有", "王自义", "汤克勤", "石锦",
     "杨锦钟", "杨锦铨", "许文葵", "王孟仁", "余又健", "杨肇南",
     "杨肖震", "程东白", "翁硕柏",
+    "李戡", "李谌", "张松涵", "张仁龙", "张仁园", "张仁宁",
+    "王福霖", "严方", "严正", "严谅", "严倬云", "牟琴", "张立纲",
+    "张大春", "张隆延", "文心",
+    "马乘风", "石梦溪", "江秀清",
     "张群", "黄少谷", "黄杰", "曹建中", "李晋芳", "钱翊平", "侯立朝",
     "阮继光", "袁英华", "卢华栋", "屠申虹", "汤炎光", "郑彦棻",
     "伍一心", "李国瑾", "李善培", "施珂", "郑锡华", "段春理",
@@ -1098,8 +1115,8 @@ CURATED_IDENTITIES = {
     "杨洁篪": ["politician", "publishing", "public_debate"],
     "桂裕": ["teacher_student", "academic"],
     "杜重远": ["media", "political_dissident", "litigation"],
-    "唐培礼": ["religion", "case_prison"],
-    "陈逸松": ["lawyer_counsel", "case_prison"],
+    "唐培礼": ["religion", "human_rights", "correspondence", "meeting", "public_debate"],
+    "陈逸松": ["lawyer_counsel", "political_dissident", "case_prison", "human_rights"],
     "陈水扁": ["politician", "public_debate"],
     "甘地": ["spiritual"],
     "平鑫涛": ["publishing", "meeting"],
@@ -1760,7 +1777,7 @@ CURATED_IDENTITIES = {
     "俞泽生": ["politician", "friendship"],
     "郭外川": ["politician", "human_rights"],
     "谷凤翔": ["politician", "meeting"],
-    "彭孟缉": ["military_figure", "politician"],
+    "彭孟缉": ["military_figure", "politician", "intelligence_police", "public_debate"],
     "张志智": ["politician", "meeting"],
     "梁上栋": ["politician", "meeting"],
     "苗告宝": ["friendship", "meeting"],
@@ -2144,8 +2161,8 @@ CURATED_IDENTITIES = {
     "陈鸿渐": ["intelligence_police", "case_prison", "torture_actor"],
     "蔡俊军": ["case_prison"],
     "沈之岳": ["intelligence_police"],
-    "蔡金铿": ["political_dissident"],
-    "吴松枝": ["political_dissident"],
+    "蔡金铿": ["political_dissident", "human_rights", "case_prison"],
+    "吴松枝": ["political_dissident", "lawyer_counsel", "human_rights"],
     "赵清泉": ["witness"],
     "杨英龙": ["case_prison", "torture_victim"],
     "刘伟民": ["case_prison", "torture_victim"],
@@ -3039,6 +3056,28 @@ CURATED_IDENTITIES = {
 }
 
 CURATED_IDENTITIES.update({
+    "黄达夫": ["medical_care", "public_debate"],
+    "刘崇鋐": ["academic", "public_debate"],
+    "李筱峰": ["academic", "public_debate"],
+    "江冬秀": ["in_law", "publishing", "public_debate"],
+    "马偕": ["medical_care", "religion", "spiritual"],
+    "冯纽曼": ["scientist", "academic", "spiritual"],
+    "朱良箴": ["publishing", "academic"],
+    "唐能理": ["meeting", "human_rights", "public_debate"],
+    "石德馨": ["intelligence_police", "litigation"],
+    "黄钟": ["teacher_student", "academic"],
+    "蔡财源": ["case_prison", "human_rights"],
+    "罗友伦": ["military_figure", "intelligence_police", "public_debate"],
+    "陈仲统": ["medical_care", "meeting", "human_rights"],
+    "陈炳煌": ["media", "political_dissident", "human_rights"],
+    "刘旺财": ["lawyer_counsel", "public_debate"],
+    "褚剑鸿": ["legal_official"],
+    "罗所长": ["prison_admin", "nickname"],
+    "沙荡": ["media", "public_debate"],
+    "胡颂平": ["academic", "academic_admin", "publishing", "public_debate"],
+    "魏岩涛": ["academic", "academic_admin", "public_debate"],
+    "徐高阮": ["academic", "public_debate"],
+    "章学诚": ["academic", "spiritual"],
     "萨达姆·侯赛因": ["politician", "military_figure", "public_debate", "spiritual"],
     "方励之": ["academic", "political_dissident", "public_debate"],
     "张乐平": ["media", "publishing", "public_debate", "spiritual"],
@@ -3268,7 +3307,7 @@ CURATED_IDENTITIES.update({
     "李廉": ["media", "publishing", "public_debate"],
     "海耶克": ["academic", "public_debate", "spiritual"],
     "萧铮": ["politician", "public_debate"],
-    "许倬云": ["academic", "public_debate"],
+    "许倬云": ["academic", "litigation", "public_debate"],
     "许以祺": ["academic", "friendship", "correspondence"],
     "吴阿民": ["media", "public_debate"],
     "罗曼纳斯": ["academic", "spiritual"],
@@ -3459,6 +3498,42 @@ CURATED_IDENTITIES.update({
     "妈祖": ["religion", "spiritual"],
     "张谞行": ["military_figure", "public_debate", "spiritual"],
     "陈亚芳": ["family", "social_case", "public_debate"],
+    "高信疆": ["media", "publishing", "correspondence", "friendship", "witness", "meeting", "public_debate"],
+    "张大春": ["publishing", "media", "public_debate"],
+    "文心": ["media", "nickname"],
+    "张隆延": ["arts_music", "publishing"],
+    "朱俊晓": ["politician", "public_debate"],
+    "马乘风": ["politician", "political_dissident", "case_prison", "public_debate"],
+    "石梦溪": ["political_dissident", "case_prison", "public_debate"],
+    "江秀清": ["political_dissident", "case_prison", "public_debate"],
+    "马寅初": ["academic", "politician", "public_debate", "spiritual"],
+    "萨特": ["spiritual", "academic"],
+    "韩愈": ["spiritual", "academic", "politician"],
+    "李戡": ["family", "publishing", "public_debate"],
+    "李谌": ["family"],
+    "张松涵": ["friendship", "meeting"],
+    "张仁龙": ["meeting", "friendship"],
+    "张仁园": ["meeting", "friendship"],
+    "张仁宁": ["meeting", "friendship"],
+    "王福霖": ["teacher_student"],
+    "陈正澄": ["classmate_colleague", "academic", "publishing"],
+    "王墨林": ["politician", "classmate_colleague", "friendship", "meeting"],
+    "王文振": ["classmate_colleague", "public_debate"],
+    "张立纲": ["academic", "classmate_colleague"],
+    "张立豫": ["in_law", "academic"],
+    "严侨": ["teacher_student", "academic", "friendship", "meeting", "political_dissident"],
+    "林蒨": ["teacher_student", "meeting"],
+    "严方": ["family"],
+    "严正": ["family"],
+    "严谅": ["family"],
+    "严倬云": ["family", "in_law"],
+    "严停云": ["publishing", "family", "in_law", "public_debate"],
+    "叶明勋": ["media", "in_law", "party_propaganda", "public_debate"],
+    "牟琴": ["teacher_student", "political_dissident"],
+    "杨肇南": ["teacher_student", "political_dissident"],
+    "杨肖震": ["teacher_student", "political_dissident"],
+    "李远哲": ["scientist", "academic", "academic_admin", "politician", "public_debate"],
+    "龙应台": ["media", "academic", "public_debate"],
 })
 
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
@@ -3618,6 +3693,15 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "公司",
+    "胡适选", "国银行", "文汉诂", "祖国版", "史编辑", "和证人", "和平象", "国会演", "应用",
+    "张力", "古人相", "关注", "郭家已", "国出版", "国会程", "国家办", "国家共", "国清寺",
+    "国体育", "何人", "和殴打", "经济行", "劳斯称", "乐观者", "乐轩戏", "家有", "家做主",
+    "李代桃", "简单数", "冷嘲", "王蓝", "从眼神", "李戡戡", "成协调", "于发生", "公诉人",
+    "伏枥", "时带走", "时承认", "明知胡", "明说胡", "李戡打", "班有同", "白发说",
+    "童常搔", "印胡适", "安全场", "时俱远", "时允许", "能安定", "都能告", "却没听",
+    "牧师", "班长", "马偕医", "台独宣", "相遇", "印刷品", "查证", "须获得", "任立委",
+    "应该做", "时应该", "马丁", "马偕医院",
+    "胡子", "罗织", "相片",
     "简体字", "能力", "毕露", "权斗士", "党政客", "景福门", "公职人", "万人命",
     "党同伐", "党员之", "国代", "国伪善", "关说疑", "花样翻", "常有人", "从斗臭",
     "从橘子", "单位栏", "党挨揍", "党党籍", "党官", "党解释", "凤凰梦", "国代组",
@@ -3696,6 +3780,7 @@ STOP_NAMES = {
     "蒋政权", "史家胡", "童子尿", "温旧梦", "曾有之", "李杰伴",
     "国父纪", "李飞刀", "和国", "万岁评", "乌鸦评", "冷暖",
     "宣传车", "和稀泥", "国公民", "高官", "高朋满",
+    "都会发", "时还要", "都说", "余痕", "陆序", "成出版", "公寓", "时有", "阎罗殿",
     "张淑婉",
     "能感动", "文化", "向皇帝", "国古代", "国之音", "和嘴巴", "家族", "文字狱",
     "关中", "东洋鬼", "雷鼓", "别人官", "成王真", "从高玉", "国两面", "华夷交",
@@ -4355,9 +4440,21 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         place_markers = (
             "在华盛顿", "华盛顿辞世", "华盛顿至今", "华盛顿方面", "华盛顿政府",
             "华盛顿当局", "华盛顿邮报", "华盛顿时报", "华盛顿会议", "华盛顿对", "华盛顿确已",
-            "到了华盛顿", "回华盛顿",
+            "到了华盛顿", "回华盛顿", "华盛顿特区", "华盛顿地区", "首都华盛顿", "白宫 华盛顿",
+            "美国华盛顿",
         )
         return any(marker in ctx for marker in place_markers)
+    if name == "林森":
+        return "林森北路" in ctx
+    if name == "林黛":
+        return text[end:end + 1] == "玉"
+    if name == "严正":
+        family_markers = ("儿子严正", "严正尚小", "严方才", "严谅还", "严师母和三个小孩")
+        return not any(marker in ctx for marker in family_markers)
+    if name == "路易斯":
+        return "路易斯安那" in ctx
+    if name == "穆罕默德":
+        return bool(text[end:end + 1] and re.match(r"[\u4e00-\u9fff]", text[end:end + 1]))
     if name == "文丑":
         return "大批文丑" in ctx
     if name == "圣母":
@@ -4370,6 +4467,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return text[max(0, start - 1):start] == "诺"
     if name == "索尔仁":
         return text[end:end + 2] == "尼琴"
+    if name == "斯诺":
+        return "必斯诺斯" in ctx
     if name == "施洗者":
         return text[end:end + 2] == "约翰"
     if name == "吉诃德":
