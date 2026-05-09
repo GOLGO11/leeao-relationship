@@ -72,7 +72,9 @@ FICTIONAL_CHARACTERS = {
     "福尔摩斯", "阿Q", "孔乙己", "祥林嫂", "薛蟠", "莺莺",
     "李鬼", "王矮虎", "孙二娘", "黄文炳", "武大郎", "晁盖", "张青", "蔡九", "史文恭",
     "孟姜女", "包龙图", "木兰", "三娘", "薛仁贵", "薛丁山", "呼延庆", "罗通",
-    "王宝钏", "薛平贵", "代战公主", "赵太爷",
+    "王宝钏", "薛平贵", "代战公主", "赵太爷", "女狐仙", "荷花三娘子",
+    "查泰莱夫人", "白瑞德", "塔土夫", "陶丽茵", "韩凭", "何氏", "尾生", "裴如海",
+    "老安德森", "少年维特", "优力西斯",
 }
 
 ALIASES = {
@@ -370,6 +372,68 @@ ALIASES = {
     "Albert Einstein": "爱因斯坦",
     "Albert Terrien de Lacouperie": "拉克伯里",
     "Albert Terrien": "拉克伯里",
+    "Oliver Wendell Holmes": "霍姆兹大法官",
+    "霍姆兹": "霍姆兹大法官",
+    "George Berkley": "乔治·巴克莱",
+    "查泰莱": "查泰莱夫人",
+    "Lady Chatterley": "查泰莱夫人",
+    "D. H. Lawrence": "劳伦斯",
+    "Dante": "但丁",
+    "Beatrice": "拜垂丝",
+    "Ellen Terry": "爱伦·黛丽",
+    "Rhett Butler": "白瑞德",
+    "Margaret Mitchell": "宓西尔",
+    "CLark Gable": "克拉克·盖博",
+    "Clark Gable": "克拉克·盖博",
+    "Moliere": "莫里哀",
+    "Tartuffe": "塔土夫",
+    "Dorine": "陶丽茵",
+    "Arturo Toscaini": "托斯卡尼尼",
+    "Claude Bernard": "克劳代·伯纳德",
+    "claude Bemard": "克劳代·伯纳德",
+    "Richard Lovelace": "拉夫瑞斯",
+    "Richard lovelace": "拉夫瑞斯",
+    "阿丽思": "爱丽丝",
+    "Alice": "爱丽丝",
+    "Walt Otto": "华特·奥图",
+    "Paul Lefontenay": "保罗·赖丰丹内",
+    "Jeanne d'Arc": "贞德",
+    "Richard Byrd": "理查·拜尔德",
+    "Bach": "巴赫",
+    "巴哈": "巴赫",
+    "Blaise Pascal": "巴斯噶",
+    "Spinoza": "斯宾诺莎",
+    "Ponce De Leon": "旁斯·得·雷昂",
+    "Henry Rider Haggard": "哈葛德",
+    "Werther": "少年维特",
+    "Archduke Ferdinand": "斐迪南",
+    "F．Scott Fitzgerald": "费滋杰罗",
+    "F. Scott Fitzgerald": "费滋杰罗",
+    "Milo": "密罗",
+    "Beauvoir": "波娃",
+    "Robert Frost": "弗洛斯特",
+    "Herman Melville": "梅尔维尔",
+    "Ulysses": "优力西斯",
+    "Attila the Hun": "阿提拉",
+    "Ildico": "伊尔娣蔻",
+    "Leo VIII": "教皇李奥八世",
+    "Felix Faure": "福尔",
+    "Copernicus": "哥白尼",
+    "Fanklin": "富兰克林",
+    "Mila Contini": "康替尼",
+    "T．S．Eliot": "艾略特",
+    "T.S.Eliot": "艾略特",
+    "Muhammad Ali": "阿里",
+    "Roberto Benigni": "罗贝多·贝尼尼",
+    "Heidegger": "海德格",
+    "Marie Antoinette": "玛丽·安唐妮",
+    "Elvis Presley": "普雷斯利",
+    "Pavarotti": "帕瓦罗蒂",
+    "Woody Allen": "伍迪·艾伦",
+    "Alain Delon": "阿兰·德龙",
+    "Burt Reynolds": "毕·雷诺斯",
+    "Thomas More": "汤玛斯·摩尔",
+    "Thomas Becket": "汤玛斯·贝凯特",
     "彭老师": "彭明敏",
     "赖喇嘛": "达赖喇嘛",
     "科拉松阿基诺": "科拉松·阿基诺",
@@ -397,6 +461,7 @@ ALIASES = {
     "孟夫子": "孟子",
     "巴扎洛夫": "巴札洛夫",
     "张子野": "张先",
+    "杨朴说": "杨朴",
     "袁子才": "袁枚",
     "纪晓岚": "纪昀",
     "晓岚": "纪昀",
@@ -671,6 +736,20 @@ ALIASES = {
     "黄主席": "黄杰",
     "杨翰兄": "杨翰",
     "叶枫说": "叶枫",
+    "万劫先生": "万劫",
+    "万劫先": "万劫",
+    "万先生": "万劫",
+    "小葇": "叶葇",
+    "叶葇说": "叶葇",
+    "叶葇有": "叶葇",
+    "君君": "陈璧君",
+    "桑塔耶": "桑塔耶那",
+    "Charlotte Church": "乔尔琪",
+    "Shiela Ryan": "希拉·蕾恩",
+    "狐女": "女狐仙",
+    "女狐仙哲学家": "女狐仙",
+    "三娘子": "荷花三娘子",
+    "崔莺莺": "莺莺",
 }
 
 ALWAYS_NAMES = {
@@ -849,6 +928,20 @@ NONSTANDARD_NAMES = {
     "杨丽花", "林柏榕", "陈重光", "王天竞", "王滔夫", "朱士烈", "王实味",
     "玛莎·葛兰姆", "黄鼎翎", "黄尊秋", "黄坤尧", "常宗豪",
     "陈仪", "叶建丽", "邹龙承",
+    "万劫", "叶葇", "陈璧君", "莫迪里亚尼", "珍妮·海布特", "毕加索",
+    "基斯林", "史丁", "露妮", "罗洛蒂", "华滋华斯", "桑塔耶那", "白壁德",
+    "乔尔琪", "希拉·蕾恩", "作家大学生", "吴先生", "她爸爸", "作家大学生的妈妈",
+    "外婆", "大阿姨",
+    "霍姆兹大法官", "乔治·巴克莱", "但丁", "拜垂丝", "爱伦·黛丽", "白瑞德",
+    "宓西尔", "克拉克·盖博", "韩凭", "何氏", "尾生", "裴如海", "莫里哀",
+    "塔土夫", "陶丽茵", "查泰莱夫人",
+    "托斯卡尼尼", "克劳代·伯纳德", "拉夫瑞斯", "老安德森", "爱丽丝", "华特·奥图",
+    "保罗·赖丰丹内", "贞德", "理查·拜尔德", "巴斯噶", "斯宾诺莎", "旁斯·得·雷昂",
+    "哈葛德", "少年维特", "斐迪南", "费滋杰罗", "密罗", "波娃", "弗洛斯特",
+    "梅尔维尔", "优力西斯", "阿提拉", "伊尔娣蔻", "教皇李奥八世", "福尔",
+    "哥白尼", "康替尼", "艾略特", "阿里", "罗贝多·贝尼尼", "海德格",
+    "玛丽·安唐妮", "普雷斯利", "帕瓦罗蒂", "伍迪·艾伦", "阿兰·德龙",
+    "毕·雷诺斯", "汤玛斯·摩尔", "汤玛斯·贝凯特",
 }
 
 CURATED_IDENTITIES = {
@@ -3865,6 +3958,97 @@ CURATED_IDENTITIES.update({
     "徐向前": ["military_figure", "politician", "spiritual"],
 })
 
+CURATED_IDENTITIES.update({
+    "万劫": ["plot_character", "literary_character", "romance", "political_dissident", "publishing"],
+    "叶葇": ["plot_character", "literary_character", "romance", "family", "correspondence"],
+    "陈璧君": ["plot_character", "literary_character", "romance", "meeting", "correspondence"],
+    "作家大学生": ["literary_character", "publishing", "meeting", "nickname"],
+    "莫迪里亚尼": ["arts_music", "romance", "spiritual"],
+    "珍妮·海布特": ["arts_music", "romance", "spiritual"],
+    "毕加索": ["arts_music", "spiritual"],
+    "基斯林": ["arts_music", "spiritual"],
+    "史丁": ["arts_music", "spiritual"],
+    "露妮": ["arts_music", "spiritual"],
+    "罗洛蒂": ["arts_music", "spiritual"],
+    "华滋华斯": ["publishing", "academic", "spiritual"],
+    "桑塔耶那": ["academic", "spiritual"],
+    "白壁德": ["fictional", "historical_allusion", "spiritual"],
+    "乔尔琪": ["arts_music", "spiritual"],
+    "希拉·蕾恩": ["arts_music", "spiritual"],
+    "吴先生（聊斋人物）": ["fictional", "historical_allusion", "spiritual", "romance"],
+    "吴先生（中兴学生）": ["literary_character", "meeting", "nickname"],
+    "女狐仙": ["fictional", "historical_allusion", "spiritual", "romance"],
+    "荷花三娘子": ["fictional", "historical_allusion", "spiritual", "romance"],
+    "叶葇父亲": ["literary_character", "family", "property_finance"],
+    "叶葇母亲": ["literary_character", "family", "arts_music"],
+    "陈璧君外婆": ["literary_character", "family"],
+    "陈璧君大阿姨": ["literary_character", "family", "property_finance"],
+    "霍姆兹大法官": ["legal_official", "historical_allusion", "spiritual"],
+    "乔治·巴克莱": ["academic", "religion", "spiritual"],
+    "但丁": ["publishing", "romance", "spiritual"],
+    "拜垂丝": ["romance", "historical_allusion", "spiritual"],
+    "爱伦·黛丽": ["arts_music", "romance", "historical_allusion", "spiritual"],
+    "白瑞德": ["fictional", "romance", "spiritual"],
+    "宓西尔": ["publishing", "spiritual"],
+    "克拉克·盖博": ["arts_music", "spiritual"],
+    "查泰莱夫人": ["fictional", "romance", "spiritual"],
+    "韩凭": ["historical_allusion", "romance", "spiritual"],
+    "何氏": ["historical_allusion", "romance", "spiritual"],
+    "尾生": ["historical_allusion", "romance", "spiritual"],
+    "裴如海": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "莫里哀": ["publishing", "spiritual"],
+    "塔土夫": ["fictional", "religion", "spiritual"],
+    "陶丽茵": ["fictional", "spiritual"],
+    "唐僧": ["religion", "historical_allusion", "fictional", "spiritual"],
+    "虞舜": ["historical_allusion", "politician", "spiritual"],
+    "柳下惠": ["historical_allusion", "politician", "spiritual"],
+    "王衍": ["historical_allusion", "politician", "spiritual"],
+    "陆象山": ["academic", "historical_allusion", "spiritual"],
+    "华滋华斯": ["publishing", "arts_music", "spiritual"],
+    "勃朗宁": ["publishing", "arts_music", "spiritual"],
+    "托斯卡尼尼": ["arts_music", "spiritual"],
+    "克劳代·伯纳德": ["scientist", "academic", "spiritual"],
+    "拉夫瑞斯": ["publishing", "romance", "spiritual"],
+    "老安德森": ["fictional", "spiritual"],
+    "爱丽丝": ["fictional", "spiritual"],
+    "华特·奥图": ["arts_music", "spiritual"],
+    "保罗·赖丰丹内": ["publishing", "academic", "spiritual"],
+    "贞德": ["historical_allusion", "religion", "political_dissident", "spiritual"],
+    "理查·拜尔德": ["explorer", "scientist", "spiritual"],
+    "巴斯噶": ["academic", "religion", "spiritual"],
+    "斯宾诺莎": ["academic", "spiritual"],
+    "旁斯·得·雷昂": ["explorer", "historical_allusion", "spiritual"],
+    "哈葛德": ["publishing", "spiritual"],
+    "少年维特": ["fictional", "romance", "spiritual"],
+    "斐迪南": ["politician", "historical_allusion", "spiritual"],
+    "费滋杰罗": ["publishing", "spiritual"],
+    "密罗": ["historical_allusion", "spiritual"],
+    "波娃": ["academic", "publishing", "romance", "spiritual"],
+    "弗洛斯特": ["publishing", "spiritual"],
+    "梅尔维尔": ["publishing", "spiritual"],
+    "优力西斯": ["fictional", "historical_allusion", "spiritual"],
+    "阿提拉": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "伊尔娣蔻": ["historical_allusion", "romance", "spiritual"],
+    "教皇李奥八世": ["religion", "politician", "historical_allusion", "spiritual"],
+    "福尔": ["politician", "historical_allusion", "spiritual"],
+    "哥白尼": ["scientist", "spiritual"],
+    "康替尼": ["arts_music", "publishing", "spiritual"],
+    "艾略特": ["publishing", "spiritual"],
+    "阿里": ["sports", "public_debate", "spiritual"],
+    "罗贝多·贝尼尼": ["arts_music", "spiritual"],
+    "海德格": ["academic", "spiritual"],
+    "玛丽·安唐妮": ["politician", "historical_allusion", "spiritual"],
+    "普雷斯利": ["arts_music", "spiritual"],
+    "帕瓦罗蒂": ["arts_music", "spiritual"],
+    "伍迪·艾伦": ["arts_music", "spiritual"],
+    "阿兰·德龙": ["arts_music", "spiritual"],
+    "毕·雷诺斯": ["arts_music", "spiritual"],
+    "汤玛斯·摩尔": ["politician", "religion", "historical_allusion", "spiritual"],
+    "汤玛斯·贝凯特": ["religion", "politician", "historical_allusion", "spiritual"],
+    "杨朴": ["publishing", "historical_allusion", "spiritual"],
+    "鲁夫人": ["historical_allusion", "spiritual"],
+})
+
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
 
@@ -4030,6 +4214,10 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "公司",
+    "余情", "从没听", "班长问", "解放僧", "钱钞", "古典世", "强盗杀", "权力起",
+    "时代才", "能有更", "任何解", "安慰女", "都讨姨", "查禁没", "暴政相", "景生情",
+    "平地齐", "叶葇要", "关公像", "经典理", "步赤裸", "成败像", "古人诗", "那只好",
+    "时身怀", "古代地", "于明虾", "于亚当", "仑琴管", "忘川", "魂断梅耶林", "来科波利斯",
     "满洲人", "万寿寺", "隆皇帝", "满清政", "满洲皇", "和尚来", "解释得",
     "和各位", "能自己", "师父", "梁老师", "公子光", "怀粉身", "宫墙",
     "时间去", "明明有", "路子",
@@ -4488,6 +4676,9 @@ STOP_NAMES = {
     "衡平", "那乌鸦", "霍氏者", "国家先", "安慰蒋", "任兼任", "国实行",
     "向主人", "台三感", "羊头化", "白莲教", "却跑到",
     "文化专", "任官吏", "于首席",
+    "满足", "古人", "通缉犯", "宿命", "苍白", "水肥车", "印度", "成见", "暴政", "路人甲",
+    "白石先", "华岗路", "别人做", "盖房子", "国幽默", "秋风有", "古代美", "别见怪",
+    "别人家", "应该再", "曾提出", "容有错", "时候来",
 }
 SIGNAL_BEFORE = set(" \t\r\n　,，.。:：;；、!！?？([（《〈“‘'\"和与及给向问访见找由同为把对从跟请替将是叫姓名骂告")
 SIGNAL_AFTER = set(" \t\r\n　,，.。:：;；、!！?？)]）《》〉”’'\"")
@@ -4532,7 +4723,9 @@ CATEGORY_LABELS = {
     "research_reference": "学术考证引用",
     "academic_admin": "学术行政",
     "scientist": "科学家",
+    "explorer": "探险航行",
     "arts_music": "文艺音乐",
+    "sports": "体育人物",
     "media": "媒体",
     "household_staff": "家中雇员",
     "disability": "残障人士",
@@ -4666,6 +4859,198 @@ PERSON_RELATIONS = [
         "weight": 7,
         "note": "李闰在谭嗣同临刑前的家书中出现，承担夫妻诀别与殉道情感的关系线。",
     },
+    {
+        "book": "上山·上山·爱",
+        "source": "万劫",
+        "target": "叶葇",
+        "relation": "山居相遇/情感主线",
+        "weight": 10,
+        "note": "万劫与叶葇的相遇、相爱与失散构成本书第一、二部的核心情感结构。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "万劫",
+        "target": "陈璧君",
+        "relation": "演讲邀约/旧情映照",
+        "weight": 9,
+        "note": "陈璧君以中兴大学学生身份邀约万劫演讲，并在容貌、年龄与命运上不断映照叶葇。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "叶葇",
+        "target": "陈璧君",
+        "relation": "母女/命运重叠",
+        "weight": 9,
+        "note": "小说结尾揭示陈璧君与叶葇之间的母女关系，使三十年前后的两条情感线合并。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "莫迪里亚尼",
+        "target": "珍妮·海布特",
+        "relation": "画家与妻子/殉情引子",
+        "weight": 6,
+        "note": "楔子以莫迪里亚尼与珍妮·海布特的死亡和合葬，引出本书关于艺术、爱情与命运的叙事气氛。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "万劫",
+        "target": "莫迪里亚尼",
+        "relation": "艺术类比/审美投射",
+        "weight": 5,
+        "note": "万劫以莫迪里亚尼的画和模特儿美学来观看叶葇，是本书早段的重要艺术类比。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "作家大学生",
+        "target": "叶葇",
+        "relation": "姐妹/介绍相识",
+        "weight": 7,
+        "note": "作家大学生先向万劫介绍妹妹叶葇，是万劫得知叶葇名字与背景的入口。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "叶葇",
+        "target": "叶葇母亲",
+        "relation": "母女/艺术影响",
+        "weight": 6,
+        "note": "叶葇母亲从事室内设计与陶艺教学，文本明确说她的气质和本领给小女儿很深影响。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "叶葇",
+        "target": "叶葇父亲",
+        "relation": "父女/家庭金钱观",
+        "weight": 5,
+        "note": "叶葇父亲以西药进口商和家庭金钱观出现，构成叶葇家庭背景的一部分。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "陈璧君",
+        "target": "陈璧君外婆",
+        "relation": "抚养/墓地安排",
+        "weight": 7,
+        "note": "陈璧君由外婆带大，外婆也安排叶葇墓地，是第三部身世揭示的重要亲属线。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "陈璧君外婆",
+        "target": "陈璧君大阿姨",
+        "relation": "亲属/居住照料",
+        "weight": 4,
+        "note": "陈璧君说外婆年老后跟大阿姨住，大阿姨也与叶葇墓地安排的家族背景相关。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "陈璧君",
+        "target": "吴先生（中兴学生）",
+        "relation": "同学/接送同行",
+        "weight": 5,
+        "note": "吴先生是中兴大学同学，负责接万劫到中兴，并与陈璧君同到山居。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "吴先生（聊斋人物）",
+        "target": "女狐仙",
+        "relation": "幻化情缘/寓言人物",
+        "weight": 5,
+        "note": "万劫向叶葇讲纪昀笔下吴先生与女狐仙的故事，用来讨论情欲、幻化和爱情。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "万劫",
+        "target": "荷花三娘子",
+        "relation": "聊斋类比/情爱想象",
+        "weight": 4,
+        "note": "万劫与叶葇谈《聊斋》荷花三娘子，以女鬼重现的故事映照两人的分离想象。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "韩凭",
+        "target": "何氏",
+        "relation": "夫妻殉情/蝴蝶典故",
+        "weight": 5,
+        "note": "万劫以韩凭、何氏故事谈殉情与化蝶，是第一部爱情论辩中的重要古典典故。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "但丁",
+        "target": "拜垂丝",
+        "relation": "精神恋爱/情人神圣化",
+        "weight": 4,
+        "note": "万劫以但丁与拜垂丝说明情人神圣化和不见可欲的精神恋爱层面。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "萧伯纳",
+        "target": "爱伦·黛丽",
+        "relation": "纸上罗曼斯/精神恋爱",
+        "weight": 4,
+        "note": "万劫将萧伯纳与爱伦·黛丽并列但丁、拜垂丝，作为纸上罗曼斯的例子。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "宓西尔",
+        "target": "白瑞德",
+        "relation": "作者与角色/爱情范型",
+        "weight": 4,
+        "note": "万劫以《乱世佳人》中的白瑞德作为现代情人范型，并点出宓西尔笔下人物来源。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "白瑞德",
+        "target": "克拉克·盖博",
+        "relation": "角色与演员/男性范型",
+        "weight": 4,
+        "note": "文本说克拉克·盖博演活了白瑞德，用以说明快乐、主动而不失气概的男子形象。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "乔治·巴克莱",
+        "target": "王阳明",
+        "relation": "唯心论对照/影子论证",
+        "weight": 4,
+        "note": "万劫用乔治·巴克莱的存在即知觉与王阳明物不在心外互相对照，解释影子不徙。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "莫里哀",
+        "target": "塔土夫",
+        "relation": "剧作与角色/宗教伪善",
+        "weight": 4,
+        "note": "万劫引用莫里哀《塔土夫》来批评唯灵论和宗教伪善。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "劳伦斯",
+        "target": "查泰莱夫人",
+        "relation": "小说作者与角色/情欲引用",
+        "weight": 4,
+        "note": "查泰莱夫人与劳伦斯同在情爱文学引用链中出现，属作品人物关系，不是李敖现实交往。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "海明威",
+        "target": "老安德森",
+        "relation": "小说作者与角色/死亡想象",
+        "weight": 3,
+        "note": "老安德森来自海明威小说引用，是万劫死亡想象中的文学角色。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "阿提拉",
+        "target": "伊尔娣蔻",
+        "relation": "历史传说/婚夜死亡",
+        "weight": 3,
+        "note": "阿提拉与伊尔娣蔻作为历史传说中的死亡典故出现，归入神交引用和历史类比。",
+    },
+    {
+        "book": "上山·上山·爱",
+        "source": "萨特",
+        "target": "波娃",
+        "relation": "哲学伴侣/思想引用",
+        "weight": 3,
+        "note": "萨特与波娃在思想与情感典故中成组出现，属于引用层面的关系。",
+    },
 ]
 
 
@@ -4749,7 +5134,37 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
     return snippet
 
 
-def canonical_name(raw_name: str, ctx: str) -> str:
+def canonical_name(raw_name: str, ctx: str, book: str | None = None) -> str:
+    if raw_name == "君君" and book != "上山·上山·爱":
+        return raw_name
+    if raw_name == "吴先生":
+        if book == "上山·上山·爱" and any(marker in ctx for marker in ("聊斋", "女狐仙", "狐女", "妓女", "纪晓岚", "阅微草堂")):
+            return "吴先生（聊斋人物）"
+        if book == "上山·上山·爱" and any(marker in ctx for marker in ("中兴", "本校同学", "接您至中兴", "开的车", "同学吴先生")):
+            return "吴先生（中兴学生）"
+        return raw_name
+    if raw_name == "她爸爸":
+        if book == "上山·上山·爱" and any(marker in ctx for marker in ("作家大学生", "西药进口", "白壁德", "薪水袋")):
+            return "叶葇父亲"
+        return raw_name
+    if raw_name == "作家大学生的妈妈":
+        if book == "上山·上山·爱":
+            return "叶葇母亲"
+        return raw_name
+    if raw_name == "外婆":
+        if book == "上山·上山·爱" and any(marker in ctx for marker in ("陈璧君", "君君", "母亲", "墓", "大阿姨", "叶葇")):
+            return "陈璧君外婆"
+        return raw_name
+    if raw_name == "大阿姨":
+        if book == "上山·上山·爱":
+            return "陈璧君大阿姨"
+        return raw_name
+    if raw_name == "三娘子" and "荷花" not in ctx:
+        return raw_name
+    if raw_name == "福尔摩斯" and any(marker in ctx for marker in ("大法官", "Holmes", "霍姆兹", "Oliver Wendell")):
+        return "霍姆兹大法官"
+    if raw_name == "巴克莱" and any(marker in ctx for marker in ("乔治·巴克莱", "George Berkley", "存在即知觉", "主教", "王阳明")):
+        return "乔治·巴克莱"
     if raw_name == "周公" and any(marker in ctx for marker in ("中共军委", "政治部副部长", "扩大和巩固抗日")):
         return "周恩来"
     if raw_name == "罗斯福" and "罗斯福夫人" in ctx:
@@ -5059,6 +5474,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             text[end:end + 1] in {"播", "州"}
             or text[start - 1:start] == "南"
             or "大方广佛华严经" in ctx
+            or "方广大庄严经" in ctx
         )
     if name == "王瑶":
         return text[end:end + 1] == "卿"
@@ -5124,7 +5540,11 @@ def extract_from_text(
             if is_contextual_false_positive(name, text, match.start(), match.end()):
                 continue
             ctx = context_window(text, match.start(), match.end())
-            name = canonical_name(name, ctx)
+            name = canonical_name(name, ctx, book)
+            if name == "万劫" and book != "上山·上山·爱":
+                continue
+            if name in {"吴先生", "她爸爸", "作家大学生的妈妈", "外婆", "大阿姨", "三娘子"}:
+                continue
             match_key = (match.start(), match.end(), name)
             if match_key in seen_matches:
                 continue
