@@ -222,7 +222,7 @@
     const nodes = [center];
     const categoryNodes = new Map();
     const personNodes = new Map();
-    const radius = Math.max(150, Math.min(width, height) * 0.28);
+    const radius = Math.max(180, Math.min(width * 0.33, height * 0.36));
 
     activeCategories.forEach((category, index) => {
       const angle = (-Math.PI / 2) + (index / Math.max(activeCategories.length, 1)) * Math.PI * 2;
@@ -243,7 +243,7 @@
     filteredPeople.forEach((person) => {
       const seed = hashName(person.name);
       const angle = (seed % 628) / 100;
-      const distance = radius + 75 + (seed % 110);
+      const distance = radius + 95 + (seed % 130);
       const node = {
         id: `person:${person.name}`,
         type: "person",
@@ -321,6 +321,8 @@
   function simulate(graph, width, height) {
     const nodes = graph.nodes.filter((node) => !node.fixed);
     const tickCount = nodes.length > 320 ? 72 : nodes.length > 220 ? 96 : 132;
+    const softLimitX = Math.max(260, width * 0.34);
+    const softLimitY = Math.max(220, height * 0.36);
     for (let tick = 0; tick < tickCount; tick += 1) {
       graph.links.forEach((link) => {
         const dx = link.target.x - link.source.x;
@@ -360,12 +362,40 @@
       nodes.forEach((node) => {
         node.vx += (width / 2 - node.x) * 0.0012;
         node.vy += (height / 2 - node.y) * 0.0012;
+        if (node.x < -softLimitX) node.vx += (-softLimitX - node.x) * 0.004;
+        if (node.x > width + softLimitX) node.vx += (width + softLimitX - node.x) * 0.004;
+        if (node.y < -softLimitY) node.vy += (-softLimitY - node.y) * 0.004;
+        if (node.y > height + softLimitY) node.vy += (height + softLimitY - node.y) * 0.004;
         node.vx *= 0.84;
         node.vy *= 0.84;
-        node.x = Math.max(24, Math.min(width - 24, node.x + node.vx));
-        node.y = Math.max(24, Math.min(height - 24, node.y + node.vy));
+        node.x += node.vx;
+        node.y += node.vy;
       });
     }
+  }
+
+  function fitGraphView(graph, width, height) {
+    const visibleNodes = graph.nodes.filter((node) => node.type !== "center");
+    if (!visibleNodes.length) return { x: 0, y: 0, k: 1 };
+    const padding = 56;
+    const bounds = visibleNodes.reduce((box, node) => ({
+      minX: Math.min(box.minX, node.x - node.r),
+      maxX: Math.max(box.maxX, node.x + node.r + Math.min(node.name.length * 12, 96)),
+      minY: Math.min(box.minY, node.y - node.r - 10),
+      maxY: Math.max(box.maxY, node.y + node.r + 10),
+    }), { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
+    const graphWidth = Math.max(1, bounds.maxX - bounds.minX);
+    const graphHeight = Math.max(1, bounds.maxY - bounds.minY);
+    const minScale = visibleNodes.length > 320 ? 0.48 : visibleNodes.length > 220 ? 0.58 : 0.72;
+    const scale = Math.max(minScale, Math.min(1.35, Math.min(
+      (width - padding * 2) / graphWidth,
+      (height - padding * 2) / graphHeight,
+    )));
+    return {
+      x: (width - graphWidth * scale) / 2 - bounds.minX * scale,
+      y: (height - graphHeight * scale) / 2 - bounds.minY * scale,
+      k: scale,
+    };
   }
 
   function renderGraph() {
@@ -389,6 +419,7 @@
 
     const graph = buildGraph(graphPeople, width, height);
     simulate(graph, width, height);
+    state.graphView = fitGraphView(graph, width, height);
     renderLegend(graph.activeCategories);
 
     const viewportLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
