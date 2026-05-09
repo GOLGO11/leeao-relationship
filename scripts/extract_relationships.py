@@ -74,7 +74,7 @@ FICTIONAL_CHARACTERS = {
     "孟姜女", "包龙图", "木兰", "三娘", "薛仁贵", "薛丁山", "呼延庆", "罗通",
     "王宝钏", "薛平贵", "代战公主", "赵太爷", "女狐仙", "荷花三娘子",
     "查泰莱夫人", "白瑞德", "塔土夫", "陶丽茵", "韩凭", "何氏", "尾生", "裴如海",
-    "老安德森", "少年维特", "优力西斯",
+    "老安德森", "少年维特", "优力西斯", "罗宾汉",
 }
 
 ALIASES = {
@@ -434,6 +434,19 @@ ALIASES = {
     "Burt Reynolds": "毕·雷诺斯",
     "Thomas More": "汤玛斯·摩尔",
     "Thomas Becket": "汤玛斯·贝凯特",
+    "史子文": "史处长",
+    "王奉璋": "欧卡曾",
+    "矮小子": "欧卡曾",
+    "龙　头": "龙头",
+    "老　黄": "老黄",
+    "班　长": "班长",
+    "龙头讲": "龙头",
+    "龙头听": "龙头",
+    "龙头举": "龙头",
+    "班长开": "班长",
+    "毛匪泽": "毛泽东",
+    "国林肯": "林肯",
+    "傅胖子": "傅积宽",
     "彭老师": "彭明敏",
     "赖喇嘛": "达赖喇嘛",
     "科拉松阿基诺": "科拉松·阿基诺",
@@ -942,6 +955,11 @@ NONSTANDARD_NAMES = {
     "哥白尼", "康替尼", "艾略特", "阿里", "罗贝多·贝尼尼", "海德格",
     "玛丽·安唐妮", "普雷斯利", "帕瓦罗蒂", "伍迪·艾伦", "阿兰·德龙",
     "毕·雷诺斯", "汤玛斯·摩尔", "汤玛斯·贝凯特",
+    "龙头", "史处长", "史子文", "余三共", "华老师", "欧卡曾", "王奉璋",
+    "王九胆", "胡牧师", "王家法", "老黄", "士官长", "班长",
+    "王印", "陈长坤",
+    "李组长", "游全球", "苏依仁",
+    "刘金财", "姚勇来", "钟金木", "黄进川", "林颂和", "许岱宗", "王甲乙", "王刚",
 }
 
 CURATED_IDENTITIES = {
@@ -4047,6 +4065,53 @@ CURATED_IDENTITIES.update({
     "汤玛斯·贝凯特": ["religion", "politician", "historical_allusion", "spiritual"],
     "杨朴": ["publishing", "historical_allusion", "spiritual"],
     "鲁夫人": ["historical_allusion", "spiritual"],
+    "龙头": ["plot_character", "literary_character", "political_dissident", "case_prison", "torture_victim", "publishing"],
+    "史处长": ["plot_character", "literary_character", "intelligence_police", "torture_actor", "case_prison"],
+    "余三共": ["plot_character", "literary_character", "case_prison", "political_dissident", "torture_victim"],
+    "华老师": ["plot_character", "literary_character", "teacher_student", "case_prison", "torture_victim"],
+    "欧卡曾": ["plot_character", "literary_character", "case_prison", "underworld"],
+    "王九胆": ["plot_character", "literary_character", "case_prison", "underworld"],
+    "胡牧师": ["plot_character", "literary_character", "religion", "teacher_student", "case_prison"],
+    "王家法": ["plot_character", "literary_character", "case_prison", "veteran"],
+    "老黄": ["plot_character", "literary_character", "case_prison", "property_finance"],
+    "士官长": ["plot_character", "literary_character", "prison_guard", "military_figure"],
+    "班长": ["plot_character", "literary_character", "prison_guard", "military_figure"],
+    "王印": ["case_prison", "teacher_student", "spiritual"],
+    "陈长坤": ["teacher_student", "case_prison", "spiritual"],
+    "李组长": ["intelligence_police", "torture_actor", "case_prison"],
+    "游全球": ["case_prison", "torture_victim", "witness"],
+    "苏依仁": ["case_prison", "torture_victim"],
+    "任显群": ["legal_official", "politician", "historical_allusion", "spiritual"],
+    "李世杰": ["intelligence_police", "case_prison", "torture_victim"],
+    "李玉堂": ["military_figure", "case_prison", "torture_victim"],
+    "孙庆林": ["social_case", "medical_care", "case_prison"],
+    "陈鸿渐": ["intelligence_police", "case_prison", "witness"],
+    "刘金财": ["case_prison", "anti_communist_defector", "social_case"],
+    "姚勇来": ["case_prison", "political_dissident"],
+    "吕安仁": ["social_case", "litigation"],
+    "钟金木": ["social_case", "case_prison"],
+    "黄进川": ["teacher_student", "case_prison", "political_dissident"],
+    "吕有文": ["legal_official", "politician"],
+    "石明江": ["legal_official"],
+    "李荆荪": ["case_prison", "political_dissident"],
+    "林颂和": ["lawyer_counsel", "torture_victim", "human_rights", "case_prison"],
+    "许岱宗": ["witness", "case_prison"],
+    "王甲乙": ["legal_official"],
+    "王刚": ["legal_official"],
+    "罗宾汉": ["fictional", "historical_allusion", "spiritual"],
+    "管仲": ["historical_allusion", "politician", "spiritual"],
+    "盛世才": ["politician", "military_figure", "torture_actor", "historical_allusion", "spiritual"],
+    "文天祥": ["historical_allusion", "political_dissident", "spiritual"],
+    "林肯": ["politician", "historical_allusion", "spiritual"],
+    "杰斐逊": ["politician", "historical_allusion", "spiritual"],
+    "岳飞": ["historical_allusion", "military_figure", "spiritual"],
+    "李夫人": ["historical_allusion", "romance", "spiritual"],
+    "甘地": ["historical_allusion", "political_dissident", "spiritual"],
+    "陈华洲": ["academic", "social_case", "torture_victim"],
+    "梁金木": ["social_case", "litigation"],
+    "蒲鲁东": ["academic", "political_dissident", "spiritual"],
+    "杨秀清": ["historical_allusion", "religion", "politician", "spiritual"],
+    "范明": ["legal_official", "case_prison"],
 })
 
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
@@ -4214,6 +4279,15 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "公司",
+    "步作业", "关怀望", "路警来", "时代俱", "东西著", "国军作", "却先反", "平心来",
+    "王印帮", "路警出", "方位", "房有人", "时只骂", "班长允", "时有好", "成蚊子",
+    "房囚犯", "和走狗", "于孙将", "却真行", "胡人抢", "高院三", "龙头包", "鞠躬说",
+    "闻即知", "时间完", "王印眼", "师部各", "高人来", "能称蒋", "冷笑道", "那位杨",
+    "党名单", "别人戴", "都会受", "厉声高", "时表达", "却说梁", "边来", "华诞",
+    "查询", "龙头老", "关进去", "申请复", "门肯", "时惊醒", "从没见", "巴拉松",
+    "国家元", "怀抱", "宁静", "夏至", "秋分", "钟情", "印地安", "关进监", "小共产党",
+    "文化侵", "万万岁", "相符", "都已经", "师说", "宣判", "车司机", "相貌堂",
+    "时半", "陈老师",
     "余情", "从没听", "班长问", "解放僧", "钱钞", "古典世", "强盗杀", "权力起",
     "时代才", "能有更", "任何解", "安慰女", "都讨姨", "查禁没", "暴政相", "景生情",
     "平地齐", "叶葇要", "关公像", "经典理", "步赤裸", "成败像", "古人诗", "那只好",
@@ -5051,6 +5125,126 @@ PERSON_RELATIONS = [
         "weight": 3,
         "note": "萨特与波娃在思想与情感典故中成组出现，属于引用层面的关系。",
     },
+    {
+        "book": "红色11",
+        "source": "龙头",
+        "target": "余三共",
+        "relation": "牢房同囚/思想辩论",
+        "weight": 9,
+        "note": "龙头与余三共同处军法看守所十一房，围绕共产党、国民党、监狱斗争展开核心对话。",
+    },
+    {
+        "book": "红色11",
+        "source": "龙头",
+        "target": "史处长",
+        "relation": "审讯对抗/权力反讽",
+        "weight": 9,
+        "note": "史处长以调查局处长身份进入牢房，与龙头形成审讯权力和精神抵抗的中心冲突。",
+    },
+    {
+        "book": "红色11",
+        "source": "余三共",
+        "target": "华老师",
+        "relation": "同囚/假共产党案",
+        "weight": 7,
+        "note": "余三共与华老师同在十一房，二人的遭遇共同揭示白色恐怖中的构陷与刑求。",
+    },
+    {
+        "book": "红色11",
+        "source": "欧卡曾",
+        "target": "龙头",
+        "relation": "牢房新人/生存训导",
+        "weight": 7,
+        "note": "欧卡曾作为新进小偷进入牢房，由龙头解释牢房规矩和政治恐怖的荒诞逻辑。",
+    },
+    {
+        "book": "红色11",
+        "source": "胡牧师",
+        "target": "龙头",
+        "relation": "同囚对话/监狱斗争学",
+        "weight": 6,
+        "note": "胡牧师在后续幕中与龙头对话，推动监狱斗争经验和信仰讽刺的展开。",
+    },
+    {
+        "book": "红色11",
+        "source": "士官长",
+        "target": "班长",
+        "relation": "戒护协作/军法看守所",
+        "weight": 5,
+        "note": "士官长与班长作为看守系统角色，在第四幕执行押送与枪决前的戒护安排。",
+    },
+    {
+        "book": "红色11",
+        "source": "士官长",
+        "target": "龙头",
+        "relation": "押送处决/戒护对象",
+        "weight": 6,
+        "note": "士官长在结尾押送龙头，连接牢房叙事与处决场景。",
+    },
+    {
+        "book": "红色11",
+        "source": "王印",
+        "target": "陈长坤",
+        "relation": "狱中识字/老师与囚徒",
+        "weight": 3,
+        "note": "龙头讲到王印在牢里遇见曾任花莲高工教师的陈长坤，由陈长坤教他念书，属牢房轶事引用。",
+    },
+    {
+        "book": "红色11",
+        "source": "龙头",
+        "target": "李组长",
+        "relation": "办案逼供/情感切断",
+        "weight": 5,
+        "note": "李组长在第三幕办案语境中要求龙头写下与女友断绝联系的文字，体现情治系统对私生活的控制。",
+    },
+    {
+        "book": "红色11",
+        "source": "游全球",
+        "target": "苏依仁",
+        "relation": "白色恐怖个案/刑求受害",
+        "weight": 3,
+        "note": "二人都作为龙头举出的白色恐怖个案人物出现，重点是被抓、被讯问与被迫卷入案件。",
+    },
+    {
+        "book": "红色11",
+        "source": "盛世才",
+        "target": "丁慰慈",
+        "relation": "历史刑求类比/逼迫自诬",
+        "weight": 3,
+        "note": "龙头以盛世才审问丁慰慈为例，说明办案者先有腹案、再以刑求迫人自诬的逻辑。",
+    },
+    {
+        "book": "红色11",
+        "source": "林颂和",
+        "target": "姚勇来",
+        "relation": "律师辩护/涉匪案连坐",
+        "weight": 3,
+        "note": "林颂和曾替涉匪案的姚勇来辩护，后来被情治系统以此为由清算刑求。",
+    },
+    {
+        "book": "红色11",
+        "source": "陈鸿渐",
+        "target": "许岱宗",
+        "relation": "职业证人/构陷反噬",
+        "weight": 3,
+        "note": "陈鸿渐曾安排许岱宗作职业证人，后来陈鸿渐本人也被构陷，证人正是许岱宗。",
+    },
+    {
+        "book": "红色11",
+        "source": "钟曜唐",
+        "target": "吕安仁",
+        "relation": "法官审判/杀人案",
+        "weight": 3,
+        "note": "龙头以钟曜唐办理吕安仁杀人案为例，批评司法系统配合政权逻辑。",
+    },
+    {
+        "book": "红色11",
+        "source": "吕安仁",
+        "target": "梁金木",
+        "relation": "杀人案被告/被害人",
+        "weight": 3,
+        "note": "吕安仁案中梁金木为被害人，文本用此案说明司法时间线被扭曲。",
+    },
 ]
 
 
@@ -5543,6 +5737,8 @@ def extract_from_text(
             name = canonical_name(name, ctx, book)
             if name == "万劫" and book != "上山·上山·爱":
                 continue
+            if name in {"龙头", "史处长", "余三共", "华老师", "欧卡曾", "王九胆", "胡牧师", "王家法", "老黄", "士官长", "班长"} and book != "红色11":
+                continue
             if name in {"吴先生", "她爸爸", "作家大学生的妈妈", "外婆", "大阿姨", "三娘子"}:
                 continue
             match_key = (match.start(), match.end(), name)
@@ -5631,6 +5827,8 @@ def extract_title_names(source_root: Path, files: list[Path] | None = None) -> s
 
 
 def keep_person(hit: PersonHit) -> bool:
+    if hit.name == "班长" and "红色11" in hit.books:
+        return True
     if hit.name in STOP_NAMES:
         return False
     if hit.name in CURATED_IDENTITIES and hit.occurrences > 0:
