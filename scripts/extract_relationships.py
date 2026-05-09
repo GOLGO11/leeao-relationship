@@ -81,6 +81,13 @@ FICTIONAL_CHARACTERS = {
 ALIASES = {
     "圣母": "玛利亚",
     "圣母玛利亚": "玛利亚",
+    "马戈": "马宏祥",
+    "老马": "马宏祥",
+    "新汉": "景新汉",
+    "适之": "胡适",
+    "适之先生": "胡适",
+    "小猴": "潘毓刚",
+    "张藉": "张籍",
     "上帝李敖": "上帝李",
     "小布希": "小布什",
     "老布希": "老布什",
@@ -789,7 +796,7 @@ ALIASES = {
     "叶葇说": "叶葇",
     "叶葇有": "叶葇",
     "君君": "陈璧君",
-    "桑塔耶": "桑塔耶那",
+    "桑塔耶": "桑塔亚纳",
     "Charlotte Church": "乔尔琪",
     "Shiela Ryan": "希拉·蕾恩",
     "狐女": "女狐仙",
@@ -4537,6 +4544,55 @@ CURATED_IDENTITIES.update({
     "弗兰克浮特": ["legal_official", "academic", "historical_allusion", "spiritual"],
 })
 
+CURATED_IDENTITIES.update({
+    "胡适": ["correspondence", "meeting", "academic", "academic_admin", "public_debate"],
+    "马宏祥": ["correspondence", "classmate", "friendship", "publishing"],
+    "景新汉": ["classmate", "meeting", "correspondence", "friendship"],
+    "潘毓刚": ["scientist", "academic", "friendship", "correspondence", "meeting", "public_debate"],
+    "余光中": ["academic", "publishing", "meeting", "correspondence", "friendship", "public_debate", "research_reference"],
+    "夏菁": ["romance", "friendship", "meeting", "nickname"],
+    "秋郎": ["nickname", "friendship", "meeting"],
+    "Rosa": ["romance", "correspondence", "nickname"],
+    "CL": ["romance", "correspondence", "nickname"],
+    "CT": ["correspondence", "friendship", "nickname"],
+    "玫园主人": ["friendship", "meeting"],
+    "庄水昆": ["military_figure", "social_case", "romance"],
+    "许美月": ["social_case", "romance", "torture_victim"],
+    "邱比特": ["fictional", "religion", "romance", "historical_allusion", "spiritual"],
+    "西施": ["historical_allusion", "romance", "spiritual"],
+    "张飞": ["military_figure", "historical_allusion", "spiritual"],
+    "胡适之": ["correspondence", "meeting", "academic", "academic_admin", "public_debate"],
+    "汤普森": ["publishing", "historical_allusion", "spiritual"],
+    "阿瑞尔": ["fictional", "literary_character", "historical_allusion", "spiritual"],
+    "桑塔亚纳": ["academic", "publishing", "historical_allusion", "spiritual"],
+    "孙中山": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "周至柔": ["military_figure", "politician", "public_debate"],
+    "胡茵梦": ["romance", "in_law", "trust_property", "litigation", "media", "publishing"],
+    "杨增悌": ["friendship", "meeting"],
+    "李善培": ["friendship", "meeting"],
+    "小玄": ["romance", "nickname"],
+    "潘璞儒": ["family", "nickname"],
+    "陈教官": ["military_figure", "meeting", "nickname"],
+    "李家大小姐": ["romance", "nickname"],
+    "湘女": ["romance", "nickname"],
+    "吴姬": ["romance", "nickname"],
+    "汪汪": ["romance", "nickname"],
+    "依依": ["romance", "nickname"],
+    "月老": ["fictional", "religion", "romance", "historical_allusion", "spiritual"],
+    "司空曙": ["publishing", "historical_allusion", "spiritual"],
+    "张籍": ["publishing", "historical_allusion", "spiritual"],
+    "王勃": ["publishing", "historical_allusion", "spiritual"],
+    "卢纶": ["publishing", "historical_allusion", "spiritual"],
+    "魏文帝": ["politician", "publishing", "historical_allusion", "spiritual"],
+    "杜牧": ["publishing", "historical_allusion", "spiritual"],
+    "李商隐": ["publishing", "historical_allusion", "spiritual"],
+    "刘长卿": ["publishing", "historical_allusion", "spiritual"],
+    "孟浩然": ["publishing", "historical_allusion", "spiritual"],
+    "崔涂": ["publishing", "historical_allusion", "spiritual"],
+    "韦应物": ["publishing", "historical_allusion", "spiritual"],
+    "王维": ["publishing", "historical_allusion", "spiritual"],
+})
+
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
 
@@ -6127,6 +6183,70 @@ PERSON_RELATIONS = [
         "weight": 4,
         "note": "《一个文法学家的葬礼》介绍勃朗宁长诗后，提到格拉宾《勃朗宁故事》专章讨论这首诗的理想主义色彩。",
     },
+    {
+        "book": "李敖的情诗",
+        "source": "景新汉",
+        "target": "马宏祥",
+        "relation": "爱情问计/军师戏诗",
+        "weight": 6,
+        "note": "《爱情军师赐诗》明写新汉来书说马戈需要经验丰富的参谋，马戈又来信说新汉劝他问计于李敖。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "庄水昆",
+        "target": "许美月",
+        "relation": "情杀案件/病态爱情例证",
+        "weight": 6,
+        "note": "《三情之书》序引用台北西门闹区情杀案，庄水昆因情感纠葛枪杀许美月，被李敖作为病态爱情传统的例证。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "杨增悌",
+        "target": "李善培",
+        "relation": "死讯转告/诗作缘起",
+        "weight": 5,
+        "note": "《无所逃》说明杨增悌告诉李敖李善培在美国被杀，这一死讯成为本诗的缘起。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "余光中",
+        "target": "桑塔亚纳",
+        "relation": "译文比较/情诗重译",
+        "weight": 5,
+        "note": "《译桑塔耶那的情诗》列出李敖译文与余光中译文，并批评余译的西化中文。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "景新汉",
+        "target": "依依",
+        "relation": "旧属奉还/生日戏诗",
+        "weight": 4,
+        "note": "《民国乐府贺新汉居士悬弧大庆》附注说“依依”本为景新汉之物，为李敖横刀所夺，今奉还，是本诗中的玩笑式情感代号。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "景新汉",
+        "target": "汪汪",
+        "relation": "某小姐代称/生日戏诗",
+        "weight": 3,
+        "note": "同诗附注说明“汪汪”除形容女人外，好像还是某小姐之姓氏，故暂作景新汉生日戏诗中的称谓待考人物。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "马宏祥",
+        "target": "湘女",
+        "relation": "恋慕对象/戏诗代号",
+        "weight": 4,
+        "note": "《爱情军师赐诗》《爱情军师又赐诗》都以马戈的爱情困局为题，诗中称“湘女孽缘”“梦里佳人本湘产”，暂作马宏祥恋慕对象的代号保留。",
+    },
+    {
+        "book": "李敖的情诗",
+        "source": "夏菁",
+        "target": "秋郎",
+        "relation": "约看对象/题赠附问",
+        "weight": 3,
+        "note": "《呈光中》附问“夏菁，咱们什么时候去看‘秋郎’？”，显示夏菁与秋郎同处李敖、余光中一组朋友往来语境中。",
+    },
 ]
 
 
@@ -6231,6 +6351,21 @@ STOP_NAMES.update({
     "朱阿姨", "范氏夫", "祝福", "强弱", "花飞", "叶落", "章台路", "路相逢",
     "孔明歌", "国古人", "国哈佛",
 })
+
+STOP_NAMES.update({
+    # 《李敖的情诗》首轮切词噪声：篇名、诗句、抽象词、称谓片段或自称片段。
+    "井水", "罗裙", "红绳", "水灾", "寿诗", "水调歌", "相思树", "白之死",
+    "国乐府", "居士悬", "师赐诗", "师又赐", "伊人面", "敖兄", "贺适之",
+    "越老越", "相有庄", "党混子", "和好人", "乌来观", "史怀古", "宗教诗",
+    "老子歌", "堂堂诗", "情诗集", "思想的", "小儿女", "大笑放", "多情总",
+    "写贻党", "蒙祸与", "笑中刀", "四言诗", "心中的", "诗的原", "远景丛",
+    "大情人", "大混蛋", "李排长", "李排长敖", "老子均", "老子低", "老子头",
+    "老子情", "老子军", "老子不", "老氏大", "胡思杜", "周郎顾", "王者的",
+    "那个穿", "那个笑", "酒涡里", "迷药迷", "粉衣服", "粉裙子",
+    "景玫园", "那西厢", "那南来",
+    "印刷厂", "成熟", "从哪儿",
+})
+STOP_NAMES.discard("汪汪")
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -6883,6 +7018,10 @@ def extract_from_text(
                 continue
             ctx = context_window(text, match.start(), match.end())
             name = canonical_name(name, ctx, book, chapter)
+            if name == "周至柔" and "天下至柔莫如水" in ctx:
+                continue
+            if name == "汪汪" and book != "李敖的情诗":
+                continue
             if name == "万劫" and book != "上山·上山·爱":
                 continue
             if name in {"龙头", "史处长", "余三共", "华老师", "欧卡曾", "王九胆", "胡牧师", "王家法", "老黄", "士官长", "班长"} and book != "红色11":
@@ -7217,11 +7356,79 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
     }
 
 
+def trim_for_site(value: str, limit: int = 180) -> str:
+    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    if len(text) <= limit:
+        return text
+    return text[: limit - 1].rstrip() + "…"
+
+
+def compact_site_data(data: dict) -> dict:
+    """Return a lightweight browser payload; people.json keeps the full archive."""
+    people = []
+    for person in data["people"]:
+        people.append(
+            {
+                "name": person["name"],
+                "aliases": person.get("aliases", []),
+                "category": person["category"],
+                "primaryCategory": person["primaryCategory"],
+                "categories": person["categories"],
+                "categoryStats": [
+                    {
+                        "category": stat["category"],
+                        "count": stat["count"],
+                        "curated": stat.get("curated", False),
+                    }
+                    for stat in person.get("categoryStats", [])
+                ],
+                "confidence": person["confidence"],
+                "occurrences": person["occurrences"],
+                "relevantOccurrences": person["relevantOccurrences"],
+                "bookCount": person["bookCount"],
+                "chapterCount": person["chapterCount"],
+                "cues": person.get("cues", [])[:5],
+                "evidence": [
+                    {
+                        "book": item.get("book", ""),
+                        "chapter": item.get("chapter", ""),
+                        "snippet": trim_for_site(item.get("snippet", "")),
+                        "score": item.get("score", 0),
+                        "category": item.get("category", ""),
+                    }
+                    for item in person.get("evidence", [])[:3]
+                ],
+            }
+        )
+
+    books = []
+    for book in data["books"]:
+        books.append(
+            {
+                "book": book["book"],
+                "collection": book["collection"],
+                "chapters": book["chapters"],
+                "personCount": book["personCount"],
+                "people": book.get("people", [])[:16],
+            }
+        )
+
+    return {
+        "generatedAt": data["generatedAt"],
+        "method": data["method"],
+        "categoryLabels": data["categoryLabels"],
+        "totals": data["totals"],
+        "people": people,
+        "personRelations": data.get("personRelations", []),
+        "books": books,
+    }
+
+
 def write_json_js(data: dict, data_dir: Path) -> None:
     data_dir.mkdir(parents=True, exist_ok=True)
     (data_dir / "people.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
     js = "window.LEEAO_RELATIONSHIP_DATA = "
-    js += json.dumps(data, ensure_ascii=False, separators=(",", ":"))
+    js += json.dumps(compact_site_data(data), ensure_ascii=False, separators=(",", ":"))
     js += ";\n"
     (data_dir / "relationship-data.js").write_text(js, encoding="utf-8")
 

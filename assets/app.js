@@ -12,6 +12,16 @@
   };
 
   const $ = (id) => document.getElementById(id);
+  const DEFAULT_GRAPH_NODE_LIMIT = 240;
+  const FILTERED_GRAPH_NODE_LIMIT = 420;
+  const SEARCH_RENDER_DELAY = 140;
+  let renderTimer = null;
+
+  if (!data) {
+    document.body.innerHTML = '<main class="layout">尚未生成数据，请先运行 scripts/extract_relationships.py。</main>';
+    return;
+  }
+
   const categoryColors = {
     meeting: "#0f766e",
     correspondence: "#0891b2",
@@ -76,13 +86,32 @@
     return String(value || "").toLowerCase().includes(query);
   }
 
-  function personAliasText(person) {
-    return (person.aliases || []).join(" ");
-  }
+  data.people.forEach((person) => {
+    const categories = person.categories || [person.category];
+    person.category = person.category || categories[0];
+    person.primaryCategory = person.primaryCategory || person.category;
+    person.categoryLabel = person.categoryLabel || data.categoryLabels[person.category] || person.category;
+    person.primaryCategoryLabel = person.primaryCategoryLabel || data.categoryLabels[person.primaryCategory] || person.primaryCategory;
+    person.categoryLabels = person.categoryLabels || categories.map((category) => data.categoryLabels[category] || category);
+    person.categoryStats = (person.categoryStats || categories.map((category) => ({ category, count: 1 }))).map((stat) => ({
+      ...stat,
+      label: stat.label || data.categoryLabels[stat.category] || stat.category,
+    }));
+    person.cues = person.cues || [];
+    person.evidence = person.evidence || [];
+    person.searchText = [
+      person.name,
+      personAliasText(person),
+      (person.categoryLabels || [person.categoryLabel]).join(" "),
+      person.cues.map((item) => item.cue).join(" "),
+      person.evidence.map((item) => `${item.chapter || ""} ${item.snippet || ""}`).join(" "),
+    ].join(" ").toLowerCase();
+  });
 
-  function identityLinks() {
-    if (Array.isArray(data.identityLinks)) return data.identityLinks;
-    return data.people.flatMap((person) =>
+  const personIndex = new Map(data.people.map((person) => [person.name, person]));
+  const identityLinkRows = Array.isArray(data.identityLinks)
+    ? data.identityLinks
+    : data.people.flatMap((person) =>
       (person.categoryStats || []).map((stat) => ({
         person: person.name,
         category: stat.category,
@@ -92,10 +121,18 @@
         confidence: person.confidence,
       })),
     );
+  const personRelationRows = Array.isArray(data.personRelations) ? data.personRelations : [];
+
+  function personAliasText(person) {
+    return (person.aliases || []).join(" ");
+  }
+
+  function identityLinks() {
+    return identityLinkRows;
   }
 
   function personRelations() {
-    return Array.isArray(data.personRelations) ? data.personRelations : [];
+    return personRelationRows;
   }
 
   function personMatches(person) {
@@ -103,27 +140,13 @@
     if (state.category !== "all" && !categories.includes(state.category)) return false;
     if (person.confidence < state.confidence) return false;
     if (!state.query) return true;
-    const query = state.query;
-    return (
-      textIncludes(person.name, query) ||
-      textIncludes(personAliasText(person), query) ||
-      textIncludes((person.categoryLabels || [person.categoryLabel]).join(" "), query) ||
-      person.cues.some((item) => textIncludes(item.cue, query)) ||
-      person.evidence.some((item) => textIncludes(item.snippet, query) || textIncludes(item.chapter, query))
-    );
+    return person.searchText.includes(state.query);
   }
 
   function personMatchesBase(person) {
     if (person.confidence < state.confidence) return false;
     if (!state.query) return true;
-    const query = state.query;
-    return (
-      textIncludes(person.name, query) ||
-      textIncludes(personAliasText(person), query) ||
-      textIncludes((person.categoryLabels || [person.categoryLabel]).join(" "), query) ||
-      person.cues.some((item) => textIncludes(item.cue, query)) ||
-      person.evidence.some((item) => textIncludes(item.snippet, query) || textIncludes(item.chapter, query))
-    );
+    return person.searchText.includes(state.query);
   }
 
   function availableCategories() {
@@ -275,9 +298,29 @@
     return { nodes, links: graphLinks, activeCategories, peopleByName };
   }
 
+  function graphNodeLimit() {
+    return state.query || state.category !== "all" ? FILTERED_GRAPH_NODE_LIMIT : DEFAULT_GRAPH_NODE_LIMIT;
+  }
+
+  function rankPeopleForGraph(people) {
+    const selectedName = state.selected && state.selected.type === "person" ? state.selected.name : "";
+    return [...people].sort((a, b) => {
+      if (a.name === selectedName) return -1;
+      if (b.name === selectedName) return 1;
+      return (b.confidence - a.confidence) || (b.relevantOccurrences - a.relevantOccurrences) || (b.occurrences - a.occurrences) || a.name.localeCompare(b.name, "zh-CN");
+    });
+  }
+
+  function visiblePeopleForGraph(filteredPeople) {
+    const limit = graphNodeLimit();
+    if (filteredPeople.length <= limit) return filteredPeople;
+    return rankPeopleForGraph(filteredPeople).slice(0, limit);
+  }
+
   function simulate(graph, width, height) {
     const nodes = graph.nodes.filter((node) => !node.fixed);
-    for (let tick = 0; tick < 180; tick += 1) {
+    const tickCount = nodes.length > 320 ? 72 : nodes.length > 220 ? 96 : 132;
+    for (let tick = 0; tick < tickCount; tick += 1) {
       graph.links.forEach((link) => {
         const dx = link.target.x - link.source.x;
         const dy = link.target.y - link.source.y;
@@ -329,7 +372,10 @@
     const width = Math.max(960, svg.clientWidth || 960);
     const height = Math.max(720, svg.clientHeight || 680);
     const filteredPeople = data.people.filter(personMatches);
-    $("resultCount").textContent = `${filteredPeople.length.toLocaleString("zh-CN")} 人`;
+    const graphPeople = visiblePeopleForGraph(filteredPeople);
+    $("resultCount").textContent = graphPeople.length < filteredPeople.length
+      ? `显示 ${graphPeople.length.toLocaleString("zh-CN")} / 共 ${filteredPeople.length.toLocaleString("zh-CN")} 人`
+      : `${filteredPeople.length.toLocaleString("zh-CN")} 人`;
     svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
     svg.innerHTML = "";
     svg.style.cursor = "grab";
@@ -340,7 +386,7 @@
       return;
     }
 
-    const graph = buildGraph(filteredPeople, width, height);
+    const graph = buildGraph(graphPeople, width, height);
     simulate(graph, width, height);
     renderLegend(graph.activeCategories);
 
@@ -403,7 +449,8 @@
       group.addEventListener("click", () => {
         state.selected = node;
         renderDetail(node);
-        renderGraph();
+        svg.querySelectorAll(".node.selected").forEach((item) => item.classList.remove("selected"));
+        group.classList.add("selected");
       });
       nodeLayer.appendChild(group);
     });
@@ -554,7 +601,7 @@
       `;
       $("detailBody").querySelectorAll("button[data-person]").forEach((button) => {
         button.addEventListener("click", () => {
-          const person = data.people.find((item) => item.name === button.dataset.person);
+          const person = personIndex.get(button.dataset.person);
           if (person) renderDetail({ id: `person:${person.name}`, type: "person", name: person.name, person });
         });
       });
@@ -623,11 +670,16 @@
   }
 
   function bindEvents() {
+    function scheduleRender(delay = SEARCH_RENDER_DELAY) {
+      window.clearTimeout(renderTimer);
+      renderTimer = window.setTimeout(renderGraph, delay);
+    }
+
     $("searchInput").addEventListener("input", (event) => {
       state.query = event.target.value.trim().toLowerCase();
       state.selected = null;
       state.graphView = { x: 0, y: 0, k: 1 };
-      renderGraph();
+      scheduleRender();
     });
     $("categoryFilter").addEventListener("change", (event) => {
       setCategory(event.target.value);
@@ -637,19 +689,14 @@
       $("confidenceValue").textContent = state.confidence;
       state.selected = null;
       state.graphView = { x: 0, y: 0, k: 1 };
-      renderGraph();
+      scheduleRender();
     });
     window.addEventListener("resize", () => {
       state.selected = null;
       state.graphView = { x: 0, y: 0, k: 1 };
-      renderGraph();
+      scheduleRender(180);
     });
     bindGraphInteractions();
-  }
-
-  if (!data) {
-    document.body.innerHTML = '<main class="layout">尚未生成数据，请先运行 scripts/extract_relationships.py。</main>';
-    return;
   }
 
   fillFilters();
