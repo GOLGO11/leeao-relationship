@@ -94,6 +94,10 @@
     );
   }
 
+  function personRelations() {
+    return Array.isArray(data.personRelations) ? data.personRelations : [];
+  }
+
   function personMatches(person) {
     const categories = person.categories || [person.category];
     if (state.category !== "all" && !categories.includes(state.category)) return false;
@@ -254,6 +258,19 @@
         length: 90 + Math.max(0, 12 - link.count) * 5,
       });
     });
+    personRelations().forEach((relation) => {
+      const sourceNode = personNodes.get(relation.source);
+      const targetNode = personNodes.get(relation.target);
+      if (!sourceNode || !targetNode) return;
+      graphLinks.push({
+        source: sourceNode,
+        target: targetNode,
+        type: "relation",
+        relation,
+        strength: 0.028,
+        length: 115 + Math.max(0, 10 - (relation.weight || 1)) * 8,
+      });
+    });
 
     return { nodes, links: graphLinks, activeCategories, peopleByName };
   }
@@ -342,9 +359,22 @@
       line.setAttribute("y1", link.source.y);
       line.setAttribute("x2", link.target.x);
       line.setAttribute("y2", link.target.y);
-      line.setAttribute("stroke-width", link.type === "identity" ? Math.max(1, Math.min(5, 1 + (link.link.count || 1) * 0.45)) : "1.2");
+      line.setAttribute(
+        "stroke-width",
+        link.type === "identity"
+          ? Math.max(1, Math.min(5, 1 + (link.link.count || 1) * 0.45))
+          : link.type === "relation"
+            ? Math.max(1.2, Math.min(4, 1 + (link.relation.weight || 1) * 0.22))
+            : "1.2",
+      );
       line.setAttribute("class", `graph-link ${link.type}`);
       if (link.type === "identity") line.setAttribute("stroke", categoryColors[link.link.category] || "#64748b");
+      if (link.type === "relation") {
+        line.setAttribute("stroke", "#172126");
+        const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+        title.textContent = `${link.relation.source} - ${link.relation.relation} - ${link.relation.target}`;
+        line.appendChild(title);
+      }
       linkLayer.appendChild(line);
     });
 
@@ -505,7 +535,7 @@
     if (node.type === "center") {
       $("detailName").textContent = "李敖";
       $("detailMeta").textContent = "关系网络中心";
-      $("detailBody").innerHTML = `<div class="metricLine"><span>人物 ${data.totals.people}</span><span>身份边 ${identityLinks().length}</span></div>`;
+      $("detailBody").innerHTML = `<div class="metricLine"><span>人物 ${data.totals.people}</span><span>身份边 ${identityLinks().length}</span><span>人物关系边 ${personRelations().length}</span></div>`;
       return;
     }
 
@@ -540,6 +570,18 @@
       ? `<div class="aliasLine"><strong>别名/外号：</strong>${aliases.map((alias) => `<span>${alias}</span>`).join("")}</div>`
       : "";
     const cues = person.cues.length ? person.cues.map((x) => `${x.cue}(${x.count})`).join("、") : "无明显线索";
+    const relationItems = personRelations()
+      .filter((relation) => relation.source === person.name || relation.target === person.name)
+      .map((relation) => {
+        const other = relation.source === person.name ? relation.target : relation.source;
+        return `
+          <article>
+            <h3>${relation.relation}：${other}</h3>
+            <p>《${relation.book}》：${relation.note}</p>
+          </article>
+        `;
+      })
+      .join("");
     const evidence = person.evidence
       .map(
         (ev) => `
@@ -559,6 +601,7 @@
       <div class="identityList">${identities}</div>
       ${aliasLine}
       <div><strong>线索：</strong>${cues}</div>
+      ${relationItems ? `<div class="relationList">${relationItems}</div>` : ""}
       <div class="evidence">${evidence || "暂无证据片段"}</div>
     `;
   }

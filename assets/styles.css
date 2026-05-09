@@ -248,6 +248,11 @@ select:focus {
   stroke-dasharray: 4 4;
 }
 
+.graph-link.relation {
+  stroke-opacity: 0.52;
+  stroke-dasharray: 2 5;
+}
+
 .node circle {
   stroke: #ffffff;
   stroke-width: 2;
@@ -391,6 +396,27 @@ select:focus {
 .evidence {
   display: grid;
   gap: 10px;
+}
+
+.relationList {
+  display: grid;
+  gap: 8px;
+}
+
+.relationList article {
+  padding: 9px 10px;
+  border-left: 3px solid #172126;
+  background: #f3f7f7;
+}
+
+.relationList h3 {
+  margin: 0 0 4px;
+  color: #172126;
+  font-size: 13px;
+}
+
+.relationList p {
+  color: #34444a;
 }
 
 .evidence article {

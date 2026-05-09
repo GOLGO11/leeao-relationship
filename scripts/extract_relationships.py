@@ -226,6 +226,7 @@ ALIASES = {
     "洪钧老祖": "鸿钧老祖",
     "梨山老母": "骊山老母",
     "王瑶卿": "王瑶卿",
+    "闰妻": "李闰",
     "母夜叉": "孙二娘",
     "武都头": "武松",
     "黑旋风": "李逵",
@@ -936,7 +937,7 @@ CURATED_IDENTITIES = {
     "倪元璐": ["academic", "politician", "spiritual"],
     "程咬金": ["military_figure", "spiritual"],
     "李世民": ["politician", "military_figure", "spiritual"],
-    "吕后": ["politician", "spiritual"],
+    "吕后": ["historical_allusion", "politician", "spiritual"],
     "李密": ["politician", "military_figure", "spiritual"],
     "王世充": ["politician", "military_figure", "spiritual"],
     "秦叔宝": ["military_figure", "spiritual"],
@@ -2402,7 +2403,7 @@ CURATED_IDENTITIES = {
     "高德源": ["social_case"],
     "鑫生": ["correspondence"],
     "叔本华": ["academic", "spiritual"],
-    "卓文君": ["spiritual"],
+    "卓文君": ["historical_allusion", "romance", "spiritual"],
     "贾充": ["politician", "spiritual"],
     "焦先": ["spiritual"],
     "潘安": ["spiritual"],
@@ -2449,7 +2450,7 @@ CURATED_IDENTITIES = {
     "王昭君": ["spiritual"],
     "爱德华八世": ["politician", "spiritual"],
     "唐明皇": ["politician", "spiritual"],
-    "吴三桂": ["politician", "military_figure", "spiritual"],
+    "吴三桂": ["historical_allusion", "politician", "military_figure", "romance", "spiritual"],
     "纪昀": ["academic", "spiritual"],
     "元稹": ["academic", "spiritual"],
     "孙原湘": ["academic", "spiritual"],
@@ -2658,7 +2659,7 @@ CURATED_IDENTITIES = {
     "方国珍": ["military_figure", "spiritual"],
     "熊天瑞": ["military_figure", "spiritual"],
     "桓温": ["politician", "military_figure", "spiritual"],
-    "周武王": ["politician", "spiritual"],
+    "周武王": ["historical_allusion", "politician", "spiritual"],
     "子路": ["academic", "spiritual"],
     "阿登纳": ["politician", "spiritual"],
     "戴高乐": ["politician", "military_figure", "spiritual"],
@@ -2667,8 +2668,8 @@ CURATED_IDENTITIES = {
     "济公": ["religion", "fictional", "spiritual"],
     "梁武帝": ["politician", "religion", "spiritual"],
     "曹仁": ["military_figure", "spiritual"],
-    "张献忠": ["military_figure", "politician", "spiritual"],
-    "李定国": ["military_figure", "politician", "spiritual"],
+    "张献忠": ["historical_allusion", "military_figure", "politician", "spiritual"],
+    "李定国": ["historical_allusion", "military_figure", "politician", "spiritual"],
     "破山和尚": ["historical_allusion", "religion", "spiritual"],
     "周世宗": ["politician", "spiritual"],
     "阎王": ["religion", "spiritual"],
@@ -2734,7 +2735,7 @@ CURATED_IDENTITIES = {
     "刘后": ["politician", "spiritual"],
     "敬新磨": ["media", "spiritual"],
     "魏征": ["historical_allusion", "politician", "academic", "spiritual"],
-    "司马相如": ["publishing", "spiritual"],
+    "司马相如": ["historical_allusion", "publishing", "romance", "spiritual"],
     "范蠡": ["politician", "spiritual"],
     "张敞": ["politician", "spiritual"],
     "梅兰芳": ["media", "spiritual"],
@@ -2814,7 +2815,7 @@ CURATED_IDENTITIES = {
     "玛士撒拉": ["religion", "spiritual"],
     "尤蒙顿": ["media", "spiritual"],
     "莎莉麦克琳": ["media", "spiritual"],
-    "维多利亚女王": ["politician", "spiritual"],
+    "维多利亚女王": ["historical_allusion", "politician", "spiritual"],
     "阿尔伯特": ["family", "politician", "spiritual"],
     "费兰西": ["media", "publishing", "spiritual"],
     "炎竝": ["publishing", "mentioned"],
@@ -2919,6 +2920,16 @@ CURATED_IDENTITIES = {
     "黄三太": ["fictional", "underworld", "spiritual"],
     "黄天霸": ["fictional", "underworld", "spiritual"],
     "杨香武": ["fictional", "underworld", "spiritual"],
+    "何罗逻": ["historical_allusion", "religion", "spiritual"],
+    "妺喜": ["historical_allusion", "romance", "spiritual"],
+    "妲己": ["historical_allusion", "romance", "spiritual"],
+    "褒姒": ["historical_allusion", "romance", "spiritual"],
+    "西施": ["historical_allusion", "romance", "spiritual"],
+    "秦稚芬": ["historical_allusion", "arts_music", "spiritual"],
+    "朱霞芬": ["historical_allusion", "arts_music", "spiritual"],
+    "珍妃": ["plot_character", "literary_character", "romance", "politician", "spiritual"],
+    "李闰": ["plot_character", "literary_character", "marriage_context", "family", "romance", "spiritual"],
+    "黄帝": ["historical_allusion", "spiritual"],
     "潘君密": ["source_support", "publishing", "friendship"],
     "李荣胜": ["source_support", "publishing"],
     "洪旭": ["social_case", "media"],
@@ -2977,7 +2988,7 @@ CURATED_IDENTITIES = {
     "萧正德": ["politician", "spiritual"],
     "棣华": ["correspondence", "friendship"],
     "神农": ["religion", "medical_care", "spiritual"],
-    "黄帝": ["spiritual"],
+    "黄帝": ["historical_allusion", "spiritual"],
     "巫彭": ["medical_care", "spiritual"],
     "巫咸": ["medical_care", "spiritual"],
     "王逸": ["academic", "spiritual"],
@@ -4558,6 +4569,106 @@ CATEGORY_LABELS = {
 }
 
 
+PERSON_RELATIONS = [
+    {
+        "book": "北京法源寺",
+        "source": "谭嗣同",
+        "target": "康有为",
+        "relation": "维新同道/思想师友",
+        "weight": 9,
+        "note": "谭嗣同在维新脉络中承接康有为一系的变法理想，又在小说中与康、梁共同构成戊戌主线。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "梁启超",
+        "target": "康有为",
+        "relation": "师生/维新同道",
+        "weight": 8,
+        "note": "梁启超以康有为弟子与同道身份出现，是维新阵营中的核心联结。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "谭嗣同",
+        "target": "王五",
+        "relation": "朋友/江湖结义",
+        "weight": 10,
+        "note": "王五与谭嗣同因剑术、侠义与反满志向相交，是小说中豪侠线的主干关系。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "谭嗣同",
+        "target": "胡七",
+        "relation": "介绍结识/江湖朋友",
+        "weight": 7,
+        "note": "胡七以通臂猿身份介绍谭嗣同认识王五，并进入王五的江湖圈。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "王五",
+        "target": "胡七",
+        "relation": "江湖朋友/结义圈",
+        "weight": 7,
+        "note": "胡七与王五同属谭嗣同结交的江湖人物圈，是王五线的重要支点。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "平山周",
+        "target": "林权助",
+        "relation": "公使馆协作/救援线",
+        "weight": 7,
+        "note": "平山周在日本公使馆救援语境中承接林权助一方安排，连接康梁逃亡线。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "佘法师",
+        "target": "李十力",
+        "relation": "师徒/宗教启发",
+        "weight": 9,
+        "note": "李十力由小和尚普净成长而来，佘法师是其寺院生活、佛法理解和精神抉择的关键师承。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "康有为",
+        "target": "史迪威",
+        "relation": "小说情节对话/中外观察",
+        "weight": 6,
+        "note": "史迪威在小说中被提前安排为美国公使馆武官，与康有为对话，承担中外观察的叙事功能。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "光绪",
+        "target": "翁同龢",
+        "relation": "帝师/政治引介",
+        "weight": 7,
+        "note": "翁同龢作为光绪老师和权贵通道，连接皇帝、新政与康有为上书线。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "慈禧",
+        "target": "光绪",
+        "relation": "权力控制/帝后冲突",
+        "weight": 9,
+        "note": "慈禧与光绪构成戊戌政变的核心权力冲突，也是小说政治压力的中心结构。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "光绪",
+        "target": "珍妃",
+        "relation": "情感牵连/宫廷压迫",
+        "weight": 7,
+        "note": "珍妃是光绪身边少数贴心人物，也成为慈禧展示威权、压迫光绪的过门。",
+    },
+    {
+        "book": "北京法源寺",
+        "source": "谭嗣同",
+        "target": "李闰",
+        "relation": "夫妻诀别/殉道书信",
+        "weight": 7,
+        "note": "李闰在谭嗣同临刑前的家书中出现，承担夫妻诀别与殉道情感的关系线。",
+    },
+]
+
+
 def build_name_regex() -> re.Pattern[str]:
     compounds = "|".join(map(re.escape, sorted(COMPOUND_SURNAMES, key=len, reverse=True)))
     singles = re.escape("".join(sorted(set(SINGLE_SURNAMES))))
@@ -5228,6 +5339,7 @@ def normalize_evidence_items(hit: PersonHit, cats: list[str]) -> list[dict]:
 
 def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[Path]) -> dict:
     kept = [hit for hit in people.values() if keep_person(hit)]
+    kept_names = {hit.name for hit in kept}
     person_rows = []
     identity_links = []
     by_book: dict[str, dict] = {}
@@ -5309,6 +5421,9 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
         "books": len(book_rows),
         "chapters": sum(x["chapters"] for x in book_rows),
         "identityLinks": len(identity_links),
+        "personRelations": sum(
+            1 for rel in PERSON_RELATIONS if rel["source"] in kept_names and rel["target"] in kept_names
+        ),
         "categoryCounts": category_counts,
         "spiritual": category_counts.get("spiritual", 0),
         "fictional": category_counts.get("fictional", 0),
@@ -5327,6 +5442,9 @@ def build_outputs(people: dict[str, PersonHit], source_root: Path, files: list[P
             identity_links,
             key=lambda x: (-x["personOccurrences"], x["person"], x["category"]),
         ),
+        "personRelations": [
+            rel for rel in PERSON_RELATIONS if rel["source"] in kept_names and rel["target"] in kept_names
+        ],
         "books": book_rows,
     }
 
@@ -5356,10 +5474,19 @@ def write_text_exports(data: dict, export_dir: Path) -> None:
     )
     lines.append(
         f"总计：{totals['people']} 人；{totals['identityLinks']} 条身份边；"
+        f"{totals.get('personRelations', 0)} 条人物关系边；"
         f"{totals['books']} 本书；{totals['chapters']} 个章节。"
     )
     lines.append(f"身份节点：{category_summary}")
     lines.append("")
+    if data.get("personRelations"):
+        lines.append("==== 人物关系边 ====")
+        for rel in data["personRelations"]:
+            lines.append(
+                f"- 《{rel['book']}》：{rel['source']} -- {rel['relation']} -- {rel['target']}｜"
+                f"权重 {rel['weight']}｜{rel['note']}"
+            )
+        lines.append("")
     for label_key, label in data["categoryLabels"].items():
         group = [p for p in data["people"] if label_key in p["categories"]]
         if not group:
