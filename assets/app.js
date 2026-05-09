@@ -43,6 +43,7 @@
     torture_actor: "#7f1d1d",
     witness: "#64748b",
     publishing: "#7c3aed",
+    source_author: "#0d9488",
     academic: "#1d4ed8",
     academic_admin: "#4338ca",
     scientist: "#0369a1",

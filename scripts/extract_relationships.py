@@ -81,6 +81,11 @@ FICTIONAL_CHARACTERS = {
 ALIASES = {
     "圣母": "玛利亚",
     "圣母玛利亚": "玛利亚",
+    "爱神": "邱比特",
+    "基督": "耶稣",
+    "释迦": "释迦牟尼",
+    "阿瞒": "曹操",
+    "任公": "梁启超",
     "马戈": "马宏祥",
     "老马": "马宏祥",
     "新汉": "景新汉",
@@ -88,6 +93,7 @@ ALIASES = {
     "适之先生": "胡适",
     "小猴": "潘毓刚",
     "张藉": "张籍",
+    "湘女": "李家大小姐",
     "上帝李敖": "上帝李",
     "小布希": "小布什",
     "老布希": "老布什",
@@ -4575,6 +4581,10 @@ CURATED_IDENTITIES.update({
     "陈教官": ["military_figure", "meeting", "nickname"],
     "李家大小姐": ["romance", "nickname"],
     "湘女": ["romance", "nickname"],
+    "袁祝公": ["friendship", "nickname"],
+    "陈七": ["historical_allusion", "nickname", "spiritual"],
+    "优孟": ["historical_allusion", "arts_music", "spiritual"],
+    "上帝": ["fictional", "religion", "spiritual"],
     "吴姬": ["romance", "nickname"],
     "汪汪": ["romance", "nickname"],
     "依依": ["romance", "nickname"],
@@ -4592,6 +4602,18 @@ CURATED_IDENTITIES.update({
     "韦应物": ["publishing", "historical_allusion", "spiritual"],
     "王维": ["publishing", "historical_allusion", "spiritual"],
 })
+CURATED_IDENTITIES.pop("湘女", None)
+
+for _source_author in (
+    "司空曙", "张籍", "王勃", "卢纶", "魏文帝", "杜牧", "李商隐", "刘长卿",
+    "孟浩然", "崔涂", "韦应物", "王维", "陶渊明", "朱自清", "徐志摩",
+    "歌德", "左拉", "桑塔亚纳", "汤普森",
+):
+    _old_categories = CURATED_IDENTITIES.get(_source_author, ["spiritual"])
+    CURATED_IDENTITIES[_source_author] = ["source_author"] + [
+        category for category in _old_categories
+        if category not in {"source_author", "publishing"}
+    ]
 
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
@@ -5283,6 +5305,7 @@ CATEGORY_LABELS = {
     "witness": "证人见证",
     "source_support": "创作资料协助",
     "publishing": "出版",
+    "source_author": "诗文出处",
     "academic": "学术",
     "research_reference": "学术考证引用",
     "academic_admin": "学术行政",
@@ -6234,10 +6257,10 @@ PERSON_RELATIONS = [
     {
         "book": "李敖的情诗",
         "source": "马宏祥",
-        "target": "湘女",
+        "target": "李家大小姐",
         "relation": "恋慕对象/戏诗代号",
         "weight": 4,
-        "note": "《爱情军师赐诗》《爱情军师又赐诗》都以马戈的爱情困局为题，诗中称“湘女孽缘”“梦里佳人本湘产”，暂作马宏祥恋慕对象的代号保留。",
+        "note": "《爱情军师赐诗》《爱情军师又赐诗》都以马戈的爱情困局为题，诗中先称“湘女孽缘”，后写“只想李家大小姐”，本轮合并为同一恋慕对象的两个称呼。",
     },
     {
         "book": "李敖的情诗",
@@ -6366,6 +6389,7 @@ STOP_NAMES.update({
     "印刷厂", "成熟", "从哪儿",
 })
 STOP_NAMES.discard("汪汪")
+STOP_NAMES.discard("阎王")
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -6401,6 +6425,8 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
     if raw_name == "君君" and book != "上山·上山·爱":
         return raw_name
+    if raw_name == "湘女" and any(marker in ctx for marker in ("马戈", "老马", "新汉", "军师", "爱情军师")):
+        return "李家大小姐"
     if raw_name == "吴先生":
         if book == "上山·上山·爱" and any(marker in ctx for marker in ("聊斋", "女狐仙", "狐女", "妓女", "纪晓岚", "阅微草堂")):
             return "吴先生（聊斋人物）"
@@ -7016,6 +7042,11 @@ def extract_from_text(
                 continue
             if is_contextual_false_positive(name, text, match.start(), match.end()):
                 continue
+            raw_name = name
+            if raw_name == "爱神" and text[match.end(): match.end() + 3] == "邱比特":
+                continue
+            if raw_name == "湘女" and match.start() and text[match.start() - 1: match.start()] in SINGLE_SURNAMES:
+                continue
             ctx = context_window(text, match.start(), match.end())
             name = canonical_name(name, ctx, book, chapter)
             if name == "周至柔" and "天下至柔莫如水" in ctx:
@@ -7186,12 +7217,15 @@ def confidence(hit: PersonHit) -> int:
 
 
 def aliases_for_person(name: str) -> list[str]:
+    extra_aliases = {
+        "李家大小姐": {"湘女"},
+    }
     return sorted(
         {
             alias
             for alias, target in ALIASES.items()
             if target == name and alias != name and alias not in STOP_NAMES
-        }
+        } | extra_aliases.get(name, set())
     )
 
 
