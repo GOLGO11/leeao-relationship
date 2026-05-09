@@ -74,10 +74,12 @@ FICTIONAL_CHARACTERS = {
     "孟姜女", "包龙图", "木兰", "三娘", "薛仁贵", "薛丁山", "呼延庆", "罗通",
     "王宝钏", "薛平贵", "代战公主", "赵太爷", "女狐仙", "荷花三娘子",
     "查泰莱夫人", "白瑞德", "塔土夫", "陶丽茵", "韩凭", "何氏", "尾生", "裴如海",
-    "老安德森", "少年维特", "优力西斯", "罗宾汉",
+    "老安德森", "少年维特", "优力西斯", "罗宾汉", "汤姆·莎耶", "奥菲莉亚",
+    "皮格马利恩", "夏娃", "卡门", "蓝胡子",
 }
 
 ALIASES = {
+    "巫主任": "巫神医",
     "国父": "孙中山",
     "朱委员": "朱高正",
     "刘光头": "刘玉章",
@@ -108,6 +110,9 @@ ALIASES = {
     "阉鸡": "李盛渊",
     "蒋总裁": "蒋介石",
     "何王剑": "王剑芬",
+    "毕卡索": "毕加索",
+    "艾森豪": "艾森豪威尔",
+    "达文西": "达芬奇",
     "华严": "严停云",
     "孟绝子": "孟祥柯",
     "梦公": "孟祥柯",
@@ -373,6 +378,7 @@ ALIASES = {
     "Albert Terrien de Lacouperie": "拉克伯里",
     "Albert Terrien": "拉克伯里",
     "Oliver Wendell Holmes": "霍姆兹大法官",
+    "奥立佛·霍姆斯": "霍姆兹大法官",
     "霍姆兹": "霍姆兹大法官",
     "George Berkley": "乔治·巴克莱",
     "查泰莱": "查泰莱夫人",
@@ -960,6 +966,25 @@ NONSTANDARD_NAMES = {
     "王印", "陈长坤",
     "李组长", "游全球", "苏依仁",
     "刘金财", "姚勇来", "钟金木", "黄进川", "林颂和", "许岱宗", "王甲乙", "王刚",
+    "朱仑", "巫神医", "巫主任", "王主任", "魏院长", "徐太太", "柳士豪",
+    "贝拉利欧", "斯垂弗德", "温特沃斯", "查理一世", "阿蒙伯爵", "巴鲁克",
+    "毛姆", "亚理斯多芬", "霍金", "乔布斯", "比尔·盖兹", "高斯", "惠更斯",
+    "巴斯卡", "席尔丝", "霍桑", "乔治桑", "吉卜龄", "斯特雷奇", "凯因斯",
+    "庞毕度夫人", "丹尼·蓬", "法朗士", "布尔狄龙", "叶慈", "济滋",
+    "维根斯坦", "闵科夫斯基", "库兹怀尔", "克林顿", "费尔摩", "戈迪瓦",
+    "福尔", "玛丽·安德逊", "罗勃·杜德利", "伊莉莎白女王", "安妮·林白",
+    "拉丝洛普", "施约瑟", "夏洛瓦", "雅典娜", "阿芙罗黛蒂",
+    "阿基米德", "波尔", "贝多芬", "汤姆·莎耶", "达芬奇", "梵谷", "查理曼",
+    "巴里", "笛卡儿", "阿基劳斯", "凡妮莎·贝尔", "克莱夫·贝尔", "摩洛",
+    "盖摩", "吉朋", "克伦威尔", "丽泰·海华丝", "罗西尼", "马斯内", "玛莉·雪莱",
+    "惠特曼", "普林尼", "普希金", "丁大留斯", "弗洛伊德", "乔治·埃佛勒斯",
+    "理查·范萧", "欧勒", "戴安娜王妃", "派劳", "戴布森", "塔虎脱", "约翰·霍姆斯",
+    "约翰·马歇尔", "吴尔芙", "格兰特", "弗赖", "克罗齐", "奥威尔", "赫立克",
+    "西比留斯", "居里夫人", "保罗·佛赛尔", "珍妮丝·珍", "宙斯", "亚历山大皇帝",
+    "玛利亚", "米开郎基罗", "史蒂夫·斯皮尔伯格", "福斯特", "小仲马", "勃朗宁夫人",
+    "休谟", "狄更斯", "奥立佛·霍姆斯",
+    "徐菁", "校长", "局长", "陈教授", "医务室护士", "特别护士",
+    "中山女中校长", "北投分局局长",
 }
 
 CURATED_IDENTITIES = {
@@ -4114,6 +4139,121 @@ CURATED_IDENTITIES.update({
     "范明": ["legal_official", "case_prison"],
 })
 
+CURATED_IDENTITIES.update({
+    "朱仑": ["plot_character", "literary_character", "romance"],
+    "巫神医": ["plot_character", "literary_character", "medical_care", "scientist"],
+    "巫主任": ["plot_character", "literary_character", "medical_care"],
+    "王主任": ["medical_care", "friendship", "meeting"],
+    "魏院长": ["medical_care", "academic_admin", "meeting"],
+    "徐太太": ["plot_character", "literary_character", "neighbor", "meeting"],
+    "柳士豪": ["academic", "medical_care", "teacher_student", "spiritual"],
+    "王羲之": ["arts_music", "historical_allusion", "spiritual"],
+    "李清照": ["publishing", "historical_allusion", "spiritual"],
+    "白鲸": ["fictional", "publishing", "spiritual"],
+    "贝拉利欧": ["fictional", "historical_allusion", "spiritual"],
+    "斯垂弗德": ["politician", "historical_allusion", "spiritual"],
+    "温特沃斯": ["politician", "historical_allusion", "spiritual"],
+    "查理一世": ["politician", "historical_allusion", "spiritual"],
+    "阿蒙伯爵": ["politician", "historical_allusion", "spiritual"],
+    "巴鲁克": ["property_finance", "historical_allusion", "spiritual"],
+    "毛姆": ["publishing", "spiritual"],
+    "亚理斯多芬": ["publishing", "historical_allusion", "spiritual"],
+    "霍金": ["scientist", "academic", "spiritual"],
+    "乔布斯": ["property_finance", "media", "spiritual"],
+    "比尔·盖兹": ["property_finance", "scientist", "spiritual"],
+    "高斯": ["scientist", "academic", "spiritual"],
+    "惠更斯": ["scientist", "academic", "spiritual"],
+    "巴斯卡": ["scientist", "academic", "spiritual"],
+    "席尔丝": ["arts_music", "spiritual"],
+    "霍桑": ["publishing", "spiritual"],
+    "乔治桑": ["publishing", "romance", "spiritual"],
+    "吉卜龄": ["publishing", "spiritual"],
+    "斯特雷奇": ["publishing", "spiritual"],
+    "凯因斯": ["academic", "property_finance", "spiritual"],
+    "庞毕度夫人": ["historical_allusion", "romance", "spiritual"],
+    "丹尼·蓬": ["historical_allusion", "spiritual"],
+    "法朗士": ["publishing", "spiritual"],
+    "布尔狄龙": ["publishing", "spiritual"],
+    "叶慈": ["publishing", "spiritual"],
+    "济滋": ["publishing", "spiritual"],
+    "维根斯坦": ["academic", "spiritual"],
+    "闵科夫斯基": ["scientist", "academic", "spiritual"],
+    "库兹怀尔": ["scientist", "publishing", "spiritual"],
+    "克林顿": ["politician", "historical_allusion", "spiritual"],
+    "费尔摩": ["politician", "historical_allusion", "spiritual"],
+    "福尔": ["politician", "historical_allusion", "spiritual"],
+    "戈迪瓦": ["historical_allusion", "romance", "spiritual"],
+    "玛丽·安德逊": ["arts_music", "spiritual"],
+    "罗勃·杜德利": ["politician", "romance", "historical_allusion", "spiritual"],
+    "伊莉莎白女王": ["politician", "historical_allusion", "spiritual"],
+    "安妮·林白": ["publishing", "spiritual"],
+    "拉丝洛普": ["arts_music", "publishing", "spiritual"],
+    "施约瑟": ["religion", "publishing", "spiritual"],
+    "夏洛瓦": ["arts_music", "spiritual"],
+    "雅典娜": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "阿芙罗黛蒂": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "阿基米德": ["scientist", "academic", "historical_allusion", "spiritual"],
+    "波尔": ["scientist", "academic", "spiritual"],
+    "贝多芬": ["arts_music", "spiritual"],
+    "汤姆·莎耶": ["fictional", "spiritual"],
+    "达芬奇": ["arts_music", "scientist", "spiritual"],
+    "梵谷": ["arts_music", "spiritual"],
+    "查理曼": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "巴里": ["publishing", "spiritual"],
+    "笛卡儿": ["academic", "scientist", "spiritual"],
+    "阿基劳斯": ["academic", "historical_allusion", "spiritual"],
+    "凡妮莎·贝尔": ["arts_music", "spiritual"],
+    "克莱夫·贝尔": ["arts_music", "academic", "spiritual"],
+    "摩洛": ["arts_music", "spiritual"],
+    "盖摩": ["scientist", "spiritual"],
+    "吉朋": ["publishing", "historical_allusion", "spiritual"],
+    "克伦威尔": ["politician", "historical_allusion", "spiritual"],
+    "丽泰·海华丝": ["media", "arts_music", "spiritual"],
+    "罗西尼": ["arts_music", "spiritual"],
+    "马斯内": ["arts_music", "spiritual"],
+    "玛莉·雪莱": ["publishing", "spiritual"],
+    "惠特曼": ["publishing", "spiritual"],
+    "普林尼": ["academic", "historical_allusion", "spiritual"],
+    "普希金": ["publishing", "spiritual"],
+    "丁大留斯": ["historical_allusion", "romance", "spiritual"],
+    "弗洛伊德": ["academic", "spiritual"],
+    "乔治·埃佛勒斯": ["explorer", "scientist", "historical_allusion", "spiritual"],
+    "理查·范萧": ["publishing", "spiritual"],
+    "欧勒": ["scientist", "academic", "spiritual"],
+    "戴安娜王妃": ["politician", "historical_allusion", "spiritual"],
+    "派劳": ["publishing", "spiritual"],
+    "戴布森": ["publishing", "spiritual"],
+    "塔虎脱": ["politician", "spiritual"],
+    "约翰·霍姆斯": ["historical_allusion", "spiritual"],
+    "奥立佛·霍姆斯": ["legal_official", "historical_allusion", "spiritual"],
+    "约翰·马歇尔": ["legal_official", "politician", "historical_allusion", "spiritual"],
+    "吴尔芙": ["publishing", "spiritual"],
+    "格兰特": ["arts_music", "spiritual"],
+    "弗赖": ["arts_music", "academic", "spiritual"],
+    "克罗齐": ["academic", "arts_music", "spiritual"],
+    "奥威尔": ["publishing", "political_dissident", "spiritual"],
+    "赫立克": ["publishing", "spiritual"],
+    "西比留斯": ["arts_music", "spiritual"],
+    "居里夫人": ["scientist", "spiritual"],
+    "保罗·佛赛尔": ["academic", "publishing", "spiritual"],
+    "珍妮丝·珍": ["arts_music", "spiritual"],
+    "宙斯": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "亚历山大皇帝": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "玛利亚": ["religion", "spiritual"],
+    "米开郎基罗": ["arts_music", "spiritual"],
+    "史蒂夫·斯皮尔伯格": ["media", "arts_music", "spiritual"],
+    "福斯特": ["publishing", "spiritual"],
+    "小仲马": ["publishing", "spiritual"],
+    "勃朗宁夫人": ["publishing", "romance", "spiritual"],
+    "休谟": ["academic", "spiritual"],
+    "狄更斯": ["publishing", "spiritual"],
+    "徐菁": ["literary_character", "family", "social_case"],
+    "中山女中校长": ["literary_character", "academic_admin", "witness"],
+    "医务室护士": ["literary_character", "medical_care"],
+    "特别护士": ["literary_character", "medical_care"],
+    "北投分局局长": ["literary_character", "intelligence_police", "witness"],
+})
+
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
 
@@ -4279,6 +4419,17 @@ BAD_ENDINGS = (
 BAD_ENDING_CHARS = set("部党会社院局处署队军报刊界学史论节集号法罪案书文稿语话事影研省市县馆系志敌间物")
 STOP_NAMES = {
     "公司",
+    # 《虚拟的十七岁》首轮切词噪声：概念、短语或被人名规则截断的片段。
+    "成真", "支点", "沙漏", "水准", "朱仑十", "朱仑有", "朱仑听", "朱仑穿",
+    "于恐惧", "于资讯", "古希腊", "陈代谢", "能说", "能说出", "应该比", "那男人",
+    "越说越", "魏晋高", "步分析", "步口译", "向电脑", "于天地", "山之巅",
+    "白纸", "平面", "万象", "古庙", "林顿", "国手", "孟子所", "公关主",
+    "解释结", "时空", "相边缘", "时推移", "从忘情", "全部记", "时有三",
+    "时互相", "颜家三", "于女秘", "相忘", "古典洋", "谢安等", "那倒要",
+    "时有几", "暴力两", "于希腊", "从没说", "东西南", "那封信",
+    "庞毕度", "朱仑见", "时用三", "时间同", "步之趣", "花致意", "山舞",
+    "强暴出", "时裸体", "那么真", "时感到", "从昏迷", "于文字",
+    "史纲", "方式有", "齐国", "能有几", "关系哟", "沙漏之", "沙漏颂",
     "步作业", "关怀望", "路警来", "时代俱", "东西著", "国军作", "却先反", "平心来",
     "王印帮", "路警出", "方位", "房有人", "时只骂", "班长允", "时有好", "成蚊子",
     "房囚犯", "和走狗", "于孙将", "却真行", "胡人抢", "高院三", "龙头包", "鞠躬说",
@@ -4356,7 +4507,7 @@ STOP_NAMES = {
     "毛说", "那位先", "能有效", "平事业", "时残民", "司法人", "叶枫说",
     "公猎", "张飞做", "刘备虽", "东山再", "翁慨已", "都容易", "经常访",
     "于普通", "向全世", "公用电", "相招待", "皮匠政", "简介", "明星即",
-    "怀疑陈", "公然演", "傅女发", "于报章", "都概括", "关公冲", "能欺负",
+    "怀疑", "怀疑陈", "公然演", "傅女发", "于报章", "都概括", "关公冲", "能欺负",
     "东奔西", "尚望", "通奸", "常抱歉", "陈情", "胡适所", "宣称受",
     "莫属", "汪汪", "游戏", "欧八桑",
     "于文化", "文化问", "那位作", "文章来", "别强调", "方块字", "于最近",
@@ -5245,6 +5396,102 @@ PERSON_RELATIONS = [
         "weight": 3,
         "note": "吕安仁案中梁金木为被害人，文本用此案说明司法时间线被扭曲。",
     },
+    {
+        "book": "虚拟的十七岁",
+        "source": "朱仑",
+        "target": "徐太太",
+        "relation": "姨甥/邻居引介",
+        "weight": 10,
+        "note": "徐太太作为朱仑的阿姨与李敖邻居，把朱仑引入病房、画室与小说主线，是本书最核心的现实入口。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "朱仑",
+        "target": "徐菁",
+        "relation": "冒名身份/已故表姐",
+        "weight": 9,
+        "note": "朱仑穿徐菁制服、使用徐菁学号与身份线索进入中山女中情节，徐菁构成朱仑神秘身份的关键谜面。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "朱仑",
+        "target": "巫神医",
+        "relation": "手术医生/脑前瞻谜团",
+        "weight": 10,
+        "note": "巫神医即巫主任，是为朱仑开刀并引出晶片、脑前瞻工程与自杀遗书谜团的核心人物。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "巫神医",
+        "target": "魏院长",
+        "relation": "医院同僚/介绍探病",
+        "weight": 8,
+        "note": "魏院长解释巫神医的身份、手术结论与自杀经过，并承接巫神医探视李敖后的神秘后果。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "巫神医",
+        "target": "柳士豪",
+        "relation": "师生/医学往事",
+        "weight": 7,
+        "note": "巫神医在三十三年前的台大医学院合照中作为柳士豪学生出现，柳士豪之死也是巫神医执念与谜团背景。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "巫神医",
+        "target": "北投分局局长",
+        "relation": "自杀案/遗书移交",
+        "weight": 7,
+        "note": "北投分局局长在巫神医自杀后持密封遗书到病房，并以自杀报结，连接警方程序与巫神医遗书线。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "朱仑",
+        "target": "王主任",
+        "relation": "同院病房/邻房线索",
+        "weight": 6,
+        "note": "王主任安排李敖住院并提示隔壁病房的神秘女孩，推动朱仑从医院邻房进入叙事。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "王主任",
+        "target": "魏院长",
+        "relation": "医院同事/共同照料",
+        "weight": 6,
+        "note": "王主任与魏院长同属振兴医院照料线，一人安排病房与初始信息，一人解释手术、巫神医和后续谜团。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "徐太太",
+        "target": "夏洛瓦",
+        "relation": "画像识认/朱仑相似",
+        "weight": 5,
+        "note": "徐太太盯住夏洛瓦画作并指出其与自家女孩的相似，促成朱仑与画中模特儿之间的视觉谜团。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "朱仑",
+        "target": "特别护士",
+        "relation": "病房照护/昏迷醒转",
+        "weight": 4,
+        "note": "特别护士在朱仑昏迷与醒转场景中负责病床边照护，是医院后段情节的具体照护角色。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "徐菁",
+        "target": "中山女中校长",
+        "relation": "身份核验/校方见证",
+        "weight": 4,
+        "note": "中山女中校长从书包夹层找到健保卡和医院收据，成为徐菁身份谜团的校方见证人。",
+    },
+    {
+        "book": "虚拟的十七岁",
+        "source": "徐菁",
+        "target": "医务室护士",
+        "relation": "校内急救/昏倒现场",
+        "weight": 3,
+        "note": "徐菁身份场景中出现昏倒与叫医务室护士的急救行动，护士承担校内突发事件的功能性角色。",
+    },
 ]
 
 
@@ -5364,10 +5611,27 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None) -> str:
     if raw_name == "罗斯福" and "罗斯福夫人" in ctx:
         return "埃莉诺·罗斯福"
     if raw_name == "马歇尔":
+        if any(marker in ctx for marker in ("John Marshall", "首席大法官马歇尔", "自由钟")):
+            return "约翰·马歇尔"
         if any(marker in ctx for marker in ("大法官马歇尔", "检察长马歇尔", "Thurgood Marshall", "最高法院")):
             return "瑟古德·马歇尔"
         if any(marker in ctx for marker in ("马歇尔国务卿", "马歇尔将军", "马歇尔来华", "马歇尔代表", "马歇尔、艾奇逊", "《马歇尔传》", "MARSHALL HERO", "国民党会做好事")):
             return "乔治·马歇尔"
+    if raw_name == "霍姆斯" and any(marker in ctx for marker in ("John Holmes", "约翰·霍姆斯", "叔公约翰", "约翰·罗杰斯", "霍姆斯睁开眼睛")):
+        return "约翰·霍姆斯"
+    if raw_name == "霍姆斯" and any(marker in ctx for marker in ("Oliver Wendell Holmes", "奥立佛·霍姆斯")):
+        return "霍姆兹大法官"
+    if raw_name == "贝尔":
+        if any(marker in ctx for marker in ("Vanessa Bell", "画家贝尔")):
+            return "凡妮莎·贝尔"
+        if any(marker in ctx for marker in ("Clive Bell", "艺术评论家贝尔")):
+            return "克莱夫·贝尔"
+    if raw_name == "校长" and book == "虚拟的十七岁" and any(marker in ctx for marker in ("徐菁", "健保卡", "振兴医院收据", "医务室护士")):
+        return "中山女中校长"
+    if raw_name == "局长" and book == "虚拟的十七岁" and any(marker in ctx for marker in ("北投分局", "巫主任", "1212病房", "密封")):
+        return "北投分局局长"
+    if raw_name == "陈教授" and any(marker in ctx for marker in ("生技魅影", "我的细胞人生", "血液肿瘤", "My Cell Career")):
+        return "陈耀昌"
     if raw_name == "张局长" and "京育" in ctx:
         return "张京育"
     if raw_name == "吴忠信" and any(
@@ -5640,7 +5904,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name in role_alias_markers:
         return not any(marker in ctx for marker in role_alias_markers[name])
     if name == "咪咪":
-        return any(marker in ctx for marker in ("母猫", "波斯种", "波斯猫", "波波", "猫为咪咪"))
+        return any(marker in ctx for marker in ("母猫", "波斯种", "波斯猫", "波波", "猫为咪咪", "笑咪咪"))
     if name == "白脸":
         return "外号" not in ctx and "叫黄永寿" not in ctx
     if name == "黄富":
@@ -5654,7 +5918,13 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "安德逊":
         return "玛丽安德逊" in ctx or "Marian Anderson" in ctx
     if name == "格林":
-        return text[end:end + 2] == "沃尔"
+        return text[end:end + 2] in {"沃尔", "威治"} or "Greenwich" in ctx
+    if name == "巴金":
+        return text[end:end + 1] == "森" or "巴金森氏症" in ctx
+    if name == "塞克":
+        return "Sussex" in ctx or "苏塞克斯" in ctx
+    if name == "钟会":
+        return any(marker in ctx for marker in ("钟会报时", "这钟会报", "报时两次", "标准时间"))
     if name == "吴石":
         return text[end:end + 1] == "氏"
     if name == "和凝":
@@ -5706,7 +5976,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "江南·江南·哀江南", "《江南·江南", "《哀江南", "江南并发症",
             "连江南都保不住", "江南廖家楠", "江南世代儒医", "江南暖",
             "江南饱", "江南恶", "江南好", "江南小国", "到江南", "下江南", "思江南",
-            "江南制造局", "江南机器局",
+            "江南制造局", "江南机器局", "江南可采莲", "《江南》民歌",
         )
         return any(marker in ctx for marker in false_markers)
     if name == "张先":
@@ -5738,6 +6008,8 @@ def extract_from_text(
             if name == "万劫" and book != "上山·上山·爱":
                 continue
             if name in {"龙头", "史处长", "余三共", "华老师", "欧卡曾", "王九胆", "胡牧师", "王家法", "老黄", "士官长", "班长"} and book != "红色11":
+                continue
+            if name in {"校长", "局长", "陈教授"}:
                 continue
             if name in {"吴先生", "她爸爸", "作家大学生的妈妈", "外婆", "大阿姨", "三娘子"}:
                 continue
