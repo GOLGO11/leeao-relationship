@@ -79,6 +79,19 @@ FICTIONAL_CHARACTERS = {
 }
 
 ALIASES = {
+    "上帝李敖": "上帝李",
+    "小布希": "小布什",
+    "老布希": "老布什",
+    "罗伯特托德林肯": "罗伯特·托德·林肯",
+    "Ari Fleischer": "阿里·弗莱舍尔",
+    "Paul Thayer": "保罗·泰耶尔",
+    "Paul Nitze": "保罗·尼兹",
+    "McKinney Russell": "麦金尼·罗素",
+    "John T. Swift": "约翰·斯威夫特",
+    "Richard Allen": "理查·艾伦",
+    "Yitzhak Shamir": "伊塞克·夏米尔",
+    "William F. Smith": "威廉·史密斯",
+    "Noriega": "诺列加",
     "巫主任": "巫神医",
     "国父": "孙中山",
     "朱委员": "朱高正",
@@ -985,6 +998,20 @@ NONSTANDARD_NAMES = {
     "休谟", "狄更斯", "奥立佛·霍姆斯",
     "徐菁", "校长", "局长", "陈教授", "医务室护士", "特别护士",
     "中山女中校长", "北投分局局长",
+    "JOHN-JOHN", "上帝李", "上帝李敖",
+    "亚当斯", "小亚当斯", "杰斐逊", "麦迪逊", "门罗", "杰克逊", "范布伦",
+    "威廉·亨利·哈里森", "本杰明·哈里森", "约翰·泰勒", "扎卡里·泰勒",
+    "波尔克", "菲尔莫尔", "皮尔斯", "布坎南", "安德鲁·约翰逊", "林登·约翰逊",
+    "海斯", "加菲尔德", "阿瑟", "克利夫兰", "麦金莱", "老罗斯福", "塔夫脱",
+    "威尔逊", "哈定", "柯立芝", "小罗斯福", "杜鲁门", "艾森豪威尔", "肯尼迪",
+    "尼克松", "福特", "里根", "老布什", "小布什", "奥巴马", "格林斯潘",
+    "麦克纳马拉", "坎贝尔", "约翰·斯科特·哈里森", "瑞波尔", "克米特·罗斯福",
+    "玛格丽特·史密斯", "罗伯特托德林肯", "罗伯特·托德·林肯", "罗伯特·肯尼迪",
+    "罗伯特·克拉克", "罗伯特·威廉斯", "朱迪丝·坎贝尔", "哈罗德·坎贝尔",
+    "罗杰·谢尔曼", "威廉·谢尔曼", "高尔特夫人", "乔治·华莱士",
+    "刘易斯·华莱士", "阿里·弗莱舍尔", "阿里斯蒂德", "保罗·泰耶尔",
+    "保罗·尼兹", "麦金尼·罗素", "约翰·斯威夫特", "理查·艾伦",
+    "伊塞克·夏米尔", "威廉·史密斯", "诺列加", "蓝波",
 }
 
 CURATED_IDENTITIES = {
@@ -4254,6 +4281,100 @@ CURATED_IDENTITIES.update({
     "北投分局局长": ["literary_character", "intelligence_police", "witness"],
 })
 
+US_PRESIDENT_PLAY_IDENTITIES = {
+    "华盛顿": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "约翰·亚当斯": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "杰斐逊": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "麦迪逊": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "门罗": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "小亚当斯": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "杰克逊": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "范布伦": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "威廉·亨利·哈里森": ["plot_character", "literary_character", "politician", "military_figure", "historical_allusion"],
+    "约翰·泰勒": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "波尔克": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "扎卡里·泰勒": ["plot_character", "literary_character", "politician", "military_figure", "historical_allusion"],
+    "菲尔莫尔": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "皮尔斯": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "布坎南": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "林肯": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "安德鲁·约翰逊": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "格兰特": ["plot_character", "literary_character", "politician", "military_figure", "historical_allusion"],
+    "海斯": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "加菲尔德": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "阿瑟": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "克利夫兰": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "本杰明·哈里森": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "麦金莱": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "老罗斯福": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "塔夫脱": ["plot_character", "literary_character", "politician", "legal_official", "historical_allusion"],
+    "威尔逊": ["plot_character", "literary_character", "politician", "academic", "historical_allusion"],
+    "哈定": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "柯立芝": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "胡佛": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "小罗斯福": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "杜鲁门": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "艾森豪威尔": ["plot_character", "literary_character", "politician", "military_figure", "historical_allusion"],
+    "肯尼迪": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "林登·约翰逊": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "尼克松": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "福特": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "卡特": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "里根": ["plot_character", "literary_character", "politician", "media", "historical_allusion"],
+    "老布什": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "克林顿": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "小布什": ["plot_character", "literary_character", "politician", "historical_allusion"],
+    "奥巴马": ["plot_character", "literary_character", "politician", "historical_allusion"],
+}
+
+CURATED_IDENTITIES.update(US_PRESIDENT_PLAY_IDENTITIES)
+CURATED_IDENTITIES.update({
+    "JOHN-JOHN": ["plot_character", "literary_character"],
+    "上帝李": ["plot_character", "literary_character"],
+    "格林斯潘": ["politician", "property_finance", "spiritual"],
+    "麦克纳马拉": ["politician", "military_figure", "spiritual"],
+    "坎贝尔": ["military_figure", "spiritual"],
+    "约翰·斯科特·哈里森": ["family", "politician", "historical_allusion", "spiritual"],
+    "瑞波尔": ["literary_character", "military_figure", "spiritual"],
+    "克米特·罗斯福": ["intelligence_police", "politician", "historical_allusion", "spiritual"],
+    "玛格丽特·史密斯": ["family", "historical_allusion", "spiritual"],
+    "罗伯特·托德·林肯": ["family", "politician", "historical_allusion", "spiritual"],
+    "罗伯特·肯尼迪": ["politician", "family", "historical_allusion", "spiritual"],
+    "罗伯特·克拉克": ["social_case", "case_prison", "human_rights", "spiritual"],
+    "罗伯特·威廉斯": ["political_dissident", "human_rights", "spiritual"],
+    "朱迪丝·坎贝尔": ["romance", "underworld", "historical_allusion", "spiritual"],
+    "哈罗德·坎贝尔": ["military_figure", "public_debate", "historical_allusion", "spiritual"],
+    "罗杰·谢尔曼": ["politician", "historical_allusion", "spiritual"],
+    "威廉·谢尔曼": ["military_figure", "historical_allusion", "spiritual"],
+    "史汀生": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "高尔特夫人": ["family", "romance", "historical_allusion", "spiritual"],
+    "布瑞格": ["military_figure", "historical_allusion", "spiritual"],
+    "斯坦顿": ["military_figure", "historical_allusion", "spiritual"],
+    "寇蒂斯": ["politician", "historical_allusion", "spiritual"],
+    "艾奇森": ["politician", "historical_allusion", "spiritual"],
+    "戴维斯": ["military_figure", "politician", "family", "historical_allusion", "spiritual"],
+    "乔治·华莱士": ["politician", "historical_allusion", "spiritual"],
+    "刘易斯·华莱士": ["publishing", "politician", "historical_allusion", "spiritual"],
+    "阿里·弗莱舍尔": ["media", "politician", "public_debate", "historical_allusion", "spiritual"],
+    "阿里斯蒂德": ["politician", "political_dissident", "historical_allusion", "spiritual"],
+    "保罗·泰耶尔": ["politician", "property_finance", "social_case", "historical_allusion", "spiritual"],
+    "保罗·尼兹": ["politician", "academic", "historical_allusion", "spiritual"],
+    "麦金尼·罗素": ["media", "politician", "political_dissident", "historical_allusion", "spiritual"],
+    "薄瑞光": ["politician", "historical_allusion", "spiritual"],
+    "安吉利": ["academic", "politician", "historical_allusion", "spiritual"],
+    "约翰·斯威夫特": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "路特": ["politician", "legal_official", "historical_allusion", "spiritual"],
+    "潘恩": ["publishing", "political_dissident", "historical_allusion", "spiritual"],
+    "理查·艾伦": ["politician", "social_case", "historical_allusion", "spiritual"],
+    "伊塞克·夏米尔": ["politician", "historical_allusion", "spiritual"],
+    "威廉·史密斯": ["politician", "social_case", "historical_allusion", "spiritual"],
+    "艾奇逊": ["politician", "historical_allusion", "spiritual"],
+    "诺列加": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "蓝波": ["fictional", "media", "spiritual"],
+    "史彼得": ["legal_official", "politician", "historical_allusion", "spiritual"],
+    "柯伦": ["political_dissident", "correspondence", "historical_allusion", "spiritual"],
+})
+
 EXACT_NAME_SET = NONSTANDARD_NAMES | set(CURATED_IDENTITIES) | set(ALIASES)
 NONSTANDARD_NAME_RE = re.compile("|".join(map(re.escape, sorted(EXACT_NAME_SET, key=len, reverse=True))))
 
@@ -5545,6 +5666,40 @@ def clean_title(raw: str) -> str:
     return name.strip(" 《》\t\r\n")
 
 
+STOP_NAMES.update({
+    "张纸", "何感想", "夏威夷", "国务卿", "越战", "国军人", "丁美洲", "伍军人",
+    "国际条", "印钞机", "东帝汶", "国国防", "胡佛总", "国英国", "国元勋",
+    "松总统", "高达", "平民", "时刻", "时来运", "解放黑", "单身汉", "公使",
+    "伊朗", "伊斯兰", "乔治", "富兰克", "莫尔", "巴马", "金莱", "利夫兰",
+    "越南人", "华工", "国没有", "国媒体",
+    "沙特阿", "平均每", "明目张", "那样", "公民权", "干涉", "公开宣", "公然说",
+    "武力攻", "巫毒经", "边缘", "巫毒教", "石油商", "于老婆",
+    "松竞选", "白宫之", "成众", "能知道", "能说谎", "那天正", "宣布开",
+    "戎马", "时间太", "白人暴", "越陷越", "宣告", "国际恐", "时拒绝",
+    "任做副", "和收买", "任文人", "任林肯", "任胡佛", "任阿瑟", "和骑兵",
+    "国历任", "时豪斯", "祖孙档", "终身当", "那战争", "向克雷", "李原谅",
+    "于死地", "任出使", "全没民", "却发生", "国宴名", "席台", "廉吴克",
+    "强光刺", "成恶魔", "成电灯", "时代已", "时启动", "时请求", "时还动",
+    "武反击", "白宫关", "白宫由", "苏联去", "费支出", "连偷看", "闻战",
+    "明面", "金融危",
+    "别忽略", "平奖最", "国情咨", "纪念品",
+    "安分", "贝弟弟", "曾形容", "车去国", "成总统", "从老罗", "党参议",
+    "东欧共", "都懂", "都构成", "都偷腥", "都要", "都野蛮", "都长",
+    "段长", "方行政", "高级官", "高能炸", "公开场", "关闭", "国策",
+    "国电视", "国脸", "何来非", "和地球", "和平准", "黄金窗", "黄金光",
+    "吉米", "居然出", "连做", "罗马教", "马竞选", "满脸骄", "明白写",
+    "那样坏", "那样没", "能办到", "能负责", "欧洲女", "平等之", "平奖居",
+    "平奖式", "钱无关", "全国三", "全责任", "权决定", "权阻止", "却弄出",
+    "却碰到", "却偷偷", "山丘", "时暧昧", "时动用", "时加入", "时完全",
+    "时要关", "时用", "通商", "通用汽", "万马", "习性", "相当老",
+    "相当无", "萧条", "宣布承", "伊朗将", "阴影太", "应该更", "于伪善",
+    "于总统", "余波", "越南打", "越南之", "越违反", "支持反", "宗教裁",
+    "国法国", "家学者", "公然发", "能怎么", "寿星老", "伊朗发", "宗教问",
+    "暴风雨", "拉麦", "摩洛", "米德", "穆罕默德", "牛郎",
+    "路线",
+})
+
+
 def is_likely_person_name(name: str) -> bool:
     if name in ALWAYS_NAMES or name in ALIASES or name in NONSTANDARD_NAMES or name in CURATED_IDENTITIES:
         return True
@@ -5575,7 +5730,7 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
     return snippet
 
 
-def canonical_name(raw_name: str, ctx: str, book: str | None = None) -> str:
+def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
     if raw_name == "君君" and book != "上山·上山·爱":
         return raw_name
     if raw_name == "吴先生":
@@ -5611,11 +5766,11 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None) -> str:
     if raw_name == "罗斯福" and "罗斯福夫人" in ctx:
         return "埃莉诺·罗斯福"
     if raw_name == "马歇尔":
-        if any(marker in ctx for marker in ("John Marshall", "首席大法官马歇尔", "自由钟")):
+        if any(marker in ctx for marker in ("John Marshall", "首席大法官马歇尔", "如此判决", "自由钟")):
             return "约翰·马歇尔"
         if any(marker in ctx for marker in ("大法官马歇尔", "检察长马歇尔", "Thurgood Marshall", "最高法院")):
             return "瑟古德·马歇尔"
-        if any(marker in ctx for marker in ("马歇尔国务卿", "马歇尔将军", "马歇尔来华", "马歇尔代表", "马歇尔、艾奇逊", "《马歇尔传》", "MARSHALL HERO", "国民党会做好事")):
+        if any(marker in ctx for marker in ("George C. Marshall", "马歇尔计划", "马歇尔回信", "马歇尔告诉", "马歇尔一世英名", "调停失败", "马歇尔国务卿", "马歇尔将军", "马歇尔来华", "马歇尔代表", "马歇尔、艾奇逊", "《马歇尔传》", "MARSHALL HERO", "国民党会做好事")):
             return "乔治·马歇尔"
     if raw_name == "霍姆斯" and any(marker in ctx for marker in ("John Holmes", "约翰·霍姆斯", "叔公约翰", "约翰·罗杰斯", "霍姆斯睁开眼睛")):
         return "约翰·霍姆斯"
@@ -5640,6 +5795,113 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None) -> str:
         return "吴忠信（党国元老）"
     if raw_name == "王允" and any(marker in ctx for marker in ("王宝钏", "彩楼配", "三击掌", "薛平贵")):
         return "王允（王宝钏之父）"
+    if book == "阳痿美国":
+        title_ctx = chapter or ""
+        if raw_name in {"上帝李敖", "上帝李"}:
+            return "上帝李"
+        if raw_name in {"小布希", "小布什"}:
+            return "小布什"
+        if raw_name in {"老布希", "老布什"}:
+            return "老布什"
+        if raw_name in {"老罗斯福", "小罗斯福"}:
+            return raw_name
+        if raw_name == "马歇尔":
+            if "第28幕" in title_ctx or "第39幕" in title_ctx:
+                return "乔治·马歇尔"
+            if "第7幕" in title_ctx or "第16幕" in title_ctx:
+                return "约翰·马歇尔"
+        if raw_name in {"优力西斯", "Ulysses"}:
+            return "格兰特"
+        if raw_name in {"罗伯特", "罗伯特托德林肯"}:
+            if "托德林肯" in ctx or "Todd Lincoln" in ctx:
+                return "罗伯特·托德·林肯"
+            if "肯尼迪" in ctx:
+                return "罗伯特·肯尼迪"
+            if "克拉克" in ctx or "Clark" in ctx:
+                return "罗伯特·克拉克"
+            if "威廉斯" in ctx or "Williams" in ctx:
+                return "罗伯特·威廉斯"
+        if raw_name == "阿里":
+            if "阿里斯蒂德" in ctx or "Aristide" in ctx:
+                return "阿里斯蒂德"
+            if "弗莱舍尔" in ctx or "Ari Fleischer" in ctx or "白宫发言人" in ctx:
+                return "阿里·弗莱舍尔"
+        if raw_name == "保罗":
+            if "保罗·尼兹" in ctx or "Paul Nitze" in ctx or "第68号文件" in ctx:
+                return "保罗·尼兹"
+            if "泰耶尔" in ctx or "Paul Thayer" in ctx or "国防部副部长" in ctx:
+                return "保罗·泰耶尔"
+        if raw_name == "罗素":
+            if "McKinney Russell" in ctx or "新闻文化组" in ctx or "薄瑞光" in ctx:
+                return "麦金尼·罗素"
+        if raw_name == "艾伦":
+            if "Richard Allen" in ctx or "国家安全顾问" in ctx:
+                return "理查·艾伦"
+            if "杜勒斯" in ctx or "Allen W. Dulles" in ctx:
+                return "艾伦·杜勒斯"
+        if raw_name == "塞克":
+            if "Shamir" in ctx or "夏米尔" in ctx:
+                return "伊塞克·夏米尔"
+        if raw_name == "史密斯":
+            if "William F. Smith" in ctx or "司法部长" in ctx:
+                return "威廉·史密斯"
+        if raw_name == "斯威夫特":
+            if "John T. Swift" in ctx or "反华健将" in ctx or "修约代表" in ctx:
+                return "约翰·斯威夫特"
+        if raw_name == "坎贝尔":
+            if "朱迪丝" in ctx or "Judith Campbell" in ctx:
+                return "朱迪丝·坎贝尔"
+            if "Harold N. Campbell" in ctx or "空军少将" in ctx:
+                return "哈罗德·坎贝尔"
+        if raw_name == "谢尔曼":
+            if "Roger Sherman" in ctx or "独立宣言" in ctx:
+                return "罗杰·谢尔曼"
+            if "William T. Sherman" in ctx or "谢尔曼将军" in ctx or "上尉" in ctx:
+                return "威廉·谢尔曼"
+        if raw_name == "高尔特":
+            return "高尔特夫人"
+        if raw_name == "华莱士":
+            if "总统候选人" in ctx:
+                return "乔治·华莱士"
+            if "小说作者" in ctx or "Ben Hur" in ctx:
+                return "刘易斯·华莱士"
+        if raw_name == "亚当斯":
+            return "小亚当斯" if "小亚当斯" in title_ctx or "小亚当斯" in ctx else "约翰·亚当斯"
+        if raw_name == "哈里森":
+            if "第9幕" in title_ctx or "威廉·亨利" in ctx or "William Henry" in ctx:
+                return "威廉·亨利·哈里森"
+            if "第23幕" in title_ctx or "本杰明" in ctx or "Benjamin Harrison" in ctx:
+                return "本杰明·哈里森"
+        if raw_name == "泰勒":
+            if "第10幕" in title_ctx or "约翰·泰勒" in ctx or "John Tyler" in ctx:
+                return "约翰·泰勒"
+            if "第12幕" in title_ctx or "扎卡里" in ctx or "Zachary Taylor" in ctx:
+                return "扎卡里·泰勒"
+        if raw_name == "约翰逊":
+            if "第17幕" in title_ctx or "安德鲁·约翰逊" in ctx or "Andrew Johnson" in ctx:
+                return "安德鲁·约翰逊"
+            if "第35幕" in title_ctx or "林登·约翰逊" in ctx or "Lyndon Johnson" in ctx:
+                return "林登·约翰逊"
+        if raw_name == "罗斯福":
+            if "克米特·罗斯福" in ctx or "Kermit Roosevelt" in ctx:
+                return "克米特·罗斯福"
+            if "第25幕" in title_ctx or "第26幕" in title_ctx:
+                return "老罗斯福"
+            if "第31幕" in title_ctx:
+                return "小罗斯福"
+            if "老罗斯福" in title_ctx or "老罗斯福" in ctx or "Theodore Roosevelt" in ctx:
+                return "老罗斯福"
+            if "小罗斯福" in title_ctx or "小罗斯福" in ctx or "Franklin D. Roosevelt" in ctx:
+                return "小罗斯福"
+            return "小罗斯福"
+        if raw_name == "布什":
+            if "老布什" in title_ctx or "老布什" in ctx or "老布希" in ctx or "George H. W. Bush" in ctx:
+                return "老布什"
+            if "爸爸" in ctx or "第37幕" in title_ctx or "第38幕" in title_ctx or "第40幕" in title_ctx:
+                return "老布什"
+            if "小布什" in title_ctx or "小布什" in ctx or "小布希" in ctx or "George W. Bush" in ctx:
+                return "小布什"
+            return "小布什"
     return ALIASES.get(raw_name, raw_name)
 
 
@@ -5803,6 +6065,60 @@ def meta_for_path(source_root: Path, path: Path) -> tuple[str, str, str]:
 
 def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> bool:
     ctx = context_window(text, start, end)
+    if name == "亚当" and text[end:end + 1] == "斯":
+        return True
+    if name == "波尔" and text[end:end + 1] == "克":
+        return True
+    if name == "波尔" and text[max(0, start - 1):start] == "瑞":
+        return True
+    if name in {"罗斯福", "布什"} and text[max(0, start - 1):start] in {"老", "小"}:
+        return True
+    if name == "贝尔" and text[max(0, start - 1):start] == "坎":
+        return True
+    if name == "格林" and text[end:end + 2] == "斯潘":
+        return True
+    if name == "马拉" and text[max(0, start - 1):start] == "纳":
+        return True
+    if name == "富兰克" and text[end:end + 1] == "林":
+        return True
+    if name == "安德鲁" and (
+        text[end:end + 1] == "·"
+        or text[end:end + 3] == "卡内基"
+        or any(marker in ctx for marker in ("Andrew Johnson", "Andrew Jackson", "Andrew Carnegie"))
+    ):
+        return True
+    if name == "莫尔" and text[max(0, start - 2):start].endswith("菲尔"):
+        return True
+    if name == "乔治" and text[end:end + 1] == "·":
+        return True
+    if name == "史密斯" and (text[end:end + 1] == "法" or text[max(0, start - 5):start].endswith("玛格丽特·")):
+        return True
+    if name == "孙子" and "孙子兵法" not in ctx and "《孙子》" not in ctx:
+        return True
+    if name == "格鲁" and "盎格鲁" in ctx:
+        return True
+    if name in {"巴哈", "巴赫"} and text[end:end + 1] == "马":
+        return True
+    if name == "Bach" and text[end:end + 5].lower() == "elors":
+        return True
+    if name == "国父" and ("美国的国父" in ctx or "美国国父" in ctx):
+        return True
+    if name in {"列宁", "斯大林"} and text[end:end + 2] == "主义":
+        return True
+    if name == "保罗" and text[max(0, start - 2):start] == "特里":
+        return True
+    if name == "侯赛因" and ("Barack Hussein Obama" in ctx or "贝拉克·侯赛因·奥巴马" in ctx):
+        return True
+    if name == "格林" and text[end:end + 2] == "纳达":
+        return True
+    if name == "马总统" and text[max(0, start - 1):start] == "拿":
+        return True
+    if name == "塞克" and ("Shamir" in ctx or "夏米尔" in ctx):
+        return True
+    if name == "王地" and text[max(0, start - 1):start] == "霸":
+        return True
+    if name == "高祖" and text[end:end + 1] == "父":
+        return True
     if name == "艾伦" and "杜勒斯" in ctx:
         return True
     if name == "华严":
@@ -5980,7 +6296,9 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         )
         return any(marker in ctx for marker in false_markers)
     if name == "张先":
-        return "张先生订" in ctx
+        return text[end:end + 1] == "生" or "张先生" in ctx or "张先生订" in ctx
+    if name == "巴里" and text[max(0, start - 1):start] == "嘴":
+        return True
     if name == "应凤凰":
         return "应凤凰电视" in ctx
     return False
@@ -6004,7 +6322,7 @@ def extract_from_text(
             if is_contextual_false_positive(name, text, match.start(), match.end()):
                 continue
             ctx = context_window(text, match.start(), match.end())
-            name = canonical_name(name, ctx, book)
+            name = canonical_name(name, ctx, book, chapter)
             if name == "万劫" and book != "上山·上山·爱":
                 continue
             if name in {"龙头", "史处长", "余三共", "华老师", "欧卡曾", "王九胆", "胡牧师", "王家法", "老黄", "士官长", "班长"} and book != "红色11":
