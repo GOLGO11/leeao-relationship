@@ -398,6 +398,16 @@
     };
   }
 
+  function syncDetailPaneHeight() {
+    const layout = document.querySelector(".networkLayout");
+    const graphPane = document.querySelector(".graphPane");
+    if (!layout || !graphPane || window.matchMedia("(max-width: 980px)").matches) {
+      if (layout) layout.style.removeProperty("--detail-pane-height");
+      return;
+    }
+    layout.style.setProperty("--detail-pane-height", `${Math.ceil(graphPane.offsetHeight)}px`);
+  }
+
   function renderGraph() {
     const svg = $("graphSvg");
     const width = Math.max(960, svg.clientWidth || 960);
@@ -421,6 +431,7 @@
     simulate(graph, width, height);
     state.graphView = fitGraphView(graph, width, height);
     renderLegend(graph.activeCategories);
+    syncDetailPaneHeight();
 
     const viewportLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
     const linkLayer = document.createElementNS("http://www.w3.org/2000/svg", "g");
@@ -619,15 +630,15 @@
     }
 
     if (node.type === "category") {
-      const people = data.people
+      const allPeople = data.people
         .filter((person) => (person.categories || []).includes(node.category))
-        .sort((a, b) => b.occurrences - a.occurrences)
-        .slice(0, 40);
+        .sort((a, b) => b.occurrences - a.occurrences);
+      const people = allPeople.slice(0, 40);
       $("detailName").textContent = node.name;
       $("detailMeta").textContent = "独立身份分类";
       $("detailBody").innerHTML = `
-        <div class="metricLine"><span>${people.length} 人显示</span></div>
-        <div class="miniList">
+        <div class="metricLine"><span>共 ${allPeople.length} 人</span><span>显示前 ${people.length} 人</span></div>
+        <div class="miniList categoryPeopleList">
           ${people.map((person) => `<button data-person="${person.name}"><strong>${person.name}</strong><span>${person.occurrences} 次</span></button>`).join("")}
         </div>
       `;

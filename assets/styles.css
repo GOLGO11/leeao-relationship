@@ -216,12 +216,14 @@ select:focus {
 .networkLayout {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 360px;
+  align-items: start;
   gap: 0;
 }
 
 .graphPane {
   position: relative;
   display: flex;
+  align-self: start;
   min-height: 0;
   flex-direction: column;
   border-right: 1px solid var(--line);
@@ -346,6 +348,11 @@ select:focus {
 }
 
 .detailPane {
+  display: flex;
+  height: var(--detail-pane-height, auto);
+  max-height: var(--detail-pane-height, none);
+  min-height: 0;
+  flex-direction: column;
   border: 0;
   border-radius: 0;
   box-shadow: none;
@@ -353,13 +360,21 @@ select:focus {
 
 .detailBody {
   display: grid;
+  flex: 1 1 auto;
+  align-content: start;
+  grid-auto-rows: max-content;
   gap: 14px;
-  max-height: 680px;
+  min-height: 0;
+  max-height: none;
   overflow: auto;
   padding: 14px;
   color: #2a3439;
   font-size: 13px;
   line-height: 1.7;
+}
+
+.detailBody:has(.categoryPeopleList) {
+  grid-template-rows: max-content minmax(0, 1fr);
 }
 
 .metricLine,
@@ -441,6 +456,14 @@ select:focus {
 .miniList {
   display: grid;
   gap: 7px;
+}
+
+.categoryPeopleList {
+  min-height: 0;
+  max-height: none;
+  overflow: auto;
+  padding-right: 4px;
+  scrollbar-width: thin;
 }
 
 .miniList button {
@@ -544,6 +567,11 @@ select:focus {
     border-right: 0;
     border-bottom: 1px solid var(--line);
     overflow: hidden;
+  }
+
+  .detailPane {
+    height: auto;
+    max-height: none;
   }
 
   #graphSvg {
