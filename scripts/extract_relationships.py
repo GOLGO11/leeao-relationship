@@ -3357,7 +3357,7 @@ CURATED_IDENTITIES = {
     "吕布": ["spiritual", "military_figure"],
     "张杨": ["spiritual", "military_figure"],
     "邵玉铭": ["media", "politician", "public_debate"],
-    "灶王爷": ["religion", "spiritual"],
+    "灶王爷": ["fictional", "religion", "spiritual"],
     "程昱": ["spiritual", "politician"],
     "貂蝉": ["fictional", "spiritual"],
     "丁原": ["spiritual", "military_figure"],
@@ -3902,7 +3902,7 @@ CURATED_IDENTITIES.update({
     "俞国华": ["politician", "litigation", "public_debate"],
     "倪文亚": ["politician", "litigation", "public_debate"],
     "林洋港": ["legal_official", "politician", "litigation", "public_debate"],
-    "孔德成": ["religion", "academic", "politician", "litigation", "public_debate"],
+    "孔德成": ["academic", "politician", "religion", "litigation", "public_debate"],
     "黄尊秋": ["politician", "litigation", "public_debate"],
     "王家骅": ["witness", "litigation"],
     "田炯锦": ["legal_official", "politician", "witness", "public_debate"],
@@ -4354,7 +4354,13 @@ US_PRESIDENT_PLAY_IDENTITIES = {
     "奥巴马": ["plot_character", "literary_character", "politician", "historical_allusion"],
 }
 
-CURATED_IDENTITIES.update(US_PRESIDENT_PLAY_IDENTITIES)
+CURATED_IDENTITIES.update({
+    name: ["politician"] + [
+        category for category in categories
+        if category != "politician"
+    ]
+    for name, categories in US_PRESIDENT_PLAY_IDENTITIES.items()
+})
 CURATED_IDENTITIES.update({
     "JOHN-JOHN": ["plot_character", "literary_character"],
     "上帝李": ["plot_character", "literary_character"],
@@ -4585,6 +4591,19 @@ CURATED_IDENTITIES.update({
     "陈七": ["historical_allusion", "nickname", "spiritual"],
     "优孟": ["historical_allusion", "arts_music", "spiritual"],
     "上帝": ["fictional", "religion", "spiritual"],
+    "张英武": ["mentioned", "spiritual"],
+    "陈香梅": ["media", "politician", "spiritual"],
+    "杨宝琳": ["mentioned", "spiritual"],
+    "宋能尔": ["mentioned", "spiritual"],
+    "谷小姐": ["fictional", "nickname"],
+    "柳小姐": ["fictional", "nickname"],
+    "王源": ["source_author", "historical_allusion", "spiritual"],
+    "刘献廷": ["historical_allusion", "spiritual"],
+    "庾亮": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "苏峻": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "老兵计程车司机": ["veteran", "meeting", "nickname"],
+    "周敦颐": ["academic", "historical_allusion", "source_author", "spiritual"],
+    "韩孔厂": ["source_author", "spiritual"],
     "吴姬": ["romance", "nickname"],
     "汪汪": ["romance", "nickname"],
     "依依": ["romance", "nickname"],
@@ -6270,6 +6289,38 @@ PERSON_RELATIONS = [
         "weight": 3,
         "note": "《呈光中》附问“夏菁，咱们什么时候去看‘秋郎’？”，显示夏菁与秋郎同处李敖、余光中一组朋友往来语境中。",
     },
+    {
+        "book": "李语录",
+        "source": "王源",
+        "target": "刘献廷",
+        "relation": "文本引用：墓表作者与传主",
+        "weight": 4,
+        "note": "《先你而死与先我而死》引用清朝王源《刘处士墓表》中刘献廷托付知己为传的文字。",
+    },
+    {
+        "book": "李语录",
+        "source": "庾亮",
+        "target": "苏峻",
+        "relation": "历史典故：征召与拒征",
+        "weight": 4,
+        "note": "《党外与山头》以庾亮征苏峻为大司马、苏峻拒征造反的典故，比喻党外山头心态。",
+    },
+    {
+        "book": "李语录",
+        "source": "灶王爷",
+        "target": "玉皇大帝",
+        "relation": "宗教寓言：打小报告",
+        "weight": 3,
+        "note": "《灶王爷》说灶王爷虽向玉皇大帝打小报告，但每年只打一次。",
+    },
+    {
+        "book": "李语录",
+        "source": "谷小姐",
+        "target": "柳小姐",
+        "relation": "虚拟对话：真假话",
+        "weight": 3,
+        "note": "《假的真话》写谷小姐向柳小姐说真话，柳小姐不喜欢这种真话，是语录中的匿名对话人物。",
+    },
 ]
 
 
@@ -6390,6 +6441,15 @@ STOP_NAMES.update({
 })
 STOP_NAMES.discard("汪汪")
 STOP_NAMES.discard("阎王")
+
+STOP_NAMES.update({
+    # 《李语录》首轮切词噪声：书名、条目标题、成语残片或抽象词。
+    "李语录", "白头偕", "公园", "乐子", "石女", "何等幽", "金兰随",
+    "却怀疑", "边拉屎", "成神", "马威",
+    # 《李语录》第二轮：语录体中的泛称群体、职业角色或寓言角色，不作为人物节点。
+    "新女性", "新女性之母", "税吏", "党外人士", "明星", "星妈", "老板",
+    "伙计", "强盗", "小气鬼", "屠户", "敌人", "朋友",
+})
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -7019,6 +7079,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "张先":
         return text[end:end + 1] == "生" or "张先生" in ctx or "张先生订" in ctx
     if name == "巴里" and text[max(0, start - 1):start] == "嘴":
+        return True
+    if name == "月老" and text[max(0, start - 1):start] == "岁":
         return True
     if name == "应凤凰":
         return "应凤凰电视" in ctx
