@@ -148,6 +148,8 @@ ALIASES = {
     "李季恒": "李鼎彝",
     "玑衡": "李鼎彝",
     "李大下巴": "李鼎彝",
+    "李文至": "李文",
+    "李文满": "李文",
     "马小个子": "马占山",
     "鲁肇岚": "小蕾",
     "尚勤": "王尚勤",
@@ -157,6 +159,8 @@ ALIASES = {
     "毛主席": "毛泽东",
     "蔡校长": "蔡元培",
     "孔冬梅": "孔东梅",
+    "曹子建": "曹植",
+    "家昌": "刘家昌",
     "元女": "玄女",
     "夏禹": "大禹",
     "马萨利": "马萨利克",
@@ -167,6 +171,9 @@ ALIASES = {
     "熊希齢": "熊希龄",
     "钱其深": "钱其琛",
     "章炳麟": "章太炎",
+    "章疯子": "章太炎",
+    "苏东坡": "苏轼",
+    "霍姆兹大法官": "霍姆斯",
     "谭复生": "谭嗣同",
     "复生": "谭嗣同",
     "谭老师": "谭嗣同",
@@ -248,6 +255,7 @@ ALIASES = {
     "劳劳女士": "安娜劳劳",
     "赵豪生": "赵浩生",
     "斯诺": "埃德加·斯诺",
+    "Edward Snowden": "斯诺登",
     "达赖": "达赖喇嘛",
     "班禅": "班禅额尔德尼",
     "确吉坚赞": "班禅额尔德尼",
@@ -417,9 +425,9 @@ ALIASES = {
     "Albert Einstein": "爱因斯坦",
     "Albert Terrien de Lacouperie": "拉克伯里",
     "Albert Terrien": "拉克伯里",
-    "Oliver Wendell Holmes": "霍姆兹大法官",
-    "奥立佛·霍姆斯": "霍姆兹大法官",
-    "霍姆兹": "霍姆兹大法官",
+    "Oliver Wendell Holmes": "霍姆斯",
+    "奥立佛·霍姆斯": "霍姆斯",
+    "霍姆兹": "霍姆斯",
     "George Berkley": "乔治·巴克莱",
     "查泰莱": "查泰莱夫人",
     "Lady Chatterley": "查泰莱夫人",
@@ -1015,13 +1023,13 @@ NONSTANDARD_NAMES = {
     "福尔", "玛丽·安德逊", "罗勃·杜德利", "伊莉莎白女王", "安妮·林白",
     "拉丝洛普", "施约瑟", "夏洛瓦", "雅典娜", "阿芙罗黛蒂",
     "阿基米德", "波尔", "贝多芬", "汤姆·莎耶", "达芬奇", "梵谷", "查理曼",
-    "巴里", "笛卡儿", "阿基劳斯", "凡妮莎·贝尔", "克莱夫·贝尔", "摩洛",
+    "巴里", "笛卡儿", "阿基劳斯", "凡妮莎·贝尔", "克莱夫·贝尔", "贝尔曼", "摩洛",
     "盖摩", "吉朋", "克伦威尔", "丽泰·海华丝", "罗西尼", "马斯内", "玛莉·雪莱",
     "惠特曼", "普林尼", "普希金", "丁大留斯", "弗洛伊德", "乔治·埃佛勒斯",
     "理查·范萧", "欧勒", "戴安娜王妃", "派劳", "戴布森", "塔虎脱", "约翰·霍姆斯",
     "约翰·马歇尔", "吴尔芙", "格兰特", "弗赖", "克罗齐", "奥威尔", "赫立克",
     "西比留斯", "居里夫人", "保罗·佛赛尔", "珍妮丝·珍", "宙斯", "亚历山大皇帝",
-    "玛利亚", "米开郎基罗", "史蒂夫·斯皮尔伯格", "福斯特", "小仲马", "勃朗宁夫人",
+    "玛利亚", "米开郎基罗", "史蒂夫·斯皮尔伯格", "福斯特", "茱蒂·福斯特", "小仲马", "勃朗宁夫人",
     "休谟", "狄更斯", "奥立佛·霍姆斯",
     "徐菁", "校长", "局长", "陈教授", "医务室护士", "特别护士",
     "中山女中校长", "北投分局局长",
@@ -1372,7 +1380,7 @@ CURATED_IDENTITIES = {
     "林佛儿": ["publishing"],
     "陈中雄": ["publishing", "meeting"],
     "黄华成": ["publishing", "meeting"],
-    "辜振甫": ["politician", "meeting"],
+    "辜振甫": ["politician", "property_finance", "public_debate"],
     "蔡维屏": ["teacher_student"],
     "陈培基": ["legal_official", "litigation"],
     "叶迫": ["case_prison"],
@@ -1438,7 +1446,7 @@ CURATED_IDENTITIES = {
     "吴钊燮": ["politician", "meeting"],
     "蔡同荣": ["politician", "public_debate", "litigation"],
     "陈文茜": ["media", "politician", "correspondence", "friendship"],
-    "李庆华": ["politician", "family"],
+    "李庆华": ["politician", "friendship", "meeting", "public_debate"],
     "顾崇廉": ["military_figure", "politician", "friendship", "meeting"],
     "游锡堃": ["politician", "public_debate"],
     "吕秀莲": ["politician", "public_debate"],
@@ -4258,6 +4266,7 @@ CURATED_IDENTITIES.update({
     "阿基劳斯": ["academic", "historical_allusion", "spiritual"],
     "凡妮莎·贝尔": ["arts_music", "spiritual"],
     "克莱夫·贝尔": ["arts_music", "academic", "spiritual"],
+    "贝尔曼": ["arts_music", "spiritual"],
     "摩洛": ["arts_music", "spiritual"],
     "盖摩": ["scientist", "spiritual"],
     "吉朋": ["publishing", "historical_allusion", "spiritual"],
@@ -4297,6 +4306,7 @@ CURATED_IDENTITIES.update({
     "米开郎基罗": ["arts_music", "spiritual"],
     "史蒂夫·斯皮尔伯格": ["media", "arts_music", "spiritual"],
     "福斯特": ["publishing", "spiritual"],
+    "茱蒂·福斯特": ["media", "arts_music", "spiritual"],
     "小仲马": ["publishing", "spiritual"],
     "勃朗宁夫人": ["publishing", "romance", "spiritual"],
     "休谟": ["academic", "spiritual"],
@@ -4703,6 +4713,93 @@ CURATED_IDENTITIES.update({
     "王宝钏": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
     "薛平贵": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
     "西门庆": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《虽千万人，李敖往矣》首轮：微博短文体中现实政治人物、媒体人物和典故人物密集出现。
+    # 先压住“见面/司法/亲属”等邻词误触发，同时把别名与同一人物合并。
+    "蔡康永": ["media", "meeting", "public_debate"],
+    "柯震东": ["media", "social_case", "public_debate"],
+    "罗文嘉": ["politician", "meeting", "public_debate"],
+    "张灵甫": ["military_figure", "politician", "historical_allusion", "public_debate", "spiritual"],
+    "巢父": ["historical_allusion", "spiritual"],
+    "瞿秋白": ["political_dissident", "politician", "source_author", "historical_allusion", "spiritual"],
+    "江春男": ["media", "public_debate", "litigation"],
+    "冯明珠": ["academic_admin", "public_debate"],
+    "周功鑫": ["academic_admin", "meeting", "witness"],
+    "蔡章麟": ["legal_official", "academic", "historical_allusion", "spiritual"],
+    "陈舜政": ["source_author", "historical_allusion", "spiritual"],
+    "丁远超": ["media", "public_debate"],
+    "马叙伦": ["politician", "academic", "source_author", "historical_allusion", "spiritual"],
+    "周书楷": ["politician", "public_debate"],
+    "王珣": ["historical_allusion", "source_author", "spiritual"],
+    "郭豫伦": ["academic", "meeting"],
+    "顾曲": ["historical_allusion", "arts_music", "spiritual"],
+    "李容洙": ["human_rights", "witness", "public_debate"],
+    "石永王": ["politician", "academic", "historical_allusion", "spiritual"],
+    "苏轼": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "乔·路易斯": ["sports", "historical_allusion", "spiritual"],
+    "阿里": ["sports", "public_debate", "spiritual"],
+    "许寿裳": ["academic", "source_author", "correspondence", "historical_allusion", "spiritual"],
+    "屈莱果": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "牛牢": ["historical_allusion", "spiritual"],
+    "红娘": ["fictional", "literary_character", "historical_allusion", "spiritual"],
+    "胡萨克": ["politician", "historical_allusion", "spiritual"],
+    "高士轩": ["friendship", "witness"],
+    "高英轩": ["friendship", "witness"],
+    # 第二轮：低频直接关系专项，保留真接触，剔除由邻词误触发的重身份。
+    "杨开慧": ["martyr", "political_dissident", "historical_allusion", "public_debate", "spiritual"],
+    "洪秀柱": ["politician", "public_debate"],
+    "王世杰": ["politician", "academic_admin", "public_debate", "public_funds", "property_finance"],
+    "许水德": ["politician", "public_debate", "meeting"],
+    "苏贞昌": ["politician", "public_debate"],
+    "俞国华": ["politician", "public_debate"],
+    "陈璧君": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "陈绥民": ["politician", "historical_allusion", "spiritual"],
+    "陈耀昌": ["medical_care", "academic", "politician"],
+    "王兆民": ["politician", "academic", "historical_allusion", "witness", "spiritual"],
+    "陈正澄": ["academic", "meeting", "friendship"],
+    "韩毅雄": ["medical_care", "academic", "classmate", "friendship"],
+    "米歇尔": ["politician", "media", "public_debate"],
+    "李丽华": ["media", "arts_music", "public_debate", "spiritual"],
+    "齐白石": ["arts_music", "historical_allusion", "spiritual"],
+    "林文奎": ["military_figure", "witness", "historical_allusion"],
+    "聂华苓": ["publishing", "media", "public_debate"],
+    "蔡志煌": ["media"],
+    "金溥聪": ["politician", "meeting", "public_debate"],
+    "霍姆斯": ["legal_official", "historical_allusion", "spiritual"],
+    "但丁": ["source_author", "historical_allusion", "spiritual"],
+    "王作荣": ["teacher_student", "academic", "politician", "spiritual"],
+    # 第三轮：现代政治与媒体人物专项，区分节目/见面/合作与单纯公共评论。
+    "宋楚瑜": ["politician", "party_propaganda", "meeting", "public_debate"],
+    "刘长乐": ["media", "meeting", "friendship"],
+    "陈文茜": ["media", "politician", "correspondence", "friendship", "meeting"],
+    "莫文蔚": ["media", "arts_music", "meeting"],
+    "王羽": ["media", "public_debate"],
+    "邓育昆": ["media", "meeting", "friendship"],
+    # 第四轮：历史典故、神交引用与虚拟人物专项，避免古人和新闻评论被邻词打成直接关系。
+    "斯诺登": ["political_dissident", "human_rights", "public_debate"],
+    "秦始皇": ["politician", "historical_allusion", "public_debate", "spiritual"],
+    "宋庆龄": ["politician", "historical_allusion", "spiritual"],
+    "江青": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "孙科": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "毛岸英": ["historical_allusion", "public_debate", "spiritual"],
+    "乔布斯": ["media", "public_debate", "spiritual"],
+    "凯因斯": ["academic", "historical_allusion", "spiritual"],
+    # 第五轮：亲友家人与遗嘱专项，补足著作权、保险金、照护和受托支付语境。
+    "王志慧": ["family", "publishing", "trust_property", "property_finance"],
+    "李谌": ["family", "property_finance", "trust_property"],
+    "李文": ["family", "property_finance", "trust_property"],
+    "陈境圳": ["teacher_student", "medical_care", "trust_property", "property_finance", "meeting"],
+    "李戡": ["family", "publishing", "public_debate", "trust_property"],
+    "张桂贞": ["family", "medical_care", "property_finance", "litigation"],
+    "李放": ["family"],
+    "石锦": ["in_law", "academic"],
+    # 第六轮：高频政治人物与残余分类收束，剔除由父母、学生、法院等邻词带来的强关系误判。
+    "李庆华": ["politician", "friendship", "meeting", "public_debate"],
+    "齐白石": ["arts_music", "historical_allusion", "spiritual"],
+    "许水德": ["politician", "public_debate", "meeting"],
+    "辜振甫": ["politician", "property_finance", "public_debate"],
 })
 CURATED_IDENTITIES.pop("湘女", None)
 
@@ -6557,6 +6654,31 @@ STOP_NAMES.update({
     "时效之", "强毅之", "能尽心",
 })
 
+STOP_NAMES.update({
+    # 《虽千万人，李敖往矣》首轮：微博短文体、书名、群体称呼、政治短语和句读残片。
+    "虽千万人", "万人", "黄金", "国共两", "党专政", "高丽棒", "寇雠", "红朝",
+    "公知", "孟子选", "李戡写", "祖国同", "别磕错", "国家副", "温奚落",
+    "路参选", "党包围", "包好难", "和尚倒", "容洙老", "常抱怨", "平奖还",
+    "班老同", "国特争", "时死", "时贬低", "步棋", "班有序", "班熊廷",
+    "终止合", "苏联返", "钱眼开", "别高估", "时做出", "古人光", "古诗做",
+    "国家繁", "时却异", "李戡看", "胡人划", "都拿出", "都有登", "都靠牺",
+    "利忘义", "台名", "孟良崮", "路人许", "车风顺", "都重申", "解深澈",
+    "国防战", "时收看", "暴君看", "步收看", "祖国情", "顾曲否",
+    # 第二轮：低频直接关系专项中的泛称、标题、语法片段或抽象词。
+    "单干户", "云散", "李四", "别人说", "常常有", "高调", "家拜访",
+    "明眼人", "屈服", "史教育", "程序做", "都市长", "公厅", "国黑人",
+    "国家人", "国人要", "国政策", "红豆冰", "黄钟",
+    "黄子孙", "居然说", "连三次", "罗曼斯",
+    # 第三轮：待复核尾巴里的地名、抽象词和句读残片。
+    "和照片", "利比亚", "关连", "时出现", "孔子出", "余味之", "红灯拦", "苏联老",
+    # 第六轮：政治语境和书名切分残片。
+    "全会议", "钱复回", "荣誉主",
+    # closeout 前检查：低频尾巴中的抽象词、鱼名、短语和句读残片。
+    "吴郭鱼", "任命状", "都有政", "时间搞", "何等清", "国财政", "明真相",
+    "台电视", "公然弃", "时打压", "别点出", "党宣传", "党总统", "国历来",
+})
+STOP_NAMES.discard("李文")
+
 
 def is_likely_person_name(name: str) -> bool:
     if name in ALWAYS_NAMES or name in ALIASES or name in NONSTANDARD_NAMES or name in CURATED_IDENTITIES:
@@ -6591,6 +6713,8 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
     if raw_name == "君君" and book != "上山·上山·爱":
         return raw_name
+    if raw_name == "斯诺" and ("斯诺登" in ctx or "Snowden" in ctx):
+        return "斯诺登"
     if raw_name == "湘女" and any(marker in ctx for marker in ("马戈", "老马", "新汉", "军师", "爱情军师")):
         return "李家大小姐"
     if raw_name == "吴先生":
@@ -6618,7 +6742,7 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
     if raw_name == "三娘子" and "荷花" not in ctx:
         return raw_name
     if raw_name == "福尔摩斯" and any(marker in ctx for marker in ("大法官", "Holmes", "霍姆兹", "Oliver Wendell")):
-        return "霍姆兹大法官"
+        return "霍姆斯"
     if raw_name == "巴克莱" and any(marker in ctx for marker in ("乔治·巴克莱", "George Berkley", "存在即知觉", "主教", "王阳明")):
         return "乔治·巴克莱"
     if raw_name == "周公" and any(marker in ctx for marker in ("中共军委", "政治部副部长", "扩大和巩固抗日")):
@@ -6635,12 +6759,18 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
     if raw_name == "霍姆斯" and any(marker in ctx for marker in ("John Holmes", "约翰·霍姆斯", "叔公约翰", "约翰·罗杰斯", "霍姆斯睁开眼睛")):
         return "约翰·霍姆斯"
     if raw_name == "霍姆斯" and any(marker in ctx for marker in ("Oliver Wendell Holmes", "奥立佛·霍姆斯")):
-        return "霍姆兹大法官"
+        return "霍姆斯"
     if raw_name == "贝尔":
+        if "贝尔曼" in ctx:
+            return "贝尔曼"
         if any(marker in ctx for marker in ("Vanessa Bell", "画家贝尔")):
             return "凡妮莎·贝尔"
         if any(marker in ctx for marker in ("Clive Bell", "艺术评论家贝尔")):
             return "克莱夫·贝尔"
+    if raw_name == "福斯特" and any(marker in ctx for marker in ("茱蒂福斯特", "Judie Foster", "Jodie Foster")):
+        return "茱蒂·福斯特"
+    if raw_name in {"优力西斯", "Ulysses"} and ("Ulysses S. Grant" in ctx or "格兰特" in ctx):
+        return "格兰特"
     if raw_name == "校长" and book == "虚拟的十七岁" and any(marker in ctx for marker in ("徐菁", "健保卡", "振兴医院收据", "医务室护士")):
         return "中山女中校长"
     if raw_name == "局长" and book == "虚拟的十七岁" and any(marker in ctx for marker in ("北投分局", "巫主任", "1212病房", "密封")):
@@ -7042,6 +7172,10 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return bool(text[end:end + 1] and re.match(r"[\u4e00-\u9fff]", text[end:end + 1]))
     if name == "文丑":
         return "大批文丑" in ctx
+    if name == "福特":
+        return "福特T型" in ctx or "福特 T型" in ctx
+    if name == "何定":
+        return "如何定义" in ctx
     if name == "圣母":
         return "圣母颂" in ctx or "皇太后" in ctx
     if name == "马克":
@@ -7086,7 +7220,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return (
             any(marker in ctx for marker in ("马可波罗", "马可孛罗", "马可仕", "马可福音"))
             or text[end:end + 1] in {"尼", "以"}
-            or text[max(0, start - 1):start] in {"老", "骆"}
+            or text[max(0, start - 1):start] in {"老", "骆", "倚"}
         )
     if name == "杨国枢":
         return "杨国枢的老丈人" in ctx
@@ -7138,7 +7272,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     if name == "方广":
         return (
             text[end:end + 1] in {"播", "州"}
-            or text[start - 1:start] == "南"
+            or text[max(0, start - 1):start] in {"南", "一"}
             or "大方广佛华严经" in ctx
             or "方广大庄严经" in ctx
         )
