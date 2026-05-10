@@ -5550,6 +5550,78 @@ CATEGORY_LABELS = {
 
 PERSON_RELATIONS = [
     {
+        "book": "大学札记",
+        "source": "姚从吾",
+        "target": "庄申",
+        "relation": "同赴南港/中研院读书",
+        "weight": 5,
+        "note": "《去南港》记姚从吾约李敖赴南港，李敖在温州街口见姚先生及庄申，同坐车去中央研究院，并与庄申谈。两人同处本次学术往来场景。",
+    },
+    {
+        "book": "大学札记",
+        "source": "凤翰",
+        "target": "王德毅",
+        "relation": "同约访友/同赴方豪处",
+        "weight": 6,
+        "note": "《见台静农、方豪》明写夜间凤翰与德毅来约李敖去方豪处畅谈，是现实朋友往来的同访关系。",
+    },
+    {
+        "book": "大学札记",
+        "source": "方豪",
+        "target": "鲁实先",
+        "relation": "谈及学人/读书事迹",
+        "weight": 3,
+        "note": "《见台静农、方豪》记方豪言及鲁实先在图书馆读书十八年事，属于方豪谈及鲁实先的学人事迹线索。",
+    },
+    {
+        "book": "大学札记",
+        "source": "王兆民",
+        "target": "程烈",
+        "relation": "转述评价/同侪见证",
+        "weight": 5,
+        "note": "《再去北沟》记王兆民跟程烈说李敖不是俗场中人，程烈是这一评价的直接听者。",
+    },
+    {
+        "book": "大学札记",
+        "source": "翁松燃",
+        "target": "庄因",
+        "relation": "转述评价/同侪见证",
+        "weight": 5,
+        "note": "《再去北沟》记翁松燃向庄因说李敖有大志向、自视甚高，显示两人在同侪评价语境中的直接转述关系。",
+    },
+    {
+        "book": "大学札记",
+        "source": "张灏",
+        "target": "孟大中",
+        "relation": "近况转告/探访缘起",
+        "weight": 5,
+        "note": "《孟大中》写孟大中上午听到张灏说及李敖近况，下午即跑来看李敖；张灏的转告成为孟大中探访的缘起。",
+    },
+    {
+        "book": "大学札记",
+        "source": "孟大中",
+        "target": "齐家旦",
+        "relation": "同席谈话/朋友聚会",
+        "weight": 4,
+        "note": "《安而乐、闲而清》记李敖夜请大中与家旦吃西瓜冰激凌，谈了许久，是现实朋友同席谈话场景。",
+    },
+    {
+        "book": "大学札记",
+        "source": "景新汉",
+        "target": "马宏祥",
+        "relation": "同场谈天/朋友往来",
+        "weight": 5,
+        "note": "《论狂态》记午前与新汉、宏祥在新兴楼上谈天，两人同处朋友谈话场景。",
+    },
+    {
+        "book": "大学札记",
+        "source": "马宏祥",
+        "target": "殷海光",
+        "relation": "陪同拜访/师友往来",
+        "weight": 5,
+        "note": "《见殷海光》记李敖下午与宏祥去殷海光家，殷海光赠文，是马宏祥陪同拜访殷海光的现实往来线索。",
+    },
+    {
         "book": "北京法源寺",
         "source": "谭嗣同",
         "target": "康有为",
@@ -6694,6 +6766,79 @@ CURATED_IDENTITIES.update({
     "萧万长": ["politician", "public_debate"],
 })
 
+CURATED_IDENTITIES.update({
+    # 《大学札记》首轮：日记体中的现实交往人物与思想引用人物。
+    "殷海光": ["teacher_student", "academic", "meeting", "publishing", "public_debate"],
+    "姚从吾": ["teacher_student", "academic", "meeting"],
+    "张世民": ["classmate", "friendship", "meeting", "correspondence"],
+    "孟大中": ["classmate", "friendship", "meeting", "witness"],
+    "翁松燃": ["meeting", "friendship", "case_prison", "spiritual"],
+    "庄申": ["academic", "meeting", "friendship", "correspondence"],
+    "庄因": ["classmate", "friendship", "meeting", "correspondence"],
+    "张灏": ["classmate", "academic", "meeting", "research_reference"],
+    "孙英善": ["classmate", "friendship", "meeting"],
+    "史静波": ["meeting", "friendship", "publishing", "correspondence"],
+    "马宏祥": ["correspondence", "classmate", "friendship", "meeting", "publishing"],
+    "刘博崑": ["meeting", "friendship"],
+    "沈鸿骏": ["meeting", "friendship"],
+    "陈淑平": ["meeting", "classmate"],
+    "加富尔": ["politician", "historical_allusion", "spiritual"],
+    # 第三轮：思想引用与神交人物，按著作、格言、历史范型细分。
+    "胡适": ["correspondence", "meeting", "academic", "academic_admin", "source_author", "public_debate"],
+    "罗素": ["academic", "source_author", "spiritual"],
+    "斯宾诺沙": ["academic", "historical_allusion", "spiritual"],
+    "布鲁达克": ["academic", "source_author", "spiritual"],
+    "亚当·斯密": ["academic", "source_author", "spiritual"],
+    "杜威": ["academic", "spiritual"],
+    "易卜生": ["source_author", "spiritual"],
+    "丁尼生": ["source_author", "spiritual"],
+    "萧伯纳": ["source_author", "spiritual"],
+    "苏格拉底": ["academic", "spiritual"],
+    "亚里士多德": ["academic", "spiritual"],
+    "孟德斯鸠": ["academic", "politician", "source_author", "spiritual"],
+    "凯撒": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "鲁仲连": ["historical_allusion", "political_dissident", "spiritual"],
+    "王国维": ["academic", "source_author", "spiritual"],
+    "富弼": ["politician", "historical_allusion", "spiritual"],
+    "文征明": ["arts_music", "historical_allusion", "spiritual"],
+    "董其昌": ["arts_music", "historical_allusion", "spiritual"],
+    "唐寅": ["arts_music", "historical_allusion", "spiritual"],
+    "郎世宁": ["arts_music", "historical_allusion", "spiritual"],
+    "赵子昂": ["arts_music", "historical_allusion", "spiritual"],
+    "曾国荃": ["military_figure", "historical_allusion", "family", "spiritual"],
+    "李申夫": ["historical_allusion", "source_author", "spiritual"],
+    "圣埃德蒙": ["religion", "source_author", "spiritual"],
+    "李陵": ["military_figure", "historical_allusion", "political_dissident", "spiritual"],
+    "宋徽宗": ["politician", "arts_music", "historical_allusion", "spiritual"],
+    "文彦博": ["politician", "arts_music", "historical_allusion", "spiritual"],
+    "司马光": ["academic", "politician", "arts_music", "historical_allusion", "spiritual"],
+    "潘安": ["source_author", "historical_allusion", "spiritual"],
+    # 第四轮：低频单次人物与残片复查，保留确证人物并细化短名。
+    "程伊川": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "王龙谿": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "薛敬轩": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "吕坤": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "邹德泳": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "徐鲁源": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "邹元标": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "广诚": ["meeting", "friendship"],
+    "善培": ["meeting", "friendship"],
+    "王德毅": ["meeting", "friendship", "source_author"],
+    "程烈": ["witness"],
+    "凤翰": ["meeting", "friendship"],
+    "卢保": ["friendship", "spiritual"],
+    "孟大强": ["friendship"],
+    "林毓生": ["classmate", "friendship", "meeting"],
+    "王兆民": ["friendship", "witness", "meeting"],
+    "张慰慈": ["academic", "source_author", "spiritual"],
+    "齐家旦": ["meeting", "friendship"],
+    "劳榦": ["academic", "source_author", "spiritual"],
+    "鲁实先": ["academic", "spiritual"],
+    "罗家伦": ["academic", "academic_admin", "politician"],
+    "史密斯同学（寓言人物）": ["fictional", "literary_character", "spiritual"],
+    "斯诺登（文学形象）": ["fictional", "literary_character", "spiritual"],
+})
+
 # 《挑战李敖——敖语录》第二轮：“李振主张”被姓名正则贪婪切成三字。
 ALWAYS_NAMES.add("李振主")
 STOP_NAMES.discard("李文")
@@ -6706,7 +6851,33 @@ BOOK_PHRASE_PEOPLE = {
         "连萧配": ("连战", "萧万长"),
         "陈吕配": ("陈水扁", "吕秀莲"),
     },
+    "大学札记": {
+        # 这些译名、字号和短名不是常规中文姓名正则都能稳定抓到，需按短语补入。
+        "加富尔": ("加富尔",),
+        "国荃": ("曾国荃",),
+        "圣埃德蒙": ("圣埃德蒙",),
+        "李陵": ("李陵",),
+        "广诚": ("广诚",),
+        "善培": ("善培",),
+        "王德毅": ("王德毅",),
+        "德毅": ("王德毅",),
+        "程烈": ("程烈",),
+        "吕坤": ("吕坤",),
+        "邹德泳": ("邹德泳",),
+        "徐鲁源": ("徐鲁源",),
+        "邹元标": ("邹元标",),
+    },
 }
+
+STOP_NAMES.update({
+    # 《大学札记》首轮：题名、句子、引文或贪婪切词残片。
+    "石心肠", "严肃", "温暖", "解自己", "和血吞", "单调生", "谢公曰", "松自己",
+    "余味", "从孤独", "牛津运", "能石块", "安详", "余独好", "金言", "廉詹姆",
+    "史系迎", "屠格涅", "鲁达克", "富尔", "通信",
+    # 第四轮：低频单次名单复查出的题名、句中动宾与贪婪切词残片。
+    "边工作", "别人辩", "古人切", "广诚言", "何价", "蒙名言", "李陵素", "庄申谈",
+    "时想起", "通常之", "应记者", "于世",
+})
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -6744,6 +6915,10 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
         return "李振"
     if raw_name == "君君" and book != "上山·上山·爱":
         return raw_name
+    if raw_name in {"斯诺", "斯诺登"} and book == "大学札记" and any(marker in ctx for marker in ("无从腐败的斯诺登", "Snowden")):
+        return "斯诺登（文学形象）"
+    if raw_name == "史密斯" and book == "大学札记" and "史密斯同学" in ctx:
+        return "史密斯同学（寓言人物）"
     if raw_name == "斯诺" and ("斯诺登" in ctx or "Snowden" in ctx):
         return "斯诺登"
     if raw_name == "湘女" and any(marker in ctx for marker in ("马戈", "老马", "新汉", "军师", "爱情军师")):
@@ -7311,6 +7486,10 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return text[end:end + 1] == "卿"
     if name == "张翼":
         return text[end:end + 1] == "德"
+    if name == "张明":
+        return text[end:end + 2] == "信片"
+    if name == "阿里":
+        return text[end:end + 1] == "山"
     if name == "李焕":
         return "李焕燊" in ctx or "李焕升" in ctx
     if name == "文强":
