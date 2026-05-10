@@ -4621,6 +4621,89 @@ CURATED_IDENTITIES.update({
     "韦应物": ["publishing", "historical_allusion", "spiritual"],
     "王维": ["publishing", "historical_allusion", "spiritual"],
 })
+
+CURATED_IDENTITIES.update({
+    # 《李敖语录》首轮：语录体常把历史人物、论战对象和引用人物压缩在短句里，
+    # 先用人工身份压住“见面/亲属”等邻词误判。
+    "孙观汉": ["public_debate", "political_dissident", "correspondence", "friendship"],
+    "颜延之": ["academic", "publishing", "historical_allusion", "spiritual"],
+    "徐树铮": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "蒋渭水": ["political_dissident", "politician", "public_debate", "historical_allusion", "spiritual"],
+    "齐宣王": ["politician", "historical_allusion", "spiritual"],
+    "尹仲容": ["politician", "property_finance", "public_debate"],
+    "陈圆圆": ["historical_allusion", "romance", "spiritual"],
+    # 《李敖语录》第三轮：主要以引文、作品、典故或文学形象进入语录，不作直接交往关系。
+    "王尔德": ["source_author", "historical_allusion", "spiritual"],
+    "莎士比亚": ["source_author", "historical_allusion", "spiritual"],
+    "弗洛斯特": ["source_author", "historical_allusion", "spiritual"],
+    "海明威": ["source_author", "historical_allusion", "spiritual"],
+    "拜伦": ["source_author", "historical_allusion", "spiritual"],
+    "马克·吐温": ["source_author", "historical_allusion", "spiritual"],
+    "泰戈尔": ["source_author", "historical_allusion", "spiritual"],
+    "屠格涅夫": ["source_author", "historical_allusion", "spiritual"],
+    "梅尔维尔": ["source_author", "historical_allusion", "spiritual"],
+    "勃朗宁": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "华兹华斯": ["source_author", "historical_allusion", "spiritual"],
+    "卡莱尔": ["source_author", "historical_allusion", "spiritual"],
+    "布雷克": ["source_author", "historical_allusion", "spiritual"],
+    "狄更斯": ["source_author", "historical_allusion", "spiritual"],
+    "爱伦坡": ["source_author", "historical_allusion", "spiritual"],
+    "乔治桑": ["source_author", "romance", "historical_allusion", "spiritual"],
+    "李清照": ["source_author", "historical_allusion", "spiritual"],
+    "吴敬梓": ["source_author", "historical_allusion", "spiritual"],
+    "斯威夫特": ["source_author", "historical_allusion", "spiritual"],
+    "孔尚任": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "格林": ["source_author", "historical_allusion", "spiritual"],
+    # 《李敖语录》第四轮：政治历史人物要保留现实身份，但主类不宜被小说剧本身份压住。
+    "梁启超": ["academic", "politician", "publishing", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "慈禧": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "袁世凯": ["politician", "plot_character", "literary_character", "public_debate", "historical_allusion", "spiritual"],
+    "谭嗣同": ["political_dissident", "academic", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "康有为": ["academic", "politician", "publishing", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "林肯": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "华盛顿": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "肯尼迪": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "福特": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "富兰克林": ["politician", "source_author", "historical_allusion", "spiritual"],
+    "丘吉尔": ["politician", "military_figure", "source_author", "historical_allusion", "spiritual"],
+    "蒋廷黻": ["academic", "politician", "source_author", "historical_allusion", "public_debate", "spiritual"],
+    "蔡元培": ["academic", "academic_admin", "politician", "historical_allusion", "spiritual"],
+    "于右任": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "林森": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "简芳达": ["media", "arts_music", "public_debate", "spiritual"],
+    "蔡锷": ["military_figure", "politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "珍妃": ["romance", "politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "张荫桓": ["politician", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "王五": ["underworld", "martyr", "plot_character", "literary_character", "historical_allusion", "spiritual"],
+    "李师科": ["martyr", "social_case", "veteran", "plot_character", "literary_character"],
+    # 《李敖语录》第五轮：现代台湾政治人物，校正公共论战、司法、见面等邻词误触发。
+    "苏南成": ["politician", "public_debate"],
+    "陈文成": ["political_dissident", "human_rights", "social_case", "academic", "public_debate"],
+    "张学良": ["military_figure", "politician", "historical_allusion", "public_debate", "spiritual"],
+    "赵耀东": ["politician", "property_finance", "public_debate"],
+    "黄少谷": ["politician", "legal_official", "public_debate"],
+    "谢长廷": ["politician", "lawyer_counsel", "public_debate"],
+    "陶百川": ["legal_official", "politician", "public_debate"],
+    "林洋港": ["legal_official", "politician", "litigation", "public_debate"],
+    "孙立人": ["military_figure", "politician", "historical_allusion", "public_debate"],
+    # 《李敖语录》第六轮：亲友师生与直接关系，区分真实接触和评论语境误触发。
+    "钱穆": ["academic", "correspondence", "public_debate", "historical_allusion"],
+    "宋希濂": ["military_figure", "correspondence", "publishing", "public_debate"],
+    "於梨华": ["publishing", "academic", "meeting", "public_debate"],
+    "陈映真": ["publishing", "editor", "political_dissident", "case_prison", "public_debate"],
+    "张继高": ["media", "publishing", "correspondence", "friendship", "meeting", "public_debate"],
+    "汝清": ["romance", "meeting", "correspondence", "publishing"],
+    "马尔腾": ["source_author", "historical_allusion", "spiritual"],
+    "杨宝琳": ["politician", "public_debate", "spiritual"],
+    "张丽珍": ["media", "spiritual"],
+    "宋能尔": ["spiritual"],
+    "黄煌雄": ["politician", "public_debate"],
+    "于义方": ["source_author", "historical_allusion", "spiritual"],
+    "克利奥帕特拉": ["politician", "romance", "historical_allusion", "spiritual"],
+    "王宝钏": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
+    "薛平贵": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
+    "西门庆": ["fictional", "literary_character", "historical_allusion", "romance", "spiritual"],
+})
 CURATED_IDENTITIES.pop("湘女", None)
 
 for _source_author in (
@@ -6449,6 +6532,29 @@ STOP_NAMES.update({
     # 《李语录》第二轮：语录体中的泛称群体、职业角色或寓言角色，不作为人物节点。
     "新女性", "新女性之母", "税吏", "党外人士", "明星", "星妈", "老板",
     "伙计", "强盗", "小气鬼", "屠户", "敌人", "朋友",
+})
+
+STOP_NAMES.update({
+    # 《李敖语录》首轮：篇名、抽象词、句读残片和组织/泛称片段。
+    "李敖语录", "危险", "曲学阿", "高等知", "方法盲", "宋朝", "游泳", "胡适写",
+    "别人来", "都要经", "诸文字", "燕廉", "纪念路", "路人星", "别人隔", "尚吃狗",
+    "强暴", "全体人", "牛刀", "史探索", "别人比", "文人看", "向阎王", "家庭来",
+    "左右怎", "席有规", "文言合", "时写作", "时又找", "时断言", "时落地",
+    "曹操合", "白话分", "鲁句践", "路告状", "别人相", "安静", "别人受",
+    "史知识", "都要反", "别人合", "广义来", "时使居", "时还将", "别人混",
+    # 《李敖语录》第二轮：低频重分类专项发现的固定词组、篇题和句子边界残片。
+    "毕竟胡", "查统计", "从陶百", "党工人", "公反", "国当代", "和抱负", "和犯人",
+    "和考试", "和思想", "花莲地", "怀疑能", "景资料", "能打", "能列名", "山涛绝",
+    "水木清", "司法公", "习做女", "向洋人", "于各", "元朝并", "张三李", "蓬莱岛",
+    "却居然", "王公旧", "车之鉴", "和真理", "巴顿巡", "蒋公命",
+    # 《李敖语录》第五轮：现代政治语境中的抽象词误切。
+    "荣辱",
+    # 《李敖语录》第六轮：直接关系专项中发现的抽象词和句子残片。
+    "高傲", "暴政斗",
+    # 《李敖语录》第七轮：待复核尾巴中的残片、概念词或无法唯一指认的人名片段。
+    "党讨姨", "陆设计", "公然开", "那么要", "古文字", "福尔", "伊丽莎白",
+    # 《李敖语录》closeout 前检查：句子残片或抽象词。
+    "时效之", "强毅之", "能尽心",
 })
 
 
