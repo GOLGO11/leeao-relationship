@@ -4773,7 +4773,7 @@ CURATED_IDENTITIES.update({
     # 第三轮：现代政治与媒体人物专项，区分节目/见面/合作与单纯公共评论。
     "宋楚瑜": ["politician", "party_propaganda", "meeting", "public_debate"],
     "刘长乐": ["media", "meeting", "friendship"],
-    "陈文茜": ["media", "politician", "correspondence", "friendship", "meeting"],
+    "陈文茜": ["media", "politician", "correspondence", "friendship", "meeting", "public_debate"],
     "莫文蔚": ["media", "arts_music", "meeting"],
     "王羽": ["media", "public_debate"],
     "邓育昆": ["media", "meeting", "friendship"],
@@ -6677,7 +6677,36 @@ STOP_NAMES.update({
     "吴郭鱼", "任命状", "都有政", "时间搞", "何等清", "国财政", "明真相",
     "台电视", "公然弃", "时打压", "别点出", "党宣传", "党总统", "国历来",
 })
+
+STOP_NAMES.update({
+    # 《挑战李敖——敖语录》首轮：短章语录体、书名、制作说明和泛称残片。
+    "挑战李敖", "敖语录", "和选民", "台湾记者", "李敖影音", "影音书籍", "不自由",
+})
+
+CURATED_IDENTITIES.update({
+    # 《挑战李敖——敖语录》第二轮：短章语录体中低频但确证的人名。
+    "连方瑀": ["public_debate", "family"],
+    "章孝严": ["politician", "public_debate"],
+    "陈进兴": ["social_case", "public_debate"],
+    "李振": ["historical_allusion", "spiritual"],
+    # 第四轮：2000 年大选搭档简称中的低频确证人物。
+    "张昭雄": ["politician", "public_debate"],
+    "萧万长": ["politician", "public_debate"],
+})
+
+# 《挑战李敖——敖语录》第二轮：“李振主张”被姓名正则贪婪切成三字。
+ALWAYS_NAMES.add("李振主")
 STOP_NAMES.discard("李文")
+
+
+BOOK_PHRASE_PEOPLE = {
+    "挑战李敖——敖语录": {
+        # 1999.11.12：“宋张配”“连萧配”“陈吕配”是 2000 年大选搭档简称。
+        "宋张配": ("宋楚瑜", "张昭雄"),
+        "连萧配": ("连战", "萧万长"),
+        "陈吕配": ("陈水扁", "吕秀莲"),
+    },
+}
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -6711,6 +6740,8 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 
 
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
+    if raw_name == "李振主" and book == "挑战李敖——敖语录":
+        return "李振"
     if raw_name == "君君" and book != "上山·上山·爱":
         return raw_name
     if raw_name == "斯诺" and ("斯诺登" in ctx or "Snowden" in ctx):
@@ -7417,6 +7448,43 @@ def extract_from_text(
                         "curated": name in CURATED_IDENTITIES,
                     },
                 )
+
+    for phrase, targets in BOOK_PHRASE_PEOPLE.get(book, {}).items():
+        start = 0
+        while True:
+            idx = text.find(phrase, start)
+            if idx < 0:
+                break
+            ctx = context_window(text, idx, idx + len(phrase))
+            for target in targets:
+                categories = CURATED_IDENTITIES.get(target, ["mentioned"])
+                category = categories[0]
+                score = 6
+                hit = people.setdefault(target, PersonHit(name=target))
+                hit.occurrences += 1
+                hit.relevant_occurrences += 1
+                hit.name_signals += 1
+                hit.strong_signals += 1
+                hit.score += score
+                hit.categories[category] += 1
+                hit.books[book] += 1
+                hit.collections[collection] += 1
+                hit.chapters[f"{book} / {chapter}"] += 1
+                hit.cue_hits[phrase] += 1
+                add_evidence(
+                    hit,
+                    {
+                        "book": book,
+                        "collection": collection,
+                        "chapter": chapter,
+                        "category": category,
+                        "score": score,
+                        "cues": [phrase],
+                        "snippet": ctx,
+                        "curated": target in CURATED_IDENTITIES,
+                    },
+                )
+            start = idx + len(phrase)
 
 
 def extract_title_names_from_strings(raw_titles: tuple[str, ...] | list[str]) -> set[str]:
