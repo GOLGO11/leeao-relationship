@@ -126,6 +126,24 @@ ALIASES = {
     "宏老": "马宏祥",
     "新公": "景新汉",
     "老景": "景新汉",
+    "善培": "李善培",
+    "述古": "李述古",
+    "又亮": "陈又亮",
+    "鼓应": "陈鼓应",
+    "仁龙": "张仁龙",
+    "仁宁": "张仁宁",
+    "尔琳": "杨尔琳",
+    "广诚": "朱广诚",
+    "李中校": "李国瑾",
+    "娄警官": "娄振岳",
+    "郑局长": "郑文杰",
+    "平景": "陈平景",
+    "紫耀": "林紫耀",
+    "遐祺": "沈遐祺",
+    "福元": "张福元",
+    "铁生": "齐铁生",
+    "白帆": "张白帆",
+    "杨羊兄": "杨羊",
     "施启杨": "施启扬",
     "詹永傑": "詹永杰",
     "景生二": "李景生",
@@ -5550,6 +5568,174 @@ CATEGORY_LABELS = {
 
 PERSON_RELATIONS = [
     {
+        "book": "早年日记",
+        "source": "陈平景",
+        "target": "张平",
+        "relation": "协同包书/出版支援",
+        "weight": 7,
+        "note": "《二十年前的一些断片》记“夜开始包书，至1时。平景、张平协同”，二人同在查禁后出版补救现场协作。",
+    },
+    {
+        "book": "早年日记",
+        "source": "陈平景",
+        "target": "小左",
+        "relation": "装订厂接洽/查禁现场",
+        "weight": 8,
+        "note": "陈平景手记中，敖之与张平及小左因雅江街厂进度太慢另洽新厂，随后小左装书并卷入查禁现场。",
+    },
+    {
+        "book": "早年日记",
+        "source": "陈平景",
+        "target": "娄振岳",
+        "relation": "查禁现场周旋",
+        "weight": 7,
+        "note": "11月9日查禁现场，娄振岳率人到装订厂，陈平景在场记录并与敖之共同周旋。",
+    },
+    {
+        "book": "早年日记",
+        "source": "陈平景",
+        "target": "郑文杰",
+        "relation": "二分局查禁现场",
+        "weight": 7,
+        "note": "郑文杰以二分局长身份到装订厂详讯印书情况，陈平景在现场手记中记录其查禁过程。",
+    },
+    {
+        "book": "早年日记",
+        "source": "郑文杰",
+        "target": "娄振岳",
+        "relation": "二分局查禁执行",
+        "weight": 8,
+        "note": "娄振岳先到厂执行查禁，郑文杰随后以二分局长身份到场并主持后续讯问，是同一警务链条上下游。",
+    },
+    {
+        "book": "早年日记",
+        "source": "娄振岳",
+        "target": "李国瑾",
+        "relation": "警总沟通/放行字样",
+        "weight": 7,
+        "note": "11月15日娄振岳去电李国瑾，确认“之×”不要涂改，并取得准发书信，显示二分局与警总之间的直接沟通。",
+    },
+    {
+        "book": "早年日记",
+        "source": "郑文杰",
+        "target": "黄某（书刊查禁警员）",
+        "relation": "市警局查禁协作",
+        "weight": 5,
+        "note": "郑文杰到厂后，市警局派管书刊查禁的黄某到场，红色警车数次拉走被查禁书籍。",
+    },
+    {
+        "book": "早年日记",
+        "source": "娄振岳",
+        "target": "那姓警员",
+        "relation": "查禁同行人员",
+        "weight": 4,
+        "note": "娄振岳率彪形大汉四人到厂，追记其中一人姓那；此人为查禁现场随行人员。",
+    },
+    {
+        "book": "早年日记",
+        "source": "娄振岳",
+        "target": "单姓警员",
+        "relation": "查禁同行人员",
+        "weight": 4,
+        "note": "娄振岳率人到厂查禁，追记其中一人姓单；此人为查禁现场随行人员。",
+    },
+    {
+        "book": "早年日记",
+        "source": "李国瑾",
+        "target": "曾先生（警总接触）",
+        "relation": "警总同场接触",
+        "weight": 5,
+        "note": "11月10日李国瑾与曾先生一同露面，与敖之初步接触，构成警总接触线。",
+    },
+    {
+        "book": "早年日记",
+        "source": "林厂主",
+        "target": "郑文杰",
+        "relation": "分局密谈/查扣书籍",
+        "weight": 6,
+        "note": "林厂主抱剩余书及纸张到分局长室，与郑文杰所在的二分局查禁程序直接相连。",
+    },
+    {
+        "book": "早年日记",
+        "source": "林厂主",
+        "target": "娄振岳",
+        "relation": "装订厂查禁现场",
+        "weight": 6,
+        "note": "娄振岳到雅江街装订厂查禁时，厂主林某因事出仓促而面如土色，是同一现场的当事人与执行者。",
+    },
+    {
+        "book": "早年日记",
+        "source": "张伟",
+        "target": "寿先生",
+        "relation": "同在装订厂警务现场",
+        "weight": 5,
+        "note": "11月16日李敖在工厂晤警员张伟及寿先生，二人同属现场警务接触人物。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕文",
+        "target": "吴东明",
+        "relation": "南下卖书/书店同行",
+        "weight": 6,
+        "note": "环岛卖书记中，焕文与李敖南下，在嘉义“夹带”文友书局老板吴东明同去台南。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕文",
+        "target": "王世贤",
+        "relation": "南下卖书/书摊接触",
+        "weight": 5,
+        "note": "焕文随李敖南下卖书，台南见集贤书摊王世贤，得知警察干涉卖书情形。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕文",
+        "target": "姜宗棠",
+        "relation": "南下卖书/书报社接触",
+        "weight": 5,
+        "note": "焕文随行南下，在台南见万利书报社姜宗棠，得知警察要求书摊店不要卖李敖的书。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕文",
+        "target": "林紫耀",
+        "relation": "南下卖书/高雄接待",
+        "weight": 5,
+        "note": "南下至高雄后，紫耀与遐祺等请李敖跳舞，随后紫耀、焕文、荫如同玩小牌，属南下行程同场人物。",
+    },
+    {
+        "book": "早年日记",
+        "source": "林紫耀",
+        "target": "沈遐祺",
+        "relation": "高雄接待/同请跳舞",
+        "weight": 5,
+        "note": "环岛卖书记中，遐祺、紫耀等人在高雄请李敖跳舞，并在次日同席请饭。",
+    },
+    {
+        "book": "早年日记",
+        "source": "林紫耀",
+        "target": "荫如",
+        "relation": "高雄同行/牌局与回门酒",
+        "weight": 5,
+        "note": "紫耀、焕文、荫如同玩小牌，次日荫如陪修车并与众人继续同行，属于南下旅程的同场关系。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕文",
+        "target": "张白帆",
+        "relation": "同席午饭/出版朋友",
+        "weight": 4,
+        "note": "11月15日午间，李敖与焕文、焕源、白帆同食于金城，白帆归并为张白帆。",
+    },
+    {
+        "book": "早年日记",
+        "source": "焕源",
+        "target": "张白帆",
+        "relation": "同席午饭",
+        "weight": 4,
+        "note": "11月15日午间，焕源与白帆同在金城午饭场景中出现。",
+    },
+    {
         "book": "大学札记",
         "source": "姚从吾",
         "target": "庄申",
@@ -6821,8 +7007,6 @@ CURATED_IDENTITIES.update({
     "邹德泳": ["academic", "source_author", "historical_allusion", "spiritual"],
     "徐鲁源": ["academic", "source_author", "historical_allusion", "spiritual"],
     "邹元标": ["academic", "source_author", "historical_allusion", "spiritual"],
-    "广诚": ["meeting", "friendship"],
-    "善培": ["meeting", "friendship"],
     "王德毅": ["meeting", "friendship", "source_author"],
     "程烈": ["witness"],
     "凤翰": ["meeting", "friendship"],
@@ -6837,6 +7021,67 @@ CURATED_IDENTITIES.update({
     "罗家伦": ["academic", "academic_admin", "politician"],
     "史密斯同学（寓言人物）": ["fictional", "literary_character", "spiritual"],
     "斯诺登（文学形象）": ["fictional", "literary_character", "spiritual"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《早年日记》首轮：短篇日记中的同学朋友、恋爱对象、出版与诉讼往来人物。
+    "周弘": ["friendship", "meeting", "correspondence"],
+    "徐道宁": ["friendship", "correspondence", "meeting"],
+    "赵依依": ["romance", "meeting", "classmate"],
+    "王曼施": ["romance", "meeting", "classmate"],
+    "张丽珍": ["romance", "correspondence"],
+    "李善培": ["friendship", "meeting", "neighbor"],
+    "李述古": ["friendship", "meeting", "correspondence"],
+    "陈平景": ["friendship", "meeting", "publishing", "source_support"],
+    "陈士宽": ["classmate"],
+    "陈又亮": ["classmate", "meeting"],
+    "陈鼓应": ["academic", "classmate", "friendship", "meeting", "public_debate"],
+    "张仁龙": ["friendship", "meeting"],
+    "张仁宁": ["friendship", "meeting"],
+    "杨尔琳": ["classmate", "friendship", "meeting", "correspondence"],
+    "朱广诚": ["classmate", "friendship", "meeting"],
+    "韩卓民": ["meeting", "media"],
+    "叶宏智": ["correspondence"],
+    "关明德": ["friendship", "correspondence"],
+    "黄淑兰": ["correspondence", "romance"],
+    "黄锡昌": ["classmate", "meeting"],
+    "洪成完": ["academic", "meeting"],
+    "孙纶芳": ["academic", "meeting"],
+    "孙智燊": ["academic", "classmate", "meeting"],
+    "王曾才": ["classmate", "meeting", "academic"],
+    "张立纲": ["academic", "classmate"],
+    "张立豫": ["academic"],
+    "吴炳钟": ["friendship", "meeting"],
+    "吴凤蓝": ["friendship", "meeting"],
+    "华肖忠": ["friendship"],
+    "郑文杰": ["intelligence_police", "meeting"],
+    "娄振岳": ["intelligence_police", "meeting"],
+    "李国瑾": ["intelligence_police", "military_figure", "meeting"],
+    "汤元吉": ["meeting", "correspondence", "source_support"],
+    "汤思泮": ["meeting", "source_support"],
+    "李士振": ["friendship", "correspondence", "property_finance"],
+    "小左": ["publishing", "meeting", "source_support", "nickname"],
+    "张平": ["publishing", "meeting", "source_support"],
+    "张福元": ["publishing", "source_support"],
+    "焕源": ["publishing", "meeting", "nickname"],
+    "华民": ["friendship", "meeting", "correspondence", "nickname"],
+    "其元": ["friendship", "meeting", "nickname"],
+    "焕文": ["publishing", "meeting", "nickname"],
+    "吴东明": ["publishing", "meeting"],
+    "王世贤": ["publishing", "meeting"],
+    "姜宗棠": ["publishing", "meeting"],
+    "沈遐祺": ["friendship", "meeting"],
+    "林紫耀": ["witness", "property_finance", "litigation", "friendship", "meeting"],
+    "荫如": ["friendship", "meeting", "nickname"],
+    "周学普": ["friendship", "meeting"],
+    "齐铁生": ["friendship", "meeting"],
+    "张伟": ["intelligence_police", "meeting"],
+    "寿先生": ["intelligence_police", "meeting", "nickname"],
+    "林厂主": ["publishing", "witness", "meeting", "nickname"],
+    "黄某（书刊查禁警员）": ["intelligence_police", "meeting", "nickname"],
+    "曾先生（警总接触）": ["intelligence_police", "meeting", "nickname"],
+    "那姓警员": ["intelligence_police", "meeting", "nickname"],
+    "单姓警员": ["intelligence_police", "meeting", "nickname"],
 })
 
 # 《挑战李敖——敖语录》第二轮：“李振主张”被姓名正则贪婪切成三字。
@@ -6857,8 +7102,6 @@ BOOK_PHRASE_PEOPLE = {
         "国荃": ("曾国荃",),
         "圣埃德蒙": ("圣埃德蒙",),
         "李陵": ("李陵",),
-        "广诚": ("广诚",),
-        "善培": ("善培",),
         "王德毅": ("王德毅",),
         "德毅": ("王德毅",),
         "程烈": ("程烈",),
@@ -6866,6 +7109,22 @@ BOOK_PHRASE_PEOPLE = {
         "邹德泳": ("邹德泳",),
         "徐鲁源": ("徐鲁源",),
         "邹元标": ("邹元标",),
+    },
+    "早年日记": {
+        # 早年日记短名很多，先把已可确认者归并到既有或全名节点。
+        "华俊": ("李华俊",),
+        "小左": ("小左",),
+        "华民": ("华民",),
+        "其元": ("其元",),
+        "焕文": ("焕文",),
+        "焕源": ("焕源",),
+        "荫如": ("荫如",),
+        "厂主林某": ("林厂主",),
+        "林某": ("林厂主",),
+        "黄某": ("黄某（书刊查禁警员）",),
+        "曾先生": ("曾先生（警总接触）",),
+        "姓那": ("那姓警员",),
+        "姓单": ("单姓警员",),
     },
 }
 
@@ -6877,6 +7136,16 @@ STOP_NAMES.update({
     # 第四轮：低频单次名单复查出的题名、句中动宾与贪婪切词残片。
     "边工作", "别人辩", "古人切", "广诚言", "何价", "蒙名言", "李陵素", "庄申谈",
     "时想起", "通常之", "应记者", "于世",
+    # 《早年日记》首轮：短句、动宾结构、地名或贪婪切词残片。
+    "安娜劳劳", "敖之初", "步至川", "陈琪情", "成绩如", "都没带", "凤翰访", "高阮谈",
+    "公司出", "公司董", "广诚访", "胡姚做", "华俊", "华俊又", "江南谈", "经审二",
+    "孙陵乃", "孙买西", "万事有", "文章好", "萧吃煎", "萧访吴", "萧偷看", "伊见面",
+    "于博爱", "于竹林", "于自兼", "杨同来", "张平看", "张平谈", "张森等", "周弘赴",
+    "周六来", "左去天", "戴良午", "金戴熹", "景马泛", "景诗", "连长寄", "马戈谈",
+    "马家二", "马夜饭", "孟能办", "孟能吃", "孟能谈", "潘表姐", "潘郑赴", "尚德同",
+    "尚勤参", "施珂谈", "石灰包", "石坚等", "时赐言", "时可逃", "时又翻",
+    "宏智", "王家二", "依依", "华民去", "林某", "黄某", "曾先生",
+    "平景买", "索引", "胡家三",
 })
 
 
@@ -7373,7 +7642,7 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         family_markers = ("儿子严正", "严正尚小", "严方才", "严谅还", "严师母和三个小孩")
         return not any(marker in ctx for marker in family_markers)
     if name == "路易斯":
-        return "路易斯安那" in ctx
+        return "路易斯安那" in ctx or "辛克莱·路易斯" in ctx
     if name == "穆罕默德":
         return bool(text[end:end + 1] and re.match(r"[\u4e00-\u9fff]", text[end:end + 1]))
     if name == "文丑":
@@ -7490,6 +7759,18 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return text[end:end + 2] == "信片"
     if name == "阿里":
         return text[end:end + 1] == "山"
+    if name == "吴凤":
+        return text[end:end + 1] == "蓝"
+    if name == "广诚":
+        return text[end:end + 1] == "姐"
+    if name == "要离":
+        return text[end:end + 1] in {"婚", "开"}
+    if name == "大禹":
+        return text[end:end + 1] == "岭"
+    if name == "吴铁城":
+        return text[end:end + 2] == "夫人"
+    if name == "上帝":
+        return any(marker in ctx for marker in ("上帝的小田亩", "死后没有上帝", "身材是上帝特别加工"))
     if name == "李焕":
         return "李焕燊" in ctx or "李焕升" in ctx
     if name == "文强":
