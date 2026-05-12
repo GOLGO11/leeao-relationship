@@ -48,6 +48,8 @@
     academic_admin: "#4338ca",
     scientist: "#0369a1",
     media: "#0284c7",
+    public_official: "#64748b",
+    campaign_election: "#16a34a",
     household_staff: "#65a30d",
     disability: "#0d9488",
     human_rights: "#059669",
