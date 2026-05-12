@@ -41,6 +41,7 @@
     public_funds: "#d97706",
     torture_victim: "#c2410c",
     torture_actor: "#7f1d1d",
+    victim: "#be123c",
     witness: "#64748b",
     publishing: "#7c3aed",
     source_author: "#0d9488",
