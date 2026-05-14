@@ -7713,6 +7713,94 @@ PERSON_RELATIONS = [
         "note": "1998年《跨海看台湾》专访中，李敖讲王安石向刘贡父夸儿子王雱为神童、刘贡父反问的故事，刘贡父按历史典故人物处理。",
     },
     {
+        "book": "李敖情书集",
+        "source": "刘会云",
+        "target": "萧孟能",
+        "relation": "告发与债权纠纷/寄会云书信线",
+        "weight": 5,
+        "note": "《寄会云》集中谈刘会云、萧孟能与外汇支票、债权和告发纠纷，属于情书集后段的现实法律财务线。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "刘会云",
+        "target": "王剑芬",
+        "relation": "外汇支票案/告发材料相关人",
+        "weight": 4,
+        "note": "《寄会云》围绕王剑芬支票、外汇案与刘会云告发材料展开，二人是同一法律财务叙述中的关键人物。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "萧孟能",
+        "target": "王剑芬",
+        "relation": "债权与支票纠纷/萧案相关人",
+        "weight": 4,
+        "note": "《寄会云》把萧孟能与王剑芬的支票、债权和司法纠纷并置为案件背景，按现实法律财务关系入图。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "杨尔琳",
+        "target": "G（贝贝）",
+        "relation": "来信转述/花莲照应",
+        "weight": 3,
+        "note": "《给G的九十四封信》中李敖多次提到杨尔琳来信及对 G（贝贝）近况的照应，属于收信对象周边的现实通信线。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "吴申叔",
+        "target": "王莫愁",
+        "relation": "夫妇/宴请与照片见证",
+        "weight": 3,
+        "note": "《给Bonnie》附记称吴申叔、王莫愁夫妇请李敖吃饭，李敖在他们家看到 Bonnie 婚后照片，二人为本书 Bonnie 线的现实见证人。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "温锦丰",
+        "target": "张树忠",
+        "relation": "同事/看守所香烟案",
+        "weight": 5,
+        "note": "《给汝清的五封信》写温锦丰任第一岗哨值勤，张树忠在看守所外包好香烟，请温锦丰自上吊进，二人同属看守所香烟案链条。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "温锦丰",
+        "target": "熊钰铮",
+        "relation": "香烟交易/贪污案",
+        "weight": 5,
+        "note": "同信写香烟带至收容中心后卖给犯人熊钰铮，熊钰铮给温锦丰二万五千元，温锦丰因此被判刑。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "张树忠",
+        "target": "熊钰铮",
+        "relation": "香烟转售链/看守所案",
+        "weight": 4,
+        "note": "张树忠在看守所外包好香烟，后由温锦丰吊入并转售给熊钰铮，三人构成同一香烟案的供货、运入、购买链。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "王文发",
+        "target": "温锦丰",
+        "relation": "主任管理员供述/辩护书证据",
+        "weight": 4,
+        "note": "辩护书中称公诉人以主任管理员王文发之供述为佐证，王文发并非亲见温锦丰吊入香烟，属于同案证据关系。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "金亚平",
+        "target": "王护士",
+        "relation": "卫生课长与护士/监所医疗线",
+        "weight": 4,
+        "note": "《给汝清的五封信》写卫生课长金亚平不给囚犯看病，其手下王护士冒充王医生诊治，二人同在看守所医疗批评线中。",
+    },
+    {
+        "book": "李敖情书集",
+        "source": "董国铨",
+        "target": "宗成鎧",
+        "relation": "法官贪污案并列/病舍特权批评",
+        "weight": 3,
+        "note": "同信将高院庭长董国铨、地院推事宗成鎧并列为法官贪污案人物，用以批评病舍住的并非真正病人。",
+    },
+    {
         "book": "早年日记",
         "source": "陈平景",
         "target": "张平",
@@ -8858,11 +8946,11 @@ PERSON_RELATIONS = [
     },
     {
         "book": "李敖秘藏日记",
-        "source": "小八",
+        "source": "李放",
         "target": "六小姐（秘藏日记）",
         "relation": "软禁生活/用车与住处线索",
         "weight": 3,
-        "note": "《软禁残记》记“小八昨晚把车开到六小姐家”，属软禁期间日常协助与六小姐住处线索。",
+        "note": "《软禁残记》记“小八昨晚把车开到六小姐家”，小八并入李放，属软禁期间日常协助与六小姐住处线索。",
     },
     {
         "book": "李敖秘藏日记",
@@ -13941,6 +14029,50 @@ CURATED_IDENTITIES.update({
     "哈台": ["arts_music", "historical_allusion", "spiritual"],
 })
 STOP_NAMES.discard("关中")
+CURATED_IDENTITIES.update({
+    # 《李敖情书集》首轮：书信体以收信对象、昵称和情感通信线为主，先稳住单字母与代称。
+    "G（贝贝）": ["romance", "correspondence", "meeting", "nickname"],
+    "LW（李敖情书集）": ["romance", "correspondence", "nickname"],
+    "H（李敖情书集）": ["romance", "correspondence", "meeting", "nickname"],
+    "Y（小Y）": ["romance", "correspondence", "meeting", "nickname"],
+    "阿贞（李敖情书集）": ["romance", "correspondence", "meeting", "nickname"],
+    "谷莺": ["romance", "correspondence", "meeting"],
+    "咪咪": ["romance", "classmate", "meeting", "correspondence"],
+    "Bonnie": ["romance", "meeting", "correspondence"],
+    "汝清": ["romance", "meeting", "correspondence", "publishing", "source_support", "editor"],
+    "刘会云": ["romance", "correspondence", "publishing", "litigation", "property_finance", "source_support"],
+    "杨尔琳": ["classmate", "friendship", "correspondence", "meeting", "source_support"],
+    "王莫愁": ["friendship", "meeting", "family"],
+    # 第三轮：法律财务与监所线，拆开管理员、监所医疗、案犯/狱友和财务诉讼身份。
+    "温锦丰": ["prison_guard", "prison_admin", "litigation", "property_finance"],
+    "张树忠": ["prison_guard", "property_finance", "litigation"],
+    "王文发": ["prison_admin", "prison_guard", "witness", "litigation"],
+    "熊钰铮": ["case_prison", "property_finance", "litigation"],
+    "金亚平": ["prison_medical", "prison_admin"],
+    "王护士": ["prison_medical", "nickname"],
+    "董国铨": ["legal_official", "litigation", "case_prison"],
+    "宗成鎧": ["legal_official", "litigation", "case_prison"],
+    "徐启学": ["case_prison", "litigation"],
+    "张国杰": ["case_prison", "victim", "medical_care", "litigation"],
+    "吕德": ["torture_victim", "case_prison", "correspondence", "human_rights"],
+    "张国霖": ["case_prison", "property_finance", "litigation"],
+    "林浩兴": ["case_prison", "property_finance", "litigation"],
+    # 第四轮：文化引用、神交人物与本书昵称，避免把文学玩笑误作现实交往。
+    "李放": ["family", "nickname", "correspondence"],
+    "伊拉斯莫斯": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "威廉大帝": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "索菲亚罗兰": ["arts_music", "media", "historical_allusion", "spiritual"],
+    "小赫胥黎": ["source_author", "scientist", "historical_allusion", "spiritual"],
+    "默罕默德": ["religion", "historical_allusion", "spiritual"],
+    "达芬奇": ["arts_music", "scientist", "historical_allusion", "spiritual"],
+    "小仲马": ["source_author", "historical_allusion", "spiritual"],
+})
+ALIASES.update({
+    "贝贝": "G（贝贝）",
+    "G贝贝": "G（贝贝）",
+    "辛八达": "李放",
+    "小八": "李放",
+})
 
 # 《挑战李敖——敖语录》第二轮：“李振主张”被姓名正则贪婪切成三字。
 ALWAYS_NAMES.add("李振主")
@@ -13952,6 +14084,66 @@ ALIASES.pop("刘军", None)
 
 
 BOOK_PHRASE_PEOPLE = {
+    "李敖情书集": {
+        # 首轮：书信标题、称呼与昵称短语，避免 G/H/Y/LW 等单字母收信对象漏收或污染全局。
+        "亲爱的476702": ("G（贝贝）",),
+        "476702": ("G（贝贝）",),
+        "安东街女主人": ("G（贝贝）",),
+        "给LW": ("LW（李敖情书集）",),
+        "LW：": ("LW（李敖情书集）",),
+        "给H的十三封信": ("H（李敖情书集）",),
+        "亲爱的H": ("H（李敖情书集）",),
+        "H：": ("H（李敖情书集）",),
+        "给阿贞": ("阿贞（李敖情书集）",),
+        "亲爱的阿贞": ("阿贞（李敖情书集）",),
+        "阿贞：": ("阿贞（李敖情书集）",),
+        "给Y的四十八封信": ("Y（小Y）",),
+        "亲爱的Y": ("Y（小Y）",),
+        "小Y": ("Y（小Y）",),
+        "Y女史": ("Y（小Y）",),
+        "Y，": ("Y（小Y）",),
+        "给谷莺": ("谷莺",),
+        "亲爱的谷莺": ("谷莺",),
+        "给Bonnie": ("Bonnie",),
+        "Bonnie：": ("Bonnie",),
+        "吴申叔王莫愁夫妇": ("吴申叔", "王莫愁"),
+        "申叔夫妇": ("吴申叔", "王莫愁"),
+        "申叔兄、莫愁嫂": ("吴申叔", "王莫愁"),
+        "莫愁嫂": ("王莫愁",),
+        "萧老头儿": ("萧孟能",),
+        "给咪咪": ("咪咪",),
+        "亲爱的咪咪": ("咪咪",),
+        "给尚勤的两封信": ("王尚勤",),
+        "尚勤：": ("王尚勤",),
+        "寄会云": ("刘会云",),
+        "会云：": ("刘会云",),
+        "给汝清": ("汝清",),
+        "孙观汉博士": ("孙观汉",),
+        "所长孙观汉": ("孙观汉",),
+        "温锦丰送来": ("温锦丰",),
+        "温锦丰二十六岁": ("温锦丰",),
+        "同事张树忠": ("张树忠",),
+        "主任管理员王文发": ("王文发",),
+        "金亚平": ("金亚平",),
+        "金课长": ("金亚平",),
+        "王护士": ("王护士",),
+        "熊钰铮": ("熊钰铮",),
+        "林浩兴案": ("林浩兴",),
+        "张国霖": ("张国霖",),
+        "董国铨": ("董国铨",),
+        "宗成鎧": ("宗成鎧",),
+        "徐启学": ("徐启学",),
+        "张国杰": ("张国杰",),
+        "吕德又来信": ("吕德",),
+        "吕德式车祸": ("吕德",),
+        "达文西": ("达芬奇",),
+        "伊拉斯莫斯": ("伊拉斯莫斯",),
+        "小仲马": ("小仲马",),
+        "威廉大帝": ("威廉大帝",),
+        "索菲亚罗兰": ("索菲亚罗兰",),
+        "T·赫胥黎": ("小赫胥黎",),
+        "默罕默德": ("默罕默德",),
+    },
     "李敖对话录": {
         # 首轮：访谈文本里多昵称、括注、报刊称谓和问答标题，先补明确真人线索。
         "孟绝子（祥柯）": ("孟祥柯",),
@@ -15580,6 +15772,18 @@ STOP_NAMES.update({
     "平民之", "左看", "管李敖", "和语言", "须做到", "时事开", "那样有",
     "公开出", "家庭有",
 })
+STOP_NAMES.update({
+    # 《李敖情书集》首轮：书信正文中被切出的普通词、职衔残片、地名残片和误接姓氏。
+    "公务", "冷淡之", "任驻台", "高雄做", "任何警", "长孙观汉", "史学能",
+    "和普通", "吴萧诸", "高雄川", "沈张王", "台北湖", "和女人", "能骂",
+    "比任何", "真切", "不忍", "偷懒", "忙碌", "如何能", "有形中",
+    "一瓢是", "沦的历", "刚升", "时乃作", "在心理", "拒不回",
+    "贝贝随", "贝贝看", "别人通", "别人交", "麻烦如", "那位说", "董相识",
+    "水牛出", "游计画", "郑重说", "萧老板", "万骂", "东吴张", "公道尚",
+    "东方望谈", "雷震太", "林今开", "黄宝实",
+    "皮球", "申叔夫", "家庭教", "车马费", "萧老头",
+    "明天", "安东街",
+})
 
 
 def is_likely_person_name(name: str) -> bool:
@@ -16179,6 +16383,8 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             "美国华盛顿",
         )
         return any(marker in ctx for marker in place_markers)
+    if name == "林肯":
+        return "林肯银行" in ctx or text[end:end + 2] == "银行"
     if name == "林森":
         return "林森北路" in ctx
     if name == "林黛":
@@ -16276,6 +16482,10 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return not any(marker in ctx for marker in role_alias_markers[name])
     if name == "咪咪":
         return any(marker in ctx for marker in ("母猫", "波斯种", "波斯猫", "波波", "猫为咪咪", "笑咪咪"))
+    if name == "施珂":
+        return any(marker in ctx for marker in ("“女”施珂", "女”施珂", "施大爷"))
+    if name == "辛八达":
+        return "辛八达七航妖岛" in ctx or text[end:end + 3] == "七航妖"
     if name == "白脸":
         return "外号" not in ctx and "叫黄永寿" not in ctx
     if name == "黄富":
