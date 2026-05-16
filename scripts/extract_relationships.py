@@ -10450,6 +10450,486 @@ PERSON_RELATIONS = [
         "note": "同篇末尾称李敖判断方素敏可以回来，并判断老康将落选且事前告诉黄怡，以此说明自己对党外局势判断较准。",
     },
     {
+        "book": "李敖书笺集",
+        "source": "蔡辰男",
+        "target": "蔡万霖",
+        "relation": "国泰财阀/父子家族线",
+        "weight": 5,
+        "note": "《斥财阀》以“辰男先生”为收信对象，并说“你去问问你爸爸、问问蔡万霖”，蔡辰男与蔡万霖同属国泰财阀批判线。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "萧孟能",
+        "target": "萧太太（李敖书笺集）",
+        "relation": "家庭债务/诉讼线",
+        "weight": 5,
+        "note": "《彼以熊来，吾以熊往》明说“萧孟能又欠萧太太钱，又被告进法院”，萧太太在本书以萧孟能相关诉讼与通信称谓出现。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "胡虚一",
+        "target": "雷震",
+        "relation": "雷震后事/自由中国旧事通信",
+        "weight": 7,
+        "note": "《关于三毛与雷三毛》由胡虚一来信谈雷震治丧费与《自由中国》旧事，随后李敖作答，是本书雷震线的重要通信关系。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "宋英",
+        "target": "雷震",
+        "relation": "配偶/治丧与遗产争议",
+        "weight": 6,
+        "note": "《谁使雷震有了遗恨？》与《关于三毛与雷三毛》均围绕雷震身后房产、公宅、治丧费与宋英身份展开。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "林永智",
+        "target": "周永嘉",
+        "relation": "辜伟甫债务/鹿港债权线",
+        "weight": 5,
+        "note": "《谁逼辜振甫还了债？》中林永智致李敖，明说辜六爷债务只剩周永嘉部分未了结，是同一债务线中的关键人物。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "辜振甫",
+        "target": "蔡金涂",
+        "relation": "辜伟甫债务/疏通转述",
+        "weight": 4,
+        "note": "同篇李敖答林永智时引蔡金涂谈辜振甫“很怕”李敖，属于辜家债务解决过程中的转述人物。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张乐平",
+        "target": "三毛（漫画人物）",
+        "relation": "漫画创作/文学虚拟人物",
+        "weight": 5,
+        "note": "《关于三毛与雷三毛》明说张乐平《三毛画传》《三毛流浪记》《三毛从军记》影响深远，本书中的三毛需与作家三毛、雷三毛分辨。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "雷震",
+        "target": "汤恩伯",
+        "relation": "厦门战局/密电报告",
+        "weight": 6,
+        "note": "《从告自己人的密到缴自己人的枪》抄录雷震致汤恩伯长电，说明厦门失守、金门防务与刘汝明部队缴械一事。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "雷震",
+        "target": "方治",
+        "relation": "厦门前线/高雄调停协作",
+        "weight": 6,
+        "note": "同篇注释说明希孔即方治，方治与雷震同到厦门前线助汤恩伯作战，撤退后又在高雄调停刘汝明部队缴械事。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "雷震",
+        "target": "陈诚",
+        "relation": "东南军政长官部/前线报告",
+        "weight": 5,
+        "note": "雷震长电中写“辞修忙甚未多谈”，注释明说辞修为陈诚，时任东南军政长官兼台湾省政府主席。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "刘汝明",
+        "target": "孙立人",
+        "relation": "部队缴械/命令链",
+        "weight": 5,
+        "note": "刘汝明回忆到达高雄后，接到孙立人转来的命令，要求刘兵团缴出枪炮公物后徒手上岸。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "刘汝明",
+        "target": "郭沛藻",
+        "relation": "二十九师官长管理",
+        "weight": 4,
+        "note": "刘汝明回忆写高雄下船后，二十九师师长郭沛藻负责管理集中在第一银行大楼的官长。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "洪兰友",
+        "target": "胡健中",
+        "relation": "雷震游戏诗/共同作者",
+        "weight": 5,
+        "note": "《关于三毛与雷三毛》校勘称“一毛天下乱”等游戏诗据《新闻天地》应为洪兰友、胡健中所作。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "胡虚一",
+        "target": "徐逸樵",
+        "relation": "雷震专家/自由中国旧友",
+        "weight": 4,
+        "note": "胡虚一来信列举夏道平、金承艺、黄中、王正路、聂华苓、徐逸樵等雷震旧友，认为他们都可做雷震生平往事的见证者。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张乐平",
+        "target": "王蓓蓓（银幕三毛）",
+        "relation": "漫画三毛/银幕改编线",
+        "weight": 4,
+        "note": "同篇写银幕三毛王蓓蓓因酷似漫画三毛而被曹禺看中拍戏，属于张乐平漫画三毛影响的电影延伸。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张桂贞",
+        "target": "胡星妈",
+        "relation": "家庭转述/胡茵梦母女风波",
+        "weight": 5,
+        "note": "《彼以熊来，吾以熊往》写李老太与胡星妈通风报信并引出“连母亲也被他赶出去”的说法，是家庭与舆论纠葛的一条线。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "王剑芬",
+        "target": "萧孟能",
+        "relation": "债务转付/判刑诉讼线",
+        "weight": 5,
+        "note": "同篇写王剑芬欠李敖钱而称给了萧孟能，后来由刘会云代为起诉，王剑芬、萧孟能都被判刑。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "李文",
+        "target": "王尚勤",
+        "relation": "父女/母系家庭线",
+        "weight": 4,
+        "note": "同篇称“小文”的事并接着谈女儿在美国学校与婚嫁话题，小文按李敖家庭线归李文，并与王尚勤母女线相连。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "宋英",
+        "target": "雷向筠",
+        "relation": "雷震遗产/木栅房产争议",
+        "weight": 6,
+        "note": "《谁使雷震有了遗恨？》为致宋英信，称向筠女士出示雷震亲笔，说明雷震身后木栅房子应归向筠所有。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "蔡辰男",
+        "target": "杨朝佐",
+        "relation": "国泰信用卡/经理代复",
+        "weight": 4,
+        "note": "《斥财阀》写李敖写信追问蔡辰男后，收到国泰信托信用卡部经理杨朝佐来信致歉并补发信用卡。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "萧孟能",
+        "target": "刘会云",
+        "relation": "文星登记/诉讼与告发线",
+        "weight": 6,
+        "note": "《从主流到乱流》写刘会云申请《文星》登记，并在萧孟能窃占案中向地检处告发，是文星与房产诉讼链的关键人物。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "萧孟能",
+        "target": "周康熙",
+        "relation": "窃占土地/借用空地合约",
+        "weight": 5,
+        "note": "同篇判决书写萧孟能将瑠公农田水利会土地连同自有土地出借周康熙，并收取保证金，构成窃占案事实链。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "江鹏坚",
+        "target": "刘会云",
+        "relation": "选区公民/行政院公帑质询",
+        "weight": 4,
+        "note": "《手下·下手·快》称刘会云为江鹏坚选区公民，写信揭发行政院为叶公超死后仍押租豪华大厦一事。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "许国泰",
+        "target": "魏廷昱",
+        "relation": "洲后村/桃园帮义卖建议",
+        "weight": 4,
+        "note": "《党外不可帮国民党擦屁股》写魏廷昱转述洲后村简报会意见，李敖再写信给许国泰讨论义卖与国家赔偿策略。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "陈水扁",
+        "target": "郁慕明",
+        "relation": "蓬莱岛/秋海棠毁谤案比较",
+        "weight": 5,
+        "note": "《驳国民党议员的四点胡说》以陈水扁《蓬莱岛》案和郁慕明《秋海棠》案比较法院标准，并逐条回应郁慕明说法。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "潘毓刚",
+        "target": "钟毓田",
+        "relation": "旧友来信/新店监狱探望记忆",
+        "weight": 4,
+        "note": "《二十年后的一次通信》里潘毓刚回忆当年与李敖一同去新店监狱看钟毓田，形成预官旧友与狱中记忆线。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "白景瑞",
+        "target": "陈启礼",
+        "relation": "江南案/介绍会面线索",
+        "weight": 5,
+        "note": "同篇李敖写陈启礼等人与情报局长汪希苓会面是在白景瑞家，白景瑞称自己只是介绍大家认识。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "白景瑞",
+        "target": "汪希苓",
+        "relation": "江南案/情报局会面线索",
+        "weight": 5,
+        "note": "同一段把白景瑞、陈启礼、汪希苓连到江南案线索中，属于李敖对国民党情报系统的追问。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "黄少谷",
+        "target": "施启扬",
+        "relation": "司法法务/公开信问责对象",
+        "weight": 4,
+        "note": "《是李敖就没完的！》抬头写给司法院院长黄少谷与法务部部长施启扬，追问胡茵梦、萧孟能、王剑芬案的并办遗漏。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张京育",
+        "target": "爱云芬芝",
+        "relation": "新闻局扫黄/中央日报裸照质问",
+        "weight": 3,
+        "note": "《谁露了奶头？》致新闻局长张京育，借《中央日报》刊出爱云芬芝裸照质问官方“三点不露”的扫黄标准。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "陈大庆",
+        "target": "宁俊兴",
+        "relation": "警总查禁/装订厂抢书旧案",
+        "weight": 4,
+        "note": "《寄赠阅户》回溯1966年告别文坛十书遭警备总部抢劫，点名陈大庆、宁俊兴、李国瑾为当年警总人员。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "郁慕明",
+        "target": "郁刘琦",
+        "relation": "《秋海棠》发行责任/夫妻转责",
+        "weight": 5,
+        "note": "《驳国民党议员老婆的一片胡说》写郁慕明把《秋海棠》核稿责任推给妻刘琦，郁刘琦同时以发行人身份收信。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "郁刘琦",
+        "target": "方前正",
+        "relation": "《秋海棠》投稿/核阅责任",
+        "weight": 4,
+        "note": "同篇法庭笔录称《党外党外你擦亮眼》为方前正投稿，郁刘琦看过后交给编辑发行。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "杨商江",
+        "target": "郁慕明",
+        "relation": "《秋海棠》诽谤案/无罪判决",
+        "weight": 4,
+        "note": "同篇引用杨商江在七十三年度自字第700号判决书中宣判郁慕明无罪，李敖逐条驳斥其证据基础。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "周灿雄",
+        "target": "吴敦",
+        "relation": "江南案/出庭辩护与正义提醒",
+        "weight": 5,
+        "note": "《维护人权与维护正义》致周灿雄，说明李敖支持维护吴敦人权，但不支持其逃避谋杀责任的遁词。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "吴敦",
+        "target": "董桂森",
+        "relation": "江南案/亲笔回忆互证",
+        "weight": 5,
+        "note": "同篇把吴敦《我狙杀叛逆刘宜良经过》与董桂森密件对读，指出二人回忆互相印证情报局唆使脉络。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "吴敦",
+        "target": "刘宜良",
+        "relation": "江南案/谋杀被害人",
+        "weight": 6,
+        "note": "同篇明说吴敦等到刘宜良家是蓄意谋杀，刘宜良即江南，是案件被害人。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "苏秋镇",
+        "target": "雷渝齐",
+        "relation": "党外餐叙/雷渝齐诽谤案近况",
+        "weight": 3,
+        "note": "《我有我的方式》写李敖接洽卖房时遇到苏大炮等人，他们正与雷渝齐聊天，谈其被关中告诽谤案。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "迈克尔·奥克森伯格",
+        "target": "卡特",
+        "relation": "美国中国政策/人权观察转述",
+        "weight": 4,
+        "note": "同篇写奥克森伯格见到李敖被国特跟踪后反感，后来与卡特搭上线，影响美国承认中共的政策环境。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "徐锡麟",
+        "target": "陶成章",
+        "relation": "光复会/拒绝假团结历史类比",
+        "weight": 4,
+        "note": "《丢掉假团结，才有真革命》以徐锡麟、陶成章和光复会为历史类比，说明拒绝假团结的革命实践。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "陶成章",
+        "target": "陈其美",
+        "relation": "光复会/暗杀与革命史改写",
+        "weight": 6,
+        "note": "同篇写陈其美忘恩负义并派蒋介石暗杀陶成章，是李敖批评国民党窜改革命史的核心例子。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "陈其美",
+        "target": "李柱中",
+        "relation": "上海光复/获救后窃取都督",
+        "weight": 4,
+        "note": "同篇写陈其美冒进被关在江南制造局，由光复会李柱中救出，随后趁李柱中等倦卧窃取上海都督。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "沈瓞民",
+        "target": "陶成章",
+        "relation": "光复会回忆/历史证词",
+        "weight": 3,
+        "note": "同篇引用沈瓞民《记光复会二三事》，作为陶成章和光复会力行武装革命的证据。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "苏洪月娇",
+        "target": "苏治洋",
+        "relation": "母女/家属信件转述",
+        "weight": 4,
+        "note": "《揪出伪君子》称收到苏洪月娇与治洋的信，并请代向东启先生、治洋致意，治洋依既有资料归苏治洋。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "郭廷以",
+        "target": "魏廷朝",
+        "relation": "入狱慰问/送钱与劝勉信",
+        "weight": 5,
+        "note": "《大家买人心》转录郭廷以致魏廷朝两信，涉及蒋经国托送钱和请章铨弟送食物、零用金。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "苏南成",
+        "target": "王聪琰",
+        "relation": "高雄市府查扣/出版法处分",
+        "weight": 4,
+        "note": "《致“台湾第一不要脸”书》称苏南成下属王聪琰以违反《出版法》为由扣押《我给我画帽子》。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "苏南成",
+        "target": "孙慧珍",
+        "relation": "书籍销售点/市府查扣线",
+        "weight": 3,
+        "note": "同篇写《我给我画帽子》委托高雄盐埕区孙慧珍代售，随后遭苏南成市府查扣。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "刘树铮",
+        "target": "徐德余",
+        "relation": "林肯大厦违建/市政质询对象",
+        "weight": 4,
+        "note": "《苍蝇也没那么好拍的！》致市议员刘树铮，请其向工务局长徐德余追究林肯大厦顶楼违建反复拆除问题。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "颜世锡",
+        "target": "王继德",
+        "relation": "林肯大厦私娼取缔/警政推托",
+        "weight": 3,
+        "note": "同篇回忆陈水扁和李敖努力后，警察局长颜世锡与大安分局局长王继德最后不得不取缔楼下私娼。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "蔡定芳",
+        "target": "林宗敏",
+        "relation": "建管处/林肯大厦违建追究线",
+        "weight": 3,
+        "note": "同篇前段说兼代处长蔡定芳交办来函，末尾又请刘树铮向建管处处长林宗敏追究，二人同属建管处责任线。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "骆学良",
+        "target": "廖俊杰",
+        "relation": "《民生报》专辑/邀稿责任说明",
+        "weight": 4,
+        "note": "《大登特登与一字不登》附骆学良复信，说明当时《民生报》文化组主任廖俊杰策划专辑并借用其名义邀稿。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "汪梦湘",
+        "target": "骆学良",
+        "relation": "《前进》文章来源/庭上卸责",
+        "weight": 5,
+        "note": "同篇写汪梦湘庭上称文章底稿未退回并牵连《民生报》副总编辑骆学良，李敖请蒋家语转询澄清。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "汪梦湘",
+        "target": "吴祥辉",
+        "relation": "《前进》转载/底稿流出争议",
+        "weight": 4,
+        "note": "同篇法庭笔录问汪梦湘是否拿底稿给吴祥辉，汪否认但承认允许参考采用，构成底稿流出争议。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "李璎",
+        "target": "梁廷英",
+        "relation": "抵押权涂销/银行经理刁难",
+        "weight": 5,
+        "note": "《如此“便民”》写李璎贷款清偿后，台湾中小企业银行板桥分行经理梁廷英仍要求陈彦增另写申请书。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "李璎",
+        "target": "赵既昌",
+        "relation": "债务清偿证明/银行董事长",
+        "weight": 4,
+        "note": "同篇写台湾中小企业银行董事长赵既昌出具债务清偿证明书，证明李璎贷款已全部清偿。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "龙云翔",
+        "target": "尤清",
+        "relation": "党外公政会/律师函警告",
+        "weight": 5,
+        "note": "《耻与为伍》收龙云翔律师致党外公政会尤清信，警告不可贸然假借李敖名义列入后援会。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "尤清",
+        "target": "费希平",
+        "relation": "党外公政会/前后主持人批评",
+        "weight": 4,
+        "note": "同篇李敖回信称党外公政会前后主持人自费希平到尤清，都是在党外招牌下盗取名利之徒。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张俊宏",
+        "target": "黄华",
+        "relation": "相见小吃/党外卖面实践",
+        "weight": 5,
+        "note": "《李氏理想，张氏实行》引用张俊宏回忆，称《台湾政论》停刊后与黄华商量开面店，作为李敖卖牛肉面理想的实践版本。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "张俊宏",
+        "target": "张金策",
+        "relation": "相见小吃/台湾政论停刊后出路",
+        "weight": 4,
+        "note": "同篇张俊宏回忆中提到张金策较无经济顾忧、打算回礁溪养鳗鱼，随后张俊宏与黄华商量开面店。",
+    },
+    {
+        "book": "李敖书笺集",
+        "source": "邓维桢",
+        "target": "何步正",
+        "relation": "《大学杂志》创办/早期编辑",
+        "weight": 5,
+        "note": "同篇引用张俊宏回忆，称《大学杂志》由邓维桢创办，早期总编辑为何步正，两人少怀大志。",
+    },
+    {
         "book": "早年日记",
         "source": "陈平景",
         "target": "张平",
@@ -17213,6 +17693,200 @@ CURATED_IDENTITIES.update({
     "何恩廷": ["intelligence_police", "public_official", "public_debate"],
     "颜世锡": ["intelligence_police", "public_official", "public_debate"],
 })
+CURATED_IDENTITIES.update({
+    # 《李敖书笺集》首轮：先固定书信抬头、党外/财阀/文星诉讼主线、雷震与三毛辨析线。
+    "牟力非": ["media", "editor", "political_dissident", "correspondence", "public_debate"],
+    "蔡辰男": ["property_finance", "trust_property", "correspondence", "public_debate"],
+    "杨朝佐": ["property_finance", "correspondence", "source_support"],
+    "萧太太（李敖书笺集）": ["family", "correspondence", "litigation", "publishing", "nickname"],
+    "计程车李先生（李敖书笺集）": ["meeting", "military_figure", "source_support", "nickname"],
+    "陈鼓应弟子某女士（李敖书笺集）": ["political_dissident", "public_debate", "nickname"],
+    "亨利（李敖书笺集）": ["correspondence", "friendship", "case_prison", "nickname"],
+    "神秘送信人（李敖书笺集）": ["correspondence", "source_support", "nickname"],
+    "曹军长（李敖书笺集）": ["military_figure", "historical_allusion", "nickname"],
+    "林小鱼": ["correspondence", "friendship", "source_support"],
+    "许国泰": ["politician", "political_dissident", "publishing", "human_rights", "social_case", "correspondence", "public_debate"],
+    "魏廷昱": ["political_dissident", "meeting", "source_support", "social_case", "public_debate"],
+    "陈增": ["public_official", "social_case", "correspondence"],
+    "孟祥柯": ["friendship", "teacher_student", "publishing", "political_dissident", "source_author", "correspondence", "public_debate"],
+    "欧阳杏如": ["family", "correspondence", "source_support"],
+    "李怡": ["media", "political_dissident", "correspondence", "public_debate"],
+    "刘美人（李敖书笺集）": ["correspondence", "nickname"],
+    "小六（李敖书笺集）": ["source_support", "family", "nickname"],
+    "小七（李敖书笺集）": ["source_support", "family", "nickname"],
+    "苏洪月娇": ["politician", "public_official", "political_dissident", "social_case", "litigation", "correspondence", "public_debate"],
+    "李璎": ["family", "property_finance", "social_case", "correspondence"],
+    "梁廷英": ["property_finance", "public_official", "correspondence", "public_debate"],
+    "林茂雄": ["legal_official", "litigation", "publishing", "public_debate"],
+    "林永智": ["source_support", "property_finance", "meeting", "friendship", "correspondence"],
+    "周永嘉": ["source_support", "property_finance", "meeting"],
+    "周永发": ["property_finance", "public_debate"],
+    "蔡金涂": ["property_finance", "trust_property", "source_support", "public_debate"],
+    "徐德余": ["public_official", "social_case", "public_debate"],
+    "徐承志": ["legal_official", "litigation", "public_debate"],
+    "胡赓年": ["politician", "public_official", "family", "in_law"],
+    "蔡云集": ["media", "source_author", "social_case", "historical_allusion"],
+    "林松祥": ["publishing", "academic", "public_debate"],
+    "郭正昭": ["publishing", "teacher_student", "public_debate"],
+    "王顺": ["editor", "publishing", "media", "public_debate"],
+    "三毛（漫画人物）": ["fictional", "arts_music", "source_author", "historical_allusion"],
+    "雷三毛": ["nickname", "historical_allusion"],
+    "王蓓蓓（银幕三毛）": ["arts_music", "fictional", "historical_allusion", "nickname"],
+    "克莱斯特": ["source_author", "historical_allusion", "spiritual"],
+    "米歇尔·科尔哈斯": ["fictional", "source_author", "historical_allusion"],
+    "休斯": ["property_finance", "historical_allusion", "spiritual"],
+    "佩里克利斯": ["politician", "historical_allusion", "spiritual"],
+    "赫尔": ["politician", "historical_allusion", "spiritual"],
+    "阿斯佩希雅": ["historical_allusion", "spiritual"],
+    "海涅": ["source_author", "historical_allusion", "spiritual"],
+    "牛顿": ["scientist", "historical_allusion", "spiritual"],
+    "霍姆斯": ["legal_official", "source_author", "historical_allusion", "spiritual"],
+    "李卓吾": ["source_author", "historical_allusion", "spiritual"],
+    "刘继庄": ["source_author", "historical_allusion", "spiritual"],
+})
+CURATED_IDENTITIES.update({
+    # 《李敖书笺集》第二轮：军政字号、雷震考证线、家庭信件线的称谓和证人校准。
+    "方治": ["politician", "public_official", "military_figure", "historical_allusion", "source_support"],
+    "林蔚": ["military_figure", "public_official", "politician", "historical_allusion"],
+    "谷正纲": ["politician", "public_official", "party_propaganda", "historical_allusion"],
+    "俞济时": ["military_figure", "public_official", "historical_allusion"],
+    "张厉生": ["politician", "public_official", "historical_allusion"],
+    "王东原": ["military_figure", "public_official", "historical_allusion"],
+    "曹圣芬": ["media", "party_propaganda", "public_official", "military_figure", "public_debate", "historical_allusion"],
+    "米文和": ["military_figure", "historical_allusion"],
+    "王连长（李敖书笺集）": ["military_figure", "nickname", "historical_allusion"],
+    "苏队长（李敖书笺集）": ["military_figure", "nickname", "historical_allusion"],
+    "李益智": ["military_figure", "historical_allusion"],
+    "陈参谋长（五十五军）": ["military_figure", "nickname", "historical_allusion"],
+    "梁廷琛": ["military_figure", "historical_allusion"],
+    "理明亚": ["military_figure", "historical_allusion"],
+    "董熙": ["military_figure", "historical_allusion"],
+    "周斌": ["military_figure", "victim", "historical_allusion"],
+    "郭沛藻": ["military_figure", "historical_allusion"],
+    "李兴中": ["military_figure", "politician", "historical_allusion"],
+    "于衡": ["source_author", "media", "historical_allusion"],
+    "于翔麟": ["source_author", "historical_allusion"],
+    "陆建章": ["military_figure", "politician", "historical_allusion"],
+    "张之江": ["military_figure", "politician", "historical_allusion"],
+    "刘郁芬": ["military_figure", "politician", "historical_allusion"],
+    "宋哲元": ["military_figure", "politician", "historical_allusion"],
+    "鹿钟麟": ["military_figure", "politician", "historical_allusion"],
+    "何应钦": ["military_figure", "politician", "public_official", "historical_allusion"],
+    "刘峙": ["military_figure", "politician", "historical_allusion"],
+    "傅作义": ["military_figure", "politician", "historical_allusion"],
+    "□□教授（李敖书笺集）": ["academic", "correspondence", "nickname"],
+    "□□教授夫人（李敖书笺集）": ["family", "correspondence", "nickname"],
+    "夏道平": ["academic", "media", "political_dissident", "source_support", "historical_allusion"],
+    "金承艺": ["political_dissident", "source_support", "historical_allusion"],
+    "黄中": ["political_dissident", "source_support", "historical_allusion"],
+    "王正路": ["political_dissident", "source_support", "historical_allusion"],
+    "聂华苓": ["publishing", "media", "political_dissident", "source_support", "historical_allusion"],
+    "徐逸樵": ["media", "political_dissident", "source_support", "historical_allusion"],
+    "张化民": ["political_dissident", "case_prison", "source_support", "public_debate"],
+    "洪兰友": ["source_author", "party_propaganda", "politician", "historical_allusion", "public_debate"],
+    "胡健中": ["source_author", "party_propaganda", "politician", "historical_allusion", "public_debate"],
+    "王世发": ["social_case", "historical_allusion", "source_support"],
+    "沈慧贤": ["social_case", "historical_allusion", "source_support"],
+    "阿林（李敖书笺集）": ["social_case", "historical_allusion", "nickname"],
+    "王宣": ["public_official", "source_author", "historical_allusion"],
+    "梁寒操": ["politician", "public_official", "source_author", "historical_allusion"],
+    "蒋复璁": ["academic", "public_official", "historical_allusion"],
+    "黎东方": ["academic", "source_author", "historical_allusion"],
+    "傅振伦": ["academic", "source_author", "historical_allusion"],
+    "小苏（李敖书笺集）": ["source_support", "correspondence", "nickname"],
+    "庞德": ["source_author", "historical_allusion", "spiritual"],
+    "杰斐逊": ["politician", "historical_allusion", "spiritual"],
+    "丘吉尔": ["politician", "source_author", "historical_allusion", "spiritual"],
+    "魏廷朝": ["friendship", "source_support", "political_dissident", "public_debate"],
+})
+CURATED_IDENTITIES.update({
+    # 《李敖书笺集》第三轮：前半书信的财阀、雷震遗产、党外通信、司法与新闻局线。
+    "雷向筠": ["family", "trust_property", "correspondence", "source_support", "political_dissident"],
+    "钱祖富": ["publishing", "source_support", "witness", "publication_control"],
+    "学英书局李小姐（李敖书笺集）": ["publishing", "source_support", "witness", "nickname"],
+    "杨金欉": ["public_official", "politician", "publication_control", "public_debate"],
+    "叶公超": ["politician", "public_official", "property_finance", "public_debate", "historical_allusion"],
+    "施性忠": ["politician", "political_dissident", "campaign_election", "public_debate"],
+    "周康熙": ["property_finance", "litigation", "witness"],
+    "郑文肃": ["legal_official", "litigation"],
+    "陈培基": ["legal_official", "litigation"],
+    "张济团": ["legal_official", "litigation"],
+    "谢家鹤": ["legal_official", "litigation"],
+    "刘士元": ["legal_official", "litigation"],
+    "尤三谋": ["legal_official", "litigation"],
+    "柯庆贤": ["legal_official", "litigation"],
+    "王江深": ["legal_official", "litigation"],
+    "刘瑞村": ["legal_official", "litigation"],
+    "刘睿辉": ["legal_official", "litigation"],
+    "史英": ["legal_official", "litigation"],
+    "林式庄": ["legal_official", "litigation"],
+    "李璋鹏": ["legal_official", "litigation"],
+    "高忠信": ["campaign_election", "politician", "source_support"],
+    "潘毓刚": ["scientist", "academic", "friendship", "correspondence", "meeting", "public_debate"],
+    "钟毓田": ["case_prison", "military_figure", "meeting", "historical_allusion"],
+    "白景瑞": ["arts_music", "media", "source_support", "witness", "public_debate"],
+    "阿基诺": ["politician", "political_dissident", "victim", "public_debate", "historical_allusion"],
+    "张京育": ["media", "public_official", "politician", "publication_control", "classmate", "public_debate"],
+    "佛朗哥狄斯托": ["arts_music", "media", "source_author", "historical_allusion"],
+    "爱云芬芝": ["arts_music", "media", "historical_allusion"],
+    "鹰哥摩圣诺": ["arts_music", "media", "historical_allusion"],
+    "卡拉普": ["fictional", "arts_music", "historical_allusion"],
+    "道安": ["religion", "source_author", "historical_allusion"],
+    "谢冠生": ["legal_official", "politician", "source_support", "historical_allusion"],
+    "沈登恩": ["publishing", "source_support", "editor", "correspondence"],
+    "成功大学资深教授（李敖书笺集）": ["academic", "correspondence", "nickname"],
+    "郁刘琦": ["family", "correspondence", "public_debate"],
+})
+CURATED_IDENTITIES.update({
+    # 《李敖书笺集》第四轮：后半书信的案内证人、党外通信、公共机关与历史引用人物。
+    "方前正": ["source_author", "media", "litigation", "public_debate"],
+    "陈琴富": ["witness", "litigation"],
+    "杨蕴坚": ["witness", "litigation"],
+    "黄耀一": ["witness", "litigation"],
+    "杨商江": ["legal_official", "litigation", "public_debate"],
+    "吴敦": ["underworld", "social_case", "litigation", "intelligence_police"],
+    "周灿雄": ["lawyer_counsel", "litigation", "human_rights", "correspondence"],
+    "康白": ["political_dissident", "human_rights", "source_author", "correspondence"],
+    "谢凤媚": ["correspondence", "source_support"],
+    "苏秋镇": ["politician", "political_dissident", "public_debate", "meeting"],
+    "迈克尔·奥克森伯格": ["academic", "human_rights", "meeting", "public_debate"],
+    "张春男": ["political_dissident", "public_debate", "source_support"],
+    "徐锡麟": ["political_dissident", "martyr", "historical_allusion", "spiritual"],
+    "沈瓞民": ["source_author", "historical_allusion", "spiritual"],
+    "李柱中": ["political_dissident", "historical_allusion", "spiritual"],
+    "秋瑾": ["political_dissident", "martyr", "historical_allusion", "spiritual"],
+    "苏治洋": ["family", "social_case", "litigation", "witness"],
+    "林世煜": ["media", "political_dissident", "correspondence", "public_debate"],
+    "胡慧玲": ["media", "political_dissident", "correspondence", "public_debate"],
+    "郭廷以": ["academic", "public_official", "source_support", "political_dissident", "public_debate"],
+    "周柏伦": ["media", "source_support", "public_debate"],
+    "陈锡福": ["media", "source_support", "public_debate"],
+    "孙慧珍": ["publishing", "source_support", "publication_control"],
+    "王聪琰": ["public_official", "publication_control", "litigation"],
+    "台湾铁路管理局局长（李敖书笺集）": ["public_official", "correspondence", "social_case", "nickname"],
+    "淡水线列车长（李敖书笺集）": ["public_official", "social_case", "nickname"],
+    "随车货运服务人员（李敖书笺集）": ["public_official", "social_case", "source_support", "nickname"],
+    "明亚副军长（李敖书笺集）": ["military_figure", "historical_allusion", "nickname"],
+    "黎玉玺": ["military_figure", "public_official", "historical_allusion"],
+    "刘树铮": ["politician", "public_official", "correspondence", "public_debate"],
+    "张克东": ["property_finance", "social_case", "public_debate"],
+    "王继德": ["intelligence_police", "public_official", "social_case"],
+    "蔡定芳": ["public_official", "social_case", "public_debate"],
+    "胡益寿": ["politician", "public_official", "public_debate"],
+    "陈金戊": ["public_official", "social_case", "public_debate"],
+    "杨炯明": ["politician", "public_official", "public_debate"],
+    "林宗敏": ["public_official", "social_case", "public_debate"],
+    "赫德": ["public_official", "historical_allusion", "spiritual"],
+    "廖俊杰": ["media", "editor", "source_support"],
+    "赵既昌": ["property_finance", "public_official", "source_support"],
+    "宋明义": ["property_finance", "public_official", "source_support"],
+    "王梵志": ["source_author", "historical_allusion", "spiritual"],
+    "图老（李敖书笺集）": ["historical_allusion", "spiritual", "nickname"],
+    "陈兆基新娘子（李敖书笺集）": ["family", "correspondence", "nickname"],
+    "拿武士刀的人（李敖书笺集）": ["intelligence_police", "publication_control", "public_debate", "nickname"],
+    "张金策": ["political_dissident", "media", "property_finance", "source_support"],
+    "黄华侄儿（李敖书笺集）": ["family", "social_case", "nickname"],
+})
 ALIASES.update({
     "贝贝": "G（贝贝）",
     "G贝贝": "G（贝贝）",
@@ -17293,6 +17967,28 @@ ALIASES.update({
     "Charles Goodyear": "查理·固特异",
     "亨利·福特二世": "亨利福特二世",
     "Henry Ford II": "亨利福特二世",
+    "季陶": "戴季陶",
+    "力非": "牟力非",
+    "力非先生": "牟力非",
+    "辰男": "蔡辰男",
+    "辰男先生": "蔡辰男",
+    "国泰弟": "许国泰",
+    "绝子": "孟祥柯",
+    "孟绝子": "孟祥柯",
+    "绝子如晤": "孟祥柯",
+    "老孟": "孟祥柯",
+    "杏如": "欧阳杏如",
+    "杏如嫂": "欧阳杏如",
+    "虚一": "胡虚一",
+    "虚一老兄": "胡虚一",
+    "苏洪女史": "苏洪月娇",
+    "苏洪女士": "苏洪月娇",
+    "步正": "何步正",
+    "步正兄": "何步正",
+    "亨利老兄": "亨利（李敖书笺集）",
+    "雷三毛": "雷震",
+    "三毛漫画": "三毛（漫画人物）",
+    "银幕三毛": "王蓓蓓（银幕三毛）",
 })
 
 # 《挑战李敖——敖语录》第二轮：“李振主张”被姓名正则贪婪切成三字。
@@ -17568,6 +18264,259 @@ BOOK_PHRASE_PEOPLE = {
         "钱代表的爱子": ("钱国维",),
         "钱代表的爱女": ("钱美端",),
         "前纳粹“里昂屠夫”": ("里昂屠夫（李敖书札集）",),
+    },
+    "李敖书笺集": {
+        # 首轮：书笺体先抓抬头、题内称谓、附录署名和密集误抽点。
+        "力非先生：": ("牟力非",),
+        "我为什么支持王八蛋": ("牟力非",),
+        "辰男先生：": ("蔡辰男",),
+        "国泰信托投资公司董事长先生：": ("蔡辰男",),
+        "国泰信托公司信用卡部经理杨朝佐": ("杨朝佐",),
+        "蔡万霖": ("蔡万霖",),
+        "萧太太：": ("萧太太（李敖书笺集）",),
+        "刘会云出面做敢死队": ("刘会云",),
+        "法院推事林茂雄": ("林茂雄",),
+        "高等法院推事刘士元、尤三谋、柯庆贤": ("刘士元", "尤三谋", "柯庆贤"),
+        "高等法院推事王江深、刘瑞村、刘睿辉": ("王江深", "刘瑞村", "刘睿辉"),
+        "地院推事李璋鹏": ("李璋鹏",),
+        "高院推事史英、徐承志、林式庄": ("史英", "徐承志", "林式庄"),
+        "鹏坚兄：": ("江鹏坚",),
+        "长廷兄": ("谢长廷",),
+        "国泰弟：": ("许国泰",),
+        "村长陈增先生": ("陈增",),
+        "廷昱告诉": ("魏廷昱",),
+        "双安并代候“桃园帮”兄弟们好、“阉鸡”好": ("许国泰", "李盛渊"),
+        "许国泰的信": ("许国泰",),
+        "克莱斯特（Henrich von Kleist）": ("克莱斯特",),
+        "米歇尔·科尔哈斯": ("米歇尔·科尔哈斯",),
+        "绝子如晤：": ("孟祥柯",),
+        "陈鼓应弟子某女士": ("陈鼓应弟子某女士（李敖书笺集）", "陈鼓应"),
+        "李荆荪致敬": ("李荆荪",),
+        "计程车司机李先生": ("计程车李先生（李敖书笺集）",),
+        "宋英女士：": ("宋英",),
+        "向筠女士": ("雷向筠",),
+        "给江鹏坚的一封信": ("江鹏坚",),
+        "刘小姐的电话": ("刘会云",),
+        "12月8日由穗直拨电话给李怡": ("李怡",),
+        "特给老孟电话": ("孟祥柯",),
+        "杏如嫂接电话": ("欧阳杏如",),
+        "有小六、小七": ("小六（李敖书笺集）", "小七（李敖书笺集）"),
+        "苏洪女史：": ("苏洪月娇",),
+        "给苏洪月娇的两封信": ("苏洪月娇",),
+        "苏洪女士：": ("苏洪月娇",),
+        "李璎女士": ("李璎",),
+        "经理叫梁廷英": ("梁廷英",),
+        "陈彦增教授": ("陈彦增",),
+        "林永智致李敖": ("林永智",),
+        "弟 林永智 敬上": ("林永智",),
+        "周永嘉之部分": ("周永嘉",),
+        "蔡金涂说": ("蔡金涂",),
+        "胡虚一）": ("胡虚一",),
+        "虚一老兄：": ("胡虚一",),
+        "雷三毛想起": ("雷震",),
+        "张乐平《三毛画传》": ("张乐平", "三毛（漫画人物）"),
+        "漫画中的三毛": ("三毛（漫画人物）",),
+        "真三毛那种悲悯": ("三毛（漫画人物）",),
+        "银幕三毛也出现过": ("王蓓蓓（银幕三毛）", "三毛（漫画人物）"),
+        "叫王蓓蓓": ("王蓓蓓（银幕三毛）",),
+        "小老虎有福了，但三毛们却无人关心": ("三毛（漫画人物）",),
+        "蔡云集的“难民生活情形": ("蔡云集",),
+        "小丢：": ("陈又亮",),
+        "王尚勤也说回来看我": ("王尚勤",),
+        "兆基：": ("陈兆基",),
+        "休斯（Howard Hughes）": ("休斯",),
+        "佩里克利斯（Pericles）": ("佩里克利斯",),
+        "赫尔（Cordell Hull）": ("赫尔",),
+        "阿斯佩希雅（Aspasia）": ("阿斯佩希雅",),
+        "爱因斯坦在我这年纪": ("爱因斯坦",),
+        "尚勤：": ("王尚勤",),
+        "李老太": ("张桂贞",),
+        "胡星妈": ("胡星妈",),
+        "胡妈妈": ("胡星妈",),
+        "胡赓年先生": ("胡赓年",),
+        "亨利老兄：": ("亨利（李敖书笺集）",),
+        "林小鱼": ("林小鱼",),
+        "海涅（Heinrick Heine）": ("海涅",),
+        "陈诚跟我说": ("陈诚",),
+        "牛顿（Isaac Newton）": ("牛顿",),
+        "神秘送信人": ("神秘送信人（李敖书笺集）",),
+        "致何步正": ("何步正",),
+        "步正兄：": ("何步正",),
+        "林松祥做发行人": ("林松祥",),
+        "郭正昭、陈少廷、王顺、王晓波": ("郭正昭", "陈少廷", "王顺", "王晓波"),
+        # 第二轮：军政字号、雷震专家名单、三毛考据与家庭信件细节。
+        "希孔是方治字": ("方治",),
+        "辞修是陈诚的字": ("陈诚",),
+        "蔚文是林蔚的字": ("林蔚",),
+        "叔常是谷正纲的字": ("谷正纲",),
+        "谷外，还有俞济时、林蔚、蒋经国、张厉生": ("谷正纲", "俞济时", "林蔚", "蒋经国", "张厉生"),
+        "曹圣芬那时是蒋总裁的官邸侍从秘书": ("曹圣芬",),
+        "总裁办公室军事组（组长是王东原）": ("王东原",),
+        "师长米文和被俘": ("米文和",),
+        "机枪连长姓王": ("王连长（李敖书笺集）",),
+        "一个姓苏的在台北做小本估衣生意": ("苏队长（李敖书笺集）",),
+        "七十四师李师长向我报告": ("李益智",),
+        "师长李益智": ("李益智",),
+        "五十五军陈参谋长": ("陈参谋长（五十五军）",),
+        "梁廷琛团": ("梁廷琛",),
+        "理副军长明亚": ("明亚副军长（李敖书笺集）",),
+        "六十八军第一任军参谋处长董熙": ("董熙",),
+        "周斌团长": ("周斌",),
+        "二十九师师长郭沛藻": ("郭沛藻",),
+        "李兴中与其他一些人士": ("李兴中",),
+        "于衡《在那个风雨飘摇的时候》": ("于衡",),
+        "于翔麟稿": ("于翔麟",),
+        "陆建章、冯玉祥、张之江": ("陆建章", "冯玉祥", "张之江"),
+        "刘郁芬、宋哲元、鹿钟麟": ("刘郁芬", "宋哲元", "鹿钟麟"),
+        "何应钦、刘峙、傅作义": ("何应钦", "刘峙", "傅作义"),
+        "□□教授我兄道鉴": ("□□教授（李敖书笺集）",),
+        "嫂夫人前能有一番畅谈": ("□□教授夫人（李敖书笺集）",),
+        "在台湾的夏道平先生": ("夏道平",),
+        "在澳大利亚的金承艺先生": ("金承艺",),
+        "在美国的黄中、王正路等诸先生和聂华苓女士": ("黄中", "王正路", "聂华苓"),
+        "雷先生老友徐逸樵先生": ("徐逸樵",),
+        "张化民先生来雷家吊丧": ("张化民",),
+        "洪兰友、张道藩、胡健中三人": ("洪兰友", "张道藩", "胡健中"),
+        "洪兰友、胡健中二人，并无张道藩": ("洪兰友", "胡健中", "张道藩"),
+        "一个叫王世发": ("王世发",),
+        "一个名沈慧贤": ("沈慧贤",),
+        "一个名阿林的": ("阿林（李敖书笺集）",),
+        "监委王宣": ("王宣",),
+        "戴传贤（季陶）先生": ("戴季陶",),
+        "梁寒操（均默）先生": ("梁寒操",),
+        "蒋复璁（慰堂）先生": ("蒋复璁",),
+        "黎东方先生": ("黎东方",),
+        "傅编纂振伦": ("傅振伦",),
+        "特派小苏、李放去抢修": ("小苏（李敖书笺集）", "李放"),
+        "美国诗人庞德": ("庞德",),
+        "杰斐逊搞美独": ("杰斐逊",),
+        "你信中提到小文的事": ("李文",),
+        "丘吉尔八九十岁": ("丘吉尔",),
+        "王剑芬、萧孟能都被判了刑": ("王剑芬", "萧孟能"),
+        "魏廷朝说得好": ("魏廷朝",),
+        # 第三轮：前半书信复核，补收信对象、证人、司法人员、新闻局与查禁线。
+        "当派舍弟往取": ("李放",),
+        "当年我母亲张桂贞买国泰信义公寓": ("张桂贞",),
+        "你爸爸、问问蔡万霖": ("蔡万霖",),
+        "向筠女士来，出示雷震先生亲迹": ("雷向筠", "雷震"),
+        "木栅房子一栋为向女士所有": ("雷向筠",),
+        "台端是监察委员": ("宋英",),
+        "国民党宋楚瑜之流": ("宋楚瑜",),
+        "周康熙签订借用空地合约书": ("萧孟能", "周康熙", "刘会云"),
+        "刘会云向台湾台北地方法院检察处检察官告发": ("刘会云",),
+        "叶公超所押": ("叶公超",),
+        "施性忠当选": ("施性忠",),
+        "水扁兄：": ("陈水扁",),
+        "学英书局负责之钱祖富及店员李小姐": ("钱祖富", "学英书局李小姐（李敖书笺集）"),
+        "杨金欉市长": ("杨金欉",),
+        "许信良在竞选桃园县长": ("许信良",),
+        "道安述联，谢冠生书": ("道安", "谢冠生"),
+        "少谷、启扬先生": ("黄少谷", "施启扬"),
+        "第一审推事郑文肃": ("郑文肃",),
+        "第二审推事陈培基、张济团、谢家鹤": ("陈培基", "张济团", "谢家鹤"),
+        "陈水扁说李敖控告《秋海棠》杂志发行人郁慕明、社长赵宁": ("陈水扁", "郁慕明", "赵宁"),
+        "冯沪祥控告《蓬莱岛》杂志毁谤案": ("冯沪祥", "陈水扁"),
+        "帮助高忠信助选": ("郁慕明", "高忠信"),
+        "帮高忠信助选": ("郁慕明", "高忠信"),
+        "潘毓刚寄李敖": ("潘毓刚",),
+        "新店监狱看钟毓田": ("潘毓刚", "钟毓田"),
+        "陈启礼他们跟国民党情报局长汪希苓": ("陈启礼", "汪希苓", "白景瑞"),
+        "白景瑞告诉我": ("白景瑞",),
+        "京育局长先生学弟": ("张京育",),
+        "意大利青年导演佛朗哥狄斯托": ("佛朗哥狄斯托",),
+        "爱云芬芝与鹰哥摩圣诺": ("爱云芬芝", "鹰哥摩圣诺"),
+        "小偷卡拉普的女友": ("卡拉普", "爱云芬芝"),
+        "警总总司令陈大庆上将、政治部主任宁俊兴中将和他手下的李国瑾中校": ("陈大庆", "宁俊兴", "李国瑾"),
+        "沈登恩为我印第一本书": ("沈登恩",),
+        "成功大学的资深教授": ("成功大学资深教授（李敖书笺集）",),
+        # 第四轮：后半书信复核，补案内证人、公共机关、党外历史引用和低频称谓。
+        "《秋海棠》发行人郁刘琦女士": ("郁刘琦",),
+        "去年6月15日郁慕明的初供笔录": ("郁慕明",),
+        "读者方前正投稿": ("方前正",),
+        "我妻刘琦负责看的": ("郁刘琦",),
+        "刘琦现在是正式的发行人": ("郁刘琦",),
+        "陈琴富、杨蕴坚、黄耀一供证在卷": ("陈琴富", "杨蕴坚", "黄耀一"),
+        "国民党法官杨商江": ("杨商江",),
+        "给周灿雄的信": ("周灿雄",),
+        "吴敦的《我狙杀叛逆刘宜良（江南）经过》": ("吴敦", "刘宜良"),
+        "与董桂森的密件对照": ("吴敦", "董桂森"),
+        "吴敦在3月20日庭上": ("吴敦",),
+        "老兄替吴敦辩护": ("周灿雄", "吴敦"),
+        "复谢凤媚的信": ("谢凤媚",),
+        "康白《返回大陆的自白》": ("康白",),
+        "代向康白致意": ("康白",),
+        "给沈登恩的信": ("沈登恩",),
+        "维桢给了我四封信": ("邓维桢",),
+        "小魏（魏廷昱）": ("魏廷昱",),
+        "一看是苏大炮他们": ("苏秋镇",),
+        "苏大炮他们。他们正与雷渝齐聊天": ("苏秋镇", "雷渝齐"),
+        "奥克森伯格（Michel Oksenberg）": ("迈克尔·奥克森伯格",),
+        "Michel Oksenberg": ("迈克尔·奥克森伯格",),
+        "回曾心仪的一封信": ("曾心仪",),
+        "又引张春男说": ("张春男",),
+        "徐锡麟拒绝假团结": ("徐锡麟",),
+        "据辛亥老人沈瓞民《记光复会二三事》": ("沈瓞民",),
+        "徐锡麟以外，像秋瑾等革命先烈": ("徐锡麟", "秋瑾"),
+        "光复会的李柱中（燮和）救了他": ("李柱中", "陈其美"),
+        "陈其美忘恩负义": ("陈其美",),
+        "派出义弟蒋介石": ("陈其美", "蒋介石"),
+        "宋教仁等为了集合长江流域的革命力量": ("宋教仁",),
+        "复苏洪月娇的信": ("苏洪月娇",),
+        "前后寄来的信和治洋的信": ("苏洪月娇", "苏治洋"),
+        "东启先生、治洋请代致意": ("苏东启", "苏治洋"),
+        "致林世煜、胡慧玲": ("林世煜", "胡慧玲"),
+        "郭廷以亲写": ("郭廷以",),
+        "郭廷以另有两信致牢中的魏廷朝": ("郭廷以", "魏廷朝"),
+        "周柏伦、陈锡福最近在“新路线”上": ("周柏伦", "陈锡福"),
+        "委托高雄市盐埕区大仁路141号孙慧珍代为销售": ("孙慧珍",),
+        "下属王聪琰者": ("王聪琰",),
+        "台湾铁路管理局局长先生": ("台湾铁路管理局局长（李敖书笺集）",),
+        "该列车长（身高约160到165": ("淡水线列车长（李敖书笺集）",),
+        "此一车次列车长（身高约160到165": ("淡水线列车长（李敖书笺集）",),
+        "随车管行李货运的服务人员": ("随车货运服务人员（李敖书笺集）",),
+        "给刘树铮的信": ("刘树铮",),
+        "树铮老弟乡兄议员阁下": ("刘树铮",),
+        "警察局长颜世锡和大安分局局长王继德": ("颜世锡", "王继德"),
+        "只因张克东无视《民法》": ("张克东",),
+        "兼代处长蔡定芳": ("蔡定芳",),
+        "台北市议员胡益寿": ("胡益寿",),
+        "建管处长陈金戊": ("陈金戊",),
+        "徐局长的长官": ("徐德余",),
+        "台北市议员杨炯明": ("杨炯明",),
+        "工务局局长徐德余、建管处处长林宗敏": ("徐德余", "林宗敏"),
+        "吴棋芳怎样作弄江鹏坚": ("吴棋芳", "江鹏坚"),
+        "总税务司赫德": ("赫德",),
+        "请蒋家语转交骆学良先生": ("蒋家语", "骆学良"),
+        "警总政战人员伙同《前进》林正杰": ("汪梦湘", "林正杰"),
+        "汪梦湘被传出庭": ("汪梦湘",),
+        "底稿予吴祥辉": ("吴祥辉",),
+        "东方望先生这篇文章": ("汪梦湘",),
+        "文化组主任廖俊杰先生": ("廖俊杰",),
+        "台湾中小企业银行板桥分行抵押借款": ("李璎",),
+        "董事长赵既昌出面开具": ("赵既昌",),
+        "经理叫梁廷英": ("梁廷英",),
+        "被授权人陈彦增教授": ("陈彦增",),
+        "宋总理明义报告": ("宋明义",),
+        "李宁：": ("李宁",),
+        "王梵志写诗": ("王梵志",),
+        "龙云翔律师致党外公政会尤清信": ("龙云翔", "尤清"),
+        "党外公共政策研究会理事长 尤清先生": ("尤清",),
+        "自费希平到尤清": ("费希平", "尤清"),
+        "留给陈又亮的信": ("陈又亮",),
+        "刘继庄，提到他朋友“图老”": ("刘继庄", "图老（李敖书笺集）"),
+        "新娘子一并大好": ("陈兆基新娘子（李敖书笺集）",),
+        "致何步正": ("何步正",),
+        "转钱给平景": ("何步正", "陈平景"),
+        "我家老太": ("张桂贞",),
+        "“拿武士刀的人”不准": ("拿武士刀的人（李敖书笺集）",),
+        "大概只有殷先生能知此中苦味": ("殷海光",),
+        "张俊宏在《我的沉思与奋斗》中": ("张俊宏",),
+        "张金策比较没有经济上的顾忧": ("张金策",),
+        "我和黄华一起商量开面店": ("张俊宏", "黄华"),
+        "黄华的侄儿也被叫了去": ("黄华侄儿（李敖书笺集）",),
+        "创办者为邓维桢": ("邓维桢",),
+        "劳莱哈台演电影": ("劳莱", "哈台"),
+        "劳莱问哈台": ("劳莱", "哈台"),
     },
     "李敖书翰集": {
         # 首轮：题名和称呼就是本书的关系入口，先补收信对象、英文简称、家书称谓和少量案由人物。
@@ -19301,6 +20250,28 @@ BOOK_SKIP_NAMES = {
         # 第五轮：全库词表带入本书的句读残片或地名切片。
         "应由李", "蒙总统", "乐天", "明山", "能控制", "权意义", "史名词", "相信同",
     },
+    # 《李敖书笺集》首轮：标题切片、句读残片、职衔截断和非人物短语。
+    "李敖书笺集": {
+        "支持王", "胡说", "赵宁辩", "赵宁看", "连出五", "水喝", "从告自",
+        "家买人", "雷震有", "关切雷", "台端无", "利用职", "应通知",
+        "应退回", "国特走", "国做穷", "江南无", "吴敦辩", "李氏理",
+        "张氏实", "时主要", "龙见尾", "水装置", "时弟认", "甘地又",
+        "向蒋总", "向林副", "班成功", "惠予平", "家属请", "雷震办",
+        "通讯员", "任监察", "陆探亲", "阉鸡好", "民党擦", "擦屁股",
+        "三毛", "师长",
+        # 第二轮：009、034、041 复核出的动词短语、职衔残片和机构称谓切片。
+        "连发生", "陈诚合", "卫司令", "理副", "梁团长", "李师长",
+        "陈参谋长", "两个队", "队长中", "张氏实", "张化民这",
+        # 第三轮：前半书信复核出的句读切片、半截译名和动宾误抽。
+        "曾写信", "司机李", "林彪谋", "米歇尔", "彼打", "此打倒",
+        "向女士", "局长先生", "京育局", "佛朗哥",
+        # 第三轮正式重建后，因全库强信号保留下来的本书残片。
+        "国家做", "孔调停", "雷代汤", "雷回台", "雷震之", "李成",
+        "李四还", "刘因", "路人互", "蒙雷震", "时东山", "时清点",
+        "时事情", "时收音", "台办", "许局长", "张三跟", "元勋",
+        # 第四轮：后半书信中机构、建筑物或全局强信号误带入本书的人名残片。
+        "林肯大厦", "康白情", "别照顾", "黄导群", "理明亚",
+    },
 }
 
 STOP_NAMES.update({
@@ -19554,6 +20525,8 @@ STOP_NAMES.update({
     "暴力划", "却笑英", "水扁讲", "于李登", "花花公",
     "经验来", "时拥有", "傅利曼",
 })
+STOP_NAMES.discard("康白")
+STOP_NAMES.add("别照顾")
 STOP_NAMES.update({
     # 《李敖访谈录1990-2018》首轮：媒体名、标题残片、问答句切片和机构名，不作为人物节点。
     "方周末", "凤凰卫", "凤凰网", "家专访", "羊城晚", "齐鲁周", "明星胡",
@@ -19869,6 +20842,121 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
             return "林老太太（李敖书札集）"
         if raw_name in {"政工官"} and "安坑监狱" in ctx:
             return "安坑监狱政工官（李敖书札集）"
+    if book == "李敖书笺集":
+        if raw_name in {"力非", "力非先生"}:
+            return "牟力非"
+        if raw_name in {"辰男", "辰男先生"}:
+            return "蔡辰男"
+        if raw_name in {"萧太太"}:
+            return "萧太太（李敖书笺集）"
+        if raw_name in {"国泰弟"}:
+            return "许国泰"
+        if raw_name in {"绝子", "孟绝子", "老孟"}:
+            return "孟祥柯"
+        if raw_name in {"杏如", "杏如嫂"}:
+            return "欧阳杏如"
+        if raw_name in {"刘美人"}:
+            return "刘美人（李敖书笺集）"
+        if raw_name in {"小六"}:
+            return "小六（李敖书笺集）"
+        if raw_name in {"小七"}:
+            return "小七（李敖书笺集）"
+        if raw_name in {"苏洪", "苏洪女史", "苏洪女士"}:
+            return "苏洪月娇"
+        if raw_name in {"虚一", "虚一兄", "虚一老兄"}:
+            return "胡虚一"
+        if raw_name in {"雷三毛"}:
+            return "雷震"
+        if raw_name == "三毛" and any(marker in ctx for marker in ("张乐平", "漫画", "画传", "流浪记", "从军记", "银幕三毛", "真三毛")):
+            return "三毛（漫画人物）"
+        if raw_name == "王蓓蓓" and any(marker in ctx for marker in ("银幕三毛", "酷似漫画中的三毛", "三毛的戏")):
+            return "王蓓蓓（银幕三毛）"
+        if raw_name == "曹军长":
+            return "曹军长（李敖书笺集）"
+        if raw_name in {"兆基"}:
+            return "陈兆基"
+        if raw_name in {"亨利", "亨利老兄"}:
+            return "亨利（李敖书笺集）"
+        if raw_name in {"步正", "步正兄"}:
+            return "何步正"
+        if raw_name == "李先生" and any(marker in ctx for marker in ("计程车司机", "河南偃城", "师部少校退伍")):
+            return "计程车李先生（李敖书笺集）"
+        if raw_name in {"李老太"}:
+            return "张桂贞"
+        if raw_name in {"胡妈妈", "胡老太"} and "胡茵梦" in ctx:
+            return "胡星妈"
+        if raw_name == "周永发" and "打李敖牌" in ctx:
+            return "周永发"
+        if raw_name in {"希孔", "希孔兄"}:
+            return "方治"
+        if raw_name in {"辞修"}:
+            return "陈诚"
+        if raw_name in {"蔚文"}:
+            return "林蔚"
+        if raw_name in {"叔常"}:
+            return "谷正纲"
+        if raw_name in {"李师长"}:
+            return "李益智"
+        if raw_name in {"陈参谋长"}:
+            return "陈参谋长（五十五军）"
+        if raw_name in {"梁团长"}:
+            return "梁廷琛"
+        if raw_name in {"明亚", "理副军长"}:
+            return "理明亚"
+        if raw_name == "小苏" and any(marker in ctx for marker in ("李放", "抢修", "孤灯")):
+            return "小苏（李敖书笺集）"
+        if raw_name == "小文" and any(marker in ctx for marker in ("信中提到", "美国学校", "女儿")):
+            return "李文"
+        if raw_name == "阿林" and any(marker in ctx for marker in ("王世发", "沈慧贤", "偷窃", "警局")):
+            return "阿林（李敖书笺集）"
+        if raw_name in {"京育", "京育局长"}:
+            return "张京育"
+        if raw_name == "李小姐" and any(marker in ctx for marker in ("学英书局", "钱祖富", "店员")):
+            return "学英书局李小姐（李敖书笺集）"
+        if raw_name == "佛朗哥" and any(marker in ctx for marker in ("狄斯托", "小偷与上帝", "意大利青年导演")):
+            return "佛朗哥狄斯托"
+        if raw_name in {"小潘", "老潘"} and any(marker in ctx for marker in ("潘毓刚", "波士顿", "二十年后")):
+            return "潘毓刚"
+        if raw_name == "尤清信":
+            return "尤清"
+        if raw_name == "章铨弟":
+            return "吴章铨"
+        if raw_name == "刘琦" and any(marker in ctx for marker in ("郁慕明", "秋海棠", "发行人", "我妻")):
+            return "郁刘琦"
+        if raw_name in {"康白", "康白兄"}:
+            return "康白"
+        if raw_name in {"凤媚"}:
+            return "谢凤媚"
+        if raw_name in {"苏大炮"}:
+            return "苏秋镇"
+        if raw_name in {"奥克森伯格", "Michael Oksenberg", "Michel Oksenberg"}:
+            return "迈克尔·奥克森伯格"
+        if raw_name in {"治洋"} and any(marker in ctx for marker in ("苏洪", "东启", "亲人", "寄来的信")):
+            return "苏治洋"
+        if raw_name in {"世煜"}:
+            return "林世煜"
+        if raw_name in {"慧玲"}:
+            return "胡慧玲"
+        if raw_name in {"树铮", "树铮老弟"}:
+            return "刘树铮"
+        if raw_name == "林肯" and (
+            "林肯大厦" in ctx
+            or chapter == "苍蝇也没那么好拍的！"
+            or any(marker in ctx for marker in ("工务局", "建管处", "违建", "大厦", "拆林肯"))
+        ):
+            return "林肯大厦"
+        if raw_name in {"梁经理"} and any(marker in ctx for marker in ("梁廷英", "板桥分行", "中小企业银行")):
+            return "梁廷英"
+        if raw_name in {"李瓔"}:
+            return "李璎"
+        if raw_name in {"龙律师"} and "龙云翔" in ctx:
+            return "龙云翔"
+        if raw_name in {"图老"} and "刘继庄" in ctx:
+            return "图老（李敖书笺集）"
+        if raw_name in {"新娘子"} and "兆基" in ctx:
+            return "陈兆基新娘子（李敖书笺集）"
+        if raw_name in {"殷先生"} and any(marker in ctx for marker in ("坐牢", "此中苦味", "步正")):
+            return "殷海光"
     if raw_name == "李振主" and book == "挑战李敖——敖语录":
         return "李振"
     if raw_name == "贺元" and book == "李敖随写录前集" and "贺元诚" in ctx:
@@ -20595,6 +21683,8 @@ def extract_from_text(
                 continue
             raw_name = name
             if raw_name == "爱神" and text[match.end(): match.end() + 3] == "邱比特":
+                continue
+            if raw_name == "导群" and match.start() and text[match.start() - 1: match.start()] == "领":
                 continue
             if raw_name == "湘女" and match.start() and text[match.start() - 1: match.start()] in SINGLE_SURNAMES:
                 continue
