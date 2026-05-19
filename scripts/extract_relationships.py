@@ -89,7 +89,15 @@ ALIASES = {
     "曹瞒": "曹操",
     "任公": "梁启超",
     "老马": "马宏祥",
+    "马戈": "马宏祥",
     "新汉": "景新汉",
+    "王右军": "王羲之",
+    "林瘟生": "林语堂",
+    "胡老头": "胡适",
+    "胡老头儿": "胡适",
+    "姚老长": "姚从吾",
+    "姚老头": "姚从吾",
+    "姚老头儿": "姚从吾",
     "适之": "胡适",
     "适之先生": "胡适",
     "南方朔": "王杏庆",
@@ -262,14 +270,14 @@ ALIASES = {
     "华俊赴": "李华俊",
     "华俊午": "李华俊",
     "乐成谈": "傅乐成",
-    "马戈看": "马戈",
-    "马戈兄": "马戈",
-    "马戈作": "马戈",
-    "马戈信": "马戈",
-    "马戈寄": "马戈",
-    "马戈片": "马戈",
-    "马戈四": "马戈",
-    "马戈已": "马戈",
+    "马戈看": "马宏祥",
+    "马戈兄": "马宏祥",
+    "马戈作": "马宏祥",
+    "马戈信": "马宏祥",
+    "马戈寄": "马宏祥",
+    "马戈片": "马宏祥",
+    "马戈四": "马宏祥",
+    "马戈已": "马宏祥",
     "马戈父": "马真吾",
     "松燃扭": "翁松燃",
     "胡适照": "胡适",
@@ -13179,7 +13187,7 @@ PERSON_RELATIONS = [
     },
     {
         "book": "大学日记后期乙集",
-        "source": "马戈",
+        "source": "马宏祥",
         "target": "袁祝泰",
         "relation": "返凤山/车站送行",
         "weight": 4,
@@ -13355,7 +13363,7 @@ PERSON_RELATIONS = [
     },
     {
         "book": "一个预备军官的日记",
-        "source": "马戈",
+        "source": "马宏祥",
         "target": "王尚义",
         "relation": "寿尔康同席午饭/军中休假会面",
         "weight": 5,
@@ -13363,7 +13371,7 @@ PERSON_RELATIONS = [
     },
     {
         "book": "一个预备军官的日记",
-        "source": "马戈",
+        "source": "马宏祥",
         "target": "陈鼓应",
         "relation": "寿尔康同席午饭/朋友往来",
         "weight": 5,
@@ -17345,6 +17353,86 @@ PERSON_RELATIONS = [
         "weight": 3,
         "note": "《假的真话》写谷小姐向柳小姐说真话，柳小姐不喜欢这种真话，是语录中的匿名对话人物。",
     },
+    {
+        "book": "给马戈的五十封信",
+        "source": "景新汉",
+        "target": "马宏祥",
+        "relation": "代问近况/共同通信",
+        "weight": 8,
+        "note": "《“我自成佛不读经”》记新汉来信要李敖回信给老马并代问好；《活页日记》又记老景来信说“如回信宏祥，请代我问好，或用我二人之名发”，显示景新汉与马宏祥在同一通信朋友圈内反复互相关照。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "马宏祥",
+        "target": "袁祝泰",
+        "relation": "同在凤山/朋友通信圈",
+        "weight": 5,
+        "note": "《活页日记》称袁祝公已入伍，可多与谈；《明归何处》又说袁祝泰来信可给老马看，显示马宏祥与袁祝泰同处凤山朋友通信圈。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "马宏祥",
+        "target": "陈彦增",
+        "relation": "托告近况/朋友通信圈",
+        "weight": 5,
+        "note": "《操纵选举》明写托马戈告诉陈彦增及袁祝泰相关话语，说明陈彦增是马宏祥可转告的朋友通信圈成员。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "马宏祥",
+        "target": "胡蓉裳",
+        "relation": "通信线索/女友话题",
+        "weight": 4,
+        "note": "《年月日要写清楚》给老马转胡蓉裳地址，并说“你们过去不是说要通信的吗”，暂作马宏祥与胡蓉裳之间的通信线索与情感话题。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "马宏祥",
+        "target": "庄因",
+        "relation": "朋友通信/诗作互嘲",
+        "weight": 4,
+        "note": "本书多次把马宏祥、庄因放在朋友玩笑与诗作往来语境中，如《艳事一则》《罗曼史这样多，嫉妒否？》等篇对老马恋爱近况与庄因来诗互相转述。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "张豪",
+        "target": "梁溪",
+        "relation": "共同问候/朋友通信圈",
+        "weight": 3,
+        "note": "《赫本欠资》写“张豪、梁溪均请替我问好”，二人同处李敖与马宏祥的朋友通信圈。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "黄显昌",
+        "target": "曹宏武",
+        "relation": "同车同行/朋友问候",
+        "weight": 4,
+        "note": "《历史系总干事》代问宏武及显昌好，《爱情军师》又说明黄显昌即那天和曹宏武一起上车的人，显示二人同处朋友往来场景。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "张世民",
+        "target": "李善培",
+        "relation": "同席吃盒子/台中朋友聚会",
+        "weight": 4,
+        "note": "《寡情如此》写李敖夜里请张世民、李善培吃盒子，是返中期间现实朋友同席聚会。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "孙英善",
+        "target": "周弘",
+        "relation": "同赴生日舞会/朋友同场",
+        "weight": 3,
+        "note": "《颇解情韵》写昨晚与孙英善、周弘等参加生日舞会，二人同处朋友舞会场景。",
+    },
+    {
+        "book": "给马戈的五十封信",
+        "source": "庄喆",
+        "target": "马浩",
+        "relation": "情侣/约看电影",
+        "weight": 4,
+        "note": "《过渡时期的爱情观》明写“三爷庄喆及其女友马浩”，并说二人要来看李敖、李敖答应请他们看电影。",
+    },
 ]
 
 
@@ -20228,6 +20316,43 @@ CURATED_IDENTITIES.update({
     "阿拉丁": ["fictional", "literary_character", "historical_allusion"],
     "阿里巴巴": ["fictional", "literary_character", "historical_allusion"],
 })
+
+CURATED_IDENTITIES.update({
+    # 《给马戈的五十封信》首轮：收信人、早年朋友通信圈、恋爱话题和被戏称的神交人物。
+    "马宏祥": ["correspondence", "classmate", "friendship", "meeting", "publishing"],
+    "胡蓉裳": ["correspondence", "romance", "friendship"],
+    "谭凝晖": ["meeting", "romance"],
+    "梁溪": ["correspondence", "friendship"],
+    "马浩": ["meeting", "romance"],
+    "李建湖": ["meeting", "romance"],
+    "庄喆": ["friendship", "meeting"],
+    "罗思琳": ["academic_admin", "classmate", "meeting"],
+    "谭洁力": ["meeting", "friendship"],
+    "刘凤翰": ["academic", "classmate", "friendship", "meeting", "medical_care"],
+    "徐子明": ["teacher_student", "academic", "source_author", "spiritual"],
+    "豫让": ["historical_allusion", "political_dissident", "spiritual"],
+    "张豪": ["correspondence", "friendship"],
+    "黄显昌": ["classmate", "friendship", "meeting", "correspondence"],
+    "曹宏武": ["friendship", "meeting", "correspondence", "source_support"],
+    "徐老头（给马戈）": ["nickname", "public_debate"],
+    "阿Q": ["fictional", "literary_character", "historical_allusion"],
+    "李白": ["source_author", "historical_allusion", "spiritual"],
+    "元好问": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "王羲之": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "施耐庵": ["source_author", "historical_allusion", "spiritual"],
+    "罗曼罗兰": ["source_author", "historical_allusion", "spiritual"],
+    "老子": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "叶公超": ["politician", "public_official", "academic", "property_finance", "public_debate", "meeting", "historical_allusion"],
+    "陶渊明": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "梁启超": ["academic", "politician", "source_author", "historical_allusion", "spiritual"],
+    "张作霖": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "胡家伦": ["classmate", "friendship", "meeting", "academic"],
+    "萧启庆": ["academic", "friendship", "meeting", "correspondence"],
+    "李华俊": ["classmate", "friendship", "meeting"],
+    "吴相湘": ["teacher_student", "academic", "meeting"],
+    "林语堂": ["academic", "source_author", "public_debate", "spiritual"],
+})
+
 for _shuhan_judge in (
     "陈联欢", "谢俊峰", "葛浩坡", "李文成", "陶振声", "刘为育", "吴敦（推事）", "叶百修", "钟惠臣", "杨荣",
     "陈石狮", "黄炎成", "李琼荫", "陈昆辉", "刘焕宇", "郑有田", "陈计男", "李锦丰", "孙森焱",
@@ -21527,6 +21652,90 @@ BOOK_PHRASE_PEOPLE = {
         "康拉德Joseph Conrad": ("康拉德",),
         "鲁宾斯坦Artur Rubinstein": ("鲁宾斯坦",),
         "显克维支Henryk Sienkiewicz": ("显克维支",),
+    },
+    "给马戈的五十封信": {
+        # 首轮：本书是给马宏祥的书信集，先补书信抬头、朋友通信圈、恋爱话题与少量思想引用。
+        "昔日宏祥今马戈": ("马宏祥",),
+        "宏祥：": ("马宏祥",),
+        "宏祥兄": ("马宏祥",),
+        "宏祥先生": ("马宏祥",),
+        "老马：": ("马宏祥",),
+        "马戈先生": ("马宏祥",),
+        "新汉来信": ("景新汉",),
+        "老景来信": ("景新汉",),
+        "如回信宏祥，请代我问好": ("景新汉", "马宏祥"),
+        "袁祝公已入伍": ("袁祝泰",),
+        "袁祝泰来信": ("袁祝泰",),
+        "托你告诉陈彦增及袁祝泰": ("陈彦增", "袁祝泰"),
+        "陈彦增为“彦”": ("陈彦增",),
+        "胡蓉裳地址": ("胡蓉裳",),
+        "胡蓉裳处我早就说你可写信给她": ("胡蓉裳",),
+        "你给胡蓉裳写的信杀青否": ("胡蓉裳",),
+        "谭凝晖在买邮票": ("谭凝晖",),
+        "你是谭凝晖吗": ("谭凝晖",),
+        "谭凝晖站在参考室门口": ("谭凝晖",),
+        "谭凝晖赫然在焉": ("谭凝晖",),
+        "张世民结婚的请帖": ("张世民",),
+        "赴张世民处谈至傍晚": ("张世民",),
+        "赵依依胖多了": ("赵依依",),
+        "碰到赵依依": ("赵依依",),
+        "华昌平能当选为副总干事": ("华昌平",),
+        "李善培吃盒子": ("李善培",),
+        "赴台中农学院去看李善培": ("李善培",),
+        "梁溪均请替我问好": ("梁溪",),
+        "写信给梁溪": ("梁溪",),
+        "刘凤翰病": ("刘凤翰",),
+        "李善培（李天培之弟）": ("李善培", "李天培"),
+        "徐子明曾言白话文": ("徐子明",),
+        "罗思琳以一〇七票": ("罗思琳",),
+        "袁天中在我幕后操纵": ("袁天中",),
+        "钱思亮统治下的台湾大学": ("钱思亮",),
+        "如魏廷朝": ("魏廷朝",),
+        "张豪、梁溪均请替我问好": ("张豪", "梁溪"),
+        "刚接你信，并张豪一片": ("张豪",),
+        "陶渊明诗谓": ("陶渊明",),
+        "陈彦增托我转给翁松燃一片": ("陈彦增", "翁松燃"),
+        "东海大学看李华俊": ("李华俊",),
+        "李华俊，亦一可交之好友": ("李华俊",),
+        "黄显昌是我中学时代的老朋友": ("黄显昌",),
+        "代问宏武及显昌好": ("曹宏武", "黄显昌"),
+        "曹宏武一起上车": ("曹宏武", "黄显昌"),
+        "宏武为我将此题译成德文": ("曹宏武",),
+        "骂Rosa": ("Rosa",),
+        "李建湖今早盯着": ("李建湖",),
+        "三爷庄喆及其女友马浩": ("庄喆", "马浩"),
+        "女友马浩": ("马浩",),
+        "与孙英善": ("孙英善",),
+        "孙英善，×××，周弘": ("孙英善", "周弘"),
+        "王尚义见到，已转致你问好": ("王尚义",),
+        "胡家伦笑我是物理学上的": ("胡家伦",),
+        "萧启庆言不恶": ("萧启庆",),
+        "吴相湘等人之激烈反对": ("吴相湘",),
+        "吴相湘谓他": ("吴相湘",),
+        "譬如说沈刚伯": ("沈刚伯",),
+        "梁启超诗": ("梁启超",),
+        "当年张作霖手下": ("张作霖",),
+        "徐老头子毁谤": ("徐老头（给马戈）",),
+        "叶公超一样地不记": ("叶公超",),
+        "鲁仲连说得好": ("鲁仲连",),
+        "阿Q说得好": ("阿Q",),
+        "老氏说": ("老子",),
+        "海明威及施耐庵风": ("海明威", "施耐庵"),
+        "Swift写格烈佛游记": ("斯威夫特",),
+        "萧伯纳曾讥谓": ("萧伯纳",),
+        "刘敞《今是集": ("刘敞",),
+        "吾改写你写来的李白诗": ("李白",),
+        "王右军诗": ("王羲之",),
+        "上帝所造皆鼠子": ("上帝",),
+        "元好问之思想": ("元好问",),
+        "罗曼罗兰之英雄论": ("罗曼罗兰",),
+        "卡莱尔之《英雄与英雄崇拜》": ("卡莱尔",),
+        "法国伏尔泰之多财善理财": ("伏尔泰",),
+        "徐志摩死后即倒闭": ("徐志摩",),
+        "林瘟生如是无耻": ("林语堂",),
+        "胡老头本月十七日六八诞辰": ("胡适",),
+        "姚老长谈": ("姚从吾",),
+        "姚老头儿见": ("姚从吾",),
     },
     "李敖书翰集": {
         # 首轮：题名和称呼就是本书的关系入口，先补收信对象、英文简称、家书称谓和少量案由人物。
@@ -23709,6 +23918,12 @@ STOP_NAMES.update({
     "水污染", "水仙", "苏俄共", "于所谓", "扶住懦", "党外我",
     "党外人", "显然这", "若无可", "如果真", "该说明", "该辩论",
 }) 
+STOP_NAMES.update({
+    # 《给马戈的五十封信》首轮：书信标题、句读残片、短语切片与非人物词。
+    "闻之美", "马戈先", "黄色", "黄牛做", "黄牛买", "明归何", "管教极",
+    "谢俗议", "成佛安", "成诗数", "史系总", "封没写", "石头", "解情韵",
+    "袁陈二", "从诗来", "景午饭", "景来信", "咪咪", "国妇女", "班代表", "仇恨", "吉光",
+})
 
 # 《李敖书翰集》补回“于长城案”中的真实政治案件人物，早前在别书被作为残片过滤。
 STOP_NAMES.discard("于长城")
@@ -24226,6 +24441,21 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
             return "马可波罗"
         if raw_name == "阿里" and "阿里巴巴" in ctx:
             return "阿里巴巴"
+    if book == "给马戈的五十封信":
+        if raw_name in {"马戈", "马戈兄", "马戈先生"}:
+            return "马宏祥"
+        if raw_name in {"林瘟生", "瘟生"}:
+            return "林语堂"
+        if raw_name in {"胡老头", "胡老头儿"}:
+            return "胡适"
+        if raw_name in {"姚老长", "姚老头", "姚老头儿"}:
+            return "姚从吾"
+        if raw_name == "宏武":
+            return "曹宏武"
+        if raw_name in {"显昌", "黄狗"}:
+            return "黄显昌"
+        if raw_name == "徐老头":
+            return "徐老头（给马戈）"
     if raw_name == "李振主" and book == "挑战李敖——敖语录":
         return "李振"
     if raw_name == "贺元" and book == "李敖随写录前集" and "贺元诚" in ctx:
@@ -24726,6 +24956,10 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
         return "林森北路" in ctx
     if name == "林黛":
         return text[end:end + 1] == "玉"
+    if name == "柏拉图" and text[end:end + 1] == "式":
+        return True
+    if name == "琼瑶":
+        return "报之以琼瑶" in ctx or "投我以木桃" in ctx
     if name == "严正":
         family_markers = ("儿子严正", "严正尚小", "严方才", "严谅还", "严师母和三个小孩")
         return not any(marker in ctx for marker in family_markers)
