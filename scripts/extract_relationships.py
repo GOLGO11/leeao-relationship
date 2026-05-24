@@ -89,6 +89,7 @@ ALIASES = {
     "阿瞒": "曹操",
     "曹瞒": "曹操",
     "任公": "梁启超",
+    "孔明": "诸葛亮",
     "老马": "马宏祥",
     "马戈": "马宏祥",
     "新汉": "景新汉",
@@ -592,6 +593,12 @@ ALIASES = {
     "Napoleon III": "拿破仑三世",
     "孙文": "孙中山",
     "唐太宗": "李世民",
+    "赵匡胤": "宋太祖",
+    "光武帝": "刘秀",
+    "忽必烈": "元世祖",
+    "元太祖": "成吉思汗",
+    "齐桓": "齐桓公",
+    "阿斗": "刘禅",
     "宋渔父": "宋教仁",
     "李石曾": "李煜瀛",
     "文德": "陈宏正",
@@ -5818,6 +5825,118 @@ CATEGORY_LABELS = {
 
 
 PERSON_RELATIONS = [
+    {
+        "book": "读史指南",
+        "source": "苏轼",
+        "target": "王彭",
+        "relation": "说书史料引述/三国故事反应",
+        "weight": 3,
+        "note": "《中国历史演义总说》引苏轼《东坡志林》中王彭的话，用儿童听刘备、曹操故事的反应说明三国说书在民间的影响。",
+    },
+    {
+        "book": "读史指南",
+        "source": "孟元老",
+        "target": "霍四究",
+        "relation": "东京梦华录记载/说三分名家",
+        "weight": 3,
+        "note": "同篇引孟元老《东京梦华录》记录说书名家，其中霍四究以说“三分”也就是三国故事出名。",
+    },
+    {
+        "book": "读史指南",
+        "source": "孟元老",
+        "target": "尹常",
+        "relation": "东京梦华录记载/说五代史名家",
+        "weight": 3,
+        "note": "同篇引孟元老《东京梦华录》记录说书名家，尹常以说《五代史》出名。",
+    },
+    {
+        "book": "读史指南",
+        "source": "宋太祖",
+        "target": "窦仪",
+        "relation": "镜部纪事/读书人宰相典故",
+        "weight": 3,
+        "note": "《介绍世界最大的百科全书》举《古今图书集成》镜部纪事，写宋太祖因镜子疑问得到窦仪解答，从而重视读书人。",
+    },
+    {
+        "book": "读史指南",
+        "source": "朱元璋",
+        "target": "李善长",
+        "relation": "明初功臣/锦衣卫政治清洗",
+        "weight": 4,
+        "note": "《中国历史演义总说》论明太祖特工政治，列李善长为帮助朱元璋打天下却在锦衣卫政治中被宰掉的功臣之一。",
+    },
+    {
+        "book": "读史指南",
+        "source": "朱元璋",
+        "target": "胡惟庸",
+        "relation": "明初功臣/锦衣卫政治清洗",
+        "weight": 4,
+        "note": "同篇把胡惟庸列入帮助朱元璋打天下、后来在明太祖特工政治下被清洗的功臣名单。",
+    },
+    {
+        "book": "读史指南",
+        "source": "朱元璋",
+        "target": "蓝玉",
+        "relation": "明初功臣/锦衣卫政治清洗",
+        "weight": 4,
+        "note": "同篇把蓝玉列入帮助朱元璋打天下、后来在明太祖特工政治下被清洗的功臣名单。",
+    },
+    {
+        "book": "读史指南",
+        "source": "梁启超",
+        "target": "黄兴",
+        "relation": "新中国未来记/黄克强预言",
+        "weight": 3,
+        "note": "同篇论《新中国未来记》时指出，梁启超预言开国伟人名叫黄克强，后来对应为黄兴。",
+    },
+    {
+        "book": "读史指南",
+        "source": "陈梦雷",
+        "target": "蒋廷锡",
+        "relation": "编纂署名争议/奉命重校",
+        "weight": 6,
+        "note": "《〈古今图书集成〉研究》辨析《古今图书集成》真正编者为陈梦雷，蒋廷锡是在雍正命令下重加编校并取得官方署名的人物。",
+    },
+    {
+        "book": "读史指南",
+        "source": "陈梦雷",
+        "target": "李光地",
+        "relation": "朋友出卖/清白无人证明",
+        "weight": 4,
+        "note": "同篇叙陈梦雷在三藩之乱后被好朋友李光地出卖，李光地不肯证明他的清白，成为陈梦雷蒙冤的重要线索。",
+    },
+    {
+        "book": "读史指南",
+        "source": "陈梦雷",
+        "target": "康熙",
+        "relation": "召还陪读/编书背景",
+        "weight": 4,
+        "note": "同篇写康熙东巡后召回陈梦雷，并让他陪皇三子诚亲王读书，成为陈梦雷编成《古今图书集成》的背景。",
+    },
+    {
+        "book": "读史指南",
+        "source": "陆费逵",
+        "target": "舒新城",
+        "relation": "中华版影印/铜活字本选择",
+        "weight": 3,
+        "note": "同篇引陆费逵中华版《古今图书集成》影印缘起，记舒新城力主采用铜活字本，二人共同出现在中华版重印脉络中。",
+    },
+    {
+        "book": "读史指南",
+        "source": "翟理思",
+        "target": "伯希和",
+        "relation": "索引序/石印本版本考证",
+        "weight": 3,
+        "note": "同篇引L·翟理思《钦定古今图书集成索引》序，提到石印本的存在由伯希和于1902年首次公开提出。",
+    },
+    {
+        "book": "读史指南",
+        "source": "曹操",
+        "target": "刘备",
+        "relation": "历史演义/三国形象辨析",
+        "weight": 3,
+        "note": "《中国历史演义总说》围绕《三国演义》辨析曹操、刘备等三国人物的史实形象与通俗演义形象。",
+    },
     {
         "book": "历史与人像",
         "source": "桑格夫人",
@@ -19191,6 +19310,7 @@ CURATED_IDENTITIES.update({
     "罗贤达": ["military_figure", "historical_allusion"],
     "汉文帝": ["politician", "historical_allusion", "spiritual"],
     "汉景帝": ["politician", "historical_allusion", "spiritual"],
+    "王莽": ["politician", "historical_allusion", "spiritual"],
     # 第六轮 closeout 前：修正跨书同名污染与历史引用分类。
     "东方朔": ["historical_allusion", "spiritual"],
     "陈毅": ["military_figure", "politician", "historical_allusion"],
@@ -20843,6 +20963,156 @@ CURATED_IDENTITIES.update({
     "华佗": ["medical_care", "historical_allusion", "spiritual"],
 })
 
+CURATED_IDENTITIES.update({
+    # 《读史指南》首轮：书目、类书版本和历史演义评介中的编纂者、版本学者与史料作者。
+    "陈梦雷": ["source_author", "editor", "publishing", "political_dissident", "historical_allusion", "spiritual"],
+    "蒋廷锡": ["editor", "public_official", "academic", "historical_allusion", "spiritual"],
+    "蒋复璁": ["academic", "public_official", "source_author", "publishing", "historical_allusion"],
+    "陆费逵": ["publishing", "source_author", "historical_allusion", "spiritual"],
+    "舒新城": ["publishing", "source_support", "academic", "historical_allusion", "spiritual"],
+    "袁同礼": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "谭祖贤": ["academic", "source_support", "public_official"],
+    "陈炳谦": ["source_support", "publishing", "historical_allusion"],
+    "翟理思": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "伯希和": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "麦尔": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "万国鼎": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "叶德辉": ["academic", "source_author", "publishing", "historical_allusion", "spiritual"],
+    "刘声木": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "童世纲": ["academic", "source_author", "research_reference"],
+    "葛思德": ["academic", "source_support", "historical_allusion", "spiritual"],
+    "义理寿": ["academic", "source_support", "historical_allusion", "spiritual"],
+    "高野侯": ["publishing", "source_support", "academic", "historical_allusion"],
+    "王汉章": ["source_author", "research_reference", "publishing"],
+    "夏德": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "桑原隲藏": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "李之鼎": ["source_author", "research_reference", "historical_allusion", "spiritual"],
+    "金简": ["public_official", "publishing", "historical_allusion", "spiritual"],
+    "张廷玉": ["public_official", "academic", "source_author", "historical_allusion", "spiritual"],
+    "李光地": ["politician", "academic", "historical_allusion", "spiritual"],
+    "陈昉": ["political_dissident", "historical_allusion", "spiritual"],
+    "耿精忠": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "诚亲王（胤祉）": ["politician", "family", "academic", "historical_allusion", "spiritual"],
+    "陈森": ["source_author", "historical_allusion", "spiritual"],
+    "杨维桢": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "陈宏谋": ["source_author", "academic", "politician", "historical_allusion", "spiritual"],
+    "周兆基": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "李翱": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "黄溍": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "张九龄": ["source_author", "politician", "historical_allusion", "spiritual"],
+    "倪瓒": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "戴良": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "屠寄": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "梁章钜": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "霍四究": ["arts_music", "historical_allusion", "spiritual"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《读史指南》第三轮：神话外编和历史演义中的虚构/宗教边界要从普通历史人物中分出。
+    "盘古": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "雷公": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "阎王": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "江赫沖": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "闪多": ["fictional", "religion", "historical_allusion", "spiritual"],
+    "达摩": ["religion", "historical_allusion", "spiritual"],
+    "刹利帝菩提多罗": ["religion", "historical_allusion", "spiritual"],
+})
+
+_DUSHI_ROUND3_IDENTITIES = {
+    # 《介绍世界最大的百科全书》：索引、氏族文献、镜部例证和中外索引编制者。
+    "柳芳": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "凌迪知": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "高力士": ["politician", "historical_allusion", "spiritual"],
+    "赵飞燕": ["historical_allusion", "romance", "spiritual"],
+    "窦仪": ["politician", "academic", "historical_allusion", "spiritual"],
+    "谢朓": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "庾信": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "梅尧臣": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "唐顺之": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "俞照": ["academic", "source_support", "research_reference", "historical_allusion"],
+    "泷泽俊亮": ["academic", "source_support", "research_reference", "historical_allusion"],
+    "牟润孙": ["academic", "source_support", "research_reference", "historical_allusion"],
+    # 《中国历史演义总说》：说书史、演义评介、各朝史论与近代政治寓言。
+    "归庄": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "黄帝": ["politician", "religion", "historical_allusion", "spiritual"],
+    "宣统": ["politician", "historical_allusion", "spiritual"],
+    "王彭": ["source_author", "historical_allusion", "spiritual"],
+    "孟元老": ["source_author", "historical_allusion", "spiritual"],
+    "尹常": ["arts_music", "historical_allusion", "spiritual"],
+    "褒姒": ["historical_allusion", "romance", "spiritual"],
+    "曹沫": ["military_figure", "historical_allusion", "spiritual"],
+    "晏蛾儿": ["historical_allusion", "spiritual"],
+    "介子推": ["historical_allusion", "politician", "spiritual"],
+    "蔺相如": ["politician", "historical_allusion", "spiritual"],
+    "秦孝公": ["politician", "historical_allusion", "spiritual"],
+    "孺子婴": ["politician", "historical_allusion", "spiritual"],
+    "汉景帝": ["politician", "historical_allusion", "spiritual"],
+    "刘秀": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "卓茂": ["politician", "historical_allusion", "spiritual"],
+    "谯玄": ["political_dissident", "historical_allusion", "spiritual"],
+    "窦宪": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "班超": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "周瑜": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "蔡阳": ["military_figure", "historical_allusion", "spiritual"],
+    "庞统": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "黄盖": ["military_figure", "historical_allusion", "spiritual"],
+    "黄忠": ["military_figure", "historical_allusion", "spiritual"],
+    "陆逊": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "何义门": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "尤侗": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "刘禅": ["politician", "historical_allusion", "spiritual"],
+    "孙浩": ["politician", "historical_allusion", "spiritual"],
+    "司马炎": ["politician", "historical_allusion", "spiritual"],
+    "司马曜": ["politician", "historical_allusion", "spiritual"],
+    "拓跋珪": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "崔鸿": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "晋怀帝": ["politician", "historical_allusion", "spiritual"],
+    "晋愍帝": ["politician", "historical_allusion", "spiritual"],
+    "晋元帝": ["politician", "historical_allusion", "spiritual"],
+    "祖逖": ["military_figure", "political_dissident", "historical_allusion", "spiritual"],
+    "桓玄": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "晋安帝": ["politician", "historical_allusion", "spiritual"],
+    "晋恭帝": ["politician", "historical_allusion", "spiritual"],
+    "萧道成": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "陈霸先": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "魏元旷": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "朱全忠": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "李克用": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "黄巢": ["military_figure", "political_dissident", "historical_allusion", "spiritual"],
+    "曹翰": ["military_figure", "historical_allusion", "spiritual"],
+    "宋仁宗": ["politician", "historical_allusion", "spiritual"],
+    "韩琦": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "狄青": ["military_figure", "historical_allusion", "spiritual"],
+    "邵康节": ["academic", "historical_allusion", "spiritual"],
+    "阿阔台": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "贵由": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "蒙哥": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "王洙": ["source_author", "politician", "historical_allusion", "spiritual"],
+    "马翌": ["politician", "historical_allusion", "spiritual"],
+    "李善长": ["politician", "historical_allusion", "spiritual"],
+    "胡惟庸": ["politician", "historical_allusion", "spiritual"],
+    "蓝玉": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "冯胜": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "刘瑾": ["politician", "institutional_security", "historical_allusion", "spiritual"],
+    "努尔哈赤": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "皇太极": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "顺治": ["politician", "historical_allusion", "spiritual"],
+    "缪荃孙": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "舒屋山人": ["source_author", "historical_allusion", "spiritual"],
+}
+for _name, _categories in _DUSHI_ROUND3_IDENTITIES.items():
+    CURATED_IDENTITIES.setdefault(_name, _categories)
+CURATED_IDENTITIES.update({
+    # 第三轮边界修正：原本只有“神交/待复核”的历史人物，在本书中是明确的史料或演义引用。
+    "黄帝": ["politician", "religion", "historical_allusion", "spiritual"],
+    "庾信": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "刘禹锡": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "刘备": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "马超": ["military_figure", "historical_allusion", "spiritual"],
+    "骆宾王": ["source_author", "political_dissident", "historical_allusion", "spiritual"],
+    "齐桓公": ["politician", "historical_allusion", "spiritual"],
+})
+
 for _shuhan_judge in (
     "陈联欢", "谢俊峰", "葛浩坡", "李文成", "陶振声", "刘为育", "吴敦（推事）", "叶百修", "钟惠臣", "杨荣",
     "陈石狮", "黄炎成", "李琼荫", "陈昆辉", "刘焕宇", "郑有田", "陈计男", "李锦丰", "孙森焱",
@@ -21004,6 +21274,48 @@ STOP_NAMES.add("王淦开")
 ALIASES.pop("刘军", None)
 
 
+DUSHI_BIBLIOGRAPHY_DYNASTIES = (
+    "后魏", "北周", "后汉", "北魏", "北齐", "南朝宋", "南唐", "民国",
+    "周", "汉", "魏", "吴", "蜀", "晋", "梁", "隋", "唐", "宋", "元", "明", "清",
+)
+DUSHI_BIBLIOGRAPHY_DYNASTY_PATTERN = "|".join(
+    re.escape(item) for item in sorted(DUSHI_BIBLIOGRAPHY_DYNASTIES, key=len, reverse=True)
+)
+DUSHI_BIBLIOGRAPHY_AUTHOR_RE = re.compile(
+    rf"(?:^|[　\s、，。；;/])(?:{DUSHI_BIBLIOGRAPHY_DYNASTY_PATTERN})：([^/\n]+)"
+)
+DUSHI_BIBLIOGRAPHY_INNER_DYNASTY_RE = re.compile(
+    rf"(^|[　\s、，,；;])(?:{DUSHI_BIBLIOGRAPHY_DYNASTY_PATTERN})："
+)
+DUSHI_BIBLIOGRAPHY_CANDIDATE_RE = re.compile(r"[\u4e00-\u9fff·]{2,9}")
+DUSHI_BIBLIOGRAPHY_SPLIT_RE = re.compile(r"[、，,；;与]")
+DUSHI_BIBLIOGRAPHY_ROLE_SUFFIXES = (
+    "等奉敕修纂", "奉敕修纂", "等奉敕刊", "奉敕刊", "等奉敕", "奉敕",
+    "等选辑", "等重修", "等辑", "等撰", "合校", "重修", "增加", "补注",
+    "辑注", "集释", "集传", "集解", "章句", "解诂", "释文", "音义", "正义",
+    "义疏", "纂疏", "注疏", "笺注", "传注", "校注", "补", "注", "疏",
+    "笺", "传", "解", "撰", "著", "辑", "编", "校", "刊", "订", "译", "释",
+)
+DUSHI_BIBLIOGRAPHY_ALIASES = {
+    "陶泓景": "陶弘景",
+    "范冲淹": "范仲淹",
+    "宋碗": "宋琬",
+    "杨街之": "杨衒之",
+    "唐何超": "何超",
+}
+DUSHI_BIBLIOGRAPHY_SKIP_NAMES = {
+    "以上字形", "以上字音", "附录", "目录", "部目", "疑字", "偏旁",
+    "不著撰人", "诸史官", "诸臣", "时人", "家藏编", "司农司",
+    "文星版", "商务版", "中华版", "武英殿", "守山阁", "士礼居",
+    "音义", "释文", "彪子", "轼季子", "辑注",
+}
+DUSHI_BIBLIOGRAPHY_BAD_FRAGMENTS = (
+    "以上", "字形", "字音", "附录", "目录", "提要", "疑字", "偏旁", "注同",
+    "校札", "校补", "不分", "不著", "家藏", "文星", "书局", "政府", "册",
+    "卷", "部", "类", "氏", "版", "书目", "丛刊", "备要",
+)
+
+
 BOOK_PHRASE_PEOPLE = {
     "历史与人像": {
         # 首轮：本书是历史论文集，题名、异译名、括号英文名和引文作者常是人物入口。
@@ -21062,6 +21374,144 @@ BOOK_PHRASE_PEOPLE = {
         "命奕劻为管理大臣": ("奕劻",),
         "陈毅的撤治交涉及其六十二条款": ("陈毅（北洋）",),
         "据都护使驻札库伦办事大员陈毅电呈": ("陈毅（北洋）",),
+    },
+    "读史指南": {
+        # 首轮：本书以书目、类书版本与历史演义为主，短语锚定可避免书名残片冒充人物。
+        "真正编者乃是含冤莫白的陈梦雷": ("陈梦雷",),
+        "陈梦雷可说是苦命的人": ("陈梦雷",),
+        "好朋友李光地出卖": ("李光地", "陈梦雷"),
+        "误会成“行贼伪命”的陈昉": ("陈昉", "陈梦雷"),
+        "靖南王耿精忠胁迫造反": ("耿精忠", "陈梦雷"),
+        "第三个儿子诚亲王读书": ("诚亲王（胤祉）", "陈梦雷"),
+        "蒋廷锡等重加编校": ("蒋廷锡",),
+        "蒋廷锡督在事诸臣成之": ("蒋廷锡",),
+        "蒋复璁在《古今图书集成的前因后果》": ("蒋复璁",),
+        "陆费逵在中华版《古今图书集成》": ("陆费逵",),
+        "舒新城先生力主用铜活字本": ("舒新城",),
+        "袁同礼先生辑关于图书集成之文献": ("袁同礼",),
+        "L·翟理思（Lionel Giles）": ("翟理思",),
+        "H. A. 翟理思（Herbert Allen Giles）": ("翟理思",),
+        "麦尔先生的话": ("麦尔",),
+        "由伯希和（M. Paul Pelliot）": ("伯希和",),
+        "万国鼎在《古今图书集成考略》": ("万国鼎",),
+        "叶德辉在《书林清话》": ("叶德辉",),
+        "刘声木在《苌楚斋五笔》": ("刘声木",),
+        "童世纲《葛思德东方书库记略》": ("童世纲", "葛思德"),
+        "义理寿（Captain I. V. Gillis）": ("义理寿",),
+        "高野侯先生即主张重印图书集成": ("高野侯",),
+        "王汉章《中国近三十年来之出版界》": ("王汉章",),
+        "夏德（Friederich Hirth）": ("夏德",),
+        "桑原隲藏博士之《中国研究者之任务》": ("桑原隲藏",),
+        "李之鼎在《丛桂草堂医案》": ("李之鼎",),
+        "廷臣金简": ("金简",),
+        "张廷玉，一人前后竟被皇帝赏赐": ("张廷玉",),
+        "陈森（少逸）《品花宝鉴》": ("陈森",),
+        "元：杨维桢（廉夫）": ("杨维桢",),
+        "清：陈宏谋/五种遗规": ("陈宏谋",),
+        "清：周兆基/佩文诗韵释要": ("周兆基",),
+        "唐：李翱//李文公集": ("李翱",),
+        "元：黄溍//金华黄先生文集": ("黄溍",),
+        "唐：张九龄（子寿）/曲江集": ("张九龄",),
+        "元：倪瓒//倪云林先生诗集": ("倪瓒",),
+        "元：戴良//九灵山房集": ("戴良",),
+        "元史专家屠寄": ("屠寄",),
+        "梁章钜根据雍正的诏谕": ("梁章钜",),
+        "霍四究说“三分”": ("霍四究",),
+        # 第三轮：后两章的百科全书例证、神话外编、说书史和历史演义人物群。
+        "《唐柳芳氏族论》《东莱博议》《凌迪知万姓统谱》、顾炎武": ("柳芳", "吕祖谦", "凌迪知", "顾炎武"),
+        "“高力士”并不姓“高”而姓“冯”": ("高力士",),
+        "“雷公”名“江赫沖”“阎王爷”名“闪多”“达摩”名“刹利帝菩提多罗”": (
+            "雷公", "江赫沖", "阎王", "闪多", "达摩", "刹利帝菩提多罗",
+        ),
+        "谢朓、庾信、李白、杜甫、孟浩然、刘长卿、韦应物、刘禹锡、李商隐、梅尧臣、苏轼、唐顺之": (
+            "谢朓", "庾信", "李白", "杜甫", "孟浩然", "刘长卿", "韦应物", "刘禹锡", "李商隐", "梅尧臣", "苏轼", "唐顺之",
+        ),
+        "秦始皇有怪镜": ("秦始皇",),
+        "赵飞燕有一面七尺的大镜子": ("赵飞燕",),
+        "宋太祖因为有关一面镜子的疑问，被窦仪解答清楚": ("宋太祖", "窦仪"),
+        "中外学人如L·翟理思、桑原隲藏、胡适、梁启超、俞照、泷泽俊亮、牟润孙": (
+            "翟理思", "桑原隲藏", "胡适", "梁启超", "俞照", "泷泽俊亮", "牟润孙",
+        ),
+        "黄帝起算，算到宣统为止": ("黄帝", "宣统"),
+        "在归庄《万古愁》曲子里": ("归庄",),
+        "更有那莽亭长": ("刘邦",),
+        "更有那小秦王": ("李世民",),
+        "还有那香孩儿": ("宋太祖",),
+        "博罗丞相抓到文天祥": ("博罗", "文天祥"),
+        "张之洞主张“全史浩繁，从何说起”": ("张之洞",),
+        "苏轼《东坡志林》里引王彭的话": ("苏轼", "王彭", "刘备", "曹操"),
+        "孟元老《东京梦华录》里": ("孟元老", "霍四究", "尹常"),
+        "胡适在《三国志演义序》里说得很明白": ("胡适",),
+        "褒姒的笑、管仲的智、齐桓的信、曹沫的无赖、晏蛾儿的愚忠、介子推的清高、晏子的识大体、伍子胥的鞭尸、苏秦的合纵、蔺相如的完璧归赵": (
+            "褒姒", "管仲", "齐桓公", "曹沫", "晏蛾儿", "介子推", "晏子", "伍子胥", "苏秦", "蔺相如",
+        ),
+        "贾谊《过秦论》说": ("贾谊", "秦孝公"),
+        "秦始皇已经即位了二十六年": ("秦始皇",),
+        "前汉自刘邦开国到孺子婴亡国": ("刘邦", "孺子婴"),
+        "汉景帝的后裔刘秀": ("汉景帝", "刘秀"),
+        "卓茂、谯玄不跟王莽合作": ("卓茂", "谯玄", "王莽", "严光"),
+        "窦宪征匈奴": ("窦宪",),
+        "班超使西域": ("班超",),
+        "文君新寡": ("卓文君",),
+        "李商隐诗中有“或谑张飞胡，或笑邓艾吃”": ("李商隐", "张飞", "邓艾"),
+        "《斩吕布》《哭周瑜》": ("吕布", "周瑜"),
+        "诸葛亮并没烧新野、借东风或演空城计": ("诸葛亮",),
+        "关羽并没诛文丑、杀蔡阳、过五关斩六将": ("关公", "文丑", "蔡阳"),
+        "刘备并没一开始就重用孔明": ("刘备", "诸葛亮"),
+        "孔明并没三气周瑜": ("诸葛亮", "周瑜"),
+        "庞统并没献连环计": ("庞统",),
+        "曹操并没追关羽": ("曹操", "关公"),
+        "张飞并没战马超": ("张飞", "马超"),
+        "黄盖并没用苦肉计": ("黄盖",),
+        "黄忠并没死于征吴": ("黄忠",),
+        "陆逊并没因八阵图受困": ("陆逊",),
+        "何义门、王世祯、尤侗等都加袭用": ("何义门", "王世祯", "尤侗"),
+        "杜甫的《丹青引》里面": ("杜甫", "曹操"),
+        "比起赵匡胤北定中原却篡夺故主": ("宋太祖",),
+        "刘备的儿子刘禅（阿斗）": ("刘备", "刘禅"),
+        "孙权的孙子孙浩": ("孙权", "孙浩"),
+        "司马懿的孙子司马炎": ("司马懿", "司马炎"),
+        "东晋孝武帝司马曜": ("司马曜",),
+        "拓跋珪兴起在北方": ("拓跋珪",),
+        "崔鸿“十六国春秋”": ("崔鸿",),
+        "怀帝、愍帝被掳北去": ("晋怀帝", "晋愍帝"),
+        "晋元帝偏安江左": ("晋元帝",),
+        "闻鸡起舞的祖逖": ("祖逖",),
+        "王敦以武昌兵做底牌，桓温、桓玄以江陵兵做底牌，苏峻以京口兵做底牌，最后刘裕以京口兵通吃": (
+            "王敦", "桓温", "桓玄", "苏峻", "刘裕",
+        ),
+        "杀了三十七岁的晋安帝、三十六岁的晋恭帝": ("晋安帝", "晋恭帝"),
+        "宋被军人萧道成所篡；齐被军人萧衍所篡；梁被军人陈霸先所篡": ("萧道成", "梁武帝", "陈霸先"),
+        "唐太宗的妈妈就是胡人": ("李世民",),
+        "唐高祖打天下的时候": ("唐高祖",),
+        "武则天看到“叛乱犯”骆宾王": ("武则天", "骆宾王"),
+        "魏元旷《蕉厂随笔》说": ("魏元旷",),
+        "朱全忠为了抵制李克用": ("朱全忠", "李克用"),
+        "平黄巢之乱": ("黄巢",),
+        "宋太祖即位的第二天": ("宋太祖",),
+        "宋太宗对曹翰": ("宋太宗", "曹翰"),
+        "宋仁宗的文臣韩琦，公然给大将狄青好看": ("宋仁宗", "韩琦", "狄青"),
+        "如邵康节所说": ("邵康节",),
+        "富弼使辽": ("富弼",),
+        "元世祖忽必烈入主中原": ("元世祖",),
+        "元太祖成吉思汗、太宗阿阔台、定宗贵由、宪宗蒙哥": ("成吉思汗", "阿阔台", "贵由", "蒙哥"),
+        "元史专家屠寄感到元朝历史太窄了": ("屠寄",),
+        "明朝进士王洙写了一部《宋史质》": ("王洙",),
+        "马翌的对话是": ("马翌",),
+        "明太祖朱元璋是平民皇帝": ("朱元璋",),
+        "李善长、胡惟庸、蓝玉、傅友德、冯胜": ("李善长", "胡惟庸", "蓝玉", "傅友德", "冯胜"),
+        "《法门寺》的刘瑾以前": ("刘瑾",),
+        "魏忠贤立“生祠”": ("魏忠贤",),
+        "太祖努尔哈赤、太宗皇太极、世祖顺治": ("努尔哈赤", "皇太极", "顺治"),
+        "康、雍、乾三期": ("康熙", "雍正", "乾隆"),
+        "恰如李鸿章说的": ("李鸿章",),
+        "临时大总统祭明太祖陵": ("孙中山", "朱元璋"),
+        "《孙大总统布告天下电》": ("孙中山",),
+        "清朝遗老缪荃孙": ("缪荃孙",),
+        "舒屋山人《新编二十六史通俗演义》": ("舒屋山人",),
+        "章学诚所谓的“中有苦心而不能显”": ("章学诚",),
+        "梁启超写《自题〈新中国未来记〉》": ("梁启超",),
+        "开国伟人名叫黄克强": ("黄兴",),
     },
     "李敖书简集": {
         # 首轮：本书多为公开信，题名、收信称呼和名单式受文者是人物入口。
@@ -23996,6 +24446,14 @@ STOP_NAMES.update({
 })
 
 BOOK_SKIP_NAMES = {
+    "读史指南": {
+        # 首轮：书目、版本、篇题和既有别名误并造成的非人物节点。
+        "古今图", "石印本", "文影印", "古代", "曹操子", "广四库",
+        "严停云", "乐器图", "仰备顾", "国体问", "时赋予", "曹敏", "黄天福",
+        "石柏苍", "刘宜良", "邓维桢", "张宏谋", "陈兆基",
+        "从二十", "印刷工", "时有六", "明之", "曾收到", "欧美各", "王莽合", "计二十",
+        "王五", "何氏",
+    },
     # 《历史与人像》首轮：历史文化论文中的制度词、题名切片、引文残片和截断名，不作为人物节点。
     "历史与人像": {
         "别娶矣", "曹钱监", "从事实", "刁奸", "都很好", "杜威博", "段党很", "段党想",
@@ -24556,6 +25014,25 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 
 
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
+    if book == "读史指南":
+        if raw_name == "维桢" and "杨维桢" in ctx:
+            return "杨维桢"
+        if raw_name == "宏谋" and "陈宏谋" in ctx:
+            return "陈宏谋"
+        if raw_name == "兆基" and "周兆基" in ctx:
+            return "周兆基"
+        if raw_name == "李文" and "李翱" in ctx:
+            return "李翱"
+        if raw_name == "金华黄" and "黄溍" in ctx:
+            return "黄溍"
+        if raw_name == "曲江张" and "张九龄" in ctx:
+            return "张九龄"
+        if raw_name == "倪云林" and "倪瓒" in ctx:
+            return "倪瓒"
+        if raw_name == "乐天" and "白居易" in ctx:
+            return "白居易"
+        if raw_name == "容甫" and "汪中" in ctx:
+            return "汪中"
     if book == "李敖五五日记":
         if raw_name == "Alice":
             return "Alice（五五日记）"
@@ -25740,6 +26217,107 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
     return False
 
 
+def normalize_dushi_bibliography_name(raw_name: str) -> str:
+    name = raw_name.strip(" \t\r\n　：:，,、。；;（）()《》“”\"'")
+    name = DUSHI_BIBLIOGRAPHY_ALIASES.get(name, name)
+    changed = True
+    stripped_role = False
+    while changed:
+        changed = False
+        for suffix in DUSHI_BIBLIOGRAPHY_ROLE_SUFFIXES:
+            if name.endswith(suffix) and len(name) > len(suffix) + 1:
+                name = name[:-len(suffix)].strip()
+                name = DUSHI_BIBLIOGRAPHY_ALIASES.get(name, name)
+                stripped_role = True
+                changed = True
+                break
+    if stripped_role:
+        for dynasty in sorted(DUSHI_BIBLIOGRAPHY_DYNASTIES, key=len, reverse=True):
+            if name.startswith(dynasty) and len(name) > len(dynasty) + 1:
+                name = name[len(dynasty):]
+                break
+    return DUSHI_BIBLIOGRAPHY_ALIASES.get(name, name)
+
+
+def looks_like_dushi_bibliography_author(name: str) -> bool:
+    if not name or len(name) < 2 or len(name) > 5:
+        return False
+    if name in DUSHI_BIBLIOGRAPHY_SKIP_NAMES or name in STOP_NAMES:
+        return False
+    if any(fragment in name for fragment in DUSHI_BIBLIOGRAPHY_BAD_FRAGMENTS):
+        return False
+    if name.endswith(("集", "表", "目", "法", "记略", "诗钞", "文集", "诗集")):
+        return False
+    return True
+
+
+def iter_dushi_bibliography_authors(text: str):
+    seen: set[tuple[str, str]] = set()
+    for line in text.splitlines():
+        if "：" not in line:
+            continue
+        stripped_line = line.strip()
+        for match in DUSHI_BIBLIOGRAPHY_AUTHOR_RE.finditer(line):
+            segment = match.group(1)
+            segment = re.sub(r"（[^）]*）", "、", segment)
+            segment = re.sub(r"\([^)]*\)", "、", segment)
+            segment = DUSHI_BIBLIOGRAPHY_INNER_DYNASTY_RE.sub(lambda item: f"{item.group(1)}、", segment)
+            for part in DUSHI_BIBLIOGRAPHY_SPLIT_RE.split(segment):
+                part = part.strip(" \t\r\n　：:，,、。；;（）()《》“”\"'")
+                if not part:
+                    continue
+                for candidate in DUSHI_BIBLIOGRAPHY_CANDIDATE_RE.findall(part):
+                    name = normalize_dushi_bibliography_name(candidate)
+                    if not looks_like_dushi_bibliography_author(name):
+                        continue
+                    key = (name, stripped_line)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    yield name, stripped_line[:180]
+
+
+def add_dushi_bibliography_author_hits(
+    text: str,
+    people: dict[str, PersonHit],
+    collection: str,
+    book: str,
+    chapter: str,
+) -> None:
+    if book != "读史指南" or not chapter.startswith("四部备要暨四部丛刊书目"):
+        return
+    for raw_name, ctx in iter_dushi_bibliography_authors(text):
+        name = canonical_name(raw_name, ctx, book, chapter)
+        if name in BOOK_SKIP_NAMES.get(book, set()) or name in STOP_NAMES:
+            continue
+        category = "source_author"
+        score = 6
+        hit = people.setdefault(name, PersonHit(name=name))
+        hit.occurrences += 1
+        hit.relevant_occurrences += 1
+        hit.name_signals += 1
+        hit.strong_signals += 1
+        hit.score += score
+        hit.categories[category] += 1
+        hit.books[book] += 1
+        hit.collections[collection] += 1
+        hit.chapters[f"{book} / {chapter}"] += 1
+        hit.cue_hits["书目作者表"] += 1
+        add_evidence(
+            hit,
+            {
+                "book": book,
+                "collection": collection,
+                "chapter": chapter,
+                "category": category,
+                "score": score,
+                "cues": ["书目作者表"],
+                "snippet": ctx,
+                "curated": name in CURATED_IDENTITIES,
+            },
+        )
+
+
 def extract_from_text(
     text: str,
     path: Path,
@@ -25836,6 +26414,8 @@ def extract_from_text(
                         "curated": name in CURATED_IDENTITIES,
                     },
                 )
+
+    add_dushi_bibliography_author_hits(text, people, collection, book, chapter)
 
     for phrase, targets in BOOK_PHRASE_PEOPLE.get(book, {}).items():
         start = 0
