@@ -85,6 +85,7 @@ ALIASES = {
     "基督": "耶稣",
     "耶酥": "耶稣",
     "释迦": "释迦牟尼",
+    "韩非子": "韩非",
     "阿瞒": "曹操",
     "曹瞒": "曹操",
     "任公": "梁启超",
@@ -5817,6 +5818,390 @@ CATEGORY_LABELS = {
 
 
 PERSON_RELATIONS = [
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "桑格先生（William Sanger）",
+        "relation": "夫妻/离婚与姓名保留",
+        "weight": 5,
+        "note": "《桑格夫人和节育运动》记桑格夫人与丈夫桑格先生因志趣不投而友好离婚，桑格夫人后来仍保留原名。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "斯里先生（J. Noah H. Slee）",
+        "relation": "夫妻/再婚与节育事业",
+        "weight": 4,
+        "note": "同篇记桑格夫人1922年嫁给斯里先生，斯里先生也不以她仍称桑格夫人为忤。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "胡适",
+        "relation": "北大演讲/主席翻译",
+        "weight": 5,
+        "note": "同篇引桑格夫人来华故事，胡适博士请她到北京大学演讲，并担任欢迎会主席和翻译。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "蒋梦麟",
+        "relation": "节育来台讨论/朋友通信",
+        "weight": 5,
+        "note": "同篇记蒋梦麟发表台湾人口问题文章，又曾复信劝桑格夫人不要来台，以免节育工作遭遇更大阻力。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "舒子宽",
+        "relation": "文星专题/节育运动",
+        "weight": 4,
+        "note": "同篇后记说明《文星》同一期有舒子宽《桑格夫人和布拉许夫人》，同属桑格夫人和节育运动专题。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "舒子宽",
+        "target": "布拉许夫人",
+        "relation": "文章题名/家庭计划专题",
+        "weight": 3,
+        "note": "同篇后记列出舒子宽《桑格夫人和布拉许夫人》，二人同处节育与家庭计划专题脉络。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "李循",
+        "relation": "文星专题/家庭计划文章",
+        "weight": 3,
+        "note": "同篇后记列李循和《目前推行家庭计划的国家及其成就》，与桑格夫人专题相互支撑。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "康斯托克",
+        "relation": "法案冲突/出版管制",
+        "weight": 5,
+        "note": "同篇记康斯托克推动邮政检查和康斯托克法案，直接压迫桑格夫人的节育出版与传播。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "威尔斯",
+        "target": "卡彭特",
+        "relation": "英国名流联署/声援节育案",
+        "weight": 3,
+        "note": "同篇记威尔斯、卡彭特等英国名流写信给美国总统威尔逊，声援桑格夫人相关案子。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "威尔斯",
+        "target": "威尔逊",
+        "relation": "致信总统/声援节育案",
+        "weight": 4,
+        "note": "《桑格夫人和节育运动》记威尔斯等英国名流写信给美国总统威尔逊，请他特别注意桑格夫人相关案子。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "卡彭特",
+        "target": "威尔逊",
+        "relation": "致信总统/声援节育案",
+        "weight": 4,
+        "note": "同篇把卡彭特列入写信给美国总统威尔逊的英国名流名单，作为国际舆论声援节育案的一环。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "孙英善",
+        "relation": "文星专题/节育文章",
+        "weight": 3,
+        "note": "同篇后记列孙英善《为什么要谈节育》和《台湾人口激增和节育的迫切》，均处于桑格夫人与节育运动专题脉络。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "李夕涛",
+        "relation": "参考文章/人口与节育议题",
+        "weight": 3,
+        "note": "同篇列李夕涛《台湾人口繁殖世界第一》为台湾人口与节育问题的参考文章，补入专题作者关系。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "桑格夫人",
+        "target": "杨子崴",
+        "relation": "参考文章/节制生育议题",
+        "weight": 3,
+        "note": "同篇列杨子崴《建立甜蜜家庭，首须节制生育》为节育运动专题参考文章，补入专题作者关系。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "张岳塞（仁钊）",
+        "target": "桑格夫人",
+        "relation": "教会资料馈赠/节育争论",
+        "weight": 3,
+        "note": "同篇后记称张岳塞看了李敖批评天主教会的文字后，送来《自然节育》《婚配圣事》，进入桑格夫人与节育争论的资料链。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "王五",
+        "target": "胡七",
+        "relation": "江湖同道/共同营救谭嗣同",
+        "weight": 5,
+        "note": "《“两昆仑”考》引陶菊隐故事，胡七与王五同教谭嗣同武艺，政变后又共同谋劫法场。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "谭嗣同",
+        "target": "王五",
+        "relation": "侠义结交/营救谋划",
+        "weight": 5,
+        "note": "同篇记王五每天与谭嗣同见面，并在政变后与胡七赴浏阳馆约谭嗣同出走。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "谭嗣同",
+        "target": "胡七",
+        "relation": "侠义结交/营救谋划",
+        "weight": 5,
+        "note": "同篇记胡七称自己认识谭嗣同，且与王五同时教授其武艺、劝其出走。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "谭嗣同",
+        "target": "李闰",
+        "relation": "夫妻/遗闻来源",
+        "weight": 4,
+        "note": "同篇记谭浏阳的夫人李闰向孙朗生解释“两昆仑”，成为李敖考辨的一条来源。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "梁启超",
+        "target": "王五",
+        "relation": "任公解诗/两昆仑解释",
+        "weight": 4,
+        "note": "同篇引梁启超说法，以昆仑指王五，并成为李敖辨析“两昆仑”含义的重要对象。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "谭嗣同",
+        "target": "梁启超",
+        "relation": "维新同道/就义诗解释",
+        "weight": 4,
+        "note": "同篇围绕谭嗣同就义诗，反复讨论梁启超对“两昆仑”的解释，二人同在维新叙事中相连。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "吴千乙",
+        "target": "吴千二",
+        "relation": "兄弟/同姓婚案",
+        "weight": 4,
+        "note": "《夫妻同体主义下的宋代婚姻的无效撤销解消及其效力与手续》引同姓婚案，称吴千乙、吴千二兄弟折合并挈幼女以往。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "吴重五",
+        "target": "阿吴（同姓婚案）",
+        "relation": "父女/同姓婚争议",
+        "weight": 5,
+        "note": "同篇引《名公书判清明集》同姓婚案，吴重五取其女阿吴归家，后又涉及改嫁争议。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "吴千二",
+        "target": "阿吴（同姓婚案）",
+        "relation": "卖与为媳/同姓婚案",
+        "weight": 5,
+        "note": "同篇记吴千二将阿吴卖与翁七七为媳妇，自知同姓后仍引发争婚诉讼。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "翁七七",
+        "target": "阿吴（同姓婚案）",
+        "relation": "买作儿媳/同姓婚诉讼",
+        "weight": 4,
+        "note": "同篇记阿吴被卖与翁七七为媳妇，翁七七后来经府县有词追到吴千二等供对。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "阿吴（同姓婚案）",
+        "target": "李三九",
+        "relation": "改嫁/同姓婚案后续",
+        "weight": 4,
+        "note": "同篇记吴重五取女归家后，阿吴又复嫁与李三九为妻，成为争议后续。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "翁七七",
+        "target": "李三九",
+        "relation": "争婚相对/同姓婚案",
+        "weight": 3,
+        "note": "同篇中翁七七一方与李三九改嫁线构成同姓婚案的相对争议关系。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "叶四",
+        "target": "阿邵",
+        "relation": "夫妻/和娶人妻案",
+        "weight": 5,
+        "note": "同篇引和娶人妻案，明写叶四有妻阿邵，不能供养而写立休书钱领及画手模。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "阿邵",
+        "target": "吕元五",
+        "relation": "改嫁/和娶人妻案",
+        "weight": 5,
+        "note": "同篇记叶四将阿邵嫁与吕元五，吕元五贪图阿邵为妻，构成两离之法的案例。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "叶四",
+        "target": "吕元五",
+        "relation": "卖妻冲突/两离之法",
+        "weight": 5,
+        "note": "同篇判词称叶四、吕元五皆不得妻阿邵，是和娶人妻、两离之法的核心冲突。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "裴千七",
+        "target": "杨万乙",
+        "relation": "啜诱押契/违法离嫁中介",
+        "weight": 4,
+        "note": "同篇记吕元五令裴千七夫妻与杨万乙啜诱叶四，二人均被断为知情押契。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "裴千七",
+        "target": "阿邵",
+        "relation": "违法离嫁/中介牵连",
+        "weight": 3,
+        "note": "同篇判词称裴千七、阿邵各系所由违法离嫁，二人同在和娶人妻案责任链中。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "叶四",
+        "target": "叶万六",
+        "relation": "寄存官会/案款牵连",
+        "weight": 3,
+        "note": "同篇记叶四卖妻后，尚未尽会二百贯寄留叶万六家，叶万六因此被牵连勘杖。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "徐道邻",
+        "target": "徐树铮",
+        "relation": "父子/文集年谱辩护",
+        "weight": 5,
+        "note": "《对〈徐树铮先生文集年谱合刊〉的批评》围绕徐道邻所编写的徐树铮文集年谱，李敖批评其史料运用和为父辩护。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "徐树铮",
+        "target": "段祺瑞",
+        "relation": "皖系军政/陆军部关系",
+        "weight": 5,
+        "note": "同篇多次将徐树铮置于段祺瑞皖系和陆军部权力脉络中，讨论复辟、陆案和外蒙问题。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "徐树铮",
+        "target": "陆建章",
+        "relation": "天津诱杀/北洋政争",
+        "weight": 5,
+        "note": "同篇围绕陆建章被请到奉军驻津司令部后遭杀，批评徐道邻对徐树铮责任的申辩。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "徐树铮",
+        "target": "张作霖",
+        "relation": "奉军副司令/军费冲突",
+        "weight": 4,
+        "note": "同篇记徐树铮曾任奉军副司令，后来因军费与张作霖发生冲突并被解除职务。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "曹汝霖",
+        "target": "章宗祥",
+        "relation": "五四同列/卖国贼评价",
+        "weight": 4,
+        "note": "同篇引徐道邻为曹汝霖、章宗祥、陆宗舆翻案的文字，李敖据此反驳其历史评价。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "曹汝霖",
+        "target": "陆宗舆",
+        "relation": "五四同列/卖国贼评价",
+        "weight": 4,
+        "note": "同篇把曹汝霖与陆宗舆并列为五四高潮中被千夫所指的人物，并讨论其亲日卖国责任。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "章宗祥",
+        "target": "陆宗舆",
+        "relation": "五四同列/山东善后与二十一条",
+        "weight": 4,
+        "note": "同篇把章宗祥、陆宗舆并列为五四历史评价对象，分别涉及山东善后条约和二十一条交涉。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "袁世凯",
+        "target": "段祺瑞",
+        "relation": "练兵处/北洋军政",
+        "weight": 4,
+        "note": "同篇引北洋史话，袁世凯任练兵大臣，段祺瑞为参谋处总办，构成北洋军政脉络。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "段祺瑞",
+        "target": "王士珍",
+        "relation": "练兵处同列/北洋军政",
+        "weight": 3,
+        "note": "同篇引练兵处职任，段祺瑞、王士珍分别任军政和军学相关要职，同属北洋新军系统。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "冯国璋",
+        "target": "王士珍",
+        "relation": "练兵处同列/北洋军政",
+        "weight": 3,
+        "note": "同篇引北洋史话，冯国璋为教练处总办，王士珍为步兵协统兼操防营务督理。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "陈毅（北洋）",
+        "target": "徐树铮",
+        "relation": "外蒙撤治/功劳争论",
+        "weight": 5,
+        "note": "同篇批评徐道邻写外蒙撤治问题时贬低陈毅功劳，李敖指出撤治成功不能湮灭陈毅作用。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "柯劭忞",
+        "target": "徐树铮",
+        "relation": "墓志铭/文集附录",
+        "weight": 3,
+        "note": "同篇说明《徐树铮先生文集年谱合刊》附柯劭忞《远威将军陆军上将萧县徐公墓志铭》，柯劭忞是徐树铮身后文字的作者之一。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "王树柟",
+        "target": "徐树铮",
+        "relation": "家传/文集附录",
+        "weight": 3,
+        "note": "同篇说明该合刊附王树柟《远威将军徐府君家传》，王树柟与徐树铮关系来自文集附录的传记材料。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "姚从吾",
+        "target": "赵铁寒",
+        "relation": "学术校注/宋代年代问题",
+        "weight": 3,
+        "note": "《夫妻同体主义下的宋代婚姻的无效撤销解消及其效力与手续》记姚从吾看过李敖原注后加注，又拿给赵铁寒看，赵铁寒也加注。",
+    },
+    {
+        "book": "历史与人像",
+        "source": "吴相湘",
+        "target": "札奇斯钦",
+        "relation": "丛刊主编/外蒙古论文",
+        "weight": 3,
+        "note": "《对〈徐树铮先生文集年谱合刊〉的批评》称札奇斯钦论文收在吴相湘主编的《中国现代史丛刊》，二人同处外蒙古史料引用链。",
+    },
     {
         "book": "李敖书序集",
         "source": "居正",
@@ -20353,6 +20738,111 @@ CURATED_IDENTITIES.update({
     "林语堂": ["academic", "source_author", "public_debate", "spiritual"],
 })
 
+ALIASES.update({
+    # 《历史与人像》首轮：历史文化论文中常用别称、截断名和异译名归并。
+    "桑格夫": "桑格夫人",
+    "山额夫人": "桑格夫人",
+    "散革夫人": "桑格夫人",
+    "珊格尔夫人": "桑格夫人",
+    "玛格丽特·希金斯": "桑格夫人",
+    "李易安": "李清照",
+    "余义夫": "余玠",
+    "徐又铮": "徐树铮",
+    "王介甫": "王安石",
+    "威廉桑格": "桑格先生（William Sanger）",
+    "张岳塞": "张岳塞（仁钊）",
+    "仁钊": "张岳塞（仁钊）",
+})
+
+CURATED_IDENTITIES.update({
+    # 《历史与人像》首轮：历史论文、人物传略和学术批评的核心对象。
+    "桑格夫人": ["human_rights", "medical_care", "public_debate", "source_author", "historical_allusion", "spiritual"],
+    "余玠": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "纪翠绫": ["social_case", "romance", "public_debate"],
+    "徐树铮": ["military_figure", "politician", "public_debate", "historical_allusion", "spiritual"],
+    "李清照": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "杜威": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "袁世凯": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "徐道邻": ["academic", "politician", "public_debate", "source_author", "historical_allusion", "spiritual"],
+    "洪迈": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "桑格先生（William Sanger）": ["family", "marriage_context", "historical_allusion", "spiritual"],
+    "斯里先生（J. Noah H. Slee）": ["family", "marriage_context", "historical_allusion", "spiritual"],
+    "马尔萨斯": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "孔多塞": ["academic", "politician", "historical_allusion", "spiritual"],
+    "康斯托克": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "埃利斯": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "威尔斯": ["source_author", "public_debate", "historical_allusion", "spiritual"],
+    "卡彭特": ["source_author", "public_debate", "historical_allusion", "spiritual"],
+    "王五": ["underworld", "martyr", "historical_allusion", "spiritual"],
+    "胡七": ["underworld", "medical_care", "historical_allusion", "spiritual"],
+    "车垓": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "吴处厚": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "李伋": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "吕元五": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "林纾": ["academic", "source_author", "publishing", "historical_allusion", "spiritual"],
+    "黄庭坚": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "黄伯度": ["source_support", "public_debate", "historical_allusion", "spiritual"],
+    "郑清茂": ["source_support", "academic", "publishing"],
+    "顾颉刚": ["academic", "editor", "publishing", "historical_allusion", "spiritual"],
+    "张钦成": ["source_author", "public_debate", "research_reference"],
+    "张舜民": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "张子能": ["social_case", "marriage_context", "historical_allusion", "spiritual"],
+    "王树柟": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "李闰": ["family", "marriage_context", "historical_allusion", "spiritual", "plot_character", "literary_character"],
+    "舒子宽": ["human_rights", "medical_care", "source_author", "publishing"],
+    "布拉许夫人": ["human_rights", "medical_care", "historical_allusion", "spiritual"],
+    "李循": ["source_author", "research_reference", "medical_care"],
+    "曾我部静雄": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "吴荣先": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "梁恭辰": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "徐珂": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "格朗特": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "戈德温": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "阿邵": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "阿吴（同姓婚案）": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "李三九": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "吴重五": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "吴千乙": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "吴千二": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "叶四": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "裴千七": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "叶万六": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "杨万乙": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "翁七七": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "黄桂": ["social_case", "marriage_context", "litigation", "historical_allusion", "spiritual"],
+    "陈毅（北洋）": ["politician", "public_official", "historical_allusion", "spiritual"],
+    "王士珍": ["military_figure", "politician", "historical_allusion", "spiritual"],
+    "曹汝霖": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "章宗祥": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "陆宗舆": ["politician", "public_debate", "historical_allusion", "spiritual"],
+    "刘永庆": ["military_figure", "public_official", "historical_allusion", "spiritual"],
+    "奕劻": ["politician", "public_official", "historical_allusion", "spiritual"],
+    "威尔逊": ["politician", "public_official", "public_debate", "historical_allusion", "spiritual"],
+    "冯国璋": ["politician", "military_figure", "historical_allusion", "spiritual"],
+    "丁文江": ["academic", "academic_admin", "source_author", "historical_allusion", "spiritual"],
+    "唐仲友": ["academic", "source_support", "historical_allusion", "spiritual"],
+    "柯劭忞": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "裴松之": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "金允植": ["politician", "public_official", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "范静生": ["academic_admin", "academic", "source_author", "historical_allusion", "spiritual"],
+    "张忠绂": ["source_author", "public_debate", "historical_allusion", "spiritual"],
+    "孙英善": ["classmate", "friendship", "meeting", "source_author", "medical_care", "public_debate"],
+    "姚从吾": ["teacher_student", "academic", "meeting", "source_support"],
+    "吴相湘": ["teacher_student", "academic", "meeting", "editor", "source_author", "publishing"],
+    "刘绍唐": ["publishing", "media", "teacher_student", "meeting", "correspondence", "public_debate", "source_support"],
+    "汪梦湘": ["intelligence_police", "military_figure", "publishing", "source_author", "friendship", "public_debate"],
+    "李夕涛": ["source_author", "media", "medical_care", "public_debate"],
+    "杨子崴": ["source_author", "media", "medical_care", "public_debate"],
+    "张岳塞（仁钊）": ["religion", "public_debate", "source_support"],
+    "张希贤": ["source_author", "religion", "medical_care", "public_debate"],
+    "顾保鹄": ["source_author", "religion", "marriage_context", "public_debate"],
+    "井田升": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "李宜琛": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "刘凤翰": ["academic", "source_author", "publishing", "classmate", "friendship", "meeting", "medical_care"],
+    "范公偁": ["academic", "source_author", "research_reference", "historical_allusion", "spiritual"],
+    "华佗": ["medical_care", "historical_allusion", "spiritual"],
+})
+
 for _shuhan_judge in (
     "陈联欢", "谢俊峰", "葛浩坡", "李文成", "陶振声", "刘为育", "吴敦（推事）", "叶百修", "钟惠臣", "杨荣",
     "陈石狮", "黄炎成", "李琼荫", "陈昆辉", "刘焕宇", "郑有田", "陈计男", "李锦丰", "孙森焱",
@@ -20515,6 +21005,64 @@ ALIASES.pop("刘军", None)
 
 
 BOOK_PHRASE_PEOPLE = {
+    "历史与人像": {
+        # 首轮：本书是历史论文集，题名、异译名、括号英文名和引文作者常是人物入口。
+        "余玠人格品质的分析": ("余玠",),
+        "余玠是湖北蕲春人": ("余玠",),
+        "杜威的教育思想": ("杜威",),
+        "约翰·杜威博士": ("杜威",),
+        "杜威先生到中国来": ("杜威",),
+        "桑格夫人和节育运动": ("桑格夫人",),
+        "桑格夫人”（Mrs. Sanger": ("桑格夫人",),
+        "Margaret Higgins Sanger": ("桑格夫人",),
+        "桑格先生（William Sanger）": ("桑格先生（William Sanger）",),
+        "斯里（J. Noah H. Slee）先生": ("斯里先生（J. Noah H. Slee）",),
+        "马尔萨斯的人口论": ("马尔萨斯",),
+        "孔多塞（Condorcet）": ("孔多塞",),
+        "康斯托克（Anthony Comstock": ("康斯托克",),
+        "埃利斯（Havelock Ellis）": ("埃利斯",),
+        "威尔斯（H. G. Wells）": ("威尔斯",),
+        "卡彭特（Edward Carpenter）": ("卡彭特",),
+        "纪翠绫该生在什么时候": ("纪翠绫",),
+        "女主角纪翠绫": ("纪翠绫",),
+        "巴札洛夫": ("巴札洛夫",),
+        "大刀”王五": ("王五",),
+        "人称胡七": ("胡七",),
+        "李易安再嫁了吗": ("李清照",),
+        "对《徐树铮先生文集年谱合刊》的批评": ("徐树铮", "徐道邻"),
+        "徐树铮先生文集年谱合刊": ("徐树铮", "徐道邻"),
+        "徐道邻先生所编": ("徐道邻",),
+        "格朗特（John Graunt）": ("格朗特",),
+        "戈德温（William Codwin）": ("戈德温",),
+        "丈夫桑格先生": ("桑格先生（William Sanger）",),
+        "第一位丈夫威廉桑格": ("桑格先生（William Sanger）",),
+        "舒子宽女士的《桑格夫人和布拉许夫人》": ("舒子宽", "布拉许夫人", "桑格夫人"),
+        "李循和先生的《目前推行家庭计划的国家及其成就》": ("李循",),
+        "东方望《节育与反攻》": ("汪梦湘",),
+        "杨子崴《建立甜蜜家庭，首须节制生育》": ("杨子崴",),
+        "李夕涛《台湾人口繁殖世界第一》": ("李夕涛",),
+        "孙英善《台湾人口激增和节育的迫切》": ("孙英善",),
+        "张岳塞（仁钊）先生": ("张岳塞（仁钊）",),
+        "张希贤的《自然节育》": ("张希贤",),
+        "顾保鹄的《婚配圣事》": ("顾保鹄",),
+        "曾我部静雄的一篇《溺女考》": ("曾我部静雄", "郑清茂"),
+        "马端临《文献通考》、吴荣先《吾学录初编》": ("马端临", "吴荣先"),
+        "梁恭辰《北东园笔录续编》、徐珂《清稗类钞》": ("梁恭辰", "徐珂"),
+        "吴重五取其女归家": ("吴重五",),
+        "吴千乙兄弟与之折合": ("吴千乙", "吴千二", "阿吴（同姓婚案）"),
+        "吴千二将阿吴卖与翁七七为媳妇": ("吴千二", "翁七七", "阿吴（同姓婚案）"),
+        "复嫁与李三九为妻": ("阿吴（同姓婚案）", "李三九"),
+        "叶四有妻阿邵": ("叶四", "阿邵"),
+        "将阿邵嫁与吕元五": ("阿邵", "吕元五"),
+        "裴千七夫妻与杨万乙": ("裴千七", "杨万乙"),
+        "寄留叶万六家": ("叶万六",),
+        "曹汝霖、章宗祥、陆宗舆": ("曹汝霖", "章宗祥", "陆宗舆"),
+        "委派段祺瑞为参谋处总办，冯国璋为教练处总办，王士珍为步兵第一协统": ("段祺瑞", "冯国璋", "王士珍"),
+        "袁世凯为会办大臣，徐世昌为提调，刘永庆为军政司正使": ("袁世凯", "徐世昌", "刘永庆"),
+        "命奕劻为管理大臣": ("奕劻",),
+        "陈毅的撤治交涉及其六十二条款": ("陈毅（北洋）",),
+        "据都护使驻札库伦办事大员陈毅电呈": ("陈毅（北洋）",),
+    },
     "李敖书简集": {
         # 首轮：本书多为公开信，题名、收信称呼和名单式受文者是人物入口。
         "李敖致辜振甫、张明炜信": ("辜振甫", "张明炜"),
@@ -23442,7 +23990,32 @@ BOOK_PHRASE_PEOPLE = {
     },
 }
 
+STOP_NAMES.update({
+    # 《历史与人像》closeout：全库强信号带入本书的普通短语残片，不作为人物节点。
+    "方法来", "能阻止",
+})
+
 BOOK_SKIP_NAMES = {
+    # 《历史与人像》首轮：历史文化论文中的制度词、题名切片、引文残片和截断名，不作为人物节点。
+    "历史与人像": {
+        "别娶矣", "曹钱监", "从事实", "刁奸", "都很好", "杜威博", "段党很", "段党想",
+        "段看", "段文字", "段系人", "冯事状", "高科", "公开演", "古人思", "广南战",
+        "国有姨", "和节育", "和学生", "怀疑徐", "黄龙游", "季常简", "家传", "经回来",
+        "经桑格", "居凡五", "居父母", "居亲强", "居祖行", "孔典礼", "郎何至", "李考",
+        "林纾则", "罗马天", "明四点", "明文禁", "能之始", "阙殆", "任翻译",
+        "桑格先", "时人又", "时桑格", "时宋人", "时有宫", "宋代婚", "宋帝始", "宋禁科",
+        "孙洪皆", "孙朗生", "王姬之", "武艺", "相奸者", "萧县徐", "须推倒", "徐谱",
+        "徐州", "许桑格", "游说", "于父母", "于庚", "于甲", "于枢密", "于宋人",
+        "于幼", "于朱熹", "余玠很", "余玠人", "郑氏自", "诸事例", "诸事实", "诸文人",
+        "祝杜威", "宗妻妾", "祖母李",
+        # 正式 68 本重建时由全局强信号带入的本书残片。
+        "从常理", "高等师", "关三十", "国巴黎", "何况徐", "和读者", "蒙自治",
+        "却有意", "施令", "文云", "许之", "时间来", "经执行",
+        # 第二轮：低频尾部复核，排除“张勋说”等语句残片；“李三九”后续确认是真实案中人物。
+        "张说", "李三",
+        # 第五轮：“黄龙游光中”的“光中”会被别名表误并到余光中，本书无余光中实体。
+        "余光中",
+    },
     # 《李敖书翰集》首轮：标题残片、普通座位名、制作信息与句读截断，不作为人物节点。
     "李敖书翰集": {
         "别座", "通座", "家报之", "国手淫", "解谈判", "于李家", "别人写", "应该请",
@@ -25648,11 +26221,16 @@ def compact_site_data(data: dict) -> dict:
 
 def write_json_js(data: dict, data_dir: Path) -> None:
     data_dir.mkdir(parents=True, exist_ok=True)
-    (data_dir / "people.json").write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+    write_text_lf(data_dir / "people.json", json.dumps(data, ensure_ascii=False, indent=2))
     js = "window.LEEAO_RELATIONSHIP_DATA = "
     js += json.dumps(compact_site_data(data), ensure_ascii=False, separators=(",", ":"))
     js += ";\n"
-    (data_dir / "relationship-data.js").write_text(js, encoding="utf-8")
+    write_text_lf(data_dir / "relationship-data.js", js)
+
+
+def write_text_lf(path: Path, text: str, encoding: str = "utf-8") -> None:
+    with path.open("w", encoding=encoding, newline="\n") as f:
+        f.write(text)
 
 
 def write_text_exports(data: dict, export_dir: Path) -> None:
@@ -25700,7 +26278,7 @@ def write_text_exports(data: dict, export_dir: Path) -> None:
             for ev in p["evidence"][:2]:
                 lines.append(f"  证据：《{ev['book']}》/{ev['chapter']}：{ev['snippet']}")
         lines.append("")
-    (export_dir / "li-ao-relationships.txt").write_text("\n".join(lines), encoding="utf-8")
+    write_text_lf(export_dir / "li-ao-relationships.txt", "\n".join(lines))
 
     by_book_lines = []
     by_book_lines.append("李敖人物关系逐本索引")
@@ -25713,10 +26291,10 @@ def write_text_exports(data: dict, export_dir: Path) -> None:
         )
         by_book_lines.append(people if people else "（未抽到候选人物）")
         by_book_lines.append("")
-    (export_dir / "by-book-index.txt").write_text("\n".join(by_book_lines), encoding="utf-8")
+    write_text_lf(export_dir / "by-book-index.txt", "\n".join(by_book_lines))
 
     with (export_dir / "li-ao-relationships.csv").open("w", newline="", encoding="utf-8-sig") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, lineterminator="\n")
         writer.writerow(["姓名", "分类", "主分类", "可信度", "出现次数", "相关出现", "涉及书数", "涉及章节数", "主要书目", "线索"])
         for p in data["people"]:
             writer.writerow(
