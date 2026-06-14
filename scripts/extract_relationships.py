@@ -977,6 +977,8 @@ ALIASES = {
     "萧衍": "梁武帝",
     "柴荣": "周世宗",
     "阮刻": "阮元",
+    "康熙帝": "康熙",
+    "李隆基": "唐玄宗",
     "曹子孝": "曹仁",
     "孙院长": "孙运璿",
     "齐格菲": "齐格菲尔德",
@@ -5880,6 +5882,22 @@ PERSON_RELATIONS = [
         "relation": "明初功臣/锦衣卫政治清洗",
         "weight": 4,
         "note": "同篇把蓝玉列入帮助朱元璋打天下、后来在明太祖特工政治下被清洗的功臣名单。",
+    },
+    {
+        "book": "读史指南",
+        "source": "朱元璋",
+        "target": "傅友德",
+        "relation": "明初功臣/锦衣卫政治清洗",
+        "weight": 4,
+        "note": "同篇把傅友德列入李善长、胡惟庸、蓝玉等明初功臣并列名单，作为朱元璋特工政治清洗的例证。",
+    },
+    {
+        "book": "读史指南",
+        "source": "朱元璋",
+        "target": "冯胜",
+        "relation": "明初功臣/锦衣卫政治清洗",
+        "weight": 4,
+        "note": "同篇把冯胜列入帮助朱元璋打天下、后来被清洗的明初功臣名单，补全该组政治清洗关系。",
     },
     {
         "book": "读史指南",
@@ -20989,6 +21007,9 @@ CURATED_IDENTITIES.update({
     "李之鼎": ["source_author", "research_reference", "historical_allusion", "spiritual"],
     "金简": ["public_official", "publishing", "historical_allusion", "spiritual"],
     "张廷玉": ["public_official", "academic", "source_author", "historical_allusion", "spiritual"],
+    "康熙": ["politician", "source_author", "historical_allusion", "spiritual"],
+    "雍正": ["politician", "historical_allusion", "spiritual"],
+    "唐玄宗": ["politician", "source_author", "historical_allusion", "spiritual"],
     "李光地": ["politician", "academic", "historical_allusion", "spiritual"],
     "陈昉": ["political_dissident", "historical_allusion", "spiritual"],
     "耿精忠": ["politician", "military_figure", "historical_allusion", "spiritual"],
@@ -21294,7 +21315,7 @@ DUSHI_BIBLIOGRAPHY_ROLE_SUFFIXES = (
     "等选辑", "等重修", "等辑", "等撰", "合校", "重修", "增加", "补注",
     "辑注", "集释", "集传", "集解", "章句", "解诂", "释文", "音义", "正义",
     "义疏", "纂疏", "注疏", "笺注", "传注", "校注", "补", "注", "疏",
-    "笺", "传", "解", "撰", "著", "辑", "编", "校", "刊", "订", "译", "释",
+    "笺", "传", "解", "撰", "著", "辑", "编", "校", "刊", "订", "译", "释", "等",
 )
 DUSHI_BIBLIOGRAPHY_ALIASES = {
     "陶泓景": "陶弘景",
@@ -21302,6 +21323,7 @@ DUSHI_BIBLIOGRAPHY_ALIASES = {
     "宋碗": "宋琬",
     "杨街之": "杨衒之",
     "唐何超": "何超",
+    "桓宽清": "桓宽",
 }
 DUSHI_BIBLIOGRAPHY_SKIP_NAMES = {
     "以上字形", "以上字音", "附录", "目录", "部目", "疑字", "偏旁",
@@ -21314,6 +21336,10 @@ DUSHI_BIBLIOGRAPHY_BAD_FRAGMENTS = (
     "校札", "校补", "不分", "不著", "家藏", "文星", "书局", "政府", "册",
     "卷", "部", "类", "氏", "版", "书目", "丛刊", "备要",
 )
+
+
+def is_dushi_bibliography_chapter(book: str, chapter: str) -> bool:
+    return book == "读史指南" and chapter.startswith("四部备要暨四部丛刊书目")
 
 
 BOOK_PHRASE_PEOPLE = {
@@ -26284,7 +26310,7 @@ def add_dushi_bibliography_author_hits(
     book: str,
     chapter: str,
 ) -> None:
-    if book != "读史指南" or not chapter.startswith("四部备要暨四部丛刊书目"):
+    if not is_dushi_bibliography_chapter(book, chapter):
         return
     for raw_name, ctx in iter_dushi_bibliography_authors(text):
         name = canonical_name(raw_name, ctx, book, chapter)
@@ -26382,7 +26408,10 @@ def extract_from_text(
                 or any(after.startswith(verb) for verb in POST_VERBS)
                 or bool(ROLE_PREFIX_RE.search(pre12))
             )
-            category, score, cues = score_context(name, ctx, after)
+            if is_dushi_bibliography_chapter(book, chapter):
+                category, score, cues = "mentioned", 0, []
+            else:
+                category, score, cues = score_context(name, ctx, after)
             hit = people.setdefault(name, PersonHit(name=name))
             hit.occurrences += 1
             if has_name_signal:
@@ -26520,7 +26549,7 @@ def categories_for_hit(hit: PersonHit) -> list[str]:
     for category, count in hit.categories.most_common():
         if category == "mentioned" and len(hit.categories) > 1:
             continue
-        if count >= minimum or category == primary_category(hit):
+        if category == "source_author" or count >= minimum or category == primary_category(hit):
             categories.append(category)
     if hit.name in FOREIGN_AND_HISTORICAL and "spiritual" not in categories:
         categories.append("spiritual")
@@ -26543,6 +26572,8 @@ def primary_category(hit: PersonHit) -> str:
         weighted["spiritual"] += 4
     if hit.relevant_occurrences == 0:
         return "mentioned"
+    if weighted.get("source_author") and weighted.most_common(1)[0][0] == "mentioned":
+        return "source_author"
     return weighted.most_common(1)[0][0]
 
 
