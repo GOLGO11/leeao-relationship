@@ -1,0 +1,83 @@
+《李敖秘密书房》round2：低频尾部与特殊身份边界
+
+时间：2026-06-17
+
+本轮范围
+继续处理：《李敖秘密书房》
+本轮重点：低频尾部人物、现实来宾误入神交、小说复合人物、遗产案当事人、科学/宗教边界。
+
+本轮结果
+单本临时重抽：1186 人，107 章。
+正式总表重建：81 本，4535 章，8927 人，24289 条身份边，2289 条人物关系边。
+正式本书索引：《李敖秘密书房》107 章，1408 人。
+
+本轮重点校正
+1. 于白侬
+   原问题：被分到 prison_admin / spiritual / teacher_student，容易误导为监狱行政人员或神交引用。
+   校正：medical_care / social_case / human_rights / meeting / source_support。
+   理由：原文是节目来宾，谈陈进兴、少年矫正、心理辅导、美国监狱与青少年犯罪，不是监狱行政人员，也不是李敖神交人物。
+
+2. 苏伟贞
+   原问题：被误标 spiritual。
+   校正：source_author / arts_music / meeting / public_debate。
+   理由：她在《我看张爱玲》中作为现实来宾讨论张爱玲、胡兰成、胡适、写作与资料整理，是文学/写作语境。
+
+3. 吴兆南
+   原问题：被误标 spiritual。
+   校正：arts_music / media / meeting / source_support。
+   理由：原文明确称“相声大师——吴兆南先生”，并有整集对谈，是现实来宾和曲艺人物。
+
+4. 丁乃竺
+   原问题：被误标 family / spiritual。
+   校正：arts_music / media / meeting / source_support / friendship。
+   理由：她是现实来宾，谈胡茵梦、赖声川、表演工作坊、剧场与信仰经验；信仰内容不等于把她本人归为神交人物。
+
+5. 刘义钧
+   原问题：被误标 politician / teacher_student。
+   校正：academic / source_support / meeting / public_debate。
+   理由：原文是政治评论/政治学观察的来宾语境，不是政治人物或师生关系节点。
+
+6. 黄玉娇
+   校正：politician / public_official / political_dissident / campaign_election / funding_support / friendship / public_debate。
+   理由：本书专章《一代玉娇》纪念她，写她为省议员、党外前辈政治人物，也写她借钱支持许国泰竞选。
+
+7. 陈查某
+   校正：property_finance / public_funds / victim / social_case / public_debate。
+   理由：本书出现于连战亲家、遗产税、定存单与家族财产争议语境；他是遗产案中的被侵害/被争议核心，不应只看作抽象财务节点。
+
+8. 李十力
+   原问题：混入 academic / religion。
+   校正：fictional / literary_character / plot_character / historical_allusion / political_dissident。
+   理由：原文明确说“化成一个人叫做李十力”“这个名字是我给他假设的”，李十力是《北京法源寺》里把李大钊、熊十力、董必武和普净结合出来的小说复合人物，应归虚拟人物与小说剧本人物。
+
+9. 李庆安、李庆华
+   校正：
+   - 李庆安：politician / campaign_election / meeting / public_debate
+   - 李庆华：politician / campaign_election / meeting / friendship / public_debate
+   理由：本书主要在选战、新党、退党支持宋楚瑜、李敖参选等政治语境出现。
+
+科学/宗教/神交边界
+李嗣涔复核通过：仍为 academic / academic_admin / scientist / research_reference / meeting / public_debate。
+虽然他在节目中谈特异功能、信息场、宗教字眼与人体科学实验，但他在本书中是现实科学家和节目来宾，不应被归入 spiritual。
+
+本轮技术处理
+1. 新增第二轮 CURATED_IDENTITIES 区块，和第一轮节目来宾基线分开，便于回溯。
+2. 增加少量非重复短语锚点，如“再请于白侬”“相声大师——吴兆南先生”“化成一个人叫做李十力”等。
+3. 特别撤掉“某某：”发言格式锚点，避免节目逐行发言人被重复计数。经验：冒号锚点能稳住命中，但会抬高 occurrences，不宜轻易用于整集来宾。
+
+验证
+1. scripts/extract_relationships.py 通过 py_compile。
+2. data/relationship-data.js 通过 node --check。
+3. assets/app.js 通过 node --check。
+4. 正式导出已重建，CSV 表头保持完整。
+5. 复核目标人物中，以下误边已清空：
+   - 于白侬：spiritual / prison_admin / teacher_student
+   - 苏伟贞：spiritual
+   - 吴兆南：spiritual
+   - 丁乃竺：spiritual / family
+   - 刘义钧：politician / teacher_student
+   - 李十力：academic / religion
+
+下一轮建议
+做《李敖秘密书房》第三轮：政治选战与弊案关系边专项。
+重点不是再大面积清人物，而是补强人物关系边：林瑞图、陈查某、陈清忠、陈弘元、连战、连惠心、陈周淑华、周百炼；以及李庆华、李庆安、宋楚瑜、王建煊、新党人物之间的退党/站台/选战关系。

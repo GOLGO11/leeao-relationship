@@ -1,0 +1,62 @@
+《李敖秘密书房》round1：节目来宾基线与高频残片清理
+
+时间：2026-06-17
+
+本轮范围
+源目录：《大李敖全集5.0》（wjm_tcy版）分章节\010.节目演讲类\003.李敖秘密书房
+处理章节：107 章
+策略：只处理本书，不使用 --all；先建立节目类文本的人物基线，再同步正式总表和网页数据。
+
+本轮结果
+单本临时重抽：1187 人。
+正式总表重建：81 本，4535 章，8927 人，24272 条身份边，2289 条人物关系边。
+正式本书索引：《李敖秘密书房》107 章，1408 人。
+
+说明：单本临时抽取人数低于正式本书索引人数，是因为正式总表重建时会把跨书已经确认的强信号人物带回对应书目切片；这不是把后续书籍混进本书，而是总表环境下的跨书归并结果。
+
+本轮新增校正规则
+1. 别名去重
+   - 黄珊 -> 黄珊珊
+   - 正式数据中“黄珊”已不再作为独立人物节点出现。
+
+2. 节目来宾和对谈者身份固定
+   - 施寄青：source_author / human_rights / friendship / meeting / public_debate
+   - 尹章义：academic / friendship / meeting / source_support / public_debate
+   - 柯俊雄：media / arts_music / politician / meeting / public_debate
+   - 陈敏明：media / arts_music / meeting / source_support
+   - 郝广才：publishing / source_author / media / meeting / public_debate
+   - 黄珊珊：lawyer_counsel / politician / meeting / public_debate
+   - 李嗣涔：academic / academic_admin / scientist / research_reference / meeting / public_debate
+   - 陶传正：media / arts_music / meeting / public_debate
+   - 林正丰：source_support / meeting / public_debate
+   - 公孙策：media / source_author / meeting / public_debate
+   - 殷乃平：academic / property_finance / source_support / meeting / public_debate
+   - 蔡敏：arts_music / academic / meeting
+   - 陈丰伟：medical_care / media / publishing / meeting / source_author
+   - 徐宗懋：media / source_support / meeting / source_author / historical_allusion
+   - 冯翊纲：arts_music / media / meeting / source_author
+
+3. 本书专用短语锚点
+   - “请来我的好朋友施寄青”“尹章义教授”“金马奖影帝——柯俊雄”“台大教务长李嗣涔教授”“中国时报的副总主笔徐宗懋”等节目口播格式，直接锚定人物节点。
+   - “黄珊珊：”“冯翊纲：”“陶传正：”等对谈发言格式，作为本书强上下文使用。
+
+4. 高频非人物残片清理
+   - 已排除：那样子、文学家、家注意、家知道、越来越、那如果、曾经讲、相声、房搜秘、房泄密、房秘密、文茜干、敖耍赖、家觉得、时候有、时候看等。
+   - 这些词多来自节目口语、题名截断或发言格式，不应进入人物图。
+
+验证
+1. scripts/extract_relationships.py 通过 py_compile。
+2. data/relationship-data.js 通过 node --check。
+3. assets/app.js 通过 node --check。
+4. exports/li-ao-relationships.csv 表头保持完整字段：
+   姓名,分类,主分类,可信度,出现次数,相关出现,涉及书数,涉及章节数,主要书目,线索
+5. exports/li-ao-relationships.txt 已更新为纯文本导出，并显示 81 本、4535 章、8927 人。
+6. by-book-index.txt 已出现《李敖秘密书房》条目。
+
+首轮校对经验
+节目演讲类文本的误差来源和前面的书不完全一样。它不是单纯的标题残片问题，而是“发言人冒号”“主持串场”“今天请来某某”“来宾身份介绍”会不断重复，导致一旦锚错，出现次数会被放大。因此本书优先校对高频来宾和节目格式，比一上来清全部低频尾巴更有效。
+
+下一轮建议
+做《李敖秘密书房》第二轮：低频尾部与特殊身份专项。
+重点抽查：于白侬、李十力、陈查某、丁乃竺、刘义钧、黄玉娇、苏伟贞、李庆安、李庆华、吴兆南。
+同时检查“科学/宗教/神交”边界，尤其是李嗣涔这类现实科学家谈超自然议题时，不应被误标成神交人物。

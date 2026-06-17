@@ -5883,6 +5883,206 @@ CATEGORY_LABELS = {
 
 PERSON_RELATIONS = [
     {
+        "book": "李敖秘密书房",
+        "source": "林瑞图",
+        "target": "陈查某",
+        "relation": "遗产案追查/安葬承诺",
+        "weight": 4,
+        "note": "《连战的亲家是小偷》叙述林瑞图在陈查某棺木前承诺追查遗产疑被侵占问题，并称由他协助陈查某入土为安，是本书遗产案线的核心爆料者关系。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈清忠",
+        "relation": "父子/遗产盗领指控",
+        "weight": 4,
+        "note": "节目称陈清忠为陈查某第三公子，并围绕定存单、遗产税与盗领指控展开；本边只记录《李敖秘密书房》文本中的指控语境。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈清忠",
+        "target": "陈弘元",
+        "relation": "父子/股东会证言线",
+        "weight": 4,
+        "note": "《连战的女婿是白贼七》称陈弘元为陈清忠独子，并以临时股东会签名、出入境时间等材料质疑其证言，是遗产案中父子并列的资料线。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈弘元",
+        "target": "连惠心",
+        "relation": "夫妻/连战女婿线",
+        "weight": 4,
+        "note": "节目反复以“连战女婿陈弘元”“连惠心的丈夫”描述二人关系，并把该婚姻关系放进陈查某遗产与权贵特权质疑中。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "连战",
+        "target": "连惠心",
+        "relation": "父女/亲家弊案政治语境",
+        "weight": 3,
+        "note": "节目把连惠心称为连战女儿，并由她与陈弘元婚姻引出连战亲家、公公、女婿等政治家族语境。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈清忠",
+        "target": "连战",
+        "relation": "亲家/特权质疑",
+        "weight": 4,
+        "note": "林瑞图在节目中称陈清忠为连战亲家，并质疑陈查某遗产税与司法处理受到连战权势影响；本边保存文本中的政治质疑，不作事实裁断。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈周淑华",
+        "target": "周百炼",
+        "relation": "父女/监察院背景",
+        "weight": 3,
+        "note": "节目称陈周淑华为监察院院长周百炼的女儿，并将这一亲属背景放入遗产案权贵网络说明中。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈清忠",
+        "target": "陈周淑华",
+        "relation": "夫妻/遗产案共犯指称",
+        "weight": 3,
+        "note": "节目称陈周淑华为陈清忠太太，并把二人列入陈查某遗产案的所谓窃盗集团关系图；本边仅记录文本指称语境。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈建忠",
+        "relation": "父子/遗产税申报线",
+        "weight": 3,
+        "note": "节目介绍陈查某子女时称大公子为陈建忠，并提到大儿子与大女儿、二儿子等遗族申报和追索遗产税问题。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈延忠",
+        "relation": "父子/遗产案家族名单",
+        "weight": 2,
+        "note": "《连战的亲家是小偷》介绍陈查某子女时称二公子为陈延忠，作为遗产案家族结构的一环。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈瑞珠",
+        "relation": "父女/股东会出席争议",
+        "weight": 3,
+        "note": "节目称陈瑞珠为陈查某小女儿，并以她人在美国却出现在股东会议记录中的说法，作为伪造会议记录的质疑材料。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈育惠",
+        "relation": "父女/遗产案家族名单",
+        "weight": 2,
+        "note": "《连战的亲家是小偷》称陈查某女儿之一为张陈育惠；《连战的女婿是白贼七》又把陈育惠列入股东会出席记录争议，记录为文本中的家族结构线。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈查某",
+        "target": "陈石",
+        "relation": "堂亲/股东会出席争议",
+        "weight": 2,
+        "note": "节目称陈石为陈查某堂弟，并把他列入临时股东会出席记录争议；本边只记录文本中出现的堂亲与争议名单语境。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈清忠",
+        "target": "陈怡均",
+        "relation": "父女/遗产案关系图",
+        "weight": 2,
+        "note": "《连战的女婿是白贼七》称陈怡均为陈清忠女儿，并把她列入陈查某遗产案的关系图说明。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈怡均",
+        "target": "陈张丽仙",
+        "relation": "兄嫂/遗产案关系图",
+        "weight": 2,
+        "note": "节目称陈怡均配合其兄嫂陈张丽仙，并把二人放入所谓犯罪人物关系图；本边只保留文本中的亲属称谓和关系图语境。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "陈怡均",
+        "target": "黄文壹",
+        "relation": "夫妻/荣大投资关系图",
+        "weight": 2,
+        "note": "节目称黄文壹为荣大投资股东，并说陈怡均是黄文壹太太，记录为遗产案关系图中的姻亲与资金人物线。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "周百炼",
+        "target": "周吴秋冬",
+        "relation": "夫妻/监察院背景",
+        "weight": 2,
+        "note": "节目称周吴秋冬为周百炼的太太，并将其作为陈清忠岳母放在遗产案权贵网络说明中。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "周吴秋冬",
+        "target": "陈清忠",
+        "relation": "岳母/遗产案关系图",
+        "weight": 2,
+        "note": "节目称周吴秋冬为陈清忠岳母，记录为遗产案关系图中的姻亲背景；不据此扩展文本外事实。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "王荣周",
+        "target": "陈查某",
+        "relation": "国税局税单/遗产税处理线",
+        "weight": 3,
+        "note": "节目称王荣周曾任台北市国税局局长、后为财政部次长，并把他放在陈查某遗产税单处理争议中，记录为行政处理线。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "李庆华",
+        "target": "宋楚瑜",
+        "relation": "退党站台/集中选票支持",
+        "weight": 4,
+        "note": "《选战兵分路》系列称李庆华为尊重新党党章退出新党，并公开支持宋楚瑜，以集中反台独选票。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "李庆安",
+        "target": "宋楚瑜",
+        "relation": "脱离国民党/支持宋楚瑜",
+        "weight": 4,
+        "note": "节目写李庆安脱离国民党、支持宋楚瑜，并在选后现场谈集中选票、组党和国民党不民主问题。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "李庆华",
+        "target": "李庆安",
+        "relation": "兄妹/双双脱党支持宋楚瑜",
+        "weight": 3,
+        "note": "节目明确说李家兄妹李庆华、李庆安在选战最后关头分别脱离新党和国民党，站出来支持宋楚瑜。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "王建煊",
+        "target": "李庆华",
+        "relation": "退党支持宋楚瑜争议",
+        "weight": 3,
+        "note": "节目批评王建煊看不出李庆华退党与支持宋楚瑜的关系，并围绕新党党章第四条、党员支持本党候选人义务展开争论。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "黄玉娇",
+        "target": "许国泰",
+        "relation": "借款助选/党外情义",
+        "weight": 3,
+        "note": "《一代玉娇》写李敖请黄玉娇借一百万元给许国泰助选，后来许国泰未当选也未还款，记录为党外政治与私人担保线。",
+    },
+    {
+        "book": "李敖秘密书房",
+        "source": "黄玉娇",
+        "target": "李登辉",
+        "relation": "省议会质询/政治对峙",
+        "weight": 4,
+        "note": "《一代玉娇》播放黄玉娇任省议员时质询省主席李登辉的画面，李敖以此对比李登辉掌权前后的政治形象。",
+    },
+    {
         "book": "挑战李敖",
         "source": "李登辉",
         "target": "苏志诚",
@@ -29348,6 +29548,7 @@ ALIASES.update({
     "虚一": "胡虚一",
     "虚一老兄": "胡虚一",
     "胡参谋": "胡虚一",
+    "黄珊": "黄珊珊",
     "苏洪女史": "苏洪月娇",
     "苏洪女士": "苏洪月娇",
     "何王剑芬": "王剑芬",
@@ -29861,8 +30062,121 @@ CURATED_IDENTITIES.update({
     "乔治·斯科特": ["arts_music", "historical_allusion", "spiritual"],
 })
 
+CURATED_IDENTITIES.update({
+    # 《李敖秘密书房》首轮：节目来宾、主题人物和高频对谈者，先固定现实身份，避免被节目主题词带偏。
+    "施寄青": ["source_author", "human_rights", "friendship", "meeting", "public_debate"],
+    "尹章义": ["academic", "friendship", "meeting", "source_support", "public_debate"],
+    "柯俊雄": ["media", "arts_music", "politician", "meeting", "public_debate"],
+    "陈敏明": ["media", "arts_music", "meeting", "source_support"],
+    "郝广才": ["publishing", "source_author", "media", "meeting", "public_debate"],
+    "黄珊珊": ["lawyer_counsel", "politician", "meeting", "public_debate"],
+    "李嗣涔": ["academic", "academic_admin", "scientist", "research_reference", "meeting", "public_debate"],
+    "陶传正": ["media", "arts_music", "meeting", "public_debate"],
+    "林正丰": ["source_support", "meeting", "public_debate"],
+    "公孙策": ["media", "source_author", "meeting", "public_debate"],
+    "殷乃平": ["academic", "property_finance", "source_support", "meeting", "public_debate"],
+    "蔡敏": ["arts_music", "academic", "meeting"],
+    "陈丰伟": ["medical_care", "media", "publishing", "meeting", "source_author"],
+    "徐宗懋": ["media", "source_support", "meeting", "source_author", "historical_allusion"],
+    "冯翊纲": ["arts_music", "media", "meeting", "source_author"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《李敖秘密书房》第二轮：低频尾部、特殊来宾和小说人物边界，修正“神交/泛政治/监狱行政”误喷。
+    "于白侬": ["medical_care", "social_case", "human_rights", "meeting", "source_support"],
+    "苏伟贞": ["source_author", "arts_music", "meeting", "public_debate"],
+    "吴兆南": ["arts_music", "media", "meeting", "source_support"],
+    "丁乃竺": ["arts_music", "media", "meeting", "source_support", "friendship"],
+    "刘义钧": ["academic", "source_support", "meeting", "public_debate"],
+    "黄玉娇": ["politician", "public_official", "political_dissident", "campaign_election", "funding_support", "friendship", "public_debate"],
+    "陈查某": ["property_finance", "public_funds", "victim", "social_case", "public_debate"],
+    "李十力": ["fictional", "literary_character", "plot_character", "historical_allusion", "political_dissident"],
+    "李庆安": ["politician", "campaign_election", "meeting", "public_debate"],
+    "李庆华": ["politician", "campaign_election", "meeting", "friendship", "public_debate"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《李敖秘密书房》第三轮：遗产税/弊案关系边所需的亲属、权贵与行政节点。
+    "陈清忠": ["family", "property_finance", "social_case", "public_debate"],
+    "陈弘元": ["family", "property_finance", "social_case", "public_debate"],
+    "连惠心": ["family", "property_finance", "social_case", "public_debate"],
+    "陈周淑华": ["family", "property_finance", "social_case", "public_debate"],
+    "周百炼": ["public_official", "family", "property_finance", "public_debate"],
+    "陈建忠": ["family", "property_finance", "social_case"],
+    "陈延忠": ["family", "property_finance", "social_case"],
+    "陈瑞珠": ["family", "property_finance", "social_case"],
+    "陈怡均": ["family", "property_finance", "social_case"],
+    "陈育惠": ["family", "property_finance", "social_case"],
+    "陈张丽仙": ["family", "property_finance", "social_case"],
+    "周吴秋冬": ["family", "property_finance", "social_case"],
+    "陈石": ["family", "property_finance", "social_case"],
+    "黄文壹": ["property_finance", "social_case", "public_debate"],
+    "王荣周": ["public_official", "property_finance", "source_support", "public_debate"],
+    "许国泰": ["campaign_election", "political_dissident", "funding_support", "public_debate"],
+})
+
+ALIASES.update({
+    # 《李敖秘密书房》closeout 前检查：同一遗产案关系图中的异写和改名。
+    "陈怡君": "陈怡均",
+    "陈龙": "陈弘元",
+})
+
 
 BOOK_PHRASE_PEOPLE = {
+    "李敖秘密书房": {
+        # 首轮：节目口播中的明确来宾、主持与强上下文人物，避免被标题半截和语气词抢占。
+        "施寄青，今天是反客为主": ("施寄青",),
+        "请来我的好朋友施寄青": ("施寄青",),
+        "尹章义教授": ("尹章义",),
+        "金马奖影帝——柯俊雄": ("柯俊雄",),
+        "陈敏明：空中摄影": ("陈敏明",),
+        "郝广才：": ("郝广才",),
+        "黄珊珊：": ("黄珊珊",),
+        "台大教务长李嗣涔教授": ("李嗣涔",),
+        "陶传正：": ("陶传正",),
+        "林正丰：": ("林正丰",),
+        "今天请来殷乃平教授": ("殷乃平",),
+        "公孙策：": ("公孙策",),
+        "今天请公孙策到我的书房": ("公孙策",),
+        "蔡敏：": ("蔡敏",),
+        "陈丰伟先生": ("陈丰伟",),
+        "中国时报的副总主笔徐宗懋": ("徐宗懋",),
+        "冯翊纲：": ("冯翊纲",),
+        # 第二轮：低频来宾、小说复合人物与遗产案当事人。
+        "再请于白侬": ("于白侬",),
+        "相声大师——吴兆南先生": ("吴兆南",),
+        "上次请的来宾丁乃竺": ("丁乃竺",),
+        "她的名字叫做黄玉娇": ("黄玉娇",),
+        "陈查某的遗产": ("陈查某",),
+        "陈查某这个人": ("陈查某",),
+        "化成一个人叫做李十力": ("李十力",),
+        "普净，就是李十力": ("李十力",),
+        "名字是我给他假设的": ("李十力",),
+        "欢迎你，庆安": ("李庆安",),
+        "新党党主席李庆华": ("李庆华",),
+        "李庆华脱离了新党": ("李庆华",),
+        # 第三轮：遗产税/弊案线和选战退党关系边所需节点。
+        "陈查某的第三公子陈清忠": ("陈查某", "陈清忠"),
+        "陈清忠的儿子": ("陈清忠", "陈弘元"),
+        "连战的女婿陈弘元": ("连战", "陈弘元"),
+        "连惠心的丈夫": ("连惠心", "陈弘元"),
+        "陈周淑华是监察院院长周百炼的女儿": ("陈周淑华", "周百炼"),
+        "陈清忠的太太陈周淑华": ("陈清忠", "陈周淑华"),
+        "大公子叫陈建忠，二公子陈延忠，三公子叫陈清忠": ("陈建忠", "陈延忠", "陈清忠", "陈查某"),
+        "小女儿陈瑞珠": ("陈瑞珠", "陈查某"),
+        "一个张陈育惠": ("陈育惠", "陈查某"),
+        "大女儿陈育惠，小女儿陈瑞珠": ("陈育惠", "陈瑞珠", "陈查某"),
+        "陈张丽仙，还有伪造陈查某的堂弟陈石": ("陈张丽仙", "陈石", "陈查某"),
+        "周吴秋冬是周百炼监察院院长的太太": ("周吴秋冬", "周百炼"),
+        "陈清忠另外一个女儿叫陈怡均": ("陈怡均", "陈清忠"),
+        "陈怡君是陈清忠的女儿": ("陈怡均", "陈清忠"),
+        "陈怡均是黄文壹的太太": ("陈怡均", "黄文壹"),
+        "陈龙和后来改名陈弘元": ("陈弘元",),
+        "财政部次长王荣周": ("王荣周",),
+        "阿娇姐请你借一百万给许国泰": ("黄玉娇", "许国泰"),
+        "李庆安脱离了国民党": ("李庆安",),
+        "王建煊错了": ("王建煊", "李庆华"),
+    },
     "挑战李敖": {
         # 首轮：节目稿中的明确来宾、资料当事人和强上下文人物，避免被口语碎片盖过。
         "总统府内部密件": ("苏志诚", "李登辉"),
@@ -34687,6 +35001,26 @@ STOP_NAMES.update({
 })
 
 BOOK_SKIP_NAMES = {
+    "李敖秘密书房": {
+        # 首轮：节目标题、口语套语、身份泛称和被姓名正则切出的非人物残片。
+        "李敖秘密", "秘密书房", "书房搜", "书房搜秘", "房搜秘", "房泄密", "房秘密",
+        "敖耍赖", "文茜干", "党打手", "政党打手",
+        "那样子", "文学家", "家注意", "家知道", "越来越", "那如果", "曾经讲",
+        "相声", "家想想", "大家看", "观众朋友", "主持人", "旁白", "特别来宾",
+        "家觉得", "时候有", "时候看",
+        "习专家", "万法郎", "东北做", "乐吃饭", "于代理", "于商品", "于鸟来",
+        "从法务", "任联合", "党主任", "党文宣", "全体开", "公司许", "公司请",
+        "公孙策到", "公家有", "公正人", "养儿子", "农夫去", "凌峰吵", "凌峰已",
+        "凌峰讲", "利音乐", "别人作", "别人共", "别人出", "别人听", "成主席",
+        "文坛再", "文献才", "文茜打", "方只要", "方胜诉", "方豪方", "时保障",
+        "时候寄", "时候选", "时写成", "时又出", "时推广", "时有关", "时校正",
+        "时根据", "时监督", "时要努", "时间暂", "明朝守", "明立场", "曹操作",
+        "权力全", "权威抵", "权威来",
+        # closeout 前检查：高频人物带出的句读残片、事件名和普通词。
+        "师胡适", "胡适做", "连战做", "连战先", "孔子讲", "孔子所",
+        "凤梨宴", "高宗教", "宗教怎", "宗教商", "宗教", "张群同",
+        "那边去", "边去", "相关性", "相关", "那李远", "李远",
+    },
     "挑战李敖": {
         # 首轮：节目口语、CALL IN 套语、阵营/机构词、金额和标题半截，不作为人物节点。
         "家注意", "家知道", "家听", "那如果", "李老师", "查出来",
@@ -35593,6 +35927,11 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
             return "证严法师"
         if "圣严法师" in ctx:
             return "圣严法师"
+    if book == "李敖秘密书房":
+        if raw_name == "黄珊":
+            return "黄珊珊"
+        if raw_name == "宗懋" and "徐宗懋" in ctx:
+            return "徐宗懋"
     if book == "挑战李敖":
         if raw_name == "严法师" and "证严法师" in ctx:
             return "证严法师"
