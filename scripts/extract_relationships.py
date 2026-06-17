@@ -5872,6 +5872,118 @@ CATEGORY_LABELS = {
 
 PERSON_RELATIONS = [
     {
+        "book": "李敖笑傲江湖",
+        "source": "钱学森",
+        "target": "金波尔",
+        "relation": "赴美受阻/海军部次长告知线",
+        "weight": 4,
+        "note": "《中国飞弹之父——钱学森》写钱学森离美前向海军部次长金波尔告知遭遇，随后金波尔通知移民局与FBI，成为钱学森被阻止离境的关键叙述节点。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "钱学森",
+        "target": "傅建中",
+        "relation": "时报文章/节目批评对象",
+        "weight": 3,
+        "note": "同集以《中国时报》傅建中关于钱学森的长文为靶子，孟绝子与李敖围绕傅文立场和资料展开批评。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "郁慕明",
+        "target": "赵宁",
+        "relation": "《秋海棠》共同被告/和解",
+        "weight": 5,
+        "note": "《李敖与郁慕明》明写郁慕明为《秋海棠》发行人、赵宁为社长兼总编辑，二人因诽谤李敖案共同成为被告并与李敖和解。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "郁慕明",
+        "target": "郁刘琦",
+        "relation": "夫妻/核稿责任证词",
+        "weight": 3,
+        "note": "同集引用判决理由称《秋海棠》第十三期文章由郁慕明妻刘琦校阅，刘琦供证成为法院认定郁慕明未核阅的依据之一。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "郁慕明",
+        "target": "高忠信",
+        "relation": "助选/未核稿辩解",
+        "weight": 3,
+        "note": "同集称郁慕明以忙于替高忠信竞选立委为由，辩称未介入《秋海棠》该期文章。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "叶圣康",
+        "target": "李敖",
+        "relation": "四季出版社见证/反证侵占指控",
+        "weight": 4,
+        "note": "同集写四季出版社老板叶圣康在美国出具律师见证，说明李敖没有霸占四季财产，反而曾为四季倒账受损。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "陈晓林",
+        "target": "张坤山",
+        "relation": "和解见证/居中调解",
+        "weight": 3,
+        "note": "《李敖与郁慕明》公布和解契约书，写陈晓林、张坤山居中调解见证郁慕明、赵宁、李敖的和解。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "李锦丰",
+        "target": "张桂贞",
+        "relation": "禁书没收案/最高法院判决",
+        "weight": 3,
+        "note": "《法官怕什么？》列李锦丰等最高法院法官曾判台中市政府胜诉，牵涉张桂贞告台中市政府禁书没收案。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "范秉阁",
+        "target": "张桂贞",
+        "relation": "禁书没收案/前后判决转变",
+        "weight": 4,
+        "note": "同集特别指出范秉阁先前参与判张桂贞败诉，后来任庭长时又判张桂贞胜诉，作为法官思想转变例子。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "李炫德",
+        "target": "汪荣祖",
+        "relation": "汪老太爷土地案/裁判费争议",
+        "weight": 3,
+        "note": "同集围绕汪荣祖父亲的高雄土地重划案，写地院法官李炫德要求提高裁判费，成为李敖批评司法黑暗的例子。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "李琼荫",
+        "target": "汪荣祖",
+        "relation": "汪老太爷土地案/承审法官",
+        "weight": 3,
+        "note": "同集写汪老太爷案发回后由庭长李琼荫、陪审法官高金枝、受命法官林健彦审理，李敖据此观察司法是否进步。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "张乐平",
+        "target": "三毛（漫画人物）",
+        "relation": "漫画创作/流浪儿童形象",
+        "weight": 5,
+        "note": "《三毛流浪记》追述张乐平因上海街头难童而创作《三毛流浪记》，漫画三毛在本书中应与作家三毛分开。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "三毛",
+        "target": "平鑫涛",
+        "relation": "皇冠饭局/第一次见李敖",
+        "weight": 3,
+        "note": "同集写李敖第一次出狱后，皇冠老板平鑫涛请他吃饭并邀作家三毛同席，是李敖与作家三毛的现实接触场景。",
+    },
+    {
+        "book": "李敖笑傲江湖",
+        "source": "三毛",
+        "target": "史怀哲",
+        "relation": "非洲援助自比/李敖质疑",
+        "weight": 2,
+        "note": "同集写作家三毛称要像史怀哲到非洲援助黑人小孩，李敖则从黄皮肤儿童与退路问题质疑这一自比。",
+    },
+    {
         "book": "中国迷信新研",
         "source": "慈禧",
         "target": "慈安太后",
@@ -7958,6 +8070,502 @@ PERSON_RELATIONS = [
         "relation": "夫妻/夫病割股案",
         "weight": 2,
         "note": "《蒙城县志》条称丁氏为李耀妻，为夫病危割股疗之。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "周越",
+        "target": "王著",
+        "relation": "题跋/《王著千文跋》存世线索",
+        "weight": 5,
+        "note": "《中国艺术史一个断层的重建》以《王著书千文真迹》卷后周越跋为核心，重建宋代书法史断层。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "黄庭坚",
+        "target": "周越",
+        "relation": "师承/早年学书二十年",
+        "weight": 5,
+        "note": "文中多次引黄庭坚自述早年以周越为师，并由此论周越在五代至宋四家之间的承接地位。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "米芾",
+        "target": "周越",
+        "relation": "书法评价/宋人论周越书风",
+        "weight": 4,
+        "note": "《周越墨迹研究》序及正文引米芾评周越书风，用来说明周越虽遭俗书之评，却有书史位置。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "蔡襄",
+        "target": "周越",
+        "relation": "师承争议/是否曾学周越",
+        "weight": 4,
+        "note": "书中专设“蔡襄是否学周越书”一节，辨析章惇、葛立方、刘克庄等对蔡襄与周越关系的不同说法。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "秦孝仪",
+        "target": "周越",
+        "relation": "故宫出版争议/周越墨迹缺席",
+        "weight": 5,
+        "note": "李敖质询秦孝仪，指出台北故宫多种法书出版品收北宋书家却无周越真迹，并据此批评故宫判断与出版水准。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "秦孝仪",
+        "target": "李敖",
+        "relation": "公共质询/故宫院长答辩对象",
+        "weight": 5,
+        "note": "《质询秦孝仪先生》以李敖对秦孝仪的二十项质询为主体，涉及故宫藏品、出版、行政与人事争议。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "杨西崑",
+        "target": "秦孝仪",
+        "relation": "洽购转介/周越墨迹未获看件",
+        "weight": 4,
+        "note": "质询文字写杨西崑大使曾洽请秦孝仪把握周越遗品机会，但秦孝仪“看都不看、一口回绝”。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "傅申",
+        "target": "周越",
+        "relation": "学术著述/周越真迹难觅脚注",
+        "weight": 4,
+        "note": "李敖引用傅申书法史著作，说明专精书法史者也只能在脚注中谈周越真迹罕见。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "杨仁恺",
+        "target": "王著",
+        "relation": "国宝沉浮/《王著千文》毁失线索",
+        "weight": 4,
+        "note": "文中借杨仁恺《国宝沉浮录》追溯《王著千文》从清宫旧藏到毁失、分裂的流传线索。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "金香蕙",
+        "target": "王著",
+        "relation": "藏品毁损/焚毁书画卷轴",
+        "weight": 4,
+        "note": "文中写金香蕙窃取并焚毁一批书画卷轴，成为《王著千文》前段毁失与周越跋独存的重要背景。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "项元汴",
+        "target": "王著",
+        "relation": "收藏题跋/明代大收藏家递藏",
+        "weight": 4,
+        "note": "《石渠宝笈》著录中保留项元汴跋与大量收藏印，李敖据此重建《王著千文》流传线索。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王裕民",
+        "target": "周越",
+        "relation": "专书研究/《周越墨迹研究》",
+        "weight": 5,
+        "note": "《〈周越墨迹研究〉序》收王裕民《周越“王著千文跋”的重要性》《周越墨迹研究》等正文，构成本书周越专项的重要文本。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "石守谦",
+        "target": "李敖",
+        "relation": "拜观建议/促成周越论文",
+        "weight": 4,
+        "note": "李敖在注中说台湾大学艺术史研究所所长石守谦到家中拜观周越真迹，惊叹赞美并建议他写论文。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "陈兆基",
+        "target": "李敖",
+        "relation": "史料代查/周越论文协作",
+        "weight": 5,
+        "note": "李敖说明《周越墨迹研究》成文过程中，好友陈兆基遍访图书馆代查史料，用力独多。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "汪荣祖",
+        "target": "李敖",
+        "relation": "留副译摘/论文协助",
+        "weight": 4,
+        "note": "李敖写初稿曾送汪荣祖留副，增补后又由汪荣祖代劳译成英文摘要。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "冒襄",
+        "target": "董小宛",
+        "relation": "夫妻/合璧卷与悼亡书写",
+        "weight": 5,
+        "note": "《冒巢民董小宛夫妇合璧卷真迹神品》说明以冒襄与董小宛的生离死别、作品合卷为主线。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "沈尹默",
+        "target": "陈独秀",
+        "relation": "书法评价/新文化同人批评",
+        "weight": 3,
+        "note": "《李敖所藏中国美术精品图说》称沈尹默书法虽被陈独秀奚落太俗，但李敖仍推重其神韵。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "张大千",
+        "target": "陈方",
+        "relation": "画竹评价/当代第一",
+        "weight": 4,
+        "note": "图说中写陈方工于画竹，张大千称赞其画竹成就为当代第一。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王雪涛",
+        "target": "齐白石",
+        "relation": "师承超越/花鸟画",
+        "weight": 3,
+        "note": "李敖在藏画图说中称王雪涛画风许多地方超迈老师齐白石。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "李可染",
+        "target": "齐白石",
+        "relation": "师承/拜师学画",
+        "weight": 3,
+        "note": "图说写李可染曾拜齐白石、黄宾虹为师，并由此改变传统山水人物技法。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "高信疆",
+        "target": "李敖",
+        "relation": "赠画/《晨雾》勾起旧事",
+        "weight": 5,
+        "note": "图说写高信疆在大陆购得孙旭章《晨雾》送给李敖，画中人恰似胡茵梦。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "高信疆",
+        "target": "胡茵梦",
+        "relation": "婚礼证人/旧事触媒",
+        "weight": 4,
+        "note": "同段说明高信疆是李敖、胡茵梦结婚时的证人，十四年后以一画触发往事。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "席德进",
+        "target": "胡茵梦",
+        "relation": "当场素描/人物画对象",
+        "weight": 4,
+        "note": "图说写席德进1980年当场素描胡茵梦，并即席送给李敖。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "席德进",
+        "target": "李敖",
+        "relation": "赠画/素描留藏",
+        "weight": 4,
+        "note": "席德进素描胡茵梦后即席送给李敖，后来成为李敖藏品说明中的现实交往线索。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "庄严",
+        "target": "李敖",
+        "relation": "三路世交/书信与墨迹",
+        "weight": 5,
+        "note": "图说写庄严与李敖父亲北大同学、庄严太太与李敖母亲同学、庄严儿子又与李敖同学，并曾给中学时代的李敖写信写字。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "许地山",
+        "target": "李敖",
+        "relation": "书法论引用/残稿重述",
+        "weight": 3,
+        "note": "《许地山论书法》由李敖引述许地山《中国文字的将来》残稿中关于书法艺术性的观点。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "周越",
+        "target": "范宽",
+        "relation": "收藏印鉴/《谿山行旅图》断代旁证",
+        "weight": 4,
+        "note": "《质询秦孝仪先生》以范宽《谿山行旅图》上“忠孝之家”印为旁证，追问周越跋卷中同类印鉴的判读。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "高士奇",
+        "target": "周越",
+        "relation": "鉴藏印/忠孝之家印归属",
+        "weight": 4,
+        "note": "李敖质疑故宫把“忠孝之家”印轻判给高士奇，要求据印鉴源流重新解释周越墨迹递藏。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "钱勰",
+        "target": "周越",
+        "relation": "收藏印鉴/忠孝之家主人考",
+        "weight": 5,
+        "note": "书中集中考证钱勰字穆父及其“忠孝之家”印，作为周越《王著千文跋》传承判断的关键。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "贾似道",
+        "target": "王著",
+        "relation": "递藏/秋壑图书印",
+        "weight": 4,
+        "note": "李敖在递藏链中列出贾似道“秋壑图书”等收藏印，说明《王著千文》卷曾经宋元名藏家递藏。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "张金界奴",
+        "target": "王著",
+        "relation": "递藏/张氏珍玩印",
+        "weight": 4,
+        "note": "《质询秦孝仪先生》将张金界奴列入《王著千文》递藏链，并以其收藏印连接元代流传线索。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "那志良",
+        "target": "项元汴",
+        "relation": "统计引证/项氏收藏印",
+        "weight": 3,
+        "note": "李敖引用那志良关于项元汴收藏印数量的统计，说明项氏钤印习惯与书画递藏判断有关。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "姜绍书",
+        "target": "项元汴",
+        "relation": "文献批评/钤印标价习气",
+        "weight": 3,
+        "note": "书中引姜绍书批评项元汴在藏画上到处钤印、标价，作为讨论项氏收藏印的文献背景。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王连起",
+        "target": "赵孟頫",
+        "relation": "鉴定论文/书画真伪考",
+        "weight": 3,
+        "note": "李敖提及王连起《赵孟頫书画真伪的鉴考问题》，用来对照故宫相关鉴定与出版说明。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "徐邦达",
+        "target": "周昉",
+        "relation": "断代意见/《调婴图》归属",
+        "weight": 3,
+        "note": "书中写罗家伦夫人张维桢捐赠展中周昉《调婴图》的断代判断，并列徐邦达与杨仁恺等意见。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "钱穆",
+        "target": "傅乐成",
+        "relation": "史学引证/政事堂误读对照",
+        "weight": 3,
+        "note": "李敖批评故宫关于宋代政事堂的说明，指出其引钱穆、傅乐成等通史材料仍有制度误读。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "蔡卞",
+        "target": "蔡京",
+        "relation": "题跋并列/宋徽宗朝书画政治",
+        "weight": 3,
+        "note": "故宫藏品说明中涉及蔡京、蔡卞题跋，李敖借二蔡并列追问书画题跋与政治身份的判读。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "谢聪敏",
+        "target": "秦孝仪",
+        "relation": "书面质询/故宫承认手民之误",
+        "weight": 4,
+        "note": "李敖透过立法委员谢聪敏书面质询，使故宫对周越跋文相关错误作出“手民之误”等答复。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王柏龄",
+        "target": "何应钦",
+        "relation": "照片篡改/黄埔史料出局者",
+        "weight": 3,
+        "note": "《质询秦孝仪先生》举黄埔照片中何应钦、王柏龄被出局一事，讽刺政治性史料剪裁。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "刘墉",
+        "target": "伊秉绶",
+        "relation": "书法通信/清代书家往还",
+        "weight": 3,
+        "note": "《李敖所藏中国美术精品图说》列刘墉写给伊秉绶的信，作为清代书法家交游与藏品说明的一部分。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "戈仙舟",
+        "target": "刘墉",
+        "relation": "师生/清代书法家门人",
+        "weight": 3,
+        "note": "图说中说明戈仙舟为刘墉学生，并联系翁方纲姻亲关系；首轮曾误作残片，本轮恢复为人物。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "梁同书",
+        "target": "刘墉",
+        "relation": "并称/清四家书法序列",
+        "weight": 3,
+        "note": "图说列梁同书、王文治、翁方纲、刘墉等清代书家，构成藏品题跋中的书法史序列。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "安岐",
+        "target": "王著",
+        "relation": "收藏著录/《墨缘汇观》记录《王著千文》",
+        "weight": 4,
+        "note": "《中国艺术史一个断层的重建》引松泉老人即安岐《墨缘汇观录》著录《王著草书千字文卷》，补足王著、周越卷的清初递藏线。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "杨翰",
+        "target": "永瑆",
+        "relation": "书法评价/《息柯杂著》论成亲王",
+        "weight": 3,
+        "note": "《李敖所藏中国美术精品图说》引杨翰《息柯杂著》评价成亲王永瑆书法，说明其取法内府藏帖与帖学成就。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "章孝慈",
+        "target": "王庆琳",
+        "relation": "东吴邀课/历史系讨论承接",
+        "weight": 4,
+        "note": "书中写章孝慈校长登门邀请李敖到东吴，后续由历史系主任王庆琳承接论文讨论与删文风波。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王庆琳",
+        "target": "秦孝仪",
+        "relation": "删文争议/删除批秦段落",
+        "weight": 5,
+        "note": "李敖致函东吴历史系主任王庆琳，追问《周越墨迹研究》讨论会后论文删去批评秦孝仪段落一事；问卷回件中只王庆琳赞成删除。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "潘毓刚",
+        "target": "周越",
+        "relation": "转刊协助/周越论文发表",
+        "weight": 4,
+        "note": "李敖撤回论文后转交好友潘毓刚教授，由潘毓刚安排在《苏州大学学报》发表。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "翁同文",
+        "target": "周越",
+        "relation": "讨论会发言/肯定周越论文",
+        "weight": 3,
+        "note": "东吴历史系讨论会上，翁同文与蔡玫芬发言肯定李敖论文，后来成为李敖追问删文责任的现场线索。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "蔡玫芬",
+        "target": "周越",
+        "relation": "讨论会发言/肯定周越论文",
+        "weight": 3,
+        "note": "东吴历史系讨论会上，蔡玫芬与翁同文发言肯定李敖论文，显示删文并非现场学术意见的自然结果。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "欧阳玄",
+        "target": "王著",
+        "relation": "题跋递藏/《王著千文》次跋",
+        "weight": 4,
+        "note": "《周越墨迹研究》据著录说明《王著千文》首跋为周越，次跋为欧阳玄，后者跋于袁涣家中但今已不存。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "袁涣",
+        "target": "王著",
+        "relation": "收藏递藏/袁涣亨伯印",
+        "weight": 4,
+        "note": "文中据“袁涣亨伯”印和欧阳玄跋，判断《王著千文》曾归袁涣收藏。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "高承埏",
+        "target": "王著",
+        "relation": "收藏著录/明末藏书画",
+        "weight": 3,
+        "note": "《周越墨迹研究》在递藏线中说明高承埏收藏古今字画，吴其贞著录中包括《王著千文》。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "吴升",
+        "target": "王著",
+        "relation": "著录/《大观录》记录《王著千文》",
+        "weight": 4,
+        "note": "文中引吴升《大观录》详录《王著千文》及周越、欧阳玄等跋文外观，是重建递藏的重要文献。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "仲翼",
+        "target": "周越",
+        "relation": "书法并称/宋人俗书评价",
+        "weight": 3,
+        "note": "文中引苏轼、黄庭坚、陆游等语，把仲翼与周越并举为宋人批评“俗书”的对象。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "尹洙",
+        "target": "周越",
+        "relation": "同时代证言/周越官职",
+        "weight": 3,
+        "note": "《周越墨迹研究》引尹洙《书禹庙碑阴》中的“膳部员外郎周君越”，作为周越官职和年代的旁证。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "梁同书",
+        "target": "李邕",
+        "relation": "书法引语/北海笔法",
+        "weight": 3,
+        "note": "图说引梁同书谈帖学时称“李北海云”，此处将“李北海”归并为唐代书家李邕。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "向楚",
+        "target": "赵熙",
+        "relation": "门人刊遗集/香宋集整理",
+        "weight": 3,
+        "note": "《李敖所藏中国美术精品图说》写赵熙死后，门人向楚、江翊云、郭沫若、周善培等为其刊遗集。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "江翊云",
+        "target": "赵熙",
+        "relation": "门人刊遗集/香宋集整理",
+        "weight": 3,
+        "note": "赵熙条列江翊云为其门人之一，与向楚、郭沫若、周善培等共同为赵熙刊遗集。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "周善培",
+        "target": "赵熙",
+        "relation": "门人刊遗集/香宋集整理",
+        "weight": 3,
+        "note": "赵熙条列周善培为其门人之一，避免本书语境中的“周善培”被全局别名误并到李善培。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "黄昭明",
+        "target": "周越",
+        "relation": "稿件流程/周越论文缴稿协助",
+        "weight": 3,
+        "note": "《周越墨迹研究》序写李敖转请黄昭明助教询问可否延后缴定稿，成为东吴论文流程的一环。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "庄严之子（李敖同学）",
+        "target": "庄严",
+        "relation": "父子/三路世交中的同学线",
+        "weight": 3,
+        "note": "图说写庄严之子与李敖同学，与庄严、庄严太太、李敖父母的两代同学关系合成“三路世交”。",
+    },
+    {
+        "book": "中国艺术新研",
+        "source": "王迪简",
+        "target": "周越",
+        "relation": "残卷清单/小白楼法书浩劫旁证",
+        "weight": 2,
+        "note": "《周越墨迹研究》序在小白楼法书名画损毁清单中列王迪简《凌波图》，作为推测《王著千文》残裂背景的旁证。",
     },
     {
         "book": "中国现代史定论",
@@ -23012,7 +23620,14 @@ def strip_production_footer(text: str) -> str:
     positions = [text.find(marker) for marker in footer_markers if marker in text]
     if not positions:
         return text
-    return text[:min(positions)].rstrip()
+    first = min(positions)
+    line_start = text.rfind("\n", 0, first) + 1
+    line_end = text.find("\n", first)
+    if line_end >= 0:
+        post = text[line_end + 1:]
+        if re.search(r"\n[ \t　]*附录[一二三四五六七八九十0-9]", post[:800]):
+            return (text[:line_start] + post).rstrip()
+    return text[:first].rstrip()
 
 
 def strip_editorial_notes(text: str) -> str:
@@ -27489,6 +28104,197 @@ CURATED_IDENTITIES.update({
     "程氏（黄日新妻）": ["social_case", "family", "medical_care", "victim", "historical_allusion", "spiritual"],
 })
 
+ALIASES.update({
+    # 《中国艺术新研》第五轮：别号、旧著录异写与封号归并；别名保留给搜索索引，人物节点用规范名。
+    "松泉老人": "安岐",
+    "欧阳元": "欧阳玄",
+    "欧阳元长": "欧阳玄",
+    "李西台": "李建中",
+    "成亲王": "永瑆",
+})
+
+CURATED_IDENTITIES.update({
+    # 《中国艺术新研》首轮：周越墨迹、故宫质询、李敖藏画题跋与冒襄董小宛合璧卷主线。
+    "周越": ["arts_music", "source_author", "academic", "public_official", "historical_allusion", "spiritual"],
+    "王著": ["arts_music", "public_official", "historical_allusion", "spiritual"],
+    "王裕民": ["academic", "source_author", "source_support", "historical_allusion"],
+    "秦孝仪": ["academic_admin", "politician", "publishing", "publication_control", "public_debate", "historical_allusion"],
+    "张德勤": ["academic_admin", "public_official", "source_support", "historical_allusion"],
+    "杨西崑": ["public_official", "source_support", "correspondence", "historical_allusion"],
+    "傅申": ["academic", "source_author", "source_support", "historical_allusion"],
+    "杨仁恺": ["academic", "source_author", "source_support", "arts_music", "historical_allusion", "spiritual"],
+    "金香蕙": ["social_case", "historical_allusion", "spiritual"],
+    "石守谦": ["academic", "source_support", "meeting", "historical_allusion"],
+    "蔡玫芬": ["academic", "source_support", "meeting", "historical_allusion"],
+    "陈兆基": ["friendship", "source_support", "publishing", "meeting", "historical_allusion"],
+    "汪荣祖": ["academic", "source_support", "publishing", "correspondence", "meeting", "historical_allusion"],
+    "启功": ["academic", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "马宗霍": ["academic", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "松泉老人": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "安岐": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "项元汴": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "梁清标": ["arts_music", "source_support", "historical_allusion", "spiritual"],
+    "于敏中": ["public_official", "source_author", "historical_allusion", "spiritual"],
+    "欧阳元": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "裴景福": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "周起": ["public_official", "family", "historical_allusion", "spiritual"],
+    "黄斌老": ["source_author", "historical_allusion", "spiritual"],
+    "蔡襄": ["arts_music", "public_official", "source_author", "historical_allusion", "spiritual"],
+    "李建中": ["arts_music", "public_official", "historical_allusion", "spiritual"],
+    "宋绶": ["arts_music", "public_official", "historical_allusion", "spiritual"],
+    "苏舜元": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "苏舜钦": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "徐铉": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "徐锴": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "章惇": ["public_official", "source_author", "historical_allusion", "spiritual"],
+    "葛立方": ["source_author", "historical_allusion", "spiritual"],
+    "刘克庄": ["source_author", "historical_allusion", "spiritual"],
+    "冒襄": ["source_author", "arts_music", "romance", "historical_allusion", "spiritual"],
+    "董小宛": ["source_author", "arts_music", "romance", "historical_allusion", "spiritual"],
+    "董白": ["source_author", "arts_music", "romance", "historical_allusion", "spiritual"],
+    "张明弼": ["source_author", "historical_allusion", "spiritual"],
+    "吴梅村": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "陈石遗": ["source_author", "historical_allusion", "spiritual"],
+    "孟森": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "董鄂妃": ["romance", "historical_allusion", "spiritual"],
+    "林黛玉": ["fictional", "literary_character", "historical_allusion"],
+    "贾宝玉": ["fictional", "literary_character", "historical_allusion"],
+    "沈尹默": ["academic", "academic_admin", "arts_music", "source_author", "historical_allusion", "spiritual"],
+    "陈方": ["arts_music", "public_official", "historical_allusion"],
+    "马寿华": ["arts_music", "public_official", "historical_allusion"],
+    "郑曼青": ["arts_music", "academic", "historical_allusion"],
+    "张谷年": ["arts_music", "historical_allusion"],
+    "刘延涛": ["arts_music", "historical_allusion"],
+    "陶芸楼": ["arts_music", "historical_allusion"],
+    "高逸鸿": ["arts_music", "historical_allusion"],
+    "张大千": ["arts_music", "source_author", "public_debate", "historical_allusion", "spiritual"],
+    "吴昌硕": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "翁方纲": ["academic", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "永瑆": ["public_official", "arts_music", "historical_allusion", "spiritual"],
+    "王珣": ["arts_music", "source_author", "historical_allusion", "spiritual"],
+    "鲍叔牙": ["politician", "historical_allusion", "spiritual"],
+    "颜真卿": ["arts_music", "source_author", "public_official", "historical_allusion", "spiritual"],
+    "赵孟頫": ["arts_music", "source_author", "public_official", "historical_allusion", "spiritual"],
+    "黄宾虹": ["arts_music", "academic", "historical_allusion", "spiritual"],
+    "杨守敬": ["academic", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "蔡京": ["public_official", "arts_music", "historical_allusion", "spiritual"],
+    "伊秉绶": ["public_official", "arts_music", "source_author", "historical_allusion", "spiritual"],
+    "杨翰": ["publishing", "media", "correspondence", "friendship", "source_author", "arts_music", "historical_allusion"],
+    "黄昭明": ["academic", "source_support", "meeting", "historical_allusion"],
+    "谢葆真": ["family", "victim", "historical_allusion"],
+    "王雪涛": ["arts_music", "academic_admin", "historical_allusion", "spiritual"],
+    "丁衍庸": ["arts_music", "academic_admin", "source_author", "historical_allusion", "spiritual"],
+    "李可染": ["arts_music", "academic", "public_official", "historical_allusion", "spiritual"],
+    "陈淦": ["arts_music", "historical_allusion"],
+    "麦生": ["arts_music", "historical_allusion"],
+    "周懋泰": ["arts_music", "historical_allusion"],
+    "邵宇": ["arts_music", "public_official", "historical_allusion"],
+    "孙旭章": ["arts_music", "historical_allusion"],
+    "席德进": ["arts_music", "meeting", "historical_allusion"],
+    "庄严": ["academic", "academic_admin", "arts_music", "correspondence", "family", "meeting", "historical_allusion"],
+    "许地山": ["academic", "source_author", "arts_music", "historical_allusion", "spiritual"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《中国艺术新研》第二轮：补收藏递藏链、题跋来源链、故宫质询链与清代书法家群。
+    "范宽": ["arts_music", "historical_allusion", "spiritual"],
+    "高士奇": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "钱勰": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "钱惟演": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "贾似道": ["politician", "public_official", "arts_music", "historical_allusion", "spiritual"],
+    "张金界奴": ["public_official", "arts_music", "source_support", "historical_allusion", "spiritual"],
+    "张九思": ["public_official", "historical_allusion", "spiritual"],
+    "虞集": ["public_official", "source_author", "historical_allusion", "spiritual"],
+    "元文宗": ["politician", "arts_music", "historical_allusion", "spiritual"],
+    "虞世南": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "尉迟乙僧": ["arts_music", "historical_allusion", "spiritual"],
+    "那志良": ["academic", "source_author", "source_support", "historical_allusion"],
+    "姜绍书": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "王连起": ["academic", "source_author", "source_support", "arts_music", "historical_allusion"],
+    "徐邦达": ["academic", "source_author", "source_support", "arts_music", "historical_allusion", "spiritual"],
+    "张维桢": ["family", "source_support", "arts_music", "historical_allusion"],
+    "周昉": ["arts_music", "historical_allusion", "spiritual"],
+    "蔡卞": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "钱穆": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "傅乐成": ["academic", "source_author", "historical_allusion", "spiritual"],
+    "谢聪敏": ["politician", "public_debate", "source_support", "human_rights", "historical_allusion"],
+    "王柏龄": ["military_figure", "public_official", "public_debate", "historical_allusion"],
+    "刘墉": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "戈仙舟": ["arts_music", "teacher_student", "family", "historical_allusion", "spiritual"],
+    "梁同书": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "王文治": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "铁保": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "何惠鉴": ["academic", "source_author", "source_support", "arts_music", "historical_allusion"],
+    "韩侘冑": ["public_official", "arts_music", "historical_allusion", "spiritual"],
+    "巨然": ["arts_music", "religion", "historical_allusion", "spiritual"],
+    "林风眠": ["academic", "arts_music", "historical_allusion", "spiritual"],
+    "徐悲鸿": ["academic", "arts_music", "historical_allusion", "spiritual"],
+    "陆时化": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "钟寿仁": ["arts_music", "historical_allusion"],
+    "夏仲昭": ["arts_music", "historical_allusion", "spiritual"],
+    "吴仲圭": ["arts_music", "historical_allusion", "spiritual"],
+    "柯九思": ["public_official", "arts_music", "historical_allusion", "spiritual"],
+    "文同": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "褚遂良": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "李焘": ["source_author", "public_official", "historical_allusion", "spiritual"],
+    "张邦基": ["source_author", "historical_allusion", "spiritual"],
+    "王应麟": ["source_author", "public_official", "historical_allusion", "spiritual"],
+    "李宗谔": ["source_author", "public_official", "historical_allusion", "spiritual"],
+    "李成": ["arts_music", "historical_allusion", "spiritual"],
+    "王著（成象）": ["public_official", "historical_allusion", "spiritual"],
+    "李嗣真": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "杜操": ["arts_music", "historical_allusion", "spiritual"],
+    "翁同龢": ["public_official", "politician", "teacher_student", "arts_music", "historical_allusion", "spiritual"],
+})
+
+CURATED_IDENTITIES.update({
+    # 《中国艺术新研》第三轮：东吴删文现场、问卷签名人，以及《周越墨迹研究》附录题跋/参考文献链。
+    "章孝慈": ["academic_admin", "politician", "meeting", "public_debate", "historical_allusion"],
+    "王庆琳": ["academic_admin", "academic", "publication_control", "public_debate", "historical_allusion"],
+    "翁同文": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "蒋武雄": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "林慈淑": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "何宛倩": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "黄兆强": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "关玲玲": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "刘静贞": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "李念萱": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "王芝芝": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "廖伯源": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "周健": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "张炎宪": ["academic", "source_author", "source_support", "public_debate", "historical_allusion"],
+    "詹素娟": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "张中训": ["academic", "source_support", "public_debate", "historical_allusion"],
+    "蔡学海": ["academic", "public_debate", "historical_allusion"],
+    "俞雨娣": ["academic", "public_debate", "historical_allusion"],
+    "甘怀真": ["academic", "public_debate", "historical_allusion"],
+    "胡菱兰": ["academic", "public_debate", "historical_allusion"],
+    "何永成": ["academic", "public_debate", "historical_allusion"],
+    "刘家驹": ["academic", "public_debate", "historical_allusion"],
+    "陈清香": ["academic", "public_debate", "historical_allusion"],
+    "欧阳玄": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "袁涣": ["public_official", "arts_music", "historical_allusion", "spiritual"],
+    "高承埏": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "吴升": ["source_author", "arts_music", "historical_allusion", "spiritual"],
+    "吕长生": ["academic", "source_author", "source_support", "arts_music", "historical_allusion"],
+    "顾学颉": ["academic", "source_author", "source_support", "historical_allusion"],
+    "仲翼": ["arts_music", "historical_allusion", "spiritual"],
+    "李邕": ["public_official", "source_author", "arts_music", "historical_allusion", "spiritual"],
+    "尹洙": ["public_official", "source_author", "historical_allusion", "spiritual"],
+    "孔克坚": ["public_official", "source_author", "historical_allusion", "spiritual"],
+    "陈懒散": ["arts_music", "historical_allusion", "spiritual"],
+    "向楚": ["source_support", "historical_allusion", "spiritual"],
+    "江翊云": ["source_support", "historical_allusion", "spiritual"],
+    "周善培": ["source_support", "historical_allusion", "spiritual"],
+    "王迪简": ["arts_music", "historical_allusion", "spiritual"],
+    "罗逊": ["arts_music", "historical_allusion", "spiritual"],
+    # 第四轮：低频尾部校对，补赵熙门人链、参考文献作者、书法题名人物与描述型同学节点。
+    "赵熙": ["public_official", "source_author", "arts_music", "teacher_student", "historical_allusion", "spiritual"],
+    "郭正忠": ["academic", "source_author", "source_support", "historical_allusion"],
+    "徐德修": ["arts_music", "historical_allusion", "spiritual"],
+    "庄严之子（李敖同学）": ["classmate", "family", "source_support", "historical_allusion"],
+})
+
 for _mixin_round7_case_name in (
     "斯氏（张泰妻）", "翁氏（翁纪孙）", "汤氏（汤邦彦女）", "俞氏（卢翼妾）", "芮氏（吴实妻）",
     "朱氏（王民妻）", "汪氏（汪南溟孙女）", "葛氏（潘鸿妻）", "许氏（叶其生妻）",
@@ -27812,7 +28618,285 @@ def is_dushi_bibliography_chapter(book: str, chapter: str) -> bool:
     return book == "读史指南" and chapter.startswith("四部备要暨四部丛刊书目")
 
 
+CURATED_IDENTITIES.update({
+    # 《李敖笑傲江湖》首轮：节目口语稿先校准核心来宾、主题人物、司法案法官与三毛辨析线。
+    "孟祥柯": ["friendship", "meeting", "source_support", "media"],
+    "钱学森": ["scientist", "military_figure", "public_debate", "historical_allusion"],
+    "金波尔": ["public_official", "source_support", "historical_allusion"],
+    "傅建中": ["media", "source_author", "public_debate"],
+    "钱三强": ["scientist", "historical_allusion"],
+    "华罗庚": ["scientist", "academic", "historical_allusion"],
+    "张煦棠": ["media", "meeting", "source_support"],
+    "许翼云": ["scientist", "public_official", "public_debate"],
+    "詹姆士": ["academic", "scientist", "historical_allusion", "spiritual"],
+    "曹秀清": ["family", "historical_allusion"],
+    "陈之藩": ["academic", "source_author", "correspondence", "friendship", "public_debate", "publishing"],
+    "郁慕明": ["politician", "litigation", "friendship", "public_debate", "meeting"],
+    "赵宁": ["media", "academic", "litigation", "public_debate", "meeting"],
+    "郁刘琦": ["witness", "family", "litigation", "source_support"],
+    "杨商江": ["legal_official", "litigation", "public_debate"],
+    "叶圣康": ["publishing", "source_support", "witness", "property_finance", "correspondence"],
+    "王永城": ["publishing", "property_finance", "public_debate"],
+    "陈晓林": ["media", "source_support", "witness", "public_debate"],
+    "张坤山": ["publishing", "friendship", "source_support", "witness", "funding_support"],
+    "黄学文": ["victim", "litigation", "political_dissident", "public_debate"],
+    "杨熏春": ["family", "litigation", "source_support"],
+    "锺曜唐": ["legal_official", "litigation", "public_debate"],
+    "吕有文": ["legal_official", "politician", "litigation", "public_debate"],
+    "王甲乙": ["legal_official", "litigation", "public_debate"],
+    "石明江": ["legal_official", "litigation", "public_debate"],
+    "李炫德": ["legal_official", "litigation", "public_debate"],
+    "黄清江": ["legal_official", "litigation", "public_debate"],
+    "王锦村": ["legal_official", "litigation", "public_debate"],
+    "庄秋桃": ["legal_official", "litigation", "public_debate"],
+    "李琼荫": ["legal_official", "litigation", "source_support", "public_debate"],
+    "高金枝": ["legal_official", "litigation"],
+    "林健彦": ["legal_official", "litigation"],
+    "李锦丰": ["legal_official", "litigation", "public_debate"],
+    "范秉阁": ["legal_official", "litigation", "public_debate"],
+    "郭柏成": ["legal_official", "litigation", "public_debate"],
+    "葛浩坡": ["legal_official", "litigation", "public_debate"],
+    "洪根树": ["legal_official", "litigation", "public_debate"],
+    "苏茂秋": ["legal_official", "litigation", "public_debate"],
+    "张福安": ["legal_official", "litigation", "public_debate"],
+    "吴启宾": ["legal_official", "litigation", "public_debate"],
+    "张桂贞": ["family", "litigation", "source_support", "property_finance"],
+    "三毛": ["arts_music", "publishing", "meeting", "public_debate"],
+    "三毛（漫画人物）": ["fictional", "literary_character", "historical_allusion", "public_debate"],
+    "张乐平": ["arts_music", "source_author", "public_debate", "historical_allusion"],
+    "平鑫涛": ["publishing", "meeting", "source_support"],
+    "史怀哲": ["religion", "human_rights", "historical_allusion", "spiritual"],
+    "廖福本": ["politician", "public_debate"],
+    "黄秋雄": ["funding_support", "source_support", "friendship"],
+    "张秀政": ["witness", "property_finance", "public_debate"],
+    "袁绍": ["politician", "military_figure", "historical_allusion"],
+    "吴俊升": ["military_figure", "historical_allusion"],
+    "侯宝林": ["arts_music", "media", "historical_allusion"],
+    "宋项如": ["arts_music", "media", "meeting"],
+    "杨杰": ["military_figure", "politician", "historical_allusion"],
+    "缪纶": ["military_figure", "intelligence_police", "public_debate"],
+    "陈平": ["politician", "historical_allusion", "spiritual"],
+})
+
+
 BOOK_PHRASE_PEOPLE = {
+    "李敖笑傲江湖": {
+        # 首轮：节目标题和明确叙述锚点，先补核心人物，避免口语切词残片抢占图谱。
+        "我的好朋友孟绝子": ("孟祥柯",),
+        "孟绝子，孟先生": ("孟祥柯",),
+        "科学家，叫做钱学森": ("钱学森",),
+        "《中国时报》驻华盛顿特派员傅建中": ("傅建中",),
+        "海军部次长金波尔": ("金波尔", "钱学森"),
+        "火箭系统领导的科学家就是钱学森": ("钱学森",),
+        "代表团团长，一个数学天才，华罗庚": ("华罗庚", "钱学森"),
+        "飞弹系统的领导人，科学家是钱三强": ("钱三强", "钱学森"),
+        "由聂荣臻将军主导": ("聂荣臻", "钱学森"),
+        "钱学森的老丈人": ("钱学森", "蒋百里"),
+        "武侠小说作者金庸的表姐": ("钱学森", "金庸"),
+        "文汇报副总编辑张煦棠": ("张煦棠", "钱学森"),
+        "许倬云的弟弟许翼云": ("许翼云", "许倬云"),
+        "心理学家詹姆士": ("詹姆士",),
+        "杜聿明将军的夫人，曹夫人": ("杜聿明", "曹秀清"),
+        "法国的皇后玛丽安东尼": ("玛丽·安唐妮",),
+        "我曾经提到了一个人，就是郁慕明": ("郁慕明",),
+        "赵宁是在电视界的天之骄子": ("赵宁", "郁慕明"),
+        "高忠信竞选立委": ("高忠信", "郁慕明"),
+        "帮着高宗信去竞选": ("高忠信", "郁慕明"),
+        "法官叫做杨商江": ("杨商江", "郁慕明", "赵宁"),
+        "他的老婆，“刘琦负责校阅": ("郁刘琦", "郁慕明"),
+        "四季出版社老板，叫叶圣康": ("叶圣康", "王永城"),
+        "王永城是他们四季出版社的小股东": ("王永城", "叶圣康"),
+        "经双方友人陈晓林": ("陈晓林", "张坤山"),
+        "张坤山先生是我的好朋友": ("张坤山",),
+        "郑南榕，就是现在民进党立法委员叶菊兰的丈夫": ("郑南榕", "叶菊兰"),
+        "武汉大旅社的命案": ("黄学文", "吕有文", "王甲乙", "石明江"),
+        "当事人之一黄学文": ("黄学文",),
+        "黄学文的太太杨熏春": ("杨熏春", "黄学文"),
+        "高等法院的院长锺曜唐": ("锺曜唐", "黄学文"),
+        "司法院的副院长吕有文": ("吕有文",),
+        "最高法院刚刚下来的院长王甲乙": ("王甲乙",),
+        "最高检察长石明江": ("石明江",),
+        "地院的法官叫李炫德": ("李炫德", "汪荣祖"),
+        "法官就碰到了这个黄清江、王锦村、庄秋桃": ("黄清江", "王锦村", "庄秋桃", "汪荣祖"),
+        "庭长李琼荫，陪审法官高金枝，受命法官林健彦": ("李琼荫", "高金枝", "林健彦"),
+        "最高法院的法官李锦丰、范秉阁、郭柏成、葛浩坡、洪根树": (
+            "李锦丰", "范秉阁", "郭柏成", "葛浩坡", "洪根树", "张桂贞",
+        ),
+        "五个法官范秉阁、苏茂秋、李琼荫、张福安、吴启宾": (
+            "范秉阁", "苏茂秋", "李琼荫", "张福安", "吴启宾", "张桂贞",
+        ),
+        "漫画家，他的名字叫做张乐平": ("张乐平",),
+        "画了一个漫画，叫做《三毛流浪记》": ("张乐平", "三毛（漫画人物）"),
+        "这个三毛流浪记这个张乐平": ("张乐平", "三毛（漫画人物）"),
+        "一个女作家出现了，她的名字叫三毛": ("三毛",),
+        "皇冠的老板平鑫涛先生请我吃饭": ("平鑫涛", "三毛", "李敖"),
+        "要像史怀哲医生一样": ("三毛", "史怀哲"),
+    },
+    "中国艺术新研": {
+        # 首轮：周越墨迹、台北故宫质询、冒襄董小宛合璧卷、李敖藏画题跋四条主线。
+        "——周越墨迹研究": ("周越",),
+        "王著书千文真迹": ("王著",),
+        "款。王著书": ("王著",),
+        "卷后周越跋": ("周越", "王著"),
+        "臣越题": ("周越", "王著"),
+        "文臣周越字子发": ("周越",),
+        "周越字子发": ("周越",),
+        "黄庭坚“以周越为师”": ("黄庭坚", "周越"),
+        "黄庭坚吸收其师周越之长": ("黄庭坚", "周越"),
+        "米芾亦言：“周越书": ("米芾", "周越"),
+        "蔡襄是否学周越书": ("蔡襄", "周越"),
+        "君谟少年时，乃师周越": ("蔡襄", "周越"),
+        "葛立方乃谓君谟书初学（周）越": ("葛立方", "蔡襄", "周越"),
+        "周越著作考": ("周越",),
+        "周越《古今法书苑》": ("周越",),
+        "王裕民）": ("王裕民",),
+        "周越墨迹研究（王裕民）": ("王裕民", "周越"),
+        "周越“王著千文跋”的重要性（王裕民）": ("王裕民", "周越", "王著"),
+        "傅申，在其巨著": ("傅申", "周越"),
+        "杨仁恺，《国宝沉浮录》": ("杨仁恺", "王著"),
+        "金香蕙": ("金香蕙", "王著"),
+        "项元汴敬述": ("项元汴", "王著"),
+        "梁清标鉴藏": ("梁清标", "王著"),
+        "臣于敏中敬识": ("于敏中", "王著"),
+        "项元汴（1525-1590）": ("项元汴",),
+        "安岐字仪周、号麓村、松泉老人": ("安岐",),
+        "欧阳元，跋袁侍御亨伯家所见": ("欧阳玄", "王著"),
+        "裴景福完成了《壮陶阁书画录》": ("裴景福",),
+        "台北“故宫博物院”继商务印书馆涵芬楼": ("秦孝仪",),
+        "秦孝仪发行": ("秦孝仪", "周越"),
+        "质询秦孝仪先生": ("秦孝仪",),
+        "经杨西崑大使洽请贵“院长”": ("杨西崑", "秦孝仪", "周越"),
+        "台湾大学艺术史研究所所长石守谦到我家": ("石守谦", "李敖", "周越"),
+        "好友陈兆基代劳，为我遍访图书馆": ("陈兆基", "李敖", "周越"),
+        "送给史学家汪荣祖留副": ("汪荣祖", "李敖"),
+        "并由荣祖代劳，译成英文摘要": ("汪荣祖", "李敖"),
+        "冒襄，字辟疆，别号巢民": ("冒襄",),
+        "冒辟疆生在1611年": ("冒襄",),
+        "董白字小宛": ("董小宛",),
+        "董小宛生在1624年": ("董小宛",),
+        "冒辟疆《亡妾董小宛哀辞序》": ("冒襄", "董小宛"),
+        "张明弼《董小宛传》": ("张明弼", "董小宛"),
+        "吴梅村的诗": ("吴梅村", "董小宛"),
+        "史学家孟森笔下的《董小宛考》": ("孟森", "董小宛"),
+        "《冒巢民董小宛夫妇合璧卷真迹神品》": ("冒襄", "董小宛"),
+        "沈尹默（1883-1971）": ("沈尹默",),
+        "陈独秀奚落太俗": ("陈独秀", "沈尹默"),
+        "陈方（1897-1962）": ("陈方",),
+        "与马寿华、郑曼青、张谷年、刘延涛、陶芸楼、高逸鸿等合组": (
+            "马寿华", "郑曼青", "张谷年", "刘延涛", "陶芸楼", "高逸鸿",
+        ),
+        "张大千称赞他画竹": ("张大千", "陈方"),
+        "王雪涛（1903-1982）": ("王雪涛",),
+        "超迈了他的老师齐白石": ("王雪涛", "齐白石"),
+        "丁衍庸（1905-1977）": ("丁衍庸",),
+        "八大山人的画风": ("八大山人", "丁衍庸"),
+        "李可染（1907-1989）": ("李可染",),
+        "拜齐白石、黄宾虹为师": ("李可染", "齐白石", "黄宾虹"),
+        "陈淦": ("陈淦",),
+        "麦生": ("麦生",),
+        "周懋泰": ("周懋泰",),
+        "邵宇": ("邵宇",),
+        "邓维桢": ("邓维桢",),
+        "孙旭章是大陆第一届全国民俗画大赛": ("孙旭章",),
+        "高信疆去大陆，看到他画在绢本上的画": ("高信疆", "孙旭章", "李敖"),
+        "高信疆是李敖、胡茵梦结婚时的证人": ("高信疆", "李敖", "胡茵梦"),
+        "席德进（1923-1981）": ("席德进",),
+        "在李昂家里，他当场素描胡茵梦": ("席德进", "李敖", "胡茵梦"),
+        "庄严（1899-1980）": ("庄严",),
+        "庄严与李敖父亲北大同学": ("庄严", "李鼎彝", "李敖"),
+        "庄严太太与李敖母亲同学": ("庄严", "申佩芬", "张桂贞", "李敖"),
+        "庄严儿子又与李敖同学": ("庄严", "庄严之子（李敖同学）", "李敖"),
+        "许地山是博学的台湾人": ("许地山",),
+        "许地山有一篇生前没刊出的残稿": ("许地山",),
+        # 第二轮：收藏递藏、题跋来源、质询链条和清代书法家群。
+        "范宽《谿山行旅图》": ("范宽",),
+        "范宽的“谿山行旅图”": ("范宽",),
+        "高士奇之印": ("高士奇",),
+        "钱勰（1034-1097）": ("钱勰",),
+        "钱惟演": ("钱惟演",),
+        "贾似道（1213-1275）": ("贾似道",),
+        "张金界奴": ("张金界奴",),
+        "张九思之子": ("张九思",),
+        "虞集所撰": ("虞集",),
+        "元文宗建奎章阁": ("元文宗",),
+        "虞世南《临兰亭帖》": ("虞世南",),
+        "尉迟乙僧《天王像卷》": ("尉迟乙僧",),
+        "那志良之统计": ("那志良", "项元汴"),
+        "姜绍书便曾批评项氏": ("姜绍书", "项元汴"),
+        "王连起《赵孟頫书画真伪的鉴考问题》": ("王连起", "赵孟頫"),
+        "罗家伦夫人张维桢女史捐赠展": ("张维桢", "罗家伦"),
+        "徐邦达与杨仁恺": ("徐邦达", "杨仁恺"),
+        "周昉调婴图": ("周昉",),
+        "钱穆的《中国历代政治得失》和傅乐成的《中国通史》": ("钱穆", "傅乐成"),
+        "蔡京、蔡卞跋文": ("蔡京", "蔡卞"),
+        "何应钦和王柏龄": ("何应钦", "王柏龄"),
+        "王柏龄，两人被出局": ("王柏龄",),
+        "立法院向谢聪敏委员承认": ("谢聪敏", "秦孝仪"),
+        "透过立法委员谢聪敏的书面质询": ("谢聪敏",),
+        "刘墉（1719-1804）": ("刘墉",),
+        "戈仙舟为刘墉学生": ("戈仙舟", "刘墉"),
+        "梁同书（1723-1815）": ("梁同书",),
+        "王文治、翁方纲、刘墉": ("王文治", "翁方纲", "刘墉"),
+        "铁保（1752-1824）": ("铁保",),
+        "陈方（1897-1962）字芷町": ("陈方",),
+        "受林风眠等指导": ("林风眠",),
+        "徐悲鸿之聘": ("徐悲鸿",),
+        "陆时化《书画说铃》": ("陆时化",),
+        "夏仲昭、吴仲圭、柯九思、文湖州、赵吴兴": ("夏仲昭", "吴仲圭", "柯九思", "文同", "赵孟頫"),
+        "钟寿仁": ("钟寿仁",),
+        "韩侘冑以助国之势取去": ("韩侘冑",),
+        "巨然《溪山兰若图》": ("巨然",),
+        "何惠鉴": ("何惠鉴",),
+        "褚河南": ("褚遂良",),
+        "李焘《续资治通鉴长编》": ("李焘",),
+        "张邦基《墨庄漫录》": ("张邦基",),
+        "王应麟《困学纪闻》": ("王应麟",),
+        "李宗谔": ("李宗谔",),
+        "杜操，字伯度": ("杜操",),
+        "翁同龢（1830-1904）": ("翁同龢",),
+        "成亲王（1752-1823）": ("永瑆",),
+        "杨翰《息柯杂著》": ("杨翰", "永瑆"),
+        "名字是永瑆": ("永瑆",),
+        # 第三轮：东吴删文、问卷签名和书画题跋/参考文献链。
+        "章孝慈校长登门邀请": ("章孝慈", "李敖"),
+        "专函王庆琳主任": ("王庆琳", "李敖"),
+        "王主任收信后跟我说": ("王庆琳", "李敖"),
+        "翁同文老师、蔡玫芬老师都发了言": ("翁同文", "蔡玫芬", "李敖"),
+        "我撤回论文后，转交好友潘毓刚教授": ("潘毓刚", "李敖"),
+        "蒋武雄、林慈淑、何宛倩、黄兆强、关玲玲、刘静贞、李念萱、王芝芝、廖伯源、周健、张炎宪、詹素娟、张中训十三位": (
+            "蒋武雄", "林慈淑", "何宛倩", "黄兆强", "关玲玲", "刘静贞", "李念萱", "王芝芝", "廖伯源",
+            "周健", "张炎宪", "詹素娟", "张中训",
+        ),
+        "蔡学海、俞雨娣、甘怀真、胡菱兰、何永成、刘家驹、蔡玫芬、翁同文、陈清香九位": (
+            "蔡学海", "俞雨娣", "甘怀真", "胡菱兰", "何永成", "刘家驹", "蔡玫芬", "翁同文", "陈清香",
+        ),
+        "只王庆琳一人赞成删除": ("王庆琳",),
+        "欧阳玄（1283-1357）": ("欧阳玄",),
+        "欧阳玄跋《王著千文》": ("欧阳玄", "王著"),
+        "欧阳玄跋文中所称的“袁侍御亨伯”": ("欧阳玄", "袁涣"),
+        "袁涣字亨伯": ("袁涣",),
+        "袁侍御亨伯家所见": ("袁涣", "欧阳玄", "王著"),
+        "高承埏（1603-1648）": ("高承埏",),
+        "吴升除了著录《王著千文》": ("吴升", "王著"),
+        "吕长生，《宋拓颜、柳、白、米四家法帖》": ("吕长生",),
+        "顾学颉，《白居易所书诗书志石刻考释》": ("顾学颉",),
+        "李北海云": ("李邕",),
+        "唐李邕善书": ("李邕",),
+        "尹洙，其于《书禹庙碑阴》": ("尹洙", "周越"),
+        "孔克坚）及中丞袁涣": ("孔克坚", "袁涣"),
+        "仲翼有书名": ("仲翼",),
+        "周越、仲翼": ("周越", "仲翼"),
+        "苏子美札": ("苏舜钦",),
+        "苏才翁屋漏法": ("苏舜钦",),
+        "近见陈懒散草书数纸": ("陈懒散",),
+        "赵熙（1867-1948）": ("赵熙",),
+        "门人向楚、江翊云、郭沫若、周善培等为刊遗集": ("向楚", "江翊云", "郭沫若", "周善培"),
+        "王迪简《凌波图》": ("王迪简",),
+        "元章始学罗逊": ("米芾", "罗逊"),
+        "黄昭明助教": ("黄昭明",),
+        "郭正忠《3-14世纪中国的权衡度量》": ("郭正忠",),
+        "《跋与徐德修草书后》": ("徐德修",),
+    },
     "历史与人像": {
         # 首轮：本书是历史论文集，题名、异译名、括号英文名和引文作者常是人物入口。
         "余玠人格品质的分析": ("余玠",),
@@ -32120,6 +33204,29 @@ STOP_NAMES.update({
 })
 
 BOOK_SKIP_NAMES = {
+    "李敖笑傲江湖": {
+        # 首轮：节目口语稿高频主持语、标题半截、书名半截、事件名和句读残片，不作为人物节点。
+        "家看", "家看到", "家注意", "家嘛", "大家看", "大家注意",
+        "严格讲", "国演义", "易经", "安事变", "满朝", "皮厚", "红旗",
+        "钱啦", "钱嘛", "利息", "文风", "蒋庙", "公然谓", "东起",
+        "管束", "国枢", "和余", "胡搞", "惠鉴", "张相", "时做",
+        "孙儿", "相护", "严吏", "王印", "班牙", "查问", "陈饭",
+        "胡先", "格鲁", "石涛", "张杨", "曹公", "黄三聊", "那么久",
+        "于未萌", "公然自", "能贪墨", "赵宁服", "那位刘", "蒋经国是",
+        "关中之", "时候要", "从国民", "国人又", "法官怕", "飞弹之",
+        "李敖笑", "笑傲江", "江湖", "江湖又", "节目里",
+        "红旗反", "家看胡", "毛流浪", "王业亦", "党叛国", "那灰色",
+        "经没有", "公开讲", "别人死", "段话说", "国家音", "那有人",
+        "从李登", "别人讲", "和尚扯", "李焕拥", "孔子讲", "那表示",
+        "国飞弹", "宰保险", "和尚有", "常谈", "边看", "那么又",
+        "董氏基", "关公庆", "从汝", "步卫星", "黄种人", "何廷有",
+        "家想想", "从唐朝", "宣扬台", "那么张", "于没有", "明明写",
+        "史留名", "曾经要", "家出来", "武帝做", "王饭", "能制造",
+        "都赞美", "应该立", "诸群众", "时间拉", "于揭发", "国托管",
+        "贝加尔", "曹操所", "时侍奉", "时跟美", "那么黄", "和李登",
+        "公开藐", "都要问", "陈诚保", "任凭", "元帅级", "别人公",
+        "晏子说", "水地区", "苏联打",
+    },
     "读史指南": {
         # 首轮：书目、版本、篇题和既有别名误并造成的非人物节点。
         "古今图", "石印本", "文影印", "古代", "曹操子", "广四库",
@@ -32261,6 +33368,26 @@ BOOK_SKIP_NAMES = {
         "陆氏", "薛氏", "夏氏", "袁氏", "汤氏", "芮氏", "斯氏", "任氏", "康氏", "庄氏", "谢氏",
         "蔡氏", "许氏", "翁氏", "葛氏", "汪氏", "朱氏", "韦氏", "俞氏", "时氏", "丁氏", "柳氏", "熊氏",
         "阿九", "田光", "胡毅生", "王昇",
+    },
+    "中国艺术新研": {
+        # 首轮：标题切片、职衔截断、书画术语、引文残片和地名，不作为人物节点。
+        "国艺术", "国美术", "周越且", "周越地", "周越定", "周起说", "周越书", "周越跋",
+        "李晸笔", "束发", "唐代足", "于僰道", "王主任", "史会要", "任农矿", "党行政",
+        "国文联", "干到副", "高薪礼", "关首长", "华艺专", "却力拒", "国人看", "宣统出",
+        "宿诺", "富收藏", "时保证", "时殉难", "时看野", "步速度", "步骤", "申报者",
+        "薄彼", "解谬误", "诸辑录", "丁叔康", "于登录", "于著录", "任斯职", "何能担",
+        "宋人董", "巢民董", "姬决舍", "明玄宴", "苍寒", "苏轼当", "荆人背", "蒋公偕", "黄氏悔", "山东",
+        "齐桓曰", "国宝重", "外国艺", "此类草", "故宫专家", "故宫当局", "院长为",
+        "藏伪辽", "伪北平", "女研究", "普通学生", "普通文化", "重要职", "外界盛",
+        "世人罕", "收藏家手", "博物院里", "海外名", "院本而", "作品二",
+        "陆方面", "宗皇帝", "国际革", "查意见", "公怒杀", "黄助教", "家庭关",
+        "燕京", "时人", "时送达", "方印", "张明", "莫干山",
+        "游山玩", "都有十", "高达七", "诸公过", "此印钤", "此帖后", "故宫所",
+        "宫专家", "于周越", "于米芾", "李文", "诸印", "诸宋官", "周越平", "周越同", "山地说", "黄艺之", "黄伯度",
+        "常人异", "车帽", "何还能", "怀素同", "时代之", "宋朝宫", "项氏万", "于存世", "越甚矣", "仲翼两",
+        "简称", "米芾皆", "任国子", "于北平", "于下角",
+        "凌波", "陆贾", "濮王", "李善培",
+        "庄严儿子",
     },
     # 《历史与人像》首轮：历史文化论文中的制度词、题名切片、引文残片和截断名，不作为人物节点。
     "历史与人像": {
@@ -32796,6 +33923,9 @@ STOP_NAMES.update({
     "毕竟有", "能发挥",
 })
 
+# 《中国艺术新研》图说里“庄严”为真实人物；普通形容词用法由上下文规则继续过滤。
+STOP_NAMES.discard("庄严")
+
 def is_likely_person_name(name: str) -> bool:
     if name in ALWAYS_NAMES or name in ALIASES or name in NONSTANDARD_NAMES or name in CURATED_IDENTITIES:
         return True
@@ -32827,6 +33957,21 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 
 
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
+    if book == "李敖笑傲江湖":
+        if raw_name in {"绝子", "孟绝子"}:
+            return "孟祥柯"
+        if raw_name == "波尔" and "金波尔" in ctx:
+            return "金波尔"
+        if raw_name == "刘琦" and any(marker in ctx for marker in ("郁慕明", "秋海棠", "校阅", "我妻", "他的老婆")):
+            return "郁刘琦"
+        if raw_name == "三毛" and any(marker in ctx for marker in ("张乐平", "漫画", "流浪记", "从军记", "真三毛", "苦难的三毛")):
+            return "三毛（漫画人物）"
+        if raw_name == "高宗信" and "竞选" in ctx:
+            return "高忠信"
+        if raw_name in {"曹夫人", "曹太太"} and "杜聿明" in ctx:
+            return "曹秀清"
+        if raw_name == "安东尼" and "玛丽安东尼" in ctx:
+            return "玛丽·安唐妮"
     if book == "读史指南":
         if raw_name == "维桢" and "杨维桢" in ctx:
             return "杨维桢"
@@ -32892,6 +34037,59 @@ def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: st
             return "马尔萨斯"
         if raw_name == "荀况" and "荀况" in ctx:
             return "荀子"
+    if book == "中国艺术新研":
+        if raw_name in {"周越真", "周越墨", "周越原"} and "周越" in ctx:
+            return "周越"
+        if raw_name in {"冒巢民", "冒辟疆", "巢民"} and any(marker in ctx for marker in ("冒襄", "董小宛", "合璧卷")):
+            return "冒襄"
+        if raw_name == "董白" and "小宛" in ctx:
+            return "董小宛"
+        if raw_name == "黄山谷":
+            return "黄庭坚"
+        if raw_name == "李昂" and "席德进" in ctx and "胡茵梦" in ctx:
+            return "李敖"
+        if raw_name == "杨西昆" and "杨西崑" in ctx:
+            return "杨西崑"
+        if raw_name in {"松泉老人"}:
+            return "安岐"
+        if raw_name in {"欧阳元", "欧阳元长"}:
+            return "欧阳玄"
+        if raw_name == "李西台":
+            return "李建中"
+        if raw_name == "成亲王":
+            return "永瑆"
+        if raw_name == "陈芷町":
+            return "陈方"
+        if raw_name == "赵吴兴":
+            return "赵孟頫"
+        if raw_name == "文湖州":
+            return "文同"
+        if raw_name == "褚河南":
+            return "褚遂良"
+        if raw_name == "钱穆父":
+            return "钱勰"
+        if raw_name == "成象" and "王著" in ctx:
+            return "王著（成象）"
+        if raw_name == "欧阳玄之":
+            return "欧阳玄"
+        if raw_name == "李北海":
+            return "李邕"
+        if raw_name in {"苏子美", "苏才翁"}:
+            return "苏舜钦"
+        if raw_name == "才翁" and ("苏才翁" in ctx or "屋漏法" in ctx):
+            return "苏舜钦"
+        if raw_name in {"善培", "李善培"} and "周善培" in ctx:
+            return "周善培"
+        if raw_name == "庄严儿子":
+            return "庄严之子（李敖同学）"
+        if raw_name == "小痴" and "陈淦" in ctx:
+            return "陈淦"
+        if raw_name == "李敖父亲":
+            return "李鼎彝"
+        if raw_name == "李敖母亲":
+            return "张桂贞"
+        if raw_name == "庄严太太":
+            return "申佩芬"
     if book == "中国性研究":
         if raw_name == "江青":
             return "江青（演员）"
@@ -34623,12 +35821,20 @@ def is_contextual_false_positive(name: str, text: str, start: int, end: int) -> 
             or "大方广佛华严经" in ctx
             or "方广大庄严经" in ctx
         )
+    if name == "庄严":
+        real_markers = (
+            "庄严（1899-1980）", "庄严与李敖父亲", "庄严太太与李敖母亲",
+            "庄严儿子又与李敖同学", "庄严给李敖", "庄严台静农",
+        )
+        return not any(marker in ctx for marker in real_markers)
     if name == "王瑶":
         return text[end:end + 1] == "卿"
     if name == "张翼":
         return text[end:end + 1] == "德"
     if name == "张青":
         return text[end:end + 1] in {"年", "蛙"}
+    if name == "关公":
+        return "关公帑" in ctx
     if name == "张明":
         return text[end:end + 2] == "信片"
     if name == "阿里":
