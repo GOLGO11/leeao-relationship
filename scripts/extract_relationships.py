@@ -5883,6 +5883,182 @@ CATEGORY_LABELS = {
 
 PERSON_RELATIONS = [
     {
+        "book": "李敖Talk秀",
+        "source": "陈孝萱",
+        "target": "陈志成",
+        "relation": "节目开场/串场主持语境",
+        "weight": 3,
+        "note": "《20000517李敖Talk秀》开场由陈孝萱、陈志成以电视圈提问和TALK TIME介绍方式串场，记录为节目制作语境中的主持/串场关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "李昂",
+        "target": "曹西平",
+        "relation": "同集来宾/节目讨论",
+        "weight": 2,
+        "note": "节目中李敖称李昂旁边是曹西平，二人同在节目现场参与关于性、媒体与社会议题的讨论，记录为同集来宾关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "侯冠群",
+        "target": "李登辉",
+        "relation": "扮演/政治讽刺节目段落",
+        "weight": 4,
+        "note": "《李敖Talk秀》多次注明侯冠群扮演李登辉，节目以高峰会、模拟问答等方式展开政治讽刺；本边记录节目扮演关系，不把侯冠群归为政治人物。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "侯冠群",
+        "target": "江泽民",
+        "relation": "扮演/政治讽刺节目段落",
+        "weight": 3,
+        "note": "节目中出现“假江泽民先生”等段落，侯冠群在节目语境中以模仿、扮演方式进入人物网络，记录为节目表演关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "陈水扁",
+        "target": "郑南榕",
+        "relation": "旧部/民主运动回忆",
+        "weight": 3,
+        "note": "节目谈到陈水扁与郑南榕的旧关系，并把叶菊兰、郑南榕、陈水扁放在民主运动与政坛叙述中说明，记录为文本中的政治回忆关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "叶菊兰",
+        "target": "郑南榕",
+        "relation": "夫妻/政治人物介绍",
+        "weight": 2,
+        "note": "节目称交通部长叶菊兰的先生为郑南榕，作为介绍叶菊兰政治背景的上下文，记录为夫妻关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "彭明敏",
+        "target": "谢聪敏",
+        "relation": "同案/政治受难叙述",
+        "weight": 3,
+        "note": "节目把彭明敏、谢聪敏、魏廷朝并置在同一历史案件与救援回忆中，记录为同案语境关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "谢聪敏",
+        "target": "魏廷朝",
+        "relation": "同案/政治受难叙述",
+        "weight": 2,
+        "note": "节目谈彭明敏案相关人物时连带提到谢聪敏与魏廷朝，记录为同案语境中的人物关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "张俊雄",
+        "target": "梁肃戎",
+        "relation": "立法院掌掴/红墨水对照",
+        "weight": 2,
+        "note": "节目以立法院冲突和红墨水事件作对照，提及张俊雄与梁肃戎，记录为公共事件比较语境下的关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "王如玄",
+        "target": "施寄青",
+        "relation": "同集来宾/妇女新知法律讨论",
+        "weight": 2,
+        "note": "节目介绍王如玄为律师并放在妇女新知、性别权益讨论脉络中，与施寄青等同场人物共同构成法律与性别议题线。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "尤秋兴",
+        "target": "颜志琳",
+        "relation": "组合成员/动力火车节目来宾",
+        "weight": 3,
+        "note": "《20000621李敖Talk秀》介绍动力火车时点名尤秋兴、颜志琳二人为同组成员，记录为组合成员与同集来宾关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "薛钦峰",
+        "target": "苏爱伦",
+        "relation": "同集来宾/同志权益法律讨论",
+        "weight": 2,
+        "note": "《20000628李敖Talk秀》在同志收养、就业歧视、性侵害等法律问题中请薛钦峰律师回应，并与苏爱伦等来宾形成同一性别权益讨论线。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "艾力克斯（李敖Talk秀）",
+        "target": "黄楷元",
+        "relation": "同集来宾/同居议题讨论",
+        "weight": 2,
+        "note": "《20000712李敖Talk秀》介绍艾力克斯、范蜜儿、黄楷元等人为同居议题现场来宾，记录为同集讨论关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "楚瑾",
+        "target": "陈鹏安",
+        "relation": "同集来宾/同居议题讨论",
+        "weight": 2,
+        "note": "节目同一段介绍楚瑾、陈鹏安、汤惠婷为同居议题来宾，记录为同集讨论关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "方岑",
+        "target": "姚黛玮",
+        "relation": "同集来宾/师生恋辩论",
+        "weight": 2,
+        "note": "《20000719李敖Talk秀》把方岑、陈永曙、胡肇婷列为反对组，姚黛玮、刘柏均、颜沛芸列为赞成组，记录为师生恋议题辩论关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "李杰圣",
+        "target": "胡书伟",
+        "relation": "同集来宾/酒店打工辩论",
+        "weight": 2,
+        "note": "《20000802李敖Talk秀》以大学生暑假是否到酒店打工为题，李杰圣属正方代表，胡书伟属反对方，记录为同集辩论关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "楼兰（时报周刊）",
+        "target": "林朝鑫",
+        "relation": "媒体同事/狱政议题同集来宾",
+        "weight": 3,
+        "note": "《20000906李敖Talk秀》介绍林朝鑫为《时报周刊》采访组副主任、楼兰为撰述委员，二人同场讨论陈定南与狱政问题。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "张景为",
+        "target": "王建煊",
+        "relation": "同集来宾/两岸与政治评估",
+        "weight": 2,
+        "note": "《20000913李敖Talk秀》邀请王建煊与《中时电子报》总编辑张景为同场讨论陈水扁上任后的两岸与政治问题。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "白喧",
+        "target": "张友骅",
+        "relation": "同集来宾/尹清枫案与军情讨论",
+        "weight": 3,
+        "note": "《20000920李敖Talk秀》介绍张友骅为军事专家、白喧为调查局出身人物，二人与李庆华同场讨论尹清枫命案、军售案和调查局问题。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "欧汉声",
+        "target": "罗志祥",
+        "relation": "同集来宾/哈日族与流行文化讨论",
+        "weight": 2,
+        "note": "《20000621李敖Talk秀》由欧汉声、罗志祥等同场参与哈日族、流行文化和年轻人消费风潮讨论，记录为同集来宾关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "任瑰",
+        "target": "任夫人",
+        "relation": "夫妻/吃醋典故引用",
+        "weight": 2,
+        "note": "节目以唐太宗赐醋的任瑰夫妇典故讨论婚姻与吃醋，记录为历史典故引用中的夫妻关系。",
+    },
+    {
+        "book": "李敖Talk秀",
+        "source": "罗丹",
+        "target": "卡蜜儿",
+        "relation": "师生/艺术恋情引用",
+        "weight": 2,
+        "note": "节目谈师生恋时以罗丹与卡蜜儿为例，记录为艺术史引用语境中的师生与恋情关系。",
+    },
+    {
         "book": "李敖颠倒众生",
         "source": "尹清枫",
         "target": "李美葵",
@@ -30610,7 +30786,221 @@ ALIASES.update({
 })
 
 
+CURATED_IDENTITIES.update({
+    # 《李敖Talk秀》首轮：电视逐字稿中的固定来宾、串场主持与专业嘉宾。
+    "李昂": ["source_author", "publishing", "media", "friendship", "meeting", "public_debate"],
+    "侯冠群": ["arts_music", "media", "meeting", "public_debate"],
+    "曹西平": ["media", "arts_music", "meeting", "public_debate"],
+    "陈志成": ["media", "meeting", "public_debate"],
+    "陈孝萱": ["media", "arts_music", "meeting", "public_debate"],
+    "周玉蔻": ["media", "meeting", "public_debate"],
+    "陈文茜": ["media", "politician", "correspondence", "friendship", "meeting", "public_debate"],
+    "苏爱伦": ["human_rights", "meeting", "public_debate"],
+    "张怡筠": ["academic", "medical_care", "source_author", "meeting", "public_debate"],
+    "谢丽金": ["arts_music", "media", "meeting", "public_debate"],
+    "吴宗宪": ["media", "arts_music", "public_debate"],
+    "郑丞杰": ["medical_care", "academic", "meeting", "public_debate"],
+    "王如玄": ["lawyer_counsel", "human_rights", "public_debate"],
+    "李艳秋": ["media", "public_debate"],
+    "谢瀛华": ["medical_care", "academic", "meeting"],
+    "杨嘉荣": ["academic", "lawyer_counsel", "meeting", "public_debate"],
+    "刘仲东": ["academic", "medical_care", "meeting", "public_debate"],
+    "陈鹏安": ["meeting", "public_debate"],
+    "张友骅": ["media", "military_figure", "public_debate"],
+    "潘世斌": ["medical_care", "meeting"],
+    "李家雄": ["medical_care", "meeting"],
+    "克劳塞维茨": ["source_author", "military_figure", "historical_allusion", "spiritual"],
+    "海伦凯勒": ["source_author", "human_rights", "historical_allusion", "spiritual"],
+    "白伦": ["media", "meeting"],
+    "夏皮罗": ["media", "meeting"],
+    "张牙医（李敖Talk秀）": ["medical_care", "neighbor", "nickname"],
+    # 《李敖Talk秀》第二轮：逐集说话人标签补漏。未知职业的现场来宾先保守标成见面/公共讨论。
+    "张宇": ["arts_music", "media", "meeting"],
+    "欧阳龙": ["arts_music", "media", "meeting", "public_debate"],
+    "黄大炜": ["arts_music", "media", "meeting", "public_debate"],
+    "明金城": ["media", "arts_music", "meeting"],
+    "陈美儒": ["meeting", "public_debate"],
+    "单小琳": ["meeting", "public_debate"],
+    "雪碧": ["meeting", "public_debate", "nickname"],
+    "辛隆": ["arts_music", "media", "meeting"],
+    "李翊君": ["arts_music", "media", "meeting"],
+    "洪其德": ["meeting", "public_debate"],
+    "许志安": ["arts_music", "media", "meeting"],
+    "Tony陈": ["media", "meeting", "nickname"],
+    "张尚文": ["meeting", "public_debate"],
+    "杨子良": ["meeting", "public_debate"],
+    "葛西健二": ["meeting", "public_debate"],
+    "何妤玟": ["media", "arts_music", "meeting", "public_debate"],
+    "欧汉声": ["media", "arts_music", "meeting", "public_debate"],
+    "罗志祥": ["media", "arts_music", "meeting", "public_debate"],
+    "尤秋兴": ["arts_music", "media", "meeting"],
+    "颜志琳": ["arts_music", "media", "meeting"],
+    "小不点（李敖Talk秀）": ["meeting", "public_debate", "nickname"],
+    "KITTY（李敖Talk秀）": ["meeting", "public_debate", "nickname"],
+    "蔡琴": ["arts_music", "media", "meeting"],
+    "陈俊志": ["media", "human_rights", "meeting", "public_debate"],
+    "王苹": ["human_rights", "meeting", "public_debate"],
+    "薛钦峰": ["lawyer_counsel", "human_rights", "meeting", "public_debate"],
+    "况明洁": ["arts_music", "media", "meeting"],
+    "文章（李敖Talk秀）": ["arts_music", "media", "meeting"],
+    "楚瑾": ["meeting", "public_debate"],
+    "艾力克斯（李敖Talk秀）": ["meeting", "public_debate", "nickname"],
+    "范蜜儿": ["meeting", "public_debate", "nickname"],
+    "汤惠婷": ["meeting", "public_debate"],
+    "黄楷元": ["meeting", "public_debate"],
+    "姚黛玮": ["meeting", "public_debate", "teacher_student"],
+    "陈洁仪": ["arts_music", "media", "meeting"],
+    "方岑": ["meeting", "public_debate"],
+    "陈永曙": ["meeting", "public_debate"],
+    "刘柏均": ["meeting", "public_debate"],
+    "胡肇婷": ["meeting", "public_debate"],
+    "颜沛芸": ["meeting", "public_debate"],
+    "叶瑷菱": ["arts_music", "media", "meeting"],
+    "李杰圣": ["meeting", "public_debate"],
+    "陈宜青": ["meeting", "public_debate"],
+    "张仪君": ["meeting", "public_debate"],
+    "胡书伟": ["meeting", "public_debate"],
+    "杜秉霖": ["meeting", "public_debate"],
+    "郑进一": ["arts_music", "media", "meeting"],
+    "洪英杰": ["meeting", "public_debate"],
+    "胡书豪": ["meeting", "public_debate"],
+    "楼兰（时报周刊）": ["media", "meeting", "public_debate"],
+    "林朝鑫": ["media", "meeting", "public_debate"],
+    "张景为": ["media", "meeting", "public_debate"],
+    "白喧": ["intelligence_police", "meeting", "public_debate"],
+    "夏甸": ["military_figure", "public_debate"],
+    "王菲": ["arts_music", "media", "meeting"],
+    # 《李敖Talk秀》第五轮：closeout 前低频尾部补正。
+    "伍佰": ["arts_music", "media", "spiritual"],
+    "金城武": ["arts_music", "media", "spiritual"],
+    "康康": ["arts_music", "media", "spiritual"],
+    "刘德华": ["arts_music", "media", "spiritual"],
+    "罗密欧": ["fictional", "literary_character", "historical_allusion"],
+    "阿里斯太狄斯": ["politician", "historical_allusion", "spiritual"],
+    "何东": ["property_finance", "historical_allusion", "spiritual"],
+    "乔石": ["politician", "public_official", "public_debate"],
+    "张宝树": ["public_official", "politician", "historical_allusion"],
+    "石掌珠": ["medical_care", "meeting"],
+    "简志信": ["media", "publishing", "friendship"],
+    "王文洋": ["property_finance", "teacher_student", "public_debate"],
+    # 《李敖Talk秀》第三轮：低频历史、文艺与神交引用补漏。
+    "任瑰": ["politician", "historical_allusion", "spiritual"],
+    "任夫人": ["marriage_context", "historical_allusion", "spiritual"],
+    "杜兰": ["source_author", "academic", "historical_allusion", "spiritual"],
+    "罗丹": ["arts_music", "historical_allusion", "spiritual"],
+    "卡蜜儿": ["arts_music", "romance", "historical_allusion", "spiritual"],
+    "苏菲亚罗兰": ["arts_music", "media", "historical_allusion", "spiritual"],
+    "鲍德瑞克": ["arts_music", "media", "historical_allusion", "spiritual"],
+})
+
+
 BOOK_PHRASE_PEOPLE = {
+    "李敖Talk秀": {
+        # 首轮：用节目中明确称谓补回来宾、串场与扮演语境中的关键人物。
+        "冒充姓李的李昂": ("李昂",),
+        "她的名字叫做李昂": ("李昂",),
+        "李敖杀手": ("李昂",),
+        "李昂旁边不是别人，就是曹西平": ("李昂", "曹西平"),
+        "侯冠群扮演李登辉": ("侯冠群", "李登辉"),
+        "李敖VS侯冠群高峰会": ("侯冠群",),
+        "假江泽民先生": ("侯冠群", "江泽民"),
+        "陈孝萱：最近电视圈都在问": ("陈孝萱", "陈志成"),
+        "陈志成：难道我们是要挑战三台": ("陈志成", "陈孝萱"),
+        "交通部长叶菊兰的先生郑南榕": ("叶菊兰", "郑南榕", "陈水扁"),
+        "阿扁是我的手下": ("陈水扁", "郑南榕"),
+        "彭明敏和谢聪敏": ("彭明敏", "谢聪敏", "魏廷朝"),
+        "潘世斌医师": ("潘世斌",),
+        "李家雄医师": ("李家雄",),
+        "坐在我身边的是苏爱伦": ("苏爱伦",),
+        "心理学博士，也是教授张怡筠": ("张怡筠",),
+        "活泼可爱的谢丽金女士": ("谢丽金",),
+        "郑丞杰名医": ("郑丞杰",),
+        "常青国际法律事务所的名律师王如玄": ("王如玄",),
+        "台北医学院家庭医学科的名医谢瀛华": ("谢瀛华",),
+        "台北大学法律系的杨嘉荣先生": ("杨嘉荣",),
+        "刘仲东刘教授": ("刘仲东",),
+        "军事专家张友骅": ("张友骅",),
+        "CLAUSEWITZ": ("克劳塞维茨",),
+        "海伦凯勒": ("海伦凯勒",),
+        "张宇：": ("张宇",),
+        "欧阳龙：": ("欧阳龙",),
+        "黄大炜：": ("黄大炜",),
+        "明金城：": ("明金城",),
+        "陈美儒：": ("陈美儒",),
+        "单小琳：": ("单小琳",),
+        "雪碧：": ("雪碧",),
+        "辛隆：": ("辛隆",),
+        "李翊君：": ("李翊君",),
+        "洪其德：": ("洪其德",),
+        "许志安：": ("许志安",),
+        "Tony陈：": ("Tony陈",),
+        "张尚文：": ("张尚文",),
+        "杨子良：": ("杨子良",),
+        "葛西健二：": ("葛西健二",),
+        "何妤玟：": ("何妤玟",),
+        "欧汉声：": ("欧汉声",),
+        "罗志祥：": ("罗志祥",),
+        "尤秋兴、颜志琳": ("尤秋兴", "颜志琳"),
+        "小不点：": ("小不点（李敖Talk秀）",),
+        "叫KITTY": ("KITTY（李敖Talk秀）",),
+        "KITTY：": ("KITTY（李敖Talk秀）",),
+        "蔡琴：": ("蔡琴",),
+        "陈俊志：": ("陈俊志",),
+        "王苹：": ("王苹",),
+        "薛钦峰律师": ("薛钦峰",),
+        "薛钦峰：": ("薛钦峰",),
+        "况明洁：": ("况明洁",),
+        "文章：": ("文章（李敖Talk秀）",),
+        "我左边的是艾力克斯，范蜜儿、黄楷元": ("艾力克斯（李敖Talk秀）", "范蜜儿", "黄楷元"),
+        "这边是楚瑾、陈鹏安、汤惠婷": ("楚瑾", "陈鹏安", "汤惠婷"),
+        "艾力克斯：": ("艾力克斯（李敖Talk秀）",),
+        "楚瑾：": ("楚瑾",),
+        "姚黛玮、刘柏均、颜沛芸": ("姚黛玮", "刘柏均", "颜沛芸"),
+        "方岑、陈永曙、胡肇婷": ("方岑", "陈永曙", "胡肇婷"),
+        "姚黛玮：": ("姚黛玮",),
+        "陈洁仪：": ("陈洁仪",),
+        "方岑：": ("方岑",),
+        "刘柏均：": ("刘柏均",),
+        "胡肇婷：": ("胡肇婷",),
+        "叶瑷菱：": ("叶瑷菱",),
+        "苏爱伦、胡书伟、张仪君": ("苏爱伦", "胡书伟", "张仪君"),
+        "李杰圣、陈宜青、杜秉霖": ("李杰圣", "陈宜青", "杜秉霖"),
+        "李杰圣：": ("李杰圣",),
+        "陈宜青：": ("陈宜青",),
+        "张仪君：": ("张仪君",),
+        "胡书伟：": ("胡书伟",),
+        "杜秉霖：": ("杜秉霖",),
+        "郑进一：": ("郑进一",),
+        "洪英杰：": ("洪英杰",),
+        "胡书豪：": ("胡书豪",),
+        "林朝鑫先生": ("林朝鑫",),
+        "林朝鑫：": ("林朝鑫",),
+        "撰述委员楼兰小姐": ("楼兰（时报周刊）",),
+        "楼兰：": ("楼兰（时报周刊）",),
+        "张景为先生": ("张景为",),
+        "张景为：": ("张景为",),
+        "白喧先生": ("白喧",),
+        "白喧：": ("白喧",),
+        "夏甸将军": ("夏甸",),
+        "王菲到我家来看我": ("王菲",),
+        "唐朝有一个有名的大臣叫做任瑰": ("任瑰", "唐太宗"),
+        "任瑰的夫人": ("任瑰", "任夫人", "唐太宗"),
+        "任夫人说不可以": ("任夫人", "任瑰", "唐太宗"),
+        "写那个《哲学的故事》《文明的故事》的杜兰": ("杜兰",),
+        "罗丹与卡蜜儿": ("罗丹", "卡蜜儿"),
+        "电影明星苏菲亚罗兰": ("苏菲亚罗兰",),
+        "鲍德瑞克是个有名的电影明星": ("鲍德瑞克",),
+        "阿里斯太狄斯": ("阿里斯太狄斯",),
+        "金城武、伍佰": ("金城武", "伍佰"),
+        "伍佰？那康康": ("伍佰", "康康"),
+        "如果罗密欧有一个": ("罗密欧",),
+        "乔石是陈布雷": ("乔石", "陈布雷"),
+        "连张宝树都到机场去送他": ("张宝树",),
+        "牙医叫做石掌珠": ("石掌珠",),
+        "简志信《时报周刊》": ("简志信",),
+        "怀疑她跟王文洋": ("王文洋",),
+        "刘德华之类": ("刘德华",),
+    },
     "李敖颠倒众生": {
         # 首轮：节目专题中的强上下文人物，补足称谓、短名和被普通规则漏掉的低频节点。
         "尹清枫上校的夫人李美葵": ("尹清枫", "李美葵"),
@@ -35573,9 +35963,54 @@ STOP_NAMES.update({
     "那儿去", "时间之",
     # 《挑战李敖》第四轮：节目口语和“特别报道”等固定短语切出的非人物残片。
     "别报道", "马劳做",
+    # 《李敖Talk秀》closeout：普通词“成长”被成姓规则误切，并已在多本书中呈现为非人物。
+    "成长",
 })
 
 BOOK_SKIP_NAMES = {
+    "李敖Talk秀": {
+        # 首轮：电视口语、栏目名、话题词、称谓残片和被规则误切的短语。
+        "李敖Talk秀", "李敖Talk", "Talk秀", "TALK TIME", "Talk Time", "talk time",
+        "那如果", "那当然", "那表示", "那意思", "那假如", "那不然", "那到底", "那一般",
+        "那位女", "那像施", "那请陈", "那么低", "那么男", "那么请", "这么低", "这么男",
+        "谢谢各", "谢谢薛", "家好", "家觉得", "家人来", "家去猜", "大家觉", "各位看",
+        "别人住", "别人共", "别人又", "别人快", "别人打", "别人跑", "别成功",
+        "公公婆", "管监狱", "管行政", "红墨水", "师生恋", "花篮", "养鸡场",
+        "CL", "干嘛", "包皮之", "居事实", "李四没", "王五没", "小甜甜",
+        "李主席", "潘医师", "李医师", "陈医师", "郑医师", "张博士", "刘教授",
+        "任瑰说", "任瑰讨", "任何有", "居有什", "居八十", "居再分", "居好像",
+        "居很可", "居有名", "居来适", "居跟分", "居虐待",
+        "张三有", "张三锤", "戴勋章", "文明之", "方要喊", "时候老", "时又宣",
+        "时有两", "时脚踏", "时说得", "时适用", "林肯儿", "林肯怎", "欧美最",
+        "步告诉", "白天所", "经营自", "胡佛讲", "能来自", "解读说", "连家立",
+        "陆军所", "麻烦嘛", "国庆等", "国立艺", "平交出", "束好", "武获室",
+        # 第二轮：正式全库重建后由强词表带进来的动词短语、称谓碎片和普通话题词。
+        "全国骂", "公司签", "公开讲", "关心台", "别人加", "别人帮", "别人用", "别人讲",
+        "别什么", "别管制", "司机说", "向蒋介", "国元首", "国家未", "国立六",
+        "家变成", "家奇怪", "家特别", "师代表", "师学生", "师母", "常优秀", "常糟糕",
+        "平等权", "应该反", "应该找", "应该替", "应该蛮", "应该跳", "张文件", "张说",
+        "支持国", "文能力", "施令", "时才来", "曾经讲", "权标准", "权没有", "李学长",
+        "李昂今", "林肯讲", "欧洲有", "欧巴桑", "申出来", "白头誓", "盖住", "能够到",
+        "能够参", "能够帮", "能够说", "能答复", "许会说", "边听", "边要讲", "连任之",
+        "那基本", "白喧讲", "宋江",
+        # 第三轮：低频历史/神交专项中复核出的句读切片和泛称。
+        "严格说", "公告", "古话说", "国政治", "居然有", "家来看", "家属", "家庭生",
+        "明明知", "别人写", "别人摸", "国人讲", "容易去", "师没有", "常常看",
+        "常常讲", "常谢谢", "应该叫", "应该回", "应该想", "应该讲", "应该没",
+        "应该深", "方式来", "时候写", "时候有", "时候说", "时候还", "时发生",
+        "时没有", "时间没", "曾经写", "能代表", "能会有", "能够打", "能够算",
+        "能回答", "能没有", "能看到", "那所谓", "那天怎", "那学生", "那种当",
+        "那种性", "那种热", "那种自", "那边", "那边有", "那还有", "那问题",
+        "那除非", "那很难", "都会有", "都没看", "都要去", "都要看", "陈平说",
+        "通吃", "张三", "李四", "王五", "俞大维",
+        # 第五轮：closeout 前低频尾部抽查出的口语切片、地名半截和普通短语。
+        "李老师", "都会做", "都要受", "都赞成", "阴人", "于监狱", "唐飞可",
+        "向钱穆", "常重要", "方如果", "广播电", "须要跟", "干到底", "白天晚",
+        "西门庆说", "经结婚", "都好", "都希望", "都没办", "都要脱", "龙头级",
+        "从蒋介", "单独关", "台独万", "和平转", "方面没", "查身体", "查厕所",
+        "高速公", "国人打", "宋朝人", "羊头卖", "高科技", "明山", "束力高",
+        "毛巾", "红利", "衡量", "王委员", "曾部长", "阿弥陀佛",
+    },
     "李敖颠倒众生": {
         # 首轮：节目标题、机构词、事件词和口语残片，不作为人物节点。
         "李敖颠倒", "颠倒众生", "颠倒众", "众生",
@@ -36532,6 +36967,43 @@ def context_window(text: str, start: int, end: int, width: int = 48) -> str:
 
 
 def canonical_name(raw_name: str, ctx: str, book: str | None = None, chapter: str | None = None) -> str:
+    if book == "李敖Talk秀":
+        if raw_name == "潘医师" and "潘世斌" in ctx:
+            return "潘世斌"
+        if raw_name == "李医师" and "李家雄" in ctx:
+            return "李家雄"
+        if raw_name == "阿扁":
+            return "陈水扁"
+        if raw_name == "王宇" and "王羽" in ctx:
+            return "王羽"
+        if raw_name == "海伦" and "海伦凯勒" in ctx:
+            return "海伦凯勒"
+        if raw_name == "张牙医" and "邻居" in ctx:
+            return "张牙医（李敖Talk秀）"
+        if raw_name == "诸葛孔明":
+            return "诸葛亮"
+        if raw_name == "小不点" and any(marker in ctx for marker in ("哈日族", "走秀", "国中生")):
+            return "小不点（李敖Talk秀）"
+        if raw_name == "KITTY" and any(marker in ctx for marker in ("KITTY猫", "KITTY迷", "哈日")):
+            return "KITTY（李敖Talk秀）"
+        if raw_name == "艾力克斯" and any(marker in ctx for marker in ("同居", "俄国末代皇帝", "国外长大")):
+            return "艾力克斯（李敖Talk秀）"
+        if raw_name == "文章" and any(marker in ctx for marker in ("王菲", "拉斯维加斯", "崇拜你")):
+            return "文章（李敖Talk秀）"
+        if raw_name == "楼兰" and "时报周刊" in ctx:
+            return "楼兰（时报周刊）"
+        if raw_name == "宋希濂" and any(marker in ctx for marker in ("学校", "监狱", "明金城", "陈美儒")):
+            return "辛隆"
+        if raw_name == "张良" and any(marker in ctx for marker in ("张学良", "宁恩承", "西安事变")):
+            return "张学良"
+        if raw_name == "蔡松坡":
+            return "蔡锷"
+        if raw_name == "鲁宾斯" and "鲁宾斯坦" in ctx:
+            return "鲁宾斯坦"
+        if raw_name == "何东爵" and "何东爵士" in ctx:
+            return "何东"
+        if raw_name in {"李祖惜", "祖惜"} and any(marker in ctx for marker in ("侯冠群", "高峰会", "李登辉", "再见祖惜", "祖惜说相声")):
+            return "李登辉"
     if raw_name == "严法师":
         if "证严法师" in ctx:
             return "证严法师"
@@ -38707,6 +39179,10 @@ def extract_from_text(
             if raw_name == "湘女" and match.start() and text[match.start() - 1: match.start()] in SINGLE_SURNAMES:
                 continue
             if raw_name == "马偕" and book == "李敖五五日记":
+                continue
+            if raw_name == "李杰" and book == "李敖Talk秀" and text[match.end(): match.end() + 1] == "圣":
+                continue
+            if raw_name == "阿里" and book == "李敖Talk秀" and text[match.end(): match.end() + 1] in {"斯", "山"}:
                 continue
             ctx = context_window(text, match.start(), match.end())
             name = canonical_name(name, ctx, book, chapter)
