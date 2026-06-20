@@ -34,7 +34,7 @@ index.html
 
 - `index.html`：交互式网页。
 - `data/relationship-data.js`：网页读取的数据。
-- `data/people.json`：结构化数据。
+- `data/people.json`：结构化数据，使用紧凑 JSON 写出以控制仓库文件体积。
 - `exports/li-ao-relationships.txt`：纯文本人物总表。
 - `exports/by-book-index.txt`：逐本索引。
 - `exports/li-ao-relationships.csv`：表格导出。

@@ -1,0 +1,79 @@
+《李敖语妙天下》round4：closeout 前综合抽查
+
+时间：2026-06-20
+范围：010.节目演讲类/009.李敖语妙天下
+重建方式：从当前 data/people.json 的 87 本书反推出显式书目路径重建；没有使用 --all。
+
+一、本轮目标
+
+round3 后本书为 1478 人、25 条本书 personRelations。本轮做 closeout 前综合抽查：
+- 复核低频真名，避免把真实人物误当残片清掉。
+- 检查胡庚年、Vicky、胡汉文等上轮提到的漏收/别名问题。
+- 清掉最后一批“能/都”开头的动词短语残片。
+- 补少量证据明确的非李敖中心关系边。
+
+二、低频真名复核结论
+
+以下候选均确认是真人物，应保留：
+- 张国焘：西路军、毛泽东系统/张国焘系统语境。
+- 顾吉涛：万宝龙台湾总负责人，给李敖寄贺年片并请题字。
+- 黄石城：中央选举委员会主任委员，公投辩论主持/规则现场。
+- 赵少康：立委、辩论与台中一中学生回忆语境。
+- 谢长廷：民进党、行政院长、辩论与施政质询语境。
+- 唐飞：将军、陈水扁第一任行政院长，与太太“七世夫妻”笑话语境。
+- 王建煊、苏起等 round3 补线端点也复核为真。
+
+三、漏收人物与别名处理
+
+1. Vicky
+- 已有别名：Vicky -> 李姿仪。
+- 本轮确认：李姿仪已保留，且在本书出现为陈文茜办公室助理、李敖立委办公室秘书。
+
+2. 胡庚年
+- 原文证据：2009-03-13 明说胡庚年是电影明星胡因梦的爸爸。
+- 处理：补入 CURATED_IDENTITIES，并在 BOOK_PHRASE_PEOPLE 中加入本书短语触发。
+
+3. 胡汉文
+- 原文证据：2009-02-17、2009-04-30 讲胡适写字给族弟胡汉文，胡汉文开胡开文笔墨庄。
+- 处理：补入 CURATED_IDENTITIES，并在 BOOK_PHRASE_PEOPLE 中加入本书短语触发。
+
+四、残片清理
+
+新增《李敖语妙天下》BOOK_SKIP_NAMES 第四轮规则，清理 closeout 前复核出的“能/都”动词短语残片，例如：
+- 能出、能够决、能够直、能够拿、能幸免、能当选、能拿几、能站起、能选、能抽烟
+- 都丢掉、都会出、都写信、都希望、都很熟、都提出、都没办、都胡扯、都要吃、都要干、都要脱、都赞成、都赞美、都起义、都送、都送花、都会做、都抓起、都拒绝、都落选
+
+五、新增本书 personRelations 5 条
+
+- 胡庚年 -> 胡茵梦：父女/立法院家庭风波，weight 4
+- 梁肃戎 -> 胡庚年：东北立委调停/胡茵梦父母风波，weight 3
+- 胡适 -> 胡汉文：族弟/胡开文笔墨庄题字，weight 4
+- 陈文茜 -> 李姿仪：秘书/办公室助理往返，weight 4
+- 李姿仪 -> 陈境圳：立委办公室助理/主任秘书同事，weight 3
+
+六、重建结果
+
+- generatedAt：2026-06-20T11:31:32
+- totals：87 books，5607 chapters，11257 people，27907 identityLinks，2495 personRelations
+- 《李敖语妙天下》：113 chapters，1450 people，30 book-specific personRelations
+- data/people.json：42870077 bytes，仍低于 50MB
+
+七、校验
+
+- py_compile scripts/extract_relationships.py：通过
+- node --check data/relationship-data.js：通过
+- node --check assets/app.js：通过
+- exports/li-ao-relationships.csv 行数 = data.people 数：11257 = 11257
+- duplicate_names：0
+- missing_relation_endpoints：0
+- duplicate_relations_all：0
+- duplicate_relations_book：0
+- 胡庚年、胡汉文、李姿仪、张国焘、顾吉涛、黄石城、唐飞均存在
+- 5 条新增关系端点均存在，并已进入本书关系集
+- exports/by-book-index.txt 本书行：章节 113，人物 1450
+
+八、下一步建议
+
+本书已完成基线、高频清理、主关系线、低频尾部、漏收人物与 closeout 前综合抽查。建议下一轮进入《李敖语妙天下》closeout：
+- 做一次只读复核：本书指标、关系边清单、端点完整性、导出一致性、文件体积。
+- 若无异常，写 closeout note，然后再进入下一本书。
