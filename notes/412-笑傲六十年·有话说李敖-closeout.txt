@@ -1,0 +1,51 @@
+《笑傲六十年·有话说李敖》closeout
+
+时间：2026-06-20
+范围：010.节目演讲类/010.笑傲六十年·有话说李敖
+重建方式：沿用当前 88 本显式书目；本轮 closeout 未新增重建，也没有使用 --all。
+
+一、处理回顾
+
+本书共完成三轮：
+- round1：建立本书基线，补魏峥，清理高频节目转写残片。
+- round2：补文星、自由中国/白色恐怖、查禁、凤凰电视、2000 选举等主轴关系，共 17 条。
+- round3：做低频尾部净化、别名归并和遗漏关系二扫，再补 16 条关系；本书累计 33 条书内关系边。
+
+二、最终指标
+
+- generatedAt：2026-06-20T15:29:21
+- totals：88 books，5613 chapters，11259 people，27910 identityLinks，2528 personRelations
+- 《笑傲六十年·有话说李敖》：6 chapters，176 people，33 book-specific personRelations
+- target-only closeout：1 book，6 chapters，157 people
+- data/people.json：42906160 bytes，仍低于 50MB
+
+三、关系覆盖
+
+本书 33 条关系覆盖以下主轴：
+- 文星线：萧同兹、萧孟能、朱婉坚、胡茵梦。
+- 自由中国/白色恐怖线：胡适、严侨、姚从吾、殷海光、蒋介石。
+- 查禁/监狱/冤狱线：蒋经国、许历农、吴荣元、李荊荪、范子文、王济中等。
+- 情治与江南案线：汪敬煦、陈启礼、汪希苓、刘宜良、郭冠英。
+- 凤凰电视与媒体线：周荃、刘长乐、王祥基、汪用和、侯佩岑、孟祥柯、胡基峻。
+- 家庭和师友线：李谌、王志慧、王尚勤、李文、李鼎彝、刘泰英、陈正澄、杨锦铨、王福霖。
+- 选举与政治线：宋楚瑜、张昭雄、连战、萧万长、许信良、朱惠良、陈水扁、吕秀莲、李庆华、冯沪祥、王作荣、李登辉。
+
+四、closeout 校验
+
+- target-only 明确残片复查：通过；round3 确认的残片均未保留。
+- target-only 归并复查：王作荣、姚从吾、周恩来、殷海光、高金素梅、陈仪、孟祥柯、刘宜良、侯佩岑、冉茂芹、孙玉华等均保留。
+- 本书 expected relation pairs：33/33 全部存在。
+- missing_relation_endpoints：0
+- duplicate_relations：0
+- exports/li-ao-relationships.csv 行数 = data.people 数：11259 = 11259
+- py_compile scripts/extract_relationships.py：通过
+- node --check data/relationship-data.js：通过
+- node --check assets/app.js：通过
+
+五、结论
+
+《笑傲六十年·有话说李敖》可 closeout。
+
+下一本建议进入：010.节目演讲类/011.李敖演讲集。
+
+继续保持：只使用显式 --book-path 白名单重建，严禁使用 --all。
