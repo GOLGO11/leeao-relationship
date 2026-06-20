@@ -1,0 +1,82 @@
+《笑敖年代》round3：低频尾部与关系补线
+
+时间：2026-06-20
+范围：`010.节目演讲类/008.笑敖年代`
+边界：未使用 `--all`。沿用当前 86 本显式 book path 重建总表。
+
+一、目标
+
+按 round2 建议复核本书 1 次低频节点和关系尾部，重点处理：
+- 泛称、短语半截、地名机构词。
+- 仍未入边的真实政治人物、司法人物、节目媒体人物。
+- 台北市长选战、国务机要费案、倒扁运动三条主线的低频关系缺口。
+
+二、本轮处理
+
+1. 别名归并
+- `云法师 -> 星云法师`
+- `广田弘 -> 广田弘毅`
+- `曾文慧 -> 曾文惠`
+- `马云九 -> 马英九`
+
+2. 低频真实端点身份补充
+- `施振荣`：property_finance、public_debate、source_support
+- `蔡明华`：lawyer_counsel、public_debate
+- `罗伯李`：military_figure、historical_allusion
+- `苏振平`：public_official、source_support、public_debate
+- `马永成`：source_support、property_finance、public_debate
+
+3. 1 次残片清理
+- 本轮重点剔除 1 次节点中的泛称、地名、动词短语、职衔半截和真名粘连。
+- 代表项：`乌克兰`、`于陈水`、`党什么`、`关公来`、`柴电潜`、`权鼎立`、`查权`、`马哥跟`、`高顾问`、`黎巴嫩` 等。
+
+4. 新增关系边
+- `周玉蔻 -> 李登辉`：台北市长选战/台联广告背书
+- `陈水扁 -> 马永成`：国务机要费案/幕僚报账争议
+- `王永兴 -> 苏振平`：审计部/国务机要费查账争议
+- `叶腾瑞 -> 赵功恒`：同案法官/冯沪祥案程序争议
+- `赵功恒 -> 庄明彰`：同案法官/冯沪祥案程序争议
+
+三、重建结果
+
+重建边界：
+- explicit_book_paths=86
+- chapters=5494
+
+总表：
+- generatedAt：2026-06-20T09:35:11
+- books：86
+- chapters：5494
+- people：11015
+- identityLinks：27508
+- personRelations：2465
+- CSV rows：11015
+
+本书：
+- book：笑敖年代
+- chapters：16
+- personCount：380
+- personRelations：19
+- 1 次节点：74
+- 索引位置：`exports/by-book-index.txt:226`
+
+四、验证
+
+- `python -m py_compile scripts/extract_relationships.py`：通过
+- `node --check data/relationship-data.js`：通过
+- `node --check assets/app.js`：通过
+- duplicate_names：0
+- duplicate_relations_all：0
+- missing relation endpoints：0
+- CSV rows 与 people 总数一致：11015
+
+五、备注
+
+本轮第一次 PowerShell here-string 重建命令返回 exit 1 且无输出，未生成临时数据。随后改用临时 Python driver 文件执行同一显式 86 本重建，成功后已删除临时 driver。
+
+六、下一轮建议
+
+进入 round4：做 `笑敖年代` closeout 前综合抽查。
+- 复核前 50 高频节点是否仍有口播残片。
+- 复核 19 条本书关系边的端点、权重和说明。
+- 抽查剩余 74 个 1 次节点，确认是否可以进入本书 closeout。

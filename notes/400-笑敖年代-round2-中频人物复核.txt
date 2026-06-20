@@ -1,0 +1,75 @@
+《笑敖年代》round2：中频人物复核
+
+时间：2026-06-20
+范围：`010.节目演讲类/008.笑敖年代`
+边界：未使用 `--all`。沿用当前 86 本显式 book path 重建总表。
+
+一、目标
+
+按 round1 建议复核本书总表口径下 2-10 次中频人物，重点区分：
+- 全库标题名放大的短语残片。
+- 台北市长选战、国务机要费、倒扁运动中的真实低频端点。
+- 节目主持、媒体、司法、第一家庭与选战文书线的身份标签。
+
+二、本轮处理
+
+1. 非人物清理
+- 确认并剔除 `韩国`、`高难度`、`白虎星`。
+- 理由：分别为国家名、难度词、星命术语，不是人物节点。
+
+2. 身份补充
+- `赵建铭`：family、litigation、property_finance、public_debate
+- `王永兴`：public_official、source_support、public_debate
+- `赵功恒`、`庄明彰`、`叶腾瑞`：legal_official、litigation
+- `黄营杉`：public_official、politician、public_debate
+- `蔡璧煌`：politician、party_propaganda、source_support、public_debate
+- `艾琳达`：in_law、public_debate、family
+
+3. 新增关系边
+- `施明德 -> 艾琳达`：前妻/国民党资助指控争议
+- `陈水扁 -> 吴淑珍`：夫妻/国务机要费第一家庭争议
+- `陈水扁 -> 赵建铭`：第一家庭/女婿司法案
+- `蔡璧煌 -> 李登辉`：选战密报/国民党主席线
+
+三、重建结果
+
+重建边界：
+- explicit_book_paths=86
+- chapters=5494
+
+总表：
+- generatedAt：2026-06-20T09:25:27
+- books：86
+- chapters：5494
+- people：11040
+- identityLinks：27554
+- personRelations：2460
+- CSV rows：11040
+
+本书：
+- book：笑敖年代
+- chapters：16
+- personCount：494
+- personRelations：14
+- 中频 2-10 次候选：125
+
+四、验证
+
+- `python -m py_compile scripts/extract_relationships.py`：通过
+- `node --check data/relationship-data.js`：通过
+- `node --check assets/app.js`：通过
+- duplicate_names：0
+- duplicate_relations_all：0
+- missing relation endpoints：0
+- CSV rows 与 people 总数一致：11040
+
+五、备注
+
+本轮全量重建时 `data/.people.json.tmp -> data/people.json` 曾遇到一次 Windows replace 权限拒绝；临时 JSON 已完整生成，随后成功手动替换并用同一 JSON 刷新 `relationship-data.js` 与 `exports/`。最终校验已通过。
+
+六、下一轮建议
+
+进入 round3：做 `笑敖年代` 低频 1 次人物和关系尾部抽查。重点关注：
+- 1 次节点中的泛称、短语半截和地名机构词。
+- 仍未入边的真实政治人物、司法人物、节目媒体人物。
+- 台北市长选战多候选人、国务机要费案、倒扁运动三条主线是否还缺关键关系边。
