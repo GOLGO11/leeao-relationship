@@ -1,0 +1,39 @@
+《李敖发电集》round4：中低频关系补网与残片回收
+
+范围：
+- 延续 round3 后的《李敖发电集》。
+- 目标路径仍为：《大李敖全集5.0》（wjm_tcy版）分章节\011.李敖电子报\002.李敖发电集。
+- 正式重建继续使用当前 data/people.json 中 93 本书的显式 --book-path 白名单；没有使用 --all。
+
+本轮处理：
+1. 新增 27 条《李敖发电集》personRelations，使本书关系边从 63 条增至 90 条。
+   - 东吴演讲取消：刘源俊、张中训、许清云、叶海烟。
+   - 清大候选人演讲规则：刘炯朗、宋楚瑜、陈水扁、沈君山、刘兆玄。
+   - 李登辉房产/财务调查：李庆元、石掌珠、李登辉、连战。
+   - 新党与选战态度：黄珊珊、郝龙斌、谢启大；吴伯雄、连战、宋楚瑜、李登辉。
+   - 海外返台政治人和台独论述：张灿鍙、陈唐山、沈富雄、彭明敏。
+   - 低频但证据链清楚的补边：庄万寿-李登辉、庄万寿-王又曾、陈培堃-李远哲、王建煊相关边。
+2. 增补 alias：石晏 -> 石掌珠，配合原有短语锚点，避免房产调查中的改名异写生成新节点。
+3. 将本书残片“干到底”“祖国”加入 BOOK_SKIP_NAMES["李敖发电集"]。
+4. 补强刘炯朗 curated identity：academic_admin / academic / public_debate。
+
+验证：
+1. Python compile 语法检查通过。
+2. AST 检查《李敖发电集》关系边：90 条，无重复 source-target 边。
+3. 单书临时抽取通过：44 章，267 个本书人物，本书关系边 90 条。
+4. 正式重建使用 93 个显式 --book-path，未使用 --all。
+5. 正式输出统计：
+   - totals：12110 people / 93 books / 5932 chapters / 2765 personRelations。
+   - 《李敖发电集》：44 chapters / 395 personCount / 90 targetRelations。
+6. 残片复核：
+   - 干到底：targetCount 0。
+   - 祖国：targetCount 0。
+   - 石晏：未生成独立人物；石掌珠在本书 targetCount 25。
+7. 本书 90 条关系边 source/target 均存在于 people.json。
+
+写回说明：
+- 正式抽取阶段完成后，Windows 在 data/people.json 的原子替换上返回 PermissionError。
+- 已验证 data/.people.json.tmp 是完整正式输出后，用同一份 JSON 直接重写 data/people.json、relationship-data.js 与 exports 三个导出文件，并删除临时 JSON。
+
+下一步建议：
+- 进入《李敖发电集》closeout 前检查/closeout：抽样核对高频主轴、低频尾部、关系端点 evidence 与 by-book-index 行数，若无新增问题即可封板进入《李敖送电集》。

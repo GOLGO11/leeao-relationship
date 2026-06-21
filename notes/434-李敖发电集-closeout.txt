@@ -1,0 +1,61 @@
+《李敖发电集》closeout
+
+范围：
+- 书籍路径：011.李敖电子报 / 002.李敖发电集
+- 章节数：44
+- 本书四轮处理记录：430 round1、431 round2、432 round3、433 round4。
+- 全程使用显式 --book-path；未使用 --all。
+
+最终口径：
+1. round1：基线与高频残片清理。
+   - 纳入电子报第二册，补回冥婚报道、学术迫害、媒体采访、一国两制说明、党产/博新资金线等端点。
+   - 清理标题、政策词、地名泛称、物件词和姓氏规则误切残片。
+2. round2：人物关系边补网。
+   - 补出党产、博新交易、学术迫害、李登辉旧事、房产疑云、党外/民进党旧线等关系主轴。
+3. round3：低频政治媒体与房产链补边。
+   - 加强水里别墅、鸿禧山庄、环球电视经营权、一国两制会谈等低频但证据明确的关系链。
+   - 固定彭高贞、张胜雄、张贵娥、沈吉田、林引国、沈世雄、赵怡、王又曾、希思等端点。
+4. round4 + closeout cleanup：中低频关系补网与残片回收。
+   - 新增东吴演讲取消、清大候选人演讲规则、李庆元财务调查、新党选战态度、海外返台政治人等关系边。
+   - 增补石晏 -> 石掌珠。
+   - closeout 审计时继续回收低频残片，例如：从今天、公权力、马哥说、那李登、支持连、张牙医（五五日记）、李主席等。
+   - 将“国务卿休华德”锚为休华德，避免只留下“华德”半截。
+
+最终正式输出：
+- generatedAt：2026-06-21T19:48:57
+- 全库：12102 people / 93 books / 5932 chapters / 29494 identityLinks / 2765 personRelations。
+- 《李敖发电集》：343 people / 44 chapters / 90 personRelations。
+- data/people.json：46,872,554 bytes。
+- data/relationship-data.js：17,772,067 bytes。
+- exports/by-book-index.txt：90,014 bytes。
+- exports/li-ao-relationships.txt：26,152,474 bytes。
+- exports/li-ao-relationships.csv：2,191,443 bytes。
+
+最终校验：
+- source 目录正文 txt：44 个；data 中本书 chapters：44。
+- totals.people = people.length = 12102。
+- totals.books = books.length = 93。
+- totals.personRelations = personRelations.length = 2765。
+- duplicateNames = 0。
+- duplicateRelationsOrdered = 0。
+- duplicateRelationsUnordered = 0。
+- missingRelationEndpoints = 0。
+- targetNoEvidence = 0。
+- exports/li-ao-relationships.txt 中《李敖发电集》关系行 = 90。
+- exports/li-ao-relationships.csv 数据行数 = 12102。
+- exports/by-book-index.txt 本书行：章节 44 / 人物 343。
+- 残片复核：从今天、公权力、马哥说、那李登、张牙医（五五日记）、支持连、李主席、华德均为 0；休华德为 1。
+- 低频尾部保留项抽查为真人或可保留端点：莫文蔚、罗文嘉、李政一、苏起、王清峰、朱镕基、汪敬煦、吴荣元、黄昆辉、唐树备、华莱士等。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- scripts/extract_relationships.py AST 解析：通过。
+- git diff --check：通过，仅有 Git 的 LF/CRLF 提醒。
+- data/ 与 exports/ 未发现 .tmp 临时文件残留。
+
+本书完成结论：
+- 《李敖发电集》已完成 closeout。
+- 当前人物数低于 round4 初稿，是 closeout 将低频残片进一步回收后的结果；关系边保持 90 条。
+
+下一步建议：
+- 进入 011.李敖电子报 / 003.李敖送电集。
+- 建议第一轮做单书基线与高频残片清理，正式重建仍使用当前书目白名单的显式 --book-path，严禁使用 --all。

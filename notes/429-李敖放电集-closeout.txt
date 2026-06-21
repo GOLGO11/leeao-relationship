@@ -1,0 +1,39 @@
+《李敖放电集》closeout
+
+范围：
+- 书籍路径：011.李敖电子报 / 001.李敖放电集
+- 章节数：23
+- 本书三轮处理记录：426 round1、427 round2、428 round3。
+- 全程使用显式 --book-path；未使用 --all。
+
+最终口径：
+- round1：基线与高频残片清理，补入低频真人、报导署名、随行名单和社会事件端点。
+- round2：补高频主轴关系边，包括媒体节目、党外建党、自救宣言、石原访台、黄信介回忆、党产掌控等。
+- round3：低频尾部与口径二扫，剔除“华兄”，保留证据明确的低频真人、文本角色、历史人物和出版/通信实体，并补强江丙坤端点。
+
+最终数据：
+- 全库：12074 人 / 92 书 / 5888 章 / 2675 条 personRelations。
+- 《李敖放电集》：191 人 / 23 章 / 36 条 personRelations。
+- data/people.json：46,716,963 bytes。
+- data/relationship-data.js：17,703,575 bytes。
+- exports/by-book-index.txt 中本书行：章节 23 / 人物 191。
+
+最终校验：
+- totals.people = people.length = 12074。
+- totals.books = books.length = 92。
+- totals.personRelations = personRelations.length = 2675。
+- duplicateNames=0。
+- duplicateRelations=0。
+- missingRelationEndpoints=0。
+- targetRelations=36。
+- exports/li-ao-relationships.txt 中《李敖放电集》关系行=36。
+- 低频 suspicious 扫描为空。
+- 华兄=0；江丙坤=2。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅有 Git 的 LF/CRLF 提醒。
+- 未发现 .tmp-fangdian-* 临时文件或目录残留。
+
+本书完成结论：
+- 《李敖放电集》已完成本书 closeout。
+- 下一步建议进入 011.李敖电子报 / 002.李敖发电集。
