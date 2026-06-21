@@ -1,0 +1,90 @@
+# 《快意还乡——李敖神州文化之旅》closeout
+
+时间：2026-06-21
+
+范围：`010.节目演讲类/013.快意还乡——李敖神州文化之旅`
+
+closeout 方式：只读复核当前正式输出；本次 closeout 没有重建，没有使用 `--all`。
+
+## 一、处理轮次回顾
+
+1. round1：基线与高频残片清理。
+   - 将本书纳入正式 91 本显式书目结果。
+   - 固定刘长乐、王纪言、吴小莉、陈鲁豫、窦文涛、鲁荣坤、王恒庆、黄维翰、田瑞琴、秦绍德、姜义华、陈希、李强、王江渝、余三乐、郑欣淼、金运昌、何飞鹏、子尤、许以祺、潘君密、李荣胜、陈兆基等神州行主干人物。
+   - 清理“家知道、常重要、王世杰、黄维汉”等高频或易误切残片。
+
+2. round2：低频真人与关系边专项。
+   - 新增并校验 34 条本书人物关系边。
+   - 补强张敏英、刘长铭、陶西平、周盛、张至真、潘燕生、吴志攀、凌峰、胡慧中、平路、李慎言等低频但证据明确的真人锚点。
+   - 清理“孔子只、白发老、益匪浅、相仿、程度好、别人同、国人打、国最好、空壳子、通用公、陆方面、陆记者、鲁迅先、鲁迅高、明山”等残片。
+
+## 二、最终正式输出
+
+本次 closeout 依据当前正式 `data/people.json` 验证：
+
+1. 全库当前口径：
+   - generatedAt：2026-06-21T10:10:00
+   - 12053 people
+   - 91 books
+   - 5865 chapters
+   - 29387 identityLinks
+   - 2639 personRelations
+
+2. 《快意还乡——李敖神州文化之旅》：
+   - 12 chapters
+   - 282 personCount
+   - 34 book-specific personRelations
+
+3. 文件体积：
+   - `data/people.json`：46620739 bytes，约 44.46 MiB。
+   - `data/relationship-data.js`：17663755 bytes。
+   - `exports/by-book-index.txt`：88052 bytes。
+   - `exports/li-ao-relationships.txt`：26029197 bytes。
+   - `exports/li-ao-relationships.csv`：2181593 bytes。
+
+## 三、关系覆盖
+
+本书 34 条关系边覆盖以下主轴：
+
+1. 凤凰与成行组织线：
+   - 刘长乐、王纪言、吴小莉、王祥基、陈文茜、游本嘉、窦文涛。
+
+2. 北京小学、四中与旧人寻访线：
+   - 陈鲁豫、黄维翰、鲁荣坤、王恒庆、田瑞琴、张敏英、刘长铭、陶西平、周盛、张至真、潘燕生、李慎言。
+
+3. 高校、文化机构与资料支持线：
+   - 陈希、李强、秦绍德、姜义华、王江渝、余三乐、郑欣淼、金运昌、何飞鹏、子尤、许以祺、潘君密、李荣胜、陈兆基、凌峰。
+
+4. 香港宴请与返台接机线：
+   - 徐展堂、黄光汉、李祖泽、卢重兴、张国良、刘永碧、吴思远、罗大佑、何志平、胡慧中、平路、马家辉、钟荣吉、李庆华、李永萍。
+
+## 四、closeout 校验
+
+- `data/people.json` duplicate_names：0。
+- personRelations ordered duplicate：0。
+- personRelations unordered duplicate：0。
+- missing_relation_endpoints：0。
+- exports/li-ao-relationships.csv 数据行数 = people 数：12053 = 12053。
+- `exports/by-book-index.txt` 包含本书。
+- `exports/li-ao-relationships.txt` 包含本书。
+- 本书 34 条关系在 TXT 导出中全部可见。
+- target top people 中 count<=2 只剩：陈独秀、黄山谷、朱丽叶。三者更像历史/文学典故或可保留节点，不属于本书阻塞性残片。
+- `node --check data/relationship-data.js`：通过。
+- `node --check assets/app.js`：通过。
+- `scripts/extract_relationships.py` AST 解析：通过。
+
+## 五、结论
+
+《快意还乡——李敖神州文化之旅》可以 closeout。
+
+当前本书已完成基线入库、高频残片清理、低频真人补锚、神州行关系边补网、正式导出审计和 closeout 结构复核。除非后续人工阅读发现具体问题，不建议继续在本书扩边；更适合进入下一本。
+
+## 六、下一步建议
+
+节目演讲类 13 本已经全部处理完。
+
+若按当前大类结束后继续往下，建议进入 `011.李敖电子报/001.李敖放电集`。
+
+另按全集源目录顺序，当前最早未纳入的书是 `003.惊世杂文类/015.千秋万岁编外集`。如果目标优先补齐前序缺口，也可以先回补这本。
+
+无论选择哪一本，下一轮仍建议采用单书基线 + 高频残片清理，正式重建继续使用显式 `--book-path`，严禁使用 `--all`。
