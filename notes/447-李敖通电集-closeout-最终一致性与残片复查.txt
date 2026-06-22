@@ -1,0 +1,58 @@
+《李敖通电集》closeout：最终一致性与残片复查
+
+时间：2026-06-22
+
+一、本轮目标
+
+1. 对《李敖通电集》进行封板前复查。
+2. 重点检查正式 by-book-index 前排、单书 1-2 次尾部、关系边端点完整性和重复关系。
+3. 只做本书残片清理，不新增关系边。
+4. 正式重建继续使用当前 96 本书的显式 --book-path 列表；未使用 --all。
+
+二、closeout 清理
+
+1. 单书 closeout 基线：279 people / 89 chapters / 93 personRelations。
+2. 首轮尾部复核清理的典型残片：
+   经征得、何支薪、和两位、应依、经评议、查作业、公帑、包含卢、司机同、陈密谈、任来、时当场、项发现、龙柏、支领特、刘主任、连家立、万左右、成立特、常常想、宣称、江主席、文洋兄、白恳请、相晤、能尽速、通拆掉、那院长、金融贷、印证、家人迁、闻声、闻显示、陈明、陈之信、陈做最、陈再次、陈摊牌、陈沟通、陈交换、高血压、石城兄、金校长、李夫人。
+3. 二扫继续清理的正式/单书回流残片：
+   罗斯福、能参选、关中、计室卢、马围剿、高薪水、施令、祖父祖、能劝卢、车驾驶、郑重质、金十万、龙穴、慎重、时支持、劳伦斯。
+4. 单书 closeout 后：219 people / 89 chapters / 93 personRelations。
+5. 二扫后的低频尾部主要剩余为实名人物、历史典故、宗教/文化人物或有明确来源语境的边缘节点，未继续扩大 skip。
+
+三、正式重建
+
+1. 使用当前 data/people.json 中的 96 本书映射源目录，生成 96 个显式 --book-path。
+2. 未使用 --all。
+3. 正式重建 generatedAt：2026-06-22T19:15:26。
+4. 总表结果：
+   12265 people / 96 books / 6124 chapters / 29832 identityLinks / 2991 personRelations。
+5. 《李敖通电集》结果：
+   392 people / 89 chapters / 93 personRelations。
+6. data/people.json 文件大小：
+   47,637,377 bytes。
+
+四、验证结果
+
+1. 单书验证：
+   target relations = 93。
+   missingEndpoints = 0。
+   targetOrderedPairDuplicates = 0。
+   targetUnorderedPairDuplicates = 0。
+2. 正式数据验证：
+   target relations = 93。
+   missingEndpoints = 0。
+   targetOrderedPairDuplicates = 0。
+   targetUnorderedPairDuplicates = 0。
+3. exports/by-book-index.txt 抽查：
+   《李敖通电集》显示 89 章、392 人；前 60 名未见明显非人物残片。
+4. 语法与导出检查：
+   scripts/extract_relationships.py ast.parse 通过。
+   node --check data/relationship-data.js 通过。
+   node --check assets/app.js 通过。
+   git diff --check 仅有 LF/CRLF 转换提示，无空白错误。
+
+五、结论与下一步
+
+《李敖通电集》可以封板。本书从 round3 正式数据的 452 人进一步收口到 392 人，同时保持 93 条人物关系边完整。
+
+下一步建议进入下一本书的首轮基线与高频残片清理；若继续沿电子报顺序，可进入后续电子报册。

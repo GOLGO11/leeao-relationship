@@ -1,0 +1,59 @@
+《李敖通电集》round2：人物关系边补网
+
+范围：
+- 书籍路径：011.李敖电子报 / 005.李敖通电集。
+- 承接 round1 的基线与残片清理，本轮专补本书人物关系边。
+- 正式重建使用当前 96 本书的显式 --book-path 清单；未使用 --all。
+
+本轮处理：
+- 新增《李敖通电集》PERSON_RELATIONS 64 条。
+- 新增本书 SSC 计划段落实名锚点与 phrase anchors：
+  丁肇中、李崇道、郑洪。
+- 关系主轴：
+  1. 全民电通/环球电视/民视告发线：张俊宏、余陈月瑛、吴子嘉、李永萍、杨宪宏、陈振东、蔡同荣、田再庭、巴燕达鲁、钟金江、许荣棋、李承龙、刘旭峰、王而立、连方瑀。
+  2. 中研院 SSC、院长交接、司机命案、销假返院与王企祥八行书线：李远哲、吴大猷、李政道、李崇道、丁肇中、杨振宁、郑洪、邬宏潘、戴政、卢丁财、杨重信、阎琴南、刘锡江、周东欉、沈哲鲲、唐飞、陈水扁、王企祥、刘兆玄、张昭鼎。
+  3. 王永庆父子密使与核四/台塑线：秦慧珠、王文洋、王永庆、江绵恒、江泽民、陈水扁、陈定南、唐飞、林信义。
+  4. 尹清枫/拉法叶案与冯沪祥质疑线：冯沪祥、陈水扁、李登辉、曾文惠、尹清枫。
+
+单书校验：
+- 单书复抽：354 people / 1 book / 89 chapters。
+- 单书 identityLinks = 794。
+- 单书 personRelations = 187；其中《李敖通电集》targetRelations = 64。
+- targetExportRelationLines = 64。
+- missingRelationEndpoints = 0。
+- duplicateExactRelations = 0。
+- targetOrderedPairDuplicates = 0。
+- targetUnorderedPairDuplicates = 0。
+
+正式重建输出：
+- generatedAt：2026-06-22T15:16:12。
+- 显式书目：explicitBookPaths = 96。
+- 全库：12387 people / 96 books / 6124 chapters / 29972 identityLinks / 2962 personRelations。
+- 《李敖通电集》：534 people / 89 chapters / 64 personRelations。
+- data/people.json：47,895,120 bytes。
+- data/relationship-data.js：18,187,912 bytes。
+- exports/by-book-index.txt：92,943 bytes。
+- exports/li-ao-relationships.txt：26,596,710 bytes。
+- exports/li-ao-relationships.csv：2,241,892 bytes。
+
+正式校验：
+- totals.people = people.length = 12387。
+- totals.books = books.length = 96。
+- totals.chapters = 各书 chapters 合计 = 6124。
+- totals.identityLinks = identityLinks.length = 29972。
+- totals.personRelations = personRelations.length = 2962。
+- 《李敖通电集》targetRelations = 64。
+- 《李敖通电集》targetExportRelationLines = 64。
+- duplicateExactRelations = 0。
+- targetOrderedPairDuplicates = 0。
+- targetUnorderedPairDuplicates = 0。
+- missingRelationEndpoints = 0。
+- exports/by-book-index.txt 本书行：章节 89 / 人物 534。
+- exports/li-ao-relationships.csv 数据行数 = 12387。
+
+下一轮建议：
+- round3 做本书关系精修与低频尾部二扫。
+- 优先检查：
+  1. 是否要把本轮未纳入的同段人物继续补成低权重边，例如蔡豪、陈升宏、赵怡、包奕洪、林俊义等。
+  2. 是否有本书新增关系文案过宽或可合并的边，尤其民视告发名单与 SSC 阵营边。
+  3. 复扫本书低频尾部，确认新增丁肇中、李崇道、郑洪后没有带入新残片。

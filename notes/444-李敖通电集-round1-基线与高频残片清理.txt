@@ -1,0 +1,68 @@
+《李敖通电集》round1：基线与高频残片清理
+
+范围：
+- 书籍路径：011.李敖电子报 / 005.李敖通电集。
+- 源目录 txt：90 个；其中正文文件 89 个，目录文件《李敖通电集》目录.txt 未计入章节。
+- 本轮进入电子报第五册，先做单书基线、低频实名锚点与高频/全库回流残片清理。
+- 正式重建使用当前 95 本书加《李敖通电集》共 96 本书的显式 --book-path 清单；未使用 --all。
+
+初始基线：
+- 单书初抽：380 people / 1 book / 89 chapters。
+- 单书初抽中《李敖通电集》targetRelations = 0。
+- 高频人物：李远哲 308、陈水扁 176、王文洋 154、张俊宏 137、王永庆 116、秦慧珠 106、江绵恒 106、李登辉 59、尤清 58、吴子嘉 39、冯沪祥 34、江泽民 30、李鼎彝 29、余陈月瑛 25、卢丁财 25、黄石城 25。
+- 高频残片和回流风险：
+  公职候、于八十、杨主任、冯委员、司机命、高科技、苏司机、秦委员、相当职、任职务、任人员、相关著、公务人、山地保、经济发、明原因、台八十、应用科、支待遇、任阁揆、步辐射、巴燕达、巫咒邪、台币、安排王、项资料、严办、周家家、任官、于文到、计画、于本、公开表、简泽民、李远、经口头。
+
+本轮处理：
+- 新增本书 curated identities，固定环球电视/全民电通、中央研究院与政务争议中的低频真实端点：
+  陈振东、刘旭峰、王而立、陈升宏、巴燕达鲁、阎琴南、戴政、林全、廖本烟。
+- 新增本书 phrase anchors，补回明确低频端点：
+  杨宪宏、陈振东、刘旭峰、王而立、陈升宏、蔡豪、巴燕达鲁、杨重信、阎琴南、刘锡江、邬宏潘、戴政、林全、廖本烟。
+- 新增《李敖通电集》BOOK_SKIP_NAMES，回收标题、职称半截、法规语句、金额/科技词、机构泛称和句子残片。
+- 本轮不补 PERSON_RELATIONS，保留 round2 做人物关系边补网。
+
+单书清理后：
+- 单书复抽：351 people / 1 book / 89 chapters。
+- 《李敖通电集》targetRelations = 0。
+- 关键残片复核为 0：
+  公职候、于八十、杨主任、冯委员、司机命、高科技、苏司机、秦委员、相当职、任职务、任人员、相关著、公务人、山地保、经济发、明原因、台八十、应用科、支待遇、任阁揆、步辐射、巴燕达、巫咒邪、台币、安排王、项资料、严办、周家家、任官、于文到、计画、于本、公开表、简泽民、李远、经口头。
+- 关键实名锚点保留：
+  杨宪宏、陈振东、刘旭峰、王而立、陈升宏、蔡豪、巴燕达鲁、阎琴南、戴政、邬宏潘、刘锡江、杨重信、卢丁财、罗铜壁、沈哲鲲。
+
+正式重建输出：
+- generatedAt：2026-06-22T14:43:04。
+- 显式书目：explicitBookPaths = 96。
+- 全库：12384 people / 96 books / 6124 chapters / 29963 identityLinks / 2898 personRelations。
+- 《李敖通电集》：531 people / 89 chapters / 0 personRelations。
+- data/people.json：47,867,431 bytes。
+- data/relationship-data.js：18,164,900 bytes。
+- exports/by-book-index.txt：92,943 bytes。
+- exports/li-ao-relationships.txt：26,573,194 bytes。
+- exports/li-ao-relationships.csv：2,241,307 bytes。
+
+正式校验：
+- source 目录全部 txt = 90；正文 txt = 89；目录文件 = 《李敖通电集》目录.txt。
+- totals.people = people.length = 12384。
+- totals.books = books.length = 96。
+- totals.chapters = 各书 chapters 合计 = 6124。
+- totals.identityLinks = identityLinks.length = 29963。
+- totals.personRelations = personRelations.length = 2898。
+- duplicateNames = 0。
+- duplicateExactRelations = 0。
+- targetOrderedPairDuplicates = 0。
+- targetUnorderedPairDuplicates = 0。
+- missingRelationEndpoints = 0。
+- exports/by-book-index.txt 本书行：章节 89 / 人物 531。
+- exports/li-ao-relationships.txt 中《李敖通电集》关系行 = 0。
+- exports/li-ao-relationships.csv 数据行数 = 12384。
+- 本书关键残片命中 = 0。
+- 关键实名保留：杨宪宏 48、陈振东 2、刘旭峰 2、王而立 2、陈升宏 2、蔡豪 55、巴燕达鲁 1、阎琴南 1、戴政 1、邬宏潘 3、刘锡江 19、杨重信 13、卢丁财 25、罗铜壁 4、沈哲鲲 3。
+
+下一轮建议：
+- round2 进入人物关系边补网。
+- 优先主轴：
+  全民电通/环球电视/民视告发线：张俊宏、余陈月瑛、吴子嘉、李永萍、杨宪宏、陈振东、蔡同荣、田再庭、巴燕达鲁、钟金江、许荣棋、李承龙。
+  中研院李远哲线：李远哲、吴大猷、李政道、刘锡江、杨重信、卢丁财、阎琴南、罗铜壁、沈哲鲲、连战。
+  王永庆父子密使线：秦慧珠、王文洋、王永庆、江绵恒、江泽民、陈水扁、陈定南、宋楚瑜、唐飞。
+  核四/政务线：陈水扁、唐飞、林信义、林俊义、王永庆、秦慧珠。
+  尹清枫/拉法叶案与冯沪祥质疑线：冯沪祥、陈水扁、李登辉、曾文惠。

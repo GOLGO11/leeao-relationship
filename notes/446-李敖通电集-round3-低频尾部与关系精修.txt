@@ -1,0 +1,66 @@
+《李敖通电集》round3：低频尾部与关系精修
+
+时间：2026-06-22
+
+一、本轮目标
+
+1. 接续 round2 的 64 条本书人物关系边，进行低频尾部与漏收端点复核。
+2. 补强环球电视/全民电通、中研院李远哲线、曾文惠自诉与拉法叶案三组关系网络。
+3. 清理正式全量重建后由强信号回流到本书索引的非人物残片。
+4. 正式重建继续使用 96 个显式 --book-path；未使用 --all。
+
+二、脚本修改
+
+1. 在《李敖通电集》专用 CURATED_IDENTITIES 中补入 6 个低频真实端点：
+   赵怡、戴锜、刘和谦、李曾遹、陈刚信、柯建铭。
+2. 在 BOOK_PHRASE_PEOPLE["李敖通电集"] 中补入明确短语锚点，覆盖：
+   环球电视原组成者赵怡、民视董监事名单、王企祥/梅贻琦/俞大维/李曾遹求学论文线、吴锦丽来电、丁远超举证、戴锜电话连线、刘宗欣代理、李安妮母女、刘和谦参谋总长。
+3. 在 BOOK_SKIP_NAMES["李敖通电集"] 中补入低频尾部误切残片和正式重建回流残片，包括：
+   万装潢、全盟申、国者赵、戴锜要、王家谈、经验加、公司之、明确、项规定、宣布独、于选举、陆方面等。
+4. 在 PERSON_RELATIONS 中新增 29 条本书关系边，目标书关系边由 64 增至 93。
+
+三、新增关系边范围
+
+1. 环球电视/全民电通：
+   赵怡-张俊宏、赵怡-吴子嘉、张俊宏-陈升宏、吴子嘉-陈升宏、张俊宏-蔡豪、吴子嘉-蔡豪、巴燕达鲁-钟金江、巴燕达鲁-吴子嘉、钟金江-吴子嘉、陈刚信-高俊明、张福淙-柯建铭。
+2. 中研院与李远哲求学/争议：
+   王企祥-梅贻琦、王企祥-俞大维、李远哲-梅贻琦、李远哲-俞大维、王企祥-李曾遹、李远哲-李曾遹、李远哲-吴锦丽、丁远超-李远哲、丁远超-李登辉。
+3. 曾文惠自诉与拉法叶案：
+   谢启大-冯沪祥、刘宗欣-曾文惠、刘宗欣-冯沪祥、刘宗欣-谢启大、谢启大-曾文惠、戴锜-冯沪祥、李安妮-曾文惠、刘和谦-李登辉、刘和谦-冯沪祥。
+
+四、重建与验证
+
+1. 单书重建：
+   命令使用 --book-path 指向《李敖通电集》目录。
+   结果：279 people / 1 book / 89 chapters。
+   本书关系边：93。
+   missingEndpoints：0。
+   targetOrderedPairDuplicates：0。
+   targetUnorderedPairDuplicates：0。
+2. 正式全量重建：
+   从当前 data/people.json 读取既有 96 本书，映射为 96 个显式 --book-path 后重建。
+   未使用 --all。
+   结果 generatedAt：2026-06-22T15:53:39。
+   总表：12316 people / 96 books / 6124 chapters / 29897 identityLinks / 2991 personRelations。
+   《李敖通电集》：452 people / 89 chapters / 93 personRelations。
+3. 正式数据验证：
+   missingEndpoints：0。
+   missingWatch：0。
+   survivingFragments：0。
+   targetOrderedPairDuplicates：0。
+   targetUnorderedPairDuplicates：0。
+4. 导出抽查：
+   exports/by-book-index.txt 中《李敖通电集》显示 89 章、452 人，前排残片“公司之、明确、项规定、宣布独、于选举、陆方面”已移除。
+5. 文件大小：
+   data/people.json：47,780,530 bytes，低于 50 MB。
+
+五、最终检查
+
+1. python -m py_compile scripts/extract_relationships.py：通过。
+2. node --check data/relationship-data.js：通过。
+3. node --check assets/app.js：通过。
+4. git diff --check：仅提示 LF/CRLF 转换警告，无空白错误。
+
+六、下一步建议
+
+本书 round3 已完成。建议下一轮进入《李敖通电集》closeout：复核正式导出前 60 名与 1-2 次尾部残片，确认关系边叙述和 book index 无明显噪声后封板。

@@ -1,0 +1,63 @@
+《李敖来电集》round1：基线与高频残片清理
+
+范围：
+- 书籍路径：011.李敖电子报 / 004.李敖来电集。
+- 源目录 txt：58 个；其中正文文件 57 个，目录文件《李敖来电集》目录.txt 未计入章节。
+- 本轮进入电子报第四册，先做单书基线、实名锚点与高频/全库回流残片清理。
+- 正式重建使用当前 95 本书的显式 --book-path 清单；未使用 --all。
+
+初始基线：
+- 单书初抽：287 people / 1 book / 57 chapters。
+- 单书初抽中《李敖来电集》targetRelations = 0。
+- 高频人物：李登辉 113、李昂 87、殷海光 85、张福淙 73、蒋介石 64、王文洋 55、杨国枢 50、胡适 49、李远哲 42、周玉蔻 37、谢雪红 35、陈水扁 26、秦孝仪 25。
+- 高频残片和全库回流风险：山庄、管理委、路用地、孙女、欧美所、经征得、关键、那么请、乌龙判、张斌、台币、党执政、盖印、危楼、白手套、广播电、国有财等。
+
+本轮处理：
+- 新增本书 curated identities，固定中研院建筑安全、殷海光论文通信、鸿禧山庄、金兰大厦、法官名单等低频端点：
+  陈鹏钦、李朝顺、张斌峰、唐琳、张添根、张月云、周浩杰、徐晋贤、徐璧湖、曾煌圳、李慧儿、刘福来、朱建男、许树林、郑玉山。
+- 新增本书 phrase anchors，覆盖：
+  陈鹏钦建筑师事务所；李朝顺会同陈鹏钦；张斌峰博士与研究生唐琳；张秀政与张添根；张月云；亓丰瑜与林宪同；金兰大厦徐晋贤、林丽蘋、吕清贵、周浩杰；黄菊文；陈丰伟；两组最高法院法官名单与施俊尧/陈国梁/刘景星/张连财。
+- 新增 alias：殷夫人 -> 夏君璐。
+- 新增《李敖来电集》BOOK_SKIP_NAMES，回收高频和全库正式重建回流的普通词、机构半截、亲属泛称、金额/标题/动词短语和句子残片。
+- 本轮不补 PERSON_RELATIONS，保留 round2 做人物关系边补网。
+
+单书清理后：
+- 单书复抽：237 people / 1 book / 57 chapters。
+- 《李敖来电集》targetRelations = 0。
+- 关键残片复核：山庄、管理委、路用地、孙女、欧美所、经征得、关键、那么请、乌龙判、张斌、唐琳致、计主任、孙女李、余万元、金兰均为 0。
+- 关键锚点复核：唐琳 7、周浩杰 4、李慧儿 3、刘福来 3、许树林 3、郑玉山 3、张添根 2、张月云 2、李朝顺 2、张斌峰 8、陈鹏钦 20。
+
+正式重建输出：
+- generatedAt：2026-06-22T10:38:13。
+- 显式书目：explicitBookPaths = 95。
+- 全库：12176 people / 95 books / 6035 chapters / 29665 identityLinks / 2821 personRelations。
+- 《李敖来电集》：308 people / 57 chapters / 0 personRelations。
+- data/people.json：47,229,829 bytes。
+- data/relationship-data.js：17,897,383 bytes。
+- exports/by-book-index.txt：91,959 bytes。
+- exports/li-ao-relationships.txt：26,317,518 bytes。
+- exports/li-ao-relationships.csv：2,208,955 bytes。
+
+正式校验：
+- source 目录全部 txt = 58；正文 txt = 57；目录文件 = 《李敖来电集》目录.txt。
+- data 中本书 chapters = 57；exports/by-book-index.txt 本书行：章节 57 / 人物 308。
+- totals.people = people.length = 12176。
+- totals.books = books.length = 95。
+- totals.chapters = 各书 chapters 合计 = 6035。
+- totals.personRelations = personRelations.length = 2821。
+- duplicateNames = 0。
+- duplicateRelationsOrdered = 0。
+- duplicateRelationsUnordered = 0。
+- missingRelationEndpoints = 0。
+- exports/li-ao-relationships.txt 中《李敖来电集》关系行 = 0。
+- exports/li-ao-relationships.csv 数据行数 = 12176。
+- 《李敖来电集》核心残片 bookCount = 0：山庄、管理委、路用地、孙女、欧美所、张斌、广播电、国有财、台币、党执政、盖印、危楼、白手套、殷夫人。
+- 低频实名保留：唐琳 7、周浩杰 4、李慧儿 3、刘福来 3、许树林 3、郑玉山 3、张添根 2、张月云 2、李朝顺 2、徐晋贤 7、张斌峰 8、陈鹏钦 20、夏君璐 2。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- scripts/extract_relationships.py AST 解析：通过。
+- git diff --check：通过；仅有 Git 的 LF/CRLF 提醒。
+
+下一轮建议：
+- round2 进入人物关系边补网。
+- 优先主轴：李登辉鸿禧山庄/财产告发线；李远哲与杨国枢/黄昆辉的中研院近美大楼与行政规则线；殷海光、张忠栋、王晓波、唐琳、张斌峰的学术通信线；张福淙、林凤梧、徐晋贤、林丽蘋、吕清贵、周浩杰的金兰大厦管理争议线；王文洋、王永庆、江绵恒、宏仁投资线；胡秋原、秦孝仪与两组法官名单的诉讼线。

@@ -1,0 +1,69 @@
+《李敖来电集》round3：关系精修与低频边复核
+
+范围：
+- 书籍路径：011.李敖电子报 / 004.李敖来电集。
+- 源目录 txt：58 个；其中正文文件 57 个，目录文件《李敖来电集》目录.txt 未计入章节。
+- 本轮承接 round2 的 55 条人物关系，复核导出关系文案、未入边人物与低频实名共现。
+- 正式重建使用当前 95 本书的显式 --book-path 清单；未使用 --all。
+
+本轮审计：
+- round2 后本书关系：55 条；已入边端点：48 个。
+- 重点审计未入边关键类人物：媒体、律师、公职、法官、建筑、学术、财产债务与诉讼线。
+- 未入边关键类人物中，许多为胡适、梁启超、康有为、谭嗣同、华盛顿、蔡元培、陈独秀、张作霖、范仲淹、麦克阿瑟、胡佛等引用或历史类比；本轮不把单纯引用硬凑成事件边。
+
+本轮处理：
+- 新增低频真实端点：
+  魏承思、杨照、奈思比。
+- 新增本书 phrase anchors，补强低频端点：
+  李昂/谢雪红/吕秀莲、奈思比、魏承思、杨照、李炳南、费鸿泰、陈嘉宏、柴松林、贺德芬、唐飞、龙云翔。
+- 新增《李敖来电集》人物关系 22 条。
+- 访谈与女性政治线：
+  周玉蔻—李昂；李昂—谢雪红；李昂—吕秀莲。
+- 陈文茜新书序与网络思想线：
+  陈文茜—奈思比。
+- 《蒋介石评传》书评争议线：
+  汪荣祖—蒋介石；汪荣祖—魏承思；杨照—胡适。
+- 新党感谢仪式线：
+  冯沪祥—郝龙斌；冯沪祥—李炳南；冯沪祥—费鸿泰。
+- 鸿禧山庄旁证线：
+  吴伯雄—李登辉；吴伯雄—张秀政；连战—连方瑀；连战—李登辉。
+- 金兰大厦背景线：
+  尤清—张福淙。
+- 党政军退出媒体承诺线：
+  游锡堃—陈水扁；游锡堃—陈嘉宏；游锡堃—柴松林；游锡堃—贺德芬；游锡堃—唐飞。
+- 秦孝仪诉讼证据线：
+  谢聪敏—龙云翔；谢聪敏—秦孝仪。
+
+单书校验：
+- 单书复抽：238 people / 1 book / 57 chapters。
+- 《李敖来电集》targetRelations = 77。
+- missingEndpoints = 0。
+- duplicateExactRelations = 0。
+- targetOrderedPairDuplicates = 0。
+- targetUnorderedPairDuplicates = 0。
+
+正式重建输出：
+- generatedAt：2026-06-22T11:16:55。
+- 显式书目：explicitBookPaths = 95。
+- 全库：12179 people / 95 books / 6035 chapters / 29675 identityLinks / 2898 personRelations。
+- 《李敖来电集》：311 people / 57 chapters / 77 personRelations。
+- 新增低频端点出现次数：魏承思 4、杨照 8、奈思比 1。
+
+正式校验：
+- source 目录全部 txt = 58；正文 txt = 57；目录文件 = 《李敖来电集》目录.txt。
+- totals.people = people.length = 12179。
+- totals.books = books.length = 95。
+- totals.chapters = 6035。
+- totals.personRelations = personRelations.length = 2898。
+- duplicateNames = 0。
+- duplicateExactRelations = 0。
+- targetOrderedPairDuplicates = 0。
+- targetUnorderedPairDuplicates = 0。
+- missingRelationEndpoints = 0。
+- exports/li-ao-relationships.txt 中《李敖来电集》关系行 = 77。
+- exports/li-ao-relationships.csv 数据行数 = 12179。
+- round3 新增 22 条关系全部存在。
+
+下一轮建议：
+- 进入本书 closeout。
+- closeout 重点不再大幅扩边，而是做最终一致性与残片复查：本书 book people、关系导出、低频实名、导出 TXT 可读性、重复边、端点完整性、临时文件清理和正式状态汇总。
