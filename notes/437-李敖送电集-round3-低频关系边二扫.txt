@@ -1,0 +1,62 @@
+《李敖送电集》round3：低频关系边二扫
+
+范围：
+- 延续 round2 后的《李敖送电集》。
+- 本轮重点补低频但证据明确的 PERSON_RELATIONS。
+- 正式重建继续使用当前 94 本书的显式 --book-path 清单，未使用 --all。
+
+本轮新增关系边：
+- 本书新增 15 条 personRelations，目标关系边由 37 增至 52。
+- 诺贝尔和平奖/国际游说文书线：
+  李登辉-霍尔布鲁克；霍尔布鲁克-克林顿；李登辉-克林顿；李登辉-江泽民；李登辉-卡特；李登辉-曼德拉；李登辉-哈维尔；哈维尔-曼德拉；李登辉-桑戈尔；李登辉-罗娜杭。
+- 官邸巷道案低频端点：
+  林美伦-黄大洲；蒋冠峰-李登辉。
+- 中研院规则与行政业务争议：
+  李远哲-黄昆辉；李远哲-杨国枢；黄昆辉-杨国枢。
+
+证据处理说明：
+- 2000-02-17 秘件中，李登辉争取诺贝尔和平奖的策略涉及霍尔布鲁克、克林顿、江泽民、卡特、曼德拉、HAVEL、SENGHOR、罗娜杭等国际端点，证据集中，适合补为低频关系边。
+- 唐树备虽在 round1 的 anchor 候选里出现过，但本轮重新扫当前《李敖送电集》源码，未检到“唐树备”或“六个注意”，因此本轮不强补唐树备关系边。
+- 官邸巷道案补回黄大洲，是因为 2000-04-05 追述林美伦向台北市长黄大洲提出检举书；补回蒋冠峰-李登辉，是因为 2000-04-06 文中将总统府第三局局长与李登辉任期后的法律责任放在同一官邸违法责任链中。
+- 中研院规则线补入黄昆辉、杨国枢，是因为 2000-03-08 写黄昆辉给李远哲秘密文件，点名杨国枢退休延长后做行政业务的争议。
+
+单书临时抽取：
+- 单书输出：261 people / 1 book / 46 chapters。
+- 《李敖送电集》targetRelations = 52。
+- 本轮新增 15 条边在单书输出中全部保留。
+
+正式重建：
+- generatedAt：2026-06-21T22:54:23
+- 显式书目：explicitBookPaths = 94。
+- 全库：12147 people / 94 books / 5978 chapters / 29602 identityLinks / 2817 personRelations。
+- 《李敖送电集》：453 people / 46 chapters / 52 personRelations。
+- data/people.json：47,098,227 bytes。
+- data/relationship-data.js：17,851,019 bytes。
+- exports/by-book-index.txt：90,982 bytes。
+- exports/li-ao-relationships.txt：26,259,990 bytes。
+- exports/li-ao-relationships.csv：2,201,791 bytes。
+
+校验：
+- source 正文 txt = 46；data 中本书 chapters = 46。
+- totals.people = people.length = 12147。
+- totals.books = books.length = 94。
+- totals.chapters = 各书 chapters 合计 = 5978。
+- totals.personRelations = personRelations.length = 2817。
+- duplicateNames = 0。
+- duplicateRelationsOrdered = 0。
+- duplicateRelationsUnordered = 0。
+- missingRelationEndpoints = 0。
+- exports/li-ao-relationships.txt 中《李敖送电集》关系行 = 52。
+- exports/li-ao-relationships.csv 数据行数 = 12147。
+- exports/by-book-index.txt 本书行：《李敖送电集》｜李敖电子报｜章节 46｜人物 453。
+- 《李敖送电集》关系边 source 高频：李登辉 8、陈水扁 7、李远哲 6、林美伦 6、吴瑞文 3、李庆华 3、王企祥 3。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- scripts/extract_relationships.py AST 解析：通过。
+- git diff --check：通过；仅有 Git 的 LF/CRLF 提醒。
+- data/ 与 exports/ 未发现 .tmp 临时文件残留。
+
+下一轮建议：
+- round4 建议做尾部审计与关系边收口。
+- 重点检查：本书 52 条关系边中同场/署名边是否需要收紧；官邸巷道案是否还需要补低频司法/媒体端点；李远哲相关的中研院/教改线是否有重复或比喻误补。
+- 若 round4 没发现新的硬证据，可转入本书 closeout。

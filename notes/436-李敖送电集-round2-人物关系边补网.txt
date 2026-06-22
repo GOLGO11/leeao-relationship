@@ -1,0 +1,61 @@
+《李敖送电集》round2：人物关系边补网
+
+范围：
+- 延续 round1 后的《李敖送电集》。
+- 本轮重点补 PERSON_RELATIONS，不再扩大残片清理。
+- 正式重建使用当前 94 本书的显式 --book-path 清单，未使用 --all。
+
+新增关系边：
+- 本书新增 37 条 personRelations。
+- 随扈来信与媒体采访团队：
+  张群智-刘富贵；廖志成-屈文锋；廖志成-吴瑞文；吴瑞文-李濠仲；吴瑞文-赖金榜；吴瑞文-李鸿明。
+- 李冯配、副手征询与 2000 年选战线：
+  李庆华-冯沪祥；李庆华-张麟征；李庆华-陈文茜；陈水扁-连战；陈水扁-宋楚瑜；连战-宋楚瑜；陈水扁-李远哲；陈水扁-彭明敏；林义雄-陈水扁；彭明敏-张温鹰。
+- 党外杂志旧线：
+  郑南榕-叶菊兰；郑南榕-陈水扁；陈水扁-叶菊兰；颜锦福-林世煜；周伯伦-郑南榕；魏廷昱-郑南榕；余陈月瑛-施性忠；陈水扁-周伯伦。
+- 清大/中研院与教改线：
+  王企祥-李远哲；王企祥-刘兆玄；李远哲-刘兆玄；李远哲-张昭鼎；王企祥-张昭鼎；李远哲-曾宪政；李远哲-瞿海源。
+- 李登辉官邸巷道案：
+  林美伦-李登辉；林美伦-曹永新；林美伦-蒋冠峰；林美伦-陈履安；林美伦-陈水扁；陈水扁-李登辉。
+
+单书临时抽取：
+- 单书输出：261 people / 1 book / 46 chapters。
+- 《李敖送电集》targetRelations = 37。
+- 37 条新增边在单书输出中全部保留。
+
+正式重建：
+- generatedAt：2026-06-21T20:42:55
+- 显式书目：explicitBookPaths = 94。
+- 全库：12147 people / 94 books / 5978 chapters / 29602 identityLinks / 2802 personRelations。
+- 《李敖送电集》：453 people / 46 chapters / 37 personRelations。
+- data/people.json：47,093,493 bytes。
+- data/relationship-data.js：17,846,285 bytes。
+- exports/by-book-index.txt：90,982 bytes。
+- exports/li-ao-relationships.txt：26,255,811 bytes。
+- exports/li-ao-relationships.csv：2,201,791 bytes。
+
+校验：
+- source 正文 txt = 46；data 中本书 chapters = 46。
+- totals.people = people.length = 12147。
+- totals.books = books.length = 94。
+- totals.chapters = 各书 chapters 合计 = 5978。
+- totals.personRelations = personRelations.length = 2802。
+- duplicateNames = 0。
+- duplicateRelationsOrdered = 0。
+- duplicateRelationsUnordered = 0。
+- missingRelationEndpoints = 0。
+- exports/li-ao-relationships.txt 中《李敖送电集》关系行 = 37。
+- exports/li-ao-relationships.csv 数据行数 = 12147。
+- exports/by-book-index.txt 本书行：《李敖送电集》｜李敖电子报｜章节 46｜人物 453。
+- 《李敖送电集》关系边 source 高频：陈水扁 7、林美伦 5、李远哲 4、吴瑞文 3、李庆华 3、王企祥 3。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- scripts/extract_relationships.py AST 解析：通过。
+- git diff --check：通过；仅有 Git 的 LF/CRLF 提醒。
+- data/ 与 exports/ 未发现 .tmp 临时文件残留。
+
+下一轮建议：
+- round3 建议做低频关系边二扫。
+- 优先查诺贝尔和平奖/国际游说文书线：唐树备、霍尔布鲁克、克林顿、曼德拉、哈维尔、桑戈尔、罗娜杭等。
+- 同时复核随扈来信、民众日报采访团队、官邸巷道案中较弱的同场/署名边，必要时收紧或补证据。
+- 可继续补李远哲-中研院规则、教改团体与“好人做坏事”一线，但要避免把比喻性人物误补成直接关系。

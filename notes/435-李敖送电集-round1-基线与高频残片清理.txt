@@ -1,0 +1,59 @@
+《李敖送电集》round1：基线与高频残片清理
+
+范围：
+- 书籍路径：011.李敖电子报 / 003.李敖送电集
+- 正文文件：46 个数字编号 txt；目录文件未计入章节。
+- 本轮继续使用单书流程；正式重建使用当前 94 本书的显式 --book-path 清单，未使用 --all。
+
+初始基线：
+- 单书初抽：312 people / 1 book / 46 chapters。
+- 高频人物：李登辉 200、陈水扁 166、李远哲 139、连战 102、宋楚瑜 86、蒋介石 29、林美伦 29、孙中山 28、彭明敏 25、蒋经国 25、李庆华 22、王企祥 18。
+- 高频残片：党轮替、苗栗人、路障、台南人、能相信、家注意、路段五、李冯配、平奖之等。
+
+本轮处理：
+- 新增本书 curated identities 和 phrase anchors，固定张群智（万康）、刘富贵、廖志成、屈文锋、吴瑞文、李濠仲、赖金榜、李鸿明、曹永新、蒋冠峰、唐树备、陈境圳、刘维斌、孙春华、霍尔布鲁克、曼德拉、哈维尔、桑戈尔、罗娜杭等端点。
+- 新增 alias：万康 -> 张群智；温斯基 -> 莱温斯基。
+- 保留并增强林美伦为新党市议员/律师线索，关联李登辉官邸巷道封锁与监察院陈情语境。
+- 补入诺贝尔和平奖游说文件中的国际人物和媒体/顾问端点：霍尔布鲁克、曼德拉、哈维尔、桑戈尔、罗娜杭。
+- 清理本书高频与中低频误切：党轮替、苗栗人、路障、台南人、能相信、家注意、路段五、李冯配、王看、空心桶、陈情人、高权重等。
+
+单书清理后：
+- 单书复抽：261 people / 46 chapters。
+- 本书关系边暂未补入：targetRelations = 0。
+- 关键抽查：温斯基 0、莱温斯基 1、王看 0、空心桶 0、陈情人 0、高权重 0、林美伦 34、张群智 4、霍尔布鲁克 1。
+
+正式重建输出：
+- generatedAt：2026-06-21T20:00:44
+- 全库：12147 people / 94 books / 5978 chapters / 29602 identityLinks / 2765 personRelations。
+- 《李敖送电集》：453 people / 46 chapters / 0 personRelations。
+- data/people.json：47,082,835 bytes。
+- data/relationship-data.js：17,835,627 bytes。
+- exports/by-book-index.txt：90,982 bytes。
+- exports/li-ao-relationships.txt：26,246,522 bytes。
+- exports/li-ao-relationships.csv：2,201,791 bytes。
+
+正式校验：
+- source 正文 txt = 46；data 中本书 chapters = 46。
+- totals.people = people.length = 12147。
+- totals.books = books.length = 94。
+- totals.chapters = 各书 chapters 合计 = 5978。
+- totals.personRelations = personRelations.length = 2765。
+- duplicateNames = 0。
+- duplicateRelationsOrdered = 0。
+- duplicateRelationsUnordered = 0。
+- missingRelationEndpoints = 0。
+- exports/li-ao-relationships.txt 中《李敖送电集》关系行 = 0。
+- exports/li-ao-relationships.csv 数据行数 = 12147。
+- exports/by-book-index.txt 本书行：《李敖送电集》｜李敖电子报｜章节 46｜人物 453。
+- 残片复核：党轮替、苗栗人、路障、台南人、能相信、家注意、路段五、李冯配、王看、空心桶、陈情人、高权重均为 0。
+- 锚点复核：张群智 4、吴瑞文 5、林美伦 34、霍尔布鲁克 1、曼德拉 1、哈维尔 1、桑戈尔 1、罗娜杭 1、莱温斯基 1。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- scripts/extract_relationships.py AST 解析：通过。
+- git diff --check：通过；仅有 Git 的 LF/CRLF 提醒。
+- data/ 与 exports/ 未发现 .tmp 临时文件残留。
+
+下一轮建议：
+- round2 进入人物关系边补网。
+- 优先主轴：李登辉 / 陈水扁 / 李远哲 / 连战 / 宋楚瑜 的 2000 年选举与政论线。
+- 重点案件：林美伦与李登辉官邸巷道案；李远哲、王企祥、刘兆玄、张昭鼎、曾宪政等教育/科研政治线；李庆华、冯沪祥、张麟征、陈文茜的副总统搭档讨论；陈履安、孙春华、刘维斌的宗教/家庭影响线；郑南榕、叶菊兰、周伯伦、林世煜的党外杂志与政治旧线；苏志诚、宋心濂等总统府文件线。
