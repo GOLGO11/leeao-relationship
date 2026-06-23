@@ -1,0 +1,49 @@
+《胡适研究》closeout
+
+日期：2026-06-23
+
+源目录：
+《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\001.胡适研究
+
+本书轮次：
+1. round1：基线与高频残片清理，见 notes/448-胡适研究-round1-基线与高频残片清理.txt。
+2. round2：人物关系边补网，见 notes/449-胡适研究-round2-人物关系边补网.txt。
+3. round3：低频端点与关系边二扫，见 notes/450-胡适研究-round3-低频端点与关系边二扫.txt。
+
+最终正式数据：
+people：12299。
+books：97。
+chapters：6132。
+identityLinks：29900。
+personRelations：3048。
+
+《胡适研究》最终状态：
+personCount：278。
+chapters：8。
+关系边：57。
+高频头部：胡适 1541、陈独秀 306、梁启超 177、郑学稼 64、丁文江 62、任卓宣 47、钱玄同 44、马克思 36、易卜生 32、李大钊 29。
+
+closeout 检查：
+1. data/people.json 中 《胡适研究》统计与 exports/by-book-index.txt 一致。
+2. exports/li-ao-relationships.txt 可检索到本书关系边，并抽样确认以下新增边已导出：
+   - 雷啸岑 -- 自由报书评/由文章谈到胡适 -- 胡适。
+   - 傅斯年 -- 旧戏改良论争/批评与答辩 -- 张厚载。
+   - 胡适 -- 胡适文存查禁/致国务总理信 -- 张国淦。
+   - 丁文江 -- 地理著作/合编新地图 -- 翁文灏。
+3. exports/li-ao-relationships.csv 行数为 12299，与 people 总数一致。
+4. 本书关系边端点缺失：0。
+5. 精确重复关系边：0。
+6. round3 低频端点若兰、孟戈、孙德中、沈宗瀚、钱天鹤、张厚载、陈天华、钱端升等均已进入正式图。
+7. 全库万大鋐仍保留其他书证据，但没有《胡适研究》 evidence，确认“孟真”本书语境已归并到傅斯年。
+
+验证命令结果：
+1. scripts/extract_relationships.py AST 语法检查通过。
+2. data/relationship-data.js node --check 通过。
+3. assets/app.js node --check 通过。
+4. git diff --check 仅提示 LF/CRLF 换行转换，没有空白错误。
+
+重建说明：
+本 closeout 未再次重建；沿用 round3 已完成的显式 97 本 --book-path 正式重建结果。全程没有使用 --all。
+
+下一本建议：
+进入人物研究类下一本《胡适评传》。
