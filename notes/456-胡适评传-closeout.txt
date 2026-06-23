@@ -1,0 +1,47 @@
+《胡适评传》closeout
+
+日期：2026-06-23
+
+源目录：
+《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\002.胡适评传
+
+本书轮次：
+1. round1：基线与高频残片清理，见 notes/452-胡适评传-round1-基线与高频残片清理.txt。
+2. round2：人物关系边补网，见 notes/453-胡适评传-round2-人物关系边补网.txt。
+3. round3：低频尾部与材料链精修，见 notes/454-胡适评传-round3-低频尾部与材料链精修.txt。
+4. round4：正式尾部与胡铁花材料链，见 notes/455-胡适评传-round4-正式尾部与胡铁花材料链.txt。
+
+closeout 清理：
+1. 单书 closeout 前正式状态：《胡适评传》531 people / 12 chapters / 50 relations。
+2. 封板前回源复核后清理的本书残片：
+   孙公、皮肉生、相应、相长、王同字、王君约、甘宁青、康奈尔、廉退尔、禹臣先、祝胡适、胡公讳、胡适交、胡适同、胡适常、胡适开、胡适片、胡适痛、胡适老、胡适要、胡适透、胡陈辈、能回答、能够念、能够提、能放弃。
+3. 同时补短语“胡公讳传字铁花” -> 胡铁花，避免附录碑文中“胡公讳传”清理后损失胡铁花材料。
+4. 单书 closeout 临时重建：429 people / 1 book / 12 chapters / 121 personRelations；其中本书关系边 50 条。
+5. 单书验证：上述 closeout 残片未回流；胡适、胡铁花、吴大澂、张佩纶、刘永福、刘铭传、伊能嘉矩、李少龙、黄纯青、罗尔纲等关键端点均保留。
+
+正式重建：
+1. 使用当前 data/people.json 中的 98 本书映射源目录，生成 98 个显式 --book-path。
+2. 未使用 --all。
+3. 正式重建 generatedAt：2026-06-23T11:54:01。
+4. 总表结果：
+   12379 people / 98 books / 6144 chapters / 30044 identityLinks / 3098 personRelations。
+5. 《胡适评传》结果：
+   505 people / 12 chapters / 50 personRelations。
+6. data/people.json 文件大小：
+   48,161,715 bytes。
+
+验证结果：
+1. 正式数据中《胡适评传》关系边端点缺失：0。
+2. 正式数据中《胡适评传》精确重复关系边：0。
+3. closeout 清理残片在《胡适评传》中未回流。
+4. exports/by-book-index.txt 显示《胡适评传》12 章、505 人；头部为胡适、胡铁花、梁启超、景新汉、王云五、胡传楷、朱经农、马君武、黄纯青、朱熹等。
+5. exports/li-ao-relationships.csv 行数为 12380，扣除表头后与 people 总数 12379 一致。
+6. scripts/extract_relationships.py AST 语法检查通过。
+7. data/relationship-data.js JSON 解析检查通过。
+8. git diff --check 仅提示 LF/CRLF 换行转换，没有空白错误。
+
+结论：
+《胡适评传》可以封板。本书从 round4 正式状态的 531 人进一步收口到 505 人，同时保持 50 条人物关系边完整。
+
+下一本建议：
+进入人物研究类下一本《胡适与我》。
