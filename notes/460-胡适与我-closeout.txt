@@ -1,0 +1,55 @@
+《胡适与我》closeout
+
+日期：2026-06-23
+
+源目录：
+《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\003.胡适与我
+
+本书轮次：
+1. round1：基线与高频残片清理，见 notes/457-胡适与我-round1-基线与高频残片清理.txt。
+2. round2：人物关系边补网，见 notes/458-胡适与我-round2-人物关系边补网.txt。
+3. round3：低频尾部与关系边二扫，见 notes/459-胡适与我-round3-低频尾部与关系边二扫.txt。
+
+closeout 复查：
+1. closeout 前正式状态：《胡适与我》328 people / 20 chapters / 75 relations。
+2. 正式 evidence 抽样发现仍有跨书强信号带回的低频残片，主要为句读粘连、动宾短语、普通词和“胡适+后缀”误切。
+3. 本轮补入本书 closeout skip：
+   孔子曾、宣布出、步指出、水推舟、经验才、罗织别、国文教、宣布独、常重要、经地义、胡适反、胡适开、胡适很、胡适立、胡适两、胡适再、胡适同、能取得、能幸免、苏联开、解散国、连任之、连选连、都充分、都出身、都闹出、满面。
+4. 本轮补入真实别称/后缀粘连归并：
+   胡君适 -> 胡适；胡江冬 -> 江冬秀；孟真先 -> 傅斯年；戴东原 -> 戴震；林肯说 -> 林肯；邹容墓 -> 邹容。
+5. 抽样保留徐公起等真实低频端点，不把源文中的明确实名误删。
+
+单书 closeout 临时重建：
+1. 命令范围：仅 --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\003.胡适与我。
+2. 输出：259 people / 1 book / 20 chapters / 197 personRelations。
+3. 本书脚本人工关系边：75。
+4. 单书验证：
+   - closeout skip 残留：0。
+   - 原始别名残片节点：0。
+   - 本书人工关系端点缺失：0。
+   - 关键端点保留：胡适、江冬秀、傅斯年、戴震、林肯、邹容、徐公起、吴震修、西义显、近卫文麿、袁守和、孙亢曾。
+
+正式重建：
+1. 从当前 data/people.json 读取正式书单，生成 99 个显式 --book-path。
+2. 参数检查：book_path_args 99；contains_all_flag False。
+3. 正式输出：12409 people / 99 books / 6164 chapters / 30106 identityLinks / 3173 personRelations。
+4. 《胡适与我》最终状态：296 people / 20 chapters / 75 personRelations。
+5. closeout 前后比较：本书 personCount 由 328 收口到 296，关系边保持 75 条不变。
+6. CSV 行数：12410，等于 people + header。
+7. 已覆盖 data/people.json、data/relationship-data.js、exports/by-book-index.txt、exports/li-ao-relationships.csv、exports/li-ao-relationships.txt。
+
+验证结果：
+1. scripts/extract_relationships.py AST 语法检查通过。
+2. data/people.json 正式统计与 exports/by-book-index.txt 一致。
+3. data/relationship-data.js node --check 通过。
+4. assets/app.js node --check 通过。
+5. 《胡适与我》关系边端点缺失：0。
+6. 《胡适与我》精确重复关系边：0。
+7. closeout skip 在正式数据可见 evidence 中未回流。
+8. git diff --check 仅提示 LF/CRLF 换行转换，没有空白错误。
+
+结论：
+《胡适与我》可以封板。本书最终保留 296 个节点、75 条人工人物关系边，覆盖胡适婚恋/交游、遗著整理、版权争议、抗战和平路线、赴美宣传密件、蒋介石非法连任、李敖早年《播种者胡适》材料链等核心人物网络。
+
+下一本建议：
+进入人物研究类下一本《孙逸仙和中国西化医学》。
