@@ -1,0 +1,97 @@
+《李远哲的真面目》round3：低频端点与关系质量复核
+
+目标
+- 接续 round2 的 64 条本书关系边，复核单书低频尾部和关系边覆盖。
+- 优先处理司机命案、近美大楼、清华迫害链、SSC 院长交接背景中的低频真实端点。
+- 继续避免 --all；正式重建使用当前 106 本书逐一显式 --book-path。
+
+尾部审计
+- 单书审计方式：导入 scripts/extract_relationships.py 的读文和抽取函数，只处理《李远哲的真面目》22 个内容文件。
+- 审计结果：
+  keptPeople = 146
+  count <= 3 的低频端点 = 104
+- 明确噪声：
+  曾任美：来自“曾任美国...”句子切片。
+  刘会云：本书语境中来自“委员会云云”一类误切；刘会云本人是全库真实端点，所以仅加入本书 skip，不全局删除。
+- 明确低频真端点：
+  刘丰哲、蔡义雄：司机命案调查委员会成员。
+  何世延：清华毁谤文件被散发时的见证/制止端点。
+  郑洪：SSC 论战反对阵营科学家端点。
+  于豪章：王企祥携李远哲信副本求助链中的转托人。
+  张昭雄：中研院“二流说”与陈水扁背书攻防端点。
+
+脚本变更
+- CURATED_IDENTITIES：
+  新增或在本书语境强化 刘丰哲、蔡义雄、何世延、郑洪、于豪章、张昭雄。
+- BOOK_PHRASE_PEOPLE["李远哲的真面目"]：
+  补入“数学研究所所长刘丰哲”“何世延教授看不过去”“丁肇中、杨振宁、郑洪反对加入的一方”“李政道、李崇道”“张昭雄的二流说”等短语。
+- BOOK_SKIP_NAMES["李远哲的真面目"]：
+  新增 曾任美、刘会云。
+- PERSON_RELATIONS：
+  本书专属关系边由 64 条增至 81 条，新增 17 条。
+
+新增关系主轴
+- SSC 论战与中研院院长交接：
+  吴大猷—李政道、李政道—李崇道、吴大猷—李崇道、丁肇中—杨振宁、丁肇中—郑洪、杨振宁—郑洪。
+- 王企祥求职/受助链：
+  吴大猷—郝柏村、王企祥—于豪章、于豪章—郝柏村、王企祥—郝柏村。
+- 清华毁谤文件传播链：
+  刘兆玄—何世延、何世延—李曾遹。
+- 司机命案调查委员会：
+  李远哲—刘丰哲、李远哲—蔡义雄、刘丰哲—蔡义雄。
+- 中研院二流说攻防：
+  陈水扁—张昭雄、李远哲—张昭雄。
+
+静态检查
+- python -m py_compile scripts/extract_relationships.py：通过。
+- target_relations_static = 81
+- duplicate_keys = 0
+- unique_pairs = 81
+
+单书临时抽取
+- 命令：
+  python scripts/extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\010.李远哲的真面目 --data-dir .tmp-liyuanzhe-r3-data --export-dir .tmp-liyuanzhe-r3-exports
+- 输出：
+  people = 147
+  books = 1
+  chapters = 22
+  identityLinks = 466
+  target_relations = 81
+  duplicateTargetRelationKeys = 0
+  missingEndpointRefs = 0
+  noiseStillPresent = 0
+- 新增/强化端点：
+  刘丰哲(2)、蔡义雄(1)、何世延(1)、郑洪(1)、于豪章(1)、张昭雄(3)、丁肇中(2)、李崇道(4)、李政道(7) 均进入单书输出。
+
+正式重建
+- 正式命令由当前 data/people.json 的 106 本书名反查源目录，逐一传入 --book-path。
+- 安全检查：
+  explicit_book_paths = 106
+  contains_all_flag = False
+  target_book_included = True
+- 输出：
+  people = 12732
+  books = 106
+  chapters = 6331
+  identityLinks = 30703
+  personRelations = 3673
+- 《李远哲的真面目》逐本索引：
+  chapters = 22
+  personCount = 275
+  top nodes = 李远哲(497)、王企祥(140)、赖克汉(58)、杨国枢(55)、陈水扁(50)、李登辉(47)、刘兆玄(46)、林明璋(32)、卢丁财(31)、吴大猷(29)、沈君山(29)、陈鹏钦(29)。
+
+导出同步
+- data/people.json 中本书 personRelations = 81
+- data/relationship-data.js 中本书 personRelations = 81
+- exports/li-ao-relationships.txt 中本书关系条目 = 81
+- exports/li-ao-relationships.csv 行数 = 12733 = 12732 people + header
+- data/people.json 大小：
+  49,924,056 bytes，仍低于 50,000,000 bytes。
+
+验证
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+下一轮建议
+- 可进入本书 closeout：做一次最终抽样，确认 81 条关系边的方向、权重和注释没有明显不自然；同时复查本书 topBooks/exports/by-book-index/people.json 体积后封板。

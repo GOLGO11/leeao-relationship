@@ -1,0 +1,71 @@
+《李远哲的真面目》closeout
+
+范围
+- 本轮为封板验收，不新增抽取规则、不新增关系边、不重建数据。
+- 基线为 round3 后产物：本书 81 条 personRelations，106 本显式 --book-path 正式重建结果。
+
+最终状态
+- 全库 totals：
+  people = 12732
+  books = 106
+  chapters = 6331
+  identityLinks = 30703
+  personRelations = 3673
+- 《李远哲的真面目》：
+  chapters = 22
+  personCount = 275
+  personRelations = 81
+  top nodes = 李远哲(497)、王企祥(140)、赖克汉(58)、杨国枢(55)、陈水扁(50)、李登辉(47)、刘兆玄(46)、林明璋(32)、卢丁财(31)、吴大猷(29)、沈君山(29)、陈鹏钦(29)。
+
+关系边封板检查
+- JSON/JS/TXT 同步：
+  data/people.json 中本书 personRelations = 81
+  data/relationship-data.js 中本书 personRelations = 81
+  exports/li-ao-relationships.txt 中本书关系条目 = 81
+- 结构检查：
+  duplicateTargetRelationKeys = 0
+  missingEndpoints = 0
+  selfLoops = 0
+  emptyFields = 0
+- 权重分布：
+  weight 2 = 5
+  weight 3 = 44
+  weight 4 = 21
+  weight 5 = 11
+- source 覆盖：
+  李远哲(35)、王企祥(12)、吴大猷(4)、杨国枢(3)、卢丁财(3)、刘兆玄(2)、李登辉(2)、陈鹏钦(2)、丁肇中(2)。
+
+关系主轴
+- 清华恩师/迫害线：
+  李远哲—王企祥—刘兆玄—张昭鼎—李卓皓—何世延—李曾遹—沈君山—徐贤修—毛高文。
+- 中研院院长交接与行政线：
+  吴大猷—李登辉—李远哲—杨国枢—罗铜壁—黄昆辉—徐济安—刘玲根—沈哲鲲。
+- 司机命案与调查线：
+  李远哲—卢丁财—周东欉—刘锡江—杨重信—苏保定—吴锦丽—刘丰哲—蔡义雄。
+- 选战/组织法/教改线：
+  李远哲—陈水扁—游锡堃—唐飞—陈哲男—曾志朗—瞿海源。
+- 近美大楼线：
+  李远哲—陈鹏钦—李朝顺—李宗德。
+- SSC 论战与吴大猷下台背景：
+  吴大猷—李政道—李崇道，对照丁肇中—杨振宁—郑洪。
+
+噪声复查
+- 本书目标噪声已清：
+  曾任美：不存在。
+  刘会云：全库真实人物仍保留，但不再回流到《李远哲的真面目》topBooks。
+  苏司机、司机命、沈院长：不存在。
+  王老师、公司之、能改：全库若存在，也不再回流到本书 topBooks。
+
+导出与体积
+- exports/li-ao-relationships.csv 行数 = 12733 = 12732 people + header。
+- data/people.json 大小 = 49,924,056 bytes，低于 50,000,000 bytes。
+
+验证命令
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+结论
+- 《李远哲的真面目》完成 round1 残片清理、round2 人物关系边补网、round3 低频端点与关系质量复核。
+- 当前状态可封板；下一本建议继续按“基线/清理 -> 关系边 -> 低频复核 -> closeout”节奏推进。

@@ -1,0 +1,92 @@
+《陈水扁的真面目》round3：低频端点与关系质量复核
+
+目标
+- 延续 round2 建议，复核本书低频端点、弱边权重与正式库回流后的 topBooks 噪声。
+- 继续遵守单书/显式书路径流程；正式重建未使用 --all。
+
+低频端点复核
+- 单书临时输出：
+  people = 142
+  books = 1
+  chapters = 32
+  identityLinks = 505
+  personRelations = 255
+  target_relations = 79
+- 低频端点 count<=2 共 18 个。
+- 已复核的关键低频端点：
+  丁渝洲、曹永新、戴安玮、郭吉仁、李灿享、林嘉诚、庞建国等均能回到具体源文位置。
+- 正式库回流后，本书 top 节点未出现 round1 中已清理的句读残片；“都市计”“路二段”“于陈水”等残片未回流。
+- 本轮不新增 BOOK_SKIP_NAMES；身份规则维持 round2 后状态。
+
+源码确认
+- 陈致中-王永庆：
+  《他的独子》写“果真如此，则这将是台塑王永庆集团向陈水扁靠拢的证据”，属于利益输送疑云链。
+- 陈水扁-郭吉仁：
+  《为阿扁论李敖的谈话进一解》把郭吉仁列入“美丽岛案”律师群，属于名单型并列边。
+- 陈水扁-林丰正：
+  《他的野心》用林丰正再任交通部长说明李登辉钦点与选战权力安排，属于背景例证边。
+
+脚本调整
+- scripts/extract_relationships.py：
+  1. 陈致中 -- 南亚科技股票/台塑集团疑云 -- 王永庆：weight 3 -> 2
+  2. 陈水扁 -- 美丽岛律师团/作秀招摇批评 -- 郭吉仁：weight 3 -> 2
+  3. 陈水扁 -- 交通部长任用/李登辉钦点对照 -- 林丰正：weight 3 -> 2
+- 保留这些边的检索价值，但降为弱边，避免与直接互动、组织分工或核心攻防边同权。
+- round2 已为低频人物补好的身份分类继续保留。
+
+单书验证
+- 命令：
+  python scripts/extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\009.陈水扁的真面目 --data-dir .tmp-chenshuibian-r3-data --export-dir .tmp-chenshuibian-r3-exports
+- 输出：
+  done: 142 people, 1 books, 32 chapters
+- 关系校验：
+  target_relations = 79
+  missing_endpoints = 0
+  duplicate_relation_keys = 0
+- 重点弱边权重：
+  陈致中-王永庆 = 2
+  林美伦-戴安玮 = 2
+  陈水扁-李灿享 = 2
+  陈水扁-庞建国 = 2
+  陈水扁-郭吉仁 = 2
+  陈水扁-林丰正 = 2
+
+正式重建
+- 正式命令由当前 105 本书名反查源目录，逐一传入 --book-path。
+- 显式路径数：
+  explicit_book_paths = 105
+- 安全检查：
+  contains_all_flag = False
+  target_book_included = True
+- 输出：
+  people = 12716
+  books = 105
+  chapters = 6309
+  identityLinks = 30652
+  personRelations = 3592
+- 《陈水扁的真面目》逐本索引：
+  chapters = 32
+  personCount = 187
+  target_relations = 79
+  top nodes = 陈水扁(635)、李登辉(141)、吴淑珍(139)、连战(50)、陈致中(44)、谢长廷(33)、林美伦(29)、马英九(27)、郝柏村(24)、陈幸妤(23)、李庆元(20)、林义雄(20)、宋楚瑜(18)、张忠厚(13)、蒋经国(10)、林瑞图(10)、林正杰(9)、许信良(9)、邓维桢(9)、蒋介石(8)
+- 导出同步：
+  data/people.json 中本书 personRelations = 79
+  data/relationship-data.js 中本书 personRelations = 79
+  exports/li-ao-relationships.txt 中本书关系条目 = 79
+  CSV 行数 = 12717 = 12716 people + header
+- data/people.json 大小：
+  49,760,352 bytes，仍低于 50MB。
+
+验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- 单书临时重跑：通过。
+- 正式 105 本显式 --book-path 重建：通过，未使用 --all。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+结论
+- round3 完成。
+- 本书低频端点无明显误收；正式库未出现新的高频残片回流。
+- 本轮只做三处弱边降权，没有改变关系数量。
+- 下一步建议进入本书 closeout：汇总三轮处理、复核本书索引/导出/文件体积，并标记可转入下一本。

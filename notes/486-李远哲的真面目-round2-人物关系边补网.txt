@@ -1,0 +1,70 @@
+《李远哲的真面目》round2：人物关系边补网
+
+目标
+- 接续 round1 的残片清理后状态，为本书补入专属 PERSON_RELATIONS。
+- 不使用 --all；正式重建仍以当前 106 本书逐一显式 --book-path 传入。
+
+脚本变更
+- 在 scripts/extract_relationships.py 的 PERSON_RELATIONS 追加《李远哲的真面目》专属关系边 64 条。
+- 覆盖五条主轴：
+  1. 李远哲—王企祥—刘兆玄—张昭鼎—李卓皓—沈君山—徐贤修—毛高文等清华恩师、学术迫害与八行书线。
+  2. 李远哲—吴大猷—李登辉—杨国枢—罗铜壁—黄昆辉等中研院院长交接、副院长延任与行政职争议线。
+  3. 李远哲—卢丁财—周东欉—刘锡江—杨重信—苏保定—吴锦丽等司机命案与院内行政责任线。
+  4. 李远哲—陈水扁—游锡堃—陈哲男—曾志朗—瞿海源等选战背书、新政府组织法与教改/研究安排线。
+  5. 李远哲—陈鹏钦—李朝顺—李宗德等近美大楼鉴定、法律意见与拆除责任线。
+
+静态检查
+- python -m py_compile scripts/extract_relationships.py：通过。
+- 静态 PERSON_RELATIONS 计数：
+  target_relations_static = 64
+  duplicate_keys = 0
+  unique_pairs = 64
+
+单书临时抽取
+- 命令：
+  python scripts/extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\010.李远哲的真面目 --data-dir .tmp-liyuanzhe-r2-data --export-dir .tmp-liyuanzhe-r2-exports
+- 输出：
+  people = 146
+  books = 1
+  chapters = 22
+  identityLinks = 460
+  target_relations = 64
+  duplicateTargetRelationKeys = 0
+  missingEndpointRefs = 0
+- 说明：单书 totals.personRelations 会包含其他书的关系，只要端点在单书 kept_names 中即会进入临时输出；本轮验收以 book == 李远哲的真面目 的 64 条为准。
+
+正式重建
+- 正式命令由当前 data/people.json 的 106 本书名反查源目录，逐一传入 --book-path；目录名前缀按脚本同款 clean_title 去编号后匹配。
+- 安全检查：
+  explicit_book_paths = 106
+  contains_all_flag = False
+  target_book_included = True
+- 输出：
+  people = 12732
+  books = 106
+  chapters = 6331
+  identityLinks = 30700
+  personRelations = 3656
+- 《李远哲的真面目》逐本索引：
+  chapters = 22
+  personCount = 274
+  top nodes = 李远哲(497)、王企祥(140)、赖克汉(58)、杨国枢(55)、陈水扁(50)、李登辉(47)、刘兆玄(46)、林明璋(32)、卢丁财(31)、吴大猷(29)、沈君山(29)、陈鹏钦(29)。
+
+导出同步
+- data/people.json 中本书 personRelations = 64
+- data/relationship-data.js 中本书 personRelations = 64
+- exports/li-ao-relationships.txt 中本书关系条目 = 64
+- exports/li-ao-relationships.csv 行数 = 12733 = 12732 people + header
+- exports/by-book-index.txt 本书行：
+  《李远哲的真面目》｜人物研究类｜章节 22｜人物 274
+- data/people.json 大小：
+  49,915,595 bytes，仍低于 50,000,000 bytes。
+
+验证
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+下一轮建议
+- round3 可进入本书低频端点与高频真实人物复核：围绕 274 个本书人物名单，优先检查司机案、近美大楼、清华迫害链中的低频人名是否还有漏并、误分或被 top80 截断后不易显眼的有效端点。
+- 若希望更快 closeout，也可先做一轮目标书关系可读性抽样：抽查 64 条关系的 source/target/relation/note 是否有方向性不自然或注释过短的问题，再决定是否补第三轮。

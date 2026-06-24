@@ -1,0 +1,81 @@
+《郑南榕研究》round3：低频尾部与关系质量复核
+
+本轮目标
+- 复核 round2 新增 61 条本书关系边的质量。
+- 清理因新增端点和全库强信号带出的低频残片。
+- 继续使用单书临时抽取验证，再用当前 104 本显式 --book-path 正式重建；未使用 --all。
+
+脚本更新
+- 新增别名归并：
+  王静安 -> 王国维
+- 《郑南榕研究》BOOK_SKIP_NAMES 新增本书尾部残片：
+  别人如、别人最、别赠言、公司之、关爱、关李敖、关心国、何况蒋、于流俗、林森。
+- 其中“林森”在本书 3 次均为“福建林森/林森县”籍贯地名，按本书 skip 处理，不影响其他书中的真实人物林森。
+- 关系质量复核后降权：
+  王杏庆 -- 九十年代发表/主持月刊 -- 李怡：weight 3 -> 2
+  郑南榕 -- 自由时代同仁/身后查证 -- 林乾义：weight 3 -> 2
+- 郑南榕 -- 陈独秀 保持 weight 2，作为言论自由史比较边保留。
+
+单书复验
+- 命令：
+  python scripts/extract_relationships.py --book-path "...\012.人物研究类\008.郑南榕研究" --data-dir .tmp-zhengnanrong-r3-data --export-dir .tmp-zhengnanrong-r3-exports
+- 输出：
+  people = 179
+  books = 1
+  chapters = 30
+  identityLinks = 655
+  《郑南榕研究》关系边 = 61
+  关系端点缺失 = 0
+- 残片探针：
+  别人如、别人最、别赠言、公司之、关爱、关李敖、关心国、何况蒋、于流俗、林森在单书输出中均为 0。
+- 王静安归并后：
+  王静安 = 0
+  王国维 = 4
+- 弱关系边权重：
+  王杏庆—李怡 = 2
+  郑南榕—林乾义 = 2
+
+正式重建
+- 正式命令由当前 104 本书名反查源目录，逐一传入 --book-path。
+- 显式路径数：
+  explicit_book_paths = 104
+- 安全检查：
+  contains_all_flag = False
+- 输出：
+  people = 12707
+  books = 104
+  chapters = 6277
+  identityLinks = 30632
+  personRelations = 3513
+- 《郑南榕研究》逐本索引：
+  chapters = 30
+  personCount = 216
+  关系边 = 61
+  关系端点缺失 = 0
+  top nodes = 郑南榕(320)、林正杰(79)、胡适(28)、许荣淑(24)、刘宜良(24)、陈启礼(21)、殷海光(20)、邓维贤(17)、林世煜(16)、蒋经国(14)、沈银和(14)、尤清(13)
+- 清理效果：
+  全库 people 由 round2 的 12710 降为 12707。
+  《郑南榕研究》personCount 由 round2 的 227 降为 216。
+  data/people.json 大小由 49,676,710 bytes 降为 49,667,454 bytes，仍低于 50MB。
+  CSV 行数 = 12708 = 12707 people + header。
+
+验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- 单书临时重跑：通过。
+- 正式 104 本显式 --book-path 重建：通过，未使用 --all。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+
+尾部复扫结论
+- 本书 count <= 2 的剩余尾部主要为：
+  真实党外/司法人物、历史典故人物、明确律师端点、自由时代系刊登记端点、江南案/情报局材料端点。
+- 暂不继续清理：
+  蔡仲伯、陈锡福、陈永兴、崔蓉芝、耿荣水、黄华、林宗正、夏晓华、张富忠等虽低频，但上下文均可解释为真实人物或材料端点。
+- 历史典故类如陈璧君、陈天华、侯君集、桓温、廖仲恺、田光、邹鲁等符合项目现有 historical_allusion / spiritual 保留策略。
+
+下一轮建议
+- 进入本书 closeout。
+- closeout 建议只做封板式检查：
+  1. 复核《郑南榕研究》关系边 61 条是否在导出文本中正常显示。
+  2. 再扫一次 topBooks 残片探针和 by-book-index。
+  3. 若无新残片，写 closeout note，准备进入下一本书。
