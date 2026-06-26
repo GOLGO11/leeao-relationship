@@ -1,0 +1,95 @@
+《你不知道的彭明敏》round2：人物关系边补网
+
+目标
+- 接续 round1 的基线与残片清理后状态，为本书补入专属 PERSON_RELATIONS。
+- 不使用 --all；正式重建仍以当前 107 本书逐一显式 --book-path 传入。
+
+脚本变更
+- 在 scripts/extract_relationships.py 的 PERSON_RELATIONS 追加《你不知道的彭明敏》专属关系边 73 条。
+- 补充关系边所需低频端点身份：
+  蔡懋棠。
+
+关系网主轴
+- 彭案、自救宣言与同案难友线：
+  彭明敏-谢聪敏、彭明敏-魏廷朝、谢聪敏-魏廷朝、谢聪敏-李政一、谢聪敏-刘辰旦、谢聪敏-郭荣文、谢聪敏-詹重雄、魏廷朝-吴忠信、李政一-刘辰旦、李政一-吴忠信、李政一-郭荣文、李政一-詹重雄、刘辰旦-吴忠信、郭荣文-詹重雄。
+- 悔过书、官方处置与情治接触线：
+  彭明敏-梁肃戎、彭明敏-蒋介石、张宝树-蒋介石、张宝树-彭明敏、彭明敏-沈之岳、彭明敏-王淦、沈之岳-吴俊才、彭明敏-吴俊才。
+- 学术师承与删名争议背景线：
+  彭明敏-胡适、彭明敏-萨孟武、彭明敏-傅斯年、彭明敏-钱复。
+- 军法审判、复判与刑求办案线：
+  聂开国-张玉芳、聂开国-王云涛、张玉芳-王云涛、韩延年-聂开国、韩延年-王云涛、李政一-吴彰炯、李政一-何洪才、李政一-季贵成、何洪才-季贵成、吴彰炯-刘辰旦、吴彰炯-吴忠信、吴彰炯-郭荣文、吴彰炯-詹重雄。
+- 偷渡、密信、国际特赦与泰源名单外泄线：
+  彭明敏-梅心怡、梅心怡-李放、彭明敏-李放、彭明敏-马丁·恩纳尔斯、谢聪敏-马丁·恩纳尔斯、魏廷朝-马丁·恩纳尔斯、马丁·恩纳尔斯-柏杨、马丁·恩纳尔斯-艾玫、柏杨-艾玫、小蕾-艾玫、孟祥柯-马丁·恩纳尔斯、孟祥柯-蔡懋棠。
+- 回忆录出版、版本授权与出版证据链：
+  彭明敏-王荣文、彭明敏-沈登恩、沈登恩-王荣文、彭明敏-林衡哲、林衡哲-林文钦、彭明敏-林文钦、彭明敏-杨宪村、彭明敏-陆啸钊。
+- 三十年后政治分歧、海外台人和党外案类比线：
+  彭明敏-李登辉、李登辉-郝柏村、彭明敏-蔡同荣、蔡同荣-郭倍宏、彭明敏-郭倍宏、王幸男-张灿鍙、彭明敏-王幸男、彭明敏-张灿鍙、许信良-黄信介、黄信介-姚嘉文、许信良-施明德、林义雄-张俊宏、谢聪敏-林水泉、彭明敏-林水泉。
+
+静态检查
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 静态 PERSON_RELATIONS 计数：
+  target_relations_static = 73
+  duplicate_keys = 0
+  unique_pairs = 73
+  missing_fields = 0
+
+单书临时抽取
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\011.你不知道的彭明敏 --data-dir .tmp-pengmingmin-r2-data --export-dir .tmp-pengmingmin-r2-exports
+- 输出：
+  people = 217
+  books = 1
+  chapters = 21
+  identityLinks = 679
+  target_relations = 73
+  duplicateTargetRelationKeys = 0
+  missingEndpointRefs = 0
+- 说明：
+  单书 totals.personRelations 会包含其他书中 source/target 都在单书 kept_names 中的关系；本轮验收以 book == 你不知道的彭明敏 的 73 条为准。
+- 新增端点探针：
+  蔡懋棠 = true。
+- 单书 top nodes：
+  彭明敏(290)、谢聪敏(99)、魏廷朝(63)、李登辉(35)、胡适(35)、孟祥柯(29)、蒋介石(27)、蔡同荣(18)、李政一(16)、马丁·恩纳尔斯(12)、孙中山(10)、张灿鍙(9)、盛世才(9)、郭倍宏(9)、沈登恩(8)、陆啸钊(8)、艾玫(8)、柏杨(8)、王云涛(7)、小蕾(7)。
+
+正式重建
+- 正式命令由当前 data/people.json 的 107 本书名反查源目录，逐一传入 --book-path。
+- 安全检查：
+  explicit_book_paths = 107
+  contains_all_flag = False
+  target_book_included = True
+- 输出：
+  people = 12771
+  books = 107
+  chapters = 6352
+  identityLinks = 30771
+  personRelations = 3746
+- 《你不知道的彭明敏》逐本索引：
+  chapters = 21
+  personCount = 313
+  target_relations = 73
+  top nodes = 彭明敏(290)、谢聪敏(99)、魏廷朝(63)、胡适(35)、李登辉(35)、孟祥柯(29)、蒋介石(27)、蔡同荣(18)、李政一(16)、马丁·恩纳尔斯(12)、孙中山(10)、盛世才(9)、郭倍宏(9)、张灿鍙(9)、陆啸钊(8)、艾玫(8)、柏杨(8)、沈登恩(8)、蒋经国(7)、小蕾(7)。
+
+导出同步
+- data/people.json 中本书 personRelations = 73
+- data/relationship-data.js 中本书 personRelations = 73
+- exports/li-ao-relationships.txt 中本书关系条目 = 73
+- exports/li-ao-relationships.csv 行数 = 12772 = 12771 people + header
+- data/people.json 大小：
+  48,625,755 bytes，仍低于 50,000,000 bytes。
+  maxEvidencePerPerson = 9
+  evidenceItems = 57,956
+
+验证
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 单书临时重跑：通过。
+- 正式 107 本显式 --book-path 重建：通过，未使用 --all。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+下一轮建议
+- round3 做低频端点与关系质量复核。
+- 建议重点复核：
+  1. 新增低频端点：蔡懋棠、钱复、王淦、韩延年、姚嘉文、林义雄、张俊宏、杨宪村等是否需要更多身份类别或降权。
+  2. 弱边质量：沈登恩-王荣文、彭明敏-钱复、彭明敏-林水泉等 weight 2/3 边是否应保留、改写或删去。
+  3. 正式总库回流后，本书 topBooks 是否重新出现地名、句读、刊名半截或政治短语残片。

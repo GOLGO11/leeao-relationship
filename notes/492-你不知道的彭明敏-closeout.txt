@@ -1,0 +1,81 @@
+《你不知道的彭明敏》closeout
+
+范围
+- 本轮为封板验收，不新增抽取规则、不新增关系边、不重建正式数据。
+- 基线为 round3 后产物：本书 76 条 personRelations，107 本显式 --book-path 正式重建结果。
+- closeout 只做正式数据一致性、单书临时探针、关系边结构和噪声复查。
+
+最终状态
+- 全库 totals：
+  people = 12748
+  books = 107
+  chapters = 6352
+  identityLinks = 30744
+  personRelations = 3749
+- 《你不知道的彭明敏》：
+  chapters = 21
+  personCount = 283
+  personRelations = 76
+  top nodes = 彭明敏(290)、谢聪敏(99)、魏廷朝(63)、胡适(35)、李登辉(35)、孟祥柯(29)、蒋介石(27)、蔡同荣(18)、李政一(16)、马丁·恩纳尔斯(12)、孙中山(10)、盛世才(9)。
+
+关系边封板检查
+- JSON/JS/TXT 同步：
+  data/people.json 中本书 personRelations = 76
+  data/relationship-data.js 中本书 personRelations = 76
+  exports/li-ao-relationships.txt 中本书关系条目 = 76
+- 结构检查：
+  duplicateTargetRelationKeys = 0
+  missingEndpoints = 0
+  selfLoops = 0
+  emptyFields = 0
+- 权重分布：
+  weight 2 = 1
+  weight 3 = 24
+  weight 4 = 38
+  weight 5 = 13
+- source 覆盖：
+  彭明敏(27)、谢聪敏(7)、李政一(7)、吴彰炯(4)、魏廷朝(2)、陈金英(2)、张宝树(2)、聂开国(2)、韩延年(2)、马丁·恩纳尔斯(2)、孟祥柯(2)、许信良(2)。
+
+关系主轴
+- 彭案核心与同案政治犯：
+  彭明敏—谢聪敏—魏廷朝—李政一—刘辰旦—吴忠信—郭荣文—詹重雄。
+- 陈情书、悔过书与特赦收场：
+  彭明敏—陈金英—蒋介石—梁肃戎，并由张宝树签呈线补出官方报复材料。
+- 调查局与官方安置线：
+  彭明敏—沈之岳—吴俊才—王淦。
+- 军法审判与警总刑求链：
+  聂开国—张玉芳—王云涛—韩延年，李政一—吴彰炯—李彬如—何洪才—季贵成。
+- 偷渡、密信和国际特赦链：
+  彭明敏—梅心怡—李放，彭明敏—马丁·恩纳尔斯—柏杨—艾玫，并连接孟祥柯—蔡懋棠的泰源名单外泄线。
+- 出版删名与回忆录版本争议：
+  彭明敏—王荣文—沈登恩—林衡哲—林文钦，并以杨宪村专访线补足材料来源。
+- 海外台独、选战和政治对照线：
+  彭明敏—蔡同荣—郭倍宏，彭明敏—李登辉—郝柏村，王幸男—张灿鍙。
+- 党外政治案类比与台湾本部构陷：
+  许信良—黄信介—姚嘉文—施明德—林义雄—张俊宏，谢聪敏—林水泉—彭明敏。
+
+噪声复查
+- 单书临时探针：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\011.你不知道的彭明敏 --data-dir .tmp-pengmingmin-closeout-data --export-dir .tmp-pengmingmin-closeout-exports
+  输出：192 people / 1 book / 21 chapters。
+- round3 新增 skip 残片在单书 people 中均不存在：
+  何处理、简称、常高兴、国土、成民国、从事预、封旧信、和独立、国展览、于彭明、白头宫、曾经资、明情形、谢谢胡、卫护彭、公布彭、相信彭、何脱离、包括彭、广邀民、步刊出、房子变、严肃地、那么紧、平安稳、利用彭、华访问、曾如林、成员、胡学古。
+- 上述残片也未出现在正式 by-book-index 的本书 top80。
+- 胡学古不再作为本书独立节点出现；胡虚一、陈金英、李彬如进入本书 top80。
+- 沈登恩—王荣文的弱推断边已删除；二者仍分别作为出版删名材料中的真实端点保留。
+
+导出与体积
+- exports/li-ao-relationships.csv 行数 = 12749 = 12748 people + header。
+- exports/by-book-index.txt 已显示：
+  《你不知道的彭明敏》｜人物研究类｜章节 21｜人物 283
+- data/people.json 大小 = 48,564,743 bytes，低于 50MB。
+
+验证命令
+- python -m py_compile scripts\extract_relationships.py：通过。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+结论
+- 《你不知道的彭明敏》完成 round1 基线与高频残片清理、round2 人物关系边补网、round3 低频端点与关系质量复核。
+- 当前状态可封板；下一本建议继续按“基线/清理 -> 关系边 -> 低频复核 -> closeout”节奏推进。

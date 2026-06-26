@@ -1,0 +1,86 @@
+《丑陋的中国人研究》closeout
+
+目标
+- 对《丑陋的中国人研究》三轮抽取进行本书收尾验收。
+- 确认正式数据、JS、CSV、TXT 与 notes 同步。
+- 本 closeout 未使用 --all；正式数据沿用 round3 已完成的 109 本显式 --book-path 重建结果。
+
+源目录
+- 路径：
+  《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\013.丑陋的中国人研究
+- 抽取章节数：
+  38 chapters。
+
+本书三轮记录
+- notes/497-丑陋的中国人研究-round1-基线与高频残片清理.txt
+  建立本书基线，处理柏杨、胡适、辜家、钱家、孙国栋批评线的高频端点与明显误切残片。
+- notes/498-丑陋的中国人研究-round2-人物关系边补网.txt
+  补胡适/江冬秀/钱思亮/张婉度线，柏杨营救与论战线，柏杨版《资治通鉴》批评线，辜家遗嘱与认亲争议线。
+- notes/499-丑陋的中国人研究-round3-低频端点与回流残片清理.txt
+  复核低频端点，清理任夫人、梅校长、蒋部长、胡院长、史伯伯、特别护士、田单症等回流残片。
+
+最终正式输出
+- 全库 totals：
+  people = 12808
+  books = 109
+  chapters = 6411
+  identityLinks = 30876
+  personRelations = 3831
+- 《丑陋的中国人研究》正式逐本索引：
+  chapters = 38
+  personCount = 363
+  personRelations = 35
+- 《丑陋的中国人研究》正式 top 主干：
+  柏杨(1165)、司马光(235)、孙观汉(143)、艾玫(139)、胡适(91)、林肯(68)、钱思亮(55)、屠申虹(52)、江冬秀(49)、辜振甫(39)、蒋经国(35)、司马迁(28)、刘家昌(28)、蒋介石(27)、毛泽东(26)、辜伟甫(26)、上帝(23)、李翰祥(23)、罗祖光(22)、汉武帝(22)。
+
+关系边封板检查
+- 正式 JSON 中本书 personRelations = 35。
+- exports/li-ao-relationships.txt 中本书关系行 = 35。
+- exports/by-book-index.txt 中本书索引行：
+  《丑陋的中国人研究》｜人物研究类｜章节 38｜人物 363
+- 本书关系首尾：
+  胡适 -- 夫妻/旧式婚姻与晚年材料 -- 江冬秀
+  辜晏宏 -- 债务清偿报告/鹿港债权线 -- 谢长廷
+- 关系端点抽检：
+  柏杨、艾玫、孙观汉、屠申虹、王光逖、王金仲达、胡适、江冬秀、钱思亮、张婉度、辜振甫、辜伟甫、孙国栋、陈启明、颜素心、徐护士均存在。
+- 说明：
+  胡适等全局高频人物可能不在 person.topBooks 的 top12 中显示本书，但 exports/by-book-index.txt 与 data.books 中有本书计数，不能据此误判为缺失。
+
+单书 closeout 复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\013.丑陋的中国人研究 --data-dir .tmp-chouloudezhongguoren-closeout-data --export-dir .tmp-chouloudezhongguoren-closeout-exports
+- 输出：
+  people = 277
+  books = 1
+  chapters = 38
+  identityLinks = 946
+  single personRelations = 172
+  missing_relation_endpoints = 0
+  round3 skip residual = 0
+- 单书复验说明：
+  单书模式会因为脚本中的全局关系定义，把端点同在本书出现的其他书关系一并回流到临时 personRelations，因此 172 不是本书正式关系数。
+  只按 book 字段等于《丑陋的中国人研究》过滤，单书临时结果为 34 条；少于正式 35 条的是“大风 -- 公开评论/丑陋的中国人柏杨 -- 柏杨”。原因是“大风”在单书阈值下未进入临时 people，而正式全库因《李敖书序集》等跨书证据保留该端点。
+  结论：正式封板关系数以 109 本显式 --book-path 全库重建结果的 35 条为准。
+
+导出同步
+- exports/li-ao-relationships.csv 行数 = 12809 = 12808 people + header。
+- data/people.json = 48,925,950 bytes，低于 50MB。
+- data/relationship-data.js = 19,114,911 bytes。
+
+验证
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 单书 closeout 临时抽取：通过；未使用 --all。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+本书结论
+- 《丑陋的中国人研究》可以 closeout。
+- 三轮抽取已经覆盖：
+  1. 胡适、江冬秀、钱思亮、张婉度、张兹闿构成的胡老太晚年材料与钱家往来线。
+  2. 柏杨、艾玫、孙观汉、屠申虹、王光逖、王金仲达、李子弋、林紫耀、张福元、罗祖光等柏杨被捕、营救、出版与友人争议线。
+  3. 孙国栋、李明德、陈启明、柏杨、司马光围绕《柏杨版资治通鉴》的翻译批评链。
+  4. 汪荣祖、水逆蕃、大风、宗鹰等围绕《丑陋的中国人》的公开评论端点。
+  5. 辜振甫、辜鸿铭、辜显荣、辜伟甫、谢长廷、林永智、辜晏宏等辜家认亲、遗嘱与债务争议线。
+- 下一本建议：
+  按人物研究类源目录顺序进入《闽变研究与文星讼案》。

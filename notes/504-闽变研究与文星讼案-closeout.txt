@@ -1,0 +1,57 @@
+《闽变研究与文星讼案》closeout
+
+日期：2026-06-26
+
+目标：
+- 对本书三轮抽取后的正式库做收口复核，补掉低频端点里的最后一批语句残片。
+- 严格沿用当前正式库的 110 本书清单逐本显式重建；本轮没有使用 --all，避免把全集 163 本全部带入。
+
+本书路径：
+- 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\014.闽变研究与文星讼案
+
+前序轮次摘要：
+- round1：建立本书基线并清理高频残片；正式库本书为 22 章、257 人、0 条目标关系。
+- round2：补入胡秋原、萧孟能、李敖、文星体系、政治与出版争讼等核心人物关系 60 条；正式库目标关系增至 60 条。
+- round3：清理“向胡适”“杜遏邪”“周祥”等低频误抽；补入林彪、胡远等锚点与 16 条关系边；正式库目标关系增至 76 条，本书为 22 章、256 人。
+
+closeout处理：
+- 正式库低频端点复核发现以下语句/副词/动宾残片仍挂在本书，已加入本书 BOOK_SKIP_NAMES：
+  却常常、平之诚、时剿灭、时欲使、时看、明证据、曾利用、曾四次、曾收有、都希望
+- 同批复核中确认“古述之”“王夫之”为真实人名，继续保留。
+
+临时单书复核：
+- 命令：extract_relationships.py --book-path 本书路径 --data-dir .tmp-minbian-closeout-data --export-dir .tmp-minbian-closeout-exports
+- 结果：200 people / 1 book / 22 chapters。
+- 目标关系：76 条。
+- closeout残片命中：0。
+
+正式库重建：
+- 重建方式：从 data/people.json 读取当前 110 本书名，映射到分章节目录后逐本传入 --book-path。
+- 映射检查：titles=110，mapped=110，missing=0。
+- 输出：done: 12831 people, 110 books, 6433 chapters。
+- 正式 totals：
+  people=12831
+  books=110
+  chapters=6433
+  identityLinks=30941
+  personRelations=3907
+- 本书正式状态：
+  chapters=22
+  personCount=246
+  personRelations=76
+- 导出体积：
+  data/people.json=49,122,366 bytes
+  data/relationship-data.js=19,185,548 bytes
+
+验证：
+- scripts/extract_relationships.py 通过 py_compile。
+- data/relationship-data.js 通过 node --check。
+- assets/app.js 通过 node --check。
+- exports/li-ao-relationships.txt 中《闽变研究与文星讼案》关系行数为 76。
+- exports/by-book-index.txt 中本书行：章节 22｜人物 246。
+- exports/li-ao-relationships.csv 行数为 12831，与 people totals 一致。
+- git diff --check 仅报告既有 LF/CRLF 提示，无空白错误。
+
+结论：
+- 《闽变研究与文星讼案》本书 closeout 完成。
+- 下一本建议进入：015.大江大海骗了你。

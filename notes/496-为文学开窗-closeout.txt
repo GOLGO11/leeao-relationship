@@ -1,0 +1,89 @@
+《为文学开窗》closeout
+
+目标
+- 对《为文学开窗》三轮抽取进行本书收尾验收。
+- 确认脚本、正式数据、JS、CSV、TXT 与 notes 同步。
+- 本 closeout 未使用 --all；正式数据沿用 round3 已完成的 108 本显式 --book-path 重建结果，本轮另做单书 --book-path 复验。
+
+源目录
+- 路径：
+  《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\012.为文学开窗
+- 源目录 txt 文件：
+  21 个正文 txt + 目录文件。
+- 抽取章节数：
+  21 chapters。
+
+本书三轮记录
+- notes/493-为文学开窗-round1-基线与高频残片清理.txt
+  基线、身份补正、短语映射、高频残片与正式全库回流残片清理。
+- notes/494-为文学开窗-round2-人物关系边补网.txt
+  补《窗外》论战、电影改编争议、苏雪林/陈致平、章太炎/赵中令、刘凤翰/居浩然、俞大纲/萧孟能、王荣文/徐复观等 27 条关系边。
+- notes/495-为文学开窗-round3-低频端点与关系质量复核.txt
+  补《窗外》内部角色链、低频论战边、利玛窦/李贽/容肇祖学术引用链、章太炎学生链；本书关系边增至 47 条。
+
+最终脚本状态
+- 本书稳定端点覆盖：
+  琼瑶、江雁容、康南、周雅安、蒋芸、王引、安良、居浩然、刘凤翰、王淑女、王柳敏、钟梅音、於梨华、陈致平、苏雪林、罗亚文、李宗侗、江太太、江仰止、程心雯、叶小蓁、容肇祖、朱希祖、汪东等。
+- 本书关系边：
+  47 条。
+- 本书 skip：
+  round1 的题名半截、称谓粘连、句读残片；round3 追加低频误切残片 26 个。
+- 保留策略：
+  《校书别记》里的纯书目、题名和校勘对象不一律转成人物关系边；只保留明确师承、信函、出版、同案、家族、论战或学术引用关系。
+
+单书 closeout 复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\012.为文学开窗 --data-dir .tmp-weiwenxuekaichuang-closeout-data --export-dir .tmp-weiwenxuekaichuang-closeout-exports
+- 输出：
+  people = 298
+  books = 1
+  chapters = 21
+  identityLinks = 1043
+  target_relations = 47
+  missing_relation_endpoints = 0
+  book_top80_skip_residual = 0
+- 单书 top 主干：
+  琼瑶(346)、江雁容(99)、王引(52)、康南(28)、周雅安(28)、蒋芸(28)、章太炎(28)、海明威(24)、刘凤翰(19)、安良(16)、胡适(12)、江太太(10)、萧孟能(10)、居浩然(9)、孟子(8)、赵中令(8)、马相伯(8)、乾隆(8)、徐复观(7)、耶稣(7)。
+
+正式输出验收
+- 正式数据来源：
+  round3 已完成的 108 本显式 --book-path 重建；未使用 --all。
+- 全库输出：
+  people = 12777
+  books = 108
+  chapters = 6373
+  identityLinks = 30813
+  personRelations = 3796
+- 《为文学开窗》正式逐本索引：
+  chapters = 21
+  personCount = 389
+  target_relations = 47
+  missing_relation_endpoints = 0
+  book_top80_skip_residual = 0
+- 《为文学开窗》正式 top 主干：
+  琼瑶(346)、江雁容(99)、王引(52)、章太炎(28)、蒋芸(28)、康南(28)、周雅安(28)、海明威(24)、刘凤翰(19)、安良(16)、胡适(12)、萧孟能(10)、江太太(10)、居浩然(9)、孟子(8)、乾隆(8)、赵中令(8)、马相伯(8)、光绪(7)、耶稣(7)。
+- 导出同步：
+  exports/li-ao-relationships.csv 行数 = 12778 = 12777 people + header。
+  exports/li-ao-relationships.txt 中《为文学开窗》关系行 = 47。
+- 文件大小：
+  data/people.json = 48,738,702 bytes，低于 50MB。
+  data/relationship-data.js = 19,054,174 bytes。
+
+验证
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 单书 closeout 临时抽取：通过；未使用 --all。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+本书结论
+- 《为文学开窗》可以 closeout。
+- 三轮抽取已经覆盖：
+  1. 《窗外》小说人物和师生恋冲突链。
+  2. 琼瑶《窗外》/《花落谁家》相关论战、电影改编、律师函和媒体报道链。
+  3. 苏雪林、陈致平、蒋芸、王集丛、方以直等围绕琼瑶及作品的评论关系。
+  4. 章太炎、赵中令、邹容、马相伯、蒋介石、胡适和章门弟子的学术政治关系。
+  5. 刘凤翰、居浩然、景新汉、李宗侗的《圆明园兴亡史》争议。
+  6. 俞大纲、萧孟能、王荣文、徐复观等出版/序跋/国学整理线。
+- 下一本建议：
+  按人物研究类源目录顺序进入《丑陋的中国人研究》。

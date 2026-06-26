@@ -1,0 +1,94 @@
+《为文学开窗》round3：低频端点与关系质量复核
+
+目标
+- 承接 round2 的 27 条关系边，本轮复核低频端点、误切残片和关系质量。
+- 优先补《窗外》内部被规则漏掉的角色关系、章太炎学生名单、校书札记中的明确学术引用链。
+- 继续保持逐书流程；正式重建使用当前 108 本工作集的显式 --book-path，未使用 --all。
+
+基线
+- round2 后单书临时抽取：
+  people = 317
+  chapters = 21
+  target_relations = 27
+  missing_relation_endpoints = 0
+- 低频复核发现：
+  1. 《窗外》内部角色江太太、江仰止、叶小蓁未进入节点；程心雯虽然进入但类别和关系未补。
+  2. 王集丛、方以直、严停云等低频端点有明确论战或同席语境，可补轻量关系边。
+  3. 章太炎学生名单中黄侃、朱希祖、钱玄同、鲁迅、周作人、沈兼士、汪东是明确师生链。
+  4. 《校书别记》中“于容肇”实为“见于容肇祖《李卓吾评传》”的误切，需正名为容肇祖；“史通”在本书是书名，不是石柏苍。
+
+脚本更新
+- 新增/补强《为文学开窗》低频端点身份：
+  江太太、江仰止、程心雯、叶小蓁、容肇祖、朱希祖、汪东。
+- 新增本书短语映射：
+  容肇祖《李卓吾评传》、黄侃（季刚）、朱希祖（逖先）、钱夏（季中、玄同）、周树人（豫才、鲁迅）、周作人、沈兼士、汪东。
+- 新增本书 skip 26 个：
+  全省高、别人设、台东州、孟能说、康南等、康南见、左庄班、文化传、文章异、时力、时嘴巴、时江涛、司教罗、端木恺律、解问题、解飘逸、许李敖、费心、齐桓曰、陈查某、于谨重、伊人、于容肇、骆明道、萧正德、石柏苍。
+- skip 说明：
+  单书复验中上述本书残片残留 0；正式全库 people 中若仍有同名节点，是其他书贡献，不代表《为文学开窗》残留。
+
+新增关系边
+- 《窗外》内部角色链：
+  江太太—江雁容、江太太—康南、江仰止—江雁容、叶小蓁—江雁容、叶小蓁—康南、程心雯—江雁容、程心雯—康南。
+- 低频论战/聚会链：
+  王集丛—琼瑶、方以直—琼瑶、方以直—王引、严停云—琼瑶。
+- 校书与学术引用链：
+  利玛窦—李贽、容肇祖—李贽。
+- 章太炎学生链：
+  章太炎—黄侃、章太炎—朱希祖、章太炎—钱玄同、章太炎—鲁迅、章太炎—周作人、章太炎—沈兼士、章太炎—汪东。
+- 本轮新增关系边：
+  20 条。
+
+单书复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\012.为文学开窗 --data-dir .tmp-weiwenxuekaichuang-r3-data --export-dir .tmp-weiwenxuekaichuang-r3-exports
+- 输出：
+  people = 298
+  books = 1
+  chapters = 21
+  target_relations = 47
+  missing_relation_endpoints = 0
+  skip_residual = 0
+- 关键新增端点：
+  江太太(10)、江仰止(2)、程心雯(2)、叶小蓁(2)、容肇祖(1)、朱希祖(3)、汪东(1)、钱玄同(1)、黄侃(2)、鲁迅(4)、周作人(2)、沈兼士(2)。
+
+正式重建
+- 正式命令由当前 data/people.json 中 108 本书名反查源目录，逐一传入 --book-path。
+- 显式路径数：
+  explicit_book_paths = 108
+- 安全检查：
+  contains_all_flag = False
+  target_book_included = True
+- 输出：
+  people = 12777
+  books = 108
+  chapters = 6373
+  identityLinks = 30813
+  personRelations = 3796
+- 《为文学开窗》逐本索引：
+  chapters = 21
+  personCount = 389
+  target_relations = 47
+  missing_relation_endpoints = 0
+  skip residual in book top80 = 0
+  top nodes = 琼瑶(346)、江雁容(99)、王引(52)、章太炎(28)、蒋芸(28)、康南(28)、周雅安(28)、海明威(24)、刘凤翰(19)、安良(16)、胡适(12)、萧孟能(10)、江太太(10)、居浩然(9)。
+- 导出同步：
+  CSV 行数 = 12778 = 12777 people + header。
+  exports/li-ao-relationships.txt 中《为文学开窗》关系行 = 47。
+- data/people.json 大小：
+  48,738,702 bytes，仍低于 50MB。
+
+验证
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 单书临时抽取：通过。
+- 108 本显式 --book-path 正式重建：通过；未使用 --all。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+下一步建议
+- 进入本书 closeout。
+- closeout 时复核：
+  1. 《为文学开窗》47 条关系边在 data、JS、CSV、TXT 中同步。
+  2. 单书 skip 残片清理和正式全库回流一致。
+  3. notes 493、494、495 可作为本书三轮依据。

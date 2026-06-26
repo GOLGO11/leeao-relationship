@@ -1,0 +1,60 @@
+《你不知道的彭明敏》round3：低频端点与关系质量复核
+
+本轮目标
+1. 继续严格使用单书临时抽取 + 当前正式书单显式 --book-path 重建，不使用 --all。
+2. 复核 round2 后正式回流带回的低频残片，压掉题名半截、句读粘连、法律短语和普通概念。
+3. 对本书人物关系边做质量复核：补强陈情书/特赦链与警总办案链，删去过度推断的弱边。
+
+脚本调整
+1. CURATED_IDENTITIES 增补：
+   - 陈金英：family / source_support / case_prison / public_debate
+   - 李彬如：military_figure / intelligence_police / torture_actor / litigation
+2. BOOK_PHRASE_PEOPLE["你不知道的彭明敏"] 增补：
+   - 胡学古（胡虚一） -> 胡虚一
+   - 胡学古/35/湖南 -> 胡虚一
+   - 彭陈金英陈情书 -> 陈金英
+   - 其母陈金英陈情书 -> 陈金英
+   - 李彬如上校 -> 李彬如
+3. BOOK_SKIP_NAMES["你不知道的彭明敏"] 增补第三轮低频尾部：
+   - 何处理、简称、常高兴、国土、成民国、从事预、封旧信、和独立、国展览、于彭明、白头宫、曾经资、明情形
+   - 谢谢胡、卫护彭、公布彭、相信彭、何脱离、包括彭、广邀民、步刊出、房子变、严肃地、那么紧、平安稳
+   - 利用彭、华访问、曾如林、成员、胡学古
+4. PERSON_RELATIONS 调整：
+   - 新增 彭明敏 -> 陈金英：母子/陈情书与特赦收场，weight 5。
+   - 新增 陈金英 -> 蒋介石：陈情书/向总统求宽，weight 4。
+   - 新增 陈金英 -> 梁肃戎：陈情书附呈/律师奔走，weight 4。
+   - 新增 李彬如 -> 吴彰炯：警总办案链/刑求与假案指挥，weight 3。
+   - 删除 沈登恩 -> 王荣文：出版材料对读/删名争议两端，weight 2。此边只连接出版证据链两端，直接关系不足。
+
+单书临时验证
+1. 命令范围：仅 --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\011.你不知道的彭明敏。
+2. 输出：192 people / 1 book / 21 chapters。
+3. 本轮新增 skip 残片在单书 people 中均未命中。
+4. 单书 personRelations 中本书关系数为 76。
+5. 新增四条关系均存在；沈登恩-王荣文弱边不存在。
+
+正式重建
+1. 从当前 data/people.json 的 107 本书名反查源目录，逐一生成 107 个显式 --book-path。
+2. contains_all_flag=False，未使用 --all。
+3. 正式输出：
+   - people = 12748
+   - books = 107
+   - chapters = 6352
+   - identityLinks = 30744
+   - personRelations = 3749
+4. 本书正式条目：
+   - 《你不知道的彭明敏》｜人物研究类｜章节 21｜人物 283
+   - 本书 personRelations = 76
+   - 陈金英、李彬如、胡虚一进入本书 top80；胡学古不再作为本书独立节点出现。
+5. data/people.json 大小为 48,564,743 bytes，低于 50MB。
+
+校验
+1. python -m py_compile scripts\extract_relationships.py：通过。
+2. node --check data\relationship-data.js：通过。
+3. node --check assets\app.js：通过。
+4. git diff --check：通过，仅有既有 CRLF 替换提示。
+5. exports/li-ao-relationships.csv 行数为 12,749，与 people 12,748 + 表头一致。
+6. exports/li-ao-relationships.txt 与 exports/by-book-index.txt 已同步刷新。
+
+下一步建议
+进入本书 closeout。重点做最终抽样：检查 76 条关系边方向/权重/注释是否自然，复核本书 top80 是否仍有残片，并确认 people.json 体积继续低于 50MB。
