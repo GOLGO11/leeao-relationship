@@ -1,0 +1,78 @@
+2026-06-27
+
+《蒋介石研究六集》round3 低频端点与支线关系复核
+
+范围：
+- 接续 notes/530 的 round2 人物关系边补网。
+- 本轮重点复核六集正式索引中的 1-3 次低频尾部，并补中日和约、空中强盗、开房间自由、吴国桢事件等支线关系。
+- 正式回流继续使用当前 117 本显式 --book-path；确认 uses_all_flag=False，未使用 --all。
+
+低频端点清理与补回：
+- 单书基线：round2 后六集单书为 280 people / 23 chapters / 42 六集关系边。
+- 本轮单书复验：272 people / 23 chapters / 64 六集关系边。
+- 新增或强化稳定端点：
+  - 中日和约线：河田烈、倭岛英二、冈崎胜男、吉田茂。
+  - 空中强盗线：张爱萍分类强化。
+  - 开房间自由线：林宏熙、吴中村、涂红线。
+  - 孙中山蒋介石与道统尾部：马林。
+- canonical 归位：
+  - 田烈 -> 河田烈。
+  - 李相国 -> 李鸿章。
+  - 马林二 -> 马林。
+- 六集专属 skip 新增低频残片：
+  - 查照办、查照并、连同萧、陆李等。
+  - 金保管、王氏更、胡适明。
+  - 都设备、闻杂记、蒋公呈、蒋公复。
+  - 吴凤、关中。
+
+新增关系边概览：
+- 六集人物关系边从 42 条增至 64 条，本轮新增 22 条。
+- 空中强盗线：
+  - 蒋介石-陈纳德、宋美龄-陈纳德、陈纳德-黄仁霖。
+  - 陈纳德-陈香梅、张爱萍-陈纳德。
+- 中日和约线：
+  - 蒋介石-杜勒斯、杜勒斯-顾维钧。
+  - 张群-倭岛英二、叶公超-张群。
+  - 吉田茂-杜勒斯、冈崎胜男-董显光。
+  - 蒋介石-河田烈、蒋介石-冈村宁次。
+- 开房间自由线：
+  - 林宏熙-胡务熙。
+  - 吴中村-涂红线。
+- 吴国桢事件线：
+  - 吴国桢-胡适、张道藩-吴国桢、吴国桢-张其昀。
+  - 张其昀-蒋介石、王世杰-吴国桢、宋美龄-吴国桢。
+  - 殷海光-胡适。
+
+单书验证：
+- 单书构建：272 people / 1 book / 23 chapters。
+- 六集关系边：64 条。
+- 六集关系边端点缺失：0。
+- 新增端点均进入单书库；上述 16 个误切残片均已消失。
+
+正式回流：
+- 正式回流使用当前书单派生的 117 个显式 --book-path。
+- uses_all_flag=False。
+- book_path_count=117。
+- target_present=True。
+- 正式回流结果：13214 people / 117 books / 6740 chapters。
+
+最终状态：
+- 正式总库：13214 people / 117 books / 6740 chapters / 31501 identityLinks / 4276 personRelations。
+- 《蒋介石研究六集》索引行：《蒋介石研究六集》｜人物研究类｜章节 23｜人物 378。
+- 六集人物关系边：64 条。
+- 六集关系边端点缺失：0。
+- exports/li-ao-relationships.csv 行数：13214。
+- data/people.json：50705577 bytes，约 48.36 MiB。
+
+验证：
+- totals 中 people/books/chapters/identityLinks/personRelations 与实际数组计数一致。
+- exports/li-ao-relationships.csv 行数与 people 总数一致。
+- exports/by-book-index.txt 中六集行确认：章节 23，人物 378。
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+
+下一轮建议：
+- 进入《蒋介石研究六集》本书 closeout。
+- closeout 建议汇总 notes/529-531 的三轮清理与关系补网，抽查六集最终低频尾部是否仍有明显残片；若无明显回弹，即可封卷并准备进入下一本。

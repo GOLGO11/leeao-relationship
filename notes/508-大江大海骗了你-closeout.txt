@@ -1,0 +1,94 @@
+《大江大海骗了你》closeout
+
+日期：2026-06-26
+
+目标
+- 对《大江大海骗了你》三轮抽取后的正式库做收尾验收。
+- 确认正式 JSON、JS、CSV、TXT 与 notes 同步。
+- 本 closeout 未使用 --all。
+- 本 closeout 未新增抽取规则，正式数据沿用 round3 已完成的 111 本显式 --book-path 重建结果。
+
+源目录
+- 路径：
+  《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\015.大江大海骗了你
+- 抽取章节数：
+  190 chapters。
+
+本书三轮记录
+- notes/505-大江大海骗了你-round1-基线与高频残片清理.txt
+  建立本书基线，处理龙应台批判、黑狱回忆、逃难见证和文星著作权线中的高频端点与明显误切残片。
+- notes/506-大江大海骗了你-round2-人物关系边补网.txt
+  补入龙应台/龙槐生/蒋介石、石原慎太郎访台、孙立人案老将、黑狱稿本、杜聿明家属、文星著作权等 50 条主干关系边。
+- notes/507-大江大海骗了你-round3-低频端点与关系质量复核.txt
+  清理低频端点与正式全库回流残片；折回傅校长、张群记/张群说、张鹄即、林森做、柏杨最、蒋老先、钱复写、石原见等“真名+后缀”误切。
+
+最终正式输出
+- 全库 totals：
+  people = 12873
+  books = 111
+  chapters = 6623
+  identityLinks = 31023
+  personRelations = 3957
+- 《大江大海骗了你》正式逐本索引：
+  chapters = 190
+  personCount = 463
+  personRelations = 50
+- 《大江大海骗了你》正式 top 主干：
+  龙应台(568)、蒋介石(484)、马英九(64)、李登辉(50)、龙槐生(49)、柏杨(45)、三毛(39)、钱穆(38)、杜聿明(38)、曹秀清(38)、彭克立(37)、龚德柏(31)、乔家才(31)、蒋经国(28)、余光中(27)、殷海光(25)、宋希濂(24)、杨虎城(24)、胡适(23)、孙中山(23)、宋美龄(23)、钱复(21)、石原慎太郎(19)。
+
+关系边封板检查
+- 正式 JSON 中本书 personRelations = 50。
+- exports/li-ao-relationships.txt 中本书关系行 = 50。
+- exports/by-book-index.txt 中本书索引行：
+  《大江大海骗了你》｜人物研究类｜章节 190｜人物 463
+- 正式关系权重分布：
+  weight 3 = 9
+  weight 4 = 20
+  weight 5 = 14
+  weight 6 = 7
+- 关系端点缺失：
+  missing_relation_endpoints = 0。
+- 低权重边复核后继续保留：
+  李庆华-石原慎太郎、欧晋德-马英九、金溥聪-马英九、张博卿-马英九、王清峰-马英九、杜聿明-宋希濂、张润佩-蒋经国、余光中-蔡文甫、钱穆-陈水扁。
+
+单书 closeout 复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\015.大江大海骗了你 --data-dir .tmp-dajiang-closeout-data --export-dir .tmp-dajiang-closeout-exports
+- 输出：
+  people = 395
+  books = 1
+  chapters = 190
+  identityLinks = 1339
+  single personRelations = 371
+  single book-filtered personRelations = 50
+  missing_relation_endpoints = 0
+  round3 skip residual = 0
+- 单书复验说明：
+  单书模式会因为脚本中的全局关系定义，把端点同在本书出现的其他书关系一并回流到临时 personRelations，因此 371 不是本书正式关系数。
+  只按 book 字段等于《大江大海骗了你》过滤，单书临时结果为 50 条，与正式库一致。
+
+导出同步
+- exports/li-ao-relationships.csv 行数 = 12873，与 people totals 一致。
+- data/people.json = 49,387,935 bytes，低于 50MB。
+- data/relationship-data.js = 19,267,470 bytes。
+- exports/li-ao-relationships.txt = 27,906,698 bytes。
+- exports/by-book-index.txt = 107,466 bytes。
+
+验证
+- python -m py_compile scripts\extract_relationships.py：通过。
+- 单书 closeout 临时抽取：通过；未使用 --all。
+- node --check data\relationship-data.js：通过。
+- node --check assets\app.js：通过。
+- git diff --check：通过；仅提示若 Git touch，若干文本文件 LF 会替换为 CRLF。
+
+本书结论
+- 《大江大海骗了你》可以 closeout。
+- 三轮抽取已经覆盖：
+  1. 龙应台、龙槐生、蒋介石、柏杨构成的历史叙述与父亲自传争议线。
+  2. 李登辉、马英九、石原慎太郎、龙应台、李庆华、潘毓刚、市府随同名单构成的石原访台争议线。
+  3. 彭克立、曾长云、曾心仪、孙立人、陈鸣人、李鸿等孙案老将与返乡见证线。
+  4. 龚德柏、乔家才、谷正文、毛人凤、蒋介石构成的黑狱稿本与情治监牢线。
+  5. 杜聿明、曹秀清、杨振宁、杜致勇、刘峙、宋希濂构成的家属人质与统战线。
+  6. 余光中、朱婉坚、萧孟能、蔡文甫、王尚义、王尚勤、李文、钱穆、陈水扁、马英九构成的文星著作权、亲属与公开评论支线。
+- 下一本建议：
+  按人物研究类源目录顺序进入《蒋介石研究》。

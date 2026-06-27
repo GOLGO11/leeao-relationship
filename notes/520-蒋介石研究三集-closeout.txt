@@ -1,0 +1,93 @@
+《蒋介石研究三集》closeout
+
+日期：2026-06-27
+
+目标
+- 对《蒋介石研究三集》三轮抽取后的正式库做收尾验收。
+- 确认正式 JSON、JS、CSV、TXT 与 notes 同步。
+- 本 closeout 未使用 --all。
+- 本 closeout 未新增抽取规则，正式数据沿用 round3 已完成的 114 本显式 --book-path 重建结果。
+
+源目录
+- 路径：
+  《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\018.蒋介石研究三集
+- 抽取章节数：
+  18 chapters。
+
+本书三轮记录
+- notes/517-蒋介石研究三集-round1-基线与正式回流清理.txt
+  建立本书基线，清理一二八、八一三、陶德曼调停、威尔基访华、黄金荣寿宴和午餐会材料中的高频残片与跨书回流误入；补强温德尔·威尔基、约翰·巴顿·戴维斯、郭泰祺、戴戟、黄强、植田谦吉、古屋奎二、尚明轩、张国兴等真端点；正式索引收束到 239 人，本书关系边暂留 0。
+- notes/518-蒋介石研究三集-round2-人物关系边补网.txt
+  补入一二八/十九路军、陶德曼调停、威尔基/宋美龄、黄金荣帮会、孟良崮与陈左弧、家族宣传和午餐会争议等 47 条主干关系边；正式索引为 240 人，本书关系边 47。
+- notes/519-蒋介石研究三集-round3-低频端点与关系质量复核.txt
+  补八一三张发奎/罗卓英/陈诚指挥链、龚德柏/重光葵史料互证、午餐会张群/何应钦/孙科/傅斯年人事链；新增 21 条关系边，并用短语锚点稳定召回傅斯年；本书关系边增至 68。
+
+最终正式输出
+- 全库 totals：
+  people = 12963
+  books = 114
+  chapters = 6684
+  identityLinks = 31189
+  personRelations = 4127
+- 《蒋介石研究三集》正式逐本索引：
+  chapters = 18
+  personCount = 240
+  personRelations = 68
+- 《蒋介石研究三集》正式 top 主干：
+  蒋介石(669)、汪精卫(63)、黄金荣(55)、孙中山(49)、张治中(38)、陶成章(33)、冯玉祥(28)、陈其美(25)、宋美龄(24)、李宗仁(24)、顾祝同(22)、陈铭枢(22)、何应钦(21)、蔡廷锴(21)、屈突通(20)、李济深(20)、俞济时(19)、章太炎(16)、白崇禧(15)、罗斯福(15)、蒋光鼐(15)、陈诚(14)、龚德柏(14)、陈立夫(12)、吴敬恒(12)、陶德曼(12)、张学良(11)、张群(11)、纪政(11)、陈公博(11)。
+
+关系边封板检查
+- 正式 JSON 中本书 personRelations = 68。
+- exports/li-ao-relationships.txt 的人物关系边区块中，本书关系行 = 68。
+- exports/by-book-index.txt 中本书索引行：
+  《蒋介石研究三集》｜人物研究类｜章节 18｜人物 240
+- 正式关系权重分布：
+  weight 3 = 14
+  weight 4 = 30
+  weight 5 = 13
+  weight 6 = 6
+  weight 7 = 1
+  weight 8 = 3
+  weight 9 = 1
+- 关系端点缺失：
+  missing_relation_endpoints = 0。
+- 重复关系键：
+  duplicate_relationship_keys = 0。
+- round1/正式回流残片抽查：
+  司令长、向蒋介、公怒杀、常务委、和平谈、蒋汪二、温德尔、张司令、孔夫人、秦主任、高级将、黄祖、蒋老先、公怒之、和夫人、满洲国、通电、蒋公介均未作为本书正式人物节点出现。
+
+单书 closeout 复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\018.蒋介石研究三集 --data-dir .tmp-jiangjieshi-sanj-closeout-data --export-dir .tmp-jiangjieshi-sanj-closeout-exports
+- 输出：
+  people = 199
+  books = 1
+  chapters = 18
+  identityLinks = 663
+  single personRelations = 171
+  single book-filtered personRelations = 68
+  missing_relation_endpoints = 0
+  duplicate_relationship_keys = 0
+  round1 residual present = 0
+- 单书复验说明：
+  单书模式会因为脚本中的全局关系定义，把部分关系端点同带入临时 people；本书过滤后的关系边为 68，与正式库和 TXT 导出一致。
+
+正式导出与体积
+- data/people.json：49,893,634 bytes，低于 50MB。
+- data/relationship-data.js：19,459,355 bytes。
+- exports/li-ao-relationships.csv：2,385,120 bytes。
+- exports/li-ao-relationships.txt：28,125,842 bytes。
+- exports/by-book-index.txt：110,400 bytes。
+- exports/li-ao-relationships.csv 行数：12963，等于 data.totals.people。
+
+验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：仅 CRLF 提示，无内容空白错误。
+
+结论
+- 《蒋介石研究三集》本书可 closeout。
+- 已完成：round1 基线与正式回流清理，round2 主干关系边补网，round3 低频端点与关系质量复核。
+- 当前正式库未使用 --all，维持 114 本显式书目范围。
+- 下一本建议进入：019.蒋介石研究四集。

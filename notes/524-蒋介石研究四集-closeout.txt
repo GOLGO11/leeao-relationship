@@ -1,0 +1,54 @@
+2026-06-27
+
+《蒋介石研究四集》closeout。
+
+源书目录：
+《大李敖全集5.0》（wjm_tcy版）分章节/012.人物研究类/019.蒋介石研究四集
+
+章节范围：
+- 共 16 章：目录、自序、001 至 015。
+
+三轮处理回顾：
+- round1：人物基线与正式回流清理。
+  - 初始单书 baseline 337 人。
+  - pass1 降至 224 人；pass2 降至 214 人。
+  - 正式回流后补清跨书强信号残片，四集正式索引为 16 章、257 人。
+  - 新增四集 curated identities、phrase anchors、BOOK_SKIP_NAMES、canonical_name 映射。
+- round2：人物关系边补网。
+  - 新增四集专属关系边 34 条。
+  - 主线为杨虎城遇害线、外蒙/卖国线、陈布雷线。
+  - 总关系边 4127 -> 4161。
+- round3：低频端点与来源作者复核。
+  - 清理正式 evidence 尾部 8 个非人名：任何有、何必去、国报纸、常重要、文章可、段回忆、满城风、边走边。
+  - 新增来源作者/史料见证边 4 条：高山流->张学良、梁敬錞->张学良、沈醉->郑绍发、沈醉->戴笠。
+  - 未加沈醉->张学良，因为本书直接文本支撑的是沈醉《我所知道的戴笠》里的郑绍发/戴笠线。
+
+closeout 最终状态：
+- 正式总库：12999 people，115 books，6700 chapters。
+- identityLinks：31252。
+- personRelations：4165。
+- 《蒋介石研究四集》索引行：章节 16，人物 249。
+- 四集专属关系边：38。
+- 四集关系边端点缺失检查：none。
+- data/people.json：50055299 bytes，约 47.74 MiB。
+- CSV 行数：12999，与 people 总数一致。
+
+closeout 验证：
+- totals 字段与实际 people/books/chapters/identityLinks/personRelations 计数一致。
+- exports/by-book-index.txt 中四集行确认： 《蒋介石研究四集》｜人物研究类｜章节 16｜人物 249。
+- round1/round2/round3 残片清单复核：residuals_found none。
+- 四集低频尾部抽样未见明显非人名残片。
+- 显式正式书单预检：115 titles，115 mapped，0 missing。
+- explicit_uses_all_flag False。
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+- 未发现 .tmp-*siji* 临时目录残留。
+
+说明：
+- closeout 未再次重跑正式回流；round3 已在本轮前完成正式 115 本显式 --book-path 回流，closeout 仅做一致性与质量核对。
+- 当前数据可作为《蒋介石研究四集》的收束状态。
+
+下一本建议：
+- 按人物研究类目录顺序进入《蒋介石研究五集》。

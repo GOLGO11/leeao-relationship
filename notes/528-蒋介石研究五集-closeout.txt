@@ -1,0 +1,37 @@
+2026-06-27
+
+《蒋介石研究五集》closeout
+
+源书目录：《大李敖全集5.0》（wjm_tcy版）分章节/012.人物研究类/020.蒋介石研究五集
+章节范围：共 17 章。
+
+三轮处理回顾：
+- round1：建立五集基线，完成正式回流清理；单书最终约 343 人，正式索引为 485 人。
+- round2：补五集人物关系边，覆盖戴笠、沈醉、蒋介石、宋美龄、张学良、杨虎城、宋子文、胡宗南等核心线索；五集关系边增至 38 条。
+- round3：复核低频端点与次级关系，新增谭海、潘汉年、李铁军，五集语境下将张冲/张淮南归并为张怀南，并补张怀南-周恩来、张怀南-潘汉年、周恩来-潘汉年、谭海-张学良、谭海-蒋介石、李金洲-张学良、梁敬錞-张学良、何世礼-张学良、李铁军-魏汝霖等 9 条关系边；五集关系边增至 47 条。
+
+closeout 最终状态：
+- 正式总库：13179 people / 116 books / 6717 chapters / 31468 identityLinks / 4212 personRelations。
+- 《蒋介石研究五集》索引行：《蒋介石研究五集》｜人物研究类｜章节 17｜人物 487。
+- 五集专属人物关系边：47 条。
+- 五集关系边端点缺失检查：0。
+- CSV 行数：13179，与 people 总数一致。
+- data/people.json：50527449 bytes，约 48.19 MiB。
+
+closeout 验证：
+- totals 中 people/books/chapters/identityLinks/personRelations 与实际数组计数一致。
+- exports/by-book-index.txt 中五集行确认：章节 17，人物 487。
+- exports/li-ao-relationships.csv 行数与 people 总数一致。
+- 五集关系边 source/target 均能落到正式 people 表。
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+- 未发现本书 .tmp-jiangjieshi-wuji-round3-* 临时目录残留。
+
+说明：
+- 本 closeout 未再次重跑正式回流；round3 已完成 116 本显式 --book-path 正式回流，并确认 uses_all_flag=False，未使用 --all。
+- books 列表内部排序并非人物研究类目录顺序；下一本建议按源目录顺序，而不是 data/people.json 的相邻书目。
+
+下一本建议：
+- 进入《蒋介石研究六集》。

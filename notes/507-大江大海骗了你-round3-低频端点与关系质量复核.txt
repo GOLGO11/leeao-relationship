@@ -1,0 +1,96 @@
+《大江大海骗了你》round3：低频端点与关系质量复核
+
+日期：2026-06-26
+
+目标
+- 接续 round2 的 50 条关系边，复核本书 1-3 次低频端点。
+- 清掉正式全库回流后放大的题名、句读、地名、概念词、动宾粘连和“真名+后缀”误切。
+- 保留真实军政、学术、出版、媒体和历史典故人物，避免因低频而误删。
+- 本轮未使用 --all；正式输出沿用当前 111 本显式 --book-path 重建。
+
+脚本调整
+- 在 BOOK_SKIP_NAMES["大江大海骗了你"] 增加 round3 跳过项，代表性残片包括：
+  台俄奸、成名之、文章没、方吃紧、方紧吃、满面、白描、高点、房子没、徐州剿、施教作、时照顾、权东路、相差甚、相信杜、沈阳解、国人之、宣布独、房间同、文章比、时并且、时有很、经地义、那种老、花乱坠、查真相等。
+- 增加本书上下文归一化，避免把真实人物切碎：
+  傅校长 -> 傅斯年
+  张群记/张群说 -> 张群
+  张鹄即 -> 张鹄
+  林森做 -> 林森
+  柏杨最 -> 柏杨
+  蒋老先 -> 蒋介石
+  钱复写 -> 钱复
+  石原见 -> 石原慎太郎
+
+单书临时复验
+- 命令：
+  python scripts\extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节\012.人物研究类\015.大江大海骗了你 --data-dir .tmp-dajiang-round3-data --export-dir .tmp-dajiang-round3-exports
+- 输出：
+  people = 395
+  books = 1
+  chapters = 190
+- 对照 round2 单书：
+  people = 409 -> 395
+- 本书关系边：
+  50
+- 已抽检的 round3 残片：
+  bad_remaining = []
+- 已抽检的真实端点仍在单书结果中：
+  傅斯年、张群、张鹄、林森、柏杨、钱复、石原慎太郎、蒋介石、龙应台、龙槐生、马英九。
+
+正式重建
+- 正式重建方式：
+  从当前 data/people.json 的 111 本书名取清单，映射源目录后以 111 个显式 --book-path 运行。
+- 未使用：
+  --all。
+- 重建过程确认：
+  running explicit book-path rebuild: 111 books
+  uses_all_flag: False
+- 全库输出：
+  people = 12873
+  books = 111
+  chapters = 6623
+  identityLinks = 31023
+  personRelations = 3957
+- 对照 round2 正式输出：
+  people = 12887 -> 12873
+  personRelations = 3957 -> 3957
+- 《大江大海骗了你》正式逐本索引：
+  chapters = 190
+  personCount = 463
+  personRelations = 50
+- 对照 round2 正式逐本索引：
+  personCount = 523 -> 463
+  personRelations = 50 -> 50
+- 正式关系权重分布：
+  weight 3 = 9
+  weight 4 = 20
+  weight 5 = 14
+  weight 6 = 7
+
+关系质量复核
+- round2 新增的 50 条本书人物关系边保留。
+- 低权重边复核后未删除：
+  李庆华-石原慎太郎、欧晋德-马英九、金溥聪-马英九、张博卿-马英九、王清峰-马英九、杜聿明-宋希濂、张润佩-蒋经国、余光中-蔡文甫、钱穆-陈水扁。
+- 这些边虽权重较低，但在本书里各有明确同场、材料链、类比或叙述功能，暂时保留以维持网络覆盖。
+
+导出与验证
+- exports/by-book-index.txt：
+  《大江大海骗了你》｜人物研究类｜章节 190｜人物 463
+- exports/li-ao-relationships.csv 行数：
+  12873，与 people totals 一致。
+- data/people.json：
+  49,387,935 bytes，低于 50MB。
+- data/relationship-data.js：
+  19,267,470 bytes。
+- exports/li-ao-relationships.txt：
+  27,906,698 bytes。
+- 验证：
+  python -m py_compile scripts\extract_relationships.py：通过。
+  node --check data\relationship-data.js：通过。
+  node --check assets\app.js：通过。
+  git diff --check：仅 LF/CRLF 提示，无空白错误。
+
+本轮结论
+- 《大江大海骗了你》round3 完成。
+- 本轮主要清理正式全库回流造成的低频噪声，本书正式人物数从 523 降至 463，关系边保持 50 条。
+- 建议下一轮进入本书 closeout：只做最终索引、关系边、文件体积、导出一致性和 git 状态复核，不再扩展新规则。

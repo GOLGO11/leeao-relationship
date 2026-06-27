@@ -1,0 +1,49 @@
+2026-06-27
+
+本轮继续《蒋介石研究四集》round3，目标是低频端点复核、关系质量复核，以及补少量有原文支撑的来源作者/史料见证边。
+
+起点：
+- round2 后正式总库：13000 people，115 books，6700 chapters，31254 identityLinks，4161 personRelations。
+- round2 后《蒋介石研究四集》：章节 16，人物 257，专属关系边 34。
+
+低频端点复核：
+- 正式 evidence 尾部确认以下 8 个为句读粘连、成语半截、普通词或动宾短语，不作为人物节点：
+  任何有、何必去、国报纸、常重要、文章可、段回忆、满城风、边走边。
+- 已加入 BOOK_SKIP_NAMES["蒋介石研究四集"]。
+- 复验后 round3_residuals_found: none。
+
+来源作者/史料见证边：
+- 新增四集专属关系边 4 条：
+  高山流 -> 张学良：史料作者/幽居生活实录。
+  梁敬錞 -> 张学良：史料作者/九一八不抵抗责任辨析。
+  沈醉 -> 郑绍发：回忆材料/郑三发子疑案。
+  沈醉 -> 戴笠：回忆材料/戴笠处理郑绍发。
+- 说明：上一轮建议中提到可看沈醉-张学良，但本书直接文本支撑的是沈醉《我所知道的戴笠》中的郑绍发/戴笠线，不是张学良线，因此本轮未硬加沈醉-张学良。
+
+单书验证：
+- 使用 --book-path 指向四集目录，临时输出到 .tmp-jiangjieshi-siji-round3-data / exports。
+- 未使用 --all；验证输出 uses_all_flag False。
+- 单书结果：215 people，1 book，16 chapters。
+- 单书四集专属关系边：38。
+- 新增来源作者边均出现。
+- 残片清单未在单书结果中出现。
+
+正式回流：
+- 从当前 data/people.json 派生 115 本正式书单，逐本映射为显式 --book-path 参数。
+- 未使用 --all；验证输出 uses_all_flag: False。
+- 正式结果：12999 people，115 books，6700 chapters，31252 identityLinks，4165 personRelations。
+- 本轮总人物数 13000 -> 12999；四集人物数 257 -> 249。
+- 《蒋介石研究四集》索引行：章节 16，人物 249。
+- 四集专属关系边：38。
+- 四集关系边端点缺失检查：none。
+- data/people.json：50055299 bytes，约 47.74 MiB。
+- CSV 行数：12999，与 people 总数一致。
+
+验证：
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+
+下一轮建议：
+- 进入本书 closeout。重点是复核四集三轮 note、确认无临时目录、确认 by-book 索引/CSV/JS 同步，必要时做最后一次关系边抽样和正式书单显式回流；若无新问题，则结束《蒋介石研究四集》并准备进入下一本。

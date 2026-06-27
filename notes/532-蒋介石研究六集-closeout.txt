@@ -1,0 +1,64 @@
+2026-06-27
+
+《蒋介石研究六集》closeout
+
+范围：
+- 汇总 notes/529-531 的三轮处理。
+- 本次 closeout 做最终低频尾部抽查，收掉正式库回流后仍落在六集 evidence 的明显句读/职衔/地名残片。
+- 全程继续使用当前 117 本显式 --book-path；确认 uses_all_flag=False，未使用 --all。
+
+三轮处理回顾：
+- round1：建立单书基线，从 339 people 清到 280 people；补回吴申叔、吴国桢、萧同兹、萧孟能、朱婉坚、童轩荪、张群、黄少谷、端木恺、刘士元、胡汝森、李国瑾、黄仁霖、陈立峰、郑锡华、张明炜、张明璋、童有德、李宏道、李根道等稳定端点；正式回流后六集索引为 386 人。
+- round2：补人物关系边 42 条，覆盖孙中山/陶成章案、陈炯明、吴敬恒、陈布雷、吴家父子、吴国桢事件、《文星》封闭改组、童轩荪/李政道家属材料等主线；六集关系边端点缺失 0。
+- round3：补中日和约、空中强盗、开房间自由、吴国桢事件二级人物线；六集关系边从 42 条增至 64 条；单书复验为 272 people / 23 chapters；正式六集索引为 378 人。
+
+closeout 小修：
+- 新增六集 closeout skip，收掉正式库低频尾部中的句读、称谓和普通短语残片：
+  - 余之言、余辩难、却专门、却更进、司司长、和民族、和蒋夫、和解条、国宣传。
+  - 安心做、安息、常轨、平事迹、应成立、康如何、怀旧之、支持国、文化政、文星索。
+  - 时保留、时动议、时总统、时照顾、时间拖、曾经教、梁子、段话来、相承、石报告、简明扼。
+  - 能够找、能够替、蒋公亲、蒋故、蒋部长、诸位先、都做到、金陵、韩国战、陈院长、陆方面。
+- 新增或扩展六集 canonical 归位：
+  - 孟武 -> 萨孟武。
+  - 宗仁 / 李（宗仁） -> 李宗仁。
+  - 张群说 -> 张群。
+  - 胡适博 -> 胡适。
+  - 蒋老先 -> 蒋介石。
+  - 长孙铭九 -> 孙铭九。
+  - 诸葛武侯 -> 诸葛亮。
+
+closeout 构建：
+- closeout 单书复验：272 people / 1 book / 23 chapters。
+- 单书六集关系边：64 条。
+- 单书关系边端点缺失：0。
+- 正式回流使用临时 data/export 目录承接结果，再同步到正式 data/exports。
+- uses_all_flag=False。
+- book_path_count=117。
+- target_present=True。
+- 正式回流结果：13204 people / 117 books / 6740 chapters。
+
+最终状态：
+- 正式总库：13204 people / 117 books / 6740 chapters / 31485 identityLinks / 4276 personRelations。
+- 《蒋介石研究六集》索引行：《蒋介石研究六集》｜人物研究类｜章节 23｜人物 331。
+- 六集人物关系边：64 条。
+- 六集关系边端点缺失：0。
+- closeout watchlist 在六集 topBooks 中归零：
+  - 余之言、余辩难、却专门、却更进、司司长、和蒋夫、张群说、胡适博、蒋老先、长孙铭九、孟武、宗仁。
+- exports/li-ao-relationships.csv 行数：13204。
+- data/people.json：50658335 bytes，约 48.31 MiB。
+
+验证：
+- totals 中 people/books/chapters/identityLinks/personRelations 与实际数组计数一致。
+- exports/li-ao-relationships.csv 行数与 people 总数一致。
+- exports/by-book-index.txt 中六集行确认：章节 23，人物 331。
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+
+封卷结论：
+- 《蒋介石研究六集》已完成 round1 基线清理、round2 主线关系补网、round3 支线关系与低频端点复核，以及 closeout 正式尾部清理。
+- 本书可封卷。
+
+下一本建议：
+- 进入下一本人物研究类书籍；若按当前目录顺序，下一本可接续用户指定书名。
