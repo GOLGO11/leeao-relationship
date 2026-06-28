@@ -1,0 +1,60 @@
+《蒋经国研究》round3：支线关系与低频尾部复核
+
+范围：
+- 在 round2 核心关系网基础上，补入中低频但有明确材料支撑的支线关系。
+- 复核单书 1-3 次低频尾部，压掉标题半截、制度词、普通词和句法残片。
+- 正式重建继续使用现有 120 本书列表生成的显式 --book-path；本轮没有使用 --all。
+
+脚本调整：
+- scripts/extract_relationships.py
+  - CURATED_IDENTITIES 增补《蒋经国研究》支线端点：
+    杨明、范魁书、史朝瀛、游鲲、郑绍康、樊哲琳、徐修惠、鲍亦荣、李连春、许丙、周中峰、王永树、方恩绪。
+  - BOOK_PHRASE_PEOPLE 增补本书短语锚点：
+    “还有游鲲、郑绍康、樊哲琳、徐修惠等人” -> 游鲲、郑绍康、樊哲琳、徐修惠。
+    “派三青团组织处长康泽为秘书长” -> 康泽。
+  - canonical_name 增补本书语境归并：
+    杨明代 -> 杨明；彭德派 -> 彭德；许丙招 -> 许丙。
+  - BOOK_SKIP_NAMES["蒋经国研究"] 增补低频误切：
+    宫廷、广告业、经济发、全国知、权力至、习题、乌兰可、赵元任。
+
+本轮新增关系边：
+- 新增 36 条《蒋经国研究》 PERSON_RELATIONS。
+- 材料/作者线：
+  曹云霞-蒋经国，彭哲愚-章亚若，严农-章亚若，孟绝子-蒋经国，顾念远-蒋经国，高墉-蒋经国，陈丹-蒋经国，陈丹-毛福梅。
+- 中央干校、赣南旧部、青年军线：
+  蒋经国-蔡希曾，蒋经国-杨明，蒋经国-范魁书，蒋经国-史朝瀛，蒋经国-游鲲，蒋经国-郑绍康，蒋经国-樊哲琳，蒋经国-徐修惠，蒋经国-康泽，蒋经国-罗卓英。
+- 任显群、吴国桢、省政财经线：
+  任显群-鲍亦荣，任显群-李连春，浦薛凤-任显群，吴国桢-陶一珊，吴国桢-彭德，吴国桢-蒋渭川，吴国桢-杨肇嘉，吴国桢-吴三连，吴国桢-宋子文，吴国桢-杜月笙，吴国桢-陈诚，吴国桢-魏道明，吴国桢-阎锡山。
+- 蒋氏后代、安全与顾正秋线：
+  蒋孝武-周中峰，周中峰-王永树，蒋孝勇-方恩绪，许丙-顾正秋，许丙-蒋经国。
+
+单书临时验证：
+- 命令：extract_relationships.py --book-path 024.蒋经国研究 --data-dir .tmp-jiangjingguo-yanjiu-r3-data2 --export-dir .tmp-jiangjingguo-yanjiu-r3-exports2
+- 结果：293 people / 1 book / 26 chapters / 916 identityLinks / 336 personRelations。
+- 《蒋经国研究》关系边：69。
+- 关系端点缺失：0。
+- 误切探针计数均为 0：
+  宫廷、广告业、经济发、全国知、权力至、习题、乌兰可、赵元任、许丙招、杨明代、彭德派。
+- 新增真实端点均已落表：
+  杨明4、范魁书5、史朝瀛1、游鲲4、郑绍康2、樊哲琳1、徐修惠2、鲍亦荣2、李连春2、许丙3、周中峰1、王永树1、方恩绪1、康泽1。
+
+正式显式重建验证：
+- 重建方式：从当前 data/people.json 的 books 列表生成 120 个显式 --book-path 参数；includes target=true；未使用 --all。
+- 临时正式产物：
+  13775 people / 120 books / 6820 chapters / 32240 identityLinks / 4488 personRelations。
+- 《蒋经国研究》正式切片：
+  358 people / 26 chapters / 69 personRelations。
+- 关系端点缺失：0。
+- 误切探针计数均为 0：
+  宫廷、广告业、经济发、全国知、权力至、习题、乌兰可、赵元任、许丙招、杨明代、彭德派。
+- data/people.json 体积约 49.96 MiB。
+
+已同步产物：
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+下一步建议：
+- 本书已完成 round1 基线清理、round2 核心关系边、round3 支线关系和低频尾部复核；建议进入《蒋经国研究》closeout。

@@ -1,0 +1,57 @@
+2026-06-28
+
+《蒋介石的真面目》closeout
+
+范围：
+- 汇总 notes/533-535 的三轮处理。
+- 本次 closeout 做正式库低频尾部抽查，重点检查本书剩余 1-2 次节点、关系边端点、导出同步和站点 JS。
+- 全程继续使用当前 118 本显式 --book-path；确认 uses_all_flag=False，未使用 --all。
+
+三轮处理回顾：
+- round1：建立本书基线，清掉题名半截、制度/地名/财税词、职衔半截、句读粘连和普通短语；补回毛福梅、陈洁如、章亚若、杨友梅、郭修甲、李国祯、朱政委、罗参谋、颜文闩、老包等稳定端点；正式回流后本书索引为 314 人。
+- round2：补人物关系边 35 条，覆盖长春围城、蒋氏婚姻、章亚若案、中苏条约/外蒙、西藏与彭明敏、宋美龄/美国线等主线；本书关系边端点缺失 0。
+- round3：保留黄中美、漆高儒、杨治兴、张令澳、乔志叶、蒋荫恩、老包等真实低频端点；清掉向经国、台四十、陈说、于现实、公司来、党史委、怀民、文丑、姜太公等回流残片；本书关系边由 35 条增至 43 条。
+
+closeout 小修：
+- 低频尾部复核后，确认剩余 95 个本书 1-2 次节点大多为真实人物、作者、证人、历史类比或资料来源。
+- 唯一小修：本书《蒋介石、王世杰卖国的新史料》中“贝尔”实际来自“贝尔纳斯”，不是全库已有的“贝尔”节点。
+- 新增贝尔纳斯为本书稳定端点，并在本书 canonical 中将上下文含“贝尔纳斯”的“贝尔”归并到贝尔纳斯。
+
+closeout 构建：
+- closeout 单书复验：252 people / 1 book / 39 chapters。
+- 单书中贝尔为 0，贝尔纳斯为 2。
+- 单书本书关系边：43 条。
+- 单书关系边端点缺失：0。
+- 正式回流使用临时 data/export 目录承接结果，再同步到正式 data/exports。
+- uses_all_flag=False。
+- book_path_count=118。
+- target_present=True。
+- 正式回流结果：13231 people / 118 books / 6779 chapters。
+
+最终状态：
+- 正式总库：13231 people / 118 books / 6779 chapters / 31542 identityLinks / 4319 personRelations。
+- 《蒋介石的真面目》索引行：《蒋介石的真面目》｜人物研究类｜章节 39｜人物 305。
+- 本书人物关系边：43 条。
+- 本书关系边端点缺失：0。
+- closeout watchlist 在本书 topBooks 中归零：
+  - 中仪嫂（五五日记）、向经国、台四十、陈说、于现实、公司来、党史委、怀民、文丑、姜太公、贝尔。
+- 贝尔纳斯在本书计数 2，主分类 public_official。
+- 黄中美在本书计数 34，宣中仪在本书计数 2。
+- exports/li-ao-relationships.csv 行数：13231。
+- data/people.json：50807999 bytes，约 48.45 MiB。
+
+验证：
+- totals 中 people/books/chapters/identityLinks/personRelations 与实际数组计数一致。
+- exports/li-ao-relationships.csv 行数与 people 总数一致。
+- exports/by-book-index.txt 中本书行确认：章节 39，人物 305。
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅提示既有 LF/CRLF 转换警告。
+
+封卷结论：
+- 《蒋介石的真面目》已完成 round1 基线清理、round2 主线关系补网、round3 低频端点与支线关系复核，以及 closeout 尾部归并与正式验证。
+- 本书可封卷。
+
+下一本建议：
+- 按当前人物研究类目录顺序，下一本可进入《蒋介石评传》。
