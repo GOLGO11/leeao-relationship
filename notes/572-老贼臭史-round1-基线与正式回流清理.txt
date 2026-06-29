@@ -1,0 +1,42 @@
+《老贼臭史》round1：基线、首批关系边与正式回流清理
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/004.老贼臭史
+- 正文 20 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- 首次正式回流从 exports/by-book-index.txt 读取当前 126 本，再追加本书，构造 127 个显式 --book-path。
+- 追加后第二次清理回流从当前正式索引读取 127 本，继续使用 127 个显式 --book-path。
+
+单书基线
+- 初始临时单书：304 人 / 1 本 / 20 章。
+- 初始《老贼臭史》专属 PERSON_RELATIONS：0。
+- 补规则后临时单书：247 人 / 787 identityLinks / 47 条本书专属关系，缺失端点 0。
+
+本轮脚本改动
+- 增加《老贼臭史》首轮 curated 端点，覆盖受降、暗杀、学潮、刑求、油商行贿、老民代、蒋彦士、薛岳与家奴线。
+- 增加 47 条《老贼臭史》PERSON_RELATIONS。
+- 增加 BOOK_PHRASE_PEOPLE["老贼臭史"]，固定方治、李公朴、王作昌/周烈范、许秀岑/江方夜等低频或易误切端点。
+- 增加 BOOK_SKIP_NAMES["老贼臭史"]，清理题名半截、称谓截断、机构/国策短语和正式回流后由跨书强信号带回的残片。
+- 增加 canonical_name 的本书归并：张市长->张群，陈局长/陈公安->陈希曾，党部陶/通缉陶->陶百川，以及少量上下文明确的称谓归并。
+
+正式回流结果
+- 第一次正式回流：14058 人 / 127 本 / 6995 章 / 32747 identityLinks / 4990 personRelations。
+- 第一次回流中《老贼臭史》为 20 章 / 363 人 / 47 条本书专属关系。
+- 正式尾部复核后补 skip，再次显式 127 本回流。
+- 最终正式库：14044 人 / 127 本 / 6995 章 / 32723 identityLinks / 4990 personRelations。
+- 最终《老贼臭史》：20 章 / 298 人 / 47 条本书专属关系，缺失端点 0。
+- 本书高频头部：冈村宁次、今井武夫、徐复观、盛世才、陶百川、何应钦、蒋介石、张群、陈希曾、闻一多、宋英、许秀岑、冷欣、薛岳、陈文成、萧毅肃、费希平、李公朴、孙中山、何柱国。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- 单书临时验证通过，has_all_flag False。
+- 正式回流护栏：explicit_book_path_count 127，argv_book_path_flags 127，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+
+下一轮建议
+- 进入《老贼臭史》round2 核心关系边补网。
+- 优先复核并扩展这些支线：何应钦/冈村宁次/今井武夫受降链，张琍敏/张振国/李公朴/闻一多暗杀链，盛世才新疆刑求与俞秀松/宋念慈/林伯雅线，陶百川/陈希曾/张群/陈铭枢学潮文件线，林栋油商行贿案，以及蒋彦士、薛岳、刘绍唐/陈立夫/秦孝仪支线。

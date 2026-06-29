@@ -1,0 +1,72 @@
+《国民党研究》closeout
+
+范围
+- 本书来源目录：《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/001.国民党研究。
+- 本书完成 round1 基线与正式回流清理、round2 核心关系边补网、round3 支线关系与低频尾部复核。
+- closeout 做最终低频尾部清理、单书复核、显式 124 本正式回流、导出同步与一致性验证。
+- 全程未使用 `--all`。
+
+历轮完成情况
+- round1：进入本书并完成明显误切清理；正式回流使用 124 个显式 `--book-path`，结果为 31 chapters / 411 people / targetRelations 0。
+- round2：新增 39 条核心关系边，覆盖同盟会、变造照片、孙科家族/蓝妮、蔡辰洲财阀宣传、杨开慧被害、通缉症、特约茶室血案、李师科赠款等主线；正式结果为 31 chapters / 418 people / targetRelations 39。
+- round3：新增 23 条支线关系边，覆盖金圆券史料、孙科寿庆署名、曹圣芬误引、王又曾军中乐园、尹俊被黜、郑为元老兵政策、黄少谷/李元簇司法酷吏、汪敬煦-江百禄-张桐凤军中编制；正式结果为 31 chapters / 424 people / targetRelations 62。
+- closeout：清理低频尾部残片并归并卢太夫人；正式结果为 31 chapters / 415 people / targetRelations 62。
+
+closeout 清理项
+- 新增本书 skip：通缉症、时呈请、经济各、强卖、莫干山、那两岁、印信、刘母高。
+- 本书语境下将“卢太夫”“卢太夫人”归并为卢慕贞。
+- 单书复验确认上述 9 个尾部项在本书切片中均不再出现。
+
+最终正式状态
+- 全库：13909 people / 124 books / 6923 chapters / 32475 identityLinks / 4793 personRelations。
+- 《国民党研究》：31 chapters / 415 people / 62 relations。
+- 关系端点缺失：0。
+- 关系边重复：0。
+- `data/people.json`：53,061,217 bytes，约 50.60 MiB。
+- `exports/by-book-index.txt`：显示《国民党研究》｜国民党史政｜章节 31｜人物 415。
+
+关系网 closeout 抽样
+- 本书关系边：62。
+- 关系覆盖主线：同盟会与建党神话、黄埔变造照片、孙科家族和财产/蓝妮线、国泰诈财宣传、杨开慧与妻子被害叙事、国民党通缉症、营妓/特约茶室血案、老兵授田证与李师科案、金圆券责任史料、司法酷吏批判。
+- 样本边确认：
+  - 孙中山 -> 黄兴
+  - 孙科 -> 蓝妮
+  - 郭凤祥 -> 吴秋香
+  - 李师科 -> 李师科所助小女儿
+  - 王云五 -> 沈云龙
+  - 姬周 -> 王又曾
+  - 郑为元 -> 李师科
+  - 黄少谷 -> 李元簇
+
+closeout 单书复核
+- 命令：`extract_relationships.py --book-path 013.国民党史政/001.国民党研究 --data-dir .tmp-guomindang-closeout-data --export-dir .tmp-guomindang-closeout-exports`
+- 结果：293 people / 1 book / 31 chapters / 895 identityLinks。
+- 本书 PERSON_RELATIONS 命中：62。
+- 缺失端点：0。
+- 重复关系边：0。
+
+正式 closeout 回流
+- 正式重建由 `data/people.json` 中现有 124 本反推路径生成 124 个显式 `--book-path`。
+- `explicit_book_path_count 124`；`json_book_count 124`；`missing_count 0`；`includes_target True`；`has_all_flag False`。
+- 正式结果：13909 people / 124 books / 6923 chapters / 32475 identityLinks / 4793 personRelations。
+- 《国民党研究》正式结果：31 chapters / 415 people / targetRelations 62 / missing endpoints 0。
+
+同步产物
+- `data/people.json`
+- `data/relationship-data.js`
+- `exports/by-book-index.txt`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+
+最终验证
+- `python -m py_compile scripts/extract_relationships.py`：通过。
+- `node --check data/relationship-data.js`：通过。
+- `node --check assets/app.js`：通过。
+- `data/relationship-data.js`：people 13909 / books 124 / personRelations 4793，与 `data/people.json` 一致。
+- CSV 行数：13909，与 totals.people 一致。
+- `git diff --check`：仅 LF/CRLF 转换提示，无 trailing whitespace 错误。
+- 临时目录 `.tmp-guomindang-closeout-*` 已用于验证，closeout 后应清理。
+
+结论
+- 《国民党研究》可 closeout。
+- 下一本建议继续国民党史政序列，进入《国民党研究续集》。

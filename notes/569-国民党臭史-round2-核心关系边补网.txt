@@ -1,0 +1,51 @@
+《国民党臭史》round2 核心关系边补网
+
+目标：
+- 在 round1 的基线清理和正式回流基础上，补入本书已经有明确文本证据的核心人物关系边。
+- 不使用 --all；正式回流继续按当前总表 126 本书逐一传入 --book-path。
+
+脚本更新：
+- 在 CURATED_IDENTITIES 中以 setdefault 方式补强本轮低频端点，避免覆盖其他书籍已定分类：
+  范度才、王法勤、柏文蔚、顾孟余、陈树人、詹重雄、何洪才、季贵成、陶成章、雷啸岑、黄郛。
+- 在 BOOK_PHRASE_PEOPLE["国民党臭史"] 中补 19 个锚点短语，覆盖党报论战、收义子、改组派处分案、爆炸案冤狱、秦孝仪诉状反驳、政学系争议。
+- 在 PERSON_RELATIONS 中新增本书关系 43 条。
+
+新增关系分组：
+- 党报论战与费城报史线 6 条：
+  曹圣芬—范度才、曹圣芬—富兰克林、曹圣芬—巴哈（曙光报）、范度才—富兰克林、范度才—巴哈（曙光报）、富兰克林—巴哈（曙光报）。
+- 收义子与军方礼仪线 5 条：
+  蒋仲苓—吴荣根、王昇—吴荣根、王昇—蒋仲苓、郝柏村—吴荣根、郝柏村—蒋仲苓。
+- 改组派处分案 9 条：
+  汪精卫—陈公博、汪精卫—顾孟余、陈公博—顾孟余、陈公博—王法勤、陈公博—柏文蔚、陈公博—陈树人、顾孟余—王法勤、顾孟余—柏文蔚、顾孟余—陈树人。
+- 爆炸案冤狱与刑求链 10 条：
+  吴彰炯—李政一、吴彰炯—刘辰旦、吴彰炯—郭荣文、李政一—刘辰旦、李政一—郭荣文、刘辰旦—郭荣文、李政一—詹重雄、何洪才—季贵成、何洪才—李政一、季贵成—李政一。
+- 林天麟/秦孝仪诉状反驳线 8 条：
+  林天麟—秦孝仪、秦孝仪—孙中山、秦孝仪—蒋介石、秦孝仪—陶成章、蒋介石—陶成章、秦孝仪—宋教仁、秦孝仪—吴稚晖、蒋介石—孙中山。
+- 政学系争议线 5 条：
+  雷啸岑—张群、雷啸岑—黄郛、张群—黄郛、张群—蒋介石、黄郛—蒋介石。
+
+单书临时验证：
+- 命令：extract_relationships.py --book-path 003.国民党臭史 --data-dir .tmp-guomindang-choushi-r2-data --export-dir .tmp-guomindang-choushi-r2-exports
+- 结果：328 people / 1 book / 28 chapters。
+- 临时 people.json：personRelations 400，其中 book == 《国民党臭史》 为 43。
+- 对照脚本 expected_script_relations 43，missing_expected_relations 0，missing_endpoints 0，duplicate_relations 0。
+
+正式回流：
+- 从 exports/by-book-index.txt 读取当前 126 本书名，映射到源目录后逐一展开为 126 个 --book-path。
+- 护栏输出：explicit_book_path_count 126，current_books_for_rebuild 126，includes_target True，has_all_flag False，argv_book_path_flags 126，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- 正式结果：14067 people / 126 books / 6975 chapters。
+- data/people.json：32741 identityLinks / 4902 personRelations。
+- 《国民党臭史》正式切片：章节 28 / 人物 475 / 本书关系 43。
+- 对照脚本：expected_script_relations 43，missing_expected_relations 0，missing_global_endpoints 0，duplicate_global_relations 0。
+- data/relationship-data.js 含《国民党臭史》。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：仅报告既有 CRLF 提示，无空白错误。
+
+尾部复核：
+- round1 的已知 skip 名称中仍有 10 个存在于全局 people 表，但逐项检查 topBooks 均未挂到《国民党臭史》，本轮未造成目标书回带。
+
+下一轮建议：
+- 进入《国民党臭史》round3：低频尾部与支线关系复核。
+- 重点看单书尾部里仍像切词残片的条目，例如“严予惩”“于学生”“于执行”“从诅咒”“任何派”“党务转”“公然谓”“和黄郛”等；该剔除的进入 BOOK_SKIP_NAMES["国民党臭史"]。
+- 同时从尚未结构化的支线里补低风险关系：文工会/宣传线、国民党与五四、国民党的秋波、国民党的报应、媚日经济、十三行古迹、司法院长小气等章节。

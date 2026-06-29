@@ -1,0 +1,102 @@
+《国民党研究》round2：核心关系边补网
+
+范围
+- 承接 round1 的本书基线与正式回流结果，补入本书核心人物关系边。
+- 重点覆盖孙中山/同盟会源流、孙科家族与蓝妮案、国泰诈财人物端点、杨开慧遇害叙事、通缉症案例、特约茶室案、李师科老兵抢案。
+- 全程未使用 --all。
+
+脚本更新
+- PERSON_RELATIONS 新增《国民党研究》39 条关系边。
+- 新增或强化低频端点：
+  - 蓝妮
+  - 蔡万春
+  - 曹锟
+  - 柳直荀
+  - 卢永祥
+  - 冯自由
+  - 李师科所助小女儿
+  - 李师科所助小女儿母亲
+- BOOK_PHRASE_PEOPLE 为上述端点补入稳定短语锚点，避免在单书与正式回流中被过滤掉。
+
+新增关系边主干
+- 同盟会源流：
+  - 孙中山 -> 黄兴
+  - 孙中山 -> 宋教仁
+  - 黄兴 -> 宋教仁
+  - 孙中山 -> 冯自由
+- 变造照片：
+  - 蒋介石 -> 孙中山
+  - 蒋介石 -> 何应钦
+  - 蒋介石 -> 王柏龄
+- 孙科线：
+  - 孙科 -> 孙中山
+  - 孙科 -> 卢慕贞
+  - 孙科 -> 宋庆龄
+  - 卢慕贞 -> 宋庆龄
+  - 孙科 -> 蓝妮
+  - 孙科 -> 胡汉民
+  - 孙科 -> 俞鸿钧
+  - 俞鸿钧 -> 刘攻芸
+- 国泰诈财：
+  - 蔡辰洲 -> 蔡万春
+- 杨开慧线：
+  - 毛泽东 -> 杨开慧
+  - 毛泽东 -> 柳直荀
+  - 杨开慧 -> 何键
+  - 萧瑜 -> 杨开慧
+- 通缉症：
+  - 孙中山 -> 曹锟
+  - 孙中山 -> 段祺瑞
+  - 孙中山 -> 张作霖
+  - 孙中山 -> 卢永祥
+  - 蒋介石 -> 段祺瑞
+  - 张宗昌 -> 韩复榘
+- 特约茶室案：
+  - 郭凤祥 -> 吴秋香
+  - 郭凤祥 -> 杨美玉
+  - 郭凤祥 -> 郭碧玉
+  - 葛树楷 -> 郭碧玉
+  - 葛树楷 -> 郭凤祥
+  - 黄昭熙 -> 林日详
+  - 黄昭熙 -> 吴秋香
+  - 李知高 -> 李金莲
+  - 李金莲 -> 郭石城
+  - 李知高 -> 郭石城
+- 李师科老兵抢案：
+  - 李师科 -> 李师科所助小女儿
+  - 李师科 -> 李师科所助小女儿母亲
+  - 李师科所助小女儿 -> 李师科所助小女儿母亲
+
+单书验证
+- 命令：extract_relationships.py --book-path 013.国民党史政/001.国民党研究 --data-dir .tmp-guomindang-yanjiu-r2c-data --export-dir .tmp-guomindang-yanjiu-r2c-exports
+- 结果：296 people / 1 book / 31 chapters / 887 identityLinks / 273 filtered personRelations。
+- 《国民党研究》 PERSON_RELATIONS 命中：39。
+- 缺失端点：0。
+
+正式回流
+- 正式重建由当前 data/people.json 的 124 本书目反查源目录，生成 124 个显式 --book-path。
+- explicit_book_path_count 124；missing_count 0；includes_target True；has_all_flag False。
+- 正式结果：13911 people / 124 books / 6923 chapters / 32470 identityLinks / 4770 personRelations。
+- 《国民党研究》正式结果：31 chapters / 418 people / targetRelations 39 / missing endpoints 0。
+
+同步产物
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+最终验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- CSV / JSON / JS people 数一致：13911。
+- books 数一致：124。
+- exports/by-book-index.txt：显示《国民党研究》｜国民党史政｜章节 31｜人物 418。
+- git diff --check：通过，仅 CRLF 提示。
+- data/people.json：53,053,034 bytes，约 50.60 MiB。
+- data/relationship-data.js：20,797,304 bytes。
+
+下一轮建议
+- 进入《国民党研究》round3：支线关系与低频尾部复核。
+- 重点检查孙运璿、王又曾、曹圣芬、尹俊、王云五、黄少谷、郑为元、陈平景、江百禄、朱广诚等本书中层端点，补足老兵、营妓、通缉、钞票/公债/国泰财务线的次级关系，并复核正式回流后是否有新的本书残片浮出。

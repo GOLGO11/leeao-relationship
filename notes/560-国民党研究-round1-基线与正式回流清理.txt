@@ -1,0 +1,49 @@
+《国民党研究》round1：基线与正式回流清理
+
+范围
+- 进入《国民党研究》，完成单书首轮抽取、明显误切清理、正式回流同步与验证。
+- 源目录：013.国民党史政/001.国民党研究。
+- 全程未使用 --all。
+
+单书基线
+- 原始单书基线：325 people / 31 chapters。
+- 首轮规则清理后单书结果：287 people / 1 book / 31 chapters / 868 identityLinks / 234 filtered personRelations。
+- 关键补回锚点：
+  - 罗曼罗兰、罗兰夫人
+  - 卢慕贞、孙中山、孙科
+  - 张群、陈星枢
+  - 吴秋香、郭凤祥、葛树楷、郭碧玉、杨美玉
+- 明确清理的误抽类型：
+  - 货币/题名/概念：金圆券、余态、公平性、史实。
+  - 地名/机构与刊名半截：凤山、广州、闻天地。
+  - 句读残片与泛称：时改换、那妓女、任夫人、严格说、公路、成员等。
+  - 姓名前后缀粘连：伍生张、元配卢、吴女、罗曼罗。
+
+正式回流
+- 正式重建由当前 data/people.json 的 123 本书目反查源目录，追加《国民党研究》，生成 124 个显式 --book-path。
+- explicit_book_path_count 124；missing_count 0；includes_target True；has_all_flag False。
+- 正式结果：13905 people / 124 books / 6923 chapters / 32452 identityLinks / 4731 personRelations。
+- 《国民党研究》正式结果：31 chapters / 411 people / target PERSON_RELATIONS 0。
+- 本书 top80 复核中，金圆券、余态、时改换、凤山、那妓女、任夫人、严格说、广州、闻天地、公路、成员、伍生张、元配卢、吴女、罗曼罗均未再进入本书 top80。
+
+同步产物
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+最终验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- CSV / JSON / JS people 数一致：13905。
+- books 数一致：124。
+- exports/by-book-index.txt：显示《国民党研究》｜国民党史政｜章节 31｜人物 411。
+- git diff --check：通过，仅 CRLF 提示。
+- data/people.json：53,015,679 bytes，约 50.56 MiB。
+- data/relationship-data.js：20,776,697 bytes。
+
+下一轮建议
+- 进入《国民党研究》round2：核心关系边补网。
+- 优先补孙中山、孙科、蒋介石、李师科、蔡辰洲、特约茶室案、老兵与营妓材料中的人物关系边。

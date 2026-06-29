@@ -1,0 +1,35 @@
+《给国民党难看》round3 支线关系与尾部复核
+
+本轮目标：
+- 接续 round2 核心关系边补网后，复核报禁借口、文天祥计划、上海屠杀、外蒙文件、上台下台、文化政策、林肯史论、王国维后人来函等支线端点。
+- 继续保持显式 --book-path 工作流，不使用 --all，避免误纳全 163 本。
+
+脚本更新：
+- 在 scripts/extract_relationships.py 中补充本书 round3 端点身份：
+  乔宝泰、王禹廷、杨干才、廖定藩、戴以道、哈里曼、霍夫施塔特、李锡锟、王贞明、王纪明、王东明、王松明、耿修业、郑毓秀、萧同兹、曾虚白、邱创焕、许水德、谢东闵、石宛珠、马星野等。
+- 新增/强化本书短语锚点：
+  熊钝生/乔宝泰/许荣淑/孙运璿/苏秋镇报禁链，刘峙/麻安邦/戴以道/周英文天祥计划，毛人凤/郭旭/毛森/章微寒屠杀材料，哈里曼/魏道明/艾登/顾维钧/贝尔纳斯外蒙文件，魏道明/郑毓秀/陈诚、萧同兹/董显光/曾虚白、许水德/邱创焕/石宛珠、李登辉/谢东闵上台下台链，陈奇禄/郭为藩文化政策，李焕/李庆华，尤清/李锡锟，霍夫施塔特/杭克斯/林肯/柏杨，王国维后人和林语堂宴席见证线。
+- 新增 55 条《给国民党难看》人工关系边，本书定义关系由 100 条增至 155 条。
+- 追加本轮误切/非人物跳过项，覆盖“古话说”“方百计”“台四十”“台币”“国家建”“国总督”“广州蒙”“文化政”“明信片”“通问题”“井冈山”“元帅府”“党斗争”“全发展”“史辞典”“常运作”“徐州剿”“林肯所”“苏俄谈”“苏联缔”“蒙古之”“黄河之”“高速公”等。
+
+单书临时验证：
+- 命令：scripts/extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/005.给国民党难看 --data-dir .tmp-geigmd-r3-data --export-dir .tmp-geigmd-r3-exports
+- 结果：310 people, 1 books, 44 chapters。
+- 校验：identityLinks 976；defined 155；emitted 155；missing 0；skip_hits 0。
+- 低频尾部复核：count<=2 尾部未见本轮需继续清除的明显半截词；新增低频端点如邱创焕、石宛珠、王纪明、王东明、王松明均有本书证据。
+
+正式回流：
+- 从 exports/by-book-index.txt 抽取当前 128 本书名，逐本拼接显式 --book-path 参数。
+- 预检：formal_rebuild_books 128；titles 128；missing 0；unique_paths 128；duplicates 0；includes_target True；argv_has_all False。
+- 正式构建结果：14100 people, 128 books, 7039 chapters。
+- 《给国民党难看》正式索引：章节 44；人物 382。
+- 正式关系校验：全局 relations_total 5204；本书 defined 155；emitted 155；missing_global 0。
+
+验证：
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅提示既有 LF/CRLF 工作区换行警告。
+
+下一步建议：
+- 进入《给国民党难看》本书 closeout：做一次最终全书索引、关系数量、误切残留和 notes 连续性复核，然后再切入下一本。

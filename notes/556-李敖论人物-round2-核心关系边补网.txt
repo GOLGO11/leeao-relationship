@@ -1,0 +1,59 @@
+《李敖论人物》round2 核心关系边补网
+
+本轮目标
+- 在 round1 已完成人物基线与正式回流清理的基础上，为《李敖论人物》补入本书可落证据的核心人物关系边。
+- 继续遵守安全规则：正式回流使用当前 123 本书的显式 repeated --book-path 参数；未使用 --all。
+
+round1 正式基线
+- 全库：13849 people / 123 books / 6892 chapters / 32373 identityLinks / 4639 personRelations
+- 《李敖论人物》切片：33 chapters / 298 people / targetRelations 0 / missing relation endpoints 0
+
+脚本调整
+- 在 PERSON_RELATIONS 中新增《李敖论人物》关系 57 条。
+- 关系主线包括：
+  - 蔡元培、胡适、陈独秀、彭允彝的不合作主义与思想论战线。
+  - 梁实秋、王世杰、胡适的新月/中研院推荐与知识分子对照线。
+  - 方豪、吴相湘、侯榕生、孟祥柯、杜而未的辅大/神父争议线。
+  - 殷海光、萧孟能、何友晖、赖阿胜、王荣文的文星/桂冠/远流出版线。
+  - 雷震、傅正、刘子英、马之骕、李万居、高玉树、齐世英、胡虚一的《自由中国》案与中国民主党筹组线。
+  - 孙立人、汪荣祖、潘德辉、陈桂华、舒适存、郭廷亮、江云锦、王善从的孙案研究与寿庆旧属线。
+  - 刘辰旦、李政一、吴忠信、郭荣文、詹重雄、吴彰炯、季贵成、翁春霞的爆炸案冤狱/刑求线。
+  - 李翰祥、陈绥民、康白、江青的国联影业、中央党部和检举信谣言线。
+  - 陈启礼、汪希苓、白景瑞、胡仪敏、帅岳峰、蒋纬国的江南案补充意见线。
+  - 郑南榕、陈永兴、尤清的自焚后解释争议线。
+  - 许信良、邓维桢、黄玉娇、许国泰的桃园帮与竞选借款线。
+  - 李庆华、李焕、罗伯特·肯尼迪、麦克纳马拉的亲族政治类比线。
+  - 胡赓年、胡星妈以及李锡锟、尤清的家庭/选战线。
+- 为保证低频端点落库，追加 curated identities：
+  - 彭允彝、刘子英、马之骕、李万居、高玉树、齐世英、胡虚一、汪荣祖、康白、江青、胡仪敏、陈永兴、尤清、黄玉娇。
+- 为二字低频名和短语语境追加 phrase anchors：
+  - 由教育总长彭允彝提案、教育总长彭允彝提案。
+  - 是康白介绍的、李翰祥和康白来我家。
+
+单书临时校验
+- 命令范围：仅《李敖论人物》单书 --book-path。
+- 结果：281 people / 1 book / 33 chapters / 963 identityLinks。
+- 脚本配置 targetRelations：57。
+- 单书实际 targetRelations：57。
+- missing relation endpoints：0。
+
+正式回流
+- 构造参数前校验：
+  - explicit_book_path_count 123
+  - json_book_count 123
+  - missing_count 0
+  - includes_target True
+  - has_all_flag False
+- 正式输出结果：
+  - 13852 people / 123 books / 6892 chapters / 32357 identityLinks / 4696 personRelations
+  - 《李敖论人物》：33 chapters / 302 people / targetRelations 57 / missing relation endpoints 0
+
+已同步文件
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+下一轮建议
+- round3 做“支线关系与尾部复核”：重点复核本书剩余低频人物、郑南榕章的政治秀支线、孙案低频证词人物、李翰祥章材料人物，并做一轮 false-positive probe，避免二字名 anchor 带出碎片。

@@ -1,0 +1,43 @@
+《国民党研究续集》round3：支线关系与尾部复核
+
+本轮目标
+- 延续 round2 的核心关系边补网，转入三条支线：王昇“裁缝将军”线、胡秋原/闽变文化委员会线、特务统治外一章的冒充调查人员与司法诈财线。
+- 补齐上述支线的低频端点与显式人物锚点，避免只留下孤立人名。
+- 做 1-3 次尾部噪点复核，并用显式 book-path 正式回流；本轮未使用 --all。
+
+新增端点与锚点
+- 新增/强化端点：王华、宋广文、胡溥元、王香兰、康宣仁、林信、江柏竹、颜水田、王松镇、蔡清福。
+- 王昇线：陈平景来信反证王昇裁缝出身；王昇与廖光美、王华构成大陆家庭线；刘维斌作为王昇学生与秘密访菲陪同者；王威宁提供王昇家中童言逸事。
+- 胡秋原/闽变线：陈铭枢、李章达、徐名鸿、林植夫、程希孟、梅龚彬、胡秋原、陈耀焜等文化委员会/教育行政/民众训练分工关系。
+- 特务统治外一章：宋广文、张四维、胡溥元同案冒充调查人员诈财；苏文华对江柏竹冒充庭长公子关说诈财；王文秀骗王香兰；康宣仁骗林信；颜水田伪安全局临检，蔡清福受害，王松镇率警查获。
+
+关系边
+- round2 后本书关系边为 36 条。
+- 本轮新增 21 条 PERSON_RELATIONS，覆盖裁缝将军线、闽变文化委员会线、冒充调查人员/诈财线。
+- 本书正式回流后关系边为 57 条。
+
+单书复验
+- 第一次单书临时构建：292 people / 1 books / 24 chapters；target_relations=57；missing_endpoints=0；duplicate_relations=0。
+- 尾部复核后加入本书 skip：林女、终拆穿、胡家来、车王香、通部贺、蔡公亦等尾部误切词均已清掉。
+- 第二次单书临时构建：270 people / 1 books / 24 chapters / 846 identityLinks / 279 mentions；target_relations=57；missing_endpoints=0；duplicate_relations=0。
+
+正式回流
+- 正式构建使用显式 repeated --book-path。
+- explicit_book_path_count=125；current_books_for_rebuild=125；includes_target=True；has_all_flag=False；duplicate_paths=0。
+- 正式回流总量：13984 people / 125 books / 6947 chapters / 32600 identityLinks / 4850 personRelations。
+- 《国民党研究续集》正式切片：24 chapters / 413 people / 57 relations。
+
+验证
+- missing_global_endpoints=0。
+- duplicate_global_relations=0。
+- missing_target_endpoints=0。
+- round3 新端点在正式 people 中均可定位；陈平景虽未进入本书 topBooks，但全局端点存在且关系端点不缺。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅有既有 LF -> CRLF warning。
+- exports/by-book-index.txt 中本书记录为：章节 24｜人物 413。
+
+下一轮建议
+- 进入 round4：低频尾部与漏边 closeout prep。
+- 优先复核 002/003/013-016/018/019/022/023 等尚未重点扫过或关系边偏稀的章节，确认是否还有可入网人物关系。
+- 同时做本书 closeout 前的重复边、尾部噪点、低频人名三项复核；若 round4 无明显新增，再进入本书 closeout。

@@ -1,0 +1,52 @@
+《国民党研究续集》closeout
+
+本书轮次
+- round1：单书基线与节点清理，清机构/地名/题名半截/句读残片，正式显式回流后本书 418 people。
+- round2：核心关系边补网，覆盖云南起义、政工投共、特务信、宗荣禄/王斯岳、叶公超/关镛、汪寿华暗杀线；本书关系边 36。
+- round3：支线关系与尾部复核，覆盖王昇裁缝将军线、胡秋原/闽变文化委员会线、冒充调查人员与司法诈财线；本书关系边 57。
+- closeout：补末尾江南案/宋教仁案类比线，清最后低频误切；本书关系边 66。
+
+closeout 清理
+- 确认为误切并加入本书 skip：黄兴联、黄女发、黄女逐。
+- 将“葛罗米”在“葛罗米柯”等上下文中归并为葛罗米柯，并补入葛罗米柯端点。
+- 新增/强化 closeout 端点：俞大钧、吴敦、应桂馨、王治馨、葛罗米柯。
+
+closeout 新增关系边
+- 俞大钧 -- 江南案疑犯/美国警方逮捕 -- 刘宜良。
+- 陈启礼 -- 江南案涉案/竹联帮老大 -- 刘宜良。
+- 吴敦 -- 江南案涉案/竹联帮分子 -- 刘宜良。
+- 董桂森 -- 江南案涉案/竹联帮分子 -- 刘宜良。
+- 陈启礼 -- 江南案涉案链/竹联帮与情报局 -- 汪希苓。
+- 张京育 -- 新闻局说明/法外失自由 -- 汪希苓。
+- 袁世凯 -- 暗杀嫁祸/栽诬宣传类比 -- 宋教仁。
+- 应桂馨 -- 宋案凶手/同党自承反讽 -- 宋教仁。
+- 王治馨 -- 警察总监代辩/杀宋案穿帮发言 -- 袁世凯。
+
+单书复验
+- closeout 前单书临时构建：270 people / 1 book / 24 chapters；target_relations=57；missing_endpoints=0；duplicate_relations=0。
+- closeout 后单书临时构建：271 people / 1 book / 24 chapters / 856 identityLinks；target_relations=66；missing_endpoints=0；duplicate_relations=0。
+- 复核结果：俞大钧、吴敦、应桂馨、王治馨、葛罗米柯均已落地；黄兴联、黄女发、黄女逐、葛罗米均已清掉。
+
+正式回流
+- 正式构建使用当前 exports/by-book-index.txt 解析出的 125 本书名，映射到 125 个源目录后以显式 repeated --book-path 回流。
+- explicit_book_path_count=125；current_books_for_rebuild=125；includes_target=True；has_all_flag=False；duplicate_paths=0；missing_titles=0；duplicate_titles=0。
+- 本轮未使用 --all。
+
+正式结果
+- 全库：13983 people / 125 books / 6947 chapters / 32604 identityLinks / 4859 personRelations。
+- 《国民党研究续集》：24 chapters / 413 people / 66 relations。
+- exports/by-book-index.txt 中本书记录为：章节 24｜人物 413。
+- data/relationship-data.js 已重新包含《国民党研究续集》，people.json 与站点瘦身数据重新同步。
+
+验证
+- missing_global_endpoints=0。
+- duplicate_global_relations=0。
+- missing_target_endpoints=0。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅有既有 LF -> CRLF warning。
+
+收口判断
+- 本书已完成节点基线、核心关系边、支线关系、尾部误切和正式回流同步。
+- 剩余稀疏章节多为政治议论或历史引用，未发现需要继续为本书开新轮的高证据漏边。
+- 可进入下一本书。

@@ -1,0 +1,38 @@
+《老贼臭史》closeout
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/004.老贼臭史
+- 正文 20 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- closeout 没有再做正式全库回流；沿用 round3 已完成的 127 个显式 --book-path 正式回流结果。
+- 本轮只做单书显式 --book-path 复验、正式数据/浏览器数据/导出索引一致性检查、尾部抽样和轻量语法检查。
+
+本书最终状态
+- 正式库：14046 人 / 127 本 / 6995 章 / 32744 identityLinks / 5049 personRelations。
+- 正式《老贼臭史》：20 章 / 258 人 / 106 条本书专属关系。
+- 浏览器压缩数据 data/relationship-data.js 与 data/people.json 一致：全库 totals 一致，本书 personCount 258，一共 106 条本书关系边。
+- exports/by-book-index.txt 本书行一致：章节 20 / 人物 258。
+- exports/li-ao-relationships.txt 中本书关系边行数：106。
+
+单书 closeout 复验
+- 临时单书输出：258 人 / 1 本 / 20 章。
+- 单书 identityLinks：829。
+- 单书关系校验：target_relations_defined 106，target_relations_emitted 106，missing_relations 0。
+- skip 命中复核：skip_hits 0。
+
+尾部抽样
+- 抽检 60 个最低频端点，未见明显句子碎片或机构词残留。
+- 低频保留端点多为文本中明确出现的真名或典故节点，例如万墨林、何世桢、华莱士、周作民、张季鸾、曾仲鸣、陈超霖、徐武军、梁漱溟等。
+- round3 已清理的“满洲国、东京、任何意、党统治、公开表、林宅血、闻报导、高票当、宁次”等残片未回流。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+
+完成判断
+- 《老贼臭史》已完成 round1 基线清理、round2 核心关系补网、round3 正式尾部复核与本轮 closeout。
+- 本书可以结束，下一本建议进入《给国民党难看》。

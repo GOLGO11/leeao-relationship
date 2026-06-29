@@ -1,0 +1,60 @@
+《国民党臭史》round3 支线关系与低频尾部复核
+
+目标：
+- 接续 round2 的 43 条核心关系边，处理本书单书低频尾部中的明显切词残片。
+- 补入文工会、五四、秋波、报应、十三行、司法院长等支线中证据稳定的人物关系。
+- 正式回流继续使用当前 126 本书逐一展开的 --book-path，未使用 --all。
+
+脚本更新：
+- CURATED_IDENTITIES：
+  - 修正张继正为 public_official/property_finance/public_debate。
+  - 补入或强化 round3 端点：任卓宣、叶楚伧、程天放、张其昀、陶希圣、谢然之、唐棣、周应龙、楚崧秋、戴瑞明、吴俊才、程沧波、包德甫、维克多·路易斯、蒋方良、伍泽元、赵少康、王宠惠、罗文干、周诒春、张绍曾。
+- BOOK_PHRASE_PEOPLE["国民党臭史"]：
+  - 新增 33 个支线锚点，覆盖文工会主任/宣传部长序列、五四材料、妇联会改名与亚银秋波、十三行遗址、王宠惠轶事。
+- BOOK_SKIP_NAMES["国民党臭史"]：
+  - 新增 54 个低频尾部残片/题名半截/机构短语/误配外文名。
+  - 重点包括：于执行、党务转、常委走、时代需、利息、国家利、苏联没、乔·路易斯、胡适因、苏俄等、莫干山、蒋公偕等。
+- PERSON_RELATIONS：
+  - 本书关系从 43 条增至 84 条，本轮新增 41 条。
+
+新增关系分组：
+- 文工会与宣传系统 16 条：
+  叶楚伧—程沧波、戴季陶—汪精卫、汪精卫—毛泽东、汪精卫—顾孟余、顾孟余—叶楚伧、程天放—任卓宣、蒋介石—任卓宣、任卓宣—毛泽东、张其昀—陶希圣、陶希圣—谢然之、蒋经国—谢然之、谢然之—唐棣、吴俊才—楚崧秋、楚崧秋—周应龙、周应龙—宋楚瑜、宋楚瑜—戴瑞明。
+- 五四解释与国共关系 5 条：
+  梁实秋—胡适、吴敬恒—于右任、于右任—张作霖、孙中山—于右任、蒋介石—胡适。
+- 秋波外交线 8 条：
+  包德甫—宋美龄、蒋介石—宋美龄、蒋介石—维克多·路易斯、维克多·路易斯—蒋经国、蒋经国—蒋方良、李登辉—张继正、张继正—郭婉容、李登辉—郭婉容。
+- 报应与蒋家接班 2 条：
+  蒋介石—蒋经国、蒋经国—李登辉。
+- 十三行古迹线 1 条：
+  伍泽元—赵少康。
+- 王宠惠/司法院长轶事线 9 条：
+  胡适—罗文干、罗文干—王宠惠、王宠惠—周诒春、王宠惠—蒋梦麟、王宠惠—顾维钧、王宠惠—黄郛、王宠惠—张绍曾、王宠惠—孙中山、张绍曾—孙中山。
+
+单书临时验证：
+- 命令：extract_relationships.py --book-path 003.国民党臭史 --data-dir .tmp-guomindang-choushi-r3-data --export-dir .tmp-guomindang-choushi-r3-exports
+- 最终单书结果：282 people / 1 book / 28 chapters。
+- 临时 people.json：908 identityLinks / 449 personRelations。
+- book == 《国民党臭史》 的关系：84。
+- expected_script_relations 84，missing_expected_relations 0，missing_endpoints 0，duplicate_relations 0。
+- target_skip_names_present 0。
+
+正式回流：
+- 从 exports/by-book-index.txt 读取当前 126 本书名，映射源目录后逐一展开为 126 个 --book-path。
+- 护栏输出：explicit_book_path_count 126，current_books_for_rebuild 126，includes_target True，has_all_flag False，argv_book_path_flags 126，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- 正式结果：14027 people / 126 books / 6975 chapters。
+- data/people.json：32689 identityLinks / 4943 personRelations。
+- 《国民党臭史》正式切片：章节 28 / 人物 429 / 本书关系 84。
+- 对照脚本：expected_script_relations 84，missing_expected_relations 0，missing_global_endpoints 0，duplicate_global_relations 0。
+- target_skip_names_returned_to_target 0。
+- data/relationship-data.js 含《国民党臭史》。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：仅报告既有 CRLF 提示，无空白错误。
+
+下一步建议：
+- 进入本书 closeout。
+- closeout 重点：
+  - 再抽一次正式目标书尾部，确认无明显回带残片。
+  - 检查《国民党臭史》84 条本书关系在 data/relationship-data.js 与导出 CSV/TXT 中一致。
+  - 如无新问题，写 closeout note 后进入下一本。

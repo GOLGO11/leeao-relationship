@@ -1,0 +1,51 @@
+《国民党臭史》closeout
+
+范围：
+- 本书本轮收束对象为《国民党臭史》，源目录为 013.国民党史政 / 003.国民党臭史。
+- 承接 notes/568 round1、notes/569 round2、notes/570 round3。
+- 本书累计保留 PERSON_RELATIONS 84 条，BOOK_PHRASE_PEOPLE 锚点 61 个，BOOK_SKIP_NAMES 本书 skip 152 个。
+
+closeout 修正：
+- 从正式 data/people.json 反查《国民党臭史》低频 topBooks，发现一批由全局强信号带回目标书的残片。
+- 追加本书 skip 批次，清理动宾短语、地名/机构半截、题名半截、普通概念和句读粘连。
+- 代表性清理项：
+  严格执、于杭州、于现实、任王昇、党史委、党籍者、公理、劳改、古人讲、国海关、孙公、宗仁、张群说、曹社长、胡适私、胡适言、解散国、莫须有、国家标、通令全等。
+- 保留低频但可能真实或可考的端点/别名，避免误杀：
+  严复、余井塘、刘师培、吴稚晖、黄膺白、罗文干、周诒春、吴伯卿、杨畅卿等。
+
+单书 closeout 验证：
+- 命令：extract_relationships.py --book-path 003.国民党臭史 --data-dir .tmp-guomindang-choushi-closeout-data --export-dir .tmp-guomindang-choushi-closeout-exports
+- 最终单书结果：265 people / 1 book / 28 chapters。
+- 临时 people.json：891 identityLinks / 449 personRelations。
+- book == 《国民党臭史》 的关系：84。
+- expected_script_relations 84，missing_expected_relations 0，missing_endpoints 0，duplicate_relations 0。
+- target_skip_names_present 0。
+
+正式回流：
+- 从 exports/by-book-index.txt 读取当前 126 本书名，映射源目录后逐一展开为 126 个 --book-path。
+- 未使用 --all。
+- 护栏输出：explicit_book_path_count 126，current_books_for_rebuild 126，includes_target True，has_all_flag False，argv_book_path_flags 126，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- 正式结果：14007 people / 126 books / 6975 chapters。
+- data/people.json：32651 identityLinks / 4943 personRelations。
+- 《国民党臭史》正式切片：章节 28 / 人物 344 / 本书关系 84。
+- 对照脚本：expected_script_relations 84，missing_expected_relations 0，missing_global_endpoints 0，duplicate_global_relations 0。
+- target_skip_names_returned_to_target 0。
+
+导出一致性：
+- data/people.json 中《国民党臭史》关系：84。
+- data/relationship-data.js 解析后《国民党臭史》关系：84。
+- exports/li-ao-relationships.txt 中《国民党臭史》关系行：84。
+- exports/li-ao-relationships.csv 是人物总表，不是关系边表；主要书目中包含《国民党臭史》的人物行 163。
+- exports/by-book-index.txt：
+  《国民党臭史》｜国民党史政｜章节 28｜人物 344。
+
+轻量检查：
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- git diff --check：仅报告既有 CRLF 提示，无空白错误。
+
+本书结论：
+- 《国民党臭史》完成 round1 基线、round2 核心关系补网、round3 支线关系与尾部复核、closeout 正式清理。
+- 本书关系网络保留 84 条，覆盖党报论战、收义子、改组派处分案、爆炸案冤狱、诉状反驳、政学系争议、文工会宣传系统、五四解释、秋波外交、报应接班、十三行古迹和王宠惠轶事。
+- 可以进入下一本。

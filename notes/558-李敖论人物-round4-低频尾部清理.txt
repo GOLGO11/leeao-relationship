@@ -1,0 +1,47 @@
+《李敖论人物》round4：低频尾部清理
+
+目标
+- 接续 round3 的支线关系补网，复核正式回流后的本书 1-2 次尾部节点。
+- 只清理已经有源文证据支持的标题残片、普通词、泛称和别名误归并，保留真实人物、历史/文学/宗教人物和明确别名端点。
+- 继续按当前 123 本显式 --book-path 正式回流，未使用 --all。
+
+本轮清理
+- BOOK_SKIP_NAMES["李敖论人物"] 增加 7 个本书 skip：
+  - 台南人：源文为“李政一（台南人）”“郭刑警（台南人）”等籍贯/泛称。
+  - 孙女：源文为“左宗棠孙女（不是孙女）”等亲属泛称，不是稳定实名节点。
+  - 毛笔写：源文为“用毛笔写”的动作短语。
+  - 祖国：源文为政治修辞“祖国”的普通概念词。
+  - 终点：源文为“生命的终点”“公车的终点站”等普通词。
+  - 李焕请：源文为“李焕请我吃饭”的姓名+动词粘连。
+  - 吴俊才：本书源文是“你吴老师信了洋和尚的天主教”，语境中对吴相湘说话，被全库别名“吴老师 -> 吴俊才”误带入；本书不保留吴俊才端点。
+
+保留说明
+- 夏君璐：本书以“殷太太”出现，结合全库别名归并为夏君璐，保留。
+- 小蕾：源文“鲁肇岚”按既有别名归小蕾，保留。
+- 白崇禧：本书既有“何应钦、白崇禧兼”的真实人物语境，虽另有“白崇禧墓园”，仍保留。
+- 唐伯虎、赛金花、王婆、宋江、如来佛等历史/文学/宗教人物按既有类型保留。
+
+单书验证
+- 命令：extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节/012.人物研究类/027.李敖论人物 --data-dir .tmp-liao-lunrenwu-r4-data --export-dir .tmp-liao-lunrenwu-r4-exports
+- 结果：280 people / 1 book / 33 chapters。
+- 本书关系：92。
+- 缺失端点：0。
+- 台南人、孙女、毛笔写、祖国、终点、李焕请、吴俊才、强梁均不在单书 people 中。
+
+正式回流
+- 正式重建由 data/people.json 中现有 123 本反推路径生成 123 个显式 --book-path。
+- explicit_book_path_count 123；json_book_count 123；missing_count 0；includes_target True；has_all_flag False。
+- 正式结果：13851 people / 123 books / 6892 chapters / 32356 identityLinks / 4731 personRelations。
+- 《李敖论人物》正式结果：33 chapters / 295 people / targetRelations 92 / missing endpoints 0。
+- 本轮为本书净清理 7 个误识别端点；全库总人数不变，因为这些节点除“强梁”外仍可能在其他书中有证据。
+
+同步产物
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+下一轮建议
+- 进入《李敖论人物》closeout。
+- closeout 重点：复核本书 by-book 索引、关系端点完整性、正式导出一致性、低频尾部抽样无明显残片，并确认当前 4 轮笔记可支撑切换下一本。

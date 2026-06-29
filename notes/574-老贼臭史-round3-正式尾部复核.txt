@@ -1,0 +1,46 @@
+《老贼臭史》round3：正式尾部复核
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/004.老贼臭史
+- 正文 20 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- 单书临时验证只使用本书显式 --book-path。
+- 正式回流从 exports/by-book-index.txt 读取当前 127 本，解析为 127 个显式 --book-path；回流前护栏显示 missing 0、unique_paths 127、argv_has_all False。
+
+差集复核
+- round2 后单书临时输出：247 人。
+- round2 后正式《老贼臭史》：300 人。
+- 只读内部分析显示：formal_full_target 300，single 247，formal_minus_single 53，single_minus_formal 0。
+- 这 53 个差异中，11 个确认为低频真实端点，42 个确认为地名/机构、群体泛称、动宾粘连或句读残片；另将“宁次”在本书上下文中归并到“冈村宁次”。
+
+本轮脚本改动
+- 增加《老贼臭史》第三轮 curated 端点：史量才、殷汝耕、石友三、华莱士、周书府、周作民、张季鸾、曾仲鸣、章友三、陈荣贵、陈超霖。
+- 增加 canonical_name 本书归并：宁次 -> 冈村宁次（上下文含冈村时）。
+- 增加 BOOK_SKIP_NAMES["老贼臭史"] round3 尾部清理项，覆盖江人、满洲国、东京、任何意、党统治、公开表、国救民、林宅血、荣民总、闻报导、高票当等 42 个误切项，并以“宁次”作为兜底 skip。
+
+单书验证
+- 补规则后临时单书：258 人 / 829 identityLinks / 106 条本书专属关系。
+- 11 个 round3 curated 端点均已进入单书输出。
+- 单书端点校验：target_relations_defined 106，target_relations_emitted 106，missing_relations 0。
+- 本书 skip 命中复核：skip_hits 0。
+
+正式回流结果
+- 正式回流命令自检：formal_rebuild_books 127，missing 0，unique_paths 127，argv_has_all False。
+- 正式库：14046 人 / 127 本 / 6995 章 / 32744 identityLinks / 5049 personRelations。
+- 正式《老贼臭史》：20 章 / 258 人 / 106 条本书专属关系。
+- 正式端点校验：target_relations_defined 106，target_relations_emitted 106，endpoint_missing_global 0。
+- 本书头部人物：冈村宁次 119、今井武夫 87、徐复观 74、盛世才 73、陶百川 66、何应钦 62、蒋介石 52、张群 45、陈希曾 38、闻一多 35。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- 单书临时验证通过，argv_has_all False。
+- 正式回流护栏通过：127 个显式 --book-path，argv_has_all False。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+
+下一轮建议
+- 进入《老贼臭史》closeout。
+- closeout 可做一轮轻量复核：确认本书 258 人、106 条关系边、导出索引和浏览器数据一致；如无新增残片，即写 closeout note 并进入下一本。

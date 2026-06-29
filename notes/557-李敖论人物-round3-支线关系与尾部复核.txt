@@ -1,0 +1,49 @@
+《李敖论人物》round3：支线关系与尾部复核
+
+目标
+- 接续 round2 的核心关系边补网，本轮补充亲属、同案、刑求、监狱转递、电影圈介绍线和郑南榕自焚后争议等支线关系。
+- 复核低频尾部误识别，压掉标题/形容词残片“强梁”。
+- 继续按当前 123 本显式 --book-path 正式回流，未使用 --all。
+
+脚本调整
+- ALIASES 增加“吴淑贞” -> “吴淑珍”，处理《应把郑南榕高明光大》中的源文异写，并沿用全库既有规范名。
+- BOOK_PHRASE_PEOPLE["李敖论人物"] 增加：
+  - “吴淑贞也依据陈永兴、黄华的话” -> 吴淑珍、陈永兴、黄华
+  - “尤清、朱高正带头” -> 尤清、朱高正
+  - “刘家昌太太江青” -> 刘家昌、江青
+- BOOK_SKIP_NAMES["李敖论人物"] 增加“强梁”，避免《立法院最后一位强梁》标题/形容词进入人物节点。
+- PERSON_RELATIONS["李敖论人物"] 从 57 条增至 92 条，本轮新增 35 条，主要包括：
+  - 王企祥-徐露、胡赓年-胡茵梦、胡茵梦-胡星妈、李世杰-李哲仲、李世杰-胡虚一。
+  - 孙立人-陈良埙、陈良榘-陈良埙、孙立人-蒋介石。
+  - 许信良-黄信介、梁肃戎-康宁祥。
+  - 彭明敏-谢聪敏-魏廷朝自救宣言同案/共同起草线。
+  - 刘辰旦案中的吴忠信、郭荣文、詹重雄同案边，吴彰炯构陷边，季贵成刑求边。
+  - 刘辰旦-吴锦江、刘辰旦-吴荣元、吴荣元-吴锦江、吴荣元-刁德善、吴荣元-陈鸿渐等监狱支线。
+  - 江青-刘家昌、李翰祥-刘家昌电影圈材料线。
+  - 郑南榕-朱高正、尤清-朱高正、郑南榕-吴淑珍、吴淑珍-陈永兴、吴淑珍-黄华。
+
+单书验证
+- 命令：extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节/012.人物研究类/027.李敖论人物 --data-dir .tmp-liao-lunrenwu-r3-data --export-dir .tmp-liao-lunrenwu-r3-exports
+- 结果：281 people / 1 book / 33 chapters。
+- 本书关系：92。
+- 缺失端点：0。
+- “强梁”：不再出现在单书 people。
+- “吴淑珍”：通过“吴淑贞”异写归并与短语锚点进入本书 people。
+
+正式回流
+- 正式重建由 data/people.json 中现有 123 本反推路径生成 123 个显式 --book-path。
+- explicit_book_path_count 123；json_book_count 123；missing_count 0；includes_target True；has_all_flag False。
+- 正式结果：13851 people / 123 books / 6892 chapters / 32356 identityLinks / 4731 personRelations。
+- 《李敖论人物》正式结果：33 chapters / 302 people / targetRelations 92 / missing endpoints 0。
+- 相比 round2，人物总数少 1，是因为压掉误识别“强梁”；全库关系数由 4696 增至 4731，净增 35 条。
+
+同步产物
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+下一轮建议
+- 进入《李敖论人物》round4：低频尾部清理/closeout readiness。
+- 重点抽样正式回流后的本书 1-2 次尾部节点，确认是否还有标题残片、普通短语、机构半截或异写姓名；若关系与尾部都稳定，可接 closeout。

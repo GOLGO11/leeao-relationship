@@ -1,0 +1,60 @@
+《国民党臭史》round1：基线与正式回流清理
+
+本轮目标
+- 进入《国民党臭史》，先做单书首轮基线，清理题名概念、报纸名半截、组织名半截、地名/国名和全库强信号回带噪点。
+- 正式回流时使用“当前 125 本 + 本书”的显式 repeated --book-path，共 126 本；本轮未使用 --all。
+
+源目录
+- sourceRoot: 《大李敖全集5.0》（wjm_tcy版）分章节
+- book path: 013.国民党史政/003.国民党臭史
+- 内容文件：28 个章节；目录文件未纳入内容扫描。
+
+单书基线与清理
+- 原始单书基线：330 people / 1 book / 28 chapters / 946 identityLinks。
+- 首轮清理后单书复验：327 people / 1 book / 28 chapters / 942 identityLinks / 357 personRelations。
+- 本书 target_relations=0；本轮为节点基线清理，尚未进入关系边补网。
+- 重点清理：
+  - 普通称谓/题名概念：干儿子、空诸所、诸所无。
+  - 报纸名/组织名半截：费城晨、欧事讨。
+  - 正式回流后由跨书强信号带回的地名、国名、机构/学校半截和句读残片：党籍、满洲国、公怒之、国政治、国立政、台南人、任何政、国人之、东京。
+- 误归并修正：
+  - 本书中的巴哈/Bach/Bache 属于《曙光报》主笔/巴哈家族材料，不应混到音乐家巴赫；本轮归并为“巴哈（曙光报）”。
+- 补入低频实名/锚点：
+  - 巴哈（曙光报）、庞居士、宣以文、林天麟。
+  - 同时补强吴荣根、蒋仲苓、王昇、范度才、曹圣芬、秦孝仪等本书关键段落锚点。
+
+正式回流
+- 本书不在原 125 本正式书单中；本轮将当前 exports/by-book-index.txt 的 125 本书名映射到源目录后，追加《国民党臭史》，构成 126 个显式 book path。
+- 校验输出：
+  - explicit_book_path_count=126
+  - current_books_for_rebuild=126
+  - includes_target=True
+  - has_all_flag=False
+  - duplicate_paths=0
+  - missing_titles=0
+  - duplicate_titles=0
+- 正式结果：14067 people / 126 books / 6975 chapters / 32742 identityLinks / 4859 personRelations。
+- 《国民党臭史》正式切片：28 chapters / 474 people / 0 target relations。
+- exports/by-book-index.txt 已出现：
+  - 《国民党臭史》｜国民党史政｜章节 28｜人物 474
+
+验证
+- missing_global_endpoints=0。
+- duplicate_global_relations=0。
+- missing_target_endpoints=0。
+- data/relationship-data.js 已包含《国民党臭史》。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅有既有 LF -> CRLF warning。
+- 重点噪点复核：
+  - 干儿子、空诸所、诸所无、费城晨、欧事讨、党籍、满洲国、公怒之、国政治、国立政、台南人、任何政、国人之、东京、巴赫均未作为《国民党臭史》topBooks 端点保留。
+  - 巴哈（曙光报）在本书落地 19 次。
+
+下一轮建议
+- round2 进入核心关系边补网：
+  - 党报/新闻论战线：曹圣芬、范度才、富兰克林、巴哈（曙光报）、《中央日报》爆炸案相关读者/评论者。
+  - 收义子线：吴荣根、蒋仲苓、王昇、郝柏村等。
+  - 改组派/开除党籍线：陈公博、王法勤、柏文蔚、顾孟余、陈树人等。
+  - 压迫自由分子与诉状线：李政一、刘辰旦、郭荣文、詹重雄、吴彰炯、林天麟、秦孝仪等。
+  - 张群/政学系与国民党元老线：张群、黄郛、雷啸岑、陈布雷、戴季陶、胡汉民、汪精卫等。
+- round2 后继续用显式 126 本 --book-path 正式回流，继续避免 --all。

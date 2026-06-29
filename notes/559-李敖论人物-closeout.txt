@@ -1,0 +1,49 @@
+《李敖论人物》closeout
+
+范围
+- 本书完成 round1 基线与正式回流清理、round2 核心关系边补网、round3 支线关系与尾部复核、round4 低频尾部清理。
+- 本 closeout 做最终单书复核、显式 123 本正式回流、导出同步与一致性验证。
+- 全程未使用 --all。
+
+最终书内状态
+- 《李敖论人物》：33 chapters / 295 people / 92 targetRelations / missing endpoints 0。
+- round4 清理项在 closeout 中确认未反弹：
+  - 台南人、孙女、毛笔写、祖国、终点、李焕请、吴俊才、强梁。
+- 关系样本确认：
+  - 王企祥 -> 徐露
+  - 胡赓年 -> 胡茵梦
+  - 吴淑珍 -> 黄华
+  - 江青 -> 刘家昌
+  - 孙立人 -> 蒋介石
+
+closeout 单书复核
+- 命令：extract_relationships.py --book-path 《大李敖全集5.0》（wjm_tcy版）分章节/012.人物研究类/027.李敖论人物 --data-dir .tmp-liao-lunrenwu-closeout-data --export-dir .tmp-liao-lunrenwu-closeout-exports
+- 结果：280 people / 1 book / 33 chapters / 961 identityLinks / 463 personRelations。
+- 本书 PERSON_RELATIONS 命中：92。
+- 缺失端点：0。
+- 低频 singleton 抽样主要为真实人物、历史/文学/宗教端点或已说明保留的别名端点；未再发现需要开启新一轮的明显标题残片。
+
+正式 closeout 回流
+- 正式重建由 data/people.json 中现有 123 本反推路径生成 123 个显式 --book-path。
+- explicit_book_path_count 123；json_book_count 123；missing_count 0；includes_target True；has_all_flag False。
+- 正式结果：13851 people / 123 books / 6892 chapters / 32356 identityLinks / 4731 personRelations。
+- 《李敖论人物》正式结果：33 chapters / 295 people / targetRelations 92 / missing endpoints 0。
+
+同步产物
+- data/people.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+
+最终验证
+- python -m py_compile scripts/extract_relationships.py：通过。
+- node --check data/relationship-data.js：通过。
+- node --check assets/app.js：通过。
+- CSV / JSON / JS people 数一致：13851。
+- exports/by-book-index.txt：显示《李敖论人物》｜人物研究类｜章节 33｜人物 295。
+- git diff --check：仅 CRLF 提示，无内容格式错误。
+
+结论
+- 《李敖论人物》可 closeout。
+- 下一本可按用户指定进入；若继续当前人物研究序列，建议从书目顺序进入下一部未处理书。
