@@ -1,0 +1,44 @@
+《给外省人难看》closeout
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/006.给外省人难看
+- 目录下 38 个 txt，正文入库 37 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- closeout 先沿用 round3 的 129 个显式 --book-path 正式回流结果做复核。
+- closeout 正式尾部抽样发现跨书强信号带回本书的短语残片后，补入本书 BOOK_SKIP_NAMES，并进行了两次 129 本显式 --book-path 正式回流。
+- 两次正式回流护栏均确认：formal_rebuild_books 129，titles 129，missing 0，unique_paths 129，duplicates 0，includes_target True，argv_has_all False。
+
+本书最终状态
+- 正式库：14154 人 / 129 本 / 7076 章 / 32995 identityLinks / 5370 personRelations。
+- 正式《给外省人难看》：37 章 / 281 人 / 166 条本书专属关系。
+- 浏览器压缩数据 data/relationship-data.js 与 data/people.json 一致：全库 totals 一致，本书 personCount 281，一共 166 条本书关系边。
+- exports/by-book-index.txt 本书行一致：章节 37 / 人物 281。
+- exports/li-ao-relationships.txt 中本书关系边行数：166。
+- exports/li-ao-relationships.csv 是人物索引导出，不是关系边表；本书名在 CSV 人物行中可检索，最终目标书相关行 134。
+
+单书 closeout 复验
+- 临时单书输出：247 人 / 1 本 / 37 章。
+- 单书 identityLinks：802。
+- 单书关系校验：target_relations_defined 166，target_relations_emitted 166，missing_relations 0。
+- skip 命中复核：skip_hits 0。
+- 本书高频头部稳定：雷震、蒋介石、蒋经国、傅正、吴大猷、许倬云、胡适、李济、郑贞铭、王又曾、余光中、梁肃戎、尤英夫、沈君山、王世杰、林秉钦、朱婉坚、钱穆、陈立夫、成舍我等。
+
+closeout 清理
+- round3 后正式库本书人物为 334；closeout 复核发现“于出版、于推动、于版权、从地方、党派关、关著作、台四十、国家建、国立政、安定生、明显看、李济所、林森做、管警察、蒋公铜”等跨书强信号残片，补入本书 skip 后正式人物降为 298。
+- 第二轮尾部复核又发现“钱穆住、陆军二、须超出、高职位、席报告、成员、方便之、能够打、莫须有、解决之、党务顾、闻天地、闻教育”等二层残片，补入本书 skip 后正式人物降为 281。
+- 复核后的目标书低频端点多为文本中明确出现的真名、法官、学者、亲属、典故和案卷人物，例如丘汉平、叶畅、孙同勋、张伯苓、戴传贤、沈曾圻、金越光、廖源泉、张祥麟、杜承唐、汪梦湘、王简文、邵锦慧、郑健才等。
+- 钱复著作权谈判支线已在 round3 复核：源文主要是钱复与“中美小组”“层峰”“美国方面”等机构/泛称，未强行补个人关系边。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+- notes 连续性确认：580 round1、581 round2、582 round3、583 closeout。
+
+完成判断
+- 《给外省人难看》已完成 round1 基线与正式回流清理、round2 核心关系边补网、round3 支线关系与尾部复核、本轮 closeout。
+- 013.国民党史政分类 6 本书已全部完成本轮序列。
+- 下一本建议进入 014.台湾史政类/001.冷眼看台湾。

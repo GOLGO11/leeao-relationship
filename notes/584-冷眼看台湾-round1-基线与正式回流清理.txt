@@ -1,0 +1,60 @@
+《冷眼看台湾》round1：基线与正式回流清理
+
+源书目录：
+《大李敖全集5.0》（wjm_tcy版）分章节\014.台湾史政类\001.冷眼看台湾
+
+本轮目标：
+- 进入《冷眼看台湾》，建立首轮人物关系基线。
+- 不使用 --all；先做单书临时校验，再用现有正式书目 + 本书的显式 --book-path 列表回流。
+- 首轮优先覆盖党外论战、诽谤诉讼、政治犯/美丽岛案外案、施性忠支线、赖债与杂志经营支线。
+
+单书临时基线：
+- 命令使用 --book-path 指向《冷眼看台湾》源目录，data/export 写入 .tmp-lengyan-r1-* 临时目录。
+- 守卫：argv_has_all False。
+- 结果：369 people，1 books，48 chapters。
+- identityLinks：1185。
+- 人工关系：定义 46，单书输出 46，missing 0，skip_hits 0。
+
+脚本清理：
+- 新增 CURATED_IDENTITIES：
+  高李丽珍、施明德、铃木久代、林献堂、黎元洪、西仓一喜、耿铭、会云、王通文、王榕生、龙云翔、蒋家语、黄德贤、赖玉山、林明雄、余岳叔、林丽霞、苏小弟、许国泰、陈锡福、黄天福、李逸洋、颜明圣、周文龙、余素贞、黄明潭、周顺吉、丘垂亮、萧木通、王云涛、屠炳春、周道济、王洸等。
+- 新增 BOOK_PHRASE_PEOPLE["冷眼看台湾"]：
+  锚定郭国基/铃木久代/林献堂/黎元洪，高俊明/高李丽珍/施明德，施性忠/庄姬美/西仓一喜/耿铭/会云/王通文，康宁祥/康文雄/李筱峰/吴祥辉/徐璐/王杏庆/林明雄/黄德贤/赖玉山，陈水扁/周伯伦/黄天福/李逸洋/邓维桢/陈锡福，黄华/魏廷朝/谢聪敏/李政一/黄信介/张俊宏，林正杰/蔡仁坚/吴祥辉/杨祖珺/汪梦湘/骆学良/蒋家语/龙云翔，许荣淑/尤清/苏小弟/余岳叔/林丽霞/谢长廷/洪奇昌/苏秋镇/黄纪男/殷海光等支线。
+- 新增 BOOK_SKIP_NAMES["冷眼看台湾"]：
+  清掉题名半截、机构制度词、普通动宾短语、称谓残片和句读粘连项，如 于专横、于该同、任何谈、党外、法院、被告、原告、推事、自诉状、中央日报、司法死、活埋法、捏造法、红包诱、那位女 等。
+- 新增 PERSON_RELATIONS：46 条。
+
+正式回流：
+- 正式重建书目：从 exports/by-book-index.txt 读取既有 129 本，追加《冷眼看台湾》。
+- 显式 --book-path 数：130。
+- 守卫输出：
+  formal_rebuild_books 130 titles 130 missing 0 unique_paths 130 duplicates 0 includes_target True argv_has_all False
+- 正式重建结果：14215 people，130 books，7124 chapters。
+
+正式校验：
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- scripts/extract_relationships.py：AST syntax check 与 py_compile 通过。
+- git diff --check：通过，仅提示 Git 未来可能把 LF 替换为 CRLF。
+- 站点 totals：
+  people 14215；books 130；chapters 7124；identityLinks 33110；personRelations 5416。
+- 《冷眼看台湾》书卡：
+  collection 台湾史政类；chapters 48；personCount 551。
+- 人工关系三方校验：
+  script defined 46；JS emitted 46；missing 0；TXT seen 46。
+- by-book-index：
+  《冷眼看台湾》｜台湾史政类｜章节 48｜人物 551。
+
+people.json 分片修复：
+- 正式重建后 data/people.json 一度回到 54.7 MB，超过既定 50 MB 红线。
+- 已把归档格式改为 people-sharded-v1：
+  data/people.json 现在是 manifest，保留 totals、identityLinks、personRelations、books 与 people 分片索引。
+  完整人物证据写入 data/people-part-001.json 到 data/people-part-006.json。
+- 当前大小：
+  people.json 6060193 bytes；6 个分片；总人物 14215；最大分片 8387280 bytes。
+- 已校验 manifest 与分片 people 总数一致，且 relationship-data.js 仍通过 node --check。
+
+下一轮建议：
+- round2 进入核心人物边补网：康宁祥/林正杰/李筱峰/吴祥辉/施性忠/魏廷朝/陈水扁/黄华/许荣淑/尤清。
+- 重点检查 formal 后 personCount 从单书 369 到正式 551 的新增低频端点，过滤跨书合并后冒出的普通词、机构词与称谓碎片。
+- 继续不使用 --all；如需回流，仍采用 by-book-index 既有书目 + 当前书的显式 --book-path 列表。

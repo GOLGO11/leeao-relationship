@@ -1,0 +1,52 @@
+《冷眼看台湾》closeout
+
+源书目录：《大李敖全集5.0》（wjm_tcy版）分章节\014.台湾史政类\001.冷眼看台湾
+
+本次目标：
+- 对 round1-round3 后的本书结果做最终收束复核。
+- 只做单书临时复核与正式输出读取校验；本次未修改抽取规则，未重建全库。
+- 继续遵守显式 --book-path 工作流；本次单书复核确认 argv_has_all False，未使用 --all。
+
+单书 closeout 复核：
+- 临时输出目录：.tmp-lengyan-closeout-data / .tmp-lengyan-closeout-exports。
+- 命令形态：scripts/extract_relationships.py --book-path <冷眼看台湾目录> --data-dir <tmp> --export-dir <tmp>。
+- 结果：352 people，1 book，48 chapters。
+- 单书 totals：
+  identityLinks 1190，personRelations 652。
+- 本书人工关系：
+  script_defined 110，single_emitted 110，missing 0，extra 0。
+- skip_hits：0。
+- uncurated_low_no_manual：0。
+- 高频前列检查：
+  康宁祥 287，林正杰 257，李筱峰 174，吴祥辉 158，施性忠 142，魏廷朝 111，萧孟能 107，段宏俊 71，康文雄 60，陈水扁 57，黄信介 53，胡茵梦 48，汪梦湘 47，彭明敏 42，郭国基 40，胡适 38。
+- 重点补网节点抽检均在单书输出中：
+  萧孟能、朱婉坚、王剑芬、董良骏、刘元方、孔杰荣、崔蓉芝、刘宜良、柯远芬、吕嘉行、李录诗、谢南光。
+
+正式输出复核：
+- 本次 closeout 未重建正式 data/exports；读取 round3 正式回流后的当前输出复核。
+- 站点 totals：
+  people 14200，books 130，chapters 7124，identityLinks 33094，personRelations 5480。
+- 《冷眼看台湾》书卡：
+  collection 台湾史政类，chapters 48，personCount 533。
+- 本书人工关系三方校验：
+  script_defined 110，JS emitted 110，missing 0，extra 0，TXT seen 110。
+- by-book-index：
+  《冷眼看台湾》｜台湾史政类｜章节 48｜人物 533。
+- people archive：
+  archiveFormat people-sharded-v1，people.json 6077194 bytes，6 shards，shard_people_total 14200，max_shard_bytes 8388668。
+- 分片目标节点抽检：
+  萧孟能、朱婉坚、王剑芬、董良骏、刘元方、孔杰荣、崔蓉芝、刘宜良、柯远芬、吕嘉行、李录诗、谢南光均可在 people shards 中找到。
+
+轻量校验：
+- scripts/extract_relationships.py：py_compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- git diff --check：通过，仅提示 Git 未来可能把 LF 替换为 CRLF。
+
+closeout 判断：
+- 本书经历三轮后，核心政治人物、党外论战、萧孟能财产/婚姻线、前进诽谤诉讼线、法院函证线和低频尾部真节点均已有可用关系边。
+- 单书尾部没有新的未策展低频无边候选；skip list 在单书输出中没有命中残片。
+- 正式输出与单书人工关系一致，适合结束本书。
+
+下一本建议：
+- 进入《白眼看台湾》。

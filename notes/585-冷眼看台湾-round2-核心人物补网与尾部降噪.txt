@@ -1,0 +1,77 @@
+《冷眼看台湾》round2：核心人物补网与尾部降噪
+
+源书目录：
+《大李敖全集5.0》（wjm_tcy版）分章节\014.台湾史政类\001.冷眼看台湾
+
+本轮目标：
+- 承接 round1 的 46 条人物关系边，补足高频但本书关系度数偏低的人物。
+- 重点处理：段宏俊、萧孟能、胡茵梦、彭明敏、胡适、高玉树、林永丰、张建邦、费希平、黄纪男等支线。
+- 继续先做单书临时校验，再显式 --book-path 正式回流；不使用 --all。
+
+单书诊断：
+- 初始 round2 单书复跑：369 people，48 chapters。
+- 补网与跳过词后单书结果：350 people，48 chapters，identityLinks 1176。
+- 本书人工关系：defined 76，emitted 76，missing 0。
+- skip_hits：0。
+
+脚本增量：
+- CURATED_IDENTITIES 新增或加固：
+  章秋芬、蔡孟坚、陈诚、汪家声、吴纯、高廷彬、侯立朝、孔杰荣、张俊雄、黄富、林永丰等。
+- BOOK_PHRASE_PEOPLE["冷眼看台湾"] 新增 round2 锚点：
+  陈故副总统 -> 陈诚/郭国基；
+  章秋芬《李敖与段宏俊左右联手打老康》 -> 章秋芬/段宏俊/康宁祥；
+  段宏俊作为胡茵梦离婚协议见证人；
+  蔡孟坚与高玉树特务晤叙；
+  杨玉城/高玉树/黄信介/李福春的杨玉城案求助线；
+  尤清/林永丰安排林正杰和解；
+  林正杰向张建邦借钱；
+  费希平/林正杰/张俊雄公政会信函责任链；
+  黄富为黄华哥哥并作证；
+  胡适/殷海光/雷震新党不参加支线；
+  彭明敏案与魏廷朝；
+  汪家声/吴纯/高廷彬高院法官端点。
+- BOOK_SKIP_NAMES["冷眼看台湾"] 新增尾部残片：
+  能干涉、任编辑、任人员、任部分、顾事实、时捏造、相片本、公正性、陈故副、司法改、伏笔、居权、黄富又、从魏廷、党史委、那妇人、金牌、闻杂记、阴沟、高市长、黄议长、高贵。
+- PERSON_RELATIONS 新增 30 条，本书总数从 46 条增至 76 条。
+
+新增关系主线：
+- 郭国基 -> 陈诚：拜访陈故副总统，澄清其爱国爱民族精神。
+- 康宁祥/李筱峰/章秋芬/段宏俊/胡茵梦：段宏俊问题、离婚见证、左右联手打老康论战。
+- 吴祥辉 -> 萧孟能/胡茵梦/陶希圣/胡秋原/张白帆：李敖死了与亚洲人案中的捏造、加码、文星讼案材料。
+- 黄信介/高玉树/杨玉城/李福春：杨玉城案与高玉树五虎将。
+- 高玉树 -> 蔡孟坚，苏南成 -> 蒋经国：党外投机与特务/国民党权力线。
+- 林永丰/尤清/林正杰：香宜午餐调停与前进案知情证据。
+- 林正杰 -> 张建邦：党外议员向国民党议长借钱。
+- 费希平 -> 林正杰/张俊雄：公政会秘件作业责任链。
+- 彭明敏 -> 魏廷朝；胡适/殷海光 -> 雷震；黄富 -> 黄华；黄纪男 -> 苏秋镇/陈文茜。
+- 汪家声/吴纯/高廷彬 -> 萧孟能：高院判决与文星照片说明对象误指。
+
+正式回流：
+- 从 exports/by-book-index.txt 读取当前正式书目，得到 130 本。
+- 守卫输出：
+  formal_rebuild_books 130 titles 130 missing 0 unique_paths 130 duplicates 0 includes_target True argv_has_all False
+- 正式重建结果：
+  14198 people，130 books，7124 chapters。
+
+正式校验：
+- scripts/extract_relationships.py：py_compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- git diff --check：通过，仅提示 Git 未来可能把 LF 替换为 CRLF。
+- 站点 totals：
+  people 14198；books 130；chapters 7124；identityLinks 33083；personRelations 5446。
+- 《冷眼看台湾》书卡：
+  chapters 48；personCount 531。
+- 人工关系三方校验：
+  script defined 76；JS emitted 76；missing 0；extra 0；TXT seen 76。
+- by-book-index：
+  《冷眼看台湾》｜台湾史政类｜章节 48｜人物 531。
+- people archive：
+  archiveFormat people-sharded-v1；people.json 6065513 bytes；6 shards；shard_people_total 14198；max_shard_bytes 8388299。
+
+下一轮建议：
+- round3 继续做法律/财产/出版支线精修：
+  萧孟能、朱婉坚、王剑芬、刘会云、周康熙、吴越潮、陈子和、郑锡华、张任飞；
+  以及林正杰/杨祖珺/董良骏/周弘宪/曹伟修/罗家伦/高荫祖等司法材料端点。
+- 继续复核 formal 后低频尾部，尤其是 title-like 称谓、普通名词和书名半截。
+- 回流仍使用显式 --book-path，不使用 --all。

@@ -1,0 +1,63 @@
+《冷眼看台湾》round3：法律财产出版支线精修
+
+源书目录：《大李敖全集5.0》（wjm_tcy版）分章节\014.台湾史政类\001.冷眼看台湾
+
+本轮目标：
+- 承接 round2 的 76 条人工人物关系边，继续补法律、财产、出版责任支线。
+- 重点处理：萧孟能、朱婉坚、王剑芬、刘会云、周康熙、吴越潮、陈子和、郑锡华、张任飞；以及林正杰、杨祖珺、董良骏、周弘宪、曹伟修、罗家伦、高荫祖、孔杰荣、崔蓉芝、刘宜良、侯立朝等司法材料端点。
+- 继续用单书临时校验后再显式 --book-path 正式回流；不使用 --all。
+
+单书诊断：
+- 初始 round3 单书复跑：350 people，48 chapters。
+- 补网后单书结果：352 people，48 chapters，identityLinks 1190，personRelations 652。
+- 本书人工关系：script defined 110，single-book emitted 110，missing 0，extra 0。
+- skip_hits：0。
+- uncurated_low_no_manual：0。
+- 新补或稳固的低频节点包括：董良骏、刘元方、柯远芬、吕嘉行、李录诗、谢南光。
+
+脚本增量：
+- CURATED_IDENTITIES["冷眼看台湾"] 相关局部块新增或稳固：
+  朱婉坚、王剑芬、刘会云、周康熙、吴越潮、陈子和、郑锡华、张任飞、董良骏、周弘宪、曹伟修、罗家伦、高荫祖、刘元方、王玉云、崔蓉芝、陈信杰、张诗源、吕嘉行、李录诗、柯远芬、谢南光。
+- BOOK_PHRASE_PEOPLE["冷眼看台湾"] 新增 round3 锚点：
+  萧孟能与朱婉坚协议分居、王剑芬同居权、协议分居见证人吴越潮/陈子和/郑锡华/张任飞、刘会云检举萧孟能、周康熙畸零地保证金、董良骏/周弘宪上诉理由状、王玉云控告杨祖珺、孔杰荣/崔蓉芝/刘宜良误报、侯立朝自称蒋经国打手、曹伟修/罗家伦/高荫祖函证链、陈信杰深耕财务查证、张诗源出版法论据、李录诗/吕嘉行选集线、郭国基/柯远芬省参议会线、苏东启/谢南光重庆介绍线。
+- PERSON_RELATIONS 新增 34 条，本书人工关系总数由 76 增至 110。
+
+新增关系主线：
+- 萧孟能 -> 朱婉坚 / 王剑芬，朱婉坚 -> 王剑芬：婚姻分居、同居权与妨害家庭控告语境。
+- 吴越潮 / 陈子和 / 郑锡华 / 张任飞 -> 萧孟能：协议分居书见证人，反证李敖未介入。
+- 刘会云 / 周康熙 -> 萧孟能，吴祥辉 -> 刘会云 / 周康熙：畸零地租用、保证金与窃占土地检举诽谤项。
+- 董良骏 -> 周弘宪 / 杨祖珺，周弘宪 -> 杨祖珺，杨祖珺 -> 王玉云：前进案上诉理由状、社长责任与旧案引用。
+- 林正杰 -> 刘元方 / 王玉云 / 孔杰荣：前进杂志误报、诽谤例子与舆论暴力自承。
+- 孔杰荣 -> 崔蓉芝，崔蓉芝 -> 刘宜良：江南遗孀委聘误报与夫妻语境。
+- 侯立朝 -> 吴祥辉 / 蒋经国：自承蒋经国打手与文星集团开火说。
+- 曹伟修 -> 罗家伦 / 高荫祖 / 萧孟能，罗家伦 -> 高荫祖 / 萧孟能，高荫祖 -> 萧孟能：法院函询、国史馆与开国文献会回函，澄清盗用档案指控。
+- 陈信杰 -> 许荣淑，林正杰 -> 陈信杰：深耕财务疑案查证线。
+- 张诗源 -> 林正杰：出版法发行人责任论据。
+- 李录诗 -> 吕嘉行，郭国基 -> 柯远芬，苏东启 -> 谢南光：低频尾部真节点补边。
+
+正式回流：
+- 从 exports/by-book-index.txt 读取当前正式书目，得到 130 本。
+- 守卫输出：
+  formal_rebuild_books 130 titles 130 missing 0 unique_paths 130 duplicates 0 includes_target True argv_has_all False
+- 正式重建结果：
+  14200 people，130 books，7124 chapters。
+
+正式校验：
+- scripts/extract_relationships.py：py_compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- git diff --check：通过，仅提示 Git 未来可能把 LF 替换为 CRLF。
+- 站点 totals：
+  people 14200，books 130，chapters 7124，identityLinks 33094，personRelations 5480。
+- 《冷眼看台湾》书卡：
+  chapters 48，personCount 533。
+- 人工关系三方校验：
+  script defined 110，JS emitted 110，missing 0，extra 0，TXT seen 110。
+- by-book-index：
+  《冷眼看台湾》｜台湾史政类｜章节 48｜人物 533。
+- people archive：
+  archiveFormat people-sharded-v1，people.json 6077194 bytes，6 shards，shard_people_total 14200，max_shard_bytes 8388668。
+
+下一轮建议：
+- 本书 round3 后，单书尾部无 uncurated_low_no_manual，正式回流也已对齐。
+- 建议下一步进入《冷眼看台湾》closeout：做一次最终书卡/关系边/低频尾部抽检，写 closeout note，然后进入下一本。

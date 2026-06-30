@@ -1,0 +1,49 @@
+《给外省人难看》round3：支线关系与尾部复核
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/006.给外省人难看
+- 正文入库 37 章。
+
+重要约束
+- 本轮没有使用 --all。
+- 单书验证只使用本书显式 --book-path。
+- 正式回流从 exports/by-book-index.txt 读取当前 129 本书目，并构造 129 个显式 --book-path。
+- 正式回流护栏确认：formal_rebuild_books 129，titles 129，missing 0，unique_paths 129，duplicates 0，includes_target True，argv_has_all False。
+
+本轮补网范围
+- 在 round2 的 125 条关系基础上，新增 41 条《给外省人难看》专属关系，合计 166 条。
+- 新增 round3 curated 端点，覆盖王又曾案被害厂商/律师/警务/亲属运赃线，吴大猷案最高法院法官和公费协助线，郑贞铭抄袭案文工会/国魂月刊/调解线，傅正后段监察院、雷震案调查和民进党政治利用线。
+- 新增 BOOK_PHRASE_PEOPLE["给外省人难看"] round3 锚点，固定叶畅、王简文、徐永大、廖源泉、汪辅、郑健才、张祥麟、王应城、王洪钧、林秋山、杨崇森、林武治、赖国洲、金越光等低频端点。
+
+关系边主题
+- 王又曾案：补王又曾与王百禄空头支票主线、刘浩查赃、杜承唐律师交涉、叶畅阻止提货、王简文父亲接头、徐永大妹夫搬运赃物、孙惠刚/徐永大运赃执行、丁承义/单志贵假债权介绍。
+- 吴大猷案：补吴大猷与蒋介石科指会任命、阎振兴在旁帮忙、沈曾圻公费协助纪念论著集；补林秉钦与廖源泉、汪辅、郑健才、张祥麟、杨襄明最高法院判决法官链。
+- 郑贞铭抄袭案：补郑贞铭与戴瑞明文工会上下级背景、沈登恩找到尤英夫并借卷宗、罗卓君/邵锦慧国魂复函求证、郑贞铭/王应城考察辩解背景、尤英夫与王洪钧/林秋山/杨崇森/林武治/赖国洲调解撤告链。
+- 傅正后段：补谢聪敏、魏廷朝探视傅正；傅正与蒋经国青年军/政工干部背景、施启扬自由中国署名对照、黄尊秋/朱炳麟监察院政治秀；宋英与谢崐山责任转嫁；陶百川/金越光雷震案调查未完成；傅正与汪梦湘感化主持；汪梦湘与蒋经国奖状、林正杰前进系反讽；傅正与费希平民进党收容外省人对照；雷震与胡虚一日记影本和文件整理功劳。
+- 钱复著作权谈判支线复核后未强行补边：源文主要是钱复与“中美小组”“层峰”“美国方面”等机构/泛称，未出现稳定个人对手端点。
+
+单书临时验证
+- 临时单书：247 人 / 1 本 / 37 章 / 802 identityLinks。
+- 本书专属关系：defined 166 / emitted 166 / missing 0 / skip_hits 0。
+- 新增端点叶畅、王简文、徐永大、王应城、林秋山、杨崇森、林武治、金越光、汪梦湘均已入库。
+- 低频尾部复核未见 round3 新增假人名；保留历史引文、法官、调解人、亲属和监察院低频端点。
+
+正式回流结果
+- 正式库：14164 人 / 129 本 / 7076 章 / 33015 identityLinks / 5370 personRelations。
+- 《给外省人难看》索引：37 章 / 人物 334。
+- 本书专属关系：defined 166 / emitted 166 / missing_global 0。
+- data/relationship-data.js 与 data/people.json totals 一致；站点侧本书 personCount 334，站点侧本书关系 166 条。
+- exports/li-ao-relationships.txt 中本书关系行数：166。
+- exports/by-book-index.txt 第 163 行为《给外省人难看》条目。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- 单书临时验证通过：247 人 / 37 章 / 802 identityLinks / 166 条本书专属关系，缺失端点 0，skip_hits 0。
+- 正式回流护栏：explicit_book_path_count 129，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+
+下一轮建议
+- 进入《给外省人难看》本书 closeout。
+- closeout 时重点复核：本书新增 41 条关系是否都在 TXT/CSV 中可读；确认钱复支线“不补个人边”的理由写入收口；确认临时目录已清理；再决定进入下一本。

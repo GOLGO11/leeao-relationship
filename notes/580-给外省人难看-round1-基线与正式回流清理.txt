@@ -1,0 +1,42 @@
+《给外省人难看》round1：基线、首批关系边与正式回流清理
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/006.给外省人难看
+- 目录下 38 个 txt，正文入库 37 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- 单书验证只使用本书显式 --book-path。
+- 正式回流从 exports/by-book-index.txt 读取当前 128 本书目，追加本书后构造 129 个显式 --book-path。
+- 正式回流护栏确认：missing 0，unique_paths 129，duplicates 0，includes_target True，argv_has_all False。
+
+单书基线
+- 初始临时单书：270 人 / 1 本 / 37 章 / 753 identityLinks。
+- 初始《给外省人难看》专属 PERSON_RELATIONS：0。
+- 补规则后临时单书：221 人 / 37 章 / 726 identityLinks / 73 条本书专属关系，缺失端点 0，skip_hits 0。
+
+本轮脚本改动
+- 新增《给外省人难看》round1 curated 端点，覆盖党国宣传、CC派系、立法院/监察院、王又曾案、孔德成父子、钱穆家事、学阀、吴大猷诉讼、郑贞铭抄袭、傅正/雷震案等支线。
+- 新增 BOOK_PHRASE_PEOPLE["给外省人难看"]，固定邵元冲、邓文仪、潘公展、雷某/雷震、司马桑敦、葭芬、韩镜良、张宝树、单志贵、丁承义、孙惠刚、孔维益、孔维宁、钱易、蓝小姐、林秉钦、沈曾圻、孙同勋、尤英夫、罗卓君、邵锦慧、刘锦隆、谢崐山、朱炳麟、赖阿胜等低频端点。
+- 新增 BOOK_SKIP_NAMES["给外省人难看"]，清理题名半截、句读粘连、机构/制度词、普通动宾短语和称谓残片，例如“云逼婚”“从丘宏”“从林毓”“雷震全”“马屁言”“傅正保”“成郞薄”“宋英做”“国考试”“马屁拍”“干经费”“权辱国”“隆处理”“公济私”“许翼云”等。
+- 新增 73 条《给外省人难看》PERSON_RELATIONS，覆盖蒋介石学历宣传、陈立夫/雷震CC派系、郝柏村民族救星答询、梁肃戎地下党与CC派、陶百川/彭明敏监管线、成舍我婚姻与负义线、谢然之/蒋经国文宣控制、邵玉铭禁书、宋楚瑜佞幸传、马英九拍马、王又曾诈财物案、吴祺芳官邸、孔德成父子免试、钱穆公产与钱易、毛子水/雷震、李济/许倬云《中国上古史》、许倬云逼婚、吴大猷/林秉钦诉讼、余光中文星版权、郑贞铭抄袭、张继高/吴心柳学历、傅正/雷震案等。
+
+正式回流结果
+- 正式库：14142 人 / 129 本 / 7076 章 / 32951 identityLinks / 5277 personRelations。
+- 《给外省人难看》索引：37 章 / 人物 309。
+- 本书专属关系：defined 73 / emitted 73 / missing_global 0。
+- 浏览器压缩数据 data/relationship-data.js 与 data/people.json totals 一致；本书 personCount 309，站点数据中本书关系 73 条。
+- exports/li-ao-relationships.txt 中本书关系边行数：73。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- 单书临时验证通过：221 人 / 37 章 / 726 identityLinks / 73 条本书专属关系，缺失端点 0，skip_hits 0。
+- 正式回流护栏：explicit_book_path_count 129，argv_has_all False，missing_titles 0，duplicate_paths 0。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 替换 warning，无 whitespace error。
+- exports/by-book-index.txt 已出现《给外省人难看》条目。
+
+下一轮建议
+- 进入《给外省人难看》round2 核心关系边补网。
+- 优先复核并扩展这些支线：宋长志/钱复/李达海政务批评线，陶百川/徐复观/郑彦棻司法与学人线，沈君山/丘宏达/林毓生/苏雪林/高希均/丁中江等学界支线，王又曾案更多诉讼端点，吴大猷案最高法院法官与钱思亮/阎振兴支线，郑贞铭案文化大学/文工会支线，傅正/雷震/宋英/谢崐山/胡虚一后续材料。

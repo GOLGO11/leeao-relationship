@@ -1,0 +1,40 @@
+《给国民党难看》closeout
+
+源目录
+- 《大李敖全集5.0》（wjm_tcy版）分章节/013.国民党史政/005.给国民党难看
+- 目录下 45 个 txt，正文入库 44 章，目录文件未计入章节。
+
+重要约束
+- 本轮没有使用 --all。
+- closeout 没有再做正式全库回流；沿用 round3 已完成的 128 个显式 --book-path 正式回流结果。
+- 本轮只做单书显式 --book-path 复验、正式数据/浏览器数据/导出索引一致性检查、关系导出行数检查、尾部抽样和轻量语法检查。
+
+本书最终状态
+- 正式库：14100 人 / 128 本 / 7039 章 / 32856 identityLinks / 5204 personRelations。
+- 正式《给国民党难看》：44 章 / 382 人 / 155 条本书专属关系。
+- 浏览器压缩数据 data/relationship-data.js 与 data/people.json 一致：全库 totals 一致，本书 personCount 382，一共 155 条本书关系边。
+- exports/by-book-index.txt 本书行一致：章节 44 / 人物 382。
+- exports/li-ao-relationships.txt 中本书关系边行数：155。
+
+单书 closeout 复验
+- 临时单书输出：310 人 / 1 本 / 44 章。
+- 单书 identityLinks：976。
+- 单书关系校验：target_relations_defined 155，target_relations_emitted 155，missing_relations 0。
+- skip 命中复核：skip_hits 0。
+- 本书高频头部稳定：孙中山、蒋介石、文天祥、黄少谷、富兰克林、林肯、宋希濂、刘玉章、王国维、曹圣芬、汪精卫、谢然之、蒋经国、苏秋镇、冯玉祥、孙运璿、汤恩伯、罗隆基、范度才、李宗仁等。
+
+尾部抽样
+- 抽检 60 个最低频端点，未见明显句子碎片、机构词或政论短语残留。
+- 低频保留端点多为文本中明确出现的真名或典故节点，例如乔·路易斯、侯镜如、俞济时、冯伯训、冷欣、刘郁芬、哈里曼、宫崎龙介、廖定藩、张忠栋、张玉芳、徐锡麟、成舍我、欧阳格等。
+- round3 已清理的“古话说、方百计、台四十、台币、国家建、国总督、广州蒙、文化政、明信片、通问题、井冈山、元帅府、党斗争、全发展、史辞典、常运作、徐州剿、林肯所、苏俄谈、苏联缔、蒙古之、黄河之、高速公”等本书误切项未回流。
+
+验证
+- python -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，无 whitespace error。
+- notes 连续性确认：576 round1、577 round2、578 round3、579 closeout。
+
+完成判断
+- 《给国民党难看》已完成 round1 基线清理、round2 核心关系补网、round3 支线关系与尾部复核、本轮 closeout。
+- 本书可以结束，下一本建议进入《给外省人难看》。
