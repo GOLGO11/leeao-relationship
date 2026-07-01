@@ -1,0 +1,32 @@
+《白色恐怖述奇》round4：赠款、第三势力、牵连名单、立委质询补网
+
+本轮目标
+- 补龚德柏《蒋介石黑狱亲历记》附录中赠款名单的剩余端点。
+- 补李世杰调查局履历中瓦解香港第三势力“中国民主政团战斗同盟”的名单端点。
+- 补李政一回忆中六张犁看守所牵连名单的低频人物。
+- 补《先认错，再开会》中围绕李元簇的立法委员质询链。
+
+新增结构
+- PERSON_RELATIONS：为《白色恐怖述奇》新增45条，手工关系由134条增至179条。
+- CURATED_IDENTITIES：新增/补入第三势力人物、李政一案牵连人物、立委质询人物、龚德柏赠款人物。
+- BOOK_PHRASE_PEOPLE：新增第三势力名单、李政一牵连名单、温士源书面质询、立委质询名单、龚德柏每月及一次或数次赠款名单短语锚点。
+
+关键新增端点
+- 李世杰线：张发奎、黄旭初、韦贽唐、王同荣、张君劢、伍宪子、李璜、左舜生。
+- 李政一线：林顺益、洪武雄、詹胜辉、陈炳煌、黄明谭、陈贤进、杨鸿铠、刘子英。
+- 李元簇线：苏秋镇、许荣淑、黄天福、李志鹏、游荣茂、林联辉、温士源。
+- 龚德柏线：虞舜、萧同兹、李崇年、谭岳泉、刘慕珍、谢贯一、杨宣诚、朱久莹、鲁荡平、陈训悆、钟伯毅、余籍传、邱昌渭、赵恒惕、龙天武、任先志、阮毅成、李永懋、韦永成、赵铭、胡健中、许少炎。
+
+验证
+- 单书临时重跑：done: 389 people, 1 books, 28 chapters。
+- 单书关系核对：script_relations=179，actual=179，missing=0，extra=0。
+- 正式回流：formal_books=134，resolved_paths=134，missing=0，duplicates=0，argv_has_all=False。
+- 正式总量：14369 people，134 books，7256 chapters，6005 personRelations。
+- 正式本书：章节28，人物493，手工关系179，missing=0，extra=0。
+- 分片：shard_sum=14369，people_count=14369。
+- 导出：CSV包含本书名296行，TXT包含本书名1405行，by-book-index含《白色恐怖述奇》且显示人物493。
+- 语法：python -B -m py_compile scripts/extract_relationships.py 通过；node --check data/relationship-data.js 通过；node --check assets/app.js 通过。
+- git diff --check：通过，仅有仓库常见的 LF/CRLF 提示。
+
+下一步建议
+- 本书已经四轮补完主干、狱政、侦审、赠款和名单型尾部；建议进入本书 closeout，做一次正式尾部误抽/漏抽收束、导出一致性复核和收尾说明。

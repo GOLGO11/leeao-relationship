@@ -1,0 +1,41 @@
+《民进党研究》closeout
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节/014.台湾史政类/004.民进党研究
+- 章节数：61
+- 本书三轮与 closeout 均使用显式 --book-path；未使用 --all。
+
+closeout 审计
+- 重新以单书显式 --book-path 构建临时输出。
+- closeout 清理前单书临时结果：275 people / 1 book / 61 chapters / 142 book-specific manual relations。
+- 正式全库尾部审计发现 4 个由跨书强信号带回本书的非人物残片：权利要、能再说、封秘件、党籍；已加入《民进党研究》BOOK_SKIP_NAMES。
+- 正式全库尾部审计发现“鲁宾斯”为“鲁宾斯坦”的截断；已在《民进党研究》canonical_name 中归并为鲁宾斯坦。
+- closeout 清理后单书临时结果：276 people / 1 book / 61 chapters / 142 book-specific manual relations。新增的单书人物为正确归并后的鲁宾斯坦。
+- 关系边一致性检查：脚本中《民进党研究》人工关系 142 条；正式输出 142 条；missing 0；extra 0；duplicates 0。
+
+最终正式状态
+- 全库：14279 people / 133 books / 7228 chapters / 5826 personRelations。
+- 分片：6 个 people-part 文件，shard_sum=14279。
+- 《民进党研究》书卡：《民进党研究》｜台湾史政类｜章节 61｜人物 345。
+- 本书人工关系：142 条。
+- 正式导出：TXT 中本书相关行 773；CSV 中本书相关行 149。
+- 残片复查：权利要、能再说、封秘件、党籍、鲁宾斯均不再挂入《民进党研究》；鲁宾斯坦挂入《民进党研究》2 次。
+
+三轮摘要
+- round1：建立党外路线斗争、邱垂亮路线文章、反康第二主流派、桃竹苗后援会、执政党饭局、公政会分会与苏洪月娇/尤清/游锡堃等基础网络；人工关系 35 条。
+- round2：补强田医师批康、康宁祥与林义雄、费希平/林正杰公开信、黄膺白青年党史料、公政会云林/屏东分会、首都周刊/郑南榕案、朱高正报到、人评会派系、前进系社运部、林正杰行规与规则问题；人工关系增至 71 条。
+- round3：补强监委罢选处分、砸报馆与打记者、黑名单游行、林正杰公开信、周清玉投蒋经国票、民进党媚骨、无知抽样、迷信抽样、口水攻势等后半本支线；人工关系增至 142 条。
+
+核心网络
+- 康宁祥、费希平、尤清、林正杰、张德铭、黄信介、朱高正、邱垂亮、苏洪月娇、周清玉、姚嘉文、许荣淑、张俊宏、谢长廷、吴德美、蒋经国等构成本书主要政治关系网络。
+- 关系主题覆盖党外路线分化、公政会名器与分会争议、党主席/派系斗争、康系与前进系、言论官司、选举与党纪处分、媚骨/无知/迷信批评、街头暴力与口水事件。
+
+验证
+- python -B -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 通过，仅提示若 Git 触碰相关文件会做 LF/CRLF 转换。
+- closeout 正式回流护栏：formal_books=133；has_minjindang_bookrow=True；has_minjindang_path=True；missing=0；duplicates=0；argv_has_all=False。
+
+下一书
+- 《白色恐怖述奇》（014.台湾史政类/005.白色恐怖述奇）。

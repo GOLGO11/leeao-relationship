@@ -1,0 +1,33 @@
+《民进党研究》round3：党纪处分、黑名单、媚骨、无知迷信与口水问题补网
+
+本轮范围
+- 延续 round2 后半本建议，重点覆盖 024《真是蠢极了！》、029《砸报馆与打记者》、033《民进党与“黑名单”》、038《如此公开信》、039《如此党主席》、042《民进党的媚骨》、046《为民进党的无知抽样》、048《民进党的声明战》、054《为民进党的迷信抽样》、057《民进党的口水问题》。
+
+补网内容
+- 新增/确认身份端点：林纯子、庄姬美、朱星羽、康水木、蓝美津、徐明德、陈胜宏、王昆和、王兆钏、郭吉仁、刘秀达、龚德柏、张发奎、薛岳、李宪荣、叶琼姿、罗益世、武炳炎、高育仁、黄镇岳、余玲雅、陈金德、蔡介雄、朱高见、邱垂贞、余陈月瑛、黄余绣鸾、冯妇、何春木、洪照男、蔡仁坚、萧裕珍、黄木添、黄铃雄、何适、林联辉、黄河清、谢美美。
+- 新增原文短语锚点，覆盖监委罢选处分名单、林文郎批吴乃仁、郭吉仁与康宁祥律师线、龚德柏《救国日报》与张发奎/薛岳砸报馆对照、黑名单游行、林正杰公开信、周清玉投蒋经国票、蒋经国连任劝进与身后反应、康宁祥/段剑岷无知抽样、林正杰冯妇/冯道误认、许荣淑铁三角发誓、深耕周刊名誉顾问、林正杰龙山寺活动、蔡仁坚换座位、口水问题与谢美美目击投书。
+- 手工人物关系边由 71 条增至 142 条，新增 71 条，主要补上党纪处分、报馆暴力史例、黑名单返乡游行、主席公开信、党主席家属与投票、媚骨名单、无知抽样、迷信抽样、口水攻势中的人物关系。
+
+单书复验
+- round3 前单书基线：258 people / 1 book / 61 chapters / 71 book-specific manual relations。
+- round3 后单书输出：275 people / 1 book / 61 chapters / 142 book-specific manual relations。
+- 抽查新增端点：林纯子、徐明德、陈胜宏、王昆和、王兆钏、郭吉仁、余玲雅、朱高见、黄余绣鸾、冯妇、何春木、洪照男、黄木添、黄铃雄、何适、林联辉、谢美美、萧裕珍均在单书临时分片中检出。
+- 单书尾部复核未发现需要新增到 BOOK_SKIP_NAMES 的明显残片。
+
+正式回流
+- 使用当前总库 133 本书目生成显式重复 --book-path 参数；未使用 --all。
+- 回流护栏输出：formal_books=133；has_minjindang_bookrow=True；has_minjindang_path=True；missing=0；duplicates=0；argv_has_all=False。
+- 正式输出：14279 people / 133 books / 7228 chapters / 5826 personRelations。
+- 分片：6 个 people-part 文件，shard_sum=14279。
+- 《民进党研究》正式切片：61 chapters / 349 people / 142 book-specific manual relations。
+- 导出检查：exports/by-book-index.txt 显示《民进党研究》｜台湾史政类｜章节 61｜人物 349；TXT 中本书相关行 778；CSV 中本书相关行 153；TXT 可检出林纯子、郭吉仁、谢美美、何适等 round3 端点。
+
+验证
+- python -B -m py_compile scripts/extract_relationships.py 通过。
+- node --check data/relationship-data.js 通过。
+- node --check assets/app.js 通过。
+- git diff --check 仅报告既有 CRLF 提示，无空白错误。
+- 正式回流后按 people-part 分片用 topBooks 复查低频端点，林纯子、郭吉仁、黄余绣鸾、冯妇、何适、林联辉、谢美美、萧裕珍、王昆和、朱高见均挂入《民进党研究》。
+
+建议下一轮
+- 进入本书 closeout：做正式尾部再审、关系边重复/过密检查、书内低频残片清理、by-book/export 对齐验证，并写《民进党研究》closeout note。
