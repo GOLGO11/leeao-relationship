@@ -1,0 +1,50 @@
+《洗你的脑，掐他脖子》closeout
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\014.台湾史政类\009.洗你的脑，掐他脖子
+- 章节数：11
+- 本书 round1、round2、round3 与 closeout 均沿用显式 --book-path 工作流；未使用 --all。
+
+closeout 审计
+- 重新以单书显式 --book-path 构建临时输出：`done: 165 people, 1 books, 11 chapters`。
+- closeout 前最新正式状态来自 round3 显式 138 本书回流：`14711 people / 138 books / 7340 chapters / 34270 identityLinks / 6573 personRelations`；本书书卡为章节 11、人物 211。
+- 关系边一致性检查：脚本中《洗你的脑，掐他脖子》人工关系 77 条；临时输出 77 条；正式输出 77 条；missing 0，extra 0，duplicates 0。
+- 单书低频尾部审计确认 `能够使` 为普通动词短语误切，不应作为人物端点。
+- closeout 将 `能够使` 加入本书 BOOK_SKIP_NAMES 后，重新单书构建：`done: 164 people, 1 books, 11 chapters`；该误切片段已从单书分片中消失。
+- closeout 后以当前 138 本正式书单重新生成 138 个显式 --book-path 参数回流正式 data / exports；missing 0，argv_has_all=False。
+- closeout 后正式全分片复核未再见 `能够使`。
+
+最终正式状态
+- 全库：`14710 people / 138 books / 7340 chapters / 34268 identityLinks / 6573 personRelations`。
+- 分片：7 个 `people-part-*.json` 文件，`shard_sum=14710`。
+- `data/people.json`：6,550,226 bytes；继续保持索引化，未回到 50MB 以上。
+- `data/relationship-data.js`：22,565,914 bytes。
+- 导出：`exports/by-book-index.txt` 133,961 bytes；`exports/li-ao-relationships.csv` 2,720,059 bytes，14,711 行含表头；`exports/li-ao-relationships.txt` 31,510,351 bytes，103,545 行。
+- 《洗你的脑，掐他脖子》正式书卡：《洗你的脑，掐他脖子》｜台湾史政类｜章节 11｜人物 210。
+- 本书人工关系：77 条；TXT 中以本书为前缀的关系边行 77 条。
+- closeout 护栏：formal_books=138，resolved_paths=138，missing=0，argv_has_all=False。
+
+三轮摘要
+- round1：补新党总统提名、宋楚瑜与连战拉扯、郁慕明/赵少康拥连、党产清查、台大司法改革访谈、一国两制与党外旧线端点。
+- round2：补美丽岛二十周年媒体生态、李远哲教改、一国两制正解、中英中美会谈、徐家父子证人、民进党县政与琼瑶/三毛阅读支线。
+- round3：补庄淇铭《台湾总统》与 1996 新党旧选战、林陈配/林郝配/林王配、杨澜访谈文学与历史典故、台大演讲低频人物。
+
+核心网络
+- 李庆华、王建煊、宋楚瑜、连战、郁慕明、赵少康、陈履安、林洋港构成本书新党提名与 1996/2000 总统选战网络。
+- 李登辉、陈水扁、刘国基、王晓波、汪道涵、江泽民、克林顿构成台湾定位、一国两制与两岸论辩网络。
+- 邓小平、叶剑英、希思、卡特、里根、撒切尔夫人构成一国两制政策形成与中英中美会谈网络。
+- 庄万寿、张作锦、王又曾、汪敬煦、林正杰、朱高正、蔡仁坚构成美丽岛事件纪念、媒体报道和党外政治评价网络。
+- 李远哲、陈培堃、连战、沈刚伯、陈维昭、马英九、许水德构成教改、台大演讲与台大校政批评网络。
+- 杨澜、胡茵梦、鲁迅、周作人、胡适、陈独秀、杰斐逊、林肯、贞德、毛泽东、彭玉麟、塞缪尔·约翰逊、亚历山大大帝、戴奥真尼斯构成访谈、文学风格与历史典故网络。
+- 徐渊涛、徐庆钟、李登辉、陈水扁、尤清、琼瑶、三毛构成证人揭露、县政贪污风评和爱情/阅读批评支线。
+
+验证
+- `python -m py_compile scripts/extract_relationships.py` 通过。
+- `node --check data/relationship-data.js` 通过。
+- `node --check assets/app.js` 通过。
+- `relationship-data.js` 通过 Node vm 执行并确认：people=14710，books=138，chapters=7340，identityLinks=34268，relations=6573，targetRelations=77，targetBook.people=210。
+- `git diff --check` 通过，仅提示若 Git 触碰相关文件会做 LF/CRLF 转换。
+- `exports/by-book-index.txt`、`data/people.json`、`data/relationship-data.js` 与 `exports/li-ao-relationships.txt` 中的本书人物数/关系数一致。
+
+下一步
+- 本书可关闭。下一轮等待用户指定下一本或转入下一分类，继续保持显式 --book-path，不使用 --all。

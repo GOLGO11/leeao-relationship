@@ -1,0 +1,71 @@
+《洗你的脑，掐他脖子》round3：新党旧选战杨澜访谈台大演讲补网
+
+时间：2026-07-02
+
+本轮定位
+- 续接 round2 的下一轮，仍只处理本书，不使用 --all。
+- 源目录：《大李敖全集5.0》（wjm_tcy版）分章节/014.台湾史政类/009.洗你的脑，掐他脖子
+- 章节数：11
+
+脚本补强
+- 在 PERSON_RELATIONS 中为本书新增 23 条人工关系。
+- 在人物身份补丁中新增：
+  - 庄淇铭：source_author / academic / public_debate
+  - 塞缪尔·约翰逊：source_author / academic / historical_allusion
+- 在 BOOK_PHRASE_PEOPLE 中新增本书短语锚点：
+  - “庄淇铭等写的《台湾总统》” -> 庄淇铭
+  - “林陈配” -> 林洋港、陈履安
+  - “林郝配” -> 林洋港、郝柏村
+  - “林王配” -> 林洋港、王建煊
+  - “约翰逊出来，他花了八年时间编了字典” -> 塞缪尔·约翰逊
+  - “亚历山大大帝去看哲学家狄亚杰尼斯” -> 亚历山大大帝、戴奥真尼斯
+  - “如果我不是皇帝，我希望我是狄亚杰尼斯” -> 亚历山大大帝、戴奥真尼斯
+
+新增关系范围
+- 庄淇铭《台湾总统》与 1996 新党总统提名旧材料：陈履安退党参选压力、王建煊紧急提名、李庆华/陈癸淼/赵少康七人小组会商线。
+- 林洋港相关组合：林陈配、林郝配、林王配，以及与宋楚瑜声势对照。
+- 杨澜访谈中的文学与思想人物引用：鲁迅/周作人、胡适/陈独秀/鲁迅文章风格并举，杨澜追问胡茵梦伪证。
+- 访谈典故链：杰斐逊/林肯家庭痛苦，贞德/毛泽东/彭玉麟斗争与大爱，塞缪尔·约翰逊编字典，亚历山大大帝/戴奥真尼斯“不要挡住阳光”。
+- 台大演讲支线：李远哲逃避兵役与沈刚伯口试，沈刚伯/陈维昭校政批评线，马英九/许水德《甜蜜的十一月》外貌比喻。
+
+临时单书验证
+- round3 前基线：159 people / 1 book / 11 chapters，personRelations 398。
+- round3 后单书：165 people / 1 book / 11 chapters，personRelations 434。
+- 新增端点检查：庄淇铭、林洋港、郝柏村、塞缪尔·约翰逊、亚历山大大帝、戴奥真尼斯、许水德均进入人物表。
+- 23 组新增人工边逐对核查均命中。
+
+正式重建
+- 使用当前 data/people.json 中记录的 138 本书生成 138 个显式 --book-path 参数。
+- 未使用 --all。
+- 正式输出：
+  - people: 14711
+  - books: 138
+  - chapters: 7340
+  - identityLinks: 34270
+  - personRelations: 6573
+- 对照 round2 正式结果：personRelations 6550 -> 6573，正好增加 23 条。
+- 目标书正式索引：《洗你的脑，掐他脖子》人物 211。
+- 目标书正式人工关系：77 条。
+
+文件与导出检查
+- data/people.json：6,550,511 bytes。
+- data/people-part-001.json 到 people-part-007.json 保持分片结构。
+- data/relationship-data.js：22,567,597 bytes。
+- exports/li-ao-relationships.csv：14,712 行（含表头）。
+- exports/li-ao-relationships.txt 已包含本书 77 条人工关系。
+
+校验命令
+- python -m py_compile scripts/extract_relationships.py
+- 单书临时构建 .tmp-xinide-round3-data1 / .tmp-xinide-round3-exports1
+- 正式显式 138 个 --book-path 重建 data / exports
+- relationship-data.js 通过 Node vm 执行并确认：
+  - people=14711
+  - books=138
+  - relations=6573
+  - targetRelations=77
+- assets/app.js 通过 Node vm.Script 语法检查。
+- git diff --check：仅显示 LF/CRLF warning，无空白错误。
+
+下一轮建议
+- 本书已经完成三轮补网，建议进入 closeout。
+- closeout 时重点核查：本书 11 章覆盖是否均衡、by-book-index 目标行与导出 TXT/CSV 是否一致、round1-round3 新增 77 条人工关系是否全部留在正式数据中。

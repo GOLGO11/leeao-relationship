@@ -1,0 +1,69 @@
+《洗你的脑，掐他脖子》round2：美丽岛教改一国两制徐家证人补网
+
+时间：2026-07-02
+
+本轮定位
+- 续接 round1 后进入第二轮，仍只处理本书，不使用 --all。
+- 源目录：《大李敖全集5.0》（wjm_tcy版）分章节/014.台湾史政类/009.洗你的脑，掐他脖子
+- 章节数：11
+
+脚本补强
+- 在 PERSON_RELATIONS 中为本书新增 23 条人工关系。
+- 在 BOOK_PHRASE_PEOPLE 中新增本书短语锚点：
+  - “英国前首相希思（奚斯）” -> 希思
+- 目的：补回单书基线漏掉的希思端点，使邓小平一国两制会谈链闭合。
+
+新增关系范围
+- 李登辉/司马辽太郎：《台湾的主张》与“台湾人的悲哀/幸福”论述。
+- 庄万寿/王又曾/张作锦/李登辉/汪敬煦：美丽岛二十周年媒体生态、捐款慰问、李登辉率团到警总致敬支线。
+- 陈培堃/李远哲/连战：天文读物教育例子、李远哲教改会、连战十二年国教对照。
+- 李炳南/唐树备/钱其琛：一个中国正解、六个注意、钱其琛外交口径证据链。
+- 刘国基/苏起/汪道涵/克林顿/李登辉/江泽民：一国两制问答、陆委会说法、汪道涵反问、克林顿新三不与两国论反证、李登辉问江泽民台湾定位。
+- 邓小平/希思/卡特/里根：一国两制系列中英、中美会谈端点。
+- 徐渊涛/徐庆钟/李登辉：徐家父子证人、《替李登辉卸妆》与李登辉恩师线。
+- 陈水扁/尤清：民进党县政贪污风评与清查党产承诺对照。
+- 琼瑶/三毛：台大演讲阅读对象与爱情观批评。
+
+临时单书验证
+- round2 前基线：158 people / 1 book / 11 chapters，personRelations 374。
+- round2 后单书：159 people / 1 book / 11 chapters，personRelations 398。
+- 新增端点检查：希思进入人物表，occurrences=1。
+- 23 组新增人工边逐对核查均命中。
+
+正式重建
+- 使用当前 data/people.json 中记录的 138 本书生成 138 个显式 --book-path 参数。
+- 未使用 --all。
+- 正式输出：
+  - people: 14710
+  - books: 138
+  - chapters: 7340
+  - identityLinks: 34266
+  - personRelations: 6550
+- 对照 round1 正式结果：personRelations 6527 -> 6550，正好增加 23 条。
+- 目标书正式索引：《洗你的脑，掐他脖子》人物 206。
+- 目标书正式人工关系：54 条。
+
+文件与导出检查
+- data/people.json：6,542,772 bytes。
+- data/people-part-001.json 到 people-part-007.json 保持分片结构。
+- data/relationship-data.js：22,557,784 bytes。
+- exports/li-ao-relationships.csv：14,711 行（含表头）。
+- exports/li-ao-relationships.txt 已包含本书 54 条人工关系。
+
+校验命令
+- python -m py_compile scripts/extract_relationships.py
+- 单书临时构建 .tmp-xinide-round2-data1 / .tmp-xinide-round2-exports1
+- 正式显式 138 个 --book-path 重建 data / exports
+- relationship-data.js 通过 Node vm 执行并确认：
+  - people=14710
+  - books=138
+  - relations=6550
+  - targetRelations=54
+- assets/app.js 通过 Node vm.Script 语法检查。
+- git diff --check：仅显示既有 LF/CRLF warning，无空白错误。
+
+下一轮建议
+- round3 可继续补 001 和 003 中的低频访谈/引用端点：
+  - 杨澜访谈中的胡适、陈独秀、周作人、圣女贞德、毛泽东等引用关系是否需要转化为人物边。
+  - 001 中庄淇铭《台湾总统》、陈履安、陈癸淼、林陈配/林张配/林郝配等新党选战旧材料是否值得补强。
+  - 007 台大演讲中的沈刚伯、胡茵梦、马英九、林肯家庭典故等是否需要保留为关系边。
