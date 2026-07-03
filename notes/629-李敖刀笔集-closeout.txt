@@ -1,0 +1,55 @@
+《李敖刀笔集》closeout
+日期：2026-07-03
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\015.雷霆法律类\002.李敖刀笔集
+- 章节数：26
+- 本书 round1、round2、round3 与 closeout 均沿用单书临时核验 + 显式 --book-path 正式回流流程；未使用 --all。
+
+closeout 审计
+- closeout 前最新正式状态来自 round3 的 140 个显式 --book-path 回流；round3 命令内检为 argv_has_all False。
+- closeout 先用只读审计脚本复用当前 140 本显式书单和抽取逻辑，在内存中还原完整书内人物列表；该审计不写 data / exports，审计内检为 audit_books 140、audit_files 7383、audit_has_all_arg False。
+- 完整尾部审计发现 9 个由正式全库信号带入《李敖刀笔集》的非人物残片：严重损、从英国、向往、施行、曾几何、祖国、花乱坠、解决问、闻媒体。
+- 已将上述 9 项加入 BOOK_SKIP_NAMES["李敖刀笔集"]，并重新运行单书临时输出与正式显式书单回流。
+- closeout 单书临时输出：169 people / 1 book / 26 chapters。
+- closeout 正式回流使用 140 个显式 --book-path，确认 formal_books 140、resolved_paths 140、argv_has_all False、target_added True。
+- 正式回流后，《李敖刀笔集》书卡从 round3 的 178 people 降至 169 people，100 条目标书关系完整保留，重复关系 0。
+
+最终正式状态
+- 全库：14754 people / 140 books / 7383 chapters / 34366 identityLinks / 6738 personRelations。
+- 分片：7 个 people-part-*.json 文件，shard_sum=14754。
+  - people-part-001.json：1251，8,385,389 bytes
+  - people-part-002.json：1322，8,385,359 bytes
+  - people-part-003.json：1422，8,388,338 bytes
+  - people-part-004.json：1841，8,386,251 bytes
+  - people-part-005.json：3044，8,388,116 bytes
+  - people-part-006.json：5480，8,388,569 bytes
+  - people-part-007.json：394，527,456 bytes
+- data/people.json：6,621,181 bytes，继续保持索引化主文件，未回到 50MB 以上。
+- data/relationship-data.js：22,691,079 bytes。
+- 导出：exports/by-book-index.txt 135,911 bytes；exports/li-ao-relationships.csv 2,730,302 bytes；exports/li-ao-relationships.txt 31,648,649 bytes。
+- 《李敖刀笔集》正式书卡：《李敖刀笔集》｜雷霆法律类｜章节 26｜人物 169。
+- 本书人工关系：100 条；relationship-data.js 运行时载入后同为 targetRelations=100。
+
+三轮摘要
+- round1：进入本书，补徐复观/洪炎秋案、萧孟能水晶大厦与发监执行线、胡茵梦天母静庐/离婚协议线、《自由时报》及台北市府处分线；正式推进到 161 人、30 条关系。
+- round2：补低频司法端点与媒体/评议会支线，包括郑学通、廖茂荣/钱通/郑汉龙、陈涵/陈博享/黄良国、黄秀得/翁其荣/徐元庆/陈成泉、潘焕昆及新闻评议会委员、胡慧玲/曾心仪等；正式推进到 168 人、70 条关系。
+- round3：补尾部司法/行政支线，包括徐复观旧诽谤案端点、台中高分院裁定、妨害公务起诉/判决链、萧孟能案最高法院发回更审与高院更审链、水晶大厦授权支线、八十年代发行人责任、台北市新闻处处分链；正式推进到 178 人、100 条关系。
+- closeout：完整尾部审计清理 9 个正式回流残片，最终收束为 169 人、100 条关系。
+
+核心网络
+- 徐复观、洪炎秋、余纪忠、孙嘉禄、郑学通、郑红、廖维辉等构成本书“小疯狗”与妨害名誉案司法主线。
+- 萧孟能、张桂贞、李放、刘会云、朱婉坚、童有德、廖茂荣、张承韬、杨力行等构成水晶大厦、诬告、发回更审和执行追责主轴。
+- 胡茵梦、王剑芬、孟祥柯、段宏俊构成天母静庐信托与离婚协议见证支线。
+- 吴阿明、颜文闩、李焕、路国华、潘香凝、吴伯雄、唐启明、潘焕昆及新闻评议会委员构成《自由时报》报道、更正、评议会裁定和市府处分网络。
+- 康宁祥、康文雄、唐启明、赵鹏科、邵玉铭构成出版法、发行人责任和新闻行政处分支线。
+
+验证
+- scripts/extract_relationships.py 源码 compile 通过。
+- data/relationship-data.js：node --check 通过；Node vm 运行时载入通过，people=14754，books=140，chapters=7383，identityLinks=34366，personRelations=6738，targetPeople=169，targetRelations=100。
+- assets/app.js：node --check 通过。
+- git diff --check 通过，仅提示若 Git 触碰相关文件会做 LF/CRLF 转换。
+- exports/by-book-index.txt、data/people.json、data/relationship-data.js 与本书关系数复核一致。
+
+下一步
+- 本书可关闭。下一轮进入用户指定的新书，继续保持显式 --book-path 工作流，不使用 --all。

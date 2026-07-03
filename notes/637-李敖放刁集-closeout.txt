@@ -1,0 +1,58 @@
+《李敖放刁集》closeout
+日期：2026-07-03
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\015.雷霆法律类\004.李敖放刁集
+- 章节数：23
+- 本书 round1、round2、round3 与 closeout 均沿用单书临时核验 + 显式 --book-path 正式回流流程；未使用 --all。
+
+closeout 审计
+- closeout 前最新正式状态来自 round3 的 142 个显式 --book-path 回流；round3 命令内检为 argv_has_all False。
+- closeout 先用只读审计脚本复用当前 142 本显式书单和抽取逻辑，在内存中还原完整书内人物列表；该审计不写 data / exports，审计内检为 audit_books 142、audit_files 7439、audit_has_all_arg False。
+- 完整尾部审计发现 22 个由正式全库信号带入《李敖放刁集》的非人物残片：万八千、于任何、却忽略、史地位、广播电、张冠李、怀疑有、成立之、房地产、施行、相当、能成立、能有、能脱身、能避免、莫须有、罗生门、诸法律、都很清、闻媒体、陆沦陷、陈义仁。
+- 已将上述 22 项加入 BOOK_SKIP_NAMES["李敖放刁集"]，并重新运行单书临时输出与正式显式书单回流。
+- closeout 单书临时输出：177 people / 1 book / 23 chapters；126 条目标书人工关系完整保留，missing=0。
+- closeout 正式回流使用 142 个显式 --book-path，确认 formal_books 142、resolved_paths 142、missing_count 0、argv_has_all False。
+- 正式回流后，《李敖放刁集》书卡从 round3 的 199 people 降至 177 people，126 条目标书关系完整保留，重复关系 0。
+- 回流后只读复核：audit_kept_people 14841，audit_target_people_all 177；隐藏尾部保留项均为真实人物、读者/证人、学术/政治人物或明确典故节点，如伊索、余光中、关公、吴树立、宋子文、张国杰、曾纪泽、李鼎彝、王荣文、董狐、邱南英、陈义仁（求是报读者）、高宪昆、麦光珪、任之恭、刘子健、庄铭山、徐芸书、许丽香、钟文清、黄秀里等。
+
+最终正式状态
+- 全库：14841 people / 142 books / 7439 chapters / 34564 identityLinks / 6985 personRelations。
+- 分片：7 个 people-part-*.json 文件，shard_sum=14841。
+  - people-part-001.json：8,385,012 bytes
+  - people-part-002.json：8,387,448 bytes
+  - people-part-003.json：8,386,366 bytes
+  - people-part-004.json：8,388,518 bytes
+  - people-part-005.json：8,388,590 bytes
+  - people-part-006.json：8,388,508 bytes
+  - people-part-007.json：939,217 bytes
+- data/people.json：6,725,556 bytes，继续保持索引化主文件，未回到 50MB 以上。
+- data/relationship-data.js：22,905,866 bytes。
+- 导出：exports/by-book-index.txt 137,889 bytes；exports/li-ao-relationships.csv 2,749,138 bytes；exports/li-ao-relationships.txt 31,903,761 bytes。
+- 《李敖放刁集》正式书卡：《李敖放刁集》｜雷霆法律类｜章节 23｜人物 177。
+- 本书人工关系：126 条；exports/li-ao-relationships.txt 中本书关系行数同为 126。
+
+三轮摘要
+- round1：进入本书，补台中扣书国赔案、《秋海棠》诽谤案、《自立晚报》广告诽谤案、《孙中山研究》查禁案、王世杰/中研院案、《求是报》股东案、秦孝仪/故宫墨宝案、王令麟/东森答辩案；正式推进到 182 人、57 条关系。
+- round2：补出版法/刑法权威引证、四季出版社证人、王世杰日记与史语所旧事、《求是报》账务证据、秦孝仪案媒体报导、东森答辩状广告业务责任；正式推进到 189 人、100 条关系。
+- round3：补台中扣书户籍、王世杰日记南港名单与被骂院士名单、王世杰家族公款线、《求是报》读者/订户来件、秦孝仪案立委质询和不起诉处分书证据链；正式推进到 199 人、126 条关系。
+- closeout：完整尾部审计清理 22 个正式回流残片，最终收束为 177 人、126 条关系。
+
+核心网络
+- 张桂贞、张子源、孟启正、杨三共、陈松碧、黄秀得、翁其荣、徐元庆、陈成泉、张坤山、王永城等构成本书台中扣书国赔案主线。
+- 郁慕明、赵宁、杨商江、张诗源、吕光（传播法教授）、苏蘅、李瞻、赵琛、林山田、蔡墩铭等构成出版法、刑法、传播法和查禁处分引证网络。
+- 孙中山、唐启明、赵鹏科、陈朴生、孙德耕、梁恒昌等构成《孙中山研究》查禁与出版行政争议线。
+- 王世杰、李济、吴大猷、蒋廷黻、张玉法、王纪五、姚从吾、黄彰健、陈槃安、徐芸书、刘世超、芮逸夫、刘子健、何炳棣、赵元任、杨振宁、陈省身、牛满江、张捷迁、任之恭等构成王世杰日记、中研院与史语所争议网络。
+- 周孟禄、伍振环、吴丽玲、许能钦、段宏俊、胡基峻、吕佳真、詹赐珠、陈丽珠、万美华、林贝玑、庄铭山、刘志强、黄秀里、萧天赞、方在德、李贤雄、许丽香、陈义仁（求是报读者）、钟文清、高长云、韩铁林等构成《求是报》股东、账务、读者和订户证据网络。
+- 秦孝仪、陈明、任鸣钜、戴章甫、陈兆基、杨西崑、刘瑞生、李建忠、颜锦福、李庆华、陈重光、庄正彦、李四端等构成故宫墨宝、周越跋王著千文、立委质询、检察处分和媒体报导证据链。
+- 王令麟、汤达仁、吴晚成、朱梅芳、王又曾等构成东森答辩状、广告业务责任和媒体报道支线。
+
+验证
+- scripts/extract_relationships.py 源码 compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- git diff --check 通过，仅提示若 Git 触碰相关文件会做 LF/CRLF 转换。
+- data/people.json totals、people-part-*.json 分片合计、exports/by-book-index.txt、exports/li-ao-relationships.txt 与本书关系数复核一致。
+
+下一步
+- 本书可关闭。下一轮进入用户指定的新书，继续保持显式 --book-path 工作流，不使用 --all。

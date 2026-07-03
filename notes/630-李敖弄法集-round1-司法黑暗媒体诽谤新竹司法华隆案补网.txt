@@ -1,0 +1,67 @@
+《李敖弄法集》round1 补网记录
+
+时间：2026-07-03
+
+一、本轮范围
+
+- 进入新书《李敖弄法集》，源目录为：
+  《大李敖全集5.0》（wjm_tcy版）分章节/015.雷霆法律类/003.李敖弄法集
+- 单书基线使用显式 --book-path，未使用 --all。
+- 单书基线：257 people / 1 book / 33 chapters / 0 target manual relations。
+- 第一轮重点补：
+  - 《一个联合造成的冤狱》：张迺良、萧孟能、罗小如、马淑芬等文星版权/背信案端点。
+  - 《他们看司法黑暗》《论石田公二事件》《吕玉介是公正的吗？》：司法黑暗例证、石田公二/陈茂松外币案、黄少谷/李元簇司法法务责任链。
+  - 《不准结婚准离婚》《张温鹰的怪例》：在押结婚、公证处、政治离婚怪例。
+  - 《“狗咬狗”的法定境界》《致监察院书状》《张镜湖启事的启示》：黄河杂志、自立晚报、自由台湾周刊、时报周刊诽谤案端点。
+  - 《林洋港的失态》《高新武还有待正心诚意》《司法现形记》：林洋港介入朱高正案、王作荣/高新武争论、新竹地院检推作秀与内部揭发。
+  - 《他们为什么有去无回？》《只起诉了一半，“恰似你的温柔！”》：王迎先警局死亡案、华隆案许阿桂/刘景义/李许月娥支线。
+
+二、脚本改动
+
+- 新增《李敖弄法集》手工关系 42 条。
+- 新增本书 round1 CURATED_IDENTITIES：
+  张迺良、罗小如、马淑芬、石田公二、陈茂松、吕玉介、陈有政、黄素玖、张玉祥、汪培松、张温鹰、黄国庆、彭振刚、郑贞铭、赖玉山、于模珉、薛松雨、刘士元、薛尔毅、高新武、尤英夫、谢启大、林朝荣、陈金宝、刘学魁、林永鸿、刘景义、李许月娥。
+- 新增 BOOK_PHRASE_PEOPLE["李敖弄法集"]，锚定司法文书、媒体诽谤案、新竹司法秀、华隆案中的低频端点。
+- 新增 BOOK_SKIP_NAMES["李敖弄法集"]：
+  首轮压掉司法黑、管制办、查庭、公开表、安处分、公证、时报周、全无、易科罚、国宴、施仁、于众、温柔等明显非人物残片；
+  正式库回流后又压掉司法独、段文字、明文规、闻媒体。
+- 新增本书专用 canonical_name：
+  - 石田公 -> 石田公二
+  - 王老师 -> 王作荣
+
+三、验证结果
+
+- 单书复验：224 people / 1 book / 33 chapters / 42 target relations。
+- 正式重建使用当前正式书单加本书的显式 repeated --book-path：
+  - 第一次正式加入本书：formal_books 141 / resolved_paths 141 / target_added True / argv_has_all False
+  - 回流碎片清理后第二次正式重建：formal_books 141 / resolved_paths 141 / target_added False / argv_has_all False
+- 正式库最终总计：
+  14839 people / 141 books / 7416 chapters / 34516 identityLinks / 6780 personRelations
+- 《李敖弄法集》正式书卡：
+  33 chapters / 325 people / 42 relations
+- 本书关系重复检查：0 duplicates。
+- 关键归并检查：
+  - 石田公二 target_count 29；石田公 target_count 0
+  - 王作荣 target_count 35；王老师 target_count 0
+  - 司法独、段文字、明文规、闻媒体 target_count 均为 0
+- data/people.json：6655502 bytes，仍为小 manifest + people-part 分片。
+- 导出文件大小：
+  - data/relationship-data.js：22831570 bytes
+  - exports/by-book-index.txt：136883 bytes
+  - exports/li-ao-relationships.csv：2748029 bytes
+  - exports/li-ao-relationships.txt：31798859 bytes
+- 轻量检查：
+  - python -m py_compile scripts/extract_relationships.py：ok
+  - node --check data/relationship-data.js：ok
+  - node --check assets/app.js：ok
+  - git diff --check：仅 LF/CRLF warning，无内容格式错误
+
+四、下一轮建议
+
+下一轮建议继续《李敖弄法集》round2，重点补尾部和未覆盖支线：
+
+- 《林贤顺案的笔迹对比》：林贤顺、刑事警察局笔迹鉴定、萧孟能/李放/林晃/黄剑青/顾锦才的笔迹与诬告案对照。
+- 《李光耀又告诽谤赞》：李光耀、远东经济评论、撰述/主笔、海峡时报印刷厂、夏万星等诽谤诉讼端点。
+- 《所谓〈台湾地区戒严时期出版物管制办法〉》《〈求是报〉社致新闻局长邵玉铭函》：国防部/新闻局出版物管制、邵玉铭、扫黄执法差别待遇。
+- 《黑牛案案里案外》《国民党如何跑了犯人也跑了法律》：黑牛案、苏秋镇、许信良、施启扬等通缉/国安法支线。
+- 《只起诉了一半，“恰似你的温柔！”》深挖华隆案：游显德、张家宜、翁大铭、李秀芬、翁有铭、姜文锱等财团/检方处理链。

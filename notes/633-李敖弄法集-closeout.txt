@@ -1,0 +1,26 @@
+《李敖弄法集》closeout 记录
+
+最终状态：
+- 本书正式归档完成。
+- 正式库中《李敖弄法集》：chapters 33，personCount 249，personRelations 121。
+- exports/by-book-index.txt 确认：《李敖弄法集》｜雷霆法律类｜章节 33｜人物 249。
+- exports/li-ao-relationships.txt 中本书关系导出行数：121。
+- 正式库总量：14799 people，141 books，7416 chapters。
+
+closeout 尾审：
+- 已对正式库回流后的本书低频尾部节点做审计。
+- 保留低频真名和明确典故节点，如叶姓少年、建文帝、惹耶勒南、明太祖、黄鸿寓、佛朗哥狄斯托、爱云芬芝、鹰哥摩圣诺、黄冠豪、何铸、周三畏、宋高宗、李若朴、何彦猷、赖忠星等。
+- 清理确认不是人物的残片/泛称：那么听、雷震搞、孟子曰、能够明、闻所未、时通知、能使人、都充分、林院长、台南人、文程度、单方面、施行。
+
+重建与验证：
+- 单书 closeout 临时构建使用显式 --book-path，argv_has_all False。
+- 单书临时构建结果：208 people，1 book，33 chapters，121 relations。
+- 单书残片复核：上述 closeout 残片均不再进入本书 book people。
+- 单书关键边保留：赖忠星-吴天惠、陶百川-张群、蒋经国-司徒雷登、岳飞-何铸。
+- 正式库重建使用 data/people.json 中 141 本书逐本显式 --book-path，argv_has_all False；未使用 --all。
+- 正式库关键边保留：赖忠星-吴天惠、陶百川-张群、蒋经国-司徒雷登、岳飞-何铸。
+- 正式分片复核：closeout 残片均不再归入《李敖弄法集》目标节点。
+- 通过：python -m py_compile scripts/extract_relationships.py（内置 Python）。
+- 通过：node --check data/relationship-data.js（内置 Node）。
+- 通过：node --check assets/app.js（内置 Node）。
+- 通过：git diff --check（仅 LF/CRLF 提示，无 whitespace error）。

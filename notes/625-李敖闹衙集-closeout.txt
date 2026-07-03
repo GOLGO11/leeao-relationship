@@ -1,0 +1,51 @@
+《李敖闹衙集》closeout
+日期：2026-07-03
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\015.雷霆法律类\001.李敖闹衙集
+- 章节数：17
+- 本书 round1、round2、round3 均沿用单书临时核验 + 显式 --book-path 正式回流流程；未使用 --all。
+
+closeout 审计
+- closeout 前最新正式状态来自 round3 的 139 个显式 --book-path 回流；round3 命令内检为 cmd_has_all False。
+- closeout 仅做尾部审计、正式产物复核和记录归档；未新增脚本或数据规则，因此未再次重建正式 data / exports。
+- 本书尾部低频节点逐项复核后均可解释为真实节点或可保留互动节点：邓维桢、连战、黄玉娇、朱抚松、孙慧珍、许水德、李宜琛、墨文藻、侯家国。
+- 既往疑似误切/非本书节点未留在本书正式索引中：朱汇森、竺道生、王云五、刘代书、陈经理；早前片段类误切如房地产、台币、台端、金衙亦未在本书正式列表中。
+- 关系边一致性：本书正式 personRelations 为 65 条，重复 0；relationship-data.js 运行时载入后同为 targetRelations=65。
+
+最终正式状态
+- 全库：14732 people / 139 books / 7357 chapters / 34320 identityLinks / 6638 personRelations。
+- 分片：7 个 people-part-*.json 文件，shard_sum=14732。
+  - people-part-001.json：1252
+  - people-part-002.json：1323
+  - people-part-003.json：1423
+  - people-part-004.json：1851
+  - people-part-005.json：3066
+  - people-part-006.json：5481
+  - people-part-007.json：336
+- data/people.json：6,580,482 bytes，继续保持索引化主文件，未回到 50MB 以上。
+- 导出：exports/by-book-index.txt 134,943 bytes；exports/li-ao-relationships.csv 2,724,870 bytes；exports/li-ao-relationships.txt 31,580,368 bytes。
+- 《李敖闹衙集》正式书卡：《李敖闹衙集》｜雷霆法律类｜章节 17｜人物 71。
+- 本书人工关系：65 条；TXT 中本书相关标记行 188。
+
+三轮摘要
+- round1：聚焦国家赔偿、查禁、保险法、萧孟能/萧同兹/朱婉坚水晶大厦债务、国防部福利总处、行政院押租与江鹏坚质询线；从单书初筛噪声中清理到正式 64 人、28 条关系。
+- round2：补稳水晶大厦保证人和低频端点，包括张熹、何蓓芳、辜伟甫、姚王椀、汪慧云、黄武弘、墨文藻、林宝山、朱抚松、林纪东、陈棋炎等；正式推进到 69 人、56 条关系。
+- round3：补行政法引证链和高雄国家赔偿协议线，包括美浓部达吉、田中二郎、吴祺芳-侯家国、苏荣泉-陈冲等；正式推进到 71 人、65 条关系。
+
+核心网络
+- 萧孟能、萧同兹、朱婉坚构成本书水晶大厦、债务、保证人、查封和诉讼主轴。
+- 吴祺芳、江鹏坚、国防部福利总处、行政院、台北地方法院相关人物构成押租、国家赔偿与公权力责任支线。
+- 美浓部达吉、田中二郎、林纪东、郑玉波等构成行政法、保险法和法律引证网络。
+- 廖兆祥、李文锦、黄章一、王砚青等构成高雄国家赔偿协议的机关代表网络。
+- 叶公超、蒋介石、蒋经国、罗斯福等构成本书政治背景与历史引证网络。
+
+验证
+- scripts/extract_relationships.py 源码 compile 通过。
+- data/relationship-data.js：node --check 通过；Node vm 运行时载入通过，people=14732，books=139，chapters=7357，identityLinks=34320，relations=6638，targetPeople=71，targetRelations=65。
+- assets/app.js：node --check 通过。
+- git diff --check 通过，仅提示若 Git 触碰相关文件会做 LF/CRLF 转换。
+- exports/by-book-index.txt、data/people.json、data/relationship-data.js 与本书关系数复核一致。
+
+下一步
+- 本书可关闭。下一轮进入用户指定的新书，继续保持显式 --book-path 工作流，不使用 --all。
