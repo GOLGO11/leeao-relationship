@@ -1,0 +1,55 @@
+《李敖好讼集》closeout
+
+范围
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\015.雷霆法律类\005.李敖好讼集
+- 章节数：30
+- 本书 round1、round2、round3 与 closeout 均沿用单书临时验证 + 正式显式 --book-path 回流流程；未使用 --all。
+
+closeout 审计
+- closeout 前最新正式状态来自 round3：全库 14907 people / 143 books / 7469 chapters；《李敖好讼集》为 personCount 243、displayPeople 80、人工关系 103 条。
+- closeout 先审计正式库回流后的本书低频尾部，发现一批由跨书强信号带回目标书的普通词、诉讼语气、题名半截、成语残片和季节词。
+- 已加入 BOOK_SKIP_NAMES["李敖好讼集"] 的 closeout 项：任省主、公理、史没有、应该停、曾收有、空言、经八百、万太轻、从政五、从速扣、何况该、党员自、公开之、公道自、关爱、别得复、吕氏乎、国际名、家可知、容来、尚非全、师二人、应负之、应赔原、张状子、时御用、时自陈、明程度、查二审、查复、查责任、经验批、能免责、解显然、解析、都要回、顾左右、高攀、陈明、夏天、经调查。
+- 已补异体归并：谷凤歧 -> 谷凤岐。
+- 其中“陈明”在本书上下文为“必须先予陈明”“并此陈明”“陈明证物事”等法律用语，“夏天”为季节，“顾左右”“高攀”“公理”“空言”“经调查”等均为普通词或成语/句法残片。
+
+单书临时验证
+- 第一次 closeout 单书构建：显式 --book-path；argv_has_all False；结果为 180 people / 1 book / 30 chapters。
+- 第一次临时库关系校验：target_relations 103；relationship txt lines 103；duplicate_relations 0；新增 skip 项均不再进入临时本书节点。
+- post-rebuild 正式尾审又发现“经调查”被全库强信号带回本书，因此补入 skip 后进行了第二次单书验证。
+- 第二次 closeout 单书构建：显式 --book-path；argv_has_all False；结果仍为 180 people / 1 book / 30 chapters；103 条人工关系完整保留。
+
+正式回流
+- 第一次 closeout 正式回流：从当前 data/people.json 读取 143 本书，解析出 143 个路径，missing_count 0，target_included True，argv_has_all False，未使用 --all。
+- 第一次正式回流后全库为 14880 people / 143 books / 7469 chapters；《李敖好讼集》为 personCount 202、关系 103 条。
+- 第二次 closeout 正式回流同样使用 143 个显式 --book-path，missing_count 0，target_included True，argv_has_all False，未使用 --all。
+- 第二次正式回流后，所有 closeout skip 项均不再挂回《李敖好讼集》目标书；本书低频尾部保留项主要为真实政治人物、司法人员、媒体/出版人物、译著作者、学术人物、典故人物或虚拟角色。
+
+最终正式状态
+- 全库：14880 people / 143 books / 7469 chapters / 34663 identityLinks / 7088 personRelations。
+- 分片：people-part-001.json 1250；people-part-002.json 1320；people-part-003.json 1413；people-part-004.json 1791；people-part-005.json 2924；people-part-006.json 5587；people-part-007.json 595；shard_sum 14880，与 data/people.json 的 people.count 一致。
+- 《李敖好讼集》正式书卡：章节 30；personCount 201；displayPeople 80。
+- exports/by-book-index.txt： 《李敖好讼集》｜雷霆法律类｜章节 30｜人物 201。
+- 本书人工关系：103 条；exports/li-ao-relationships.txt 中本书关系行数同为 103；duplicate_relations 0。
+
+三轮摘要
+- round1：进入本书，补胡秋原名誉案、石永贵党报传播线、梁肃戎立法院公报发行责任、最高法院/高院民赔法官、中央日报拒刊、三军总医院医疗争议等法律端点。
+- round2：补殷海光证人组、上诉状律师、胡秋原史料争点、蔡尊五等民赔发回法官，并扩充胡秋原与殷海光、赵天仪、韦政通等证人/学术争议网络。
+- round3：补胡秋原“共产党同路人”争点、董必武/冯雪峰/周恩来/斯大林支线、陈诚计划、费正清研究费、严侨、洛扬/马克思争点，以及陈铭枢牵出的神州国光社左派译著链。
+- closeout：清理 41 个本书专属残片并补 1 个异体归并，最终把本书从 243 人收束到 201 人，103 条人工关系完整保留。
+
+核心网络
+- 胡秋原仍为本书主轴，连接名誉案诉讼、殷海光证人线、史料争点、共产党同路人争点与左派/马克思主义争议。
+- 石永贵、梁肃戎、蒋嵘华、郑汉龙、丁锦清、黄聪明、刘敬一、蔡尊五、廖宏明、郑淑贞等构成诉讼/判决/发行责任核心法律网络。
+- 殷海光、赵天仪、韦政通、石文杰、林正弘等构成证人与学术/思想史争议支线。
+- 董必武、冯雪峰、周恩来、斯大林、陈诚、费正清、严侨、洛扬、马克思等构成胡秋原政治史料与诽谤争点支线。
+- 陈铭枢、王礼锡、李季、刘镜圆、李衡之、傅子东、杜畏之、汪馥泉、叶启芳、吴树人、郭沫若、施复亮、洪涛、钟古熙、侯外庐等构成神州国光社左派译著链。
+
+验证
+- scripts/extract_relationships.py：python -m py_compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- data/people.json totals、people-part-*.json 分片合计、exports/by-book-index.txt、exports/li-ao-relationships.txt 与本书关系数复核一致。
+- git diff --check 通过，仅提示 Git 将在触碰 data/relationship-data.js、exports/by-book-index.txt、exports/li-ao-relationships.csv、exports/li-ao-relationships.txt、scripts/extract_relationships.py 时做 LF/CRLF 转换；无 whitespace error。
+
+下一步
+- 本书可关闭。下一轮进入用户指定的新书，继续保持显式 --book-path 工作流，不使用 --all。

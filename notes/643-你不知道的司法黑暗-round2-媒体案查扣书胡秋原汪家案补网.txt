@@ -1,0 +1,40 @@
+《你不知道的司法黑暗》round2：媒体案、查扣书案、胡秋原案、汪家案补网
+
+本轮目标：
+- 在 round1 的司法黑暗榜、冤案、核心法官链基础上，补入本书中更细的媒体诉讼、查扣书、胡秋原案证据链与汪家土地案代理关系。
+- 继续保持单书推进；正式回流只使用当前正式清单中的 144 个显式 --book-path，没有使用 --all。
+
+新增关系重点：
+- 自立晚报广告/诽谤案：补吴三连、吴丰山、颜文闩与张桂贞/报社责任链，补杨丰卿、杨力行、许增男、胡森田等无罪判决法官，以及刘扬群、林玉贞广告费争点。
+- 自由时报诽谤案：补陈国梁、林乡诚、刘景星对吴阿明、颜文闩的高院枉法裁判链；补陈嘉铭、廖茂荣、林家惠、钱通追加被告支线；补张明贤、陈进荣、林剑青、刘志聪证人链。
+- 张桂贞查扣藏书案：补张子源市长责任、黄秀得一审胜诉、翁其荣/徐元庆/陈成泉逆转判决、刘焕宇/孙森焱/曾桂香/林奇福/罗一宇最高法院发回、黄奠华/袁再兴/林富村正确判决，以及孟启正、杨三共、鞠金蕾、陈松碧等执行/证人端点。
+- 胡秋原案：补陈世淙、蔡清遊反诉案高院发回；补王振兴、张剑男、周庆光裁定驳回救济；补许慧玲邮购《中华》杂志散布争点；补胡基峻、林正弘、韦政通、赵天仪与殷海光证词证据链。
+- 汪家土地案：补陈良榘律师与汪荣祖、汪陈霞云、汪迎祖的上诉理由状/委任诉讼关系。
+
+脚本改动：
+- scripts/extract_relationships.py
+  - PERSON_RELATIONS 中《你不知道的司法黑暗》从 82 条增至 135 条。
+  - 新增 round2 CURATED_IDENTITIES，覆盖张明贤、陈进荣、林剑青、刘扬群、林玉贞、周庆光、许慧玲等低频端点。
+  - BOOK_PHRASE_PEOPLE 增加经源文校验的短语锚点，包括“证人张明贤、陈进荣、林剑青、刘志聪”“律师陈良榘提出上诉理由状”等。
+
+验证：
+- py_compile：通过。
+- 单书临时构建：done: 457 people, 1 books, 27 chapters；目标书 personRelations=135，missing_endpoints=0，duplicate_relations=0。
+- 正式回流：argv_has_all False；book_path_args 144；done: 15024 people, 144 books, 7496 chapters。
+- 正式数据：
+  - totals_people=15024
+  - totals_books=144
+  - totals_chapters=7496
+  - totals_identityLinks=34895
+  - totals_personRelations=7223
+  - shard_count=7，shard_people_sum=15024
+  - target_personCount=535
+  - target_relations_json=135
+  - target_relations_txt_lines=135
+  - missing_endpoints=0
+  - duplicate_target_relations=0
+  - all_relation_duplicates=0
+- data/relationship-data.js：node --check 通过。
+
+当前建议：
+- 下一轮可继续做 round3，重点收束《你不知道的司法黑暗》尾部低频人物与漏网支线：司法行政层级（黄少谷、林洋港、吴树立、罗萃儒）、胡秋原案更多司法/证据旁支、姚嘉荐案/华定国案重复审级的低频法官，以及正式回流后新增的尾部误切 skip。

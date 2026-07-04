@@ -1,0 +1,49 @@
+《你不知道的司法黑暗》round3：司法行政审级链与尾部去噪补网
+
+提速策略：
+- 本轮只做一次正式 144 本回流；前置迭代全部使用脚本静态检查和单书临时构建。
+- 正式回流继续使用当前正式清单解析出的 144 个显式 --book-path；没有使用 --all，也没有扫描 163 本全集。
+
+新增关系重点：
+- 司法行政层级：补黄少谷-吴树立-杨丰卿、林洋港-罗萃儒-杨力行等自立晚报诽谤案行政责任链。
+- 求是报违约案：补萧仰归、施俊尧、王锡宝、陈昆辉、林金村、温良瑞、蔡俊有、黄合文、蔡诗文、庄登照、郑三源、林明俊、刘胜吉、杨贵森等审级端点，连接伍振环、周孟禄。
+- 胡秋原/梁肃戎名誉案：补尤丰彦、陈义仲、李璋腾高院续行枉法支线。
+- 姚嘉荐命案：补周宗颐、王炳辉、刘鸿儒、吕有文、黄雅卿、潘天寿、廖源泉、汪辅、吴运祥、黄书琚、夏华夏、王甲乙、石明江、董国铨、金经昌、杨力行、王锡宝、林金村、陈昆辉等复审与后段判决链。
+- 华定国冤狱：补董国铨、杨力行、李光化、夏华夏、汪辅、黄书琚、仲跻阁、徐幼祚、林锡湖、王炳辉、吴昌麟、何惠民、孟继湘、俞兆年、杨襄明等审级链。
+
+脚本改动：
+- scripts/extract_relationships.py
+  - PERSON_RELATIONS 中《你不知道的司法黑暗》从 135 条增至 197 条。
+  - 新增 round3 CURATED_IDENTITIES，覆盖本轮低频审级法官与司法行政端点。
+  - ALIASES 新增杨薰春→杨熏春、叶朝渠→叶昭渠、黄叔琚/黄叔据→黄书琚、何芳羆→何芳罴。
+  - BOOK_PHRASE_PEOPLE 增加经源文校验的审级名单短语。
+  - BOOK_SKIP_NAMES 增加本书显示层/尾部误切，如“公然侮”“成诽谤”“查证据”“能证明”“万八千”“相当”等。
+
+验证：
+- py_compile：通过。
+- AST 去重：target_relations_script=197，duplicate_keys=0。
+- 单书临时构建：argv_has_all False；done: 446 people, 1 books, 27 chapters。
+  - target_relations=197
+  - missing_endpoints=0
+  - duplicate_relations=0
+  - noise_present=[]
+- 正式回流：argv_has_all False；book_path_args 144；done: 15014 people, 144 books, 7496 chapters。
+- 正式数据：
+  - totals_people=15014
+  - totals_books=144
+  - totals_chapters=7496
+  - totals_identityLinks=34893
+  - totals_personRelations=7285
+  - shard_count=7，shard_people_sum=15014
+  - target_personCount=513
+  - target_relations_json=197
+  - target_relations_txt_lines=197
+  - missing_endpoints=0
+  - duplicate_target_relations=0
+  - duplicate_all_relations=0
+  - target_noise_present=[]
+- data/relationship-data.js：node --check 通过。
+- git diff --check：通过，仅有既有 LF/CRLF 提示。
+
+当前建议：
+- 下一步进入本书 closeout。重点做最终低频尾部抽查、真实法官身份补标、关系说明一致性检查，以及确认 closeout 后再进入下一本。

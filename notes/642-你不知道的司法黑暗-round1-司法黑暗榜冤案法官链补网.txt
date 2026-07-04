@@ -1,0 +1,53 @@
+《你不知道的司法黑暗》round1 补网记录
+
+本轮定位：
+- 进入新书《你不知道的司法黑暗》。
+- 来源目录：《大李敖全集5.0》（wjm_tcy版）分章节\015.雷霆法律类\006.你不知道的司法黑暗。
+- 源目录共有 28 个 txt，其中《你不知道的司法黑暗》目录.txt 被内容过滤排除；实际进入抽取 27 章。
+- 本轮新增 82 条人工关系，建立本书司法黑暗榜、冤案、判决争议、查扣书案、胡秋原案、汪家土地案的主干网络。
+- 全程未使用 --all；单书验证和正式回流均使用显式 --book-path。
+
+关系范围：
+- 萧孟能诬告与李敖冤狱线：林晃、黄剑青、顾锦才、王昇、陈聪明、郑文肃、陈培基、伍伯英等。
+- 吕安仁案：钟曜唐、吕安仁、林金生、杨国镇、黄灵书、梁金木、林东雄、李素月。
+- 景美翁媳命案：张国杰、王新政、黄秋丽、王明雄、林晃、王瑶、刘友桂。
+- 华定国与吕德冤狱：张剑男、林晃、谷凤岐、姚锡玖、薛尔毅、廖茂荣、洪根树、钱通又、吕德、大头牛。
+- 姚嘉荐命案/黄学文冤案：姚嘉荐、黄学文、林祖簪、游全球、王蔼云、吴亮、陈华洲、杨熏春、姚志国、叶昭渠、何祚歆、黄怡、刘日安、吕一鸣、王兴仁。
+- 张桂贞查扣藏书与自立晚报假扣押线：谢俊峰、王德云、张剑男、林松虎、李锦丰、范秉阁、郭柏成、葛浩坡、洪根树、陈瑞甫、陈满贤、梁松雄。
+- 自由时报诽谤案：陈贻男、吴阿明、颜文闩。
+- 胡秋原案：邱美育、梁肃戎、谷凤岐、施俊尧、陈国梁、刘景星、张连财、石明江、蒋嵘华、郑汉龙、丁锦清、黄聪明、刘敬一、房阿生、蔡光治、黄赛月。
+- 汪荣祖家族土地案：李炫德、黄清江、王锦村、庄秋桃、施启扬、汪陈霞云、汪迎祖。
+
+身份、锚点与清理：
+- 为本书低频端点补充身份：杨国镇、黄灵书、林东雄、李素月、刘友桂、姚锡玖、钱通又、大头牛、黄赛月、汪陈霞云、汪迎祖等。
+- 增加本书短语锚点，覆盖“军中同袍林金生、杨国镇、黄灵书”“讯问人刘友桂”“法官谷凤岐、姚锡玖、薛尔毅改判无罪”“吕德同案大头牛致吕德秘件”“法官房阿生、蔡光治、黄赛月”“汪家妈妈汪陈霞云、弟弟汪迎祖”等名单式端点。
+- 首轮清理本书专属残片，包括司法黑、法律语气、题名半截、制度词、普通词组和正式回流后由跨书强信号带回的句法残片。
+
+单书验证：
+- 初始单书临时基线：显式 --book-path；argv_has_all False；结果为 539 people / 1 book / 27 chapters。
+- 加入 round1 关系、身份、锚点和首批 skip 后，单书临时验证为 470 people / 1 book / 27 chapters；82 条人工关系完整进入导出。
+- 续补低频明显残片后，最终单书临时验证为 461 people / 1 book / 27 chapters；manual_relations 82；temp_relations 82；missing_manual_relations 0；relationship txt lines 82。
+
+正式回流：
+- 第一次正式回流：当前 143 本正式书单 + 新书，共 144 个显式 --book-path；resolved_paths 144；missing_count 0；target_included True；argv_has_all False；未使用 --all。
+- 第一次正式回流后：15067 people / 144 books / 7496 chapters；本书 personCount 641；82 条关系完整保留。
+- formal-tail 审计发现跨书强信号带回一批制度词和句法残片，已加入本书 skip 后再次正式回流。
+- 第二次正式回流：仍为 144 个显式 --book-path；resolved_paths 144；missing_count 0；target_included True；argv_has_all False；未使用 --all。
+
+最终正式状态：
+- 全库：15021 people / 144 books / 7496 chapters / 34880 identityLinks / 7170 personRelations。
+- 《你不知道的司法黑暗》正式书卡：章节 27；personCount 532；displayPeople 80。
+- exports/by-book-index.txt： 《你不知道的司法黑暗》｜雷霆法律类｜章节 27｜人物 532。
+- 本书人工关系：82 条；formal_relations 82；missing_manual_relations 0；duplicate_relations 0。
+- exports/li-ao-relationships.txt 中本书关系行数：82。
+- 分片合计：people-part-001 至 people-part-007 合计 15021，与 data/people.json 的 people.count 一致。
+- 上一书《李敖好讼集》复核：relationship txt lines 103；formal_relations 103；关系未丢失。因新书全库回流增加跨书保留信号，书卡 personCount 由 closeout 时 201 变为 210。
+
+验证：
+- scripts/extract_relationships.py：python -m py_compile 通过。
+- data/relationship-data.js：node --check 通过。
+- assets/app.js：node --check 通过。
+- git diff --check 通过，仅提示 Git 将在触碰 data/relationship-data.js、exports/by-book-index.txt、exports/li-ao-relationships.csv、exports/li-ao-relationships.txt、scripts/extract_relationships.py 时做 LF/CRLF 转换；无 whitespace error。
+
+下一轮建议：
+- round2 可沿本书后半继续细化：中央日报/自由时报/自立晚报媒体案、张桂贞查扣书案中的台中市政府/警备总部/证人链、胡秋原案中证人和判决理由支线，以及汪家土地案的高雄市政府、第三人、律师陈良榘等端点。

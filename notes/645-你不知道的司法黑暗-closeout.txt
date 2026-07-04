@@ -1,0 +1,59 @@
+《你不知道的司法黑暗》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书是 `015.雷霆法律类` 中最后一本；本次 closeout 后，雷霆法律类已完成到当前工作流状态。
+
+closeout目标：
+- 对 round3 后的本书低频尾部进行最终抽查。
+- 补真实低频法官、检察官、证人与案情端点的身份。
+- 清理本书显示层/尾部中的姓名半截、地名、题名半截和普通词误切。
+- 对新增内容做单书临时验证，再用 144 个显式 --book-path 正式回流。
+
+closeout新增关系：
+- 景美翁媳命案：补陈纲 -> 张国杰，标记最高法院发回审级端点。
+- 华定国冤狱：补陈焕生 -> 华定国，标记最高法院定谳无期支线。
+- 姚嘉荐命案：补陈思永、陈钟、蒋伯邢 -> 黄学文，标记二审维持原判；补陈宗仁 -> 姚嘉荐，标记友人收埋端点。
+- 吕德冤狱：补吕振裕 -> 吕德，标记同行取押金经过。
+
+closeout脚本收束：
+- scripts/extract_relationships.py
+  - PERSON_RELATIONS 中《你不知道的司法黑暗》从 197 条增至 204 条。
+  - 新增 closeout CURATED_IDENTITIES：陈纲、陈焕生、陈思永、陈钟、蒋伯邢、陈宗仁、吕振裕、陈有全、陈联欢、吴启宾、叶炳福、金丽英、钟光慧等。
+  - BOOK_PHRASE_PEOPLE 增加“死者友人陈宗仁”“我和吕振裕从新庄到新店山上”等源文锚点。
+  - BOOK_SKIP_NAMES 增加本书尾部误切：宗仁、计二十、路二段、何处有、相干、翁媳命、范围之、连连、公然破、满清、张明、万来求。
+
+验证：
+- py_compile：通过。
+- AST 去重：target_relations_script=204，duplicate_keys=0。
+- 单书临时构建：
+  - argv_has_all False
+  - done: 442 people, 1 books, 27 chapters
+  - target_relations=204
+  - missing_endpoints=0
+  - duplicate_relations=0
+  - noise_present=[]
+- 正式回流：
+  - argv_has_all False
+  - book_path_args 144
+  - done: 15010 people, 144 books, 7496 chapters
+- 正式数据：
+  - totals_people=15010
+  - totals_books=144
+  - totals_chapters=7496
+  - totals_identityLinks=34901
+  - totals_personRelations=7292
+  - shard_count=7，shard_people_sum=15010，actual_people_from_shards=15010
+  - target_personCount=504
+  - target_fullBookPeople=378
+  - target_relations_json=204
+  - target_relations_txt_lines=204
+  - missing_endpoints=0
+  - duplicate_target_relations=0
+  - duplicate_all_relations=0
+  - target_noise_present=[]
+- data/relationship-data.js：node --check 通过。
+- git diff --check：通过，仅有既有 LF/CRLF 提示。
+
+后续建议：
+- `015.雷霆法律类` 已完成当前书序收束；下一步可进入下一个未处理类别/书序，或先做阶段性提交与推送。

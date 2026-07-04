@@ -1,0 +1,31 @@
+《笑傲五十年》round1
+
+范围：
+- 源目录：016.李敖祸台五十年庆祝十书/001.笑傲五十年
+- 正文规模：38 chapters
+- 本轮未使用 --all；正式回流使用 145 个显式 --book-path。
+
+本轮补网主线：
+- 殷海光/夏君璐/王晓波/赖阿胜：殷师母来访、殷海光遗稿与全集出版。
+- 王企祥/刘宾雁/李远哲：清华教授、学生和李远哲老师链。
+- 张学良/张作霖/蒋介石/王家桢/林久治郎：东北易帜、西安事变和拒独支线。
+- 胡适/陈独秀/李大钊/蔡元培/北大同人：五四、新文化运动和不谈政治戒约。
+- 陈寅恪/梁嘉彬/毛子水/钱穆/余英时/汪荣祖/唐晓莹/傅斯年：陈寅恪赴台说争议。
+- 殷海光/刘福增/陈鼓应/林毓生/张灏/邓维贤/邓维桢：殷门弟子与书呆子论争。
+- 李远哲/赖再兴/赖克汉/鲍林：蓝色毛毯、国策顾问和科学家公共责任支线。
+- 管仲/齐桓公/鲍叔牙/孔子、柏杨/林肯/罗勃李、高适/李广：大人格与历史类比支线。
+
+规则变更：
+- PERSON_RELATIONS added 62 《笑傲五十年》 relations.
+- CURATED_IDENTITIES added/confirmed short names and low-frequency endpoints including 李大钊、黄侃、王照、唐晓莹、罗勃李、高适、鲍林、虞美人等。
+- BOOK_PHRASE_PEOPLE added phrase recovery for short names, bracketed names and translated names.
+- BOOK_SKIP_NAMES added first-round and formal-reflow noise filters, including 文嚼字、皮子、高地厚、方独立、常常出、殷老师等。
+- Added a book-specific canonicalization for 殷老师 -> 殷海光 in this book context.
+
+Validation:
+- Single-book temp: 221 people / 1 book / 38 chapters / 62 target relations.
+- Formal rebuild: 15041 people / 145 books / 7534 chapters / 34960 identityLinks / 7354 personRelations.
+- Target formal card: 302 people / 38 chapters / 62 target relations.
+- target script relations: 62; missing_after_filter=0; target_exact_dups=0; shown_noise_present=[].
+- node --check data/relationship-data.js passed.
+- git diff --check passed, with only Git CRLF working-copy warnings.
