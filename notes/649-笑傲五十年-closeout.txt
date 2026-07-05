@@ -1,0 +1,66 @@
+《笑傲五十年》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书路径：`016.李敖祸台五十年庆祝十书/001.笑傲五十年`
+
+closeout目标：
+- 对 round3 后的本书低频尾部和正式导出尾部做最终抽查。
+- 补真实低频历史典故、五四史料与人格论端点关系。
+- 清理正式导出中由全库强信号带入本书的非人物残片。
+- 对新增内容做单书临时验证，再用 145 个显式 --book-path 正式回流。
+
+closeout新增关系：
+- 《中国式好人》《从大规迹评论人》：补李贽、晏子、匡章、陶渊明、文天祥作为“中国式好人”反证/大规迹并列链。
+- 《中国式好人》：补班固《古今人表》尾部代表人物分类链，包括董狐、范蠡、赵盾、程婴、公孙杵臼、越王勾践、豫让、墨子、孙膑、吕不韦、荆轲、张仪、公孙龙、专诸、夏桀、吴王夫差等。
+- 《“不出户，知天下”》：补康德、达尔文、马克思的安静生活/伟大人物特征并列链。
+- 《李敖论五四》：补张静庐、胡适、陈独秀之间的《中国现代出版史料》收信与“不谈政治”戒约证据链。
+
+closeout脚本收束：
+- `scripts/extract_relationships.py`
+  - PERSON_RELATIONS 中《笑傲五十年》从 184 条增至 208 条。
+  - BOOK_PHRASE_PEOPLE 增加《古今人表》尾部名单、康德/达尔文/马克思安静生活、张静庐收信等源文锚点。
+  - BOOK_SKIP_NAMES 增加正式导出尾部误切：黎巴嫩、陆沦陷、诸侯、相当、文程度、怀疑有、万人吾、鲍叔贾、都配合、通警察、解甲归、胡适看、胡人打、经常可、申告、水泥灌、权力来、应该能、常讨厌、国联调、国同休、国古诗、和民族、向北方、劳碌、别解释、何须、任总理、从各种。
+
+验证：
+- py_compile：通过。
+- 单书临时构建：
+  - argv_has_all False
+  - done: 261 people, 1 books, 38 chapters
+  - target_relations=208
+  - closeout_added_from_marker=24
+  - missing_endpoints=0
+  - duplicate_relations=0
+  - noise_present=[]
+- 正式回流：
+  - resolved_book_paths=145
+  - missing_paths=0
+  - argv_has_all False
+  - book_path_args=145
+  - done: 15069 people, 145 books, 7534 chapters
+- 正式数据：
+  - totals_people=15069
+  - totals_books=145
+  - totals_chapters=7534
+  - totals_identityLinks=35035
+  - totals_personRelations=7500
+  - shard_count=7，shard_people_sum=15069，actual_people_from_shards=15069
+  - target_personCount=310
+  - target_chapters=38
+  - target_relations_json=208
+  - target_relations_txt_lines=208
+  - formal_extra_vs_tmp=0
+  - formal_missing_vs_tmp=0
+  - missing_rel_endpoints_global=0
+  - duplicate_target_relations=0
+  - duplicate_all_relations=0
+  - target_noise_present=[]
+- data/relationship-data.js：node --check 通过。
+- git diff --check：通过，仅有既有 LF/CRLF 提示。
+
+临时目录：
+- 已清理 `.tmp-xiaoao50-closeout-data` / `-exports`
+- 已清理 `.tmp-xiaoao50-closeout-b-data` / `-exports`
+
+后续建议：
+- 本书已完成当前工作流收束；下一步可进入 `016.李敖祸台五十年庆祝十书/002.*` 的下一本，或先做阶段性提交与推送。

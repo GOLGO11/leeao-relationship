@@ -1,0 +1,50 @@
+《笑傲五十年》第三轮补网记录
+
+时间：2026-07-05
+
+源书路径：
+《大李敖全集5.0》（wjm_tcy版）分章节/016.李敖祸台五十年庆祝十书/001.笑傲五十年
+
+本轮范围：
+- 继续本书第三轮，不使用 --all。
+- 正式回流仍采用现有正式库中的 145 本书，逐一解析为显式 --book-path 参数。
+- 本轮补入 62 条《笑傲五十年》关系；本书关系由第二轮的 122 条增至 184 条。
+
+主要补网支线：
+- 《大人格与小人格》：子贡、子路与孔子关于管仲是否为仁的问答；召忽、公子纠作为殉主对照；甘地、文天祥、公孙弘的大人格/小人格反衬；匡章、张良、周公、直不疑、马援、袁崇焕、张自忠、岳飞的蒙诬谱系；顾宪成、阿登纳、沙卡洛夫的不从众抗权并列。
+- 《中国式好人》：以班固《汉书·古今人表》为中心，补入孔子、伏羲、神农、黄帝、唐尧、虞舜、大禹、周武王、周公、女娲、伯夷、叔齐、管仲、孟子、屈原、鲁仲连、蔺相如、子贡、曾子、扁鹊、苏秦、公子纠、秦始皇、李斯、项羽、秦二世、蚩尤、妲己、褒姒等分类链。
+- 《李敖论五四》：陈独秀与马克思主义批评，马克思/恩格斯/舒密特书信链，鲁迅、毛泽东、陈独秀作为五四后知识分子误路并列。
+- 《孤独伴此生》：梭罗与哈玛绍的孤独格言并列。
+- 《“这些家伙的枪法真差劲”》：戴高乐与霍姆斯的遇刺/枪法隐喻并列，霍姆斯学生论文与柏拉图。
+- 《幸亏有我》：释迦牟尼、耶稣、伏尔泰、阿里作为不可或缺人物并列；徐树铮、徐道邻、孙中山的收复外蒙古年谱/贺电链。
+
+脚本改动：
+- 在 PERSON_RELATIONS 为《笑傲五十年》追加本轮关系。
+- 在 CURATED_IDENTITIES 增补子贡、公子纠、召忽、公孙弘、马援、沙卡洛夫、哈玛绍等低频端点。
+- 在 BOOK_PHRASE_PEOPLE 为本书增加孔门问答、蒙诬人物组、古今人表名单、五四批评、孤独格言和不可或缺人物段落的短语锚点。
+
+单书临时验证：
+- argv_has_all False
+- done: 261 people, 1 books, 38 chapters
+- target_relations=184
+- round3_added_from_marker=62
+- missing_rel_endpoints=0
+- duplicate_relation_keys=0
+
+正式回流验证：
+- resolved_book_paths=145
+- missing_paths=0
+- argv_has_all False
+- book_path_args=145
+- done: 15075 people, 145 books, 7534 chapters
+- totals: people=15075, books=145, chapters=7534, identityLinks=35044, personRelations=7476
+- 《笑傲五十年》切片：personCount=339, chapters=38, target_relations=184
+- 正式库《笑傲五十年》关系键与单书临时库完全一致：formal_extra_vs_tmp=0, formal_missing_vs_tmp=0
+- relation duplicate keys=0
+- missing_rel_endpoints_global=0
+- node --check data/relationship-data.js 通过
+- git diff --check 退出码 0，仅有 Git LF/CRLF 工作区提示，无空白错误
+
+临时目录：
+- 已清理 .tmp-xiaoao50-r3-data / -exports
+- 已清理 .tmp-xiaoao50-r3b-data / -exports

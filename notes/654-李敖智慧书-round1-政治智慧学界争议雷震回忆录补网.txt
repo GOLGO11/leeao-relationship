@@ -1,0 +1,32 @@
+《李敖智慧书》round1：政治智慧、黄金来台、雷震回忆录与李远哲/王企祥学界争议补网
+
+本轮范围：
+- 新进入《李敖智慧书》，源目录为《大李敖全集5.0》（wjm_tcy版）分章节/016.李敖祸台五十年庆祝十书/003.李敖智慧书。
+- 基线单书构建确认本书此前未有本书人工关系；基线为 45 章、241 个候选人物、0 条本书关系。
+- 首轮优先补四条主干：政治寓言/民主宪政与反共台独论述、黄金来台与金圆券叙事、雷震回忆录被焚与监察权支线、李远哲/王企祥学界争议。
+
+脚本补丁：
+- 增加《李敖智慧书》首轮低频身份端点，如阿克顿勋爵、克瑞顿、阿里斯太提斯、秦舞阳、巴普洛夫、钱伟长、王禄生、吴松长、劭玉铭、弗里曼、西曼斯基、修梅克尔、于豪章、卢嘉锡等。
+- 增加本书 BOOK_PHRASE_PEOPLE 锚点，覆盖长译名、篇名粘连、文件名单和第 44 章高频学界争议端点。
+- 增加本书 BOOK_SKIP_NAMES，过滤阿里、雷震回、黄金来、马屁代、武力犯、查明王、李王爷、金圆券、关键、沈院长、台币、全国共、全国同、向读者、罗会议、干政等非人物残片。
+- 新增本书 PERSON_RELATIONS 80 条。
+
+单书临时验证：
+- 命令使用 1 个显式 --book-path，argv_has_all False，contains_all_arg False。
+- 结果：240 people / 1 book / 45 chapters。
+- 关系校验：expected_relations 80，actual_relations 80，missing_relations 0，extra_relations 0，duplicate_relations 0。
+- 本书专属噪声：noise_present []。
+
+正式回流：
+- 未使用 --all；正式回流使用 147 个显式 --book-path。
+- 回流确认：argv_has_all False，book_path_args 147，contains_all_arg False。
+- 最终结果：15219 people / 147 books / 7632 chapters / 7 shards。
+- 《李敖智慧书》书卡：45 chapters，335 people。
+- 本书关系：expected_relations 80，actual_relations 80，missing_relations 0，extra_relations 0，duplicate_relations 0。
+- 本书书卡噪声：noise_in_book_card []。
+- data/relationship-data.js 通过 node --check。
+- git diff --check 仅提示既有 LF/CRLF warning，无空白错误。
+
+下一轮建议：
+- round2 可沿第 44 章继续补王晓波、张群、宋英、王企祥文件链、读者投书和学术迫害尾部人物。
+- 同时可补 026-039 的报刊无知、中央社/监察院、雷震回忆录案低频官员与 source_author 关系。

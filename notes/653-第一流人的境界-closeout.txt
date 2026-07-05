@@ -1,0 +1,64 @@
+《第一流人的境界》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书路径：`016.李敖祸台五十年庆祝十书/002.第一流人的境界`
+
+closeout目标：
+- 对 round3 后的本书正式导出尾部、JSON/TXT关系数和低频人物残片做最终抽查。
+- 清理正式全库回流后由跨书强信号带入本书的非人物残片。
+- 稳定本书正文中的真实低频端点，避免临时单书构建与正式全库回流出现漂移。
+
+closeout脚本收束：
+- `scripts/extract_relationships.py`
+  - `CURATED_IDENTITIES` 增补：全斗焕、周彼得。
+  - `BOOK_PHRASE_PEOPLE["第一流人的境界"]` 增补：天神周彼得（Jupiter）、全斗焕领导之政府、全斗焕执政时的光州大暴动。
+  - `BOOK_SKIP_NAMES["第一流人的境界"]` 增补正式导出尾部误切：国首相、关键、国绅士、宋朝人、于师。
+  - PERSON_RELATIONS 保持 142 条，不再新增关系边。
+
+临时单书验证：
+- 命令防护：`argv_has_all False`。
+- 输出：`done: 226 people, 1 books, 53 chapters`。
+- `target_personCount 226`
+- `target_chapters 53`
+- `relations 142`
+- `duplicate_relations 0`
+- `closeout_noise_present []`
+- `retained_real_lowfreq [('全斗焕', 7), ('周彼得', 4)]`
+
+正式回流：
+- 严格使用当前 146 本清单生成显式 `--book-path` 参数。
+- 防护输出：`argv_has_all False`，`book_path_args 146`，`contains_all_arg False`。
+- 第一次在默认沙盒路径下触发 `sourceRoot` 与 `book-path` 映射不一致，未完成构建；随后在真实 workspace 路径下提升权限重跑成功。
+- 成功输出：`done: 15147 people, 146 books, 7587 chapters`。
+- 耗时：`elapsed_seconds 296.7`。
+
+正式校验：
+- `books_total 146`
+- `target_chapters 53`
+- `target_personCount 298`
+- `target_relations_json 142`
+- `target_relations_txt_lines 142`
+- `totals_people 15147`
+- `totals_identityLinks 35223`
+- `totals_personRelations 7642`
+- `shard_count 7`
+- `shard_people_sum 15147`
+- `duplicate_target_relations 0`
+- `target_noise_present []`
+- `target_real_retained [{'name': '全斗焕', 'count': 7}, {'name': '周彼得', 'count': 4}]`
+- `formal_extra_vs_tmp 0`
+- `formal_missing_vs_tmp 0`
+- `data/relationship-data.js`：`node --check` 通过。
+- `git diff --check`：仅提示既有 LF/CRLF 转换，无空白错误。
+
+导出抽查：
+- `exports/by-book-index.txt` 中本书为：章节 53｜人物 298。
+- top 人物中已无 `国首相`、`关键`、`国绅士`、`宋朝人`、`于师`。
+- top 人物保留真实低频端点：全斗焕(7)、周彼得(4)。
+
+临时目录：
+- 已清理 `.tmp-firstclass-closeout-data` / `.tmp-firstclass-closeout-exports`。
+
+后续建议：
+- 本书已完成当前工作流收束；下一步可进入 `016.李敖祸台五十年庆祝十书/003.*` 的下一本。

@@ -1,0 +1,53 @@
+《笑傲五十年》第二轮补网记录
+
+时间：2026-07-05
+
+源书路径：
+《大李敖全集5.0》（wjm_tcy版）分章节/016.李敖祸台五十年庆祝十书/001.笑傲五十年
+
+本轮范围：
+- 继续本书第二轮，不使用 --all。
+- 正式回流采用现有正式库中的 145 本书，逐一解析为显式 --book-path 参数。
+- 本轮补入 60 条《笑傲五十年》关系；本书关系由 round1 的 62 条增至 122 条。
+
+主要补网支线：
+- 《好人坏在哪里？》：吴相湘辞职与张伯苓警语；顾炎武、林肯、老罗斯福的外向型善行对照；孟子与俞正燮的动机/事实之辩。
+- 《子夜神驰》：张伯英、颜真卿、柳公权、刘太冲、冯宿、唐坰、王文治、铁保构成的书法与碑帖来源链。
+- 《如此亲人》：虞舜/瞽叟/象、唐尧/丹朱、虞舜/商均、该隐/亚伯、郑武公/姜氏、窦太后/汉景帝/梁王、杰斐逊母子等亲属相害或亲属疏离支线。
+- 《“这些家伙的枪法真差劲”》：霍姆斯父子、温代尔·霍姆斯与爱默生、任卓宣与胡适批判关系。
+- 《从大规迹评论人》：广田弘毅、史匹尔、希特勒，以及里根/雷震作为大德小德对照。
+- 《作家正义与国家正义》《希金斯案的正义意义》：希金斯、欧贝德、杜尔、里根等国际正义/人质案关系。
+- 《奇情与俗情》《美人的死和英雄的死》：汉武帝/李夫人，李世民与凌烟阁功臣，项羽/虞美人/司马迁/司马光/刘邦/韩信/吕马童，广田弘毅/静子/花山法师，伍子胥/渔父/溧阳女子/浣纱女，侯赢/信陵君/王维。
+- 《至今犹忆李将军》：罗勃李、格兰特、林肯、摩理斯、费施维克的南北战争史料链。
+
+脚本改动：
+- 在 PERSON_RELATIONS 为《笑傲五十年》追加本轮关系。
+- 在 CURATED_IDENTITIES 增补柳公权、刘太冲、冯宿、唐坰、希金斯、欧贝德、李左车、静子、花山法师、侯赢、江上渔父、溧阳女子、浣纱女、摩理斯、费施维克、温代尔·霍姆斯、史匹尔、瞽叟、丹朱、商均、该隐、亚伯、姜氏、郑武公、窦太后、梁王、珍·伦道夫·杰斐逊等低频端点。
+- 在 BOOK_PHRASE_PEOPLE 为本书增加碑帖、凌烟阁、亲属相害、人质案、南北战争史料等短语锚点。
+- 增加“虞姬”到“虞美人”的别名归并，避免同一人物裂成两个节点。
+- 在 BOOK_SKIP_NAMES 为本书增加本轮单书复核确认的句读残片和章节粘连噪声。
+
+单书临时验证：
+- argv_has_all False
+- done: 253 people, 1 books, 38 chapters
+- target_relations=122
+- missing_rel_endpoints=0
+- duplicate_relation_keys=0
+
+正式回流验证：
+- resolved_book_paths=145
+- missing_paths=0
+- argv_has_all False
+- book_path_args=145
+- done: 15071 people, 145 books, 7534 chapters
+- totals: people=15071, books=145, chapters=7534, identityLinks=35032, personRelations=7414
+- 《笑傲五十年》切片：personCount=332, chapters=38, target_relations=122
+- 正式库《笑傲五十年》关系键与单书临时库完全一致：formal_extra_vs_tmp=0, formal_missing_vs_tmp=0
+- relation duplicate keys=0
+- node --check data/relationship-data.js 通过
+- git diff --check 退出码 0，仅有 Git LF/CRLF 工作区提示，无空白错误
+
+临时目录：
+- 已清理 .tmp-xiaoao50-r2-data / -exports
+- 已清理 .tmp-xiaoao50-r2b-data / -exports
+- 已清理 .tmp-xiaoao50-r2c-data / -exports
