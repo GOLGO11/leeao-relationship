@@ -1,0 +1,92 @@
+《恰似我的温柔》round1 记录
+
+本轮进入《李敖祸台五十年庆祝十书》中的《恰似我的温柔》，按单本临时初跑、通读重点章节、补 curated 关系、单本复验、正式显式 book-path 重建的顺序推进；没有使用 --all。
+
+一、首轮补网范围
+
+1. 公开信与学界签名线
+   - 补入《一千五百余位学人及教授花名榜》《签名并发症》一组关系：沈剑虹-费正清、费正清-巴奈特、钱思亮-李先闻、朱建民-董世祁、胡秋原-费正清、钱思亮-胡秋原等。
+   - 保留重复签名与公开信传播的结构性线索，避免只抽单个人名。
+
+2. 戒严体制与马屁学线
+   - 补秦孝仪、蒋介石、宋美龄、蒋经国三角马屁学；补高玉树、雷震、蒋介石、蔡孟坚等政治迫害和任用对照线。
+
+3. 文学、知识分子与自由主义线
+   - 补郭良惠《心锁》、谢冰莹与解禁签名名单。
+   - 补陶百川、胡佛、李怡、余英时、许倬云、邱宏达、胡秋原、费正清等声明与支援网络。
+   - 补殷海光、夏君璐、吴丰山、陈鼓应、王晓波、徐复观关系。
+
+4. 政党、澄社与公政会线
+   - 补张忠栋、朱敬一、瞿海源、尤清、杨国枢、林俊义、苏秋镇、黄煌雄等澄社评鉴线。
+   - 补许信良案二十三学者、二十八教授退党、劳思光/余英时/李远哲/杜维明公共声明线。
+
+5. 林正杰与党外/民进党线
+   - 补林正杰、胡益寿、许信良、郑南榕、姚嘉文、黄信介、武炳炎、费希平、林毓生等关系。
+   - 重点处理“羡慕蒋介石”“警察局长”上下文，分开身份批评、政治阵营、证言与法庭风波。
+
+6. 司法、立院与地方政治线
+   - 补朱高正出庭风波：黄泽青、梁肃戎、康宁祥、郑南榕、王伟骏、许胜发等。
+   - 补张建邦、居浩然、居瀛玖、张建国、林添福、徐萱、张惊声淡江线。
+   - 补萧天赞、陈耀能、十二律师；补张俊雄、梁肃戎“一巴掌”线。
+   - 补尤清、王淑慧、卢嘉辰、蒋介石《李敖看尤清》尾线。
+
+二、代码与词表调整
+
+1. scripts/extract_relationships.py
+   - 为《恰似我的温柔》新增 132 条 PERSON_RELATIONS。
+   - 新增本书 CURATED_IDENTITIES 锚点，保证低频人物在单本和正式重建中可稳定出现。
+   - 新增别名归并：
+     - 菜墩铭 -> 蔡墩铭
+     - 丘宏达 -> 邱宏达
+     - 郭婉容 -> 郭婉蓉
+     - 杨宪弘 -> 杨宪宏
+   - 增补 BOOK_PHRASE_PEOPLE 与 BOOK_SKIP_NAMES，降低本书误抽词和组织/套语噪音。
+
+三、验证结果
+
+1. 单本临时初跑
+   - 命令形态：extract_relationships.py --source ... --book-path 004.恰似我的温柔 --data-dir .tmp-qiasi-r1-initial-data --export-dir .tmp-qiasi-r1-initial-exports
+   - 结果：531 people, 1 books, 46 chapters。
+
+2. 单本补丁复验
+   - 命令形态：extract_relationships.py --source ... --book-path 004.恰似我的温柔 --data-dir .tmp-qiasi-r1-patched2-data --export-dir .tmp-qiasi-r1-patched2-exports
+   - 结果：543 people, 1 books, 46 chapters。
+   - expected curated relations: 132
+   - actual book relations: 132
+   - missing: 0
+   - duplicate actual keys: 0
+
+3. 正式重建
+   - 使用 .tmp-run-qiasi-r1-rebuild.py 从现有 data/people.json 读取 147 本旧书，再追加《恰似我的温柔》。
+   - 重建使用 148 个显式 --book-path 参数。
+   - guard 输出：
+     - existing_books 147
+     - missing_count 0
+     - added_new_book True
+     - book_path_args 148
+     - contains_all_arg False
+     - argv_has_all False
+     - book_path_flags 148
+   - 正式结果：
+     - people: 15286
+     - books: 148
+     - chapters: 7678
+     - personRelations: 7925
+     - 本书 chapters: 46
+     - 本书 personCount: 707
+
+4. 导出检查
+   - exports/by-book-index.txt 已出现：
+     - 《恰似我的温柔》｜李敖祸台五十年庆祝十书｜章节 46｜人物 707
+   - exports/li-ao-relationships.txt 中本书 curated 关系行数：132。
+   - TXT 抽查命中首尾代表关系：
+     - 沈剑虹 -- 新闻局传播/反费正清公开信 -- 费正清
+     - 尤清 -- 县政能力批评/同党议员质疑 -- 王淑慧
+   - exports/li-ao-relationships.csv 总行数：15286；主要书目字段含本书的汇总人物行：437。
+
+四、下一轮建议
+
+第二轮建议继续围绕本书的“名单型尾部”和“公共声明密集段”补细：
+1. 001、006、025、036 的签名/解禁/学者名单，可补低频人物之间的共同签署或公开立场链。
+2. 031、037 的保台会、保国会、海外学人、自由主义学者声明，可补海外政治社群与台湾政治人物的横向关系。
+3. 040-045 的官员唱歌、重返联合国、公文与县议会尾线，可补黄主文、廖天欣、朱汇森、宋晞、陈守煌等较低频节点。
