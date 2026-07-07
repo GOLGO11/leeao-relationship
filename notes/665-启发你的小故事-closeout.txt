@@ -1,0 +1,65 @@
+《启发你的小故事》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书路径：`016.李敖祸台五十年庆祝十书/005.启发你的小故事`
+
+closeout 目标：
+- 对 round3 后的正式全库回流结果做低频人物、尾部导出和关系闭环抽查。
+- 清理由单本尾部和正式回流展示面带出的诗句半截、句读粘连、法规/媒体短语。
+- 保持本书三轮已补出的雷震房车、文星/现代杂志、党外政治犯、司法查扣、影剧典故和鸡汤轶事关系网络稳定。
+
+closeout 脚本收束：
+- `scripts/extract_relationships.py`
+  - PERSON_RELATIONS 保持 197 条；closeout 不新增关系边。
+  - `BOOK_SKIP_NAMES["启发你的小故事"]` 增补 5 个 closeout 跳词：常度、萧飒万、闻媒体、文字所、项规定。
+
+临时单书验证：
+- 命令使用显式 `--book-path`，未使用 `--all`。
+- 输出：`done: 291 people, 1 books, 55 chapters`。
+- `tmp_people 291`
+- `tmp_books 1`
+- `tmp_chapters 55`
+- `source_qifa_relations 197`
+- `output_qifa_relations 197`
+- `missing_qifa_relations 0`
+- `noise_present []`
+- 保留真实低频端点：王晓籁、刘鸿生、刘博渊、李运成、侯立朝、熊钝生、萧同兹。
+
+正式回流：
+- 严格使用当前正式 149 本清单逐本解析为源文目录，传入 149 个显式 `--book-path`。
+- 护栏输出：
+  - `existing_books 149`
+  - `book_path_args 149`
+  - `missing_count 0`
+  - `contains_all_arg False`
+  - `argv_has_all False`
+- 成功输出：`done: 15545 people, 149 books, 7733 chapters`。
+- 耗时：`elapsed_seconds 216.4`。
+
+正式校验：
+- `totals_people 15545`
+- `totals_books 149`
+- `totals_chapters 7733`
+- `totals_identityLinks 36118`
+- `totals_personRelations 8342`
+- `shard_count 7`
+- `shard_people_sum 15545`
+- 《启发你的小故事》正式书卡：55 章 / 349 人。
+- 正式关系闭环：脚本关系 197 条；正式 personRelations 中本书关系 197 条；缺失 0；额外 0；重复 0。
+- closeout 残片抽查：常度、萧飒万、闻媒体、文字所、项规定在本书计数均为 0。
+- 真实低频端点保留：王晓籁(1)、刘鸿生(1)、刘博渊(2)、李运成(2)、侯立朝(13)、熊钝生(2)、萧同兹(关系端点保留)。
+- `scripts/extract_relationships.py`：`py_compile` 通过。
+- `data/relationship-data.js`：`node --check` 通过。
+- `assets/app.js`：`node --check` 通过。
+- `git diff --check`：仅提示既有 LF/CRLF 转换，无空白错误。
+
+导出抽查：
+- `exports/by-book-index.txt` 中本书为：`《启发你的小故事》｜李敖祸台五十年庆祝十书｜章节 55｜人物 349`。
+- `data/people.json` 中本书关系 197 条；首条为陶德曼 -- 抗战调停/逃得慢典故 -- 蒋介石；末条为侯立朝 -- 自承打手/奉命对文星开火 -- 蒋经国。
+- `exports/li-ao-relationships.csv`：总行数 15545；主要书目字段含本书的汇总人物行 151。
+- `exports/li-ao-relationships.txt`：本书名出现 984 次，导出展示已同步。
+
+本书结论：
+- 《启发你的小故事》三轮加 closeout 已完成，可视为本书归档。
+- 下一本建议进入：006《君子爱人以色》。

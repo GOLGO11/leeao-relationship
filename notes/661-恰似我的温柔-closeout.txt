@@ -1,0 +1,57 @@
+《恰似我的温柔》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书路径：`016.李敖祸台五十年庆祝十书/004.恰似我的温柔`
+
+closeout 目标：
+- 对 round3 后的正式全库回流结果做低频人物、尾部导出和关系闭环抽查。
+- 清理由政论句、名单说明、制度词和跨书强信号带入本书的非人物残片。
+- 保持本书仍以人物网络为主，不引入“台北小城起造人”“侨融建设公司”等群体或机构节点。
+
+closeout 脚本收束：
+- `scripts/extract_relationships.py`
+  - `CURATED_IDENTITIES` 增补真实低频端点：吕亚力、周天瑞、张国龙、张晓春、郑钦仁、何怀硕。
+  - `BOOK_SKIP_NAMES["恰似我的温柔"]` 增补 16 个 closeout 跳词：于办理、于林正、任何制、任政治、党各派、党开放、党政职、全部要、别人坐、卜卦、司法审、国之友、国元首、容包括、公正性、关键。
+  - PERSON_RELATIONS 保持 352 条；closeout 不新增关系边。
+
+临时单书验证：
+- 命令防护：`argv_has_all False`，`book_path_args 1`。
+- 输出：`done: 785 people, 1 books, 46 chapters`。
+- `tmp_book_personCount 785`
+- `expected_relations 352`
+- `actual_relations 352`
+- `missing_relations 0`
+- `duplicate_relation_keys 0`
+- `noise_present []`
+- 保留真实低频端点：何怀硕(学术, 9)、张晓春(学术, 5)、周天瑞(学术, 4)、吕亚力(学术, 1)、郑钦仁(学术, 6)。
+
+正式回流：
+- 严格使用当前正式 148 本清单逐本解析为源文目录，传入 148 个显式 `--book-path`。
+- 护栏输出：`existing_books 148`，`missing_count 0`，`book_path_args 148`，`contains_all_arg False`，`argv_has_all False`，`book_path_flags 148`。
+- 成功输出：`done: 15502 people, 148 books, 7678 chapters`。
+- 耗时：`elapsed_seconds 174.7`。
+
+正式校验：
+- `totals_people 15502`
+- `totals_books 148`
+- `totals_chapters 7678`
+- `totals_identityLinks 35995`
+- `totals_personRelations 8145`
+- `shard_count 7`
+- `shard_people_sum 15502`
+- 《恰似我的温柔》正式书卡：46 章 / 910 人。
+- 正式关系闭环：脚本关系 352 条；正式 personRelations 中本书关系 352 条；缺失 0；额外 0；重复 0。
+- closeout 残片抽查：于办理、于林正、任何制、任政治、党各派、党开放、党政职、全部要、别人坐、卜卦、司法审、国之友、国元首、容包括、公正性、关键在本书计数均为 0。
+- 真实低频端点保留：何怀硕(学术, 9)、张晓春(学术, 5)、周天瑞(学术, 4)、吕亚力(学术, 1)、郑钦仁(学术, 6)。
+- `data/relationship-data.js`：`node --check` 通过。
+- `git diff --check`：仅提示既有 LF/CRLF 转换，无空白错误。
+
+导出抽查：
+- `exports/by-book-index.txt` 中本书为：`《恰似我的温柔》｜李敖祸台五十年庆祝十书｜章节 46｜人物 910`。
+- `exports/li-ao-relationships.txt` 中本书关系标题行 352；首条为沈剑虹 -- 新闻局传播/反费正清公开信 -- 费正清；末条为郁慕明 -- 重返联合国案/八十五位立委名单尾段 -- 洪昭南。
+- `exports/li-ao-relationships.csv`：总行数 15502；主要书目字段含本书的汇总人物行 647。
+
+本书结论：
+- 《恰似我的温柔》三轮加 closeout 已完成，可视为本书归档。
+- 下一本建议进入：005《启发你的小故事》。
