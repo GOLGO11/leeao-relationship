@@ -1,0 +1,33 @@
+# 《我们没有明天》closeout
+
+## 范围
+- 本书路径：`《大李敖全集5.0》（wjm_tcy版）分章节/016.李敖祸台五十年庆祝十书/009.我们没有明天`
+- closeout 目标：确认 round1-round3 补网已稳定回流到总数据、导出文件同步，并守住不把误点人物写入关系网。
+- 重要保护：正式回流未使用 `--all`，而是沿用当前 `data/people.json` 中 153 本书的显式 `--book-path` 列表。
+
+## 单书复跑
+- 临时单书抽取：194 人物 / 1 本书 / 44 章 / 359 条全量 personRelations。
+- 本书关系对照：导出关系 101，脚本源关系 101，缺失脚本关系 0。
+- 必查人物与必查关系：缺失 0。
+- 禁入误点：`华盛顿`、`乔治·马歇尔`、`吴石`、`CL`、`上帝` 均未作为本书人物或关系端点写入。
+
+## 正式回流
+- 显式 `--book-path`：153 个。
+- guard：`missing_count 0`，`target_included True`，`duplicate_title_count 0`，`book_path_flags 153`，`contains_all_arg False`，`argv_has_all False`。
+- 正式总量：15860 人物 / 153 本书 / 7899 章 / 8932 条 personRelations。
+- 本书书卡：44 章 / 242 人物。
+- 本书关系：导出关系 101，脚本源关系 101，缺失脚本关系 0。
+
+## 导出与校验
+- `data/people.json`：本书关系 101。
+- `exports/li-ao-relationships.txt`：本书关系行 101。
+- `data/relationship-data.js`：本书关系 101，书卡 44 章 / 242 人物。
+- `exports/li-ao-relationships.csv`：人物导出命中 `胡翡翠`、`林维源`、`金基少`、`英格索`、`陈田锚`、`吴石楠`。
+- `exports/by-book-index.txt`：`《我们没有明天》｜李敖祸台五十年庆祝十书｜章节 44｜人物 242`。
+- `scripts/extract_relationships.py`：`py_compile ok`。
+- `data/relationship-data.js`：`node --check` 通过。
+- `git diff --check`：通过，仅提示若干文本文件未来可能被 Git 替换 LF/CRLF。
+
+## 下一步建议
+- 进入同一系列下一本：`010.李敖生死书`。
+- 建议 round1 先抓生死主题下的自我叙述、亲友/出版/医疗/宗教/论敌线索，再用单书临时验证确认人物边界。

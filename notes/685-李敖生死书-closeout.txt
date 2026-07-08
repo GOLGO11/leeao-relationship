@@ -1,0 +1,38 @@
+# 《李敖生死书》closeout
+
+## 范围
+- 本书路径：`《大李敖全集5.0》（wjm_tcy版）分章节/016.李敖祸台五十年庆祝十书/010.李敖生死书`
+- closeout 目标：确认 round1-round3 的补网结果已经稳定进入正式数据、导出面同步，并记录下一本入口。
+- 重要保护：本次 closeout 只核验现有正式产物，没有重建；round3 正式回流沿用显式 `--book-path` 列表，记录中已确认 `argv_has_all=False`。
+
+## 三轮递进
+- round1：从生死自杀、西路军、甘地家族主干入手；baseline 单书 287 people / 22 chapters / 本书关系 0，临时单书 pass2 为 265 people / 103 book_relations；正式回流后总量 15963 people / 154 books / 7921 chapters，本书关系 106。
+- round2：补五百完人、山东联中、战犯返台、新疆案、西路军低频线；临时单书 305 people / 179 book_relations；正式回流后总量 16003 people / 154 books / 7921 chapters，本书关系 179。
+- round3：补戴季陶、王国维、张妈妈/淡江、胡轨、甘地家族尾部低频线；临时单书 318 people / 204 book_relations；正式回流后总量 16013 people / 154 books / 7921 chapters，本书关系 204。
+
+## 正式状态
+- `data/people.json` 总量：16013 people / 154 books / 7921 chapters。
+- 本书书卡：22 chapters / personCount 439。
+- 本书关系：204 条；关系端点 205 个。
+- `exports/by-book-index.txt`：`《李敖生死书》｜李敖祸台五十年庆祝十书｜章节 22｜人物 439`。
+- `exports/li-ao-relationships.txt`：本书关系行 204。
+- `exports/li-ao-relationships.csv`：人物导出总行 16013，关键端点均可命中。
+- `data/relationship-data.js`：包含《李敖生死书》正式数据。
+
+## closeout 校验
+- 关键端点缺失：`[]`。
+- 关键关系缺失：`[]`。
+- 误切残留：`[]`。
+- `python -m py_compile scripts/extract_relationships.py`：通过。
+- `node --check data/relationship-data.js`：通过。
+- `git diff --check`：通过；仅提示若干文本文件未来可能被 Git 替换 LF/CRLF。
+
+## 覆盖说明
+- 生死/自杀主线：戴季陶、王国维、路易十六、五百完人、西路军、战犯返台等线已建出主要关系边。
+- 家族/讣闻主线：徐锡麟-徐学文讣闻亲属、甘地家族三代政治继承、张妈妈/淡江居家支线已补入尾部端点。
+- 政治史低频线：山东联中、盛世才新疆案、西路军干部与马家军、胡轨黄埔同学等低频端点已清理并回流。
+- 误切防线：安眠药、时许、暴力自、和园、国旅社、青年救国等非人物残片未作为本书关系端点保留。
+
+## 下一步建议
+- 当前 `016.李敖祸台五十年庆祝十书` 已完成到第 10 本；下一步进入新集合：`017.百家论李敖/001.我也李敖一下`。
+- round1 建议先抓序、前言、魏京生、柏杨、参选评论等早段章节，重点区分“评论者与李敖的关系”和“文中转述的第三方关系”，先建立李敖被评论、被比较、被引用的主干网络。

@@ -1,0 +1,42 @@
+《从万宝囊到臭屎堆》closeout
+
+目标
+- 收束前三轮后残留的关系边落地问题，重点核对“脚本关系存在、正式人物端点未进入 people 表”的缺口。
+- 只围绕本书做显式 `--book-path` 回流；本轮未使用、也不应使用 `--all`。
+
+closeout 发现
+- closeout 前临时单本：288 people / 168 relations / script_relations 170。
+- 缺口 2 条：
+  - 孙中山 -> 凯特·盖利｜宣誓公证/伪造出生文书：脚本关系已写入，但“凯特·盖利”低频译名未进人物表。
+  - 屈突通 -> 屈突盖｜兄弟执法严峻/民间谚语并称：脚本关系已写入，但“屈突盖”仍在全局 STOP_NAMES 中，被最终输出过滤。
+
+本轮补丁
+- 在《从万宝囊到臭屎堆》身份补网后解除 `屈突盖` 的误停用：`STOP_NAMES.discard("屈突盖")`。
+- 在本书短语锚点中加入：
+  - `凯特·盖利（签名）` -> 凯特·盖利、孙中山。
+  - `宁食三年艾，不见屈突盖` -> 屈突盖、屈突通。
+
+单本验证
+- closeout 后临时单本：290 people / 170 relations / script_relations 170 / missing 0。
+- 凯特·盖利：1 occurrence，分类 legal_official / witness / historical_allusion。
+- 屈突盖：4 occurrence，分类 public_official / historical_allusion。
+
+正式回流
+- 使用当前 `exports/by-book-index.txt` 的 152 本书名生成显式 repeated `--book-path` 参数。
+- 正式回流输出：done: 15825 people, 152 books, 7855 chapters。
+- 回流脚本检查：book_count 152；argv_has_all False。
+
+正式验证
+- `python -B -m py_compile scripts\extract_relationships.py`：通过。
+- `node --check data\relationship-data.js`：通过。
+- `git diff --check`：通过，仅提示工作区 LF/CRLF 转换警告。
+- `.tmp-wanbao-closeout-validate.py`：通过。
+  - totals: 15825 people / 152 books / 7855 chapters / 8831 personRelations。
+  - 本书书卡：403 people / 34 chapters。
+  - 本书关系：170。
+  - 凯特·盖利、屈突盖均进入正式 people 分片与 CSV 人物导出。
+  - 两条 closeout 边均进入 manifest、TXT 与 relationship-data.js。
+
+下一步建议
+- 本书可 closeout。
+- 下一本按目录顺序进入《我们没有明天》round1，路径为 `016.李敖祸台五十年庆祝十书/009.我们没有明天`。

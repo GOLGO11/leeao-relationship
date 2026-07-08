@@ -1,0 +1,73 @@
+《君子爱人以色》closeout
+
+本书状态：
+- 已完成 round1、round2、round3 与 closeout。
+- 本书路径：`016.李敖祸台五十年庆祝十书/006.君子爱人以色`
+
+closeout 目标：
+- 对 round3 后的正式全库回流结果做低频人物、尾部导出和关系闭环抽查。
+- 确认爱情/权力对照、男色史料链、跑步政治、风水祖坟和龙发堂证人链均已进入正式数据。
+- 检查本书展示面和分片 JSON，避免回到单书数据或 50MB 单文件状态。
+
+closeout 脚本收束：
+- `scripts/extract_relationships.py`
+  - closeout 不新增人工关系边。
+  - 补充短语锚点：`科林斯（Corinth）国王 -> 科林斯国王 / 俄狄浦斯`。
+  - 该锚点修复 round3 中 `俄狄浦斯 -> 科林斯国王` 已在脚本存在、但因源文写作“科林斯（Corinth）国王”而未落入正式数据的问题。
+
+临时单书验证：
+- 命令使用显式 `--book-path`，未使用 `--all`。
+- 输出：`done: 310 people, 1 books, 43 chapters`。
+- `tmp_people 310`
+- `tmp_books 1`
+- `tmp_chapters 43`
+- `script_relations 175`
+- `tmp_relations 175`
+- `missing_script_relations 0`
+- `duplicate_relation_keys 0`
+- `missing_endpoints 0`
+- `科林斯国王` 单书出现 1 次。
+- `俄狄浦斯 -> 科林斯国王` 在临时数据中存在。
+
+正式回流：
+- 严格使用当前正式 150 本清单逐本解析为源文目录，传入 150 个显式 `--book-path`。
+- 护栏输出：
+  - `formal_rebuild_book_paths 150`
+  - `argv_has_all False`
+- 成功输出：`done: 15682 people, 150 books, 7776 chapters`。
+
+正式校验：
+- `totals_people 15682`
+- `totals_books 150`
+- `totals_chapters 7776`
+- `totals_identityLinks 36461`
+- `totals_personRelations 8517`
+- `shard_count 7`
+- `shard_people_sum 15682`
+- `js_totals_match True`
+- `js_people_count 15682`
+- 《君子爱人以色》正式书卡：43 章 / 397 人。
+- 正式关系闭环：脚本关系 175 条；正式 personRelations 中本书关系 175 条；缺失 0；额外 0；重复 0；缺失端点 0。
+- round3 关键边抽查均存在：
+  - 法非愚斯 -> 泰绮思
+  - 齐景公 -> 羽人
+  - 汉哀帝 -> 董贤
+  - 马英九 -> 马大基
+  - 陈朝清 -> 陈宝钟
+  - 俄狄浦斯 -> 科林斯国王
+  - 许信良 -> 刘邦
+- closeout 残片抽查：round1/round2 累计跳词和正式回流常见噪声在本书书卡中均未出现。
+- `scripts/extract_relationships.py`：`py_compile` 通过。
+- `data/relationship-data.js`：`node --check` 通过。
+- `assets/app.js`：`node --check` 通过。
+- `git diff --check`：仅提示既有 LF/CRLF 转换，无空白错误。
+
+导出抽查：
+- `exports/by-book-index.txt` 中本书为：`《君子爱人以色》｜李敖祸台五十年庆祝十书｜章节 43｜人物 397`。
+- `exports/li-ao-relationships.csv`：总行数 15682；主要书目字段含本书的汇总人物行 236。
+- `exports/li-ao-relationships.txt`：本书名出现 1388 次，导出展示已同步。
+- `data/people.json` 中本书关系 175 条；首条为李翰祥 -- 牌局玩笑/停止性交典故 -- 骆明道；末条为许信良 -- 天命自负类比/政治奋斗 -- 刘邦。
+
+本书结论：
+- 《君子爱人以色》三轮加 closeout 已完成，可视为本书归档。
+- 下一本建议进入：007《只爱一点点》。
