@@ -5,6 +5,8 @@
     category: "all",
     confidence: 1,
     selected: null,
+    lockedPersonName: "",
+    nameInitial: "",
     graphView: { x: 0, y: 0, k: 1 },
     pan: null,
     touchPointers: new Map(),
@@ -15,6 +17,33 @@
   const DEFAULT_GRAPH_NODE_LIMIT = 240;
   const FILTERED_GRAPH_NODE_LIMIT = 420;
   const SEARCH_RENDER_DELAY = 140;
+  const NAME_INITIALS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ#".split("");
+  const pinyinCollator = new Intl.Collator("zh-CN-u-co-pinyin", { numeric: true, sensitivity: "base" });
+  const pinyinBoundaries = [
+    ["A", "阿"],
+    ["B", "八"],
+    ["C", "嚓"],
+    ["D", "哒"],
+    ["E", "娥"],
+    ["F", "发"],
+    ["G", "旮"],
+    ["H", "哈"],
+    ["J", "击"],
+    ["K", "喀"],
+    ["L", "垃"],
+    ["M", "妈"],
+    ["N", "拿"],
+    ["O", "哦"],
+    ["P", "啪"],
+    ["Q", "期"],
+    ["R", "然"],
+    ["S", "撒"],
+    ["T", "塌"],
+    ["W", "挖"],
+    ["X", "昔"],
+    ["Y", "压"],
+    ["Z", "匝"],
+  ];
   let renderTimer = null;
 
   if (!data) {
@@ -86,12 +115,37 @@
     mentioned: "#64748b",
   };
 
-  function textIncludes(value, query) {
-    return String(value || "").toLowerCase().includes(query);
+  function normalizeSearch(value) {
+    return String(value || "")
+      .trim()
+      .toLocaleLowerCase("zh-CN")
+      .replace(/\s+/g, "");
+  }
+
+  function makeSearchText(parts) {
+    return normalizeSearch(parts.filter(Boolean).join(" "));
+  }
+
+  function personSortInitial(name) {
+    const first = String(name || "").trim().charAt(0);
+    if (!first) return "#";
+    if (/^[a-z]$/i.test(first)) return first.toUpperCase();
+    if (!/[\u4e00-\u9fff]/.test(first)) return "#";
+
+    let initial = "#";
+    pinyinBoundaries.forEach(([letter, boundary]) => {
+      if (pinyinCollator.compare(first, boundary) >= 0) initial = letter;
+    });
+    return initial;
+  }
+
+  function comparePeopleName(a, b) {
+    return pinyinCollator.compare(a.name, b.name) || a.name.localeCompare(b.name, "zh-CN");
   }
 
   data.people.forEach((person) => {
     const categories = person.categories || [person.category];
+    person.aliases = person.aliases || [];
     person.category = person.category || categories[0];
     person.primaryCategory = person.primaryCategory || person.category;
     person.categoryLabel = person.categoryLabel || data.categoryLabels[person.category] || person.category;
@@ -103,13 +157,22 @@
     }));
     person.cues = person.cues || [];
     person.evidence = person.evidence || [];
-    person.searchText = [
-      person.name,
-      personAliasText(person),
+    const identitySearchText = makeSearchText([
       (person.categoryLabels || [person.categoryLabel]).join(" "),
       person.cues.map((item) => item.cue).join(" "),
-      person.evidence.map((item) => `${item.chapter || ""} ${item.snippet || ""}`).join(" "),
-    ].join(" ").toLowerCase();
+    ]);
+    const evidenceSearchText = makeSearchText(
+      person.evidence.map((item) => `${item.book || ""} ${item.chapter || ""} ${item.snippet || ""}`),
+    );
+    person.search = {
+      name: normalizeSearch(person.name),
+      aliases: person.aliases.map(normalizeSearch).filter(Boolean),
+      identity: identitySearchText,
+      evidence: evidenceSearchText,
+    };
+    person.search.all = [person.search.name, ...person.search.aliases, person.search.identity, person.search.evidence].join("");
+    person.searchText = person.search.all;
+    person.sortInitial = personSortInitial(person.name);
   });
 
   const personIndex = new Map(data.people.map((person) => [person.name, person]));
@@ -126,10 +189,39 @@
       })),
     );
   const personRelationRows = Array.isArray(data.personRelations) ? data.personRelations : [];
+  const searchNameIndex = new Map();
+  const relationNeighborsByName = new Map();
+  const peopleByInitial = new Map(NAME_INITIALS.map((initial) => [initial, []]));
+  let exactNameCache = { query: null, names: new Set() };
 
-  function personAliasText(person) {
-    return (person.aliases || []).join(" ");
+  function addSearchName(key, person) {
+    if (!key) return;
+    if (!searchNameIndex.has(key)) searchNameIndex.set(key, []);
+    searchNameIndex.get(key).push(person);
   }
+
+  function addRelationNeighbor(source, target) {
+    if (!source || !target) return;
+    if (!relationNeighborsByName.has(source)) relationNeighborsByName.set(source, new Set());
+    relationNeighborsByName.get(source).add(target);
+  }
+
+  data.people.forEach((person) => {
+    addSearchName(person.search.name, person);
+    person.search.aliases.forEach((alias) => addSearchName(alias, person));
+    const initial = peopleByInitial.has(person.sortInitial) ? person.sortInitial : "#";
+    peopleByInitial.get(initial).push(person);
+  });
+
+  NAME_INITIALS.forEach((initial) => {
+    peopleByInitial.get(initial).sort(comparePeopleName);
+  });
+  state.nameInitial = NAME_INITIALS.find((initial) => peopleByInitial.get(initial).length) || "#";
+
+  personRelationRows.forEach((relation) => {
+    addRelationNeighbor(relation.source, relation.target);
+    addRelationNeighbor(relation.target, relation.source);
+  });
 
   function identityLinks() {
     return identityLinkRows;
@@ -139,18 +231,66 @@
     return personRelationRows;
   }
 
-  function personMatches(person) {
+  function exactNamesForQuery(query = state.query) {
+    if (exactNameCache.query === query) return exactNameCache.names;
+    const exactPeople = query ? searchNameIndex.get(query) || [] : [];
+    exactNameCache = { query, names: new Set(exactPeople.map((person) => person.name)) };
+    return exactNameCache.names;
+  }
+
+  function isRelatedToAny(name, names) {
+    const neighbors = relationNeighborsByName.get(name);
+    if (!neighbors) return false;
+    return [...names].some((exactName) => neighbors.has(exactName));
+  }
+
+  function searchScore(person, query = state.query) {
+    if (!query) return 0;
+    if (person.search.name === query) return 1000;
+    if (person.search.aliases.some((alias) => alias === query)) return 960;
+    if (person.search.name.startsWith(query)) return 920;
+    if (person.search.aliases.some((alias) => alias.startsWith(query))) return 880;
+    if (person.search.name.includes(query)) return 820;
+    if (person.search.aliases.some((alias) => alias.includes(query))) return 780;
+    if (person.search.identity.includes(query)) return 420;
+    if (person.search.evidence.includes(query)) return 120;
+    return 0;
+  }
+
+  function personPassesCategory(person) {
     const categories = person.categories || [person.category];
-    if (state.category !== "all" && !categories.includes(state.category)) return false;
+    return state.category === "all" || categories.includes(state.category);
+  }
+
+  function makePersonSelection(person) {
+    return { id: `person:${person.name}`, type: "person", name: person.name, person };
+  }
+
+  function personMatches(person) {
+    const exactNames = exactNamesForQuery();
+    if (exactNames.size) {
+      if (exactNames.has(person.name)) return true;
+      if (person.confidence < state.confidence || !personPassesCategory(person)) return false;
+      return isRelatedToAny(person.name, exactNames);
+    }
+
+    if (!personPassesCategory(person)) return false;
     if (person.confidence < state.confidence) return false;
     if (!state.query) return true;
-    return person.searchText.includes(state.query);
+    return searchScore(person) > 0;
   }
 
   function personMatchesBase(person) {
+    const exactNames = exactNamesForQuery();
+    if (exactNames.size) {
+      if (exactNames.has(person.name)) return true;
+      if (person.confidence < state.confidence) return false;
+      return isRelatedToAny(person.name, exactNames);
+    }
+
     if (person.confidence < state.confidence) return false;
     if (!state.query) return true;
-    return person.searchText.includes(state.query);
+    return searchScore(person) > 0;
   }
 
   function availableCategories() {
@@ -163,7 +303,9 @@
     const filter = $("categoryFilter");
     if (filter) filter.value = category;
     state.selected = null;
+    state.lockedPersonName = "";
     state.graphView = { x: 0, y: 0, k: 1 };
+    renderNameIndex();
     renderGraph();
   }
 
@@ -183,7 +325,6 @@
     $("statIdentities").textContent = identityLinks().length.toLocaleString("zh-CN");
     $("statBooks").textContent = data.totals.books.toLocaleString("zh-CN");
     $("statChapters").textContent = data.totals.chapters.toLocaleString("zh-CN");
-    $("bookCount").textContent = `${data.books.length} 本`;
   }
 
   function categoryPill(category, label, count) {
@@ -308,16 +449,23 @@
 
   function rankPeopleForGraph(people) {
     const selectedName = state.selected && state.selected.type === "person" ? state.selected.name : "";
+    const lockedName = state.lockedPersonName;
     return [...people].sort((a, b) => {
+      if (lockedName && a.name === lockedName) return -1;
+      if (lockedName && b.name === lockedName) return 1;
       if (a.name === selectedName) return -1;
       if (b.name === selectedName) return 1;
+      if (state.query) {
+        const scoreDiff = searchScore(b) - searchScore(a);
+        if (scoreDiff) return scoreDiff;
+      }
       return (b.confidence - a.confidence) || (b.relevantOccurrences - a.relevantOccurrences) || (b.occurrences - a.occurrences) || a.name.localeCompare(b.name, "zh-CN");
     });
   }
 
   function visiblePeopleForGraph(filteredPeople) {
     const limit = graphNodeLimit();
-    if (filteredPeople.length <= limit) return filteredPeople;
+    if (!state.query && !state.lockedPersonName && filteredPeople.length <= limit) return filteredPeople;
     return rankPeopleForGraph(filteredPeople).slice(0, limit);
   }
 
@@ -411,11 +559,114 @@
     layout.style.setProperty("--detail-pane-height", `${Math.ceil(graphPane.offsetHeight)}px`);
   }
 
+  function lockPerson(name, { syncSearch = true } = {}) {
+    const person = personIndex.get(name);
+    if (!person) return;
+
+    state.lockedPersonName = person.name;
+    state.nameInitial = peopleByInitial.has(person.sortInitial) ? person.sortInitial : "#";
+    state.selected = makePersonSelection(person);
+    state.category = "all";
+    const categoryFilter = $("categoryFilter");
+    if (categoryFilter) categoryFilter.value = "all";
+    if (syncSearch) {
+      state.query = normalizeSearch(person.name);
+      const searchInput = $("searchInput");
+      if (searchInput) searchInput.value = person.name;
+    }
+    state.graphView = { x: 0, y: 0, k: 1 };
+    renderNameIndex();
+    renderGraph();
+  }
+
+  function clearPersonLock() {
+    state.lockedPersonName = "";
+    renderNameIndex();
+    renderGraph();
+  }
+
+  function ensureSelectedPerson(filteredPeople) {
+    if (!filteredPeople.length) {
+      state.selected = null;
+      return;
+    }
+
+    const visibleNames = new Set(filteredPeople.map((person) => person.name));
+    if (state.lockedPersonName && visibleNames.has(state.lockedPersonName)) {
+      state.selected = makePersonSelection(personIndex.get(state.lockedPersonName));
+      return;
+    }
+    if (state.selected && state.selected.type === "person" && visibleNames.has(state.selected.name)) return;
+    if (state.query) {
+      state.selected = makePersonSelection(rankPeopleForGraph(filteredPeople)[0]);
+      return;
+    }
+    state.selected = null;
+  }
+
+  function renderNameIndex() {
+    const letters = $("nameIndexLetters");
+    const list = $("nameIndexList");
+    const meta = $("nameIndexMeta");
+    if (!letters || !list || !meta) return;
+
+    letters.innerHTML = "";
+    NAME_INITIALS.forEach((initial) => {
+      const people = peopleByInitial.get(initial) || [];
+      const button = document.createElement("button");
+      button.type = "button";
+      button.textContent = `${initial} ${people.length}`;
+      button.disabled = !people.length;
+      button.className = state.nameInitial === initial ? "active" : "";
+      button.addEventListener("click", () => {
+        state.nameInitial = initial;
+        renderNameIndex();
+      });
+      letters.appendChild(button);
+    });
+
+    const people = peopleByInitial.get(state.nameInitial) || [];
+    meta.textContent = state.lockedPersonName
+      ? `已锁定：${state.lockedPersonName}`
+      : `${state.nameInitial} 组 ${people.length.toLocaleString("zh-CN")} 人`;
+
+    list.innerHTML = "";
+    if (state.lockedPersonName) {
+      const lockBar = document.createElement("div");
+      lockBar.className = "lockBar";
+      const label = document.createElement("span");
+      label.textContent = `当前锁定 ${state.lockedPersonName}`;
+      const clearButton = document.createElement("button");
+      clearButton.type = "button";
+      clearButton.textContent = "解除";
+      clearButton.addEventListener("click", clearPersonLock);
+      lockBar.append(label, clearButton);
+      list.appendChild(lockBar);
+    }
+
+    const grid = document.createElement("div");
+    grid.className = "nameIndexGrid";
+    people.forEach((person) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = `nameIndexItem${state.lockedPersonName === person.name ? " locked" : ""}`;
+      const name = document.createElement("strong");
+      name.textContent = person.name;
+      const metaText = document.createElement("span");
+      metaText.textContent = `${person.occurrences} 次 · ${person.primaryCategoryLabel}`;
+      button.append(name, metaText);
+      button.addEventListener("click", () => lockPerson(person.name));
+      grid.appendChild(button);
+    });
+    list.appendChild(grid);
+  }
+
   function renderGraph() {
     const svg = $("graphSvg");
     const width = Math.max(960, svg.clientWidth || 960);
     const height = Math.max(720, svg.clientHeight || 680);
     const filteredPeople = data.people.filter(personMatches);
+    ensureSelectedPerson(filteredPeople);
     const graphPeople = visiblePeopleForGraph(filteredPeople);
     $("resultCount").textContent = graphPeople.length < filteredPeople.length
       ? `显示 ${graphPeople.length.toLocaleString("zh-CN")} / 共 ${filteredPeople.length.toLocaleString("zh-CN")} 人`
@@ -472,7 +723,9 @@
 
     graph.nodes.forEach((node) => {
       const group = document.createElementNS("http://www.w3.org/2000/svg", "g");
-      group.setAttribute("class", `node ${node.type}${state.selected && state.selected.id === node.id ? " selected" : ""}`);
+      const isSelected = state.selected && state.selected.id === node.id;
+      const isLocked = state.lockedPersonName && node.type === "person" && node.name === state.lockedPersonName;
+      group.setAttribute("class", `node ${node.type}${isSelected ? " selected" : ""}${isLocked ? " locked" : ""}`);
       group.setAttribute("transform", `translate(${node.x},${node.y})`);
       group.style.cursor = "pointer";
 
@@ -493,15 +746,27 @@
       group.appendChild(text);
 
       group.addEventListener("click", () => {
+        if (node.type === "person") {
+          lockPerson(node.name);
+          return;
+        }
         state.selected = node;
+        state.lockedPersonName = "";
         renderDetail(node);
+        renderNameIndex();
         svg.querySelectorAll(".node.selected").forEach((item) => item.classList.remove("selected"));
+        svg.querySelectorAll(".node.locked").forEach((item) => item.classList.remove("locked"));
         group.classList.add("selected");
+        if (node.type === "person") group.classList.add("locked");
       });
       nodeLayer.appendChild(group);
     });
 
-    if (!state.selected) {
+    const selectedNode = state.selected ? graph.nodes.find((node) => node.id === state.selected.id) : null;
+    if (selectedNode) {
+      state.selected = selectedNode;
+      renderDetail(selectedNode);
+    } else if (!state.selected) {
       const first = graph.nodes.find((node) => node.type === "person");
       if (first) {
         state.selected = first;
@@ -647,8 +912,7 @@
       `;
       $("detailBody").querySelectorAll("button[data-person]").forEach((button) => {
         button.addEventListener("click", () => {
-          const person = personIndex.get(button.dataset.person);
-          if (person) renderDetail({ id: `person:${person.name}`, type: "person", name: person.name, person });
+          lockPerson(button.dataset.person);
         });
       });
       return;
@@ -656,7 +920,7 @@
 
     const person = node.person;
     $("detailName").textContent = person.name;
-    $("detailMeta").textContent = `出现 ${person.occurrences} 次 · 可信度 ${person.confidence}`;
+    $("detailMeta").textContent = `${state.lockedPersonName === person.name ? "已锁定 · " : ""}出现 ${person.occurrences} 次 · 可信度 ${person.confidence}`;
     const identities = (person.categoryStats || []).map((stat) => categoryPill(stat.category, stat.label, stat.count)).join("");
     const aliases = (person.aliases || []).filter(Boolean);
     const aliasLine = aliases.length
@@ -685,33 +949,27 @@
         `,
       )
       .join("");
+    const detailActions = state.lockedPersonName === person.name
+      ? ""
+      : `
+      <div class="detailActions">
+        <button type="button" data-lock-current>锁定人物</button>
+      </div>`;
     $("detailBody").innerHTML = `
       <div class="metricLine">
         <span>出现 ${person.occurrences}</span>
         <span>相关出现 ${person.relevantOccurrences}</span>
         <span>章节 ${person.chapterCount}</span>
       </div>
+      ${detailActions}
       <div class="identityList">${identities}</div>
       ${aliasLine}
       <div><strong>线索：</strong>${cues}</div>
       ${relationItems ? `<div class="relationList">${relationItems}</div>` : ""}
       <div class="evidence">${evidence || "暂无证据片段"}</div>
     `;
-  }
-
-  function renderBooks() {
-    const grid = $("bookGrid");
-    grid.innerHTML = "";
-    data.books.forEach((book) => {
-      const item = document.createElement("button");
-      item.type = "button";
-      item.className = "bookItem";
-      item.innerHTML = `
-        <strong>《${book.book}》</strong>
-        <span>${book.collection} · ${book.chapters} 章 · ${book.personCount} 人</span>
-        <p>${book.people.slice(0, 8).map((x) => x.name).join("、")}</p>
-      `;
-      grid.appendChild(item);
+    $("detailBody").querySelectorAll("button[data-lock-current]").forEach((button) => {
+      button.addEventListener("click", () => lockPerson(person.name));
     });
   }
 
@@ -722,9 +980,11 @@
     }
 
     $("searchInput").addEventListener("input", (event) => {
-      state.query = event.target.value.trim().toLowerCase();
+      state.query = normalizeSearch(event.target.value);
       state.selected = null;
+      state.lockedPersonName = "";
       state.graphView = { x: 0, y: 0, k: 1 };
+      renderNameIndex();
       scheduleRender();
     });
     $("categoryFilter").addEventListener("change", (event) => {
@@ -734,11 +994,13 @@
       state.confidence = Number(event.target.value);
       $("confidenceValue").textContent = state.confidence;
       state.selected = null;
+      state.lockedPersonName = "";
       state.graphView = { x: 0, y: 0, k: 1 };
+      renderNameIndex();
       scheduleRender();
     });
     window.addEventListener("resize", () => {
-      state.selected = null;
+      if (!state.lockedPersonName) state.selected = null;
       state.graphView = { x: 0, y: 0, k: 1 };
       scheduleRender(180);
     });
@@ -747,7 +1009,7 @@
 
   fillFilters();
   fillStats();
-  renderBooks();
+  renderNameIndex();
   bindEvents();
   renderGraph();
 })();

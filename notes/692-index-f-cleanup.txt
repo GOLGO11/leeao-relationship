@@ -1,0 +1,48 @@
+2026-07-09 索引 F 清理
+
+执行标准：
+- 沿用用户校正规则：职衔、关系称谓、某人妻/某女/某母、某先生等，只要指向一个具体人，都保留为人物节点。
+- 只删除真正非人：普通词、动作短语、地点/机构/报刊/节目名、概念词、标题残片和姓名后缀动词黏连。
+
+范围：
+- 未使用 --all。
+- 基于当前 data/people.json 清单中的 154 本书和分片 people-part-*.json 操作。
+- 临时回扫 7921 个当前章节文件，只为 F 组候选确认书籍归属并同步逐书索引，不重跑抽取。
+
+本轮删除：
+- 方组删除“方百计、方代表、方独立、方自治、方系统、方式来、方式去、方面做、方言”等普通词、概念词和句读残片；保留方豪、方素敏、方前正、方氏（某人妻/某女/某媳）、方印等具体人或具体人指向项。
+- 范组删除“范围之、范学校、范蠡说”，保留范蠡、范可钦、范仲淹等人物。
+- 房组删除“房地产、房东、房子卖/抵/据/送/要、房间同、房间牢、房李敖”等地点/物件/句读残片；保留房阿生、房东孙、房匪谍、房玄龄等具体人或具体人指向项。
+- 费/丰组删除“费城晨、费青春、费精神、费收入、费做人、丰厚”；保留费朋克大使、费兰西、丰原、费大妈、费边将军等具体人或具体人指向项。
+- 凤/封/冯组删除“凤凰全、凤梨、凤山、封面、封回信、封秘件、封杀谷、冯当然、冯部精、冯配、冯之地”等节目/地名/普通短语；保留凤翰、冯大轰、冯志翔等人物。
+- 符/扶/傅/富组删除“符合公、符合现、符体制、扶摇直、傅园、富邦、富贵楼、富华证、富庶”等短语、地点或机构；保留傅校长、副座、副连长、辅大女学生、附添潘婆等具体人指向项。
+
+数据变化：
+- people: 15258 -> 15163
+- identityLinks: 36157 -> 36012
+- personRelations: 9134 -> 9134
+- touched books: 152
+- 前端 F 索引桶：340 -> 245
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入同一批 F 组非人词，后续单书重建不会回流。
+
+验证：
+- manifest_people=15163, loaded_people=15163, totals_people=15163
+- identityLinks=36012, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- CSV rows=15163，removed_in_csv=0
+- F_count=245
+- 抽查保留：房东孙、副座、副连长、傅校长、房匪谍、费朋克、费兰西、丰原、风露、辅大女学生（李敖书函集）、附添潘婆（五五日记）
+- node --check data/relationship-data.js
+- node --check assets/app.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步：
+- 进入索引 G，继续只清真正非人，不删可指向具体人的职衔、关系或称谓节点。

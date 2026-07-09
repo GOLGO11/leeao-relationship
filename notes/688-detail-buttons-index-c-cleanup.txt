@@ -1,0 +1,43 @@
+2026-07-09 右侧详情按钮调整 + 索引 C 首轮清理
+
+前端调整：
+- 右侧人物详情中，人物已锁定时不再显示“刷新锁定”和“解除锁定”按钮。
+- 未锁定人物仍保留“锁定人物”按钮；从 A-Z 名称索引点击人物仍会直接锁定。
+- assets/app.js 中已移除 data-clear-lock 绑定，避免无用按钮继续出现。
+
+索引 C 首轮范围：
+- 未使用 --all；仅依据当前 data/people.json 清单中的 154 本书回扫确认候选分布。
+- 临时回扫 7921 个当前章节文件，只保留 289 个 C 组候选的书籍归属，用于安全更新逐书 personCount。
+- 本轮删除高确定性误切节点：从* 介词短语、成*/常*/查*/程* 普通语块、题名残片、机构/普通词、姓名后缀粘连，以及陈/曹/曾/蔡下明显“姓名 + 动词/句尾”的残片。
+- 谨慎保留了源文看起来指向具体人物的非标准节点，例如成露茜、成希超、陈查某、蔡妈福、蔡射受、查耳时、曹社长、曹处长等，留待后续若有更明确规则再处理。
+
+数据变化：
+- people: 15802 -> 15513
+- identityLinks: 37042 -> 36591
+- personRelations: 9134 -> 9134
+- touched books: 144
+- 前端 C 索引桶：1372 -> 1083
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入同一批 C 组首轮误切词，后续单书重建不会回流。
+
+验证：
+- manifest_people=15513, loaded_people=15513, totals_people=15513
+- removed_still_in_people=0
+- identityLinks=36591, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- CSV rows=15513，删除项未出现在 CSV
+- C_count=1083
+- rg "刷新锁定|解除锁定|data-clear-lock" assets index.html 无匹配
+- node --check assets/app.js
+- node --check data/relationship-data.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步：
+- 继续索引 C 第二轮，重点复查陈/蔡/曹/曾等大姓中的低频尾部和角色式节点。

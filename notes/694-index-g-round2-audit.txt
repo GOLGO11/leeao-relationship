@@ -1,0 +1,38 @@
+2026-07-09 索引 G 第二轮复核
+
+执行标准：
+- 未使用 --all。
+- 不重跑抽取；基于当前 data/people.json manifest 和 people-part-*.json 分片做精确删点，再同步前端数据与导出。
+- 继续沿用用户校正规则：职衔、关系称谓、某人妻/某女/某母、某先生等，只要指向具体人或人称语境，保留为人物节点；本轮只删除明确非人名的句法残片。
+
+本轮复核重点：
+- 复查剩余 G 桶 411 项，重点看郭、高、葛、谷及低频/待复核项。
+- 保留项示例：
+  - 高峰祈、高德源、高国华、高寒、高兰、高胜助、高天来、高英洋、高友唐、高总成、高子白：证据均指具体人。
+  - 高山流、高信郑、国府种德：均为具体作者/友人/学者姓名。
+  - 葛兰特、葛雷高、葛利普、葛威尔、葛县长、谷老将、谷小姐、谷圳、谷家华：均有具体人物、称谓或人称指向。
+  - 跟监治安人员（李敖书翰集）、管区警察（软禁残记）、古亭女中老师（李敖书翰集）：虽为职衔/角色式节点，但在原文中指向实际人或人群语境，本轮按保留规则不删。
+
+本轮删除：
+- 郭同宿
+  - 原文为“与郭同宿的妓女杨美玉亦说……”，其中“郭”指前文郭凤祥，“同宿”是动作，整体不是人名。
+  - 已加入 scripts/extract_relationships.py 的 G 组第二轮 STOP_NAMES，后续单书重建不会回流。
+
+数据变化：
+- people: 14768 -> 14767
+- identityLinks: 35357 -> 35356
+- personRelations: 9134 -> 9134
+- 前端 G 索引桶：411 -> 410
+
+验证：
+- manifest_people=14767, loaded_people=14767, totals_people=14767
+- identityLinks=35356, totals_identityLinks=35356, bad_identity_links=0
+- personRelations=9134, totals_personRelations=9134, bad_relations=0
+- 郭同宿不再作为 people.name、identityLinks.person、personRelations.source/target、CSV 行或 book index 项出现。
+- relationship-data.js 中仍可在葛树楷、杨美玉的 evidence snippet 里看到原文“郭同宿”，这是来源片段，不是节点残留。
+- node --check data/relationship-data.js
+- node --check assets/app.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步建议：
+- G 组剩余项已经以具体人名、人称关系、职衔/角色指向为主；建议进入 H 组索引排查。

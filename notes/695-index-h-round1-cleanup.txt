@@ -1,0 +1,51 @@
+2026-07-09 索引 H 首轮清理
+
+执行标准：
+- 未使用 --all。
+- 不重跑抽取；基于当前 data/people.json manifest 与 people-part-*.json 分片做精确删点。
+- 为保持逐书统计一致，临时脚本扫描当前 7921 个章节源文件，只用于确认删除名出现过的书籍并同步 books.personCount / book index。
+- 继续按用户校正规则执行：职衔、关系称谓、某人妻/某女/某母、某先生等，只要指向具体人或人称语境，保留为人物节点；本轮只删除普通词、题名/地名、句法尾巴、姓名后缀动词黏连。
+
+本轮删除：
+- 共删除 222 个 H 桶明显非人名节点。
+- 主要类型：
+  - “和*”介词短语残片：保留古人“和凝”，删除“和艾森、和柏杨、和老师、和男人、和美女、和国家、和苏联、和谈拖”等 75 项。
+  - “胡适*”姓名后缀黏连：保留“胡适、胡适妈、胡适母亲”，删除“胡适抱、胡适博、胡适等、胡适跟、胡适密、胡适生、胡适透”等 31 项。
+  - 韩/何/黄等姓名后接动作或句法残片：如“韩访问、韩寒很、韩信说、韩愈问、韩正首、何花落、何处理、何须、黄巢睡、黄郛看、黄盖自、黄行动、黄兴等”。
+  - 普通词、题名、地名/物名：如“花生、花园、花名榜、红地毯、红绿灯、华北、华西街、华水螅、黄河水、黄金夜、惠顾、惠利息、侯世家、侯选人”。
+
+本轮保留的边界项示例：
+- 韩说：古人名，保留。
+- 何尚宝遵、华宇、滑凤：原文为“某人之后/某人妻”语境，按具体人指向保留。
+- 何因、杭之、寒爵、红莲、华严、华老师、黄华表、黄鹄显、黄老生、黄老先、黄脸婆、黄妈典、黄某（书刊查禁警员）、黄小姐（李敖札记）、黄山谷、黄中国、黄金岛、黄金重、胡军校、胡适妈、胡适母亲、霍四究：均有具体人名、人称关系、职衔角色或人物语境，保留。
+
+数据变化：
+- people: 14767 -> 14545
+- identityLinks: 35356 -> 35055
+- personRelations: 9134 -> 9134
+- 前端 H 索引桶：1117 -> 895
+- touched books: 153
+- removed book/name pairs: 1681
+- books.personCount 合计减少：1543
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 已加入同一批 H 组 STOP_NAMES，后续单书重建不会回流。
+
+验证：
+- manifest_people=14545, loaded_people=14545, totals_people=14545
+- identityLinks=35055, totals_identityLinks=35055, bad_identity_links=0
+- personRelations=9134, totals_personRelations=9134, bad_relations=0
+- removedPeople=0, removedIdentity=0, removedRelation=0
+- bookPeopleHits=0, csvNameHits=0, sitePeopleHits=0, siteRelHits=0
+- node --check data/relationship-data.js
+- node --check assets/app.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步建议：
+- H 组剩余 895 个里仍有黄、胡、何的大量真名与边界称谓。建议进入 H 组第二轮，重点复核剩余的“黄/胡/何”低频项和带书名括号的角色项。

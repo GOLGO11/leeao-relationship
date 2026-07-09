@@ -1,0 +1,34 @@
+2026-07-09 索引 E 清理
+
+范围：
+- 未使用 --all。
+- 用户确认 E 组只需删除“鄂西之”。
+- 该节点来自《蒋介石评传》“鄂中与鄂西之匪”，是地理短语切片，不是人物。
+
+数据变化：
+- people: 15259 -> 15258
+- identityLinks: 36158 -> 36157
+- personRelations: 9134 -> 9134
+- 前端 E 索引桶：10 -> 9
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入“鄂西之”，后续单书重建不会回流。
+
+验证：
+- manifest_people=15258, loaded_people=15258, totals_people=15258
+- removed_in_people=False
+- CSV rows=15258，removed_in_csv=False
+- identityLinks=36157, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- E_count=9
+- node --check data/relationship-data.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步：
+- 进入索引 F，继续只清真正非人，不删可指向具体人的职衔、关系或称谓节点。

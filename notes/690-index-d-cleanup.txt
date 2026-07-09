@@ -1,0 +1,50 @@
+2026-07-09 索引 D 首轮清理
+
+执行标准：
+- 沿用 C 组第二轮的用户校正规则：职衔、关系称谓、某人妻/某女/某母、某先生等，只要指向一个具体人，都保留为人物节点。
+- 只删除真正非人：普通词、动作短语、党派/机构/地点、标题/书名残片、句读误切。
+
+范围：
+- 未使用 --all。
+- 仅依据当前 data/people.json 清单中的 154 本书回扫确认候选分布。
+- 临时回扫 7921 个当前章节文件，只保留 254 个 D 组候选的书籍归属，用于安全更新逐书 personCount。
+
+本轮删除：
+- 副词“都”误切短语 117 个，保留 都氏（陈满妻）、都市王。
+- 党派/党务误切短语 61 个，保留 党丕修、党三阳、党太尉、党湛。
+- 删除“单方面、单薄、单独*、单位先”等普通词/短语，保留 单小琳、单雄信、单志贵、单亦诚、单千龄、单姓警员。
+- 删除“戴脚镣、戴钢盔、戴耳环、戴面具、戴手套、戴勋章、戴笠有/只/担/熟/等”等动作或姓名粘连残片，保留 戴院长、戴传贤、戴天仇 等具体人指向项。
+- 删除“东京、东柏林、东协、东番记、东西*、东北*、东床坦”等地点/机构/书名/短语残片，保留 东氏（陈士心妻）、东昏侯、东方朔、东方望 等具体人或角色。
+- 删除“第五种思、第五师师、第五任代、第五场”等标题/序数残片，保留 第欧根尼、第六区队长。
+- 删除“段文字、段回忆、段话讲、段胡适、段李敖、段安可”等段落/标题/姓名粘连残片。
+- 删除“杜威来、杜威打、杜甫写、邓变脸、丁神灯、丁玲冒”等姓名后缀或标题残片。
+
+数据变化：
+- people: 15513 -> 15259
+- identityLinks: 36591 -> 36158
+- personRelations: 9134 -> 9134
+- touched books: 143
+- 前端 D 索引桶：605 -> 351
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入同一批 D 组非人词，后续单书重建不会回流。
+
+验证：
+- manifest_people=15259, loaded_people=15259, totals_people=15259
+- identityLinks=36158, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- CSV rows=15259，精确删除项未出现在 CSV
+- D_count=351
+- 都* 仅余：都市王、都氏（陈满妻）
+- 党* 仅余：党三阳、党丕修、党太尉、党湛
+- node --check data/relationship-data.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步：
+- 进入索引 E，继续只清真正非人，不删可指向具体人的职衔、关系或称谓节点。

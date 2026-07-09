@@ -1,0 +1,40 @@
+2026-07-09 索引 B 清理
+
+范围：
+- 延续前端 A-Z 人名索引清理，处理 B 组中明显不是人物的节点。
+- 未使用 --all；仅依据当前 data/people.json 清单中的 154 本书回扫确认候选分布。
+- 临时回扫 7921 个当前章节文件，只保留 191 个 B 组候选的书籍归属，用于安全更新逐书 personCount。
+
+本轮删除：
+- 191 个误切节点，主要是“别人*”“包括*”“步*”“边*”句法残片，以及“白手套”“白痴萧”“北投分局局长”“便衣人员（秘藏日记）”“包起来”“班牙”“班门弄”等短语、角色、机构/地名或误切片段。
+- 未触碰 B 组中可确认为真实人物的名称，例如边大绶、边裕渊等。
+
+数据变化：
+- people: 15993 -> 15802
+- identityLinks: 37283 -> 37042
+- personRelations: 9135 -> 9134
+- touched books: 119
+- 前端 B 索引桶：394 -> 203
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入同一批 B 组误切词，后续单书重建不会回流。
+
+验证：
+- manifest_people=15802, loaded_people=15802, totals_people=15802
+- removed_still_in_people=0
+- identityLinks=37042, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- CSV rows=15802，删除项未出现在 CSV
+- node --check assets/app.js
+- node --check data/relationship-data.js
+- python -m py_compile scripts/extract_relationships.py
+- 前端“逐本挖掘进度”相关标识仍无匹配。
+
+下一步：
+- 进入索引 C，继续按同样方式清理明显非人名节点。

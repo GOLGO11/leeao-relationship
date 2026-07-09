@@ -1,0 +1,48 @@
+2026-07-09 索引 G 首轮清理
+
+执行标准：
+- 沿用用户校正规则：职衔、关系称谓、某人妻/某女/某母、某先生等，只要指向一个具体人，都保留为人物节点。
+- 本轮先清一眼可定的非人：普通词、地名/机构、标题切片、成语/形容词、节目/报刊残片和姓名后缀动词黏连。
+
+范围：
+- 未使用 --all。
+- 基于当前 data/people.json 清单中的 154 本书和分片 people-part-*.json 操作。
+- 临时回扫 7921 个当前章节文件，只为 G 组候选确认书籍归属并同步逐书索引，不重跑抽取。
+
+本轮删除：
+- 国组删除除“国昌兄（李敖书牍集）/国分直一/国府种德/国俊/国焘”外的 178 个国字残片，如“国政治、国成立、国人做、国诗人、国家建、国父说、国行、国誉”等。
+- 公组删除“公开表/公开讲/公然*、公司*、公文*、公权力、公务人、公尺”等 47 个普通词或机构动作残片；保留公孙策、公孙杵臼、公孙弘、公孙龙、公羊高、公冶长、公子纠。
+- 高组删除“高层、高地厚、高规格、高级将、高丽、高速公、高雄去、高尚、高深、高职权”等 40 个形容词、地名和普通短语；保留高厂长、高信郑、高育、高山流、高市长、高院三推事等具体人或具体人指向项。
+- 关/顾/管/古/广/干/盖/甘等组删除“关键、关系到、顾问名、管道、古话说、广东、广告人、干嘛、盖印、甘肃”等普通词和地名残片。
+- 其他删除“勾结国、勾结起、贡献来、耿耿、葛玛兰、郭刺杀、郭进行、桂系副、宫女扯、宫女只”等。
+
+数据变化：
+- people: 15163 -> 14768
+- identityLinks: 36012 -> 35357
+- personRelations: 9134 -> 9134
+- touched books: 154
+- 前端 G 索引桶：806 -> 411
+
+同步文件：
+- data/people.json
+- data/people-part-*.json
+- data/relationship-data.js
+- exports/by-book-index.txt
+- exports/li-ao-relationships.csv
+- exports/li-ao-relationships.txt
+- scripts/extract_relationships.py 的 STOP_NAMES 已加入同一批 G 组非人词，后续单书重建不会回流。
+
+验证：
+- manifest_people=14768, loaded_people=14768, totals_people=14768
+- identityLinks=35357, bad_identity_links=0
+- personRelations=9134, bad_relations=0
+- CSV rows=14768，removed_in_csv=0
+- G_count=411
+- 抽查保留：国昌兄（李敖书牍集）、国分直一、国府种德、国俊、国焘、高厂长（五五日记）、高信郑、高育、高山流、郭委员、顾方舟妻（李敖书函集）、管区警察（软禁残记）、跟监治安人员（李敖书翰集）
+- 追加边界抽查：谷文化、广禄、观近斋、圭畦里、古述之、郭江湖、龚金源、高丘、葛祖兰、郭辅、郭可均有具体人物或署名语境；耿直虽混有形容词用法，但也命中真实人物，首轮保留。
+- node --check data/relationship-data.js
+- node --check assets/app.js
+- python -m py_compile scripts/extract_relationships.py
+
+下一步：
+- 建议继续 G 组第二轮，重点复核剩余 411 个中的“郭/高/葛/谷”边界项；若只走粗清，也可进入 H 组。
