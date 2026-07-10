@@ -1,0 +1,71 @@
+Z 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 按网页实际拼音分档复核 Z 组 1533 项，并继续执行“每个字母组只做一轮完整清理”的约定。
+- 只删除明确不构成单一人物节点的普通词、地点/群体、祝颂用语、句法截片和姓名后接动作的误切残片。
+- 职衔、关系、某人妻、某先生、匿名具体人物、历史/文学/虚构人物、昵称及仍能确指人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建 163 本全集；高频候选的定向重放严格限定在当前存档的 154 本书。
+
+删除项概况（147 项）：
+- 分组数量：章 1、甄 2、支 18、终 14、诸 17、祝 4、庄 2、宗 8、祖 18、左 5、张 34、赵 10、郑 4、周 5、朱 5。
+- 普通词、地名和群体：`章建筑`、`终点`、`终结`、`诸法律`、`诸侯`、`诸君`、`祖国`、`祖先`、`左派人`、`左翼团`、`周知`等。
+- 句法和祝颂片段：`支持陈`、`支持国`、`支持李`、`支持台`、`祝胡适`、`祝李敖`、`郑重澄`、`郑重呼`、`郑重声`等。
+- 姓名后接动作或语法成分：`甄珍看`、`甄珍拍`、`庄因亦`、`庄子有`、`张群说`、`张群做`、`赵宁打`、`赵怡说`、`周荃站`、`朱德讲`、`朱子又`等。
+- 断句粘连和非人物标签：`张冠李`、`张卡片`、`张门票`、`张牌`、`张文件`、`赵国`、`郑氏由`、`朱尊重`等。
+
+重点保留项：
+- `指导员`、`中山女中校长`、`赵检察`、`郑主管`、`周主席`、`周总理`、`朱班长`、`朱政委（一兵团谈判代表）`等职衔人物保留。
+- `章氏（陈幼学妻）`、`钟古夫人`、`张伯父`、`张伯母`、`赵四小姐`、`郑鋐会`等关系或确指人物保留。
+- `詹森副`、`詹森总`、`章义来`、`庄严先`、`赵怡先`等虽有截短但仍能确指具体人物，按人物指向原则保留。
+- `诸青来`、`张人权`、`张三爱`、`张所德`、`张修`、`赵靖赵`、`周民进`、`周扬传`、`周朱枕`、`朱高见`等回查后均为真人，保留。
+- `灶王爷`、`猪八戒`、`转轮王`、`周彼得`、`朱仑`、`朱丽叶`等神话、文学或虚构人物保留。
+- `作家大学生`、`周姓难友（李敖书牍集）`等匿名但明确指向单一人物的条目保留。
+
+规则修正：
+- 删除旧人工身份表中误收的 `郑重声`；证据均来自“郑重声明”的断词，不存在名为“郑重声”的人物。
+- 将本轮 147 项加入 `scripts/extract_relationships.py` 的全局 `STOP_NAMES`，避免后续局部重建时复生。
+
+逐书映射处理：
+- 对 bookCount 不超过 12 的候选直接复用存档中完整的 topBooks 映射，并校验总次数与书数。
+- 仅对 15 个跨 12 本书的高频候选做源文定向重放，共命中 1258 个章节文件；次数、涉及书数及 topBooks 与存档全部一致。
+- 147 项共形成 684 组人物/书目正式映射，涉及 134 本书。
+- 同步清除逐书 top80 中 121 个展示行，涉及 90 本书；其中 59 行是展示侧旧误命中。
+- 正式映射与展示侧并集为 743 组，最终影响 146 本书。
+- 删除项没有命中任何人物关系边，personRelations 保持不变。
+
+数据变化：
+- people：12102 -> 11955
+- identityLinks：31551 -> 31356
+- personRelations：9128 -> 9128
+- Z 桶人数：1533 -> 1386
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的人工身份修正和全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = shard people = totals people = site people = CSV people = 11955
+- identityLinks = totals identityLinks = 31356
+- personRelations = totals personRelations = 9128
+- books = 154，chapters = 7921，shards = 6
+- Z 桶人数 = 1386
+- badShards = 0，badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 147 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py .tmp-index-z-cleanup.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- A-Z 主索引单轮清理已全部完成，下一步建议进入全索引 closeout：汇总各字母清理结果，做一次跨组残留抽查、全局一致性校验和最终统计，不再逐字母开启第二轮。

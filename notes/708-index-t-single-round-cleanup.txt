@@ -1,0 +1,66 @@
+T 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续执行每个字母组只做一轮完整清理的约定。
+- 按网页实际拼音分桶复核 T 组 349 项，只删除明确不是单一人物节点的机构/地域、普通词、群体合称和姓名后接动作误切。
+- 职衔、关系、某人妻、某先生、历史/文学角色、笔名、昵称及仍能确指具体人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建全集；正式重放范围严格限定为存档中的 154 本书。
+
+删除项概况（80 项）：
+- 分组数量：台 31、汤 2、唐 9、通 36、屠 2。
+- 地域、机构和政治词：`台办`、`台币`、`台电公`、`台独人`、`台联立`、`台南人`、`台商等`等。
+- 普通词、物件和文献词：`汤圆`、`通电`、`通告`、`通膨`、`通行本`、`通讯录`、`通知单`、`屠夫`等。
+- 姓名后接动作或句法成分：`唐飞跟`、`唐飞可`、`唐飞说`、`唐飞做`、`唐纵听`、`屠杀台`等。
+- `汤屠两`明确是汤炎光、屠申虹两人合称，不是单一人物节点；`通部长`在不同书中指不同交通部长，也不形成单一人物。
+
+重点保留项：
+- `台银董`来自“台银董事长”，原文明确指尹仲容；`台中法院法官（五五日记）`等六个机构职衔节点均指具体人物，保留。
+- `汤局长`明确指具体警察局长，`汤总司`明确指汤恩伯总司令，`汤公同`也来自同一具体人物语境，保留。
+- `唐公房`是《水经注》中的仙人，`唐擘黄`是译者，`唐能理`是美国新闻处前处长，`唐连`是军官，均保留。
+- `唐氏`等关系称谓、`田妈妈`、`童常老`、`团长`、`图老（李敖书笺集）`等具体称谓人物继续保留。
+- `特别护士`、`特别护士（五五日记）`和署名 `特号老顽固`均指具体人物；`塔土夫`、`太上老君`、`泰山王`、`托塔天王`等虚构或宗教人物继续保留。
+- `屠申虹`是真实作者及编辑人物，与普通词 `屠夫`、句片 `屠杀台`区分保留。
+
+逐书映射处理：
+- 对 bookCount 不超过 12 的删除项，直接复用存档中完整的 topBooks 映射并校验总次数与书数。
+- 仅对 6 个跨 12 本书的高频项做源文定向重放，共命中 906 个章节；计数、涉及书数和 topBooks 与存档全部一致。
+- 80 项共有 384 组人物/书目正式映射，涉及 113 本书。
+- 同步清除逐书 top80 中 95 个删除项展示行；其中 57 行是展示侧旧误命中，按展示行与正式映射并集精确修正 `personCount`。
+- 正式映射及展示侧并集共影响 128 本书。
+
+数据变化：
+- people：12756 -> 12676
+- identityLinks：32496 -> 32384
+- personRelations：9128 -> 9128
+- T 桶人数：349 -> 269
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = shard people = totals people = site people = CSV people = 12676
+- identityLinks = totals identityLinks = 32384
+- personRelations = totals personRelations = 9128
+- books = 154，chapters = 7921，shards = 6
+- T 桶人数 = 269
+- badShards = 0，badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 80 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- T 组按单轮制结束；U、V 无实际拼音分桶，下一步直接进入 W 组索引单轮清理。

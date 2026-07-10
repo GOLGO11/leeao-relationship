@@ -1,0 +1,65 @@
+M 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续执行每个字母组只做一轮完整清理的约定。
+- 按网页实际拼音分桶复核 M 组 480 项，只删除明确不是人物节点的普通词、地名、群体/机构、题名残片和姓名后接动词误切。
+- 职衔、关系、某人妻、某先生、历史/文学角色、笔名、昵称及能指向具体人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建全集。
+
+删除项概况（118 项）：
+- 分组数量：麻 8、马 19、满 14、毛 10、梅 4、蒙 9、孟 2、米 2、明 42、莫 6、牧 1、穆 1。
+- 普通词、地名和群体/机构：`麻雀`、`马路`、`满清`、`满洲国`、`满族`、`蒙藏`、`莫斯科`、`穆斯林`等。
+- 题名、成语和句法残片：`马之美`、`满城风`、`毛骨悚`、`蒙难记`、`莫须有`、`明鉴`、`明信片`等。
+- 姓名后接动词或句子切片：`马哥说`、`毛作陪`、`蒙田玩`、`孟子曰`、`莫辛等`、`明义有`等。
+- `毛四`六次均来自“一毛四”的监所薪级或法警等级，不是具体人物；同步撤销早期把它标成司法人员的人工分类。
+
+重点保留项：
+- `明升`：三次命中中两次是“明升暗降”，但《李敖新刊》明确写到明末夏国君主明升，仍是真实历史人物，保留。
+- `马无能`：明确指向马英九的昵称；`马劳先`指马劳先生，均按人物指向原则保留。
+- `满清将`：上下文明确指向凤山将军；`明华`、`明义`、`牧养`等虽为残缺人名，仍能指向具体人物，保留。
+- `马上`、`孟绝子`：作家名单或署名中的具体笔名；`妈祖`、`美狄丝`、`米老鼠`为神祇、神话或虚拟人物，也保留。
+- `马祖圣`、`毛寿先`、`梅杰`、`明金城`、`明居正`等真实人物均保留。
+- `模特儿（秘藏日记）`、`民进党著名律师（李敖书牍集）`等指向具体人物的书内称谓继续保留。
+
+逐书映射处理：
+- 对初步 119 项候选命中的 2116 个章节定向重放现有抽取规则，未使用 `--all`；出现次数、涉及书数和 topBooks 与存档全部一致。
+- 永久规则校验发现 `明升`同时是历史人物白名单项，回查证据后将其撤出删除名单，最终删除 118 项。
+- 最终 118 项共有 840 组人物/书目正式映射，涉及 145 本书。
+- 同步清除逐书 top80 中 169 个删除项展示行；其中 94 行是旧补表中的展示侧误命中，按展示行与正式映射并集精确修正 `personCount`，全部受影响书目共 149 本。
+
+数据变化：
+- people：13863 -> 13745
+- identityLinks：34141 -> 33959
+- personRelations：9133 -> 9133
+- M 桶人数：480 -> 362
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES` 与 `毛四` 旧人工分类
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = totals people = site people = CSV people = 13745
+- identityLinks = totals identityLinks = 33959
+- personRelations = totals personRelations = 9133
+- books = 154，chapters = 7921，shards = 6
+- M 桶人数 = 362
+- badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 118 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中，`明升`仍保有历史人物节点
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- M 组按单轮制结束，下一步直接进入 N 组索引单轮清理。

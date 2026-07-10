@@ -1,0 +1,66 @@
+N 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续执行每个字母组只做一轮完整清理的约定。
+- 按网页实际拼音分桶复核 N 组 332 项，只删除明确不是人物节点的能愿动词、语气词句片、普通词、群体称谓和姓名后接句法成分误切。
+- 职衔、关系、某人妻、某先生、历史/文学角色、笔名、昵称及能指向具体人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建全集。
+
+删除项概况（245 项）：
+- 分组数量：那 110、能 126、宁 2、牛 6、农 1。
+- 能愿动词和句法残片：`能证明`、`能看到`、`能够用`、`能成立`、`能代表`、`能干`、`能做`等。
+- 语气词和普通短语：`那当然`、`那么高`、`那种感`、`那天晚`、`那意思`、`那人家`等。
+- 姓名后接句法成分：`那李登`、`那连战`、`那何世`、`那孙科`、`那王莽`、`那王太`、`那钱行`等。
+- 普通词、成语和群体称谓：`牛二虎`来自“九牛二虎”，另删除 `牛骨头`、`牛喝水`、`农民工`等。
+
+重点保留项：
+- `那志良`：真实学者和故宫文物专家，仍保留《中国艺术新研》中与项元汴的统计引证关系边。
+- `宁猪狗`：元代史料中的真实姓名；`牛牢`是汉光武帝刘秀学生时代的朋友，均不能按普通词删除。
+- `纳什`：多数命中来自“纳什维尔号”，但《爱情的秘密》明确列出诗人 Ogden Nash，保留人物节点。
+- `宁次`：虽是冈村宁次被截出的残缺名称，但明确指向具体人物，按人物指向原则保留。
+- `那姑娘`、`那护士`、`那家长`、`那老师`、`那老先`、`那妹妹`、`那名女`、`那男孩`、`那位教`、`那位民`、`那位青年（李敖札记）`、`那位台`、`那姓警员`、`那学生`、`那妖僧`、`那丈夫`、`那职员`、`那流氓`均为人物称谓或关系对象，继续保留。
+- `拿武士刀的人（李敖书笺集）`、`内政部出版事业管理处熊处长（李敖书翰集）`、`女法官（五五日记）`等书内具体人物称谓继续保留。
+- `哪吒`、`牛魔王`、`牛头马面`、`女狐仙`、`女娲`、`诺亚`等宗教、神话或虚拟人物继续保留。
+
+逐书映射处理：
+- 对 245 项候选命中的 3266 个章节定向重放现有抽取规则，未使用 `--all`。
+- 245 项的出现次数、涉及书数和 topBooks 与存档全部一致，共有 2127 组人物/书目正式映射，涉及 147 本书。
+- 同步清除逐书 top80 中 237 个删除项展示行；其中 155 行是旧补表中的展示侧误命中，按展示行与正式映射并集精确修正 `personCount`。
+- 正式映射及展示侧并集共影响 149 本书。
+
+数据变化：
+- people：13745 -> 13500
+- identityLinks：33959 -> 33538
+- personRelations：9133 -> 9133
+- N 桶人数：332 -> 87
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = totals people = site people = CSV people = 13500
+- identityLinks = totals identityLinks = 33538
+- personRelations = totals personRelations = 9133
+- books = 154，chapters = 7921，shards = 6
+- N 桶人数 = 87
+- badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 245 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中，`那志良`的人物关系边仍保留
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- N 组按单轮制结束，下一步直接进入 O 组索引单轮清理。

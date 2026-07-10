@@ -1,0 +1,66 @@
+L 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续执行每个字母组只做一轮完整清理的约定。
+- 按网页实际拼音分桶复核 L 组 2282 项，只删除明确不是人物节点的地名、事件、普通词、政治组合、句法残片和姓名后接动词误切。
+- 职衔、关系、某人妻、某先生、历史/文学角色、笔名、昵称及能指向具体人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建全集。
+
+删除项概况（292 项）：
+- 分组数量：赖 1、蓝 8、郎 1、劳 5、乐 6、雷 18、冷 6、黎 1、李 52、利 11、连 65、梁 4、林 26、刘 5、廉 2、龙 13、鲁 24、陆 20、路 9、吕 4、罗 11。
+- 普通词、地名、事件和题名：`冷水`、`冷战`、`黎巴嫩`、`罗马`、`罗生门`、`林宅血`、`龙去脉`、`路历程`、`陆沦陷`等。
+- 政治组合与制度/群体残片：`蓝绿两`、`连宋阵`、`连萧配`、`罗会议`、`罗宣言`、`陆专家`等。
+- 姓名后接动词或句法残片：`李杰说`、`连战来`、`林肯所`、`刘备跟`、`鲁迅有`、`雷震坐`等。
+- 其他误切：`李无算`来自“桃李无算”，`连家立`之外的普通词误切未再混入真实人物节点，`吕坤名`来自“吕坤名言”。
+
+重点保留项：
+- `连家立`：真实人物，“家立”会归并到该节点；《李敖五五日记》中有来坐、看房、贷款等明确交往证据，并保有一条人物关系边。
+- `龙头`：《红色11》中的人物称号和对话角色，不按普通词删除；仅删除 `龙头核`、`龙头级`等后缀误切。
+- `李调查`、`陆军副`、`雷倩老`、`鲁迅先`：分别是调查局局长、陆军副总司令张光锦、雷倩老太太、鲁迅先生等人物职衔/称谓残片，按人物指向原则保留。
+- `李女又`、`路人钱`、`路人吴`、`路人余`：上下文能指向具体人物或关系对象，保留。
+- `雷震春`、`林今开`、`林台南`、`林诗党`、`林惺狱`、`罗张`：回查后均为真实姓名，保留。
+- `龙云台`虽为龙应台的误写，但仍明确指向具体人物，保留。
+
+逐书映射处理：
+- 对候选项命中的 1674 个章节定向重放现有抽取规则，未使用 `--all`。
+- 首次重放发现 `连家立`因“家立 -> 连家立”的人工归并而混入大量普通短语，保护检查主动停止，正式数据未修改。
+- 回查日记、别名规则、关系边和旧记录后确认 `连家立`是真实人物，将其撤出删除名单。
+- 其余 292 项重放结果与存档的出现次数、涉及书数和 topBooks 全部一致，正式书目映射涉及 136 本书。
+- 同步清除逐书 top80 中 64 个删除项展示行；其中 34 行是旧补表中的展示侧误命中，按展示行与正式映射并集精确修正 `personCount`。
+
+数据变化：
+- people：14155 -> 13863
+- identityLinks：34514 -> 34141
+- personRelations：9133 -> 9133
+- L 桶人数：2282 -> 1990
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = totals people = site people = 13863
+- identityLinks = totals identityLinks = 34141
+- personRelations = totals personRelations = 9133
+- books = 154，chapters = 7921，shards = 6
+- L 桶人数 = 1990
+- badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 292 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中；`连家立`的人物关系边仍保留
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- L 组按单轮制结束，下一步直接进入 M 组索引单轮清理。

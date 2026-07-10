@@ -1,0 +1,66 @@
+R 组索引清理单轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续执行每个字母组只做一轮完整清理的约定。
+- 按网页实际拼音分桶复核 R 组 142 项，只删除明确不是人物节点的任职/普通句片、机构词和姓名后接动作误切。
+- 职衔、关系、某人妻、某先生、历史/文学角色、笔名、昵称及仍能确指具体人物的残缺称谓继续保留。
+- 本轮没有使用 `--all`，没有重建全集；正式重放范围严格限定为存档中的 154 本书。
+
+删除项概况（79 项）：
+- 分组数量：任 48、荣 18、容 11、戎 1、融 1。
+- 任职和普通句片：`任财政`、`任党务`、`任东北`、`任管理`、`任教务`、`任期满`、`任劳任`、`任何政`等。
+- 机构、制度和普通词：`荣民医`、`荣民总`、`荣寿`、`荣幸`、`容包括`、`容并包`、`融危机`等。
+- 姓名后接动作或句法成分：`任李焕`、`任王昇`、`荣抗议`、`荣负责`、`荣公投`、`荣逃掉`、`荣祖联`等。
+- `任守卫`、`任斋务`分别来自担任守卫和“分任斋务、教务、事务”的句片；`戎马半`来自“戎马半生”，均不指向独立人物。
+
+重点保留项：
+- `任夫人`在任瑰典故中明确指任瑰夫人，且有既有人物关系边；按关系称谓人物保留。
+- `荣委员`来自“蔡同荣委员”，是能确指蔡同荣的职衔残缺称谓，保留。
+- `荣发`虽由张荣发姓名尾部抽出，但三个命中都明确指向张荣发，按具体人物指向原则保留。
+- `任氏（臧劝妻）`、`如玲（李先闻妻）`、`芮氏（芮锵女）`、`芮氏（吴实妻）`等亲属关系节点继续保留。
+- `任兵`、`任瑰`、`任鸿隽`、`任建园`、`任鸣钜`、`任山`、`任维钧`、`任先志`、`任显群`、`任逸翔`、`任之恭`、`任治平`、`任卓宣`等真实人物均保留。
+- `荣源`、`荣臻`、`容闳`、`容肇祖`、`仁井田陞`、`日置益`等真实人物，以及 `如来佛`、`瑞波尔`等虚构或文学人物继续保留。
+
+逐书映射处理：
+- 初次只读预检发现源目录含未入库存档的额外书目，未写入任何数据；随后在正式数据变更前把范围收紧为现有 154 本存档书。
+- 对 79 项候选命中的 699 个章节定向重放现有抽取规则，未使用 `--all`。
+- 79 项的出现次数、涉及书数和 topBooks 与存档全部一致，共有 389 组人物/书目正式映射，涉及 111 本书。
+- 同步清除逐书 top80 中 18 个删除项展示行；其中 9 行是展示侧旧误命中，按展示行与正式映射并集精确修正 `personCount`。
+- 正式映射及展示侧并集共影响 114 本书。
+
+数据变化：
+- people：13293 -> 13214
+- identityLinks：33242 -> 33133
+- personRelations：9130 -> 9130
+- R 桶人数：142 -> 63
+- books：154（不变）
+- chapters：7921（不变）
+- shards：6（不变）
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = shard people = totals people = site people = CSV people = 13214
+- identityLinks = totals identityLinks = 33133
+- personRelations = totals personRelations = 9130
+- books = 154，chapters = 7921，shards = 6
+- R 桶人数 = 63
+- badShards = 0，badIdentityLinks = 0，badRelations = 0，badBookNames = 0，invalidBookCounts = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- 79 个删除项在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- 所有重点保留项仍在人物档案中
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- R 组按单轮制结束，下一步直接进入 S 组索引单轮清理。

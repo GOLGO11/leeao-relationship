@@ -364,8 +364,11 @@ select:focus {
 }
 
 .graph-link {
+  fill: none;
   stroke: #b7c3c7;
   stroke-opacity: 0.65;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
 }
 
 .graph-link.identity {

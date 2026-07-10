@@ -8,6 +8,7 @@
     lockedPersonName: "",
     nameInitial: "",
     graphView: { x: 0, y: 0, k: 1 },
+    graphFitView: { x: 0, y: 0, k: 1 },
     pan: null,
     touchPointers: new Map(),
     pinch: null,
@@ -358,61 +359,165 @@
     return hash;
   }
 
+  function graphFocusName(filteredPeople) {
+    const visibleNames = new Set(filteredPeople.map((person) => person.name));
+    if (state.lockedPersonName && visibleNames.has(state.lockedPersonName)) return state.lockedPersonName;
+    const exactNames = [...exactNamesForQuery()].filter((name) => visibleNames.has(name));
+    return exactNames.length === 1 ? exactNames[0] : "";
+  }
+
+  function displayIdentityLinks(filteredPeople, focusName) {
+    const peopleByName = new Set(filteredPeople.map((person) => person.name));
+    const linksByPerson = new Map();
+    identityLinks().forEach((link) => {
+      if (!peopleByName.has(link.person)) return;
+      if (!linksByPerson.has(link.person)) linksByPerson.set(link.person, []);
+      linksByPerson.get(link.person).push(link);
+    });
+
+    const links = [];
+    filteredPeople.forEach((person) => {
+      const personLinks = (linksByPerson.get(person.name) || []).sort((a, b) =>
+        (b.count - a.count) || String(a.category).localeCompare(String(b.category)),
+      );
+      if (!personLinks.length) return;
+      if (person.name === focusName) {
+        links.push(...personLinks);
+        return;
+      }
+      const filteredLink = state.category === "all"
+        ? personLinks[0]
+        : personLinks.find((link) => link.category === state.category) || personLinks[0];
+      links.push(filteredLink);
+    });
+    return links;
+  }
+
+  function distributeRing(nodes, radius, centerX, centerY) {
+    if (!nodes.length) return;
+    const sorted = [...nodes].sort((a, b) =>
+      (a.desiredAngle - b.desiredAngle)
+      || (b.person.occurrences - a.person.occurrences)
+      || a.name.localeCompare(b.name, "zh-CN"),
+    );
+    const step = (Math.PI * 2) / sorted.length;
+    let offsetX = 0;
+    let offsetY = 0;
+    sorted.forEach((node, index) => {
+      const baseAngle = -Math.PI + index * step;
+      const difference = node.desiredAngle - baseAngle;
+      offsetX += Math.cos(difference);
+      offsetY += Math.sin(difference);
+    });
+    const offset = Math.atan2(offsetY, offsetX);
+    sorted.forEach((node, index) => {
+      const angle = -Math.PI + index * step + offset;
+      node.angle = angle;
+      node.x = centerX + Math.cos(angle) * radius;
+      node.y = centerY + Math.sin(angle) * radius;
+    });
+  }
+
   function buildGraph(filteredPeople, width, height) {
     const peopleByName = new Map(filteredPeople.map((person) => [person.name, person]));
-    const links = identityLinks().filter((link) => peopleByName.has(link.person));
-    const activeCategories = [...new Set(links.map((link) => link.category))];
-    const center = { id: "center:leeao", type: "center", name: "李敖", x: width / 2, y: height / 2, fixed: true, r: 28 };
+    const focusName = graphFocusName(filteredPeople);
+    const links = displayIdentityLinks(filteredPeople, focusName);
+    const activeCategories = [...new Set(links.map((link) => link.category))].sort((a, b) =>
+      (data.categoryLabels[a] || a).localeCompare(data.categoryLabels[b] || b, "zh-CN"),
+    );
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const center = {
+      id: "center:leeao",
+      type: "center",
+      name: "李敖",
+      x: centerX,
+      y: focusName ? centerY - 54 : centerY,
+      fixed: true,
+      r: 28,
+      labelSide: "right",
+    };
     const nodes = [center];
     const categoryNodes = new Map();
     const personNodes = new Map();
-    const radius = Math.max(180, Math.min(width * 0.33, height * 0.36));
+    const categoryRingCount = activeCategories.length > 20 ? 2 : 1;
+    const categoryRadii = categoryRingCount === 2 ? [150, 218] : [172];
 
     activeCategories.forEach((category, index) => {
-      const angle = (-Math.PI / 2) + (index / Math.max(activeCategories.length, 1)) * Math.PI * 2;
+      const ringIndex = categoryRingCount === 2 ? index % 2 : 0;
+      const slotIndex = categoryRingCount === 2 ? Math.floor(index / 2) : index;
+      const slotCount = categoryRingCount === 2
+        ? Math.ceil((activeCategories.length - ringIndex) / 2)
+        : activeCategories.length;
+      const angle = (-Math.PI / 2) + (slotIndex / Math.max(slotCount, 1)) * Math.PI * 2
+        + (ringIndex ? Math.PI / Math.max(slotCount, 1) : 0);
+      const radius = categoryRadii[ringIndex];
       const node = {
         id: `category:${category}`,
         type: "category",
         category,
         name: data.categoryLabels[category] || category,
-        x: width / 2 + Math.cos(angle) * radius,
-        y: height / 2 + Math.sin(angle) * radius,
+        x: centerX + Math.cos(angle) * radius,
+        y: centerY + Math.sin(angle) * radius,
         fixed: true,
         r: 18,
+        angle,
       };
       categoryNodes.set(category, node);
       nodes.push(node);
     });
 
+    const linksByPerson = new Map();
+    links.forEach((link) => {
+      if (!linksByPerson.has(link.person)) linksByPerson.set(link.person, []);
+      linksByPerson.get(link.person).push(link);
+    });
     filteredPeople.forEach((person) => {
-      const seed = hashName(person.name);
-      const angle = (seed % 628) / 100;
-      const distance = radius + 95 + (seed % 130);
+      const personLinks = linksByPerson.get(person.name) || [];
+      let vectorX = 0;
+      let vectorY = 0;
+      personLinks.forEach((link) => {
+        const categoryNode = categoryNodes.get(link.category);
+        if (!categoryNode) return;
+        const weight = Math.max(1, Math.sqrt(link.count || 1));
+        vectorX += Math.cos(categoryNode.angle) * weight;
+        vectorY += Math.sin(categoryNode.angle) * weight;
+      });
+      const desiredAngle = vectorX || vectorY
+        ? Math.atan2(vectorY, vectorX)
+        : ((hashName(person.name) % 628) / 100) - Math.PI;
+      const isFocus = person.name === focusName;
       const node = {
         id: `person:${person.name}`,
         type: "person",
         name: person.name,
         person,
-        x: width / 2 + Math.cos(angle) * distance,
-        y: height / 2 + Math.sin(angle) * distance,
-        vx: 0,
-        vy: 0,
+        x: isFocus ? centerX : 0,
+        y: isFocus ? centerY + 54 : 0,
+        fixed: isFocus,
+        desiredAngle,
         r: Math.max(6, Math.min(20, 5 + Math.sqrt(person.occurrences))),
       };
+      if (isFocus) node.r = Math.max(node.r, 22);
       personNodes.set(person.name, node);
       nodes.push(node);
     });
 
-    const graphLinks = [];
-    filteredPeople.forEach((person) => {
-      graphLinks.push({
-        source: center,
-        target: personNodes.get(person.name),
-        type: "person",
-        strength: 0.015,
-        length: 210 + Math.min(person.occurrences, 60),
-      });
+    const movablePeople = [...personNodes.values()].filter((node) => !node.fixed);
+    const personRingCount = Math.max(1, Math.min(8, Math.ceil(movablePeople.length / 48)));
+    const personRings = Array.from({ length: personRingCount }, () => []);
+    movablePeople
+      .sort((a, b) => (a.desiredAngle - b.desiredAngle) || a.name.localeCompare(b.name, "zh-CN"))
+      .forEach((node, index) => personRings[index % personRingCount].push(node));
+    const firstPersonRadius = categoryRingCount === 2 ? 310 : 260;
+    personRings.forEach((ringNodes, index) => {
+      distributeRing(ringNodes, firstPersonRadius + index * 58, centerX, centerY);
     });
+    nodes.forEach((node) => {
+      if (!node.labelSide) node.labelSide = node.x < centerX ? "left" : "right";
+    });
+
+    const graphLinks = [];
     links.forEach((link) => {
       const categoryNode = categoryNodes.get(link.category);
       const personNode = personNodes.get(link.person);
@@ -422,25 +527,34 @@
         target: personNode,
         type: "identity",
         link,
-        strength: 0.035,
-        length: 90 + Math.max(0, 12 - link.count) * 5,
       });
     });
-    personRelations().forEach((relation) => {
+    const relationGroups = new Map();
+    const visibleRelations = focusName
+      ? personRelations().filter((relation) => relation.source === focusName || relation.target === focusName)
+      : personRelations();
+    visibleRelations.forEach((relation) => {
       const sourceNode = personNodes.get(relation.source);
       const targetNode = personNodes.get(relation.target);
-      if (!sourceNode || !targetNode) return;
+      if (!sourceNode || !targetNode || sourceNode === targetNode) return;
+      const pair = [sourceNode, targetNode].sort((a, b) => a.id.localeCompare(b.id));
+      const key = `${pair[0].id}\u0000${pair[1].id}`;
+      if (!relationGroups.has(key)) {
+        relationGroups.set(key, { source: pair[0], target: pair[1], relations: [] });
+      }
+      relationGroups.get(key).relations.push(relation);
+    });
+    relationGroups.forEach((group) => {
       graphLinks.push({
-        source: sourceNode,
-        target: targetNode,
+        source: group.source,
+        target: group.target,
         type: "relation",
-        relation,
-        strength: 0.028,
-        length: 115 + Math.max(0, 10 - (relation.weight || 1)) * 8,
+        relations: group.relations,
+        weight: group.relations.reduce((sum, relation) => sum + (relation.weight || 1), 0),
       });
     });
 
-    return { nodes, links: graphLinks, activeCategories, peopleByName };
+    return { nodes, links: graphLinks, activeCategories, peopleByName, focusName };
   }
 
   function graphNodeLimit() {
@@ -469,84 +583,54 @@
     return rankPeopleForGraph(filteredPeople).slice(0, limit);
   }
 
-  function simulate(graph, width, height) {
-    const nodes = graph.nodes.filter((node) => !node.fixed);
-    const tickCount = nodes.length > 320 ? 72 : nodes.length > 220 ? 96 : 132;
-    const softLimitX = Math.max(260, width * 0.34);
-    const softLimitY = Math.max(220, height * 0.36);
-    for (let tick = 0; tick < tickCount; tick += 1) {
-      graph.links.forEach((link) => {
-        const dx = link.target.x - link.source.x;
-        const dy = link.target.y - link.source.y;
-        const distance = Math.sqrt(dx * dx + dy * dy) || 1;
-        const force = (distance - link.length) * link.strength;
-        const fx = (dx / distance) * force;
-        const fy = (dy / distance) * force;
-        if (!link.source.fixed) {
-          link.source.vx = (link.source.vx || 0) + fx;
-          link.source.vy = (link.source.vy || 0) + fy;
-        }
-        if (!link.target.fixed) {
-          link.target.vx = (link.target.vx || 0) - fx;
-          link.target.vy = (link.target.vy || 0) - fy;
-        }
-      });
-
-      for (let i = 0; i < nodes.length; i += 1) {
-        for (let j = i + 1; j < nodes.length; j += 1) {
-          const a = nodes[i];
-          const b = nodes[j];
-          const dx = b.x - a.x;
-          const dy = b.y - a.y;
-          const distance2 = Math.max(dx * dx + dy * dy, 80);
-          const distance = Math.sqrt(distance2);
-          const force = Math.min(1.8, 900 / distance2);
-          const fx = (dx / distance) * force;
-          const fy = (dy / distance) * force;
-          a.vx -= fx;
-          a.vy -= fy;
-          b.vx += fx;
-          b.vy += fy;
-        }
-      }
-
-      nodes.forEach((node) => {
-        node.vx += (width / 2 - node.x) * 0.0012;
-        node.vy += (height / 2 - node.y) * 0.0012;
-        if (node.x < -softLimitX) node.vx += (-softLimitX - node.x) * 0.004;
-        if (node.x > width + softLimitX) node.vx += (width + softLimitX - node.x) * 0.004;
-        if (node.y < -softLimitY) node.vy += (-softLimitY - node.y) * 0.004;
-        if (node.y > height + softLimitY) node.vy += (height + softLimitY - node.y) * 0.004;
-        node.vx *= 0.84;
-        node.vy *= 0.84;
-        node.x += node.vx;
-        node.y += node.vy;
-      });
-    }
-  }
-
   function fitGraphView(graph, width, height) {
-    const visibleNodes = graph.nodes.filter((node) => node.type !== "center");
+    const visibleNodes = graph.nodes;
     if (!visibleNodes.length) return { x: 0, y: 0, k: 1 };
-    const padding = 56;
-    const bounds = visibleNodes.reduce((box, node) => ({
-      minX: Math.min(box.minX, node.x - node.r),
-      maxX: Math.max(box.maxX, node.x + node.r + Math.min(node.name.length * 12, 96)),
-      minY: Math.min(box.minY, node.y - node.r - 10),
-      maxY: Math.max(box.maxY, node.y + node.r + 10),
-    }), { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
+    const padding = 48;
+    const bounds = visibleNodes.reduce((box, node) => {
+      const labelWidth = Math.min([...node.name].length * 12, 120) + 7;
+      const labelLeft = node.labelSide === "left" ? labelWidth : 0;
+      const labelRight = node.labelSide === "left" ? 0 : labelWidth;
+      return {
+        minX: Math.min(box.minX, node.x - node.r - labelLeft),
+        maxX: Math.max(box.maxX, node.x + node.r + labelRight),
+        minY: Math.min(box.minY, node.y - node.r - 10),
+        maxY: Math.max(box.maxY, node.y + node.r + 10),
+      };
+    }, { minX: Infinity, maxX: -Infinity, minY: Infinity, maxY: -Infinity });
     const graphWidth = Math.max(1, bounds.maxX - bounds.minX);
     const graphHeight = Math.max(1, bounds.maxY - bounds.minY);
-    const minScale = visibleNodes.length > 320 ? 0.48 : visibleNodes.length > 220 ? 0.58 : 0.72;
-    const scale = Math.max(minScale, Math.min(1.35, Math.min(
+    const scale = Math.min(1.2, Math.min(
       (width - padding * 2) / graphWidth,
       (height - padding * 2) / graphHeight,
-    )));
+    ));
     return {
       x: (width - graphWidth * scale) / 2 - bounds.minX * scale,
       y: (height - graphHeight * scale) / 2 - bounds.minY * scale,
       k: scale,
     };
+  }
+
+  function graphLinkPath(link) {
+    const dx = link.target.x - link.source.x;
+    const dy = link.target.y - link.source.y;
+    const distance = Math.hypot(dx, dy) || 1;
+    const unitX = dx / distance;
+    const unitY = dy / distance;
+    const startPadding = link.source.r + 2;
+    const endPadding = link.target.r + 2;
+    const startX = link.source.x + unitX * startPadding;
+    const startY = link.source.y + unitY * startPadding;
+    const endX = link.target.x - unitX * endPadding;
+    const endY = link.target.y - unitY * endPadding;
+    const seed = hashName(`${link.source.id}|${link.target.id}`);
+    const direction = seed % 2 ? 1 : -1;
+    const bend = link.type === "relation"
+      ? Math.min(52, 18 + Math.log2(1 + (link.relations || []).length) * 8)
+      : 10 + (seed % 13);
+    const controlX = (startX + endX) / 2 - unitY * bend * direction;
+    const controlY = (startY + endY) / 2 + unitX * bend * direction;
+    return `M ${startX} ${startY} Q ${controlX} ${controlY} ${endX} ${endY}`;
   }
 
   function syncDetailPaneHeight() {
@@ -682,8 +766,8 @@
     }
 
     const graph = buildGraph(graphPeople, width, height);
-    simulate(graph, width, height);
     state.graphView = fitGraphView(graph, width, height);
+    state.graphFitView = { ...state.graphView };
     renderLegend(graph.activeCategories);
     syncDetailPaneHeight();
 
@@ -697,28 +781,32 @@
     applyGraphView(svg, viewportLayer);
 
     graph.links.forEach((link) => {
-      const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      line.setAttribute("x1", link.source.x);
-      line.setAttribute("y1", link.source.y);
-      line.setAttribute("x2", link.target.x);
-      line.setAttribute("y2", link.target.y);
-      line.setAttribute(
+      const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      path.setAttribute("d", graphLinkPath(link));
+      path.setAttribute(
         "stroke-width",
         link.type === "identity"
           ? Math.max(1, Math.min(5, 1 + (link.link.count || 1) * 0.45))
           : link.type === "relation"
-            ? Math.max(1.2, Math.min(4, 1 + (link.relation.weight || 1) * 0.22))
+            ? Math.max(1.2, Math.min(5, 1 + Math.log2(1 + link.weight) * 0.7))
             : "1.2",
       );
-      line.setAttribute("class", `graph-link ${link.type}`);
-      if (link.type === "identity") line.setAttribute("stroke", categoryColors[link.link.category] || "#64748b");
-      if (link.type === "relation") {
-        line.setAttribute("stroke", "#172126");
+      path.setAttribute("class", `graph-link ${link.type}`);
+      if (link.type === "identity") {
+        path.setAttribute("stroke", categoryColors[link.link.category] || "#64748b");
         const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
-        title.textContent = `${link.relation.source} - ${link.relation.relation} - ${link.relation.target}`;
-        line.appendChild(title);
+        title.textContent = `${link.link.person}：${link.link.categoryLabel || data.categoryLabels[link.link.category] || link.link.category}`;
+        path.appendChild(title);
       }
-      linkLayer.appendChild(line);
+      if (link.type === "relation") {
+        path.setAttribute("stroke", "#172126");
+        const title = document.createElementNS("http://www.w3.org/2000/svg", "title");
+        const relationLabels = [...new Set(link.relations.map((relation) => relation.relation))];
+        const suffix = relationLabels.length > 4 ? `等 ${relationLabels.length} 类关系` : relationLabels.join("、");
+        title.textContent = `${link.source.name} ↔ ${link.target.name}：${suffix}`;
+        path.appendChild(title);
+      }
+      linkLayer.appendChild(path);
     });
 
     graph.nodes.forEach((node) => {
@@ -740,8 +828,10 @@
       group.appendChild(circle);
 
       const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      text.setAttribute("x", node.r + 5);
+      const labelOnLeft = node.labelSide === "left";
+      text.setAttribute("x", labelOnLeft ? -(node.r + 5) : node.r + 5);
       text.setAttribute("y", "4");
+      text.setAttribute("text-anchor", labelOnLeft ? "end" : "start");
       text.textContent = node.name;
       group.appendChild(text);
 
@@ -802,7 +892,7 @@
       const oldK = state.graphView.k;
       const worldX = (pointX - state.graphView.x) / oldK;
       const worldY = (pointY - state.graphView.y) / oldK;
-      state.graphView.k = Math.max(0.55, Math.min(2.8, nextK));
+      state.graphView.k = Math.max(0.16, Math.min(2.8, nextK));
       state.graphView.x = pointX - worldX * state.graphView.k;
       state.graphView.y = pointY - worldY * state.graphView.k;
       applyGraphView(svg);
@@ -877,7 +967,7 @@
 
     svg.addEventListener("dblclick", (event) => {
       if (event.target.closest(".node")) return;
-      state.graphView = { x: 0, y: 0, k: 1 };
+      state.graphView = { ...state.graphFitView };
       applyGraphView(svg);
     });
   }

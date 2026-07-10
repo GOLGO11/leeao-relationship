@@ -1,0 +1,50 @@
+J 组索引清理第二轮记录
+
+时间：2026-07-10
+
+范围：
+- 继续 A-Z 人名索引清理，对 J 组首轮剩余的 391 项做第二轮低频边界复核。
+- 本轮没有使用 `--all`，没有重建全集；仅基于当前 `data/people.json` 分片清单做精确剪枝。
+- 继续执行“只删除非人”的边界：职衔、关系、某人妻、某先生、笔名、角色及虽被截短但仍能指向具体人物的条目全部保留。
+
+删除项：
+- `蒋公正`：原文为“总统候选人名单，蒋公正。什么人？国民党。居正。什么人？国民党……”，实际是“蒋公”与“居正”在断句中粘连形成的伪名字，不指向名为“蒋公正”的人物。
+
+重点保留项：
+- `蒋故`、`蒋老先`、`金庸先`、`金花老`、`经国夫`：形式虽被截短，但都仍是对蒋氏故总统、蒋老先生、金庸先生、赛金花老太太、蒋经国夫人的明确人物指称，按人物指向原则保留。
+- `姬周`、`杰业`、`金丰乡`、`金陵`、`金人`、`金一`、`九仙`：回查证据后均为具体人物、笔名或昵称，保留。
+- `江上渔父`、`狙公`、`晋侯`等历史或文学角色仍指向人物，保留。
+
+数据变化：
+- people：14189 -> 14188
+- identityLinks：34564 -> 34563
+- personRelations：9133 -> 9133
+- J 桶人数：391 -> 390
+- books：154（不变）
+- chapters：7921（不变）
+- 逐书人数仅对《李敖笑傲江湖》减 1；该伪名字原本不在该书展示用 top80 人物列表中。
+
+同步范围：
+- `scripts/extract_relationships.py` 的全局 `STOP_NAMES`
+- `data/people.json` 与 `data/people-part-001..006.json`
+- `data/relationship-data.js`
+- `exports/li-ao-relationships.csv`
+- `exports/li-ao-relationships.txt`
+- `exports/by-book-index.txt`
+
+校验：
+- manifest people = loaded people = totals people = site people = 14188
+- identityLinks = totals identityLinks = 34563
+- personRelations = totals personRelations = 9133
+- books = 154，chapters = 7921，shards = 6
+- J 桶人数 = 390
+- badIdentityLinks = 0，badRelations = 0，badBookNames = 0
+- categoryCounts 与剩余人物重新计算结果一致
+- `蒋公正` 在 people、identityLinks、relation endpoints、book.people、site people、CSV、TXT、by-book 人物列表中均无残留
+- `node --check data/relationship-data.js`
+- `node --check assets/app.js`
+- `python -m py_compile scripts/extract_relationships.py`
+- `git diff --check` 通过，仅有工作区既有的 CRLF 提示
+
+建议下一步：
+- J 组第二轮后剩余项已高度集中于真实人物与可指向人的称谓，建议结束 J 组清理，进入 K 组索引首轮。
